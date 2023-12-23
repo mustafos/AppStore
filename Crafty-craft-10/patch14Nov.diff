@@ -1,0 +1,709 @@
+From 5f16e24399798e899676c778b2ef29119c5539e8 Mon Sep 17 00:00:00 2001
+From: VitalyPolezhay <>
+Date: Tue, 14 Nov 2023 18:03:14 +0200
+Subject: [PATCH] fixed bugs 1-4  (14 Nov)
+
+---
+ .../UIViewController+ActivityView.swift       |  2 +-
+ Crafty Craft 5/SceneDelegate.swift            |  4 +-
+ .../ContentViewController.swift               |  6 +-
+ .../Skin3DTestViewController.xib              | 82 +++++++++----------
+ .../Seed Tab/SeedDetailsViewController.swift  |  4 +-
+ .../Seed Tab/SeedDetailsViewController.xib    | 75 +++++++++++++----
+ .../ServerDetailsViewController.swift         |  4 +-
+ .../ServerDetailsViewController.xib           | 71 ++++++++++++----
+ 8 files changed, 161 insertions(+), 87 deletions(-)
+
+diff --git a/Crafty Craft 5/Extensions/UIViewController+ActivityView.swift b/Crafty Craft 5/Extensions/UIViewController+ActivityView.swift
+index 30fd70a..265fe02 100644
+--- a/Crafty Craft 5/Extensions/UIViewController+ActivityView.swift	
++++ b/Crafty Craft 5/Extensions/UIViewController+ActivityView.swift	
+@@ -34,7 +34,7 @@ extension UIViewController {
+     }
+     
+     func share(string: String, from: UIView? = nil, direction: UIPopoverArrowDirection = .any) {
+-        let centerView: some UIView = from ?? view
++        let centerView: UIView = from ?? view
+         _share(shareItems: [string], from: centerView, direction: direction)
+     }
+     
+diff --git a/Crafty Craft 5/SceneDelegate.swift b/Crafty Craft 5/SceneDelegate.swift
+index 6d04807..c0ff8be 100755
+--- a/Crafty Craft 5/SceneDelegate.swift	
++++ b/Crafty Craft 5/SceneDelegate.swift	
+@@ -21,8 +21,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                     switch isPur {
+                     case true: self.l0adApp()
+-//                    case false: self.l0adApp()
+-                    case false: self.loadSubscription()
++                    case false: self.l0adApp()
++//                    case false: self.loadSubscription()
+                     }
+                 }
+                 //             Validate ContentProductSub
+diff --git a/Crafty Craft 5/Tab Bar/Content Tab/Content Module/ContentViewController.swift b/Crafty Craft 5/Tab Bar/Content Tab/Content Module/ContentViewController.swift
+index 59e7194..5b7bbc8 100755
+--- a/Crafty Craft 5/Tab Bar/Content Tab/Content Module/ContentViewController.swift	
++++ b/Crafty Craft 5/Tab Bar/Content Tab/Content Module/ContentViewController.swift	
+@@ -401,11 +401,11 @@ extension ContentViewController{
+     var titleString: String {
+         switch mode {
+         case .addons:
+-            return "ADDONS"
++            return "ADDON"
+         case .skins:
+-            return "SKINS"
++            return "SKIN"
+         case .maps:
+-            return "MAPS"
++            return "MAP"
+         }
+     }
+ }
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.xib b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.xib
+index 2c9378e..0d4e3be 100755
+--- a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.xib	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.xib	
+@@ -1,9 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+-    <device id="retina4_7" orientation="portrait" appearance="light"/>
++<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
++    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+     <dependencies>
+         <deployment identifier="iOS"/>
+-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
++        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+         <capability name="Named colors" minToolsVersion="9.0"/>
+         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+@@ -58,23 +58,23 @@
+         </placeholder>
+         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
++            <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+             <subviews>
+                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Green Background" translatesAutoresizingMaskIntoConstraints="NO" id="UER-0E-SS7">
+-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
++                    <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                 </imageView>
+                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhO-Vb-FiW" userLabel="Navigation Bar">
+-                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
++                    <rect key="frame" x="0.0" y="24" width="1024" height="64"/>
+                     <subviews>
+                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKIN EDITOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wy-8u-y8C">
+-                            <rect key="frame" x="50" y="8" width="275" height="34"/>
++                            <rect key="frame" x="64" y="8" width="896" height="48"/>
+                             <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="28"/>
+                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                             <nil key="highlightedColor"/>
+                         </label>
+                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkP-RY-yMd" userLabel="Home Button">
+-                            <rect key="frame" x="16" y="12" width="26" height="26"/>
++                            <rect key="frame" x="16" y="12" width="40" height="40"/>
+                             <constraints>
+                                 <constraint firstAttribute="width" secondItem="OkP-RY-yMd" secondAttribute="height" multiplier="1:1" id="ote-Qm-cDC"/>
+                             </constraints>
+@@ -85,7 +85,7 @@
+                             </connections>
+                         </button>
+                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6A-Ls-lEA">
+-                            <rect key="frame" x="333" y="12" width="26" height="26"/>
++                            <rect key="frame" x="968" y="12" width="40" height="40"/>
+                             <constraints>
+                                 <constraint firstAttribute="width" secondItem="g6A-Ls-lEA" secondAttribute="height" multiplier="1:1" id="4y3-Nn-mM2"/>
+                             </constraints>
+@@ -114,18 +114,18 @@
+                     </constraints>
+                 </view>
+                 <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEn-mf-WOc">
+-                    <rect key="frame" x="0.0" y="89" width="375" height="436.5"/>
++                    <rect key="frame" x="0.0" y="132.5" width="1024" height="944"/>
+                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                 </sceneKitView>
+                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D10-R1-Ltm" userLabel="Tools Stack View">
+-                    <rect key="frame" x="0.0" y="525.5" width="375" height="141.5"/>
++                    <rect key="frame" x="0.0" y="1076.5" width="1024" height="289.5"/>
+                     <subviews>
+                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="516-2I-QlD" userLabel="ColorsView">
+-                            <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
++                            <rect key="frame" x="0.0" y="0.0" width="1024" height="116"/>
+                             <subviews>
+                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGE-fi-6p0">
+-                                    <rect key="frame" x="37.5" y="16.5" width="300" height="24"/>
++                                    <rect key="frame" x="102.5" y="46" width="819" height="24"/>
+                                     <subviews>
+                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TA1-0g-4xb">
+                                             <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+@@ -141,7 +141,7 @@
+                                             </connections>
+                                         </button>
+                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWy-7J-gOy">
+-                                            <rect key="frame" x="276" y="0.0" width="24" height="24"/>
++                                            <rect key="frame" x="795" y="0.0" width="24" height="24"/>
+                                             <constraints>
+                                                 <constraint firstAttribute="width" secondItem="wWy-7J-gOy" secondAttribute="height" multiplier="1:1" id="7Sz-Bc-pjl"/>
+                                                 <constraint firstAttribute="width" constant="24" id="TOV-xn-0rV"/>
+@@ -155,7 +155,7 @@
+                                             </connections>
+                                         </button>
+                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="VKe-nd-IgU">
+-                                            <rect key="frame" x="40" y="-12" width="220" height="48"/>
++                                            <rect key="frame" x="40" y="-12" width="739" height="48"/>
+                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="h7A-Sg-pLa">
+                                                 <size key="itemSize" width="128" height="128"/>
+@@ -191,19 +191,19 @@
+                             </constraints>
+                         </view>
+                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ma-6A-IHA">
+-                            <rect key="frame" x="0.0" y="57" width="375" height="84.5"/>
++                            <rect key="frame" x="0.0" y="116" width="1024" height="173.5"/>
+                             <subviews>
+                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TI5-yZ-uEY" userLabel="Custom Tool Picker" customClass="CustomToolPickerView" customModule="Crafty_Craft_5" customModuleProvider="target">
+-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
++                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="173.5"/>
+                                     <subviews>
+                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KwF-8J-KY2">
+-                                            <rect key="frame" x="9.5" y="8" width="356" height="46"/>
++                                            <rect key="frame" x="25.5" y="8" width="973" height="94.5"/>
+                                             <subviews>
+                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AjJ-SC-8ZB" userLabel="Pencil View Container">
+-                                                    <rect key="frame" x="0.0" y="0.0" width="52.5" height="46"/>
++                                                    <rect key="frame" x="0.0" y="0.0" width="155.5" height="94.5"/>
+                                                     <subviews>
+                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q71-xB-QT1" userLabel="Pencil Button">
+-                                                            <rect key="frame" x="16" y="7" width="20" height="20"/>
++                                                            <rect key="frame" x="63" y="26.5" width="30" height="30"/>
+                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                             <constraints>
+                                                                 <constraint firstAttribute="width" secondItem="q71-xB-QT1" secondAttribute="height" multiplier="1:1" id="Ipv-SV-Fmn"/>
+@@ -221,7 +221,7 @@
+                                                             </connections>
+                                                         </button>
+                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pencil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRj-Pc-XRa">
+-                                                            <rect key="frame" x="0.0" y="29" width="52.5" height="17"/>
++                                                            <rect key="frame" x="0.0" y="71.5" width="155.5" height="23"/>
+                                                             <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                             <color key="textColor" name="blackCCRedesign"/>
+                                                             <nil key="highlightedColor"/>
+@@ -243,10 +243,10 @@
+                                                     </constraints>
+                                                 </view>
+                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHH-ah-ida" userLabel="Eraser View Container">
+-                                                    <rect key="frame" x="60.5" y="0.0" width="53" height="46"/>
++                                                    <rect key="frame" x="163.5" y="0.0" width="155.5" height="94.5"/>
+                                                     <subviews>
+                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGU-sT-OYX" userLabel="Eraser Button">
+-                                                            <rect key="frame" x="16.5" y="7" width="20" height="20"/>
++                                                            <rect key="frame" x="63" y="26.5" width="30" height="30"/>
+                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                             <constraints>
+                                                                 <constraint firstAttribute="width" constant="20" id="Cee-mc-jhF">
+@@ -263,7 +263,7 @@
+                                                             </connections>
+                                                         </button>
+                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eraser" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2De-3i-r5Q">
+-                                                            <rect key="frame" x="0.0" y="29" width="53" height="17"/>
++                                                            <rect key="frame" x="0.0" y="71.5" width="155.5" height="23"/>
+                                                             <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                             <color key="textColor" name="blackCCRedesign"/>
+                                                             <nil key="highlightedColor"/>
+@@ -285,10 +285,10 @@
+                                                     </constraints>
+                                                 </view>
+                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCn-an-dg5" userLabel="Picker View Container">
+-                                                    <rect key="frame" x="121.5" y="0.0" width="52.5" height="46"/>
++                                                    <rect key="frame" x="327" y="0.0" width="155.5" height="94.5"/>
+                                                     <subviews>
+                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juE-kK-GND" userLabel="Brash Button">
+-                                                            <rect key="frame" x="16" y="7" width="20" height="20"/>
++                                                            <rect key="frame" x="63" y="26.5" width="30" height="30"/>
+                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                             <constraints>
+                                                                 <constraint firstAttribute="width" secondItem="juE-kK-GND" secondAttribute="height" multiplier="1:1" id="zFU-gu-zLY"/>
+@@ -305,7 +305,7 @@
+                                                             </connections>
+                                                         </button>
+                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colorize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gh-Yc-jsf">
+-                                                            <rect key="frame" x="0.0" y="29" width="52.5" height="17"/>
++                                                            <rect key="frame" x="0.0" y="71.5" width="155.5" height="23"/>
+                                                             <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                             <color key="textColor" name="blackCCRedesign"/>
+                                                             <nil key="highlightedColor"/>
+@@ -327,10 +327,10 @@
+                                                     </constraints>
+                                                 </view>
+                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-0j-o7f" userLabel="Fill View Container">
+-                                                    <rect key="frame" x="182" y="0.0" width="52.5" height="46"/>
++                                                    <rect key="frame" x="490.5" y="0.0" width="155.5" height="94.5"/>
+                                                     <subviews>
+                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5w-2X-H7d" userLabel="Fill Button">
+-                                                            <rect key="frame" x="16.5" y="7" width="20" height="20"/>
++                                                            <rect key="frame" x="62.5" y="26.5" width="30" height="30"/>
+                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                             <constraints>
+                                                                 <constraint firstAttribute="width" secondItem="u5w-2X-H7d" secondAttribute="height" multiplier="1:1" id="Jda-Hi-7q9"/>
+@@ -347,7 +347,7 @@
+                                                             </connections>
+                                                         </button>
+                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iS0-m1-FB5">
+-                                                            <rect key="frame" x="0.0" y="29" width="52.5" height="17"/>
++                                                            <rect key="frame" x="0.0" y="71.5" width="155.5" height="23"/>
+                                                             <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                             <color key="textColor" name="blackCCRedesign"/>
+                                                             <nil key="highlightedColor"/>
+@@ -369,10 +369,10 @@
+                                                     </constraints>
+                                                 </view>
+                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VD3-GA-Ulj" userLabel="Noise View Container">
+-                                                    <rect key="frame" x="242.5" y="0.0" width="53" height="46"/>
++                                                    <rect key="frame" x="654" y="0.0" width="155.5" height="94.5"/>
+                                                     <subviews>
+                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSs-NF-l7Q" userLabel="Noise Button">
+-                                                            <rect key="frame" x="16.5" y="7" width="20" height="20"/>
++                                                            <rect key="frame" x="62.5" y="26.5" width="30" height="30"/>
+                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                             <constraints>
+                                                                 <constraint firstAttribute="width" secondItem="CSs-NF-l7Q" secondAttribute="height" multiplier="1:1" id="8b4-q2-Rin"/>
+@@ -389,7 +389,7 @@
+                                                             </connections>
+                                                         </button>
+                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ze-Qp-jZ4">
+-                                                            <rect key="frame" x="0.0" y="29" width="53" height="17"/>
++                                                            <rect key="frame" x="0.0" y="71.5" width="155.5" height="23"/>
+                                                             <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                             <color key="textColor" name="blackCCRedesign"/>
+                                                             <nil key="highlightedColor"/>
+@@ -411,10 +411,10 @@
+                                                     </constraints>
+                                                 </view>
+                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnH-53-ITQ" userLabel="Undo View Container">
+-                                                    <rect key="frame" x="303.5" y="0.0" width="52.5" height="46"/>
++                                                    <rect key="frame" x="817.5" y="0.0" width="155.5" height="94.5"/>
+                                                     <subviews>
+                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvg-8X-uYD" userLabel="Undo Button">
+-                                                            <rect key="frame" x="16.5" y="7" width="20" height="20"/>
++                                                            <rect key="frame" x="62.5" y="26.5" width="30" height="30"/>
+                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                             <constraints>
+                                                                 <constraint firstAttribute="width" constant="20" id="dWi-Oz-gHb">
+@@ -431,7 +431,7 @@
+                                                             </connections>
+                                                         </button>
+                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Undo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzU-DG-vO7">
+-                                                            <rect key="frame" x="0.0" y="29" width="52.5" height="17"/>
++                                                            <rect key="frame" x="0.0" y="71.5" width="155.5" height="23"/>
+                                                             <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                             <color key="textColor" name="blackCCRedesign"/>
+                                                             <nil key="highlightedColor"/>
+@@ -476,7 +476,7 @@
+                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                 </stackView>
+                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glY-bF-pQp">
+-                    <rect key="frame" x="303" y="89" width="56" height="56"/>
++                    <rect key="frame" x="952" y="132.5" width="56" height="56"/>
+                     <constraints>
+                         <constraint firstAttribute="width" constant="56" id="ejN-7c-1g5"/>
+                         <constraint firstAttribute="height" constant="56" id="q9M-uh-Yq0"/>
+@@ -488,14 +488,14 @@
+                     </connections>
+                 </button>
+                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d20-uq-IDt" userLabel="BrashSizeView" customClass="BrashSizeView" customModule="Crafty_Craft_5" customModuleProvider="target">
+-                    <rect key="frame" x="0.0" y="455.5" width="375" height="70"/>
++                    <rect key="frame" x="0.0" y="1006.5" width="1024" height="70"/>
+                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                     <constraints>
+                         <constraint firstAttribute="height" constant="70" id="POO-7v-G9g"/>
+                     </constraints>
+                 </view>
+                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY NEW SKIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiI-Mh-Q6Y">
+-                    <rect key="frame" x="8" y="58" width="359" height="31"/>
++                    <rect key="frame" x="8" y="96" width="1008" height="36.5"/>
+                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="22"/>
+                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                     <nil key="highlightedColor"/>
+@@ -504,7 +504,7 @@
+                     </variation>
+                 </label>
+                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfN-nT-Ult" customClass="SmallModelView" customModule="Crafty_Craft_5" customModuleProvider="target">
+-                    <rect key="frame" x="20" y="422" width="83.5" height="83.5"/>
++                    <rect key="frame" x="20" y="885.5" width="171" height="171"/>
+                     <color key="backgroundColor" name="lightGreenBachgroundColor"/>
+                     <constraints>
+                         <constraint firstAttribute="width" secondItem="MfN-nT-Ult" secondAttribute="height" multiplier="1:1" id="fuZ-MT-D7r"/>
+@@ -578,7 +578,7 @@
+             <color red="0.086274509803921567" green="0.40392156862745099" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+         </namedColor>
+         <systemColor name="tertiarySystemGroupedBackgroundColor">
+-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
++            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+         </systemColor>
+     </resources>
+ </document>
+diff --git a/Crafty Craft 5/Tab Bar/Seed Tab/SeedDetailsViewController.swift b/Crafty Craft 5/Tab Bar/Seed Tab/SeedDetailsViewController.swift
+index 5e55afc..824b1d1 100644
+--- a/Crafty Craft 5/Tab Bar/Seed Tab/SeedDetailsViewController.swift	
++++ b/Crafty Craft 5/Tab Bar/Seed Tab/SeedDetailsViewController.swift	
+@@ -79,8 +79,8 @@ class SeedDetailsViewController: UIViewController {
+             }
+         }
+     }
+-    @IBAction func shareAction(_ sender: Any) {
+-        self.share(string: seed.seed)
++    @IBAction func shareAction(_ sender: UIButton) {
++        self.share(string: seed.seed, from: sender)
+     }
+     //MARK: - private method
+ 
+diff --git a/Crafty Craft 5/Tab Bar/Seed Tab/SeedDetailsViewController.xib b/Crafty Craft 5/Tab Bar/Seed Tab/SeedDetailsViewController.xib
+index b745f73..622e5f9 100644
+--- a/Crafty Craft 5/Tab Bar/Seed Tab/SeedDetailsViewController.xib	
++++ b/Crafty Craft 5/Tab Bar/Seed Tab/SeedDetailsViewController.xib	
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+-    <device id="retina6_12" orientation="portrait" appearance="light"/>
++    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+     <dependencies>
+         <deployment identifier="iOS"/>
+         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+@@ -25,14 +25,14 @@
+         </placeholder>
+         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="kO2-7L-fnH">
+-            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
++            <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+             <subviews>
+                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="24A-4x-B7H" userLabel="Navigation Bar">
+-                    <rect key="frame" x="0.0" y="59" width="393" height="50"/>
++                    <rect key="frame" x="0.0" y="24" width="1024" height="50"/>
+                     <subviews>
+                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IoG-PH-yzd">
+-                            <rect key="frame" x="50" y="8" width="293" height="34"/>
++                            <rect key="frame" x="50" y="8" width="924" height="34"/>
+                             <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="28"/>
+                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                             <nil key="highlightedColor"/>
+@@ -71,25 +71,37 @@
+                     </constraints>
+                 </view>
+                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJC-7W-P51">
+-                    <rect key="frame" x="20" y="109" width="353" height="635"/>
++                    <rect key="frame" x="20" y="74" width="984" height="1192"/>
+                     <subviews>
+                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWt-Lo-woh">
+-                            <rect key="frame" x="0.0" y="0.0" width="353" height="415.33333333333331"/>
++                            <rect key="frame" x="0.0" y="0.0" width="984" height="696"/>
+                             <subviews>
+                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VYF-9V-bZJ">
+-                                    <rect key="frame" x="0.0" y="20" width="353" height="282.33333333333331"/>
++                                    <rect key="frame" x="0.0" y="20" width="984" height="562.5"/>
+                                     <constraints>
++                                        <constraint firstAttribute="width" secondItem="VYF-9V-bZJ" secondAttribute="height" multiplier="350:200" id="I7R-NI-XdW"/>
+                                         <constraint firstAttribute="width" secondItem="VYF-9V-bZJ" secondAttribute="height" multiplier="350:280" id="U84-3a-23W"/>
+                                     </constraints>
++                                    <variation key="default">
++                                        <mask key="constraints">
++                                            <exclude reference="I7R-NI-XdW"/>
++                                        </mask>
++                                    </variation>
++                                    <variation key="heightClass=regular-widthClass=regular">
++                                        <mask key="constraints">
++                                            <include reference="I7R-NI-XdW"/>
++                                            <exclude reference="U84-3a-23W"/>
++                                        </mask>
++                                    </variation>
+                                 </imageView>
+                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uym-4r-9WG">
+-                                    <rect key="frame" x="0.0" y="322.33333333333331" width="353" height="33.666666666666686"/>
++                                    <rect key="frame" x="0.0" y="602.5" width="984" height="34"/>
+                                     <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="28"/>
+                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                     <nil key="highlightedColor"/>
+                                 </label>
+                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HF7-FI-1A5">
+-                                    <rect key="frame" x="0.0" y="376" width="353" height="19.333333333333314"/>
++                                    <rect key="frame" x="0.0" y="656.5" width="984" height="19.5"/>
+                                     <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="16"/>
+                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                     <nil key="highlightedColor"/>
+@@ -120,13 +132,15 @@
+                     </constraints>
+                 </scrollView>
+                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PE1-FK-O0k">
+-                    <rect key="frame" x="0.0" y="744" width="393" height="108"/>
++                    <rect key="frame" x="0.0" y="1266" width="1024" height="100"/>
+                     <subviews>
+                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efD-PV-V5u">
+-                            <rect key="frame" x="204" y="10" width="154" height="54"/>
++                            <rect key="frame" x="522" y="10" width="402" height="60"/>
+                             <color key="backgroundColor" name="greenCCRedesign"/>
+                             <constraints>
+-                                <constraint firstAttribute="height" constant="54" id="imz-bM-ZYP"/>
++                                <constraint firstAttribute="height" constant="54" id="imz-bM-ZYP">
++                                    <variation key="heightClass=regular-widthClass=regular" constant="60"/>
++                                </constraint>
+                             </constraints>
+                             <state key="normal" title="Button"/>
+                             <buttonConfiguration key="configuration" style="plain" title="Share">
+@@ -143,7 +157,7 @@
+                             </connections>
+                         </button>
+                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgi-YQ-pyB">
+-                            <rect key="frame" x="35" y="10" width="154" height="54"/>
++                            <rect key="frame" x="100" y="10" width="402" height="60"/>
+                             <color key="backgroundColor" name="greenCCRedesign"/>
+                             <constraints>
+                                 <constraint firstAttribute="width" secondItem="Lgi-YQ-pyB" secondAttribute="height" multiplier="154:54" id="CxK-Xo-CkD"/>
+@@ -158,6 +172,11 @@
+                                     <integer key="value" value="27"/>
+                                 </userDefinedRuntimeAttribute>
+                             </userDefinedRuntimeAttributes>
++                            <variation key="heightClass=regular-widthClass=regular">
++                                <mask key="constraints">
++                                    <exclude reference="CxK-Xo-CkD"/>
++                                </mask>
++                            </variation>
+                             <connections>
+                                 <action selector="copyLinkAction:" destination="-1" eventType="touchUpInside" id="8IW-pV-8ZD"/>
+                             </connections>
+@@ -166,19 +185,39 @@
+                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                     <constraints>
+                         <constraint firstItem="Lgi-YQ-pyB" firstAttribute="width" secondItem="efD-PV-V5u" secondAttribute="width" id="FUW-CG-pao"/>
++                        <constraint firstItem="efD-PV-V5u" firstAttribute="width" secondItem="Lgi-YQ-pyB" secondAttribute="width" id="Hkw-g1-mcX"/>
+                         <constraint firstItem="Lgi-YQ-pyB" firstAttribute="top" secondItem="PE1-FK-O0k" secondAttribute="top" constant="10" id="IVl-qX-dMT"/>
+                         <constraint firstItem="Lgi-YQ-pyB" firstAttribute="centerY" secondItem="efD-PV-V5u" secondAttribute="centerY" id="Q5k-Qw-avq"/>
+                         <constraint firstItem="efD-PV-V5u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lgi-YQ-pyB" secondAttribute="trailing" constant="5" id="Tkf-26-Jep"/>
++                        <constraint firstItem="efD-PV-V5u" firstAttribute="leading" secondItem="Lgi-YQ-pyB" secondAttribute="trailing" constant="20" id="WJ7-Pk-daZ"/>
+                         <constraint firstItem="Lgi-YQ-pyB" firstAttribute="height" secondItem="efD-PV-V5u" secondAttribute="height" id="o7I-bq-V1a"/>
+-                        <constraint firstAttribute="trailing" secondItem="efD-PV-V5u" secondAttribute="trailing" constant="35" id="obF-z2-3SG"/>
+-                        <constraint firstItem="Lgi-YQ-pyB" firstAttribute="leading" secondItem="PE1-FK-O0k" secondAttribute="leading" constant="35" id="xsm-57-Ks2"/>
++                        <constraint firstAttribute="trailing" secondItem="efD-PV-V5u" secondAttribute="trailing" constant="35" id="obF-z2-3SG">
++                            <variation key="heightClass=regular-widthClass=regular" constant="100"/>
++                        </constraint>
++                        <constraint firstItem="Lgi-YQ-pyB" firstAttribute="leading" secondItem="PE1-FK-O0k" secondAttribute="leading" constant="35" id="xsm-57-Ks2">
++                            <variation key="heightClass=regular-widthClass=regular" constant="100"/>
++                        </constraint>
+                     </constraints>
++                    <variation key="default">
++                        <mask key="constraints">
++                            <exclude reference="WJ7-Pk-daZ"/>
++                            <exclude reference="Hkw-g1-mcX"/>
++                        </mask>
++                    </variation>
++                    <variation key="heightClass=regular-widthClass=regular">
++                        <mask key="constraints">
++                            <exclude reference="FUW-CG-pao"/>
++                            <exclude reference="Tkf-26-Jep"/>
++                            <include reference="WJ7-Pk-daZ"/>
++                            <include reference="Hkw-g1-mcX"/>
++                        </mask>
++                    </variation>
+                 </view>
+                 <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83k-kO-136">
+-                    <rect key="frame" x="34" y="386.66666666666669" width="325" height="104"/>
++                    <rect key="frame" x="34" y="633" width="956" height="104"/>
+                     <subviews>
+                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COPIED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0c-aG-Un1">
+-                            <rect key="frame" x="128.66666666666666" y="16" width="67.666666666666657" height="27"/>
++                            <rect key="frame" x="444" y="16" width="68" height="27"/>
+                             <constraints>
+                                 <constraint firstAttribute="height" constant="27" id="q7J-lJ-DQA"/>
+                             </constraints>
+@@ -187,7 +226,7 @@
+                             <nil key="highlightedColor"/>
+                         </label>
+                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Done Icon" translatesAutoresizingMaskIntoConstraints="NO" id="axc-X7-OJN">
+-                            <rect key="frame" x="148" y="59" width="29" height="29"/>
++                            <rect key="frame" x="463.5" y="59" width="29" height="29"/>
+                             <constraints>
+                                 <constraint firstAttribute="height" constant="29" id="Bv0-ec-kpb"/>
+                                 <constraint firstAttribute="width" secondItem="axc-X7-OJN" secondAttribute="height" multiplier="1:1" id="m1Q-NS-Gz5"/>
+diff --git a/Crafty Craft 5/Tab Bar/Server Tab/ServerDetailsViewController.swift b/Crafty Craft 5/Tab Bar/Server Tab/ServerDetailsViewController.swift
+index 94dbeb3..7ea5d73 100644
+--- a/Crafty Craft 5/Tab Bar/Server Tab/ServerDetailsViewController.swift	
++++ b/Crafty Craft 5/Tab Bar/Server Tab/ServerDetailsViewController.swift	
+@@ -179,8 +179,8 @@ class ServerDetailsViewController: UIViewController {
+         }
+     }
+     
+-    @IBAction func shareButtonTapped(_ sender: Any) {
+-        self.share(string: server.address)
++    @IBAction func shareButtonTapped(_ sender: UIButton) {
++        self.share(string: server.address, from: sender)
+     }
+     
+     private func addLoader() {
+diff --git a/Crafty Craft 5/Tab Bar/Server Tab/ServerDetailsViewController.xib b/Crafty Craft 5/Tab Bar/Server Tab/ServerDetailsViewController.xib
+index 26a1ef9..fd07dc8 100644
+--- a/Crafty Craft 5/Tab Bar/Server Tab/ServerDetailsViewController.xib	
++++ b/Crafty Craft 5/Tab Bar/Server Tab/ServerDetailsViewController.xib	
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+-    <device id="retina6_12" orientation="portrait" appearance="light"/>
++    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+     <dependencies>
+         <deployment identifier="iOS"/>
+         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+@@ -25,14 +25,14 @@
+         </placeholder>
+         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+-            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
++            <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+             <subviews>
+                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a08-rd-BxR" userLabel="Navigation Bar">
+-                    <rect key="frame" x="0.0" y="59" width="393" height="50"/>
++                    <rect key="frame" x="0.0" y="24" width="1024" height="50"/>
+                     <subviews>
+                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SERVERS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJB-TZ-tuF">
+-                            <rect key="frame" x="50" y="8" width="293" height="34"/>
++                            <rect key="frame" x="50" y="8" width="924" height="34"/>
+                             <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="28"/>
+                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                             <nil key="highlightedColor"/>
+@@ -71,25 +71,37 @@
+                     </constraints>
+                 </view>
+                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6c-wC-uWX">
+-                    <rect key="frame" x="20" y="109" width="353" height="635"/>
++                    <rect key="frame" x="20" y="74" width="984" height="1192"/>
+                     <subviews>
+                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fT-ww-6oW">
+-                            <rect key="frame" x="0.0" y="0.0" width="353" height="415.33333333333331"/>
++                            <rect key="frame" x="0.0" y="0.0" width="984" height="696"/>
+                             <subviews>
+                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M6m-cE-SIi">
+-                                    <rect key="frame" x="0.0" y="20" width="353" height="282.33333333333331"/>
++                                    <rect key="frame" x="0.0" y="20" width="984" height="562.5"/>
+                                     <constraints>
++                                        <constraint firstAttribute="width" secondItem="M6m-cE-SIi" secondAttribute="height" multiplier="350:200" id="6b7-QI-q1q"/>
+                                         <constraint firstAttribute="width" secondItem="M6m-cE-SIi" secondAttribute="height" multiplier="350:280" id="CUU-KX-AOQ"/>
+                                     </constraints>
++                                    <variation key="default">
++                                        <mask key="constraints">
++                                            <exclude reference="6b7-QI-q1q"/>
++                                        </mask>
++                                    </variation>
++                                    <variation key="heightClass=regular-widthClass=regular">
++                                        <mask key="constraints">
++                                            <include reference="6b7-QI-q1q"/>
++                                            <exclude reference="CUU-KX-AOQ"/>
++                                        </mask>
++                                    </variation>
+                                 </imageView>
+                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXb-si-YSy">
+-                                    <rect key="frame" x="0.0" y="322.33333333333331" width="353" height="33.666666666666686"/>
++                                    <rect key="frame" x="0.0" y="602.5" width="984" height="34"/>
+                                     <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="28"/>
+                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                     <nil key="highlightedColor"/>
+                                 </label>
+                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dl8-LX-8zb">
+-                                    <rect key="frame" x="0.0" y="376" width="353" height="19.333333333333314"/>
++                                    <rect key="frame" x="0.0" y="656.5" width="984" height="19.5"/>
+                                     <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="16"/>
+                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                     <nil key="highlightedColor"/>
+@@ -120,13 +132,15 @@
+                     </constraints>
+                 </scrollView>
+                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5b-TX-In0">
+-                    <rect key="frame" x="0.0" y="744" width="393" height="108"/>
++                    <rect key="frame" x="0.0" y="1266" width="1024" height="100"/>
+                     <subviews>
+                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtK-3x-EHX">
+-                            <rect key="frame" x="204" y="10" width="154" height="54"/>
++                            <rect key="frame" x="522" y="10" width="402" height="60"/>
+                             <color key="backgroundColor" name="greenCCRedesign"/>
+                             <constraints>
+-                                <constraint firstAttribute="height" constant="54" id="P8B-dU-VgN"/>
++                                <constraint firstAttribute="height" constant="54" id="P8B-dU-VgN">
++                                    <variation key="heightClass=regular-widthClass=regular" constant="60"/>
++                                </constraint>
+                             </constraints>
+                             <state key="normal" title="Button"/>
+                             <buttonConfiguration key="configuration" style="plain" title="Share">
+@@ -143,7 +157,7 @@
+                             </connections>
+                         </button>
+                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fx-I2-gqK">
+-                            <rect key="frame" x="35" y="10" width="154" height="54"/>
++                            <rect key="frame" x="100" y="10" width="402" height="60"/>
+                             <color key="backgroundColor" name="greenCCRedesign"/>
+                             <constraints>
+                                 <constraint firstAttribute="width" secondItem="9fx-I2-gqK" secondAttribute="height" multiplier="154:54" id="ZyV-cX-wdS"/>
+@@ -158,6 +172,11 @@
+                                     <integer key="value" value="27"/>
+                                 </userDefinedRuntimeAttribute>
+                             </userDefinedRuntimeAttributes>
++                            <variation key="heightClass=regular-widthClass=regular">
++                                <mask key="constraints">
++                                    <exclude reference="ZyV-cX-wdS"/>
++                                </mask>
++                            </variation>
+                             <connections>
+                                 <action selector="copyLinkButtonTapped:" destination="-1" eventType="touchUpInside" id="jbQ-FZ-pJM"/>
+                             </connections>
+@@ -165,20 +184,36 @@
+                     </subviews>
+                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                     <constraints>
+-                        <constraint firstItem="9fx-I2-gqK" firstAttribute="leading" secondItem="L5b-TX-In0" secondAttribute="leading" constant="35" id="9PC-Ks-bh7"/>
++                        <constraint firstItem="9fx-I2-gqK" firstAttribute="leading" secondItem="L5b-TX-In0" secondAttribute="leading" constant="35" id="9PC-Ks-bh7">
++                            <variation key="heightClass=regular-widthClass=regular" constant="100"/>
++                        </constraint>
+                         <constraint firstItem="9fx-I2-gqK" firstAttribute="width" secondItem="MtK-3x-EHX" secondAttribute="width" id="ENr-hj-Zbq"/>
+-                        <constraint firstAttribute="trailing" secondItem="MtK-3x-EHX" secondAttribute="trailing" constant="35" id="WeI-aV-NAM"/>
++                        <constraint firstAttribute="trailing" secondItem="MtK-3x-EHX" secondAttribute="trailing" constant="35" id="WeI-aV-NAM">
++                            <variation key="heightClass=regular-widthClass=regular" constant="100"/>
++                        </constraint>
+                         <constraint firstItem="MtK-3x-EHX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9fx-I2-gqK" secondAttribute="trailing" constant="5" id="c8c-3S-Im7"/>
++                        <constraint firstItem="MtK-3x-EHX" firstAttribute="leading" secondItem="9fx-I2-gqK" secondAttribute="trailing" constant="20" id="dea-Dc-8la"/>
+                         <constraint firstItem="9fx-I2-gqK" firstAttribute="centerY" secondItem="MtK-3x-EHX" secondAttribute="centerY" id="gwu-wM-pRK"/>
+                         <constraint firstItem="9fx-I2-gqK" firstAttribute="height" secondItem="MtK-3x-EHX" secondAttribute="height" id="n41-2g-Kz9"/>
+                         <constraint firstItem="9fx-I2-gqK" firstAttribute="top" secondItem="L5b-TX-In0" secondAttribute="top" constant="10" id="sYW-9t-mVu"/>
+                     </constraints>
++                    <variation key="default">
++                        <mask key="constraints">
++                            <exclude reference="dea-Dc-8la"/>
++                        </mask>
++                    </variation>
++                    <variation key="heightClass=regular-widthClass=regular">
++                        <mask key="constraints">
++                            <exclude reference="c8c-3S-Im7"/>
++                            <include reference="dea-Dc-8la"/>
++                        </mask>
++                    </variation>
+                 </view>
+                 <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITO-H8-pc5">
+-                    <rect key="frame" x="34" y="386.66666666666669" width="325" height="104"/>
++                    <rect key="frame" x="34" y="633" width="956" height="104"/>
+                     <subviews>
+                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COPIED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6q-sN-fgc">
+-                            <rect key="frame" x="128.66666666666666" y="16" width="67.666666666666657" height="27"/>
++                            <rect key="frame" x="444" y="16" width="68" height="27"/>
+                             <constraints>
+                                 <constraint firstAttribute="height" constant="27" id="Dwn-l4-0sr"/>
+                             </constraints>
+@@ -187,7 +222,7 @@
+                             <nil key="highlightedColor"/>
+                         </label>
+                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Done Icon" translatesAutoresizingMaskIntoConstraints="NO" id="LUo-u9-sXB">
+-                            <rect key="frame" x="148" y="59" width="29" height="29"/>
++                            <rect key="frame" x="463.5" y="59" width="29" height="29"/>
+                             <constraints>
+                                 <constraint firstAttribute="width" secondItem="LUo-u9-sXB" secondAttribute="height" multiplier="1:1" id="MhX-Q9-mxU"/>
+                                 <constraint firstAttribute="height" constant="29" id="xfL-ed-Xzd"/>
+-- 
+2.37.0
+

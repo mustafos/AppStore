@@ -1,0 +1,73 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Ta wersja próbna automatycznie odnawia się w płatną subskrypcję i będzie automatycznie odnawiana, dopóki nie anulujesz. * Aby korzystać z tej aplikacji, musisz być subskrybentem. Brak darmowych treści. * Opłaty za subskrypcję zostaną pobrane z Twojego konta iTunes po potwierdzeniu zakupu. * Subskrypcje zostaną automatycznie odnowione, a płatność zostanie pobrana z Twojego konta iTunes, chyba że automatyczne odnawianie zostanie wyłączone co najmniej 24 godziny przed końcem bieżącego okresu. Koszt odnowienia zależy od Twojego Planu Abonamentowego. Nasze standardowe plany subskrypcji to: * 1-tygodniowa subskrypcja (4,99 USD) W przypadku innych walut cena odpowiada tej samej warstwie cenowej w macierzy cen App Store. * Subskrypcja z bezpłatnym okresem próbnym zostanie automatycznie odnowiona na subskrypcję płatną. Możesz anulować automatyczne odnawianie bezpłatnego okresu próbnego lub zarządzać nim w Ustawieniach konta po zakupie. Anulowanie wejdzie w życie 24 godziny po ostatnim dniu bieżącego okresu subskrypcji i zostaniesz zdegradowany do bezpłatnej usługi. * Uwaga: niewykorzystana część 3-dniowego bezpłatnego okresu próbnego (jeśli jest oferowana) przepadnie, jeśli kupisz subskrypcję premium w trakcie bezpłatnego okresu próbnego. Aby uzyskać więcej informacji, zapoznaj się z naszą Polityką prywatności i Warunkami użytkowania.";
+/**/
+"iOSButtonID"="KONTYNUOWAĆ";
+/**/
+"iOSStart3daysTitleID"="ROZPOCZNIJ 3 DNI ZA DARMO, A POTEM 5,99 USD/TYDZIEŃ";
+
+/**/
+"LoadingID"="ŁADOWANIE";
+
+/**/
+"PrivacyID"="Polityka prywatności";
+
+/**/
+"restore"="Przywrócić";
+
+/**/
+"TermsID"="Warunki korzystania";
+
+/**/
+"SliderID1"="UZYSKAJ LOKALIZACJĘ ZBROI BÓSTWA";
+/**/
+"SliderID2"="ZNAJDŹ 5 UMIEJĘTNOŚCI Mędrców I Lasu Koroków";
+/**/
+"SliderID3"="WSZYSTKIE JASKINIE I STUDNIE NA MAPIE";
+/**/
+"SliderID4"="WSZYSTKIE 152 SANKTUARIUM NA INTERAKTYWNEJ MAPIE";
+/**/
+"SliderID5"="ZBIERZ WSZYSTKIE ZESTAWY ZBROI WEDŁUG LOKALIZACJI";
+
+/**/
+"TextTitle1ID"="WYBIERZ SWÓJ ZESTAW ZBROI";
+
+/**/
+"TextTitle2ID"="WYBIERZ POŻĄDANĄ UMIEJĘTNOŚĆ";
+
+/**/
+"Text1ID"="Zdolność Amiibo";
+
+/**/
+"Text2ID"="Zdolność bezpiecznika";
+
+/**/
+"Text3ID"="Zdolność wznoszenia się";
+
+/**/
+"Text4ID"="Zdolność przywoływania";
+
+/**/
+"Text5ID"="Zdolność aparatu";
+
+/**/
+
+"ConnectivityTitle"="Problem z łącznością";
+"ConnectivityDescription"="Wygląda na to, że połączenie internetowe jest offline ☹️";
+
+
+"error_iap" = "Error";
+"inval_prod_id" = "Looks like you have bad Internet connection";
+
+
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+

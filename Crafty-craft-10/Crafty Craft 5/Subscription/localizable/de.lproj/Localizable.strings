@@ -1,0 +1,73 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Diese Testversion verlängert sich automatisch in ein kostenpflichtiges Abonnement und verlängert sich automatisch weiter, bis Sie kündigen. * Sie müssen abonniert sein, um diese App nutzen zu können. Keine kostenlosen Inhalte. * Abonnementzahlungen werden Ihrem iTunes-Konto bei Bestätigung Ihres Kaufs belastet. * Abonnements verlängern sich automatisch und die Zahlung wird Ihrem iTunes-Konto belastet, es sei denn, die automatische Verlängerung wird mindestens 24 Stunden vor dem Ende des aktuellen Zeitraums deaktiviert. Die Kosten für die Verlängerung hängen von Ihrem Abonnementplan ab. Unsere Standard-Abonnementpläne sind: * 1-wöchiges Abonnement (4,99 $) Für andere Währungen entspricht der Preis der gleichen Preisstufe in der App Store-Preismatrix. * Ein Abonnement mit einer kostenlosen Testphase verlängert sich automatisch zu einem kostenpflichtigen Abonnement. Sie können die automatische Verlängerung Ihrer kostenlosen Testversion nach dem Kauf in Ihren Kontoeinstellungen kündigen oder verwalten. Die Kündigung wird 24 Stunden nach dem letzten Tag des aktuellen Abonnementzeitraums wirksam und Sie werden auf den kostenlosen Service herabgestuft. * Bitte beachten Sie: Jeder ungenutzte Teil eines kostenlosen Testzeitraums von 3 Tagen (sofern angeboten) verfällt, wenn Sie während des kostenlosen Testzeitraums ein Premium-Abonnement erwerben. Weitere Informationen finden Sie in unseren Datenschutzbestimmungen und Nutzungsbedingungen.";
+/**/
+"iOSButtonID"="WEITERMACHEN";
+/**/
+"iOSStart3daysTitleID"="Start 3-days for FREE\n Then $4.99/week";
+
+/**/
+"LoadingID"="WIRD GELADEN";
+
+/**/
+"PrivacyID"="Datenschutz-Bestimmungen";
+
+/**/
+"restore"="Wiederherstellen";
+
+/**/
+"TermsID"="Nutzungsbedingungen";
+
+/**/
+"SliderID1"="ERHALTEN SIE DEN STANDORT DER FIERCE-GOTTHEIT-RÜSTUNG";
+/**/
+"SliderID2"="FINDEN SIE 5 FÄHIGKEITEN DER WEISEN UND DES KOROK-WALDES";
+/**/
+"SliderID3"="ALLE HÖHLEN UND BRUNNEN AUF DER KARTE";
+/**/
+"SliderID4"="ALLE 152 SCHREINE AUF DER INTERAKTIVEN KARTE";
+/**/
+"SliderID5"="SAMMLE ALLE RÜSTUNGSSETS NACH STANDORTEN";
+
+/**/
+"TextTitle1ID"="WÄHLEN SIE IHR RÜSTUNGSSET";
+
+/**/
+"TextTitle2ID"="WÄHLEN SIE DIE GEWÜNSCHTE FÄHIGKEIT";
+
+/**/
+"Text1ID"="Amiibo-Fähigkeit";
+
+/**/
+"Text2ID"="Sicherungsfähigkeit";
+
+/**/
+"Text3ID"="Aufstiegsfähigkeit";
+
+/**/
+"Text4ID"="Rückruffähigkeit";
+
+/**/
+"Text5ID"="Kamerafähigkeit";
+
+/**/
+
+"ConnectivityTitle"="Verbindungsproblem";
+"ConnectivityDescription"="Die Internetverbindung scheint offline zu sein ☹️";
+
+
+"error_iap" = "Error";
+"inval_prod_id" = "Looks like you have bad Internet connection";
+
+
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+

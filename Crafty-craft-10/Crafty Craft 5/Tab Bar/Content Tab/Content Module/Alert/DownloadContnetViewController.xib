@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Blinker-SemiBold.ttf">
+            <string>Blinker-SemiBold</string>
+        </array>
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DownloadContnetViewController" customModule="Crafty_Craft_5" customModuleProvider="target">
+            <connections>
+                <outlet property="installAddonView" destination="oEb-Do-Mgt" id="Cgn-I5-Idz"/>
+                <outlet property="manualInstallAddonView" destination="W5N-sb-eAY" id="TGR-Rl-vXH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="366"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDON READY TO INSTALL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMD-rZ-SPL">
+                    <rect key="frame" x="5" y="16" width="290" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="nj1-Ab-ek9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="21"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap “Install Addon” and choose Minecraft or manual installation to install directly into Minecraft worlds." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcH-6b-S9J">
+                    <rect key="frame" x="17" y="226" width="266" height="55"/>
+                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViA-Hb-1BK">
+                    <rect key="frame" x="14" y="297" width="272" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="Bw9-VG-ZGU"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                        <backgroundConfiguration key="background" cornerRadius="27" strokeWidth="0.0">
+                            <color key="backgroundColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="strokeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </backgroundConfiguration>
+                        <fontDescription key="titleFontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="17"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="ZpA-hi-v1d"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="La0-3z-ew9">
+                    <rect key="frame" x="16" y="58" width="268" height="152"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEb-Do-Mgt">
+                            <rect key="frame" x="0.0" y="0.0" width="268" height="68"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="install_addon_icon" translatesAutoresizingMaskIntoConstraints="NO" id="lI9-4m-NHb">
+                                    <rect key="frame" x="118" y="7" width="32" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="lI9-4m-NHb" secondAttribute="height" multiplier="1:1" id="9Fk-zK-Fh6"/>
+                                        <constraint firstAttribute="height" constant="32" id="j1F-b2-yVB"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install Addon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbL-tZ-gaK">
+                                    <rect key="frame" x="88" y="43" width="92" height="19.666666666666671"/>
+                                    <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="14"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.59215686270000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="VbL-tZ-gaK" firstAttribute="centerX" secondItem="lI9-4m-NHb" secondAttribute="centerX" id="SiF-oF-vS5"/>
+                                <constraint firstItem="VbL-tZ-gaK" firstAttribute="top" secondItem="lI9-4m-NHb" secondAttribute="bottom" constant="4" id="fXd-CR-bwU"/>
+                                <constraint firstItem="lI9-4m-NHb" firstAttribute="centerX" secondItem="oEb-Do-Mgt" secondAttribute="centerX" id="o2F-Lw-Sbo"/>
+                                <constraint firstItem="lI9-4m-NHb" firstAttribute="top" secondItem="oEb-Do-Mgt" secondAttribute="top" constant="7" id="yDH-QZ-Q87"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5N-sb-eAY">
+                            <rect key="frame" x="0.0" y="84" width="268" height="68"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="manual_add_addon_icon" translatesAutoresizingMaskIntoConstraints="NO" id="N8A-Z0-uln">
+                                    <rect key="frame" x="118" y="7" width="32" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="N8A-Z0-uln" secondAttribute="height" multiplier="1:1" id="Gh2-o3-N0u"/>
+                                        <constraint firstAttribute="width" secondItem="N8A-Z0-uln" secondAttribute="height" multiplier="1:1" id="ICh-ut-Dld"/>
+                                        <constraint firstAttribute="height" constant="32" id="VBm-RL-G8d"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install Manually" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-gq-gOZ">
+                                    <rect key="frame" x="79" y="43" width="110" height="19.666666666666671"/>
+                                    <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="14"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.59215686270000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="Nde-gq-gOZ" firstAttribute="centerX" secondItem="N8A-Z0-uln" secondAttribute="centerX" id="HFv-aJ-nX0"/>
+                                <constraint firstItem="N8A-Z0-uln" firstAttribute="centerX" secondItem="W5N-sb-eAY" secondAttribute="centerX" id="Sip-KL-ouW"/>
+                                <constraint firstItem="Nde-gq-gOZ" firstAttribute="top" secondItem="N8A-Z0-uln" secondAttribute="bottom" constant="4" id="xJq-Bw-0V5"/>
+                                <constraint firstItem="N8A-Z0-uln" firstAttribute="top" secondItem="W5N-sb-eAY" secondAttribute="top" constant="7" id="yLq-d9-nhj"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="152" id="7mV-Sw-0sa"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="La0-3z-ew9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="29A-sF-Q3J"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ViA-Hb-1BK" secondAttribute="trailing" constant="14" id="5a2-2r-Zuu"/>
+                <constraint firstAttribute="trailing" secondItem="VMD-rZ-SPL" secondAttribute="trailing" constant="5" id="9MU-ed-TWv"/>
+                <constraint firstItem="YcH-6b-S9J" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Jxt-R9-pDU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="La0-3z-ew9" secondAttribute="trailing" constant="16" id="Qcs-Su-WPF"/>
+                <constraint firstItem="ViA-Hb-1BK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="14" id="SuT-9I-kCv"/>
+                <constraint firstItem="YcH-6b-S9J" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="TWQ-nb-daA"/>
+                <constraint firstItem="VMD-rZ-SPL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="UkQ-l5-auo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YcH-6b-S9J" secondAttribute="trailing" constant="5" id="Vtk-Id-EXA"/>
+                <constraint firstItem="ViA-Hb-1BK" firstAttribute="top" secondItem="YcH-6b-S9J" secondAttribute="bottom" constant="16" id="hqM-ZJ-Teg"/>
+                <constraint firstItem="YcH-6b-S9J" firstAttribute="top" secondItem="La0-3z-ew9" secondAttribute="bottom" constant="16" id="ln1-7L-THz"/>
+                <constraint firstItem="La0-3z-ew9" firstAttribute="top" secondItem="VMD-rZ-SPL" secondAttribute="bottom" constant="16" id="u5m-3H-bqO"/>
+                <constraint firstItem="ViA-Hb-1BK" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="-15" id="uD7-of-Ryd"/>
+                <constraint firstItem="VMD-rZ-SPL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="uns-ee-SQ0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="129.7709923664122" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="install_addon_icon" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="manual_add_addon_icon" width="32.333332061767578" height="32.333332061767578"/>
+    </resources>
+</document>

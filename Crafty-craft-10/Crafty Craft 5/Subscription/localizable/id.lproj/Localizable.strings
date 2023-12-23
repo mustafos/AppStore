@@ -1,0 +1,73 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Uji coba ini secara otomatis diperbarui menjadi langganan berbayar dan akan terus diperbarui secara otomatis hingga Anda membatalkannya. * Anda harus berlangganan untuk menggunakan aplikasi ini. Tidak ada konten gratis. * Pembayaran langganan akan dibebankan ke akun iTunes Anda saat konfirmasi pembelian Anda. * Langganan akan diperpanjang secara otomatis dan pembayaran akan dibebankan ke akun iTunes Anda kecuali perpanjangan otomatis dimatikan setidaknya 24 jam sebelum akhir periode berjalan. Biaya perpanjangan tergantung pada Paket Langganan Anda. Paket Langganan standar kami adalah: * Langganan 1 minggu ($4,99) Untuk mata uang lain, harga sesuai dengan tingkat harga yang sama di Matriks Harga App Store. * Langganan dengan masa percobaan gratis akan diperpanjang secara otomatis menjadi langganan berbayar. Anda dapat membatalkan atau mengelola perpanjangan otomatis uji coba gratis di Pengaturan Akun Anda setelah pembelian. Pembatalan akan berlaku 24 jam setelah hari terakhir periode berlangganan saat ini dan Anda akan diturunkan ke layanan gratis. * Harap dicatat: setiap bagian yang tidak terpakai dari masa uji coba gratis selama 3 hari (jika ditawarkan) akan hangus saat Anda membeli langganan premium selama masa uji coba gratis. Silakan, untuk informasi lebih lanjut lihat Kebijakan Privasi dan Ketentuan Penggunaan kami.";
+/**/
+"iOSButtonID"="MELANJUTKAN";
+/**/
+"iOSStart3daysTitleID"="MULAI GRATIS 3 HARI KEMUDIAN $5,99/MINGGU";
+
+/**/
+"LoadingID"="MEMUAT";
+
+/**/
+"PrivacyID"="Kebijakan pribadi";
+
+/**/
+"restore"="Memulihkan";
+
+/**/
+"TermsID"="Syarat Penggunaan";
+
+/**/
+"SliderID1"="DAPATKAN LOKASI ARMOR DEITY YANG GENGAS";
+/**/
+"SliderID2"="TEMUKAN 5 KEMAMPUAN SAGES DAN HUTAN KOROK";
+/**/
+"SliderID3"="SEMUA GUA DAN SUMUR DI PETA";
+/**/
+"SliderID4"="SEMUA 152 SHRINES DI PETA INTERAKTIF";
+/**/
+"SliderID5"="KUMPULKAN SEMUA SET ARMOR BERDASARKAN LOKASI";
+
+/**/
+"TextTitle1ID"="PILIH SET ARMOR ANDA";
+
+/**/
+"TextTitle2ID"="PILIH KEMAMPUAN YANG DIINGINKAN";
+
+/**/
+"Text1ID"="Kemampuan amiibo";
+
+/**/
+"Text2ID"="Kemampuan sekering";
+
+/**/
+"Text3ID"="Kemampuan naik";
+
+/**/
+"Text4ID"="Kemampuan mengingat";
+
+/**/
+"Text5ID"="Kemampuan kamera";
+
+/**/
+
+"ConnectivityTitle"="Masalah Konektivitas";
+"ConnectivityDescription"="Koneksi internet tampaknya offline ☹️";
+
+
+"error_iap" = "Error";
+"inval_prod_id" = "Looks like you have bad Internet connection";
+
+
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+

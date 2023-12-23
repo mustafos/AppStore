@@ -1,0 +1,59 @@
+From 6804cc68c1009fe17c2790c16f803f16ae7b1216 Mon Sep 17 00:00:00 2001
+From: VitalyPolezhay <>
+Date: Tue, 12 Sep 2023 16:57:41 +0300
+Subject: [PATCH] fixed picker tools
+
+---
+ .../Skin3DCreator/3dModel/EditorSkinModel.swift        | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/3dModel/EditorSkinModel.swift b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/3dModel/EditorSkinModel.swift
+index 84a7584..3485887 100644
+--- a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/3dModel/EditorSkinModel.swift	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/3dModel/EditorSkinModel.swift	
+@@ -149,7 +149,7 @@ class EditorSkinModel {
+         case .eraser:
+             sizeBrushWith(color: .clear, forIndex: nodeIndex, nameRootNod: nameRootNod, gestureState: gestureState)
+         case .brash:
+-            sizeBrushWith(color: currentDrawingColor, forIndex: nodeIndex, nameRootNod: nameRootNod, gestureState: gestureState)
++            break
+         case .fill:
+             let colorsIndex = Array(0..<nodeColors.count)
+             if drawSkinCommands.undoCommands.count > commandIndex {
+@@ -241,13 +241,13 @@ class EditorSkinModel {
+                     switch controller.toolBarSelectedItem {
+                     case .fill:
+                         break
+-                    case .brash, .pencil:
++                    case .pencil:
+                         newColor = color
+                     case .noise:
+                         newColor = makeNoiseColor()
+                     case .eraser:
+                         newColor = .clear
+-                    case .undo:
++                    case .undo, .brash:
+                         break
+                     }
+                     colorlForSideNodes[nameRootNod]?[i] = newColor
+@@ -373,7 +373,7 @@ class EditorSkinModel {
+     //MARK: Pan
+     private func panDrawLogic(index: Int, nameRootNode: String, gestureState: UIGestureRecognizer.State) {
+         switch controller.toolBarSelectedItem {
+-        case .brash, .pencil:
++        case .pencil:
+             sizeBrushWith(color: currentDrawingColor, forIndex: index, nameRootNod: nameRootNode, gestureState: gestureState)
+         case .fill:
+             break
+@@ -382,7 +382,7 @@ class EditorSkinModel {
+             sizeBrushWith(color: noiseColor, forIndex: index, nameRootNod: nameRootNode, gestureState: gestureState)
+         case .eraser:
+             sizeBrushWith(color: .clear, forIndex: index, nameRootNod: nameRootNode, gestureState: gestureState)
+-        case .undo:
++        case .undo, .brash:
+             break
+         }
+     }
+-- 
+2.37.0
+
