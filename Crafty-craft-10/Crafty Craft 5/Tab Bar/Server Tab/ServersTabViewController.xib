@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Blinker-SemiBold.ttf">
-            <string>Blinker-SemiBold</string>
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ServersTabViewController" customModule="Crafty_Craft_5" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ServersTabViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
             <connections>
                 <outlet property="navigationBarContainerView" destination="uRY-Va-JPN" id="I0o-9P-nmp"/>
                 <outlet property="searchBarView" destination="6BF-eO-fVA" id="pTO-Q5-4E9"/>
@@ -30,10 +30,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" horizontalHuggingPriority="255" verticalHuggingPriority="255" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" translatesAutoresizingMaskIntoConstraints="NO" id="uRY-Va-JPN" userLabel="NavigationBarContainer">
-                    <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="84"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3H-Wv-ACU" userLabel="SearchButton">
-                            <rect key="frame" x="351" y="12" width="26" height="26"/>
+                            <rect key="frame" x="329" y="20" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="s3H-Wv-ACU" secondAttribute="height" multiplier="1:1" id="9Z8-4D-VOs"/>
                             </constraints>
@@ -43,18 +43,18 @@
                                 <action selector="searchButtonTapped:" destination="-1" eventType="touchUpInside" id="qdB-EP-HH1"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SERVERS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2p-UL-5f0">
-                            <rect key="frame" x="143.66666666666666" y="8" width="105.66666666666666" height="34"/>
-                            <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="28"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SERVERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2p-UL-5f0">
+                            <rect key="frame" x="143.33333333333334" y="0.0" width="106.33333333333334" height="84"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                            <color key="textColor" name="BeigeColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6BF-eO-fVA" customClass="SearchBarView" customModule="Crafty_Craft_5" customModuleProvider="target">
-                            <rect key="frame" x="16" y="2" width="361" height="46"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6BF-eO-fVA" customClass="SearchBarView" customModule="Crafty_Craft_10" customModuleProvider="target">
+                            <rect key="frame" x="20" y="20" width="353" height="44"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nN8-FO-Mi1">
-                            <rect key="frame" x="16" y="9" width="32" height="32"/>
+                            <rect key="frame" x="20" y="20" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="nN8-FO-Mi1" secondAttribute="height" multiplier="1:1" id="o1l-1r-hVa"/>
                             </constraints>
@@ -68,28 +68,28 @@
                     <viewLayoutGuide key="safeArea" id="dtn-aP-5ha"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="s3H-Wv-ACU" firstAttribute="top" secondItem="uRY-Va-JPN" secondAttribute="top" constant="12" id="2BJ-5T-0vU"/>
+                        <constraint firstItem="s3H-Wv-ACU" firstAttribute="top" secondItem="uRY-Va-JPN" secondAttribute="top" constant="20" id="2BJ-5T-0vU"/>
                         <constraint firstItem="D2p-UL-5f0" firstAttribute="centerX" secondItem="uRY-Va-JPN" secondAttribute="centerX" id="2ls-vf-yFC"/>
-                        <constraint firstAttribute="trailing" secondItem="s3H-Wv-ACU" secondAttribute="trailing" constant="16" id="6vl-XK-BEK"/>
-                        <constraint firstItem="nN8-FO-Mi1" firstAttribute="leading" secondItem="dtn-aP-5ha" secondAttribute="leading" constant="16" id="BNx-Wy-qoI"/>
-                        <constraint firstAttribute="height" constant="50" id="CQ4-pY-aUV">
+                        <constraint firstAttribute="trailing" secondItem="s3H-Wv-ACU" secondAttribute="trailing" constant="20" id="6vl-XK-BEK"/>
+                        <constraint firstItem="nN8-FO-Mi1" firstAttribute="leading" secondItem="dtn-aP-5ha" secondAttribute="leading" constant="20" id="BNx-Wy-qoI"/>
+                        <constraint firstAttribute="height" constant="84" id="CQ4-pY-aUV">
                             <variation key="heightClass=regular-widthClass=regular" constant="64"/>
                         </constraint>
-                        <constraint firstAttribute="bottom" secondItem="s3H-Wv-ACU" secondAttribute="bottom" constant="12" id="HeB-fu-9Ya"/>
-                        <constraint firstAttribute="bottom" secondItem="D2p-UL-5f0" secondAttribute="bottom" constant="8" id="Tq8-gK-uTM"/>
-                        <constraint firstItem="6BF-eO-fVA" firstAttribute="top" secondItem="uRY-Va-JPN" secondAttribute="top" constant="2" id="YCc-WT-Hro"/>
-                        <constraint firstItem="6BF-eO-fVA" firstAttribute="leading" secondItem="uRY-Va-JPN" secondAttribute="leading" constant="16" id="aSP-Nx-KJK"/>
+                        <constraint firstAttribute="bottom" secondItem="s3H-Wv-ACU" secondAttribute="bottom" constant="20" id="HeB-fu-9Ya"/>
+                        <constraint firstAttribute="bottom" secondItem="D2p-UL-5f0" secondAttribute="bottom" id="Tq8-gK-uTM"/>
+                        <constraint firstItem="6BF-eO-fVA" firstAttribute="top" secondItem="uRY-Va-JPN" secondAttribute="top" constant="20" id="YCc-WT-Hro"/>
+                        <constraint firstItem="6BF-eO-fVA" firstAttribute="leading" secondItem="uRY-Va-JPN" secondAttribute="leading" constant="20" id="aSP-Nx-KJK"/>
                         <constraint firstItem="D2p-UL-5f0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nN8-FO-Mi1" secondAttribute="trailing" constant="8" id="bxH-do-VzX"/>
-                        <constraint firstAttribute="bottom" secondItem="6BF-eO-fVA" secondAttribute="bottom" constant="2" id="dsR-KK-436"/>
-                        <constraint firstAttribute="trailing" secondItem="6BF-eO-fVA" secondAttribute="trailing" constant="16" id="exC-2q-K0z"/>
+                        <constraint firstAttribute="bottom" secondItem="6BF-eO-fVA" secondAttribute="bottom" constant="20" id="dsR-KK-436"/>
+                        <constraint firstAttribute="trailing" secondItem="6BF-eO-fVA" secondAttribute="trailing" constant="20" id="exC-2q-K0z"/>
                         <constraint firstItem="s3H-Wv-ACU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="D2p-UL-5f0" secondAttribute="trailing" constant="8" id="iuh-GM-eC2"/>
-                        <constraint firstItem="nN8-FO-Mi1" firstAttribute="top" secondItem="dtn-aP-5ha" secondAttribute="top" constant="9" id="qW8-vl-Ia8"/>
-                        <constraint firstItem="D2p-UL-5f0" firstAttribute="top" secondItem="uRY-Va-JPN" secondAttribute="top" constant="8" id="sJy-le-VQT"/>
-                        <constraint firstItem="dtn-aP-5ha" firstAttribute="bottom" secondItem="nN8-FO-Mi1" secondAttribute="bottom" constant="9" id="zM7-cz-rau"/>
+                        <constraint firstItem="nN8-FO-Mi1" firstAttribute="top" secondItem="dtn-aP-5ha" secondAttribute="top" constant="20" id="qW8-vl-Ia8"/>
+                        <constraint firstItem="D2p-UL-5f0" firstAttribute="top" secondItem="uRY-Va-JPN" secondAttribute="top" id="sJy-le-VQT"/>
+                        <constraint firstItem="dtn-aP-5ha" firstAttribute="bottom" secondItem="nN8-FO-Mi1" secondAttribute="bottom" constant="20" id="zM7-cz-rau"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="QOi-qe-Dix">
-                    <rect key="frame" x="20" y="119" width="353" height="699"/>
+                    <rect key="frame" x="20" y="143" width="353" height="709"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="isv-t4-GCF"/>
@@ -98,24 +98,27 @@
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
-                <constraint firstItem="QOi-qe-Dix" firstAttribute="top" secondItem="uRY-Va-JPN" secondAttribute="bottom" constant="10" id="4XO-ef-Bt1"/>
+                <constraint firstItem="QOi-qe-Dix" firstAttribute="top" secondItem="uRY-Va-JPN" secondAttribute="bottom" id="4XO-ef-Bt1"/>
                 <constraint firstItem="uRY-Va-JPN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="95d-7N-NA9"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QOi-qe-Dix" secondAttribute="bottom" id="Htz-7y-5qi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QOi-qe-Dix" secondAttribute="trailing" constant="20" id="Mys-UW-r8s"/>
                 <constraint firstItem="uRY-Va-JPN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="RII-pC-17a"/>
                 <constraint firstItem="QOi-qe-Dix" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Rw1-yi-k64"/>
+                <constraint firstAttribute="bottom" secondItem="QOi-qe-Dix" secondAttribute="bottom" id="d6X-F3-d4C"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uRY-Va-JPN" secondAttribute="trailing" id="vgx-Er-Cgh"/>
             </constraints>
-            <point key="canvasLocation" x="120" y="21"/>
+            <point key="canvasLocation" x="119.84732824427481" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
-        <image name="Search Item" width="24" height="24"/>
-        <image name="Settings Item" width="32" height="32"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="Search Item" width="44" height="44"/>
+        <image name="Settings Item" width="44" height="44"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.19215686274509805" green="0.20784313725490197" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BeigeColor">
+            <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

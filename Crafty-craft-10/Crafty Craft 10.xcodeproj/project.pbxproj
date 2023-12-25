@@ -330,13 +330,11 @@
 		F4ADA93A2A0A6A46009A2756 /* SkinCreatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4ADA9382A0A6A46009A2756 /* SkinCreatorViewController.xib */; };
 		F4ADA93C2A0A76FB009A2756 /* CustomToolPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADA93B2A0A76FB009A2756 /* CustomToolPickerView.swift */; };
 		F4DB05D02A02959000E4C43D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB05CE2A02959000E4C43D /* TabBarViewController.swift */; };
-		F4DB05D12A02959000E4C43D /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DB05CF2A02959000E4C43D /* TabBarViewController.xib */; };
 		F4DB05D52A0295F300E4C43D /* CreateTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB05D32A0295F300E4C43D /* CreateTabViewController.swift */; };
 		F4DB05D62A0295F300E4C43D /* CreateTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DB05D42A0295F300E4C43D /* CreateTabViewController.xib */; };
 		F4DB05DB2A02962800E4C43D /* ContentTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB05D92A02962800E4C43D /* ContentTabViewController.swift */; };
 		F4DB05DC2A02962800E4C43D /* ContentTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DB05DA2A02962800E4C43D /* ContentTabViewController.xib */; };
 		F4DB05E02A02A5CC00E4C43D /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4DB05DF2A02A5CC00E4C43D /* Poppins-Bold.ttf */; };
-		F4DB05E42A02ACD100E4C43D /* TabBarWithCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB05E32A02ACD100E4C43D /* TabBarWithCorners.swift */; };
 		F4DB05E62A03923700E4C43D /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4DB05E52A03923700E4C43D /* Poppins-SemiBold.ttf */; };
 		F4DE46762A03B157001DFB1B /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE46742A03B157001DFB1B /* ContentCollectionViewCell.swift */; };
 		F4DE46772A03B157001DFB1B /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DE46752A03B157001DFB1B /* ContentCollectionViewCell.xib */; };
@@ -725,13 +723,11 @@
 		F4ADA9382A0A6A46009A2756 /* SkinCreatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinCreatorViewController.xib; sourceTree = "<group>"; };
 		F4ADA93B2A0A76FB009A2756 /* CustomToolPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolPickerView.swift; sourceTree = "<group>"; };
 		F4DB05CE2A02959000E4C43D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		F4DB05CF2A02959000E4C43D /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		F4DB05D32A0295F300E4C43D /* CreateTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTabViewController.swift; sourceTree = "<group>"; };
 		F4DB05D42A0295F300E4C43D /* CreateTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTabViewController.xib; sourceTree = "<group>"; };
 		F4DB05D92A02962800E4C43D /* ContentTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabViewController.swift; sourceTree = "<group>"; };
 		F4DB05DA2A02962800E4C43D /* ContentTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTabViewController.xib; sourceTree = "<group>"; };
 		F4DB05DF2A02A5CC00E4C43D /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		F4DB05E32A02ACD100E4C43D /* TabBarWithCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarWithCorners.swift; sourceTree = "<group>"; };
 		F4DB05E52A03923700E4C43D /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		F4DE46742A03B157001DFB1B /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4DE46752A03B157001DFB1B /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -1755,8 +1751,6 @@
 			isa = PBXGroup;
 			children = (
 				F4DB05CE2A02959000E4C43D /* TabBarViewController.swift */,
-				F4DB05CF2A02959000E4C43D /* TabBarViewController.xib */,
-				F4DB05E32A02ACD100E4C43D /* TabBarWithCorners.swift */,
 				F4DB05D72A0295FD00E4C43D /* Create Tab */,
 				F4DB05D82A02961600E4C43D /* Content Tab */,
 				03AFFD362AD7F3F7002A131D /* Seed Tab */,
@@ -2025,7 +2019,6 @@
 				039BF2B52AA326830065EF48 /* Localizable.strings in Resources */,
 				033847A12A9CB41700A55021 /* DownloadContnetViewController.xib in Resources */,
 				03AFFD2B2AD7D818002A131D /* Blinker-Thin.ttf in Resources */,
-				F4DB05D12A02959000E4C43D /* TabBarViewController.xib in Resources */,
 				F41F6D0F2A21078500F72851 /* SkinEditorViewController.xib in Resources */,
 				F4DB05E02A02A5CC00E4C43D /* Poppins-Bold.ttf in Resources */,
 				039BF2F32AA3294C0065EF48 /* PollerOne-Regular.ttf in Resources */,
@@ -2265,7 +2258,6 @@
 				F40415E82A126E9500066473 /* DrawCommand.swift in Sources */,
 				035166872AFA3F0900035087 /* ConstraintDSL.swift in Sources */,
 				035166A52AFA3F0900035087 /* PremiumMainController.swift in Sources */,
-				F4DB05E42A02ACD100E4C43D /* TabBarWithCorners.swift in Sources */,
 				1C2983C82A5EADAA00E936BA /* AddonsOptionsCellWithTextField.swift in Sources */,
 				F41F6D122A210B7D00F72851 /* SkinEditorCollectionViewCell.swift in Sources */,
 				6352819D2A589FE000F3EB23 /* MainAddonCreatorModel.swift in Sources */,

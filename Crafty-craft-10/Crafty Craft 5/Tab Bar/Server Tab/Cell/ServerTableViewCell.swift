@@ -15,6 +15,8 @@ class ServerTableViewCell: UITableViewCell {
     
     @IBOutlet weak var serverIcon: UIImageView!
     
+    @IBOutlet weak var subContainer: UIView!
+    @IBOutlet weak var namingInfoView: UIView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var subName: UILabel!
     @IBOutlet weak var onlineStatusView: UIView!
@@ -39,9 +41,22 @@ class ServerTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        super.layoutSubviews()
+        
+        subContainer.layer.cornerRadius = 30
+        subContainer.layer.borderWidth = 1
+        subContainer.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        
         serverIcon.backgroundColor = .clear
+        serverIcon.layer.cornerRadius = 30
+        serverIcon.layer.borderWidth = 1
+        serverIcon.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 14, right: 0))
+    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -58,9 +73,13 @@ class ServerTableViewCell: UITableViewCell {
     }
     
     private func configDefautFileds(server: ServerRealmSession) {
-        name.text = server.name
+        namingInfoView.layer.cornerRadius = 22
+        namingInfoView.layer.borderWidth = 1
+        namingInfoView.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        name.text = server.name.uppercased()
         subName.text = server.address
-        onlineStatusView.backgroundColor = server.statusEnum == .Online ? UIColor(red: 60 / 255, green: 209 / 255, blue: 7 / 255, alpha: 1) : .red
+        onlineStatusView.layer.cornerRadius = onlineStatusView.bounds.width / 2.0
+        onlineStatusView.backgroundColor = server.statusEnum == .Online ? UIColor(named: "YellowSelectiveColor") : .red
     }
     
     func configWithImageData(server: ServerRealmSession) {

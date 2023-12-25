@@ -35,7 +35,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0p-pK-gfY" userLabel="CustomNav View">
-                    <rect key="frame" x="0.0" y="59" width="393" height="68"/>
+                    <rect key="frame" x="0.0" y="59" width="390" height="68"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSn-D9-Egw" userLabel="ScreenTitle Lab">
                             <rect key="frame" x="140.33333333333331" y="0.0" width="112.33333333333334" height="68"/>
@@ -140,26 +140,21 @@
                     </subviews>
                 </stackView>
                 <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgL-4j-FRz">
-                    <rect key="frame" x="46" y="390" width="301" height="72"/>
+                    <rect key="frame" x="46" y="390" width="298" height="72"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cache successfully cleared!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yT-ez-1fi">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cache successfully cleared!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yT-ez-1fi">
                             <rect key="frame" x="10" y="23.666666666666686" width="281" height="24.666666666666671"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="20"/>
                             <color key="textColor" name="EerieBlackColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="106-vz-rPl">
-                            <rect key="frame" x="-46" y="-394" width="393" height="859"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" name="EerieOpacColor"/>
-                        </view>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="4Sq-95-BHd"/>
                     <color key="backgroundColor" name="YellowSelectiveColor"/>
                     <constraints>
-                        <constraint firstItem="3yT-ez-1fi" firstAttribute="centerX" secondItem="4Sq-95-BHd" secondAttribute="centerX" id="278-C0-p7E"/>
-                        <constraint firstAttribute="height" constant="72" id="8SC-gy-1dy"/>
-                        <constraint firstItem="3yT-ez-1fi" firstAttribute="centerY" secondItem="4Sq-95-BHd" secondAttribute="centerY" id="G26-9f-hHp"/>
+                        <constraint firstAttribute="height" constant="72" id="FKu-cv-W82"/>
+                        <constraint firstAttribute="width" constant="298" id="dUE-bx-bgB"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -172,6 +167,7 @@
             <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KgL-4j-FRz" secondAttribute="trailing" constant="46" id="018-7F-4IX"/>
+                <constraint firstItem="KgL-4j-FRz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0xR-ZP-cNa"/>
                 <constraint firstItem="g0p-pK-gfY" firstAttribute="centerX" secondItem="KgL-4j-FRz" secondAttribute="centerX" id="9tv-JZ-1bQ"/>
                 <constraint firstItem="KgL-4j-FRz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="FKx-u8-36Q"/>
                 <constraint firstItem="isi-Sh-GAU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="KxE-Lk-dPy"/>
@@ -181,6 +177,7 @@
                 <constraint firstItem="isi-Sh-GAU" firstAttribute="top" secondItem="g0p-pK-gfY" secondAttribute="bottom" constant="20" id="l5j-8C-JC4"/>
                 <constraint firstItem="KgL-4j-FRz" firstAttribute="top" secondItem="isi-Sh-GAU" secondAttribute="bottom" constant="39" id="uHf-Lt-9pG"/>
                 <constraint firstItem="g0p-pK-gfY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uU0-XG-s1S"/>
+                <constraint firstItem="KgL-4j-FRz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="viV-4i-VsB"/>
             </constraints>
             <point key="canvasLocation" x="-14.503816793893129" y="-12.67605633802817"/>
         </view>
@@ -196,9 +193,6 @@
         </namedColor>
         <namedColor name="EerieBlackColor">
             <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="EerieOpacColor">
-            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="YellowSelectiveColor">
             <color red="0.97254901960784312" green="0.80784313725490198" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

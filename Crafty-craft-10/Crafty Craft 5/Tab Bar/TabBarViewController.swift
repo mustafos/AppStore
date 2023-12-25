@@ -2,10 +2,7 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
     
-    //    @IBOutlet weak var tabBarWithCorners: UITabBar!
-    
     // MARK: - Private properties -
-    
     private let isIpad = Device.iPad
     
     private let networkingMonitor = NetworkStatusMonitor.shared

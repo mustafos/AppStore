@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 import RealmSwift
 
 class ServerRealmSession: Object, Identifiable {
@@ -125,11 +124,8 @@ class ServersTabViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configTableView()
-        setupBackground()
         setupSearchBar()
-        
         setUpPageModel()
         setupRealmObserver()
     }
@@ -175,16 +171,7 @@ class ServersTabViewController: UIViewController {
             dataSourceServers = servers.filter({$0.name.containsCaseInsesetive(filteredText ?? "")})
         }
     }
-    
-    private func setupBackground() {
-        let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "Green Background")
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
-    }
-    
+
     private func setupSearchBar() {
         searchBarView.buttonTapAction = { [weak self] in
             self?.flushSearch()
@@ -198,12 +185,12 @@ class ServersTabViewController: UIViewController {
         }
         
         searchBarView.onStartSearch = {[weak self] in
-            guard let self else {return}
+            guard let self else { return }
             self.showSuggestionsTableView()
         }
         
-        searchBarView.onEndSearch = {[weak self] in
-            guard let self else {return}
+        searchBarView.onEndSearch = { [weak self] in
+            guard let self else { return }
             self.removeSuggestionsTableView()
         }
     }
@@ -264,6 +251,7 @@ extension ServersTabViewController: TabBarConfigurable {
     }
 }
 
+// MARK: – ServersTabViewController
 extension ServersTabViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == suggestionsTableView {
@@ -273,12 +261,13 @@ extension ServersTabViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableView == suggestionsTableView{
+        if tableView == suggestionsTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchSuggestionCell.identifier) as! SearchSuggestionCell
             if dataSourceServers.count > indexPath.row {
                 cell.titleLabel.text = dataSourceServers[indexPath.row].name
+                cell.titleLabel.font = UIFont(name: "Montserrat-Regular", size: 14)
+                cell.titleLabel.textColor = UIColor(named: "EerieBlackColor")
             }
-            
             cell.selectionStyle = .none
             return cell
         }
@@ -325,7 +314,7 @@ extension ServersTabViewController: UITableViewDataSource, UITableViewDelegate {
     
     func showSuggestionsTableView() {
         if tableViewContainer == nil {
-            let y: CGFloat = navigationBarContainerView.frame.origin.y + 2  //+ navigationBarContainerView.frame.height + 10
+            let y: CGFloat = navigationBarContainerView.frame.height - 5
             tableViewContainer = UIView(frame: CGRect(x: searchBarView.frame.origin.x,
                                                           y: y,
                                                           width: searchBarView.frame.width,
@@ -342,11 +331,19 @@ extension ServersTabViewController: UITableViewDataSource, UITableViewDelegate {
             suggestionsTableView?.contentInsetAdjustmentBehavior = .never
             suggestionsTableView?.backgroundColor = .clear
             
-            tableViewContainer?.backgroundColor = UIColor(red: 0.086, green: 0.404, blue: 0.341, alpha: 1)
+            tableViewContainer?.backgroundColor = UIColor(named: "YellowSelectiveColor")
 
             // corners
+            tableViewContainer?.layer.borderWidth = 1
+            tableViewContainer?.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
             tableViewContainer?.clipsToBounds = true
-            tableViewContainer?.layer.cornerRadius = 20
+            tableViewContainer?.clipsToBounds = true
+            tableViewContainer?.layer.cornerRadius = 30
+            
+            
+            //TODO: – SEPARATOR DESIGN
+            suggestionsTableView?.separatorStyle = .singleLine
+            suggestionsTableView?.separatorColor = UIColor(named: "EerieBlackColor")
             
             view.bringSubviewToFront(navigationBarContainerView!)
             

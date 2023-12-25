@@ -147,7 +147,6 @@ final class CreateTabViewController: UIViewController {
                                                          selectedTextColor: UIColor(named: "BeigeColor"))
     }
     
-    
     @IBAction func segmentControlChangeAction(_ sender: BetterSegmentedControl) {
         switch sender.index {
         case 0: // SKINS

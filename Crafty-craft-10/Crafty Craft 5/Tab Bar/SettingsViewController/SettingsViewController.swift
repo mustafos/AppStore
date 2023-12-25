@@ -1,6 +1,5 @@
 import UIKit
 
-
 class SettingsViewController: UIViewController {
     
     //MARK: propertirs
@@ -11,7 +10,6 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var vcTitleLab: UILabel!
     
-    
     @IBOutlet weak var termsContaienr: UIView!
     @IBOutlet weak var privacyContainer: UIView!
     @IBOutlet weak var clearCacheContainer: UIView!
@@ -21,7 +19,6 @@ class SettingsViewController: UIViewController {
     lazy var alertViewContainer: UIView = {
         var view = UIView()
         view.frame = UIScreen.main.bounds
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         view.isHidden = true
         self.view.addSubview(view)
 
@@ -83,9 +80,6 @@ class SettingsViewController: UIViewController {
         configClearCacheAlertUI()
         configCorners()
         updateCacheLab()
-        
-        // Set the background color of doneView
-        doneView.layer.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.8).cgColor
     }
 
     private func configCorners() {
@@ -159,14 +153,9 @@ extension SettingsViewController {
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
         alertViewContainer.addSubview(containerView)
-        containerView.backgroundColor = UIColor(named: "blackCCRedesign") ?? .black
-        containerView.roundCorners(.allCorners, radius: 12)
         
         // Create the label at the top
         let label = UILabel()
-        label.text = "CACHE CLEARED"
-        label.font = UIFont(name: "Blinker-Bold", size: 22)
-        label.textColor = .white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(label)
@@ -176,6 +165,10 @@ extension SettingsViewController {
         squareImageView.image = UIImage(named: "done filter") // Customize the image view as needed
         squareImageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(squareImageView)
+        
+        // Apply the capsule shape to the container view
+        containerView.layer.cornerRadius = containerView.frame.height / 2
+        containerView.layer.masksToBounds = true
         
         // Define constraints for the container view
         NSLayoutConstraint.activate([

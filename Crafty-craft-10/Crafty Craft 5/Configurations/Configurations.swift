@@ -9,7 +9,6 @@ import Foundation
 import CoreText
 
 enum Configurations {
-//    static let fontName = "PollerOne-Regular"
     static let subFontUrl = Bundle.main.url(forResource: "sub", withExtension: "ttf")!
     static let adjustToken = "hfg1t85ufqbk"
     
