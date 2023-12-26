@@ -32,7 +32,7 @@ class SearchBarView: UIView, UITextFieldDelegate {
     private lazy var closeButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "close cross"), for: .normal)
+        button.setImage(UIImage(named: "cancel filter"), for: .normal)
         button.addTarget(self, action: #selector(buttonCloseTapped), for: .touchUpInside)
         
         return button
@@ -112,10 +112,7 @@ class SearchBarView: UIView, UITextFieldDelegate {
         searchTextField.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.6).isActive = true
         searchTextField.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
-        closeButton.backgroundColor = .clear
-        closeButton.sizeThatFits(CGSize(width: 32, height: 32))
-        
-        closeButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
+        closeButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8).isActive = true
         closeButton.widthAnchor.constraint(equalTo: closeButton.heightAnchor).isActive = true
         closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
         closeButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true

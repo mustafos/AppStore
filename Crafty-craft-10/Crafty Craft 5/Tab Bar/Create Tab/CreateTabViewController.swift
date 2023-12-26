@@ -212,9 +212,8 @@ extension CreateTabViewController: TabBarConfigurable {
     }
 }
 
-// Suggest view
+// MARK: – CreateTabViewController
 extension CreateTabViewController: UITableViewDelegate, UITableViewDataSource {
-    
     var tableViewContainerHeight: CGFloat {
         return searchViewHeightWith(itemsCount: min(numberOfRowsInTableView, 4))
     }
@@ -245,8 +244,16 @@ extension CreateTabViewController: UITableViewDelegate, UITableViewDataSource {
             tableViewContainer?.backgroundColor = UIColor(named: "YellowSelectiveColor")
 
             // corners
+            tableViewContainer?.layer.borderWidth = 1
+            tableViewContainer?.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
             tableViewContainer?.clipsToBounds = true
-            tableViewContainer?.layer.cornerRadius = 40
+            tableViewContainer?.clipsToBounds = true
+            tableViewContainer?.layer.cornerRadius = 30
+            
+            suggestionsTableView?.separatorStyle = .singleLine
+            suggestionsTableView?.layoutMargins = UIEdgeInsets.zero
+            suggestionsTableView?.separatorInset = UIEdgeInsets.zero
+            suggestionsTableView?.separatorColor = UIColor(named: "EerieBlackColor")
             
             view.bringSubviewToFront(navigationBarContainerView!)
             
@@ -296,14 +303,17 @@ extension CreateTabViewController: UITableViewDelegate, UITableViewDataSource {
             if let skinCollectonScreen {
                 let skins = skinCollectonScreen.filteredSkins()
                 cell.titleLabel.text = skins[indexPath.row].name
+                cell.titleLabel.font = UIFont(name: "Montserrat-Regular", size: 14)
+                cell.titleLabel.textColor = UIColor(named: "EerieBlackColor")
             }
         case .addon:
             if let addonCollectionScreen {
                 let addons = addonCollectionScreen.filteredAddon()
                 cell.titleLabel.text = addons[indexPath.row].displayName
+                cell.titleLabel.font = UIFont(name: "Montserrat-Regular", size: 14)
+                cell.titleLabel.textColor = UIColor(named: "EerieBlackColor")
             }
         }
-        
         cell.selectionStyle = .none
         return cell
     }

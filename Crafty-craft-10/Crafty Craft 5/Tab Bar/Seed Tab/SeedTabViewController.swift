@@ -222,6 +222,7 @@ extension SeedTabViewController: TabBarConfigurable {
     }
 }
 
+// MARK: – UITableView Extension
 extension SeedTabViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == suggestionsTableView {
@@ -235,6 +236,8 @@ extension SeedTabViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchSuggestionCell.identifier) as! SearchSuggestionCell
             if dataSourceSeed.count > indexPath.row {
                 cell.titleLabel.text = dataSourceSeed[indexPath.row].name
+                cell.titleLabel.font = UIFont(name: "Montserrat-Regular", size: 14)
+                cell.titleLabel.textColor = UIColor(named: "EerieBlackColor")
             }
             cell.selectionStyle = .none
             return cell
@@ -289,7 +292,7 @@ extension SeedTabViewController: UITableViewDataSource, UITableViewDelegate {
     
     func showSuggestionsTableView() {
         if tableViewContainer == nil {
-            let y: CGFloat = navigationBarContainerView.frame.origin.y + 2  //+ navigationBarContainerView.frame.height + 10
+            let y: CGFloat = navigationBarContainerView.frame.height - 5
             tableViewContainer = UIView(frame: CGRect(x: searchBarView.frame.origin.x,
                                                           y: y,
                                                           width: searchBarView.frame.width,
@@ -306,11 +309,19 @@ extension SeedTabViewController: UITableViewDataSource, UITableViewDelegate {
             suggestionsTableView?.contentInsetAdjustmentBehavior = .never
             suggestionsTableView?.backgroundColor = .clear
             
-            tableViewContainer?.backgroundColor = UIColor(red: 0.086, green: 0.404, blue: 0.341, alpha: 1)
+            tableViewContainer?.backgroundColor = UIColor(named: "YellowSelectiveColor")
 
             // corners
+            tableViewContainer?.layer.borderWidth = 1
+            tableViewContainer?.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
             tableViewContainer?.clipsToBounds = true
-            tableViewContainer?.layer.cornerRadius = 20
+            tableViewContainer?.clipsToBounds = true
+            tableViewContainer?.layer.cornerRadius = 30
+            
+            suggestionsTableView?.separatorStyle = .singleLine
+            suggestionsTableView?.layoutMargins = UIEdgeInsets.zero
+            suggestionsTableView?.separatorInset = UIEdgeInsets.zero
+            suggestionsTableView?.separatorColor = UIColor(named: "EerieBlackColor")
             
             view.bringSubviewToFront(navigationBarContainerView!)
             

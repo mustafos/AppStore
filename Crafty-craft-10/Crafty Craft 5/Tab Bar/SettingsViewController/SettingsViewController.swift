@@ -2,11 +2,11 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-    //MARK: propertirs
-    
+    //MARK: – Propertirs
     private var model: SettingsModel?
+    var blurEffectView: UIVisualEffectView?
     
-    //MARK: Iboutlets
+    //MARK: – Iboutlets
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var vcTitleLab: UILabel!
     
@@ -25,8 +25,7 @@ class SettingsViewController: UIViewController {
         return view
     }()
 
-    //MARK: Init
-    
+    // MARK: – Init
     init() {
         self.model = SettingsModel()
         super.init(nibName: nil, bundle: nil)
@@ -36,8 +35,7 @@ class SettingsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: LifeCycle
-    
+    // MARK: – LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -49,8 +47,7 @@ class SettingsViewController: UIViewController {
     }
 
     
-    //MARK: Setup Functions
-    
+    // MARK: – Setup Functions
     private func setupActions() {
         
         //terms Container
@@ -74,8 +71,7 @@ class SettingsViewController: UIViewController {
         
     }
     
-    //MARK: ConfigUI
-
+    // MARK: ConfigUI
     private func setupUI() {
         configClearCacheAlertUI()
         configCorners()
@@ -83,20 +79,26 @@ class SettingsViewController: UIViewController {
     }
 
     private func configCorners() {
-        termsContaienr.layer.cornerRadius = 32
-        privacyContainer.layer.cornerRadius = 32
-        clearCacheContainer.layer.cornerRadius = 32
+        termsContaienr.layer.cornerRadius = 30
+        termsContaienr.layer.borderWidth = 1
+        termsContaienr.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        
+        privacyContainer.layer.cornerRadius = 30
+        privacyContainer.layer.borderWidth = 1
+        privacyContainer.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        
+        clearCacheContainer.layer.cornerRadius = 30
+        clearCacheContainer.layer.borderWidth = 1
+        clearCacheContainer.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
     }
 
     
-    //MARK: private Functions
-    
+    // MARK: – private Functions
     private func updateCacheLab() {
         cachesizeLab.text = model?.cacheInKB
     }
 
-//MARK: Actions
-
+    // MARK: – Actions
     @IBAction func backBtnTapped(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
@@ -113,25 +115,43 @@ class SettingsViewController: UIViewController {
     
     //clearCacheBtn
     @objc func clearCacheIsTapped(_ sender: UITapGestureRecognizer) {
+        addBlurEffectToBackground()
+        doneView.roundCorners(.allCorners, radius: 30)
         doneView.isHidden = false
         model?.clearCache()
         updateCacheLab()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { [weak self] in
             guard let self else { return }
-           
             UIView.transition(with: self.doneView, duration: 0.3,
                               options: .curveEaseOut,
                               animations: { [weak self] in
                 self?.doneView.alpha = 0
+                self?.blurEffectView?.alpha = 0
             }) { [weak self] _ in
                 self?.doneView.alpha = 1
                 self?.doneView.isHidden = true
+                self?.blurEffectView?.removeFromSuperview()
+                self?.blurEffectView = nil
             }
         }
     }
     
-
-
+    // BlurBackground
+    private func addBlurEffectToBackground() {
+        let blurEffect = UIBlurEffect(style: .dark)
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView?.frame = view.bounds
+        blurEffectView?.alpha = 0
+        view.addSubview(blurEffectView!)
+        
+        // Make the blur effect view cover the doneView
+        view.bringSubviewToFront(doneView)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.blurEffectView?.alpha = 1
+        }
+    }
 }
 
 

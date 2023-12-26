@@ -340,9 +340,9 @@ extension ServersTabViewController: UITableViewDataSource, UITableViewDelegate {
             tableViewContainer?.clipsToBounds = true
             tableViewContainer?.layer.cornerRadius = 30
             
-            
-            //TODO: – SEPARATOR DESIGN
             suggestionsTableView?.separatorStyle = .singleLine
+            suggestionsTableView?.layoutMargins = UIEdgeInsets.zero
+            suggestionsTableView?.separatorInset = UIEdgeInsets.zero
             suggestionsTableView?.separatorColor = UIColor(named: "EerieBlackColor")
             
             view.bringSubviewToFront(navigationBarContainerView!)

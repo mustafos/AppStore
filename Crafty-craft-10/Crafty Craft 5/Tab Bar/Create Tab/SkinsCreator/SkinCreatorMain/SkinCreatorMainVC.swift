@@ -33,14 +33,8 @@ class SkinCreatorMainVC: UIViewController {
     var selectedSkinIndex = Int()
     lazy var model = SkinEditorVCModel()
     
-    
-    // MARK: - Outlets
-    
-    
     private weak var downloadButton: UIButton?
     private var filterText: String?
-    
-    // MARK: - Actions
     
     // MARK: - View Life Cycle
     
@@ -60,6 +54,7 @@ class SkinCreatorMainVC: UIViewController {
             menuCollectionView.reloadData()
         }
         unlockButton.titleLabel?.textAlignment = .center
+        unlockButton.roundCorners(.allCorners, radius: 30)
         unlockButton.isHidden = isSubscriptionAvailable
         menuCollectionView.isHidden = !isSubscriptionAvailable
         
@@ -76,7 +71,6 @@ class SkinCreatorMainVC: UIViewController {
     }
     
     // MARK: - Action
-    
     @IBAction func unlockButtonTapped(_ sender: Any) {
         //show subscrition
         let nextVC = PremiumMainController()

@@ -66,7 +66,8 @@ class AddonCreatorMainVC: UIViewController {
             model.updateCreatedAddons()
             addonCollectionView.reloadData()
         }
-        
+        unlockButton.titleLabel?.textAlignment = .center
+        unlockButton.roundCorners(.allCorners, radius: 30)
         unlockButton.isHidden = isSubscriptionAvailable
         addonCollectionView.isHidden = !isSubscriptionAvailable
         addonCollectionView.isHidden = !isSubscriptionAvailable

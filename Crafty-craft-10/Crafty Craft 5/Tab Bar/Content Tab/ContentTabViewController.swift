@@ -654,7 +654,6 @@ extension ContentTabViewController: UICollectionViewDelegateFlowLayout {
 
 
 //MARK: KeyboardStateDelegate
-
 extension ContentTabViewController: KeyboardStateProtocol {
     func keyboardShows(height: CGFloat) {
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: height, right: 0)
@@ -668,9 +667,7 @@ extension ContentTabViewController: KeyboardStateProtocol {
     }
 }
 
-//MARK: Suggestion for serach bar
-
-// Suggest view
+// MARK: – ContentTabViewController
 extension ContentTabViewController: UITableViewDelegate, UITableViewDataSource {
     
     var tableViewContainerHeight: CGFloat {
@@ -700,11 +697,19 @@ extension ContentTabViewController: UITableViewDelegate, UITableViewDataSource {
             suggestionsTableView?.contentInsetAdjustmentBehavior = .never
             suggestionsTableView?.backgroundColor = .clear
             
-            tableViewContainer?.backgroundColor = UIColor(red: 0.086, green: 0.404, blue: 0.341, alpha: 1)
+            tableViewContainer?.backgroundColor = UIColor(named: "YellowSelectiveColor")
 
             // corners
+            tableViewContainer?.layer.borderWidth = 1
+            tableViewContainer?.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
             tableViewContainer?.clipsToBounds = true
-            tableViewContainer?.layer.cornerRadius = 20
+            tableViewContainer?.clipsToBounds = true
+            tableViewContainer?.layer.cornerRadius = 30
+            
+            suggestionsTableView?.separatorStyle = .singleLine
+            suggestionsTableView?.layoutMargins = UIEdgeInsets.zero
+            suggestionsTableView?.separatorInset = UIEdgeInsets.zero
+            suggestionsTableView?.separatorColor = UIColor(named: "EerieBlackColor")
             
             view.bringSubviewToFront(navigationBarContainerView!)
             
@@ -727,7 +732,7 @@ extension ContentTabViewController: UITableViewDelegate, UITableViewDataSource {
         return filteredPageModel.count
     }
 
-    // MARK: - table data source
+    // MARK: – UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         numberOfRowsInTableView
     }
@@ -736,6 +741,8 @@ extension ContentTabViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchSuggestionCell.identifier) as! SearchSuggestionCell
         if filteredPageModel.count > indexPath.row {
             cell.titleLabel.text = filteredPageModel[indexPath.row].name
+            cell.titleLabel.font = UIFont(name: "Montserrat-Regular", size: 14)
+            cell.titleLabel.textColor = UIColor(named: "EerieBlackColor")
         }
         cell.selectionStyle = .none
         return cell

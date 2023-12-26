@@ -12,11 +12,14 @@ class SeedDetailsViewController: UIViewController {
     typealias ImageDataCallback = (Data?) -> Void
     
     let seed: SeedRealmSession
-    @IBOutlet weak var doneView: UIView!
+    var blurEffectView: UIVisualEffectView?
     
+    @IBOutlet weak var doneView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descSeedLabel: UILabel!
     @IBOutlet weak var seedIcon: UIImageView!
+    @IBOutlet weak var generalContainer: UIScrollView!
+    @IBOutlet weak var titleContainer: UIView! 
     private lazy var dropboxQueue: DispatchQueue = {
         let queue = DispatchQueue(label: "com.seed.serialSeed")
         
@@ -54,15 +57,17 @@ class SeedDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupBackground()
+        setupLayers()
     }
     
-    //MARK: - Action
-    
+    // MARK: - Action
     @IBAction func backButtonAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func copyLinkAction(_ sender: Any) {
+        addBlurEffectToBackground()
+        doneView.roundCorners(.allCorners, radius: 20)
         doneView.isHidden = false
         UIPasteboard.general.string = seed.seed
         
@@ -73,9 +78,12 @@ class SeedDetailsViewController: UIViewController {
                               options: .curveEaseOut,
                               animations: { [weak self] in
                 self?.doneView.alpha = 0
+                self?.blurEffectView?.alpha = 0
             }) { [weak self] _ in
                 self?.doneView.alpha = 1
                 self?.doneView.isHidden = true
+                self?.blurEffectView?.removeFromSuperview()
+                self?.blurEffectView = nil
             }
         }
     }
@@ -95,13 +103,17 @@ class SeedDetailsViewController: UIViewController {
         }
     }
     
-    private func setupBackground() {
-        let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "Green Background")
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
+    private func setupLayers() {
+        generalContainer.roundCorners(.allCorners, radius: 30)
+        generalContainer.layer.borderWidth = 1
+        generalContainer.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        
+        titleContainer.roundCorners(.allCorners, radius: 20)
+        titleContainer.layer.borderWidth = 1
+        titleContainer.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+
+        seedIcon.roundCorners(.allCorners, radius: 25)
+        seedIcon.setBorder(size: 1, color: UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1))
     }
     
     private func loadDropboxImage(imageName: String, queue: DispatchQueue) {
@@ -179,6 +191,22 @@ class SeedDetailsViewController: UIViewController {
                 self?.imageSemaphore.signal()
             }
             imageSemaphore.wait()
+        }
+    }
+    
+    // BlurBackground
+    private func addBlurEffectToBackground() {
+        let blurEffect = UIBlurEffect(style: .dark)
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView?.frame = view.bounds
+        blurEffectView?.alpha = 0
+        view.addSubview(blurEffectView!)
+        
+        // Make the blur effect view cover the doneView
+        view.bringSubviewToFront(doneView)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.blurEffectView?.alpha = 1
         }
     }
     

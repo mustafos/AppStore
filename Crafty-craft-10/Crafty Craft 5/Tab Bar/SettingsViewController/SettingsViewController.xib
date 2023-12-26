@@ -35,7 +35,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0p-pK-gfY" userLabel="CustomNav View">
-                    <rect key="frame" x="0.0" y="59" width="390" height="68"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="68"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSn-D9-Egw" userLabel="ScreenTitle Lab">
                             <rect key="frame" x="140.33333333333331" y="0.0" width="112.33333333333334" height="68"/>
@@ -140,11 +140,10 @@
                     </subviews>
                 </stackView>
                 <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgL-4j-FRz">
-                    <rect key="frame" x="46" y="390" width="298" height="72"/>
+                    <rect key="frame" x="46" y="390" width="301" height="72"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cache successfully cleared!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yT-ez-1fi">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cache successfully cleared!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yT-ez-1fi">
                             <rect key="frame" x="10" y="23.666666666666686" width="281" height="24.666666666666671"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="20"/>
                             <color key="textColor" name="EerieBlackColor"/>
                             <nil key="highlightedColor"/>
@@ -154,7 +153,8 @@
                     <color key="backgroundColor" name="YellowSelectiveColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="72" id="FKu-cv-W82"/>
-                        <constraint firstAttribute="width" constant="298" id="dUE-bx-bgB"/>
+                        <constraint firstItem="3yT-ez-1fi" firstAttribute="centerY" secondItem="4Sq-95-BHd" secondAttribute="centerY" id="MWt-lV-fSF"/>
+                        <constraint firstItem="3yT-ez-1fi" firstAttribute="centerX" secondItem="4Sq-95-BHd" secondAttribute="centerX" id="xc4-2F-II0"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

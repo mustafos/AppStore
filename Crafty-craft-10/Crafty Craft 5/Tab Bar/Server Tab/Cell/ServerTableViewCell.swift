@@ -43,14 +43,20 @@ class ServerTableViewCell: UITableViewCell {
         super.awakeFromNib()
         super.layoutSubviews()
         
-        subContainer.layer.cornerRadius = 30
+        subContainer.roundCorners(.allCorners, radius: 30)
         subContainer.layer.borderWidth = 1
         subContainer.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
         
         serverIcon.backgroundColor = .clear
-        serverIcon.layer.cornerRadius = 30
+        serverIcon.roundCorners(.allCorners, radius: 30)
         serverIcon.layer.borderWidth = 1
         serverIcon.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        
+        namingInfoView.roundCorners(.allCorners, radius: 20)
+        namingInfoView.layer.borderWidth = 1
+        namingInfoView.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        
+        onlineStatusView.layer.cornerRadius = onlineStatusView.bounds.width / 2.0
     }
     
     override func layoutSubviews() {
@@ -73,12 +79,8 @@ class ServerTableViewCell: UITableViewCell {
     }
     
     private func configDefautFileds(server: ServerRealmSession) {
-        namingInfoView.layer.cornerRadius = 22
-        namingInfoView.layer.borderWidth = 1
-        namingInfoView.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
         name.text = server.name.uppercased()
         subName.text = server.address
-        onlineStatusView.layer.cornerRadius = onlineStatusView.bounds.width / 2.0
         onlineStatusView.backgroundColor = server.statusEnum == .Online ? UIColor(named: "YellowSelectiveColor") : .red
     }
     
