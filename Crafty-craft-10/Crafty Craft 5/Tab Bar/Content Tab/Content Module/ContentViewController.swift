@@ -15,8 +15,12 @@ class ContentViewController: UIViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var textView: UITextView!
     
+    @IBOutlet weak var skinsImage: UIImageView!
     @IBOutlet private weak var pageImage: UIImageView!
     @IBOutlet private weak var pageLabel: UILabel!
+    
+    @IBOutlet weak var generalContainer: UIView!
+    @IBOutlet weak var titleContainer: UIView!
     
     @IBOutlet private weak var downloadButton: UIButton!
     @IBOutlet private weak var downloadBtnActivity: UIActivityIndicatorView! {
@@ -67,8 +71,6 @@ class ContentViewController: UIViewController {
         
         setUpPropertys()
         
-        navigationBarContainerView.backgroundColor = .clear
-        downloadButton.roundCorners(28)
         isPageFavorite = model.isFavorite
         
         updateFavoriteButton()
@@ -80,30 +82,47 @@ class ContentViewController: UIViewController {
     
     private func setUpPropertys() {
         if let image = model.imageData {
-            pageImage.image = UIImage(data: image)
+            if mode == .skins {
+                skinsImage.image = UIImage(data: image)
+            } else {
+                pageImage.image = UIImage(data: image)
+            }
         } else {
-            pageImage.image = UIImage()
+            if mode == .skins {
+                skinsImage.image = UIImage()
+            } else {
+                pageImage.image = UIImage()
+            }
             loadDropboxImage(imageName: model.image, queue: dropboxQueue)
         }
-        pageLabel.text = model.name
+        pageLabel.text = model.name.uppercased()
         textView.text = model.description
         
-        pageImage.roundCorners(12)
-        pageImage.clipsToBounds = true
-        downloadButton.roundCorners()
+        generalContainer.roundCorners(.allCorners, radius: 30)
+        generalContainer.layer.borderWidth = 1
+        generalContainer.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        generalContainer.clipsToBounds = true
+        
+        titleContainer.roundCorners(.allCorners, radius: 20)
+        titleContainer.layer.borderWidth = 1
+        titleContainer.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        titleContainer.clipsToBounds = true
+
+        pageImage.roundCorners(.allCorners, radius: 25)
+        pageImage.setBorder(size: 1, color: UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1))
         pageImage.clipsToBounds = true
         
 //        isNewImage.isHidden = !model.isContentNew
         pageImage.translatesAutoresizingMaskIntoConstraints = false
         
         if mode == .skins {
-            pageImage.contentMode = .scaleAspectFit
-            pageLabel.isHidden = true
-            textView.isHidden = true
-            scrollView.isHidden = true
-        } else {
-            pageImage.contentMode = .scaleToFill
-        }
+            skinsImage.isHidden = false
+//            pageImage.contentMode = .scaleAspectFit
+//            pageLabel.isHidden = true
+            generalContainer.isHidden = true
+        } //else {
+//            pageImage.contentMode = .scaleToFill
+//        }
     }
     
     private func loadDropboxImage(imageName: String, queue: DispatchQueue) {
@@ -141,7 +160,11 @@ class ContentViewController: UIViewController {
             // Update Thumbnail Image View
             DispatchQueue.main.async {
                 self?.hideActivityIndicator()
-                self?.pageImage.image = img
+                if self?.mode == .skins {
+                    self?.skinsImage.image = img
+                } else {
+                    self?.pageImage.image = img
+                }
             }
             
             if let imageDataCallback = self?.imageDataCallback {
@@ -166,7 +189,11 @@ class ContentViewController: UIViewController {
                 self?.imageDownloadOperation.cancel()
                 
                 DispatchQueue.main.async {
-                    self?.pageImage.image = UIImage()
+                    if self?.mode == .skins {
+                        self?.skinsImage.image = UIImage()
+                    } else {
+                        self?.pageImage.image = UIImage()
+                    }
                 }
             }
             self?.imageSemaphore.signal()
@@ -191,7 +218,7 @@ class ContentViewController: UIViewController {
         activityIndicator.color = .white
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
-        pageImage.addSubview(activityIndicator)
+        mode == .skins ? skinsImage.addSubview(activityIndicator) : pageImage.addSubview(activityIndicator)
         activityIndicator.centerInSuperview()
     }
     
@@ -206,12 +233,12 @@ class ContentViewController: UIViewController {
     }
     
     private func updateDowloadButton() {
-        var buttonTitle = !isAlreadyDownloadItem ? "Download" : "Export"
+        var buttonImage = !isAlreadyDownloadItem ? "Save Item" : "Dowmload Item"
         if mode == .addons, isAlreadyDownloadItem {
-            buttonTitle = "Install"
+            buttonImage = "Dowmload Item"
         }
         
-        downloadButton.setTitle(buttonTitle, for: .normal)
+        downloadButton.setImage(UIImage(named: buttonImage), for: .normal)
     }
     
     private func updateTitleLabel() {
@@ -253,7 +280,7 @@ class ContentViewController: UIViewController {
             }
         } else {
             //Download
-            downloadButton.setTitle("", for: .normal)
+            downloadButton.setImage(UIImage(named: ""), for: .normal) //setTitle("", for: .normal)
             downloadItem { [weak self] url in
                 guard let self, let url else { return }
                 DispatchQueue.main.async { [weak self] in
@@ -401,11 +428,11 @@ extension ContentViewController{
     var titleString: String {
         switch mode {
         case .addons:
-            return "ADDON"
+            return "ADDONS"
         case .skins:
-            return "SKIN"
+            return "SKINS"
         case .maps:
-            return "MAP"
+            return "MAPS"
         }
     }
 }

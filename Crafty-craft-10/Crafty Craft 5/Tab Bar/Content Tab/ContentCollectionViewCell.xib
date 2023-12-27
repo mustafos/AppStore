@@ -1,32 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Blinker-SemiBold.ttf">
-            <string>Blinker-SemiBold</string>
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContentCollectionViewCell" id="gTV-IL-0wX" customClass="ContentCollectionViewCell" customModule="Crafty_Craft_5" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="184" height="240"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContentCollectionViewCell" id="gTV-IL-0wX" customClass="ContentCollectionViewCell" customModule="Crafty_Craft_10" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="168" height="213"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="184" height="240"/>
+                <rect key="frame" x="0.0" y="0.0" width="168" height="213"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="WRT-m7-eR3" userLabel="Rounded Background View">
-                        <rect key="frame" x="0.0" y="0.0" width="184" height="240"/>
+                        <rect key="frame" x="0.0" y="0.0" width="168" height="213"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQO-U8-gbg" userLabel="HeaderLabContainer View">
+                                <rect key="frame" x="12" y="12" width="144" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjq-Ga-L9I">
+                                        <rect key="frame" x="12" y="12" width="120" height="16"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                        <color key="textColor" name="EerieBlackColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="BeigeColor"/>
+                                <constraints>
+                                    <constraint firstItem="Gjq-Ga-L9I" firstAttribute="top" secondItem="hQO-U8-gbg" secondAttribute="top" constant="12" id="51a-4x-lyT"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gjq-Ga-L9I" secondAttribute="bottom" constant="12" id="8B9-gL-lpX"/>
+                                    <constraint firstItem="Gjq-Ga-L9I" firstAttribute="leading" secondItem="hQO-U8-gbg" secondAttribute="leading" constant="12" id="XvD-BL-YDt"/>
+                                    <constraint firstItem="Gjq-Ga-L9I" firstAttribute="centerY" secondItem="hQO-U8-gbg" secondAttribute="centerY" id="pWg-IO-J0G"/>
+                                    <constraint firstItem="Gjq-Ga-L9I" firstAttribute="centerX" secondItem="hQO-U8-gbg" secondAttribute="centerX" id="r9y-Vd-sdA"/>
+                                    <constraint firstAttribute="height" constant="40" id="uST-0g-9CG"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gjq-Ga-L9I" secondAttribute="trailing" constant="12" id="yGU-Ly-07P"/>
+                                </constraints>
+                            </view>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new Instance Icon" translatesAutoresizingMaskIntoConstraints="NO" id="vRH-Ol-ewJ" userLabel="New Icon">
-                                <rect key="frame" x="98" y="20" width="70" height="40"/>
+                                <rect key="frame" x="90" y="60" width="70" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="DDJ-tp-Yxg">
@@ -37,58 +59,22 @@
                                     </constraint>
                                 </constraints>
                             </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addons_icon_button" translatesAutoresizingMaskIntoConstraints="NO" id="RLI-QT-yx6" userLabel="Category Icon">
-                                <rect key="frame" x="16" y="20" width="40" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="22" id="Jlb-0I-GgX">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="40"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="22" id="P1w-JA-MWg">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="40"/>
-                                    </constraint>
-                                </constraints>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" image="body" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qqk-LT-NF8" userLabel="Content Image View" customClass="CustomImageLoader" customModule="Crafty_Craft_10" customModuleProvider="target">
+                                <rect key="frame" x="12" y="56" width="144" height="145"/>
+                                <color key="backgroundColor" name="BeigeColor"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" image="body" translatesAutoresizingMaskIntoConstraints="NO" id="Qqk-LT-NF8" userLabel="Content Image View" customClass="CustomImageLoader" customModule="Crafty_Craft_5" customModuleProvider="target">
-                                <rect key="frame" x="8" y="16" width="168" height="176"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQO-U8-gbg" userLabel="HeaderLabContainer View">
-                                <rect key="frame" x="8" y="200" width="168" height="32"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjq-Ga-L9I">
-                                        <rect key="frame" x="8" y="0.0" width="152" height="32"/>
-                                        <color key="backgroundColor" red="0.0" green="0.59215686274509804" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="H8q-rj-tI8"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="16"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.59215686270000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Gjq-Ga-L9I" secondAttribute="trailing" constant="8" id="QsE-m8-OGP"/>
-                                    <constraint firstItem="Gjq-Ga-L9I" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hQO-U8-gbg" secondAttribute="leading" constant="4" id="Xfn-Fi-CYw"/>
-                                    <constraint firstItem="Gjq-Ga-L9I" firstAttribute="centerY" secondItem="hQO-U8-gbg" secondAttribute="centerY" id="pWg-IO-J0G"/>
-                                    <constraint firstItem="Gjq-Ga-L9I" firstAttribute="centerX" secondItem="hQO-U8-gbg" secondAttribute="centerX" id="r9y-Vd-sdA"/>
-                                    <constraint firstAttribute="height" constant="32" id="uST-0g-9CG"/>
-                                </constraints>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="YellowLightColor"/>
                         <constraints>
-                            <constraint firstItem="Qqk-LT-NF8" firstAttribute="top" secondItem="WRT-m7-eR3" secondAttribute="top" constant="16" id="6BP-kT-6DA"/>
-                            <constraint firstAttribute="trailing" secondItem="hQO-U8-gbg" secondAttribute="trailing" constant="8" id="AeK-DJ-bn8"/>
+                            <constraint firstItem="hQO-U8-gbg" firstAttribute="top" secondItem="WRT-m7-eR3" secondAttribute="top" constant="12" id="2y2-et-W8b"/>
+                            <constraint firstAttribute="trailing" secondItem="hQO-U8-gbg" secondAttribute="trailing" constant="12" id="AeK-DJ-bn8"/>
                             <constraint firstItem="vRH-Ol-ewJ" firstAttribute="top" secondItem="Qqk-LT-NF8" secondAttribute="top" constant="4" id="I4G-l6-6WF"/>
-                            <constraint firstItem="RLI-QT-yx6" firstAttribute="leading" secondItem="Qqk-LT-NF8" secondAttribute="leading" constant="8" id="R5M-yz-jWw"/>
-                            <constraint firstAttribute="trailing" secondItem="Qqk-LT-NF8" secondAttribute="trailing" constant="8" id="bU3-2b-QIL"/>
-                            <constraint firstItem="Qqk-LT-NF8" firstAttribute="leading" secondItem="WRT-m7-eR3" secondAttribute="leading" constant="8" id="fEZ-lH-yuH"/>
-                            <constraint firstItem="hQO-U8-gbg" firstAttribute="leading" secondItem="WRT-m7-eR3" secondAttribute="leading" constant="8" id="fZQ-Hb-kzl"/>
-                            <constraint firstItem="vRH-Ol-ewJ" firstAttribute="trailing" secondItem="Qqk-LT-NF8" secondAttribute="trailing" constant="-8" id="gu7-8t-Q0K"/>
-                            <constraint firstItem="RLI-QT-yx6" firstAttribute="top" secondItem="Qqk-LT-NF8" secondAttribute="top" constant="4" id="oxY-0w-XMt"/>
-                            <constraint firstAttribute="bottom" secondItem="hQO-U8-gbg" secondAttribute="bottom" constant="8" id="qle-YE-P4B"/>
-                            <constraint firstItem="hQO-U8-gbg" firstAttribute="top" secondItem="Qqk-LT-NF8" secondAttribute="bottom" constant="8" id="yx4-c9-VwC"/>
+                            <constraint firstItem="Qqk-LT-NF8" firstAttribute="top" secondItem="hQO-U8-gbg" secondAttribute="bottom" constant="4" id="TLg-6i-CPb"/>
+                            <constraint firstAttribute="trailing" secondItem="Qqk-LT-NF8" secondAttribute="trailing" constant="12" id="bU3-2b-QIL"/>
+                            <constraint firstItem="Qqk-LT-NF8" firstAttribute="leading" secondItem="WRT-m7-eR3" secondAttribute="leading" constant="12" id="fEZ-lH-yuH"/>
+                            <constraint firstItem="hQO-U8-gbg" firstAttribute="leading" secondItem="WRT-m7-eR3" secondAttribute="leading" constant="12" id="fZQ-Hb-kzl"/>
+                            <constraint firstAttribute="bottom" secondItem="Qqk-LT-NF8" secondAttribute="bottom" constant="12" id="g0O-P7-tWH"/>
+                            <constraint firstItem="vRH-Ol-ewJ" firstAttribute="trailing" secondItem="Qqk-LT-NF8" secondAttribute="trailing" constant="4" id="gu7-8t-Q0K"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -102,19 +88,26 @@
             </constraints>
             <size key="customSize" width="184" height="240"/>
             <connections>
-                <outlet property="categoryImageView" destination="RLI-QT-yx6" id="adN-0N-4cC"/>
                 <outlet property="contentImageView" destination="Qqk-LT-NF8" id="nBW-Pi-vll"/>
                 <outlet property="headerLabContainerView" destination="hQO-U8-gbg" id="zMo-QZ-boJ"/>
                 <outlet property="headerLabel" destination="Gjq-Ga-L9I" id="Hld-V3-JYU"/>
                 <outlet property="newIcon" destination="vRH-Ol-ewJ" id="ezB-vg-XK6"/>
                 <outlet property="roundedBackgroundView" destination="WRT-m7-eR3" id="r1I-3g-R9Q"/>
             </connections>
-            <point key="canvasLocation" x="240.82031249999997" y="-39.53147877013177"/>
+            <point key="canvasLocation" x="240.82031249999997" y="-39.751098096632504"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="addons_icon_button" width="23" height="23"/>
-        <image name="body" width="90" height="153"/>
+        <image name="body" width="456" height="560"/>
         <image name="new Instance Icon" width="40" height="24"/>
+        <namedColor name="BeigeColor">
+            <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="EerieBlackColor">
+            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowLightColor">
+            <color red="0.98000001907348633" green="0.90600001811981201" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

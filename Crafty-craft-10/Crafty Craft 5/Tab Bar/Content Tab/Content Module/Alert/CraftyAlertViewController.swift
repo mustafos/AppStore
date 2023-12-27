@@ -27,8 +27,9 @@ class CraftyAlertViewController: UIViewController {
             subTitleLbl.text = configModel.subTitle
             mainButton.setTitle(configModel.buttonTitle, for: .normal)
         }
-        
-        self.view.layer.cornerRadius = 12
+        self.view.roundCorners(.allCorners, radius: 30)
+        self.view.layer.borderWidth = 1
+        self.view.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
         self.view.layer.masksToBounds = true
     }
 

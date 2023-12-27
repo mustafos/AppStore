@@ -107,13 +107,16 @@ class SeedDetailsViewController: UIViewController {
         generalContainer.roundCorners(.allCorners, radius: 30)
         generalContainer.layer.borderWidth = 1
         generalContainer.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        generalContainer.clipsToBounds = true
         
         titleContainer.roundCorners(.allCorners, radius: 20)
         titleContainer.layer.borderWidth = 1
         titleContainer.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        generalContainer.clipsToBounds = true
 
         seedIcon.roundCorners(.allCorners, radius: 25)
         seedIcon.setBorder(size: 1, color: UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1))
+        generalContainer.clipsToBounds = true
     }
     
     private func loadDropboxImage(imageName: String, queue: DispatchQueue) {

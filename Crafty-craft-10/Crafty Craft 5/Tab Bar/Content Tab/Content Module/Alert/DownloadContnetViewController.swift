@@ -22,26 +22,22 @@ class DownloadContnetViewController: UIViewController {
     }
     
     private func configurateInstallViews() {
-        installAddonView.layer.cornerRadius = 34
-        installAddonView.layer.masksToBounds = true
-        let installAddonTap = UITapGestureRecognizer(target: self, action: #selector(self.installAddonAction(_:)))
-        installAddonView.addGestureRecognizer(installAddonTap)
-        
-        manualInstallAddonView.layer.cornerRadius = 34
-        manualInstallAddonView.layer.masksToBounds = true
-        let manualInstallAddonTap = UITapGestureRecognizer(target: self, action: #selector(self.manualAddonAction(_:)))
-        manualInstallAddonView.addGestureRecognizer(manualInstallAddonTap)
+        self.view.roundCorners(.allCorners, radius: 30)
+        self.view.layer.borderWidth = 1
+        self.view.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        self.view.layer.masksToBounds = true
     }
-
-    @objc func manualAddonAction(_ sender: UITapGestureRecognizer? = nil) {
+    
+    @IBAction func installAddonAction(_ sender: Any) {
+        self.dismiss(animated: true)
+        shareAddonAction?()
+    }
+    
+    @IBAction func manualAddonAction(_ sender: Any) {
         self.dismiss(animated: true)
         manualIntallAction?()
     }
     
-    @objc func installAddonAction(_ sender: UITapGestureRecognizer? = nil) {
-        self.dismiss(animated: true)
-        shareAddonAction?()
-    }
     @IBAction func cancelButtonTapped(_ sender: Any) {
         self.dismiss(animated: true)
     }

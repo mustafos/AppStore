@@ -703,7 +703,6 @@ extension ContentTabViewController: UITableViewDelegate, UITableViewDataSource {
             tableViewContainer?.layer.borderWidth = 1
             tableViewContainer?.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
             tableViewContainer?.clipsToBounds = true
-            tableViewContainer?.clipsToBounds = true
             tableViewContainer?.layer.cornerRadius = 30
             
             suggestionsTableView?.separatorStyle = .singleLine

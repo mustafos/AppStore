@@ -9,7 +9,6 @@ final class ContentCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var newIcon: UIImageView!
     @IBOutlet weak var contentImageView: CustomImageLoader!
-    @IBOutlet weak var categoryImageView: UIImageView!
     @IBOutlet weak var headerLabContainerView: UIView!
     
     private let imageSemaphore = DispatchSemaphore(value: 0)
@@ -36,8 +35,6 @@ final class ContentCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         configureView()
-        backgroundColor = .clear
-        contentImageView.backgroundColor = .clear
         
         self.isUserInteractionEnabled = true
     }
@@ -173,14 +170,23 @@ final class ContentCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupRoundedBackgroundView() {
-        roundedBackgroundView.roundCorners()
+        roundedBackgroundView.roundCorners(.allCorners, radius: 30)
+        roundedBackgroundView.layer.borderWidth = 1
+        roundedBackgroundView.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        roundedBackgroundView.layer.masksToBounds = true
     }
     
     private func setupHeaderLabContainerViewl() {
-        headerLabContainerView.roundCorners([.allCorners], radius: 8)
+        headerLabContainerView.roundCorners(.allCorners, radius: 20)
+        headerLabContainerView.layer.borderWidth = 1
+        headerLabContainerView.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        headerLabContainerView.layer.masksToBounds = true
     }
     
     private func setupContentImageView() {
-        contentImageView.roundCorners([.allCorners], radius: 8)
+        contentImageView.roundCorners(.allCorners, radius: 20)
+        contentImageView.layer.borderWidth = 1
+        contentImageView.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        contentImageView.layer.masksToBounds = true
     }
 }
