@@ -24,7 +24,7 @@ extension ContentFilter: Equatable {
 
 struct ContentFilterModel {
     let icon: UIImage? = nil
-    let cornerIcon: UIImage? = UIImage(named: "categoryLock_ic")  // New property for corner icon
+    let cornerIcon: UIImage? = UIImage(named: "lock button")
     let label: String
     let filter: ContentFilter
     var isLocked: Bool = false
@@ -73,7 +73,7 @@ class ContentFilterViewModel: ObservableObject {
                     }
                     Text(buttons[index].label)
                         .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
-                        .font(Font.custom("Blinker-SemiBold", size: 16))
+                        .font(Font.custom("Montserrat-SemiBold", size: 16))
                 }
                 .frame(height: 30)
                 .background(

@@ -337,9 +337,6 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         for view in roundedViewContainers {
             view.roundCorners(25)
         }
-        
-        headerLabel.textColor = UIColor(named: "BeigeColor")
-//        navigationBarContainerView.backgroundColor = .clear
     }
     
     private func navBarSearchMode(predicate: Bool) {
@@ -533,17 +530,17 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         }
     }
     
-    private func updateSegmentedControlUI(selected: UIButton, deselected: UIButton) {
-        selected.backgroundColor = UIColor(named: "darkGreenBackground")
-        selected.layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
-        selected.layer.borderWidth = 1.0
-        selected.setTitleColor(.white, for: .normal)
-        
-        deselected.backgroundColor = UIColor(named: "lightGreenBachgroundColor")
-        deselected.layer.borderColor = UIColor.clear.cgColor
-        deselected.layer.borderWidth = 0
-        deselected.setTitleColor(.lightGray, for: .normal)
-    }
+//    private func updateSegmentedControlUI(selected: UIButton, deselected: UIButton) {
+//        selected.backgroundColor = UIColor(named: "darkGreenBackground")
+//        selected.layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
+//        selected.layer.borderWidth = 1.0
+//        selected.setTitleColor(.white, for: .normal)
+//        
+//        deselected.backgroundColor = UIColor(named: "lightGreenBachgroundColor")
+//        deselected.layer.borderColor = UIColor.clear.cgColor
+//        deselected.layer.borderWidth = 0
+//        deselected.setTitleColor(.lightGray, for: .normal)
+//    }
     
     @IBAction private func onNavBarSearchButtonTapped(_ sender: UIButton) {
         navbarSearchMode.toggle()
@@ -642,6 +639,7 @@ extension ContentTabViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: – UICollectionViewDelegateFlowLayout
 extension ContentTabViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = collectionView.frame.size.width / 2 - 5

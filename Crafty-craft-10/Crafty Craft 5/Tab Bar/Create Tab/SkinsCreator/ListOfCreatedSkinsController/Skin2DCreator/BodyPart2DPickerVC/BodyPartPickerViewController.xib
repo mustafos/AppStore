@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -15,9 +15,12 @@
         <array key="Blinker-SemiBold.ttf">
             <string>Blinker-SemiBold</string>
         </array>
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BodyPartPickerViewController" customModule="Crafty_Craft_5" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BodyPartPickerViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
             <connections>
                 <outlet property="bodyComponentView" destination="CbH-wi-X2b" id="s1J-p6-odw"/>
                 <outlet property="bodyPartsContainer" destination="Pnv-aH-El4" id="FSC-er-4PK"/>
@@ -40,25 +43,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0XI-7f-nBV" userLabel="Navigation Bar">
-                    <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                    <rect key="frame" x="0.0" y="50" width="375" height="84"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKIN CREATOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNE-ol-vcM">
-                            <rect key="frame" x="103.66666666666669" y="8" width="168" height="34"/>
-                            <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="28"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <rect key="frame" x="101" y="0.0" width="173" height="84"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                            <color key="textColor" name="BeigeColor"/>
                             <nil key="highlightedColor"/>
-                            <variation key="heightClass=compact-widthClass=compact">
-                                <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="22"/>
-                            </variation>
-                            <variation key="heightClass=regular-widthClass=compact">
-                                <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="28"/>
-                            </variation>
-                            <variation key="heightClass=regular-widthClass=regular">
-                                <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="50"/>
-                            </variation>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAt-LD-z83">
-                            <rect key="frame" x="16" y="12" width="26" height="26"/>
+                            <rect key="frame" x="20" y="20" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="gAt-LD-z83" secondAttribute="height" multiplier="1:1" id="hZ1-ca-UN0"/>
                             </constraints>
@@ -69,21 +63,21 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="59A-vJ-XEm">
+                        <constraint firstAttribute="height" constant="84" id="59A-vJ-XEm">
                             <variation key="heightClass=regular-widthClass=regular" constant="64"/>
                         </constraint>
-                        <constraint firstItem="gAt-LD-z83" firstAttribute="top" secondItem="0XI-7f-nBV" secondAttribute="top" constant="12" id="7ko-Sf-STN"/>
-                        <constraint firstItem="BNE-ol-vcM" firstAttribute="top" secondItem="0XI-7f-nBV" secondAttribute="top" constant="8" id="7oc-NC-7Y1"/>
+                        <constraint firstItem="gAt-LD-z83" firstAttribute="top" secondItem="0XI-7f-nBV" secondAttribute="top" constant="20" id="7ko-Sf-STN"/>
+                        <constraint firstItem="BNE-ol-vcM" firstAttribute="top" secondItem="0XI-7f-nBV" secondAttribute="top" id="7oc-NC-7Y1"/>
                         <constraint firstItem="BNE-ol-vcM" firstAttribute="centerX" secondItem="0XI-7f-nBV" secondAttribute="centerX" id="kYj-Si-iPc"/>
-                        <constraint firstItem="gAt-LD-z83" firstAttribute="leading" secondItem="0XI-7f-nBV" secondAttribute="leading" constant="16" id="lIC-ai-Dwc"/>
-                        <constraint firstAttribute="bottom" secondItem="gAt-LD-z83" secondAttribute="bottom" constant="12" id="w3O-jM-8VT"/>
-                        <constraint firstAttribute="bottom" secondItem="BNE-ol-vcM" secondAttribute="bottom" constant="8" id="y1e-oo-Uhe"/>
+                        <constraint firstItem="gAt-LD-z83" firstAttribute="leading" secondItem="0XI-7f-nBV" secondAttribute="leading" constant="20" id="lIC-ai-Dwc"/>
+                        <constraint firstAttribute="bottom" secondItem="gAt-LD-z83" secondAttribute="bottom" constant="20" id="w3O-jM-8VT"/>
+                        <constraint firstAttribute="bottom" secondItem="BNE-ol-vcM" secondAttribute="bottom" id="y1e-oo-Uhe"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnv-aH-El4" userLabel="partsContainer View">
-                    <rect key="frame" x="32" y="240.00000000000003" width="187.66666666666666" height="454.66666666666674"/>
+                    <rect key="frame" x="32" y="274" width="187.66666666666666" height="454.66666666666674"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fLD-Nx-lwi" userLabel="head component">
                             <rect key="frame" x="48.999999999999993" y="0.0" width="89.333333333333314" height="89.333333333333329"/>
@@ -105,11 +99,11 @@
                             <color key="backgroundColor" red="0.99999994039999995" green="0.99999994039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9KT-BE-xfe" userLabel="left leg component">
-                            <rect key="frame" x="49" y="261.33333333333331" width="43.666666666666657" height="163.66666666666669"/>
+                            <rect key="frame" x="49" y="261.33333333333337" width="43.666666666666657" height="163.66666666666663"/>
                             <color key="backgroundColor" red="0.99999994039999995" green="0.99999994039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E1S-6Y-GRr" userLabel="right leg component">
-                            <rect key="frame" x="94.666666666666671" y="261.33333333333331" width="43.666666666666671" height="163.66666666666669"/>
+                            <rect key="frame" x="94.666666666666671" y="261.33333333333337" width="43.666666666666671" height="163.66666666666663"/>
                             <color key="backgroundColor" red="0.99999994039999995" green="0.99999994039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </imageView>
                     </subviews>
@@ -142,14 +136,14 @@
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DuQ-O8-jwp" userLabel="hatComponent">
-                    <rect key="frame" x="253.33333333333334" y="239.99999999999997" width="89.666666666666657" height="89.666666666666657"/>
+                    <rect key="frame" x="253.33333333333334" y="274" width="89.666666666666657" height="89.666666666666686"/>
                     <color key="backgroundColor" red="0.99999994039999995" green="0.99999994039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="DuQ-O8-jwp" secondAttribute="height" multiplier="1:1" id="yRl-sn-0qP"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INNER LAYER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ega-uE-bzV" userLabel="layerSwticherLab">
-                    <rect key="frame" x="253.00000000000003" y="210" width="90.333333333333343" height="18"/>
+                    <rect key="frame" x="253.00000000000003" y="244" width="90.333333333333343" height="18"/>
                     <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -164,7 +158,7 @@
                     </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUTLET LAYER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7t-5u-q9i" userLabel="currentLayerLab">
-                    <rect key="frame" x="73.666666666666671" y="214" width="104.00000000000001" height="18"/>
+                    <rect key="frame" x="73.666666666666671" y="248" width="104.00000000000001" height="18"/>
                     <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -195,7 +189,7 @@
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Mil-iG-eVm" secondAttribute="bottom" constant="12" id="2oZ-jR-Hot"/>
                 <constraint firstItem="Mil-iG-eVm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="4J0-k0-tnf"/>
@@ -229,39 +223,42 @@
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="hPj-Qg-7Cw"/>
+                    <exclude reference="pMY-zq-XCN"/>
                     <exclude reference="Jkl-cG-Ej1"/>
                     <exclude reference="SPp-pg-8B6"/>
                     <exclude reference="WQg-zp-RjA"/>
-                    <exclude reference="hPj-Qg-7Cw"/>
-                    <exclude reference="pMY-zq-XCN"/>
                 </mask>
             </variation>
             <variation key="heightClass=compact-widthClass=compact">
                 <mask key="constraints">
+                    <exclude reference="hPj-Qg-7Cw"/>
                     <exclude reference="Jkl-cG-Ej1"/>
                     <include reference="WQg-zp-RjA"/>
-                    <exclude reference="hPj-Qg-7Cw"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="constraints">
-                    <include reference="Jkl-cG-Ej1"/>
                     <include reference="hPj-Qg-7Cw"/>
+                    <include reference="Jkl-cG-Ej1"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=regular">
                 <mask key="constraints">
-                    <include reference="SPp-pg-8B6"/>
                     <include reference="pMY-zq-XCN"/>
+                    <include reference="SPp-pg-8B6"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="-89.312977099236633" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
-        <image name="Back Item" width="32" height="32"/>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="Back Item" width="44" height="44"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.19215686274509805" green="0.20784313725490197" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BeigeColor">
+            <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

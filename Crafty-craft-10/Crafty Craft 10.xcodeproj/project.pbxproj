@@ -186,6 +186,8 @@
 		63E876752A2A0C6B00B486B1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 63E876742A2A0C6B00B486B1 /* RealmSwift */; };
 		63EE81AD2A581362005BE8E7 /* AddonEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EE81AB2A581362005BE8E7 /* AddonEditorViewController.xib */; };
 		63F971D62A3721EB005D102E /* BodyPartPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F971D52A3721EA005D102E /* BodyPartPickerViewController.xib */; };
+		6A17D0F42B3D73B50060539E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A17D0F32B3D73B40060539E /* CustomTabBar.swift */; };
+		6A17D0F62B3D9A0F0060539E /* TabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A17D0F52B3D9A0F0060539E /* TabBarItems.swift */; };
 		6A31826D2B3981C7009C5196 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A31826C2B3981C7009C5196 /* Montserrat-Medium.ttf */; };
 		6A31826E2B3981C7009C5196 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A31826C2B3981C7009C5196 /* Montserrat-Medium.ttf */; };
 		6A9F88D02B33257F0058F244 /* Pushwoosh in Frameworks */ = {isa = PBXBuildFile; productRef = 6A9F88CF2B33257F0058F244 /* Pushwoosh */; };
@@ -592,6 +594,8 @@
 		63CC9B342A5CB0C900136801 /* SsvedAddonCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SsvedAddonCollectionCell.xib; sourceTree = "<group>"; };
 		63EE81AB2A581362005BE8E7 /* AddonEditorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddonEditorViewController.xib; sourceTree = "<group>"; };
 		63F971D52A3721EA005D102E /* BodyPartPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BodyPartPickerViewController.xib; sourceTree = "<group>"; };
+		6A17D0F32B3D73B40060539E /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		6A17D0F52B3D9A0F0060539E /* TabBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItems.swift; sourceTree = "<group>"; };
 		6A31826C2B3981C7009C5196 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		6AD8FA5F2B344ADA00C9CC3D /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		6AD931D52B332D6D00961FC8 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -1754,6 +1758,8 @@
 			isa = PBXGroup;
 			children = (
 				F4DB05CE2A02959000E4C43D /* TabBarViewController.swift */,
+				6A17D0F32B3D73B40060539E /* CustomTabBar.swift */,
+				6A17D0F52B3D9A0F0060539E /* TabBarItems.swift */,
 				F4DB05D72A0295FD00E4C43D /* Create Tab */,
 				F4DB05D82A02961600E4C43D /* Content Tab */,
 				03AFFD362AD7F3F7002A131D /* Seed Tab */,
@@ -1891,7 +1897,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = "Noname Digital";
 				TargetAttributes = {
 					6F6F55A52A4ED1090093F556 = {
@@ -2119,6 +2125,7 @@
 				035166902AFA3F0900035087 /* ConstraintLayoutGuide.swift in Sources */,
 				F438AA1E2A14BB0D007469E7 /* HueDelegate.swift in Sources */,
 				03A674CD2AC316650062A3A8 /* UIViewController+Alert.swift in Sources */,
+				6A17D0F62B3D9A0F0060539E /* TabBarItems.swift in Sources */,
 				03A8F76A2ADED23E00B87A4A /* ServerTableViewCell.swift in Sources */,
 				F438AA202A14C442007469E7 /* RSColourSlider.swift in Sources */,
 				035166A12AFA3F0900035087 /* ConstraintLayoutSupportDSL.swift in Sources */,
@@ -2133,6 +2140,7 @@
 				F438AA172A14BB0D007469E7 /* HueView.swift in Sources */,
 				63A8C1532A32045F005A117B /* NSLayoutConstraint_Ext.swift in Sources */,
 				6370382C2A5953DE0003A220 /* AddonEditorModel.swift in Sources */,
+				6A17D0F42B3D73B50060539E /* CustomTabBar.swift in Sources */,
 				635281992A589ECB00F3EB23 /* RealmEntities.swift in Sources */,
 				F41F6D062A20FC6B00F72851 /* ListTableViewCell.swift in Sources */,
 				C0398D8C2A52D42600A48138 /* Extension_EditorSkinModel+hideBodyParts.swift in Sources */,
@@ -2451,6 +2459,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -2483,6 +2493,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2511,6 +2522,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -2543,6 +2556,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

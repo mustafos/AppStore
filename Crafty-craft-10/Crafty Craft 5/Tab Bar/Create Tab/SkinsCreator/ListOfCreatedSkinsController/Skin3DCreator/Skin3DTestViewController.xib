@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,15 +13,15 @@
         <array key="Blinker-Regular.ttf">
             <string>Blinker-Regular</string>
         </array>
-        <array key="Blinker-SemiBold.ttf">
-            <string>Blinker-SemiBold</string>
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
         </array>
         <array key="Poppins-SemiBold.ttf">
             <string>Poppins-SemiBold</string>
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Skin3DTestViewController" customModule="Crafty_Craft_5" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Skin3DTestViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
             <connections>
                 <outlet property="brashSizeView" destination="d20-uq-IDt" id="tND-CG-abk"/>
                 <outlet property="color3DCollection" destination="VKe-nd-IgU" id="Dcc-YM-qkX"/>
@@ -65,16 +65,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhO-Vb-FiW" userLabel="Navigation Bar">
-                    <rect key="frame" x="0.0" y="59" width="430" height="50"/>
+                    <rect key="frame" x="0.0" y="59" width="430" height="84"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKIN EDITOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wy-8u-y8C">
-                            <rect key="frame" x="50" y="8" width="330" height="34"/>
-                            <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="28"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <rect key="frame" x="140" y="0.0" width="150" height="84"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                            <color key="textColor" name="BeigeColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkP-RY-yMd" userLabel="Home Button">
-                            <rect key="frame" x="16" y="12" width="26" height="26"/>
+                            <rect key="frame" x="20" y="20" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="OkP-RY-yMd" secondAttribute="height" multiplier="1:1" id="ote-Qm-cDC"/>
                             </constraints>
@@ -85,7 +85,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6A-Ls-lEA">
-                            <rect key="frame" x="388" y="12" width="26" height="26"/>
+                            <rect key="frame" x="366" y="20" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="g6A-Ls-lEA" secondAttribute="height" multiplier="1:1" id="4y3-Nn-mM2"/>
                             </constraints>
@@ -98,23 +98,25 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="8wy-8u-y8C" secondAttribute="bottom" constant="8" id="4BX-2a-55n"/>
-                        <constraint firstItem="8wy-8u-y8C" firstAttribute="leading" secondItem="OkP-RY-yMd" secondAttribute="trailing" constant="8" id="5oA-4T-eQP"/>
-                        <constraint firstItem="OkP-RY-yMd" firstAttribute="top" secondItem="lhO-Vb-FiW" secondAttribute="top" constant="12" id="GUv-VR-jRC"/>
-                        <constraint firstAttribute="bottom" secondItem="g6A-Ls-lEA" secondAttribute="bottom" constant="12" id="L2O-X1-KA1"/>
-                        <constraint firstItem="8wy-8u-y8C" firstAttribute="top" secondItem="lhO-Vb-FiW" secondAttribute="top" constant="8" id="QmO-S9-mTg"/>
-                        <constraint firstItem="OkP-RY-yMd" firstAttribute="leading" secondItem="lhO-Vb-FiW" secondAttribute="leading" constant="16" id="UM9-Ue-mUW"/>
-                        <constraint firstAttribute="height" constant="50" id="W18-cf-acF">
+                        <constraint firstAttribute="bottom" secondItem="8wy-8u-y8C" secondAttribute="bottom" id="4BX-2a-55n"/>
+                        <constraint firstItem="8wy-8u-y8C" firstAttribute="centerY" secondItem="lhO-Vb-FiW" secondAttribute="centerY" id="4St-BT-5Gv"/>
+                        <constraint firstItem="8wy-8u-y8C" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OkP-RY-yMd" secondAttribute="trailing" constant="8" id="5oA-4T-eQP"/>
+                        <constraint firstItem="OkP-RY-yMd" firstAttribute="top" secondItem="lhO-Vb-FiW" secondAttribute="top" constant="20" id="GUv-VR-jRC"/>
+                        <constraint firstAttribute="bottom" secondItem="g6A-Ls-lEA" secondAttribute="bottom" constant="20" id="L2O-X1-KA1"/>
+                        <constraint firstItem="8wy-8u-y8C" firstAttribute="top" secondItem="lhO-Vb-FiW" secondAttribute="top" id="QmO-S9-mTg"/>
+                        <constraint firstItem="OkP-RY-yMd" firstAttribute="leading" secondItem="lhO-Vb-FiW" secondAttribute="leading" constant="20" id="UM9-Ue-mUW"/>
+                        <constraint firstAttribute="height" constant="84" id="W18-cf-acF">
                             <variation key="heightClass=regular-widthClass=regular" constant="64"/>
                         </constraint>
-                        <constraint firstAttribute="trailing" secondItem="g6A-Ls-lEA" secondAttribute="trailing" constant="16" id="ehK-g1-up1"/>
-                        <constraint firstItem="g6A-Ls-lEA" firstAttribute="top" secondItem="lhO-Vb-FiW" secondAttribute="top" constant="12" id="wy2-9g-vuY"/>
-                        <constraint firstItem="g6A-Ls-lEA" firstAttribute="leading" secondItem="8wy-8u-y8C" secondAttribute="trailing" constant="8" id="xyW-Fz-9ld"/>
-                        <constraint firstAttribute="bottom" secondItem="OkP-RY-yMd" secondAttribute="bottom" constant="12" id="z1r-jj-QO0"/>
+                        <constraint firstAttribute="trailing" secondItem="g6A-Ls-lEA" secondAttribute="trailing" constant="20" id="ehK-g1-up1"/>
+                        <constraint firstItem="8wy-8u-y8C" firstAttribute="centerX" secondItem="lhO-Vb-FiW" secondAttribute="centerX" id="pRs-30-hpg"/>
+                        <constraint firstItem="g6A-Ls-lEA" firstAttribute="top" secondItem="lhO-Vb-FiW" secondAttribute="top" constant="20" id="wy2-9g-vuY"/>
+                        <constraint firstItem="g6A-Ls-lEA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8wy-8u-y8C" secondAttribute="trailing" constant="8" id="xyW-Fz-9ld"/>
+                        <constraint firstAttribute="bottom" secondItem="OkP-RY-yMd" secondAttribute="bottom" constant="20" id="z1r-jj-QO0"/>
                     </constraints>
                 </view>
                 <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEn-mf-WOc">
-                    <rect key="frame" x="0.0" y="148" width="430" height="586.33333333333337"/>
+                    <rect key="frame" x="0.0" y="182" width="430" height="552.33333333333337"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </sceneKitView>
@@ -193,7 +195,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ma-6A-IHA">
                             <rect key="frame" x="0.0" y="79.333333333333258" width="430" height="118.33333333333331"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TI5-yZ-uEY" userLabel="Custom Tool Picker" customClass="CustomToolPickerView" customModule="Crafty_Craft_5" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TI5-yZ-uEY" userLabel="Custom Tool Picker" customClass="CustomToolPickerView" customModule="Crafty_Craft_10" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="430" height="118.33333333333333"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KwF-8J-KY2">
@@ -327,7 +329,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-0j-o7f" userLabel="Fill View Container">
-                                                    <rect key="frame" x="208.33333333333337" y="0.0" width="61.333333333333314" height="64.333333333333329"/>
+                                                    <rect key="frame" x="208.33333333333334" y="0.0" width="61.333333333333343" height="64.333333333333329"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5w-2X-H7d" userLabel="Fill Button">
                                                             <rect key="frame" x="20.666666666666657" y="16.333333333333371" width="20" height="20"/>
@@ -476,7 +478,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glY-bF-pQp">
-                    <rect key="frame" x="358" y="148" width="56" height="56"/>
+                    <rect key="frame" x="358" y="182" width="56" height="56"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="56" id="ejN-7c-1g5"/>
                         <constraint firstAttribute="height" constant="56" id="q9M-uh-Yq0"/>
@@ -487,7 +489,7 @@
                         <action selector="rotationCameraControllButtonAction:" destination="-1" eventType="touchUpInside" id="Ojb-DH-Ab0"/>
                     </connections>
                 </button>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d20-uq-IDt" userLabel="BrashSizeView" customClass="BrashSizeView" customModule="Crafty_Craft_5" customModuleProvider="target">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d20-uq-IDt" userLabel="BrashSizeView" customClass="BrashSizeView" customModule="Crafty_Craft_10" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="664.33333333333337" width="430" height="70"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -495,7 +497,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY NEW SKIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiI-Mh-Q6Y">
-                    <rect key="frame" x="8" y="117" width="414" height="31"/>
+                    <rect key="frame" x="8" y="151" width="414" height="31"/>
                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="22"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -503,9 +505,9 @@
                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="26"/>
                     </variation>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfN-nT-Ult" customClass="SmallModelView" customModule="Crafty_Craft_5" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfN-nT-Ult" customClass="SmallModelView" customModule="Crafty_Craft_10" customModuleProvider="target">
                     <rect key="frame" x="20.000000000000007" y="598" width="116.66666666666669" height="116.33333333333337"/>
-                    <color key="backgroundColor" name="lightGreenBachgroundColor"/>
+                    <color key="backgroundColor" name="YellowSelectiveColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="MfN-nT-Ult" secondAttribute="height" multiplier="1:1" id="fuZ-MT-D7r"/>
                     </constraints>
@@ -552,14 +554,14 @@
     </objects>
     <resources>
         <image name="3drotate" width="56" height="56"/>
-        <image name="Back Item" width="32" height="32"/>
+        <image name="Back Item" width="44" height="44"/>
         <image name="Eraser Item" width="25" height="25"/>
         <image name="Fill Item" width="25" height="25"/>
         <image name="Green Background" width="390" height="844"/>
         <image name="Noise Item" width="25" height="25"/>
         <image name="Pencil Item" width="25" height="25"/>
         <image name="Picker Item" width="20" height="20"/>
-        <image name="Save Item" width="32" height="32"/>
+        <image name="Save Item" width="44" height="44"/>
         <image name="Undo Item" width="25" height="25"/>
         <image name="dropperNonSelected" width="24" height="24"/>
         <image name="eraserNonSelected" width="25" height="25"/>
@@ -571,6 +573,12 @@
         <image name="paletteSelected" width="25" height="25"/>
         <image name="pencilNonSelected" width="25" height="25"/>
         <image name="undoNonSelected" width="25" height="25"/>
+        <namedColor name="BeigeColor">
+            <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowSelectiveColor">
+            <color red="0.97254901960784312" green="0.80784313725490198" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="blackCCRedesign">
             <color red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

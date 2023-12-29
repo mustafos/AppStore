@@ -1,7 +1,6 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-    
     // MARK: - Private properties -
     private let isIpad = Device.iPad
     
@@ -16,8 +15,8 @@ class TabBarViewController: UITabBarController {
         var title: String? = viewController.tabBarTitle
         
         if isIpad {
-            selectedImage = UIImage.resizedImage(named: "Content TabBar Icon", size: CGSize(width: 24, height: 24))
-            unselectedImage = UIImage.resizedImage(named: "Content TabBar Icon", size: CGSize(width: 24, height: 24))
+            selectedImage = UIImage.resizedImage(named: "content", size: CGSize(width: 24, height: 24))
+            unselectedImage = UIImage.resizedImage(named: "content", size: CGSize(width: 24, height: 24))
         }
         viewController.tabBarItem = UITabBarItem(title: title, image: unselectedImage, selectedImage: selectedImage)
         
@@ -32,8 +31,8 @@ class TabBarViewController: UITabBarController {
         var title: String? = viewController.tabBarTitle
         
         if isIpad {
-            selectedImage = UIImage.resizedImage(named: "Create TabBar Icon", size: CGSize(width: 24, height: 24))
-            unselectedImage = UIImage.resizedImage(named: "Create TabBar Icon", size: CGSize(width: 24, height: 24))
+            selectedImage = UIImage.resizedImage(named: "create", size: CGSize(width: 24, height: 24))
+            unselectedImage = UIImage.resizedImage(named: "create", size: CGSize(width: 24, height: 24))
         }
         
         viewController.tabBarItem = UITabBarItem(title: title, image: unselectedImage, selectedImage: selectedImage)
@@ -49,8 +48,8 @@ class TabBarViewController: UITabBarController {
         var title: String? = viewController.tabBarTitle
         
         if isIpad {
-            selectedImage = UIImage.resizedImage(named: "Seed TabBar Icon", size: CGSize(width: 24, height: 24))
-            unselectedImage = UIImage.resizedImage(named: "Seed TabBar Icon", size: CGSize(width: 24, height: 24))
+            selectedImage = UIImage.resizedImage(named: "seeds", size: CGSize(width: 24, height: 24))
+            unselectedImage = UIImage.resizedImage(named: "seeds", size: CGSize(width: 24, height: 24))
         }
         
         viewController.tabBarItem = UITabBarItem(title: title, image: unselectedImage, selectedImage: selectedImage)
@@ -66,8 +65,8 @@ class TabBarViewController: UITabBarController {
         var title: String? = viewController.tabBarTitle
         
         if isIpad {
-            selectedImage = UIImage.resizedImage(named: "Servers TabBar Icon", size: CGSize(width: 24, height: 24))
-            unselectedImage = UIImage.resizedImage(named: "Servers TabBar Icon", size: CGSize(width: 24, height: 24))
+            selectedImage = UIImage.resizedImage(named: "servers", size: CGSize(width: 24, height: 24))
+            unselectedImage = UIImage.resizedImage(named: "servers", size: CGSize(width: 24, height: 24))
         }
         
         viewController.tabBarItem = UITabBarItem(title: title, image: unselectedImage, selectedImage: selectedImage)
@@ -136,11 +135,13 @@ class TabBarViewController: UITabBarController {
         tabBar.tintColor = UIColor(named: "BeigeColor")
         tabBar.unselectedItemTintColor = UIColor(named: "EerieBlackColor")
     }
+    
     private func setupManagers() {
         self.networkingMonitor.delegate = self
     }
 }
 
+// MARK: - NetworkStatusMonitorDelegate
 extension TabBarViewController: NetworkStatusMonitorDelegate {
     func goodInnet() {}
     

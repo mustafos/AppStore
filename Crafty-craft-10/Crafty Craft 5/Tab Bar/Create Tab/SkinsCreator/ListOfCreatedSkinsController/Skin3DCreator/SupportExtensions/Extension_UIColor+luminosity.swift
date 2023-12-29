@@ -44,7 +44,7 @@ fileprivate extension CGFloat {
 extension UIColor {
     static let blue = UIColor(hex: 0x5690FF)
     static let lightBlue = UIColor(hex: 0xEDF3FF)
-    static let background = UIColor(hex: 0xF8FAFF)
+//    static let background = UIColor(hex: 0x4C8BE)
 
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")

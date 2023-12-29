@@ -8,9 +8,47 @@
 
 import SwiftUI
 
+enum Tab: String, CaseIterable {
+    case create
+    case content
+    case seeds
+    case servers
+}
+
 struct CustomTabBar: View {
+    @State private var selectedTab: Tab = .create
+    
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            VStack {
+                TabView(selection: $selectedTab) {
+                    ForEach(Tab.allCases, id: \.rawValue) { tab in
+                        Group {
+                            switch tab {
+                            case .create:
+                                Text("Hello")
+                            case .content:
+                                Text("Hello")
+                            case .seeds:
+                                Text("Hello")
+                            case .servers:
+                                Text("Hello")
+                            }
+                        }
+                        .tag(tab)
+                        .ignoresSafeArea()
+                    }
+                }
+            }
+            VStack {
+                Spacer()
+                TabBarItems(selectedTab: $selectedTab)
+            }
+        }
     }
 }
 

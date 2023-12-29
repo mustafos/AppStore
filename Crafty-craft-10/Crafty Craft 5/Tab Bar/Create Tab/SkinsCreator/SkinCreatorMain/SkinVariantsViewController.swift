@@ -34,59 +34,69 @@ class SkinVariantsViewController: UIViewController {
     
     var state: State = .new
     
+    var blurEffectView: UIVisualEffectView?
+    
     // define lazy views
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.frame =  CGRectMake(0, 0, self.view.frame.width - buttonHorizontalOffset*2, 26)
+        label.frame =  CGRectMake(0, 0, self.view.frame.width - buttonHorizontalOffset * 2, 26)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.heightAnchor.constraint(equalToConstant: titleHeight).isActive = true
         label.textAlignment = .center
-        label.textColor = .white
-        label.font = UIFont.montserratFont(.semiBold, size: 22)
+        label.textColor = UIColor(named: "BeigeColor")
+        label.font = UIFont(name: "Montserrat-Bold", size: 22)
         label.text = state == .new ? "NEW SKIN" : "EDIT SKIN"
-        label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
     
     
     lazy var createNew2dButton: UIButton = {
         let button = UIButton()
-        button.frame = CGRectMake(0, 0, self.view.frame.width - buttonHorizontalOffset*2, buttonHeight)
+        button.frame = CGRectMake(0, 0, self.view.frame.width - buttonHorizontalOffset * 2, buttonHeight)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
         button.setTitle("Create New 2D", for: .normal)
-        button.titleLabel?.font = UIFont.montserratFont(.semiBold, size: 16)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .white
-        button.cornerRadius = buttonHeight/2
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 18)
+        button.setTitleColor(UIColor(named: "EerieBlackColor"), for: .normal)
+        button.backgroundColor = UIColor(named: "YellowSelectiveColor")
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        button.clipsToBounds = true
+        button.cornerRadius = buttonHeight / 2
         button.addTarget(self, action: #selector(createNew2dButtonTapped), for: .touchUpInside)
         return button
     }()
     
     lazy var createNew3dButton: UIButton = {
         let button = UIButton()
-        button.frame = CGRectMake(0, 0, self.view.frame.width - buttonHorizontalOffset*2, buttonHeight)
+        button.frame = CGRectMake(0, 0, self.view.frame.width - buttonHorizontalOffset * 2, buttonHeight)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
         button.setTitle("Create New 3D", for: .normal)
-        button.titleLabel?.font = UIFont.montserratFont(.semiBold, size: 16)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .white
-        button.cornerRadius = buttonHeight/2
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 18)
+        button.setTitleColor(UIColor(named: "EerieBlackColor"), for: .normal)
+        button.backgroundColor = UIColor(named: "YellowSelectiveColor")
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        button.clipsToBounds = true
+        button.cornerRadius = buttonHeight / 2
         button.addTarget(self, action: #selector(createNew3dButtonTapped), for: .touchUpInside)
         return button
     }()
     
     lazy var createNew3d128Button: UIButton = {
         let button = UIButton()
-        button.frame = CGRectMake(0, 0, self.view.frame.width - buttonHorizontalOffset*2, buttonHeight)
+        button.frame = CGRectMake(0, 0, self.view.frame.width - buttonHorizontalOffset * 2, buttonHeight)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
         button.setTitle("Create New 3D (128*128)", for: .normal)
-        button.titleLabel?.font = UIFont.montserratFont(.semiBold, size: 16)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .white
-        button.cornerRadius = buttonHeight/2
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 18)
+        button.setTitleColor(UIColor(named: "EerieBlackColor"), for: .normal)
+        button.backgroundColor = UIColor(named: "YellowSelectiveColor")
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        button.clipsToBounds = true
+        button.cornerRadius = buttonHeight / 2
         button.addTarget(self, action: #selector(createNew3d128ButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -97,52 +107,59 @@ class SkinVariantsViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
         button.setTitle("Import", for: .normal)
-        button.titleLabel?.font = UIFont.montserratFont(.semiBold, size: 16)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .white
-        button.cornerRadius = buttonHeight/2
+        button.setImage(UIImage(named: "Import Button"), for: .normal)
+        button.configuration?.imagePadding = 10
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 18)
+        button.setTitleColor(UIColor(named: "EerieBlackColor"), for: .normal)
+        button.backgroundColor = UIColor(named: "YellowSelectiveColor")
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        button.clipsToBounds = true
+        button.cornerRadius = buttonHeight / 2
         button.addTarget(self, action: #selector(importButtonTapped), for: .touchUpInside)
         return button
     }()
     
     lazy var createCancelButton: UIButton = {
         let button = UIButton()
-        button.frame = CGRectMake(0, 0, self.view.frame.width - buttonHorizontalOffset*2, buttonHeight)
+        button.frame = CGRectMake(0, 0, self.view.frame.width - buttonHorizontalOffset * 2, buttonHeight)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
-        button.setTitle("Cancel", for: .normal)
-        button.titleLabel?.font = UIFont.montserratFont(.semiBold, size: 16)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .white
-        button.cornerRadius = buttonHeight/2
+        button.setImage(UIImage(named: "Cancel Button"), for: .normal)
         button.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         return button
     }()
     
     lazy var edit2dButton: UIButton = {
         let button = UIButton()
-        button.frame = CGRectMake(0, 0, self.view.frame.width - buttonHorizontalOffset*2, buttonHeight)
+        button.frame = CGRectMake(0, 0, self.view.frame.width - buttonHorizontalOffset * 2, buttonHeight)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
         button.setTitle("Edit in 2D", for: .normal)
-        button.titleLabel?.font = UIFont.montserratFont(.semiBold, size: 16)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .white
-        button.cornerRadius = buttonHeight/2
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 18)
+        button.setTitleColor(UIColor(named: "EerieBlackColor"), for: .normal)
+        button.backgroundColor = UIColor(named: "YellowSelectiveColor")
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        button.clipsToBounds = true
+        button.cornerRadius = buttonHeight / 2
         button.addTarget(self, action: #selector(edit2dButtonTapped), for: .touchUpInside)
         return button
     }()
     
     lazy var edit3dButton: UIButton = {
         let button = UIButton()
-        button.frame = CGRectMake(0, 0, self.view.frame.width - buttonHorizontalOffset*2, buttonHeight)
+        button.frame = CGRectMake(0, 0, self.view.frame.width - buttonHorizontalOffset * 2, buttonHeight)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
         button.setTitle("Edit in 3D", for: .normal)
-        button.titleLabel?.font = UIFont.montserratFont(.semiBold, size: 16)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .white
-        button.cornerRadius = buttonHeight/2
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 18)
+        button.setTitleColor(UIColor(named: "EerieBlackColor"), for: .normal)
+        button.backgroundColor = UIColor(named: "YellowSelectiveColor")
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        button.clipsToBounds = true
+        button.cornerRadius = buttonHeight / 2
         button.addTarget(self, action: #selector(edit3dButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -196,14 +213,14 @@ class SkinVariantsViewController: UIViewController {
         stackView.axis = .vertical
         stackView.distribution = .fill
 
-        stackView.spacing = 16.0
+        stackView.spacing = 12.0
         return stackView
     }()
     
     lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 16
+        view.backgroundColor = .clear
+//        view.layer.cornerRadius = 16
         view.clipsToBounds = true
         return view
     }()
@@ -211,7 +228,7 @@ class SkinVariantsViewController: UIViewController {
     let maxDimmedAlpha: CGFloat = 0.6
     lazy var dimmedView: UIView = {
         let view = UIView()
-        view.backgroundColor = .black
+        view.backgroundColor = .black /// blure
         view.alpha = maxDimmedAlpha
         return view
     }()
@@ -220,9 +237,9 @@ class SkinVariantsViewController: UIViewController {
     var defaultHeight: CGFloat {
         switch state {
         case .new:
-            return buttonHeight*5 + titleHeight + itemSpacing*7 + bottomOffset
+            return buttonHeight * 5 + titleHeight + itemSpacing * 7 + bottomOffset
         case .edit:
-            return buttonHeight*3 + titleHeight + itemSpacing*4 + bottomOffset
+            return buttonHeight * 3 + titleHeight + itemSpacing * 4 + bottomOffset
         }
     }
     
@@ -261,6 +278,21 @@ class SkinVariantsViewController: UIViewController {
     
     func setupView() {
         view.backgroundColor = .clear
+        
+        // Add dimmed view as a subview
+        view.addSubview(dimmedView)
+        
+        // Add blur effect
+        let blurEffect = UIBlurEffect(style: .dark)
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView?.frame = view.bounds
+        blurEffectView?.alpha = 0
+        
+        // Add the blur effect view as a subview
+        view.addSubview(blurEffectView!)
+        
+        // Add the container view as the last subview
+        view.addSubview(containerView)
     }
     
     func setupConstraints() {
@@ -270,8 +302,7 @@ class SkinVariantsViewController: UIViewController {
         dimmedView.translatesAutoresizingMaskIntoConstraints = false
         containerView.translatesAutoresizingMaskIntoConstraints = false
         
-        containerView.backgroundColor = UIColor(named: "greenCCRedesign")
-        
+        containerView.backgroundColor = .clear
         containerView.addSubview(contentStackView)
         contentStackView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -408,5 +439,4 @@ class SkinVariantsViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-
 }

@@ -16,7 +16,7 @@ class SkinEditorCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        backgroundContainerView.roundCorners(12)
+        backgroundContainerView.roundCorners(30)
         backgroundColor = .clear
     }
     

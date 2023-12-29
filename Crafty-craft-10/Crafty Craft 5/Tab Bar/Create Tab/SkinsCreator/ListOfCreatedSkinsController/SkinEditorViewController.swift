@@ -55,8 +55,8 @@ class SkinEditorViewController: UIViewController {
     
     private func setupBackground() {
         let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "Green Background")
-        backgroundImageView.contentMode = .scaleAspectFill
+//        backgroundImageView.image = UIImage(named: "Green Background")
+//        backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)
@@ -284,8 +284,8 @@ extension SkinEditorViewController {
 extension SkinEditorViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = collectionView.frame.size.width / 2 - 5
-        let cellHeight = cellWidth * 1.3
+        let cellWidth = collectionView.frame.size.width /*/ 2 - 5*/
+        let cellHeight = cellWidth /** 1.3*/
         
         return CGSize(width: cellWidth, height: cellHeight)
     }

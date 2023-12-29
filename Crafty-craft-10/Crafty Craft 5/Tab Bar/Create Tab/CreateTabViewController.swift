@@ -15,7 +15,7 @@ final class CreateTabViewController: UIViewController {
     // MARK: - Properties
     
     var alertWindow: UIWindow?
-    var blurView: UIVisualEffectView?
+    var blurEffectView: UIVisualEffectView?
     private var state: CreateTabState = .skin {
         didSet {
             self.updateCollectionForCurrentState()

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -39,15 +39,15 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" horizontalHuggingPriority="255" verticalHuggingPriority="255" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FFG-T6-bmk" userLabel="NavigationBarContainer">
-                    <rect key="frame" x="0.0" y="44" width="414" height="84"/>
+                <view contentMode="scaleToFill" horizontalHuggingPriority="255" verticalHuggingPriority="255" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" translatesAutoresizingMaskIntoConstraints="NO" id="FFG-T6-bmk" userLabel="NavigationBarContainer">
+                    <rect key="frame" x="0.0" y="59" width="430" height="84"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCC-6w-cQF" userLabel="SearchButton">
-                            <rect key="frame" x="350" y="20" width="44" height="44"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCC-6w-cQF" userLabel="SearchButton">
+                            <rect key="frame" x="366" y="20" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="JCC-6w-cQF" secondAttribute="height" multiplier="1:1" id="Bcv-tt-gah"/>
                             </constraints>
@@ -57,8 +57,8 @@
                                 <action selector="onNavBarSearchButtonTapped:" destination="-1" eventType="touchUpInside" id="qUg-hw-Z6y"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qh3-g6-eWn">
-                            <rect key="frame" x="160.33333333333331" y="8" width="93.333333333333343" height="68"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qh3-g6-eWn">
+                            <rect key="frame" x="168.33333333333334" y="8" width="93.333333333333343" height="68"/>
                             <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
                             <color key="textColor" name="BeigeColor"/>
                             <nil key="highlightedColor"/>
@@ -74,32 +74,32 @@
                                 <action selector="settingsBtnTapped:" destination="-1" eventType="touchUpInside" id="mmR-eE-nKz"/>
                             </connections>
                         </button>
-                        <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-Sf-Tdp" customClass="SearchBarView" customModule="Crafty_Craft_10" customModuleProvider="target">
-                            <rect key="frame" x="20" y="20" width="374" height="44"/>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-Sf-Tdp" customClass="SearchBarView" customModule="Crafty_Craft_10" customModuleProvider="target">
+                            <rect key="frame" x="20" y="20" width="390" height="44"/>
                         </view>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="Iex-kb-vSV"/>
                     <constraints>
-                        <constraint firstItem="ocf-Q7-C7u" firstAttribute="top" secondItem="Iex-kb-vSV" secondAttribute="top" constant="20" id="37H-Dn-gt9"/>
+                        <constraint firstItem="JCC-6w-cQF" firstAttribute="top" secondItem="Iex-kb-vSV" secondAttribute="top" constant="20" id="7XO-xN-ZL0"/>
+                        <constraint firstItem="Qh3-g6-eWn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ocf-Q7-C7u" secondAttribute="trailing" constant="8" id="EWe-It-sPm"/>
                         <constraint firstItem="Qh3-g6-eWn" firstAttribute="centerX" secondItem="FFG-T6-bmk" secondAttribute="centerX" id="J9t-T8-Vgb"/>
+                        <constraint firstItem="Iex-kb-vSV" firstAttribute="trailing" secondItem="JCC-6w-cQF" secondAttribute="trailing" constant="20" id="KAt-sc-5Pi"/>
                         <constraint firstItem="Iex-kb-vSV" firstAttribute="bottom" secondItem="eHs-Sf-Tdp" secondAttribute="bottom" constant="20" id="M2s-tl-Igm"/>
-                        <constraint firstItem="Iex-kb-vSV" firstAttribute="bottom" secondItem="ocf-Q7-C7u" secondAttribute="bottom" constant="20" id="QC0-jo-Z3h"/>
-                        <constraint firstItem="Iex-kb-vSV" firstAttribute="bottom" secondItem="JCC-6w-cQF" secondAttribute="bottom" constant="20" id="RCv-Ad-0zt"/>
-                        <constraint firstItem="JCC-6w-cQF" firstAttribute="top" secondItem="Iex-kb-vSV" secondAttribute="top" constant="20" id="Tw4-lo-1ua"/>
+                        <constraint firstItem="JCC-6w-cQF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qh3-g6-eWn" secondAttribute="trailing" constant="8" id="MbS-1Y-LXa"/>
+                        <constraint firstItem="ocf-Q7-C7u" firstAttribute="top" secondItem="Iex-kb-vSV" secondAttribute="top" constant="20" id="PMl-4m-uE4"/>
+                        <constraint firstItem="Iex-kb-vSV" firstAttribute="bottom" secondItem="ocf-Q7-C7u" secondAttribute="bottom" constant="20" id="TxG-kF-pfu"/>
+                        <constraint firstItem="Iex-kb-vSV" firstAttribute="bottom" secondItem="JCC-6w-cQF" secondAttribute="bottom" constant="20" id="UlP-jD-6Za"/>
                         <constraint firstItem="Iex-kb-vSV" firstAttribute="trailing" secondItem="eHs-Sf-Tdp" secondAttribute="trailing" constant="20" id="UwQ-eh-5mF"/>
                         <constraint firstItem="eHs-Sf-Tdp" firstAttribute="top" secondItem="Iex-kb-vSV" secondAttribute="top" constant="20" id="Vks-Iv-pDY"/>
-                        <constraint firstItem="Qh3-g6-eWn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ocf-Q7-C7u" secondAttribute="trailing" constant="8" id="Xbk-1J-MtV"/>
                         <constraint firstAttribute="height" constant="84" id="YZS-jb-76h"/>
                         <constraint firstItem="Qh3-g6-eWn" firstAttribute="top" secondItem="Iex-kb-vSV" secondAttribute="top" constant="8" id="ajk-Gv-0OB"/>
-                        <constraint firstItem="ocf-Q7-C7u" firstAttribute="leading" secondItem="Iex-kb-vSV" secondAttribute="leading" constant="20" id="d44-93-M5l"/>
                         <constraint firstItem="Iex-kb-vSV" firstAttribute="bottom" secondItem="Qh3-g6-eWn" secondAttribute="bottom" constant="8" id="flL-3X-IUc"/>
-                        <constraint firstItem="JCC-6w-cQF" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Qh3-g6-eWn" secondAttribute="trailing" priority="999" constant="96" id="kgl-EM-wMi"/>
                         <constraint firstItem="eHs-Sf-Tdp" firstAttribute="leading" secondItem="Iex-kb-vSV" secondAttribute="leading" constant="20" id="ks6-e6-CIc"/>
-                        <constraint firstItem="Iex-kb-vSV" firstAttribute="trailing" secondItem="JCC-6w-cQF" secondAttribute="trailing" constant="20" id="s7L-c4-jUR"/>
+                        <constraint firstItem="ocf-Q7-C7u" firstAttribute="leading" secondItem="Iex-kb-vSV" secondAttribute="leading" constant="20" id="pgg-WM-bds"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tFp-IV-Kjp" userLabel="Tab Choose Stack View">
-                    <rect key="frame" x="20" y="128" width="382" height="0.0"/>
+                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tFp-IV-Kjp" userLabel="Tab Choose Stack View">
+                    <rect key="frame" x="20" y="143" width="382" height="0.0"/>
                     <subviews>
                         <view contentMode="scaleAspectFit" id="QB2-Xg-5Pu" userLabel="RoundedView">
                             <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="0.0"/>
@@ -176,8 +176,8 @@
                         <constraint firstAttribute="height" id="0Eu-uA-diN"/>
                     </constraints>
                 </stackView>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IGh-VW-faH" userLabel="SegmentControll" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                    <rect key="frame" x="20" y="128" width="374" height="58"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGh-VW-faH" userLabel="SegmentControll" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                    <rect key="frame" x="20" y="143" width="390" height="58"/>
                     <viewLayoutGuide key="safeArea" id="W1J-di-tVu"/>
                     <color key="backgroundColor" name="YellowSelectiveColor"/>
                     <constraints>
@@ -198,15 +198,15 @@
                         <action selector="segmentControlChangeAction:" destination="-1" eventType="valueChanged" id="QDX-fy-uLD"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dAp-YO-bQq" userLabel="Sort Buttons View Container">
-                    <rect key="frame" x="20" y="200" width="374" height="48"/>
+                <view contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="dAp-YO-bQq" userLabel="Sort Buttons View Container">
+                    <rect key="frame" x="20" y="215" width="390" height="48"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="ACz-P3-5lc"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" id="oq0-Va-xSk">
-                    <rect key="frame" x="20" y="256" width="374" height="640"/>
+                    <rect key="frame" x="20" y="283" width="390" height="657"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" name="BackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9HO-b9-DFF">
@@ -226,23 +226,20 @@
             <constraints>
                 <constraint firstItem="FFG-T6-bmk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="45h-ht-Ef4"/>
                 <constraint firstItem="dAp-YO-bQq" firstAttribute="top" secondItem="IGh-VW-faH" secondAttribute="bottom" constant="14" id="6RZ-Di-1a9"/>
-                <constraint firstAttribute="trailing" secondItem="tFp-IV-Kjp" secondAttribute="trailing" constant="20" id="CHc-dQ-1KZ"/>
-                <constraint firstItem="tFp-IV-Kjp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Cox-9k-O1s"/>
+                <constraint firstItem="tFp-IV-Kjp" firstAttribute="leading" secondItem="IGh-VW-faH" secondAttribute="leading" id="8ti-uM-ZqA"/>
                 <constraint firstItem="IGh-VW-faH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="JNp-JP-Jaq"/>
                 <constraint firstItem="IGh-VW-faH" firstAttribute="top" secondItem="tFp-IV-Kjp" secondAttribute="bottom" id="Lpc-lk-Mfw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dAp-YO-bQq" secondAttribute="trailing" constant="20" id="Q5r-z2-NkJ"/>
                 <constraint firstItem="FFG-T6-bmk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Q6Y-2R-QyM"/>
-                <constraint firstItem="IGh-VW-faH" firstAttribute="top" secondItem="FFG-T6-bmk" secondAttribute="bottom" id="QKN-Xn-EVd"/>
                 <constraint firstItem="FFG-T6-bmk" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="UEi-gy-1Y9"/>
                 <constraint firstItem="FFG-T6-bmk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ux9-8r-9fj"/>
                 <constraint firstItem="FFG-T6-bmk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fO3-od-ja5"/>
                 <constraint firstItem="FFG-T6-bmk" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hkD-ok-DaF"/>
                 <constraint firstItem="dAp-YO-bQq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="nl4-YW-ltl"/>
-                <constraint firstItem="oq0-Va-xSk" firstAttribute="top" secondItem="dAp-YO-bQq" secondAttribute="bottom" constant="20" id="pUq-pA-VwV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IGh-VW-faH" secondAttribute="trailing" constant="20" id="uoT-43-V9Z"/>
                 <constraint firstItem="tFp-IV-Kjp" firstAttribute="top" secondItem="FFG-T6-bmk" secondAttribute="bottom" id="wHR-G4-Yca"/>
             </constraints>
-            <point key="canvasLocation" x="104.34782608695653" y="18.080357142857142"/>
+            <point key="canvasLocation" x="103.25581395348837" y="18.025751072961373"/>
         </view>
     </objects>
     <resources>
