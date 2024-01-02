@@ -55,8 +55,6 @@ class SkinEditorViewController: UIViewController {
     
     private func setupBackground() {
         let backgroundImageView = UIImageView(frame: view.bounds)
-//        backgroundImageView.image = UIImage(named: "Green Background")
-//        backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddonEditorSelectorViewController" customModule="Crafty_Craft_5" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddonEditorSelectorViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
             <connections>
                 <outlet property="bottomConstrains" destination="nod-sL-lw2" id="iRt-Md-XYU"/>
                 <outlet property="cancelButton" destination="kas-gp-QdI" id="fqm-Dn-oDk"/>
@@ -26,40 +26,37 @@
             <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="Green Background" translatesAutoresizingMaskIntoConstraints="NO" id="7S8-rr-CLh">
-                    <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSs-cV-u3S">
                     <rect key="frame" x="16" y="75" width="398" height="807"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dwE-2r-IJ0">
-                            <rect key="frame" x="8" y="749" width="382" height="50"/>
+                            <rect key="frame" x="8" y="747" width="382" height="52"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kas-gp-QdI">
-                                    <rect key="frame" x="0.0" y="0.0" width="183" height="50"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="183" height="52"/>
+                                    <color key="backgroundColor" name="YellowLightColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="RGU-aV-kts"/>
+                                        <constraint firstAttribute="height" constant="52" id="RGU-aV-kts"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Cancel">
-                                        <fontDescription key="titleFontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="16"/>
-                                        <color key="baseForegroundColor" name="blackCCRedesign"/>
+                                        <fontDescription key="titleFontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                        <color key="baseForegroundColor" name="EerieBlackColor"/>
                                     </buttonConfiguration>
                                     <connections>
                                         <action selector="cancelTapped:" destination="-1" eventType="touchUpInside" id="a9w-Z3-nsi"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEd-th-hiT" userLabel="Done">
-                                    <rect key="frame" x="199" y="0.0" width="183" height="50"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="199" y="0.0" width="183" height="52"/>
+                                    <color key="backgroundColor" name="YellowLightColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="Azt-qS-TEM"/>
+                                        <constraint firstAttribute="height" constant="52" id="Azt-qS-TEM"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Done">
-                                        <fontDescription key="titleFontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="16"/>
-                                        <color key="baseForegroundColor" name="blackCCRedesign"/>
+                                        <fontDescription key="titleFontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                        <color key="baseForegroundColor" name="EerieBlackColor"/>
                                     </buttonConfiguration>
                                     <connections>
                                         <action selector="doneTapped:" destination="-1" eventType="touchUpInside" id="VqS-Sq-IQu"/>
@@ -68,8 +65,8 @@
                             </subviews>
                         </stackView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="eZg-dq-p41">
-                            <rect key="frame" x="10" y="76" width="378" height="599"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <rect key="frame" x="10" y="84" width="378" height="723"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6AB-59-fnK">
                                 <size key="itemSize" width="128" height="128"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -78,22 +75,25 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hw8-a3-2o8" userLabel="Import">
-                            <rect key="frame" x="8" y="683" width="382" height="50"/>
-                            <color key="backgroundColor" name="greenCCRedesign"/>
+                            <rect key="frame" x="8" y="681" width="382" height="50"/>
+                            <color key="backgroundColor" name="EerieBlackColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="qzi-ND-SSe"/>
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Import">
-                                <fontDescription key="titleFontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="16"/>
-                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="titleFontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                                <color key="baseForegroundColor" name="BeigeColor"/>
                             </buttonConfiguration>
                             <connections>
                                 <action selector="importTapped:" destination="-1" eventType="touchUpInside" id="kCe-t4-eKY"/>
                             </connections>
                         </button>
                         <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="L44-Nq-zLr">
-                            <rect key="frame" x="10" y="10" width="373" height="56"/>
+                            <rect key="frame" x="20" y="20" width="358" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Nrt-KB-sgk"/>
+                            </constraints>
                             <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <textInputTraits key="textInputTraits"/>
                             <scopeButtonTitles>
@@ -110,16 +110,16 @@
                             </connections>
                         </searchBar>
                     </subviews>
-                    <color key="backgroundColor" red="0.070588235294117646" green="0.23529411764705882" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="dwE-2r-IJ0" firstAttribute="top" secondItem="Hw8-a3-2o8" secondAttribute="bottom" constant="16" id="2Om-On-L84"/>
-                        <constraint firstItem="L44-Nq-zLr" firstAttribute="leading" secondItem="bSs-cV-u3S" secondAttribute="leading" constant="10" id="3Rh-nd-rBa"/>
-                        <constraint firstItem="L44-Nq-zLr" firstAttribute="top" secondItem="bSs-cV-u3S" secondAttribute="top" constant="10" id="AaI-gP-OO7"/>
-                        <constraint firstAttribute="trailing" secondItem="L44-Nq-zLr" secondAttribute="trailing" constant="15" id="EA9-xl-2c3"/>
-                        <constraint firstItem="Hw8-a3-2o8" firstAttribute="top" secondItem="eZg-dq-p41" secondAttribute="bottom" constant="8" id="KZT-qV-8tO"/>
+                        <constraint firstItem="L44-Nq-zLr" firstAttribute="leading" secondItem="bSs-cV-u3S" secondAttribute="leading" constant="20" id="3Rh-nd-rBa"/>
+                        <constraint firstItem="L44-Nq-zLr" firstAttribute="top" secondItem="bSs-cV-u3S" secondAttribute="top" constant="20" id="AaI-gP-OO7"/>
+                        <constraint firstAttribute="trailing" secondItem="L44-Nq-zLr" secondAttribute="trailing" constant="20" id="EA9-xl-2c3"/>
+                        <constraint firstAttribute="bottom" secondItem="eZg-dq-p41" secondAttribute="bottom" id="KeQ-fa-Kow"/>
                         <constraint firstAttribute="trailing" secondItem="eZg-dq-p41" secondAttribute="trailing" constant="10" id="WHY-j0-u6M"/>
                         <constraint firstItem="dwE-2r-IJ0" firstAttribute="leading" secondItem="bSs-cV-u3S" secondAttribute="leading" constant="8" id="dg6-8W-ujX"/>
-                        <constraint firstItem="eZg-dq-p41" firstAttribute="top" secondItem="L44-Nq-zLr" secondAttribute="bottom" constant="10" id="mQy-3f-qHo"/>
+                        <constraint firstItem="eZg-dq-p41" firstAttribute="top" secondItem="L44-Nq-zLr" secondAttribute="bottom" constant="20" id="mQy-3f-qHo"/>
                         <constraint firstItem="eZg-dq-p41" firstAttribute="leading" secondItem="bSs-cV-u3S" secondAttribute="leading" constant="10" id="qHS-aC-Cfe"/>
                         <constraint firstItem="Hw8-a3-2o8" firstAttribute="leading" secondItem="bSs-cV-u3S" secondAttribute="leading" constant="8" id="tiy-jF-5Kg"/>
                         <constraint firstAttribute="trailing" secondItem="dwE-2r-IJ0" secondAttribute="trailing" constant="8" id="xBX-h5-diN"/>
@@ -129,12 +129,8 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="05W-ZF-eKA"/>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
-                <constraint firstItem="7S8-rr-CLh" firstAttribute="top" secondItem="V7H-aQ-CaC" secondAttribute="top" id="0Fa-gh-65h"/>
-                <constraint firstAttribute="bottom" secondItem="7S8-rr-CLh" secondAttribute="bottom" id="68Y-KR-eZB"/>
-                <constraint firstItem="7S8-rr-CLh" firstAttribute="leading" secondItem="05W-ZF-eKA" secondAttribute="leading" id="EHU-Dx-gbU"/>
-                <constraint firstItem="05W-ZF-eKA" firstAttribute="trailing" secondItem="7S8-rr-CLh" secondAttribute="trailing" id="Rby-6v-F2J"/>
                 <constraint firstItem="bSs-cV-u3S" firstAttribute="leading" secondItem="05W-ZF-eKA" secondAttribute="leading" constant="16" id="XwF-Tj-hau" userLabel="View.leading = Safe Area.leading "/>
                 <constraint firstItem="bSs-cV-u3S" firstAttribute="top" secondItem="05W-ZF-eKA" secondAttribute="top" constant="16" id="gdu-gH-GQn" userLabel="View.top = Safe Area.top "/>
                 <constraint firstItem="05W-ZF-eKA" firstAttribute="bottom" secondItem="bSs-cV-u3S" secondAttribute="bottom" constant="16" id="nod-sL-lw2" userLabel="Safe Area.bottom = View.bottom"/>
@@ -144,12 +140,17 @@
         </view>
     </objects>
     <resources>
-        <image name="Green Background" width="390" height="844"/>
-        <namedColor name="blackCCRedesign">
-            <color red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.19215686274509805" green="0.20784313725490197" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="greenCCRedesign">
-            <color red="0.0" green="0.59215686274509804" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BeigeColor">
+            <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="EerieBlackColor">
+            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowLightColor">
+            <color red="0.98000001907348633" green="0.90600001811981201" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

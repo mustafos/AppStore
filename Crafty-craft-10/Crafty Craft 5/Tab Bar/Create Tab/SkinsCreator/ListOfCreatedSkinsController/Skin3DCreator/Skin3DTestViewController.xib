@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -61,9 +60,6 @@
             <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Green Background" translatesAutoresizingMaskIntoConstraints="NO" id="UER-0E-SS7">
-                    <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhO-Vb-FiW" userLabel="Navigation Bar">
                     <rect key="frame" x="0.0" y="59" width="430" height="84"/>
                     <subviews>
@@ -519,7 +515,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="glY-bF-pQp" secondAttribute="trailing" constant="16" id="29i-qc-CJy"/>
                 <constraint firstAttribute="bottom" secondItem="D10-R1-Ltm" secondAttribute="bottom" id="2Mh-1N-LWs"/>
@@ -530,16 +526,12 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EEn-mf-WOc" secondAttribute="trailing" id="IAY-2Y-FtN"/>
                 <constraint firstItem="MfN-nT-Ult" firstAttribute="bottom" secondItem="EEn-mf-WOc" secondAttribute="bottom" constant="-20" id="J2h-7a-IYv"/>
                 <constraint firstItem="lhO-Vb-FiW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Kz5-jb-ofs"/>
-                <constraint firstItem="UER-0E-SS7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PL4-Hq-pDB"/>
                 <constraint firstItem="d20-uq-IDt" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="RPw-fX-6IB"/>
                 <constraint firstAttribute="trailing" secondItem="D10-R1-Ltm" secondAttribute="trailing" id="StB-V0-IBi"/>
-                <constraint firstAttribute="trailing" secondItem="UER-0E-SS7" secondAttribute="trailing" id="Xho-bU-OMJ"/>
-                <constraint firstAttribute="bottom" secondItem="UER-0E-SS7" secondAttribute="bottom" id="bid-Ez-9HO"/>
                 <constraint firstItem="glY-bF-pQp" firstAttribute="top" secondItem="oiI-Mh-Q6Y" secondAttribute="bottom" id="dBk-om-rOu"/>
                 <constraint firstItem="lhO-Vb-FiW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="doZ-r9-OP0"/>
                 <constraint firstItem="oiI-Mh-Q6Y" firstAttribute="top" secondItem="lhO-Vb-FiW" secondAttribute="bottom" constant="8" id="eJ0-ms-8K7"/>
                 <constraint firstAttribute="trailing" secondItem="oiI-Mh-Q6Y" secondAttribute="trailing" constant="8" id="fHd-FE-HWq"/>
-                <constraint firstItem="UER-0E-SS7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ggh-cR-AGr"/>
                 <constraint firstItem="EEn-mf-WOc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jjV-Fh-hNm"/>
                 <constraint firstItem="MfN-nT-Ult" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="jsS-fV-jwj"/>
                 <constraint firstItem="EEn-mf-WOc" firstAttribute="top" secondItem="oiI-Mh-Q6Y" secondAttribute="bottom" id="jus-x0-FCS"/>
@@ -557,7 +549,6 @@
         <image name="Back Item" width="44" height="44"/>
         <image name="Eraser Item" width="25" height="25"/>
         <image name="Fill Item" width="25" height="25"/>
-        <image name="Green Background" width="390" height="844"/>
         <image name="Noise Item" width="25" height="25"/>
         <image name="Pencil Item" width="25" height="25"/>
         <image name="Picker Item" width="20" height="20"/>
@@ -573,6 +564,9 @@
         <image name="paletteSelected" width="25" height="25"/>
         <image name="pencilNonSelected" width="25" height="25"/>
         <image name="undoNonSelected" width="25" height="25"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.19215686274509805" green="0.20784313725490197" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="BeigeColor">
             <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -585,8 +579,5 @@
         <namedColor name="lightGreenBachgroundColor">
             <color red="0.086274509803921567" green="0.40392156862745099" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

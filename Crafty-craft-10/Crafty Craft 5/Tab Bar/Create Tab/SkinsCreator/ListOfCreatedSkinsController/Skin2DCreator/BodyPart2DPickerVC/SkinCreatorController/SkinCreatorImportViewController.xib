@@ -30,9 +30,6 @@
             <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Green Background" translatesAutoresizingMaskIntoConstraints="NO" id="0vU-9q-4hd">
-                    <rect key="frame" x="0.0" y="-1" width="430" height="933"/>
-                </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Skin Creator Canvas Background" translatesAutoresizingMaskIntoConstraints="NO" id="TwB-uC-Qx8" userLabel="Background Image">
                     <rect key="frame" x="20" y="143" width="390" height="575.33333333333337"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -172,7 +169,6 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
-                <constraint firstItem="0vU-9q-4hd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4Ma-h9-We3"/>
                 <constraint firstItem="1gE-hK-9XT" firstAttribute="top" secondItem="WYr-f4-eo3" secondAttribute="bottom" id="4g6-rL-nAz"/>
                 <constraint firstItem="TwB-uC-Qx8" firstAttribute="top" secondItem="1gE-hK-9XT" secondAttribute="top" id="HX9-o5-EaT"/>
                 <constraint firstItem="1gE-hK-9XT" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.75" priority="998" id="Kwm-GC-xEA"/>
@@ -189,17 +185,13 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1gE-hK-9XT" secondAttribute="trailing" constant="20" id="foI-8P-WpT"/>
                 <constraint firstItem="TwB-uC-Qx8" firstAttribute="leading" secondItem="1gE-hK-9XT" secondAttribute="leading" id="gpt-e4-5lo"/>
                 <constraint firstItem="WYr-f4-eo3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hEE-NP-qcV"/>
-                <constraint firstAttribute="bottom" secondItem="0vU-9q-4hd" secondAttribute="bottom" id="hIz-ma-Lw0"/>
-                <constraint firstAttribute="trailing" secondItem="0vU-9q-4hd" secondAttribute="trailing" id="heH-j8-Dcg"/>
                 <constraint firstItem="1gE-hK-9XT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="p9f-gs-tZj"/>
-                <constraint firstItem="0vU-9q-4hd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-1" id="vWR-3B-HOK"/>
             </constraints>
             <point key="canvasLocation" x="32.093023255813954" y="19.95708154506438"/>
         </view>
     </objects>
     <resources>
         <image name="Back Item" width="44" height="44"/>
-        <image name="Green Background" width="375" height="812"/>
         <image name="Picker Item" width="20" height="20"/>
         <image name="Save Item" width="44" height="44"/>
         <image name="Skin Creator Canvas Background" width="1400" height="2000"/>

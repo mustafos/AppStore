@@ -56,10 +56,10 @@
                     </subviews>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="isi-Sh-GAU">
-                    <rect key="frame" x="20" y="147" width="350" height="204"/>
+                    <rect key="frame" x="20" y="147" width="353" height="204"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfn-HQ-3bj" userLabel="TermsContainer View">
-                            <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms Of Use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5q-vM-Ab3">
                                     <rect key="frame" x="19.999999999999993" y="0.0" width="123.33333333333331" height="60"/>
@@ -68,7 +68,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="angle-small-left_ic" translatesAutoresizingMaskIntoConstraints="NO" id="pkv-la-RDy">
-                                    <rect key="frame" x="306" y="18" width="24" height="24"/>
+                                    <rect key="frame" x="309" y="18" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="pkv-la-RDy" secondAttribute="height" multiplier="1:1" id="D5q-OZ-dIA"/>
                                         <constraint firstAttribute="height" constant="24" id="SC7-ZS-1Nb"/>
@@ -81,16 +81,15 @@
                                 <constraint firstItem="v5q-vM-Ab3" firstAttribute="top" secondItem="kfn-HQ-3bj" secondAttribute="top" id="4H1-Hn-Xsm"/>
                                 <constraint firstItem="v5q-vM-Ab3" firstAttribute="leading" secondItem="kfn-HQ-3bj" secondAttribute="leading" constant="20" id="9L9-ZI-pL0"/>
                                 <constraint firstAttribute="trailing" secondItem="pkv-la-RDy" secondAttribute="trailing" constant="20" id="E2W-KS-Kcx"/>
-                                <constraint firstAttribute="width" constant="350" id="IdM-DB-iN4"/>
                                 <constraint firstAttribute="height" constant="60" id="q4c-HC-KLJ"/>
                                 <constraint firstAttribute="bottom" secondItem="v5q-vM-Ab3" secondAttribute="bottom" id="urL-ls-glo"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucX-LA-fRD" userLabel="PrivacyPolicyContainer View">
-                            <rect key="frame" x="0.0" y="72" width="350" height="60"/>
+                            <rect key="frame" x="0.0" y="72" width="353" height="60"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="angle-small-left_ic" translatesAutoresizingMaskIntoConstraints="NO" id="1WZ-Wo-UJZ">
-                                    <rect key="frame" x="306" y="18" width="24" height="24"/>
+                                    <rect key="frame" x="309" y="18" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="98q-e6-HZ4"/>
                                         <constraint firstAttribute="width" secondItem="1WZ-Wo-UJZ" secondAttribute="height" multiplier="1:1" id="Nk6-jF-ZiX"/>
@@ -113,10 +112,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUk-Xv-jxW" userLabel="ClearCacheContainer View">
-                            <rect key="frame" x="0.0" y="144" width="350" height="60"/>
+                            <rect key="frame" x="0.0" y="144" width="353" height="60"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 KB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3H-wf-td1">
-                                    <rect key="frame" x="288.66666666666669" y="0.0" width="41.333333333333314" height="60"/>
+                                    <rect key="frame" x="291.66666666666669" y="0.0" width="41.333333333333314" height="60"/>
                                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                     <color key="textColor" name="EerieBlackColor"/>
                                     <nil key="highlightedColor"/>
@@ -178,6 +177,7 @@
                 <constraint firstItem="KgL-4j-FRz" firstAttribute="top" secondItem="isi-Sh-GAU" secondAttribute="bottom" constant="39" id="uHf-Lt-9pG"/>
                 <constraint firstItem="g0p-pK-gfY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uU0-XG-s1S"/>
                 <constraint firstItem="KgL-4j-FRz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="viV-4i-VsB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="isi-Sh-GAU" secondAttribute="trailing" constant="20" id="zAt-Et-o0w"/>
             </constraints>
             <point key="canvasLocation" x="-14.503816793893129" y="-12.67605633802817"/>
         </view>

@@ -9,7 +9,6 @@ class AddonOptionsViewController: UIViewController {
     private enum Constant {
         static let listCellIdentifier = "ListTableViewCell"
         static let optionsCellIdentifier = "AddonsOptionsTableViewCell"
-        static let greenBackgroundImageName = "Green Background"
         static let searchItemImageName = "Search Item"
         static let saveItemImageName = "Save Item"
     }
@@ -47,7 +46,6 @@ class AddonOptionsViewController: UIViewController {
     
     private func setupBackground() {
         let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: Constant.greenBackgroundImageName)
         backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(backgroundImageView)

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,60 +16,19 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SsvedAddonCollectionCell" customModule="Crafty_Craft_5" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="184" height="240"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SsvedAddonCollectionCell" customModule="Crafty_Craft_10" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="168" height="252"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="184" height="240"/>
+                <rect key="frame" x="0.0" y="0.0" width="168" height="252"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoM-9O-mq9">
-                        <rect key="frame" x="8" y="8" width="168" height="185"/>
-                        <color key="backgroundColor" name="greenCCRedesign"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="12"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="TdU-ot-F7O" customClass="CustomImageLoader" customModule="Crafty_Craft_5" customModuleProvider="target">
-                        <rect key="frame" x="8" y="8" width="168" height="185"/>
-                    </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQL-QM-eIB" userLabel="deleteBtn">
-                        <rect key="frame" x="132" y="16" width="36" height="36"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="GiW-lv-UQW">
-                                <variation key="heightClass=regular-widthClass=regular" constant="36"/>
-                            </constraint>
-                            <constraint firstAttribute="width" secondItem="TQL-QM-eIB" secondAttribute="height" multiplier="1:1" id="tzY-5r-S2h"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" backgroundImage="delete button"/>
-                        <connections>
-                            <action selector="deleteBtnTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3jo-po-vey"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzX-Ye-Kzw" userLabel="downloadBtn">
-                        <rect key="frame" x="132" y="62" width="36" height="36"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="vzX-Ye-Kzw" secondAttribute="height" multiplier="1:1" id="fqG-Wo-SqV"/>
-                            <constraint firstAttribute="height" constant="24" id="oTg-iA-LtZ">
-                                <variation key="heightClass=regular-widthClass=regular" constant="36"/>
-                            </constraint>
-                        </constraints>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" backgroundImage="download button"/>
-                        <connections>
-                            <action selector="downLoadBtnTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="tvW-qM-1r0"/>
-                        </connections>
-                    </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ee-jI-TSY">
-                        <rect key="frame" x="8" y="201" width="168" height="31"/>
+                        <rect key="frame" x="12" y="12" width="144" height="40"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="x6b-xR-2ZG">
-                                <rect key="frame" x="12" y="3.5" width="144" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="x6b-xR-2ZG">
+                                <rect key="frame" x="12" y="8" width="44.5" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -83,10 +42,7 @@
                         </subviews>
                         <color key="backgroundColor" name="greenCCRedesign"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="31" id="1x9-Qc-vt2"/>
-                            <constraint firstItem="x6b-xR-2ZG" firstAttribute="centerY" secondItem="7ee-jI-TSY" secondAttribute="centerY" id="e4K-Di-vrT"/>
-                            <constraint firstItem="x6b-xR-2ZG" firstAttribute="leading" secondItem="7ee-jI-TSY" secondAttribute="leading" constant="12" id="twW-Go-BqX"/>
-                            <constraint firstAttribute="trailing" secondItem="x6b-xR-2ZG" secondAttribute="trailing" constant="12" id="weq-DV-6V3"/>
+                            <constraint firstAttribute="height" constant="40" id="1x9-Qc-vt2"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -94,32 +50,57 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoM-9O-mq9">
+                        <rect key="frame" x="12" y="56" width="144" height="140"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TdU-ot-F7O" customClass="CustomImageLoader" customModule="Crafty_Craft_10" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="144" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="greenCCRedesign"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="140" id="unf-xA-4Fb"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQL-QM-eIB" userLabel="deleteBtn">
+                        <rect key="frame" x="116" y="200" width="40" height="40"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" backgroundImage="delete button"/>
+                        <connections>
+                            <action selector="deleteBtnTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3jo-po-vey"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzX-Ye-Kzw" userLabel="downloadBtn">
+                        <rect key="frame" x="12" y="200" width="40" height="40"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" backgroundImage="download button"/>
+                        <connections>
+                            <action selector="downLoadBtnTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="tvW-qM-1r0"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="zoM-9O-mq9" firstAttribute="bottom" secondItem="TdU-ot-F7O" secondAttribute="bottom" id="3AX-3t-nbg"/>
-                <constraint firstItem="zoM-9O-mq9" firstAttribute="leading" secondItem="TdU-ot-F7O" secondAttribute="leading" id="3K2-4p-aG5"/>
-                <constraint firstItem="zoM-9O-mq9" firstAttribute="trailing" secondItem="TdU-ot-F7O" secondAttribute="trailing" id="5ty-vF-IMr"/>
-                <constraint firstItem="7ee-jI-TSY" firstAttribute="top" secondItem="TdU-ot-F7O" secondAttribute="bottom" constant="8" id="Bht-Mc-GVU"/>
-                <constraint firstItem="TdU-ot-F7O" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Clo-R0-zvA"/>
-                <constraint firstItem="zoM-9O-mq9" firstAttribute="top" secondItem="TdU-ot-F7O" secondAttribute="top" id="EfJ-fM-DG0"/>
-                <constraint firstAttribute="trailing" secondItem="TdU-ot-F7O" secondAttribute="trailing" constant="8" id="GGy-C3-xrG"/>
-                <constraint firstItem="vzX-Ye-Kzw" firstAttribute="top" secondItem="TQL-QM-eIB" secondAttribute="bottom" constant="10" id="Qz0-I4-79g"/>
-                <constraint firstItem="TdU-ot-F7O" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="VUM-pF-7c2"/>
-                <constraint firstItem="TQL-QM-eIB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="YIt-hy-0ro">
-                    <variation key="heightClass=regular-widthClass=regular" constant="16"/>
-                </constraint>
-                <constraint firstAttribute="trailing" secondItem="7ee-jI-TSY" secondAttribute="trailing" constant="8" id="ba2-lZ-LKS"/>
-                <constraint firstAttribute="bottom" secondItem="7ee-jI-TSY" secondAttribute="bottom" constant="8" id="bkH-Dm-BFs"/>
-                <constraint firstAttribute="trailing" secondItem="TQL-QM-eIB" secondAttribute="trailing" constant="12" id="ly1-OI-nBC">
-                    <variation key="heightClass=regular-widthClass=regular" constant="16"/>
-                </constraint>
-                <constraint firstAttribute="trailing" secondItem="vzX-Ye-Kzw" secondAttribute="trailing" constant="12" id="s1C-Zz-udI">
-                    <variation key="heightClass=regular-widthClass=regular" constant="16"/>
-                </constraint>
-                <constraint firstItem="7ee-jI-TSY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="wcY-hG-8Vg"/>
+                <constraint firstItem="7ee-jI-TSY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="56S-ZU-33o"/>
+                <constraint firstItem="vzX-Ye-Kzw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="9da-de-pgx"/>
+                <constraint firstAttribute="trailing" secondItem="zoM-9O-mq9" secondAttribute="trailing" constant="12" id="BaS-4a-Y6h"/>
+                <constraint firstAttribute="bottom" secondItem="TQL-QM-eIB" secondAttribute="bottom" constant="12" id="KwE-jD-vvN"/>
+                <constraint firstItem="7ee-jI-TSY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="L37-ZG-SZH"/>
+                <constraint firstItem="zoM-9O-mq9" firstAttribute="top" secondItem="7ee-jI-TSY" secondAttribute="bottom" constant="4" id="SO4-Lp-l6A"/>
+                <constraint firstItem="zoM-9O-mq9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="hb3-FF-pVO"/>
+                <constraint firstAttribute="trailing" secondItem="TQL-QM-eIB" secondAttribute="trailing" constant="12" id="lJ1-jb-ne0"/>
+                <constraint firstAttribute="bottom" secondItem="vzX-Ye-Kzw" secondAttribute="bottom" constant="12" id="sAM-ke-rb2"/>
+                <constraint firstAttribute="trailing" secondItem="7ee-jI-TSY" secondAttribute="trailing" constant="12" id="sQn-Jn-uIP"/>
             </constraints>
             <size key="customSize" width="162" height="219"/>
             <connections>
@@ -132,8 +113,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="delete button" width="24" height="24"/>
-        <image name="download button" width="24" height="24"/>
+        <image name="delete button" width="40" height="40"/>
+        <image name="download button" width="40" height="40"/>
         <namedColor name="greenCCRedesign">
             <color red="0.0" green="0.59215686274509804" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

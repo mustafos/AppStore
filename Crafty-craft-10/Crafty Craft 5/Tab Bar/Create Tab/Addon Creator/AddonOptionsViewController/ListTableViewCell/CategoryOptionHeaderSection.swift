@@ -13,8 +13,8 @@ class CategoryOptionHeaderSection: UIView {
     lazy var title: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.montserratFont(.semiBold, size: 20)
-        label.textColor = .white
+        label.font = UIFont.montserratFont(.semiBold, size: 18)
+//        label.textColor = .white
         label.textAlignment = .left
         return label
     }()

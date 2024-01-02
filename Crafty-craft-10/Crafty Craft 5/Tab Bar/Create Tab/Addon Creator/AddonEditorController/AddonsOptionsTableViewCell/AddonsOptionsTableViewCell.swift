@@ -50,7 +50,7 @@ class AddonsOptionsTableViewCell: UITableViewCell {
     private func setupTextFiled() {
         textField.layer.borderWidth = 1
         textField.layer.cornerRadius = 17
-        textField.layer.borderColor = #colorLiteral(red: 0, green: 0.5921568627, blue: 0.3058823529, alpha: 1)
+//        textField.layer.borderColor = #colorLiteral(red: 0, green: 0.5921568627, blue: 0.3058823529, alpha: 1)
     }
     
     private func setuphelper() {
