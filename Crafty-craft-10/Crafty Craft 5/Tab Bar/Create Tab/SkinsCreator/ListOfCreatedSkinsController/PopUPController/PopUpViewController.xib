@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Poppins-Bold.ttf">
-            <string>Poppins-Bold</string>
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
         </array>
-        <array key="Poppins-SemiBold.ttf">
-            <string>Poppins-SemiBold</string>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpViewController" customModule="Crafty_Craft_5" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundView" destination="vDJ-d8-n7d" id="Kwg-0A-1gd"/>
                 <outlet property="cancelButton" destination="tTt-Gh-P8a" id="28S-4v-9ze"/>
@@ -34,116 +35,81 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vDJ-d8-n7d" userLabel="Background View">
-                    <rect key="frame" x="256" y="418.5" width="512" height="529.5"/>
+                    <rect key="frame" x="256" y="534" width="512" height="298"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QkM-cT-Sph">
-                            <rect key="frame" x="16" y="32" width="480" height="481.5"/>
+                            <rect key="frame" x="16" y="32" width="480" height="250"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" image="Skin Icon" translatesAutoresizingMaskIntoConstraints="NO" id="EZF-Au-y9Y">
-                                    <rect key="frame" x="170" y="0.0" width="140" height="140"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="78" id="U7J-EI-p5U">
-                                            <variation key="heightClass=regular-widthClass=regular" constant="140"/>
-                                        </constraint>
-                                        <constraint firstAttribute="width" secondItem="EZF-Au-y9Y" secondAttribute="height" multiplier="1:1" id="ydp-cc-eSy"/>
-                                    </constraints>
-                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="NEW SKIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFg-1I-UuU">
-                                    <rect key="frame" x="183.5" y="156" width="113.5" height="32.5"/>
-                                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="180.5" y="0.0" width="119.5" height="27"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                                    <color key="textColor" name="EerieBlackColor"/>
                                     <nil key="highlightedColor"/>
-                                    <variation key="heightClass=regular-widthClass=compact">
-                                        <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=regular">
-                                        <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="23"/>
-                                    </variation>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ovm-oB-JQw">
-                                    <rect key="frame" x="82" y="204.5" width="316" height="277"/>
+                                    <rect key="frame" x="131" y="43" width="218" height="207"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="253" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbh-ER-4vK">
-                                            <rect key="frame" x="0.0" y="0.0" width="316" height="49"/>
-                                            <color key="backgroundColor" red="0.086274509803921567" green="0.40392156862745099" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="15"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="218" height="35"/>
+                                            <color key="backgroundColor" name="YellowLightColor"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                             <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" title="Create New 2D"/>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="15"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="23"/>
-                                            </variation>
+                                            <state key="normal" title="Create New 2D">
+                                                <color key="titleColor" name="EerieBlackColor"/>
+                                            </state>
                                             <connections>
                                                 <action selector="onCreateNew2DButtonTapped:" destination="-1" eventType="touchUpInside" id="ruV-qp-Ltl"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4U-mM-MVE">
-                                            <rect key="frame" x="0.0" y="57" width="316" height="49"/>
-                                            <color key="backgroundColor" red="0.086274509803921567" green="0.40392156862745099" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="15"/>
+                                            <rect key="frame" x="0.0" y="43" width="218" height="35"/>
+                                            <color key="backgroundColor" name="YellowLightColor"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                             <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" title="Create New 3D"/>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="15"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="23"/>
-                                            </variation>
+                                            <state key="normal" title="Create New 3D">
+                                                <color key="titleColor" name="EerieBlackColor"/>
+                                            </state>
                                             <connections>
                                                 <action selector="onCreateNew3DButtonTapped:" destination="-1" eventType="touchUpInside" id="6dC-Gt-d4L"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o70-I6-nOX">
-                                            <rect key="frame" x="0.0" y="114" width="316" height="49"/>
-                                            <color key="backgroundColor" red="0.086274509803921567" green="0.40392156862745099" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="15"/>
+                                            <rect key="frame" x="0.0" y="86" width="218" height="35"/>
+                                            <color key="backgroundColor" name="YellowLightColor"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                             <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" title="Create New 3D (128*128)"/>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="15"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="23"/>
-                                            </variation>
+                                            <state key="normal" title="Create New 3D (128*128)">
+                                                <color key="titleColor" name="EerieBlackColor"/>
+                                            </state>
                                             <connections>
                                                 <action selector="onCreateNew3DWithOptionsButtonTapped:" destination="-1" eventType="touchUpInside" id="xOE-RC-kOI"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErN-TU-Brg">
-                                            <rect key="frame" x="0.0" y="171" width="316" height="49"/>
-                                            <color key="backgroundColor" red="0.086274509803921567" green="0.40392156862745099" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="15"/>
+                                            <rect key="frame" x="0.0" y="129" width="218" height="35"/>
+                                            <color key="backgroundColor" name="YellowLightColor"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                             <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" title="Import"/>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="15"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="23"/>
-                                            </variation>
+                                            <state key="normal" title="Import">
+                                                <color key="titleColor" name="EerieBlackColor"/>
+                                            </state>
                                             <connections>
                                                 <action selector="onImportButtonTapped:" destination="-1" eventType="touchUpInside" id="nfX-Tm-GEt"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTt-Gh-P8a">
-                                            <rect key="frame" x="0.0" y="228" width="316" height="49"/>
-                                            <color key="backgroundColor" red="0.086274509803921567" green="0.40392156862745099" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="15"/>
+                                            <rect key="frame" x="0.0" y="172" width="218" height="35"/>
+                                            <color key="backgroundColor" name="YellowLightColor"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                             <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" title="Cancel"/>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="15"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="23"/>
-                                            </variation>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleColor" name="EerieBlackColor"/>
+                                            </state>
                                             <connections>
                                                 <action selector="onCancelButtonTapped:" destination="-1" eventType="touchUpInside" id="gSq-GY-x1y"/>
                                             </connections>
@@ -153,7 +119,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" red="0.058823529409999999" green="0.2784313725" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" name="YellowSelectiveColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="QkM-cT-Sph" secondAttribute="bottom" constant="16" id="UJS-WM-lma"/>
                         <constraint firstAttribute="trailing" secondItem="QkM-cT-Sph" secondAttribute="trailing" constant="16" id="Vf8-28-NJY"/>
@@ -185,6 +151,14 @@
         </view>
     </objects>
     <resources>
-        <image name="Skin Icon" width="50" height="79"/>
+        <namedColor name="EerieBlackColor">
+            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowLightColor">
+            <color red="0.98000001907348633" green="0.90600001811981201" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowSelectiveColor">
+            <color red="0.97254901960784312" green="0.80784313725490198" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -6,13 +6,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Allerta-Regular.ttf">
-            <string>Allerta-Regular</string>
-        </array>
         <array key="Blinker-Regular.ttf">
             <string>Blinker-Regular</string>
         </array>
@@ -75,22 +71,22 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="8PU-8l-Viq">
-                    <rect key="frame" x="79.666666666666686" y="203" width="234" height="477"/>
+                    <rect key="frame" x="87.666666666666686" y="203" width="218" height="477"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="O4o-zy-oEm">
-                            <rect key="frame" x="0.0" y="0.0" width="105" height="477"/>
+                            <rect key="frame" x="0.0" y="0.0" width="97" height="477"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="CcB-Jk-PSt">
-                                    <rect key="frame" x="0.0" y="0.0" width="105" height="141"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="97" height="141"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfE-ub-Gqh">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="20"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="28"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                             <color key="textColor" name="BeigeColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_head" translatesAutoresizingMaskIntoConstraints="NO" id="l0T-oB-Xbf" userLabel="head component">
-                                            <rect key="frame" x="0.0" y="36" width="105" height="105"/>
+                                            <rect key="frame" x="0.0" y="44" width="97" height="97"/>
                                             <color key="backgroundColor" name="BeigeColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="l0T-oB-Xbf" secondAttribute="height" multiplier="1:1" id="Pwx-nz-E1a"/>
@@ -98,29 +94,17 @@
                                         </imageView>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="G5v-Uy-SbS">
-                                    <rect key="frame" x="0.0" y="168" width="105" height="141"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="G5v-Uy-SbS">
+                                    <rect key="frame" x="0.0" y="168" width="97" height="141"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FRONT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZj-j1-k1X">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="28"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="28" id="0es-TO-Nze"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="28"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                            <color key="textColor" name="BeigeColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=compact-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="16"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="22"/>
-                                            </variation>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_head" translatesAutoresizingMaskIntoConstraints="NO" id="uT5-Ek-qhp" userLabel="head component">
-                                            <rect key="frame" x="0.0" y="36" width="105" height="105"/>
+                                            <rect key="frame" x="0.0" y="44" width="97" height="97"/>
                                             <color key="backgroundColor" white="0.9302741699" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="uT5-Ek-qhp" secondAttribute="height" multiplier="1:1" id="8qY-cT-waz"/>
@@ -128,29 +112,17 @@
                                         </imageView>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bui-Y1-uQx">
-                                    <rect key="frame" x="0.0" y="336" width="105" height="141"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bui-Y1-uQx">
+                                    <rect key="frame" x="0.0" y="336" width="97" height="141"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEFT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q72-Q4-RSL">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="28"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="28" id="gbi-ia-uiy"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="28"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                            <color key="textColor" name="BeigeColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=compact-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="16"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="22"/>
-                                            </variation>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_head" translatesAutoresizingMaskIntoConstraints="NO" id="UwY-0R-69m" userLabel="head component">
-                                            <rect key="frame" x="0.0" y="36" width="105" height="105"/>
+                                            <rect key="frame" x="0.0" y="44" width="97" height="97"/>
                                             <color key="backgroundColor" white="0.9302741699" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="UwY-0R-69m" secondAttribute="height" multiplier="1:1" id="bcR-7R-k1H"/>
@@ -161,31 +133,19 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="5YN-Ck-rVq">
-                            <rect key="frame" x="129" y="0.0" width="105" height="477"/>
+                            <rect key="frame" x="121" y="0.0" width="97" height="477"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vda-Gf-U9z">
-                                    <rect key="frame" x="0.0" y="0.0" width="105" height="141"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vda-Gf-U9z">
+                                    <rect key="frame" x="0.0" y="0.0" width="97" height="141"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOTTOM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekn-nF-vfb">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="28"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="28" id="Dq2-eY-5HI"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="28"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                            <color key="textColor" name="BeigeColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=compact-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="16"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="22"/>
-                                            </variation>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_head" translatesAutoresizingMaskIntoConstraints="NO" id="cds-LI-qN8" userLabel="head component">
-                                            <rect key="frame" x="0.0" y="36" width="105" height="105"/>
+                                            <rect key="frame" x="0.0" y="44" width="97" height="97"/>
                                             <color key="backgroundColor" white="0.9302741699" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="cds-LI-qN8" secondAttribute="height" multiplier="1:1" id="XDq-Qy-axG"/>
@@ -193,29 +153,17 @@
                                         </imageView>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-Or-1X2">
-                                    <rect key="frame" x="0.0" y="168" width="105" height="141"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-Or-1X2">
+                                    <rect key="frame" x="0.0" y="168" width="97" height="141"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BACK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dh-eI-J7h">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="28"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="28" id="QlU-Zl-4tH"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="28"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                            <color key="textColor" name="BeigeColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=compact-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="16"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="22"/>
-                                            </variation>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_head" translatesAutoresizingMaskIntoConstraints="NO" id="UNC-YR-SGb" userLabel="head component">
-                                            <rect key="frame" x="0.0" y="36" width="105" height="105"/>
+                                            <rect key="frame" x="0.0" y="44" width="97" height="97"/>
                                             <color key="backgroundColor" white="0.9302741699" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="UNC-YR-SGb" secondAttribute="height" multiplier="1:1" id="VvH-KW-rBG"/>
@@ -223,29 +171,20 @@
                                         </imageView>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tqG-5j-gAS">
-                                    <rect key="frame" x="0.0" y="336" width="105" height="141"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tqG-5j-gAS">
+                                    <rect key="frame" x="0.0" y="336" width="97" height="141"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RIGHT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfe-um-Fib">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="28"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="28"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="28" id="TCk-Ya-pFb"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                            <color key="textColor" name="BeigeColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=compact-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="16"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="22"/>
-                                            </variation>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_head" translatesAutoresizingMaskIntoConstraints="NO" id="JNC-XM-ekr" userLabel="head component">
-                                            <rect key="frame" x="0.0" y="36" width="105" height="105"/>
+                                            <rect key="frame" x="0.0" y="44" width="97" height="97"/>
                                             <color key="backgroundColor" white="0.9302741699" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="JNC-XM-ekr" secondAttribute="height" multiplier="1:1" id="har-Fq-ruW"/>
@@ -281,7 +220,7 @@
     </objects>
     <resources>
         <image name="Back Item" width="44" height="44"/>
-        <image name="general_head" width="368" height="368"/>
+        <image name="general_head" width="204" height="204"/>
         <namedColor name="BackgroundColor">
             <color red="0.19215686274509805" green="0.20784313725490197" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

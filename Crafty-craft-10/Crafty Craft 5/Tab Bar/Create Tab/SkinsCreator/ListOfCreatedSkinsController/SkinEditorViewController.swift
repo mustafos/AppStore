@@ -282,8 +282,8 @@ extension SkinEditorViewController {
 extension SkinEditorViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = collectionView.frame.size.width /*/ 2 - 5*/
-        let cellHeight = cellWidth /** 1.3*/
+        let cellWidth = collectionView.frame.size.width / (Device.iPad ? 4 : 2) - 8
+        let cellHeight = cellWidth * 1.3
         
         return CGSize(width: cellWidth, height: cellHeight)
     }
