@@ -35,10 +35,12 @@ class Color3DCollectionCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-
-        contentView.layer.cornerRadius = 2
-        contentView.layer.masksToBounds = true
-
+        
+        contentView.layer.cornerRadius = contentView.frame.width / 2
+        contentView.clipsToBounds = true
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+        
     }
     
     func configCell(bgColor: UIColor, isSelected: Bool) {

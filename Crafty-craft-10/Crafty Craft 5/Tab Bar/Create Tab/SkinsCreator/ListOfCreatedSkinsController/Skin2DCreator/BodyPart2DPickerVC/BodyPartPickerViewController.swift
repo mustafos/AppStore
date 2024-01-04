@@ -1,4 +1,3 @@
-
 import UIKit
 
 enum BodyPartPickerOption {
@@ -103,15 +102,6 @@ final class BodyPartPickerViewController: UIViewController {
     }
     
     private func setupViews() {
-        navigationBar.backgroundColor = .clear
-        
-        let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "Green Background")
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
-        
         headComponentView.image = UIImage(named: "general_head")
         leftArmComponentView.image = UIImage(named: "general_arm")
         rightArmComponentView.image = UIImage(named: "general_arm")
@@ -153,7 +143,7 @@ final class BodyPartPickerViewController: UIViewController {
         
         saveAlertView?.setSkinNameSaveTextField.attributedPlaceholder = NSAttributedString(
             string: currentEditableSkin?.name ?? "",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "placeholderCCRedesign")]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(.gray)]
         )
         view.addSubview(saveAlertView!)
     }
@@ -223,13 +213,13 @@ final class BodyPartPickerViewController: UIViewController {
     //MARK: Private func
     
     private func enableImageViewsBorder() {
-        leftArmComponentView.setBorder(size: 2, color: UIColor(named: "greenCCRedesign")!)
-        rightLegComponentView.setBorder(size: 2, color: UIColor(named: "greenCCRedesign")!)
-        leftLegComponentView.setBorder(size: 2, color: UIColor(named: "greenCCRedesign")!)
-        bodyComponentView.setBorder(size: 2, color: UIColor(named: "greenCCRedesign")!)
-        rightArmComponentView.setBorder(size: 2, color: UIColor(named: "greenCCRedesign")!)
-        headComponentView.setBorder(size: 2, color: UIColor(named: "greenCCRedesign")!)
-        hatComponentView.setBorder(size: 2, color: UIColor(named: "greenCCRedesign")!)
+        leftArmComponentView.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!)
+        rightLegComponentView.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!)
+        leftLegComponentView.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!)
+        bodyComponentView.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!)
+        rightArmComponentView.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!)
+        headComponentView.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!)
+        hatComponentView.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!)
     }
     
     private func deselectBorders(view: UIView) {

@@ -41,12 +41,9 @@ class SaveAlertView: UIView {
         mainSaveAlertView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mainSaveAlertView.translatesAutoresizingMaskIntoConstraints = true
         
-        cancelSaveSkButton.layer.borderColor = UIColor.white.cgColor
-        cancelSaveSkButton.layer.borderWidth = 1
-        
         setSkinNameSaveTextField.delegate = self
         
-        dialogTextLabel.text = "Choose a name for your skin".uppercased()
+        dialogTextLabel.text = "Choose a name for your skin."
         
         let tapGestureOnBlureView = UITapGestureRecognizer(target: self, action: #selector(tapOnBlureViewPressed(_:)))
         defoultDarkBlureEffectView.addGestureRecognizer(tapGestureOnBlureView)
@@ -65,7 +62,7 @@ class SaveAlertView: UIView {
         } else {
             if setSkinNameSaveTextField.isHidden {
                 setSkinNameSaveTextField.isHidden = false
-                dialogTextLabel.text = "Choose a name for your skin".uppercased()
+                dialogTextLabel.text = "Choose a name for your skin."
             } else {
                 guard let nameSkin = setSkinNameSaveTextField.text else {
                     showInputInvalidAllert(title: "Invalid Name", message: "Please provide another name")
