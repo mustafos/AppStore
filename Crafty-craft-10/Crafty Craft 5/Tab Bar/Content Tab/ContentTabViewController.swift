@@ -93,7 +93,7 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
     }
     
     public var tabBarIcon: UIImage? {
-        return UIImage(named: "Content TabBar Icon")
+        return UIImage(named: "content")
     }
     
     public var tabBarTitle: String {
@@ -144,7 +144,7 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         configureView()
         setupViews()
         setupSearchBar()
-        setupAppearance()
+//        setupAppearance()
         tabsPageControllMode = .skins
         IAPManager.shared.contentProductDelegate = self
     }
@@ -161,7 +161,7 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         validateSub()
         updateData()
         registerForKeyboardNotifications()
-//        flushSearch()
+        flushSearch()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -226,7 +226,6 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
             isShowedSubsription = false
         } else {
             IAPManager.shared.validateSubscriptions(productIdentifiers: [Configurations.unlockContentSubscriptionID]) { [weak self] results in
-    //            Vaildate Content
                 guard let self else { return }
                 if let value = results[Configurations.unlockContentSubscriptionID] {
                     self.updatePurchaseStatus(isPurchased: value)
@@ -329,14 +328,6 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
     private func setupCollectionView() {
         let nib = UINib(nibName: cellId, bundle: nil)
         contentCollectionView.register(nib, forCellWithReuseIdentifier: cellId)
-    }
-    
-    private func setupAppearance() {
-        sortButtonsContainerView.roundCorners(25)
-        
-        for view in roundedViewContainers {
-            view.roundCorners(25)
-        }
     }
     
     private func navBarSearchMode(predicate: Bool) {

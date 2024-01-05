@@ -204,7 +204,7 @@ final class CreateTabViewController: UIViewController {
 
 extension CreateTabViewController: TabBarConfigurable {
     var tabBarIcon: UIImage? {
-        return UIImage(named: "Create TabBar Icon")
+        return UIImage(named: "create")
     }
 
     var tabBarTitle: String {

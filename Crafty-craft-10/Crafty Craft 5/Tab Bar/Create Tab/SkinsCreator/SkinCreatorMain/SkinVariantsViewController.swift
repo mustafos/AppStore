@@ -107,6 +107,7 @@ class SkinVariantsViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
         button.setTitle("Import", for: .normal)
+        button.imageEdgeInsets.right = 10
         button.setImage(UIImage(named: "Import Button"), for: .normal)
         button.configuration?.imagePadding = 10
         button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 18)
@@ -228,7 +229,6 @@ class SkinVariantsViewController: UIViewController {
     let maxDimmedAlpha: CGFloat = 0.6
     lazy var dimmedView: UIView = {
         let view = UIView()
-        view.backgroundColor = .black /// blure
         view.alpha = maxDimmedAlpha
         return view
     }()
@@ -287,12 +287,14 @@ class SkinVariantsViewController: UIViewController {
         blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView?.frame = view.bounds
         blurEffectView?.alpha = 0
-        
-        // Add the blur effect view as a subview
         view.addSubview(blurEffectView!)
         
         // Add the container view as the last subview
         view.addSubview(containerView)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.blurEffectView?.alpha = 1
+        }
     }
     
     func setupConstraints() {
@@ -320,7 +322,7 @@ class SkinVariantsViewController: UIViewController {
             contentStackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 32),
             contentStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -20),
             contentStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
-            contentStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
+            contentStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20)
         ])
         
         // Set dynamic constraints

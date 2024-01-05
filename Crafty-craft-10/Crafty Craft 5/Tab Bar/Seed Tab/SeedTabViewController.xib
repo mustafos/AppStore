@@ -90,7 +90,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sqj-eq-ccp">
-                    <rect key="frame" x="20" y="143" width="353" height="675"/>
+                    <rect key="frame" x="20" y="143" width="353" height="709"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="wO5-ht-jQN"/>
@@ -102,14 +102,14 @@
             <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
                 <constraint firstItem="RP9-ab-gd5" firstAttribute="top" secondItem="vw3-hw-cdh" secondAttribute="top" id="1Qg-Mn-Zqm"/>
-                <constraint firstItem="vw3-hw-cdh" firstAttribute="bottom" secondItem="sqj-eq-ccp" secondAttribute="bottom" id="1pz-wr-PIW"/>
                 <constraint firstItem="RP9-ab-gd5" firstAttribute="leading" secondItem="vw3-hw-cdh" secondAttribute="leading" id="4OU-w9-fic"/>
                 <constraint firstItem="RP9-ab-gd5" firstAttribute="trailing" secondItem="vw3-hw-cdh" secondAttribute="trailing" id="BEC-UW-sCs"/>
+                <constraint firstAttribute="bottom" secondItem="sqj-eq-ccp" secondAttribute="bottom" id="CZV-3S-32Y"/>
                 <constraint firstItem="vw3-hw-cdh" firstAttribute="trailing" secondItem="sqj-eq-ccp" secondAttribute="trailing" constant="20" id="dny-2D-cdB"/>
                 <constraint firstItem="sqj-eq-ccp" firstAttribute="top" secondItem="RP9-ab-gd5" secondAttribute="bottom" id="m8L-yW-MY2"/>
                 <constraint firstItem="sqj-eq-ccp" firstAttribute="leading" secondItem="vw3-hw-cdh" secondAttribute="leading" constant="20" id="sOV-Mq-3in"/>
             </constraints>
-            <point key="canvasLocation" x="140" y="21"/>
+            <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>

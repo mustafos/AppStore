@@ -44,6 +44,9 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jih-Zx-hw4" userLabel="Favorite Button">
                             <rect key="frame" x="314" y="20" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Jih-Zx-hw4" secondAttribute="height" multiplier="1:1" id="7Nw-QX-Hot"/>
+                            </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" backgroundImage="FavButton_unselected"/>
                         </button>
@@ -60,6 +63,9 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BP-Hl-V2o" userLabel="Shared Button">
                             <rect key="frame" x="366" y="20" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="8BP-Hl-V2o" secondAttribute="height" multiplier="1:1" id="zaz-wu-tic"/>
+                            </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" backgroundImage="Dowmload Item"/>
                             <connections>
@@ -73,7 +79,6 @@
                         <constraint firstItem="8BP-Hl-V2o" firstAttribute="top" secondItem="XQA-PB-AA4" secondAttribute="top" constant="20" id="1nh-JW-ljo"/>
                         <constraint firstAttribute="bottom" secondItem="8BP-Hl-V2o" secondAttribute="bottom" constant="20" id="63w-30-0ZQ"/>
                         <constraint firstAttribute="bottom" secondItem="Jih-Zx-hw4" secondAttribute="bottom" constant="20" id="7Kf-fc-RgM"/>
-                        <constraint firstItem="Jih-Zx-hw4" firstAttribute="width" secondItem="Jih-Zx-hw4" secondAttribute="height" multiplier="1:1" id="7Nw-QX-Hot"/>
                         <constraint firstAttribute="bottom" secondItem="HcT-a4-hvq" secondAttribute="bottom" constant="20" id="G8o-Ce-3ys"/>
                         <constraint firstItem="HcT-a4-hvq" firstAttribute="top" secondItem="XQA-PB-AA4" secondAttribute="top" constant="20" id="SVj-ll-dPR"/>
                         <constraint firstAttribute="trailing" secondItem="8BP-Hl-V2o" secondAttribute="trailing" constant="20" id="cfa-it-6a0"/>
@@ -84,7 +89,6 @@
                         <constraint firstItem="HcT-a4-hvq" firstAttribute="leading" secondItem="XQA-PB-AA4" secondAttribute="leading" constant="20" id="q22-dI-tbD"/>
                         <constraint firstItem="Jih-Zx-hw4" firstAttribute="top" secondItem="XQA-PB-AA4" secondAttribute="top" constant="20" id="r0d-eu-fnq"/>
                         <constraint firstItem="8BP-Hl-V2o" firstAttribute="leading" secondItem="Jih-Zx-hw4" secondAttribute="trailing" constant="8" id="u7s-vk-DMl"/>
-                        <constraint firstItem="8BP-Hl-V2o" firstAttribute="width" secondItem="8BP-Hl-V2o" secondAttribute="height" multiplier="1:1" id="zaz-wu-tic"/>
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpz-6x-bdG">
@@ -106,8 +110,8 @@
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=regular">
                                         <mask key="constraints">
-                                            <include reference="XxD-uj-KVe"/>
                                             <exclude reference="VJU-Cc-t8a"/>
+                                            <include reference="XxD-uj-KVe"/>
                                         </mask>
                                     </variation>
                                 </imageView>
@@ -154,8 +158,7 @@
                             <rect key="frame" x="8" y="693" width="374" height="54"/>
                             <color key="backgroundColor" name="YellowSelectiveColor"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="iwX-TM-hGv" secondAttribute="height" multiplier="154:54" id="EQI-1M-fnB"/>
-                                <constraint firstAttribute="height" constant="54" id="eql-Id-Sqs"/>
+                                <constraint firstAttribute="height" constant="54" id="15R-iV-tGu"/>
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="copy symbol" title="Copy link" imagePadding="10">
@@ -176,11 +179,6 @@
                                     <real key="value" value="1"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
-                            <variation key="heightClass=regular-widthClass=regular">
-                                <mask key="constraints">
-                                    <exclude reference="EQI-1M-fnB"/>
-                                </mask>
-                            </variation>
                             <connections>
                                 <action selector="copyLinkButtonTapped:" destination="-1" eventType="touchUpInside" id="f77-XB-Tp3"/>
                             </connections>

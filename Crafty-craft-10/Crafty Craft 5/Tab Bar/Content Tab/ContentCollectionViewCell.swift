@@ -90,7 +90,7 @@ final class ContentCollectionViewCell: UICollectionViewCell {
                 return
             }
             
-            let img = self?.image ?? UIImage(named: "close cross")
+            let img = self?.image ?? UIImage(named: "body")
             
             // Update Thumbnail Image View
             DispatchQueue.main.async {
@@ -134,7 +134,7 @@ final class ContentCollectionViewCell: UICollectionViewCell {
                 self?.imageDownloadOperation.cancel()
                 
                 DispatchQueue.main.async {
-                    self?.contentImageView.image = UIImage(named: "close cross")
+                    self?.contentImageView.image = UIImage(named: "body")
                 }
             }
             self?.imageSemaphore.signal()

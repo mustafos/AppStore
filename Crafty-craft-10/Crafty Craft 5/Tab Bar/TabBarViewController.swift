@@ -1,3 +1,11 @@
+//
+//  TabBarViewController.swift
+//  Crafty Craft 10
+//
+//  Created by Mustafa Bekirov on 28.12.2023.
+//  Copyright © 2023 Noname Digital. All rights reserved.
+//
+
 import UIKit
 
 class TabBarViewController: UITabBarController {
@@ -116,22 +124,17 @@ class TabBarViewController: UITabBarController {
         roundLayer.path = bezierPath.cgPath
         
         tabBar.layer.insertSublayer(roundLayer, at: 0)
-        
         tabBar.itemWidth = width / 5
         tabBar.itemPositioning = .centered
         
+        roundLayer.strokeColor = UIColor.black.cgColor
+        roundLayer.lineWidth = 1.0
         roundLayer.fillColor = UIColor(red: 0.97, green: 0.81, blue: 0.38, alpha: 1).cgColor
-        
-        // Adding shadow
         roundLayer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         roundLayer.shadowOpacity = 1
         roundLayer.shadowRadius = 4
         roundLayer.shadowOffset = CGSize(width: 0, height: 4)
-        
-        // Adding border
-        roundLayer.borderWidth = 1
-        roundLayer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
-        
+
         tabBar.tintColor = UIColor(named: "BeigeColor")
         tabBar.unselectedItemTintColor = UIColor(named: "EerieBlackColor")
     }

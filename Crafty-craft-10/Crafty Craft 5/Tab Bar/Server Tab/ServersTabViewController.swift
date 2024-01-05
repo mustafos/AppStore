@@ -243,7 +243,7 @@ class ServersTabViewController: UIViewController {
 
 extension ServersTabViewController: TabBarConfigurable {
     var tabBarIcon: UIImage? {
-        return UIImage(named: "Servers TabBar Icon")
+        return UIImage(named: "servers")
     }
 
     var tabBarTitle: String {

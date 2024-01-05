@@ -48,7 +48,7 @@ class ServerTableViewCell: UITableViewCell {
         subContainer.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
         
         serverIcon.backgroundColor = .clear
-        serverIcon.roundCorners(.allCorners, radius: 30)
+        serverIcon.roundCorners(.allCorners, radius: 25)
         serverIcon.layer.borderWidth = 1
         serverIcon.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
         
