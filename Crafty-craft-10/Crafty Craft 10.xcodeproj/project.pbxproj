@@ -328,8 +328,6 @@
 		F4916C7A2A0B89270090E9B6 /* AddonCreatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4916C782A0B89270090E9B6 /* AddonCreatorViewController.xib */; };
 		F4AA287E2A1BB04D001B9F0A /* Skin3DTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA287C2A1BB04D001B9F0A /* Skin3DTestViewController.swift */; };
 		F4AA287F2A1BB04D001B9F0A /* Skin3DTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4AA287D2A1BB04D001B9F0A /* Skin3DTestViewController.xib */; };
-		F4ADA9342A0A3919009A2756 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADA9322A0A3919009A2756 /* PopUpViewController.swift */; };
-		F4ADA9352A0A391A009A2756 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4ADA9332A0A3919009A2756 /* PopUpViewController.xib */; };
 		F4ADA9392A0A6A46009A2756 /* SkinCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADA9372A0A6A46009A2756 /* SkinCreatorViewController.swift */; };
 		F4ADA93A2A0A6A46009A2756 /* SkinCreatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4ADA9382A0A6A46009A2756 /* SkinCreatorViewController.xib */; };
 		F4ADA93C2A0A76FB009A2756 /* CustomToolPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADA93B2A0A76FB009A2756 /* CustomToolPickerView.swift */; };
@@ -724,8 +722,6 @@
 		F4916C782A0B89270090E9B6 /* AddonCreatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddonCreatorViewController.xib; sourceTree = "<group>"; };
 		F4AA287C2A1BB04D001B9F0A /* Skin3DTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skin3DTestViewController.swift; sourceTree = "<group>"; };
 		F4AA287D2A1BB04D001B9F0A /* Skin3DTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Skin3DTestViewController.xib; sourceTree = "<group>"; };
-		F4ADA9322A0A3919009A2756 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
-		F4ADA9332A0A3919009A2756 /* PopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
 		F4ADA9372A0A6A46009A2756 /* SkinCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinCreatorViewController.swift; sourceTree = "<group>"; };
 		F4ADA9382A0A6A46009A2756 /* SkinCreatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinCreatorViewController.xib; sourceTree = "<group>"; };
 		F4ADA93B2A0A76FB009A2756 /* CustomToolPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolPickerView.swift; sourceTree = "<group>"; };
@@ -1217,7 +1213,6 @@
 				633030432A34AB8900CDCD4A /* SkinEditorVCModel.swift */,
 				F41F6D0C2A21078500F72851 /* SkinEditorViewController.swift */,
 				F41F6D0D2A21078500F72851 /* SkinEditorViewController.xib */,
-				63F971D82A372481005D102E /* PopUPController */,
 				F4ADA9362A0A6A1F009A2756 /* SkinCreator2D */,
 				63A85E9B2A33476C005586FE /* Skin3DCreator */,
 				F40415D42A126C0900066473 /* PixelCreator */,
@@ -1409,15 +1404,6 @@
 				639407D72A77BFB6007D6301 /* ColorManger.swift */,
 			);
 			path = SkinCreatorController;
-			sourceTree = "<group>";
-		};
-		63F971D82A372481005D102E /* PopUPController */ = {
-			isa = PBXGroup;
-			children = (
-				F4ADA9322A0A3919009A2756 /* PopUpViewController.swift */,
-				F4ADA9332A0A3919009A2756 /* PopUpViewController.xib */,
-			);
-			path = PopUPController;
 			sourceTree = "<group>";
 		};
 		6F1CADE82A667C2500735EAB /* AddonEditorSelector */ = {
@@ -2077,7 +2063,6 @@
 				035166702AFA3F0900035087 /* TransactionView.xib in Resources */,
 				035166A42AFA3F0900035087 /* PremiumMainController.xib in Resources */,
 				6F1CADED2A667C3200735EAB /* AddonEditorSelectorViewController.xib in Resources */,
-				F4ADA9352A0A391A009A2756 /* PopUpViewController.xib in Resources */,
 				F41F6D0B2A20FDD000F72851 /* AddonsOptionsTableViewCell.xib in Resources */,
 				039BF2B42AA326830065EF48 /* SFProText-Bold.ttf in Resources */,
 				035166772AFA3F0900035087 /* AnimatedButton.xib in Resources */,
@@ -2276,7 +2261,6 @@
 				F41F6D122A210B7D00F72851 /* SkinEditorCollectionViewCell.swift in Sources */,
 				6352819D2A589FE000F3EB23 /* MainAddonCreatorModel.swift in Sources */,
 				F40415EC2A126EFC00066473 /* Tool.swift in Sources */,
-				F4ADA9342A0A3919009A2756 /* PopUpViewController.swift in Sources */,
 				0351668C2AFA3F0900035087 /* ConstraintMakerRelatable+Extensions.swift in Sources */,
 				F48E0B532A093FC200B9020D /* TabBarConfigurable.swift in Sources */,
 				0351667C2AFA3F0900035087 /* SwiftyGifManager.swift in Sources */,
