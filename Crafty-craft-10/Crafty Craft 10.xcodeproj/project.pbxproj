@@ -191,6 +191,7 @@
 		6A31826D2B3981C7009C5196 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A31826C2B3981C7009C5196 /* Montserrat-Medium.ttf */; };
 		6A31826E2B3981C7009C5196 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A31826C2B3981C7009C5196 /* Montserrat-Medium.ttf */; };
 		6A9F88D02B33257F0058F244 /* Pushwoosh in Frameworks */ = {isa = PBXBuildFile; productRef = 6A9F88CF2B33257F0058F244 /* Pushwoosh */; };
+		6AC7664C2B4B2E0F007EDB05 /* SkinCreatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AC7664B2B4B2E0F007EDB05 /* SkinCreatorViewController.xib */; };
 		6AD8FA602B344ADA00C9CC3D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AD8FA5F2B344ADA00C9CC3D /* Montserrat-Regular.ttf */; };
 		6AD8FA612B344ADA00C9CC3D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AD8FA5F2B344ADA00C9CC3D /* Montserrat-Regular.ttf */; };
 		6AD931D62B332D6D00961FC8 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AD931D52B332D6D00961FC8 /* Montserrat-SemiBold.ttf */; };
@@ -329,7 +330,6 @@
 		F4AA287E2A1BB04D001B9F0A /* Skin3DTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA287C2A1BB04D001B9F0A /* Skin3DTestViewController.swift */; };
 		F4AA287F2A1BB04D001B9F0A /* Skin3DTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4AA287D2A1BB04D001B9F0A /* Skin3DTestViewController.xib */; };
 		F4ADA9392A0A6A46009A2756 /* SkinCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADA9372A0A6A46009A2756 /* SkinCreatorViewController.swift */; };
-		F4ADA93A2A0A6A46009A2756 /* SkinCreatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4ADA9382A0A6A46009A2756 /* SkinCreatorViewController.xib */; };
 		F4ADA93C2A0A76FB009A2756 /* CustomToolPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADA93B2A0A76FB009A2756 /* CustomToolPickerView.swift */; };
 		F4DB05D02A02959000E4C43D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB05CE2A02959000E4C43D /* TabBarViewController.swift */; };
 		F4DB05D52A0295F300E4C43D /* CreateTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB05D32A0295F300E4C43D /* CreateTabViewController.swift */; };
@@ -595,6 +595,7 @@
 		6A17D0F32B3D73B40060539E /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		6A17D0F52B3D9A0F0060539E /* TabBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItems.swift; sourceTree = "<group>"; };
 		6A31826C2B3981C7009C5196 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		6AC7664B2B4B2E0F007EDB05 /* SkinCreatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkinCreatorViewController.xib; sourceTree = "<group>"; };
 		6AD8FA5F2B344ADA00C9CC3D /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		6AD931D52B332D6D00961FC8 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		6AD931D82B332E4100961FC8 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -723,7 +724,6 @@
 		F4AA287C2A1BB04D001B9F0A /* Skin3DTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skin3DTestViewController.swift; sourceTree = "<group>"; };
 		F4AA287D2A1BB04D001B9F0A /* Skin3DTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Skin3DTestViewController.xib; sourceTree = "<group>"; };
 		F4ADA9372A0A6A46009A2756 /* SkinCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinCreatorViewController.swift; sourceTree = "<group>"; };
-		F4ADA9382A0A6A46009A2756 /* SkinCreatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinCreatorViewController.xib; sourceTree = "<group>"; };
 		F4ADA93B2A0A76FB009A2756 /* CustomToolPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolPickerView.swift; sourceTree = "<group>"; };
 		F4DB05CE2A02959000E4C43D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F4DB05D32A0295F300E4C43D /* CreateTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTabViewController.swift; sourceTree = "<group>"; };
@@ -1398,8 +1398,8 @@
 				D70970342A77F6F80044F81F /* SkinCreatorImportViewController.xib */,
 				63A5DFDC2A3353480037D65B /* CustomViews */,
 				F4ADA9372A0A6A46009A2756 /* SkinCreatorViewController.swift */,
+				6AC7664B2B4B2E0F007EDB05 /* SkinCreatorViewController.xib */,
 				F428B9262A137D21005D575F /* SkinCreatorViewController+PixelView.swift */,
-				F4ADA9382A0A6A46009A2756 /* SkinCreatorViewController.xib */,
 				632471FB2A77AACA009CD1C3 /* SkinCreatorController+Ext_Collection.swift */,
 				639407D72A77BFB6007D6301 /* ColorManger.swift */,
 			);
@@ -1988,6 +1988,7 @@
 			files = (
 				C0236D872A4303E800AE1FD3 /* BrashSizeView.xib in Resources */,
 				03AFFD272AD7D818002A131D /* Blinker-Bold.ttf in Resources */,
+				6AC7664C2B4B2E0F007EDB05 /* SkinCreatorViewController.xib in Resources */,
 				D709705F2A78206B0044F81F /* ColorCollectionCell.xib in Resources */,
 				039BF2B02AA326830065EF48 /* phone.mp4 in Resources */,
 				03AFFD2E2AD7D818002A131D /* Blinker-Black.ttf in Resources */,
@@ -2034,7 +2035,6 @@
 				035166A82AFA3F0900035087 /* ReusableView.xib in Resources */,
 				C0EC65732A44488900C5B8ED /* SmallModelView.xib in Resources */,
 				F438AA272A14FA05007469E7 /* ColorPickerViewController.xib in Resources */,
-				F4ADA93A2A0A6A46009A2756 /* SkinCreatorViewController.xib in Resources */,
 				C0398D912A54309C00A48138 /* SaveAlertView.xib in Resources */,
 				F42CEC5F2A09228200A6D2D6 /* ContentViewController.xib in Resources */,
 				03AFFD412AD7F464002A131D /* ServersTabViewController.xib in Resources */,

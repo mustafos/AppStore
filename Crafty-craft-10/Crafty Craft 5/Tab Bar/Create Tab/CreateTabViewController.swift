@@ -21,8 +21,9 @@ final class CreateTabViewController: UIViewController {
             self.updateCollectionForCurrentState()
         }
     }
-    @IBOutlet weak var navigationBarContainerView: UIView!
+    
     // MARK: - Outlets
+    @IBOutlet weak var navigationBarContainerView: UIView!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var collectionContainer: UIView!
@@ -153,7 +154,6 @@ final class CreateTabViewController: UIViewController {
             self.state = .skin
         default:
             self.state = .addon
-
         }
         searchBarView.searchTextField.resignFirstResponder()
         self.flushSearch()
@@ -205,6 +205,10 @@ final class CreateTabViewController: UIViewController {
 extension CreateTabViewController: TabBarConfigurable {
     var tabBarIcon: UIImage? {
         return UIImage(named: "create")
+    }
+    
+    var tabBarSelectedIcon: UIImage? {
+        return UIImage(named: "createSelect")
     }
 
     var tabBarTitle: String {

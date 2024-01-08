@@ -213,10 +213,14 @@ class SeedTabViewController: UIViewController {
 }
 
 extension SeedTabViewController: TabBarConfigurable {
+    
     var tabBarIcon: UIImage? {
         return UIImage(named: "seeds")
     }
-
+    
+    var tabBarSelectedIcon: UIImage? {
+        return UIImage(named: "seedsSelect")
+    }
     var tabBarTitle: String {
         return "Seeds"
     }

@@ -116,7 +116,7 @@ class SettingsViewController: UIViewController {
     //clearCacheBtn
     @objc func clearCacheIsTapped(_ sender: UITapGestureRecognizer) {
         addBlurEffectToBackground()
-        doneView.roundCorners(.allCorners, radius: 30)
+        doneView.roundCorners(.allCorners, radius: 25)
         doneView.isHidden = false
         model?.clearCache()
         updateCacheLab()

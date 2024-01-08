@@ -6,14 +6,12 @@
 //  Copyright © 2023 Noname Digital. All rights reserved.
 //
 
-protocol ColorAble: AnyObject {
-    func updateCollection()
-}
-
-
 import UIKit
 import Foundation
 
+protocol ColorAble: AnyObject {
+    func updateCollection()
+}
 
 class ColorsManger {
 
@@ -99,6 +97,4 @@ class ColorsManger {
         }
         return defaultColorArray
     }
-    
-    
 }

@@ -1,4 +1,5 @@
 import UIKit
+import BetterSegmentedControl
 
 enum BodyPartPickerOption {
     case head
@@ -26,37 +27,26 @@ final class BodyPartPickerViewController: UIViewController {
     //MARK: - Private vars
     
     private var currentEditableSkin: SkinCreatedModel?
-    private var layerToEdit: CurrentEditableLayer = .innerLayer
+    private var layerToEdit: CurrentEditableLayer = .outerLayer
     private var saveAlertView: SaveAlertView?
     
     //MARK: - IBOutlets
     
     @IBOutlet private weak var navigationBar: UIView!
     
-    @IBOutlet private weak var skinNameLab: UILabel!
-    
-    @IBOutlet private weak var layerSwithcerLab: UILabel!
-    
-    @IBOutlet private weak var currentLayerLab: UILabel!
-    
+    @IBOutlet weak var currentEditableSwitcher: BetterSegmentedControl!
+
     @IBOutlet private weak var leftArmComponentView: UIImageView!
-    
     @IBOutlet private weak var rightLegComponentView: UIImageView!
-    
     @IBOutlet private weak var leftLegComponentView: UIImageView!
-    
     @IBOutlet private weak var bodyComponentView: UIImageView!
-    
     @IBOutlet private weak var rightArmComponentView: UIImageView!
-    
     @IBOutlet private weak var headComponentView: UIImageView!
-    
-    @IBOutlet private weak var hatComponentView: UIImageView!
-    
     @IBOutlet private weak var bodyPartsContainer: UIView!
     
-    //MARK: - Init
+    @IBOutlet weak var goNextButton: UIButton!
     
+    //MARK: - Init
     init(currentEditableSkin: SkinCreatedModel? = nil) {
         super.init(nibName: nil, bundle: nil)
         
@@ -105,21 +95,15 @@ final class BodyPartPickerViewController: UIViewController {
         headComponentView.image = UIImage(named: "general_head")
         leftArmComponentView.image = UIImage(named: "general_arm")
         rightArmComponentView.image = UIImage(named: "general_arm")
-        
         leftLegComponentView.image = UIImage(named: "general_arm")
         rightLegComponentView.image = UIImage(named: "general_arm")
-        
         bodyComponentView.image = UIImage(named: "general_body")
-        
-        skinNameLab.text = currentEditableSkin?.name
-        
-        updateCurrentLayerText()
-        
+
         enableImageViewsBorder()
+        configureView()
     }
     
     //MARK: Gestures
-    
     private func addTapGestures() {
         addTapGesture(for: headComponentView)
         addTapGesture(for: leftArmComponentView)
@@ -127,13 +111,37 @@ final class BodyPartPickerViewController: UIViewController {
         addTapGesture(for: leftLegComponentView)
         addTapGesture(for: bodyComponentView)
         addTapGesture(for: rightArmComponentView)
-        addTapGesture(for: hatComponentView)
     }
     
     private func addTapGesture(for view: UIView) {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:)))
         view.addGestureRecognizer(tapGestureRecognizer)
         view.isUserInteractionEnabled = true
+    }
+    
+    private func configureView() {
+        currentEditableSwitcher.segments = LabelSegment.segments(withTitles: ["Outer layer", "Inner layer"],
+                                                                 normalFont: UIFont(name: "Montserrat-Bold", size: 18),
+                                                                 normalTextColor: UIColor(named: "EerieBlackColor"),
+                                                                 selectedFont: UIFont(name: "Montserrat-Bold", size: 18),
+                                                                 selectedTextColor: UIColor(named: "BeigeColor"))
+    }
+    
+    @IBAction func segmentControlChangeAction(_ sender: BetterSegmentedControl) {
+        switch sender.index {
+        case 0:
+            self.layerToEdit = .outerLayer
+            self.colorSides()
+            if layerToEdit != .outerLayer {
+                layerToEdit.toggle()
+            }
+        default:
+            self.layerToEdit = .innerLayer
+            self.colorSides()
+            if layerToEdit != .innerLayer {
+                layerToEdit.toggle()
+            }
+        }
     }
     
     @IBAction private func onHomeButtonTapped(_ sender: UIButton) {
@@ -202,9 +210,6 @@ final class BodyPartPickerViewController: UIViewController {
             }
             navigationController?.pushViewController(TorsoBodyPartViewController(currentEditableSkin: currentEditableSkin, body: body), animated: true)
             
-        case hatComponentView:
-            switchSelectedLayer()
-            
         default:
             break
         }
@@ -219,17 +224,12 @@ final class BodyPartPickerViewController: UIViewController {
         bodyComponentView.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!)
         rightArmComponentView.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!)
         headComponentView.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!)
-        hatComponentView.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!)
     }
-    
-    private func deselectBorders(view: UIView) {
-        view.layer.borderWidth = 0
-    }
-    
+
     private func startFlashingBorder(for view: UIView) {
         let animation = CABasicAnimation(keyPath: "borderColor")
         animation.fromValue = UIColor.clear.cgColor
-        animation.toValue = UIColor.blue.cgColor
+        animation.toValue = UIColor.black.cgColor
         animation.duration = 0.5
         animation.repeatCount = .infinity
         animation.autoreverses = true
@@ -286,24 +286,6 @@ final class BodyPartPickerViewController: UIViewController {
             } else {
                 AppDelegate.log("theSide is wrong")
             }
-        }
-    }
-    
-    private func switchSelectedLayer() {
-        layerToEdit.toggle()
-        
-        updateCurrentLayerText()
-        
-        colorSides()
-    }
-    
-    private func updateCurrentLayerText() {
-        if layerToEdit == .innerLayer {
-            currentLayerLab.text = "OUTER LAYER"
-            layerSwithcerLab.text = "INNER LAYER"
-        } else {
-            currentLayerLab.text = "INNER LAYER"
-            layerSwithcerLab.text = "OUTER LAYER"
         }
     }
 }

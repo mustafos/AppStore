@@ -41,7 +41,7 @@ class ServerDetailsViewController: UIViewController {
     
     private lazy var loader = {
         let activityView = UIActivityIndicatorView(style: .large)
-        activityView.color = .white
+        activityView.color = .black
         return activityView
     }()
     

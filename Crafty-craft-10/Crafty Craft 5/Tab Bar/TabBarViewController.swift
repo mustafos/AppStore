@@ -19,14 +19,14 @@ class TabBarViewController: UITabBarController {
     private lazy var contentViewController: UIViewController = {
         let viewController = ContentTabViewController()
         var unselectedImage: UIImage? = viewController.tabBarIcon
-        var selectedImage = viewController.tabBarIcon
+        var selectedImage = viewController.tabBarSelectedIcon
         var title: String? = viewController.tabBarTitle
         
         if isIpad {
             selectedImage = UIImage.resizedImage(named: "content", size: CGSize(width: 24, height: 24))
             unselectedImage = UIImage.resizedImage(named: "content", size: CGSize(width: 24, height: 24))
         }
-        viewController.tabBarItem = UITabBarItem(title: title, image: unselectedImage, selectedImage: selectedImage)
+        viewController.tabBarItem = UITabBarItem(title: nil, image: unselectedImage, selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
         
         return viewController
     }()
@@ -35,7 +35,7 @@ class TabBarViewController: UITabBarController {
         let viewController = CreateTabViewController()
         
         var unselectedImage: UIImage? = viewController.tabBarIcon
-        var selectedImage = viewController.tabBarIcon
+        var selectedImage = viewController.tabBarSelectedIcon
         var title: String? = viewController.tabBarTitle
         
         if isIpad {
@@ -43,7 +43,7 @@ class TabBarViewController: UITabBarController {
             unselectedImage = UIImage.resizedImage(named: "create", size: CGSize(width: 24, height: 24))
         }
         
-        viewController.tabBarItem = UITabBarItem(title: title, image: unselectedImage, selectedImage: selectedImage)
+        viewController.tabBarItem = UITabBarItem(title: nil, image: unselectedImage, selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
         
         return viewController
     }()
@@ -52,7 +52,7 @@ class TabBarViewController: UITabBarController {
         let viewController = SeedTabViewController()
         
         var unselectedImage: UIImage? = viewController.tabBarIcon
-        var selectedImage = viewController.tabBarIcon
+        var selectedImage = viewController.tabBarSelectedIcon
         var title: String? = viewController.tabBarTitle
         
         if isIpad {
@@ -60,7 +60,7 @@ class TabBarViewController: UITabBarController {
             unselectedImage = UIImage.resizedImage(named: "seeds", size: CGSize(width: 24, height: 24))
         }
         
-        viewController.tabBarItem = UITabBarItem(title: title, image: unselectedImage, selectedImage: selectedImage)
+        viewController.tabBarItem = UITabBarItem(title: nil, image: unselectedImage, selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
         
         return viewController
     }()
@@ -69,7 +69,7 @@ class TabBarViewController: UITabBarController {
         let viewController = ServersTabViewController()
         
         var unselectedImage: UIImage? = viewController.tabBarIcon
-        var selectedImage = viewController.tabBarIcon
+        var selectedImage = viewController.tabBarSelectedIcon
         var title: String? = viewController.tabBarTitle
         
         if isIpad {
@@ -77,7 +77,7 @@ class TabBarViewController: UITabBarController {
             unselectedImage = UIImage.resizedImage(named: "servers", size: CGSize(width: 24, height: 24))
         }
         
-        viewController.tabBarItem = UITabBarItem(title: title, image: unselectedImage, selectedImage: selectedImage)
+        viewController.tabBarItem = UITabBarItem(title: nil, image: unselectedImage, selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
         
         return viewController
     }()
@@ -124,8 +124,12 @@ class TabBarViewController: UITabBarController {
         roundLayer.path = bezierPath.cgPath
         
         tabBar.layer.insertSublayer(roundLayer, at: 0)
-        tabBar.itemWidth = width / 5
-        tabBar.itemPositioning = .centered
+        
+        if let items = tabBar.items {
+            for (index, item) in items.enumerated() {
+                item.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+            }
+        }
         
         roundLayer.strokeColor = UIColor.black.cgColor
         roundLayer.lineWidth = 1.0
@@ -135,7 +139,6 @@ class TabBarViewController: UITabBarController {
         roundLayer.shadowRadius = 4
         roundLayer.shadowOffset = CGSize(width: 0, height: 4)
 
-        tabBar.tintColor = UIColor(named: "BeigeColor")
         tabBar.unselectedItemTintColor = UIColor(named: "EerieBlackColor")
     }
     

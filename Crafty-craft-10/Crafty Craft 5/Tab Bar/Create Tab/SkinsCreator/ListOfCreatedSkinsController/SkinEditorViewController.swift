@@ -10,7 +10,6 @@ class SkinEditorViewController: UIViewController {
     private lazy var minecraftSkinManager: MinecraftSkinManagerProtocol = MinecraftSkinManager()
     
     var alertWindow: UIWindow?
-    var blurView: UIVisualEffectView?
     
     var selectedSkinIndex = Int()
     lazy var model = SkinEditorVCModel()

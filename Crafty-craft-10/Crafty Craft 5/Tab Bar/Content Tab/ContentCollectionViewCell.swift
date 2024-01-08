@@ -113,8 +113,8 @@ final class ContentCollectionViewCell: UICollectionViewCell {
         addSubview(loader)
         bringSubviewToFront(loader)
         loader.translatesAutoresizingMaskIntoConstraints = false
-        loader.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        loader.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        loader.centerYAnchor.constraint(equalTo: contentImageView.centerYAnchor).isActive = true
+        loader.centerXAnchor.constraint(equalTo: contentImageView.centerXAnchor).isActive = true
         loader.startAnimating()
     }
     

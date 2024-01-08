@@ -96,6 +96,10 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         return UIImage(named: "content")
     }
     
+    public var tabBarSelectedIcon: UIImage? {
+        return UIImage(named: "contentSelect")
+    }
+    
     public var tabBarTitle: String {
         return "Content"
     }

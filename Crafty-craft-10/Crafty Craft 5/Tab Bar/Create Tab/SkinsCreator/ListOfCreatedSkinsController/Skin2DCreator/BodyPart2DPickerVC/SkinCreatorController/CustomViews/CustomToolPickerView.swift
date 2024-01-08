@@ -5,9 +5,9 @@ class CustomToolPickerView : UIView {
 
 //    @IBInspectable var color: UIColor?
 //    @IBInspectable var radii: CGFloat = 15.0
-
-    // MARK: - Private Properties
-
+//
+//    // MARK: - Private Properties
+//
 //    private var shapeLayer: CALayer?
 //
 //    // MARK: - Lifecycle

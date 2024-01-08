@@ -1,6 +1,3 @@
-
-
-// MARK: ios 13+ only
 import UIKit
 import PencilKit
 import CoreGraphics

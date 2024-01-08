@@ -245,6 +245,10 @@ extension ServersTabViewController: TabBarConfigurable {
     var tabBarIcon: UIImage? {
         return UIImage(named: "servers")
     }
+    
+    var tabBarSelectedIcon: UIImage? {
+        return UIImage(named: "serversSelect")
+    }
 
     var tabBarTitle: String {
         return "Servers"

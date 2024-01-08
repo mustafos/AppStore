@@ -35,7 +35,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5ka-hS-8fO">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="184"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="184" id="xOl-zk-IqD"/>
+                                            <constraint firstAttribute="height" constant="184" id="xOl-zk-IqD"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uxx-Fq-YON">

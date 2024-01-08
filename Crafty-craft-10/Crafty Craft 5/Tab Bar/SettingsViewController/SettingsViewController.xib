@@ -142,8 +142,8 @@
                     <rect key="frame" x="46" y="390" width="301" height="72"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cache successfully cleared!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yT-ez-1fi">
-                            <rect key="frame" x="10" y="23.666666666666686" width="281" height="24.666666666666671"/>
-                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="20"/>
+                            <rect key="frame" x="24" y="25" width="253" height="22"/>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
                             <color key="textColor" name="EerieBlackColor"/>
                             <nil key="highlightedColor"/>
                         </label>
