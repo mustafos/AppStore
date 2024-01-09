@@ -1,13 +1,12 @@
 import UIKit
 
-
 class HeadBodyPartViewController: UIViewController {
 
     var currentEditableSkin: SkinCreatedModel?
     var bodyPartSide = CubicHuman.BodyPart.head
-
+    
     // MARK: - Outlets
-
+    
     @IBOutlet private weak var backHeadImageView: UIImageView!
     @IBOutlet private weak var rightHeadImageView: UIImageView!
     @IBOutlet private weak var leftHeadImageView: UIImageView!
@@ -15,7 +14,8 @@ class HeadBodyPartViewController: UIViewController {
     @IBOutlet private weak var bottomHeadImageView: UIImageView!
     @IBOutlet private weak var topHeadImageView: UIImageView!
     @IBOutlet private weak var navigationBarView: UIView!
-
+    
+    @IBOutlet weak var headerLabel: UILabel!
 
     // MARK: - Actions
 
@@ -25,7 +25,6 @@ class HeadBodyPartViewController: UIViewController {
     
     
     //MARK: - Init
-    
     init(currentEditableSkin: SkinCreatedModel? = nil, layerToEdit: CurrentEditableLayer) {
         super.init(nibName: nil, bundle: nil)
         
@@ -36,7 +35,6 @@ class HeadBodyPartViewController: UIViewController {
             bodyPartSide = CubicHuman.BodyPart.head1
         }
     }
-
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -51,10 +49,7 @@ class HeadBodyPartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupBackground()
         setupHeadImages()
-        setupNavigation()
         setupGestureRecognizers()
     }
     
@@ -65,25 +60,15 @@ class HeadBodyPartViewController: UIViewController {
     }
     
     // MARK: - Setup
-
-    private func setupBackground() {
-        let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "Green Background")
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
-    }
-    
     private func setupHeadImages() {
         let headImageViews: [UIImageView] = [backHeadImageView, rightHeadImageView, leftHeadImageView, frontHeadImageView, bottomHeadImageView, topHeadImageView]
         headImageViews.forEach { $0.image = UIImage(named: "general_head") }
         headImageViews.forEach{ $0.layer.magnificationFilter = .nearest }
-        headImageViews.forEach{ $0.setBorder(size: 2, color: UIColor(named: "greenCCRedesign")!) }
-    }
-    
-    private func setupNavigation() {
-        navigationBarView.backgroundColor = .clear
+        headImageViews.forEach{ $0.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!) }
+        
+        headerLabel.roundCorners(.allCorners, radius: 27)
+        headerLabel.layer.borderWidth = 1
+        headerLabel.layer.borderColor = UIColor(.black).cgColor
     }
     
     private func setupGestureRecognizers() {

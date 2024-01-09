@@ -23,7 +23,6 @@ class SsvedAddonCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var downloadBtn: UIButton!
     
-    
     @IBAction func deleteBtnTapped(_ sender: UIButton) {
         onDeleteButtonTapped?()
     }

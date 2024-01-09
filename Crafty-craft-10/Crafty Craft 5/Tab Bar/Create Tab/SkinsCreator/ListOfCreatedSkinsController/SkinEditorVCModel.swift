@@ -2,7 +2,6 @@ import ImageIO
 import UIKit
 import Foundation
 
-
 final class SkinEditorVCModel {
     
     var selectedSkinIndex = Int()

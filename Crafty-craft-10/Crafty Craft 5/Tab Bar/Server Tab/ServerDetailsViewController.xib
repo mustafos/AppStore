@@ -42,14 +42,6 @@
                             <color key="textColor" name="BeigeColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jih-Zx-hw4" userLabel="Favorite Button">
-                            <rect key="frame" x="314" y="20" width="44" height="44"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="Jih-Zx-hw4" secondAttribute="height" multiplier="1:1" id="7Nw-QX-Hot"/>
-                            </constraints>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" backgroundImage="FavButton_unselected"/>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcT-a4-hvq" userLabel="Home Button">
                             <rect key="frame" x="20" y="20" width="44" height="44"/>
                             <constraints>
@@ -78,7 +70,6 @@
                         <constraint firstItem="kDi-bw-cEs" firstAttribute="leading" secondItem="HcT-a4-hvq" secondAttribute="trailing" constant="8" id="18x-Ss-X0x"/>
                         <constraint firstItem="8BP-Hl-V2o" firstAttribute="top" secondItem="XQA-PB-AA4" secondAttribute="top" constant="20" id="1nh-JW-ljo"/>
                         <constraint firstAttribute="bottom" secondItem="8BP-Hl-V2o" secondAttribute="bottom" constant="20" id="63w-30-0ZQ"/>
-                        <constraint firstAttribute="bottom" secondItem="Jih-Zx-hw4" secondAttribute="bottom" constant="20" id="7Kf-fc-RgM"/>
                         <constraint firstAttribute="bottom" secondItem="HcT-a4-hvq" secondAttribute="bottom" constant="20" id="G8o-Ce-3ys"/>
                         <constraint firstItem="HcT-a4-hvq" firstAttribute="top" secondItem="XQA-PB-AA4" secondAttribute="top" constant="20" id="SVj-ll-dPR"/>
                         <constraint firstAttribute="trailing" secondItem="8BP-Hl-V2o" secondAttribute="trailing" constant="20" id="cfa-it-6a0"/>
@@ -87,8 +78,6 @@
                         <constraint firstItem="kDi-bw-cEs" firstAttribute="centerX" secondItem="XQA-PB-AA4" secondAttribute="centerX" id="lcU-Yp-kea"/>
                         <constraint firstAttribute="bottom" secondItem="kDi-bw-cEs" secondAttribute="bottom" constant="8" id="mMG-w6-et9"/>
                         <constraint firstItem="HcT-a4-hvq" firstAttribute="leading" secondItem="XQA-PB-AA4" secondAttribute="leading" constant="20" id="q22-dI-tbD"/>
-                        <constraint firstItem="Jih-Zx-hw4" firstAttribute="top" secondItem="XQA-PB-AA4" secondAttribute="top" constant="20" id="r0d-eu-fnq"/>
-                        <constraint firstItem="8BP-Hl-V2o" firstAttribute="leading" secondItem="Jih-Zx-hw4" secondAttribute="trailing" constant="8" id="u7s-vk-DMl"/>
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpz-6x-bdG">
@@ -197,7 +186,7 @@
                     <rect key="frame" x="66" y="454.66666666666669" width="298" height="48"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copied successfully!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvN-1x-4Gl">
-                            <rect key="frame" x="42.666666666666671" y="12" width="212.66666666666663" height="24"/>
+                            <rect key="frame" x="43.000000000000014" y="12" width="212.33333333333337" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="Jta-6e-aFv"/>
                             </constraints>
@@ -242,7 +231,6 @@
     <resources>
         <image name="Back Item" width="44" height="44"/>
         <image name="Dowmload Item" width="44" height="44"/>
-        <image name="FavButton_unselected" width="44" height="44"/>
         <image name="copy symbol" width="24" height="24"/>
         <namedColor name="BackgroundColor">
             <color red="0.19215686274509805" green="0.20784313725490197" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

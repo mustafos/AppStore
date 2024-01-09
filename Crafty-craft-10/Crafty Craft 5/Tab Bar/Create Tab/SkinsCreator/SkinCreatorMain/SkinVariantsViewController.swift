@@ -243,9 +243,6 @@ class SkinVariantsViewController: UIViewController {
         }
     }
     
-    
-    
-    
     lazy var dismissibleHeight: CGFloat = defaultHeight * 0.8
     let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 64
     // keep current new height, initial is default height
@@ -299,9 +296,7 @@ class SkinVariantsViewController: UIViewController {
     
     func setupConstraints() {
         // Add subviews
-        view.addSubview(dimmedView)
         view.addSubview(containerView)
-        dimmedView.translatesAutoresizingMaskIntoConstraints = false
         containerView.translatesAutoresizingMaskIntoConstraints = false
         
         containerView.backgroundColor = .clear
@@ -310,34 +305,33 @@ class SkinVariantsViewController: UIViewController {
         
         // Set static constraints
         NSLayoutConstraint.activate([
-            // set dimmedView edges to superview
-            dimmedView.topAnchor.constraint(equalTo: view.topAnchor),
-            dimmedView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            dimmedView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            dimmedView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            // set container static constraint (trailing & leading)
-            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            // set container static constraint (centered horizontally and vertically)
+            containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            containerView.widthAnchor.constraint(equalToConstant: self.view.frame.width - buttonHorizontalOffset * 2),
             // content stackView
-            contentStackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 32),
-            contentStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -20),
-            contentStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
-            contentStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20)
+            contentStackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 90),
+            contentStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 0),
+            contentStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 0),
+            contentStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 0)
         ])
         
         // Set dynamic constraints
-        // First, set container to default height
-        // after panning, the height can expand
+        // Set container to default height
         containerViewHeightConstraint = containerView.heightAnchor.constraint(equalToConstant: defaultHeight)
-        
-        // By setting the height to default height, the container will be hide below the bottom anchor view
-        // Later, will bring it up by set it to 0
-        // set the constant to default height to bring it down again
-        containerViewBottomConstraint = containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: defaultHeight)
-        // Activate constraints
         containerViewHeightConstraint?.isActive = true
-        containerViewBottomConstraint?.isActive = true
+        
+        // Add titleLabel to the center top of the view
+        view.addSubview(titleLabel)
+        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32).isActive = true
+        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        // Add createCancelButton to the top right corner
+        view.addSubview(createCancelButton)
+        createCancelButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        createCancelButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
     }
+
     
     func setupPanGesture() {
         // add pan gesture recognizer to the view controller's view (the whole screen)

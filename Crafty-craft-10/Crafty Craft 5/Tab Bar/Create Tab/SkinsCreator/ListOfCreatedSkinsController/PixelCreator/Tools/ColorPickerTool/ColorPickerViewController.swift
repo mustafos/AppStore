@@ -1,7 +1,5 @@
 import UIKit
 
-
-
 protocol PickerViewControllerProtocol : AnyObject {
     func dismissView()
     func setColor(color: UIColor)
@@ -47,21 +45,19 @@ class ColorPickerViewController: UIViewController {
     }
     
     private func configurePikkoView() {
-        pikkoView.roundCorners(18)
-        pikkoView.layer.borderWidth = 1
-        pikkoView.layer.borderColor = UIColor.white.cgColor
-        pikkoView.backgroundColor = .clear
+        pikkoView.roundCorners(12)
         pikkoView.clipsToBounds = true
         pikkoView.currentColor = TransitionColor
         pikkoView.setColor(TransitionColor)
     }
     
     private func configureBackgroundView() {
-        backgroundView.roundCorners(12)
+        backgroundView.roundCorners(27)
+        backgroundView.layer.borderWidth = 1
+        backgroundView.layer.borderColor = #colorLiteral(red: 0.1529411765, green: 0.1529411765, blue: 0.1529411765, alpha: 1)
     }
     
     private func configureColorButton() {
-        colorButton.backgroundColor = .white
         colorButton.layer.borderWidth = 1
         colorButton.layer.borderColor = #colorLiteral(red: 0.1529411765, green: 0.1529411765, blue: 0.1529411765, alpha: 1)
         colorButton.roundCorners(27)
@@ -71,7 +67,7 @@ class ColorPickerViewController: UIViewController {
     
     private func configureColorSlider() {
         colorSlider.backgroundColor = .clear
-        colorSlider.setCornerRadius(by: colorSlider.bounds.height / 2)
+        colorSlider.setCornerRadius(by: colorSlider.bounds.height / 3)
         let thumbViewSizeOffset: CGFloat = Device.iPhone ? 6 : 0
         colorSlider.thumbView.layer.borderWidth = 2
         colorSlider.thumbView.frame = CGRect(x: 0,

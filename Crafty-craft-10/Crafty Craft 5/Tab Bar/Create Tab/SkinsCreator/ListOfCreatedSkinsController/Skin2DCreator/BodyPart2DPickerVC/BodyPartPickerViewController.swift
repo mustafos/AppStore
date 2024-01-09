@@ -44,8 +44,6 @@ final class BodyPartPickerViewController: UIViewController {
     @IBOutlet private weak var headComponentView: UIImageView!
     @IBOutlet private weak var bodyPartsContainer: UIView!
     
-    @IBOutlet weak var goNextButton: UIButton!
-    
     //MARK: - Init
     init(currentEditableSkin: SkinCreatedModel? = nil) {
         super.init(nibName: nil, bundle: nil)

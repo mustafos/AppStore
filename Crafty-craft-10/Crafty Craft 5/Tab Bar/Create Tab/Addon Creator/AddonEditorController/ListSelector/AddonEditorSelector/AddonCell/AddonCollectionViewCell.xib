@@ -67,6 +67,7 @@
             <size key="customSize" width="184" height="240"/>
             <connections>
                 <outlet property="Image" destination="Ds7-m8-lWh" id="8GS-Na-SdL"/>
+                <outlet property="image" destination="Ds7-m8-lWh" id="Ut8-6w-H4c"/>
                 <outlet property="label" destination="5zk-Ra-hzh" id="OFr-qQ-lip"/>
             </connections>
             <point key="canvasLocation" x="239.64843749999997" y="-40.409956076134698"/>
@@ -74,7 +75,7 @@
     </objects>
     <designables>
         <designable name="5zk-Ra-hzh">
-            <size key="intrinsicContentSize" width="59.5" height="19"/>
+            <size key="intrinsicContentSize" width="46" height="20"/>
         </designable>
     </designables>
     <resources>

@@ -63,10 +63,7 @@ extension SkinCreatorViewController: UICollectionViewDelegateFlowLayout {
 //MARK: ColorManager Delegate
 
 extension SkinCreatorViewController: ColorAble {
-
     func updateCollection() {
         colorsCollection.reloadData()
     }
-    
-    
 }

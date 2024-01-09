@@ -16,6 +16,8 @@ class TorsoBodyPartViewController: UIViewController {
     
     @IBOutlet weak var rightBody: UIImageView!
     
+    @IBOutlet weak var headerLabel: UILabel!
+    
     
     //MARK: - Init
     
@@ -38,16 +40,9 @@ class TorsoBodyPartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "Green Background")
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
-        
-        navigationBar.backgroundColor = .clear
-        
+        headerLabel.roundCorners(.allCorners, radius: 27)
+        headerLabel.layer.borderWidth = 1
+        headerLabel.layer.borderColor = UIColor(.black).cgColor
 
         addTapGesture(for: backBody)
         addTapGesture(for: frontBody)
@@ -130,7 +125,7 @@ class TorsoBodyPartViewController: UIViewController {
         
         let imageViews: [UIImageView] = [topBody, bottomBody, leftBody, rightBody, frontBody, backBody]
         imageViews.forEach({ $0.layer.magnificationFilter = .nearest })
-        imageViews.forEach({ $0.setBorder(size: 2, color: UIColor(named: "greenCCRedesign")!) })
+        imageViews.forEach({ $0.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!) })
             
         let sides = [
             body.top,

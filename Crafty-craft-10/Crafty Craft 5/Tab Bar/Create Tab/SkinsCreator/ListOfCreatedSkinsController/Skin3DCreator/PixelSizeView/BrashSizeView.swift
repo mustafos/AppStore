@@ -1,24 +1,17 @@
-
-
 import UIKit
-
-
 
 class BrashSizeView: UIView {
     
     @IBOutlet private var mainBrashSizeView: UIView!
     
-    @IBOutlet private var pointIndicatorBashSizeImages: [UIImageView]!
-    
-
-    @IBOutlet var sizeLabels: [UILabel]!
+    @IBOutlet private var brashSizeSlider: UISlider!
     
     weak var delegate: BrashSizeCangableDelegate?
     
     var currentBrashTool: ToolBar3DSelectedItem = .pencil {
         didSet {
-            updateCurrentIndex()
-            resetImages()
+            updateSliderValue()
+            delegate?.changeBrashSize(to: brashSize)
         }
     }
     
@@ -33,13 +26,6 @@ class BrashSizeView: UIView {
     
     private var brashSize: BrashSize {
         sizes[currentBrashTool]!
-    }
-    
-    private var currentIndex = 0 {
-        didSet {
-            resetImages()
-            delegate?.changeBrashSize(to: brashSize)
-        }
     }
     
     override init(frame: CGRect) {
@@ -59,66 +45,31 @@ class BrashSizeView: UIView {
         mainBrashSizeView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mainBrashSizeView.translatesAutoresizingMaskIntoConstraints = true
         
-        updateCurrentIndex()
-        
-        for (index, pointIndicator) in pointIndicatorBashSizeImages.enumerated() {
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
-            pointIndicator.isUserInteractionEnabled = true
-            pointIndicator.addGestureRecognizer(tapGesture)
-            pointIndicator.tag = index
-        }
-        
-        for (index, pointIndicator) in sizeLabels.enumerated() {
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
-            pointIndicator.isUserInteractionEnabled = true
-            pointIndicator.addGestureRecognizer(tapGesture)
-            pointIndicator.tag = index
-        }
+        brashSizeSlider.addTarget(self, action: #selector(handleSliderChange(_:)), for: .valueChanged)
         
         addSubview(mainBrashSizeView)
     }
     
-    private func updateCurrentIndex() {
+    private func updateSliderValue() {
         switch brashSize {
         case .one:
-            currentIndex = 0
+            brashSizeSlider.value = 0
         case .two:
-            currentIndex = 1
+            brashSizeSlider.value = 1
         case .four:
-            currentIndex = 2
+            brashSizeSlider.value = 2
         case .six:
-            currentIndex = 3
+            brashSizeSlider.value = 3
         case .eight:
-            currentIndex = 4
+            brashSizeSlider.value = 4
         }
     }
     
-    @objc private func handleTapGesture(_ gesture: UITapGestureRecognizer) {
-        currentIndex = gesture.view?.tag ?? 0
-        
-        resetImages()
-    }
-    
-    private func resetImages() {
-        pointIndicatorBashSizeImages.forEach { imag in
-            if imag.tag == currentIndex {
-                imag.image = UIImage(named: "brashSelectIcon")
-                switch imag.tag {
-                case 0:
-                    sizes[currentBrashTool] = .one
-                case 1:
-                    sizes[currentBrashTool] = .two
-                case 2:
-                    sizes[currentBrashTool] = .four
-                case 3:
-                    sizes[currentBrashTool] = .six
-                default:
-                    sizes[currentBrashTool] = .eight
-                }
-            } else {
-                imag.image = UIImage(named: "brushDot")
-            }
-        }
+    @objc private func handleSliderChange(_ slider: UISlider) {
+        let roundedValue = round(slider.value)
+        slider.value = roundedValue
+        sizes[currentBrashTool] = BrashSize(rawValue: Int(roundedValue)) ?? .one
+        delegate?.changeBrashSize(to: brashSize)
     }
     
     private func loadVolumeViewFromNib() -> UIView {

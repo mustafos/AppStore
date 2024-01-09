@@ -1,7 +1,4 @@
-
-
 import Foundation
-
 import UIKit
 
 var TransitionColor: UIColor = .black
@@ -11,14 +8,10 @@ var TransitionColor: UIColor = .black
 public class Pikko: UIView {
     
     public var hueView: HueView?
-    
     private var brightnessSaturationView: BrightnessSaturationView?
     public var currentColor: UIColor = .white
     public var dimensionW: Int = 0
     public var dimensionH: Int = 0
-    
-    
-
     
     /// The PikkoDelegate that is called whenever the color is updated.
     public var delegate: PikkoDelegate?

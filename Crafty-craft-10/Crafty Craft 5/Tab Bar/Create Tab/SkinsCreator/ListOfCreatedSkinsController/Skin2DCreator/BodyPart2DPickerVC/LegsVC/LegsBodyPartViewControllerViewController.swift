@@ -16,6 +16,7 @@ class LegsBodyPartViewControllerViewController: UIViewController {
     @IBOutlet private weak var bottomLegImageView: UIImageView!
     @IBOutlet private weak var topLegImageView: UIImageView!
     @IBOutlet private weak var navigationBarView: UIView!
+    @IBOutlet weak var headerLabel: UILabel!
     
     
     //MARK: - Init
@@ -46,7 +47,7 @@ class LegsBodyPartViewControllerViewController: UIViewController {
         setupGestureRecognizers()
         
         topLegImageView.layer.borderWidth = 2
-        topLegImageView.layer.borderColor = UIColor(named: "greenCCRedesign")?.cgColor
+        topLegImageView.layer.borderColor = UIColor(named: "EerieBlackColor")?.cgColor
         
         updateImageFor(imageView: topLegImageView, image: nil)
         updateImageFor(imageView: bottomLegImageView, image: nil)
@@ -64,12 +65,9 @@ class LegsBodyPartViewControllerViewController: UIViewController {
     // MARK: - Setup
 
     private func setupBackground() {
-        let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "Green Background")
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
+        headerLabel.roundCorners(.allCorners, radius: 27)
+        headerLabel.layer.borderWidth = 1
+        headerLabel.layer.borderColor = UIColor(.black).cgColor
     }
     
     private func setupLegImages() {

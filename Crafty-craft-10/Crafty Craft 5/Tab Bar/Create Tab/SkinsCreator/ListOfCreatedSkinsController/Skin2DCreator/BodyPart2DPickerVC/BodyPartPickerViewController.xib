@@ -19,7 +19,6 @@
                 <outlet property="bodyComponentView" destination="CbH-wi-X2b" id="s1J-p6-odw"/>
                 <outlet property="bodyPartsContainer" destination="Pnv-aH-El4" id="FSC-er-4PK"/>
                 <outlet property="currentEditableSwitcher" destination="1GI-C5-0LV" id="64U-Mw-xjB"/>
-                <outlet property="goNextButton" destination="MI9-jm-pIy" id="l9H-91-nNY"/>
                 <outlet property="headComponentView" destination="fLD-Nx-lwi" id="heM-CY-njf"/>
                 <outlet property="leftArmComponentView" destination="YP9-4z-M6R" id="v4a-8n-deW"/>
                 <outlet property="leftLegComponentView" destination="9KT-BE-xfe" id="kbn-Wv-7qK"/>
@@ -87,61 +86,38 @@
                         <action selector="segmentControlChangeAction:" destination="-1" eventType="valueChanged" id="Rk7-SR-P1x"/>
                     </connections>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MI9-jm-pIy">
-                    <rect key="frame" x="20" y="718" width="335" height="54"/>
-                    <color key="backgroundColor" name="YellowSelectiveColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="54" id="ruy-0x-NzR"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Next">
-                        <color key="titleColor" name="EerieBlackColor"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" name="EerieBlackColor"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="28"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnv-aH-El4" userLabel="partsContainer View">
                     <rect key="frame" x="93.666666666666686" y="233.66666666666663" width="188" height="425"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fLD-Nx-lwi" userLabel="head component">
                             <rect key="frame" x="48.999999999999993" y="0.0" width="89.333333333333314" height="89.333333333333329"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.99999994039999995" green="0.99999994039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" name="BeigeColor"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-wi-X2b" userLabel="body component">
                             <rect key="frame" x="48.999999999999993" y="94.333333333333314" width="89.333333333333314" height="164"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" name="BeigeColor"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33k-ux-xnD" userLabel="right arm component">
                             <rect key="frame" x="143.66666666666666" y="94.333333333333314" width="44" height="164"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.99999994039999995" green="0.99999994039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" name="BeigeColor"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YP9-4z-M6R" userLabel="left arm component">
                             <rect key="frame" x="0.0" y="94.333333333333314" width="43.666666666666664" height="164"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.99999994039999995" green="0.99999994039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" name="BeigeColor"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9KT-BE-xfe" userLabel="left leg component">
                             <rect key="frame" x="49" y="261.33333333333331" width="43.666666666666657" height="163.66666666666669"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.99999994039999995" green="0.99999994039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" name="BeigeColor"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E1S-6Y-GRr" userLabel="right leg component">
                             <rect key="frame" x="94.666666666666671" y="261.33333333333331" width="43.666666666666671" height="163.66666666666669"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.99999994039999995" green="0.99999994039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" name="BeigeColor"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -159,11 +135,8 @@
                 <constraint firstItem="0XI-7f-nBV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5pX-py-g7B"/>
                 <constraint firstItem="Pnv-aH-El4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Alw-n7-afx"/>
                 <constraint firstItem="Pnv-aH-El4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="40" id="WGQ-Ie-ydV"/>
-                <constraint firstItem="MI9-jm-pIy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Wf0-HY-ogf"/>
                 <constraint firstItem="1GI-C5-0LV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ZFp-m3-Xoy"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MI9-jm-pIy" secondAttribute="trailing" constant="20" id="aIo-X4-lKW"/>
                 <constraint firstItem="0XI-7f-nBV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gPx-Hu-bkU"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MI9-jm-pIy" secondAttribute="bottom" constant="6" id="p7M-3u-amd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1GI-C5-0LV" secondAttribute="trailing" constant="20" id="qwD-Zd-ntO"/>
             </constraints>
             <point key="canvasLocation" x="-116" y="23.645320197044335"/>

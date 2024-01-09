@@ -141,7 +141,7 @@ final class SkinCreatorImportViewController: UIViewController {
         navigationBar.backgroundColor = .clear
         
         saveButton.isEnabled = false
-        
+        canvasContainer.roundCorners()
         buttonsStackView.roundCorners()
     }
     
@@ -185,7 +185,7 @@ final class SkinCreatorImportViewController: UIViewController {
         saveAlertView?.setSkinNameSaveTextField.isHidden = true
         saveAlertView?.setSkinNameSaveTextField.attributedPlaceholder = NSAttributedString(
             string: currentEditableSkin?.name ?? "",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "placeholderCCRedesign")]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(.gray)]
         )
         view.addSubview(saveAlertView!)
     }

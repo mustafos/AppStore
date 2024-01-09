@@ -23,7 +23,6 @@ extension Skin3DTestViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         guard let cell = color3DCollection.dequeueReusableCell(withReuseIdentifier: "Color3DCollectionCell", for: indexPath) as? Color3DCollectionCell else {
-
             return UICollectionViewCell()
         }
 
@@ -67,10 +66,7 @@ extension Skin3DTestViewController: UICollectionViewDelegateFlowLayout {
 //MARK: ColorManager Delegate
 
 extension Skin3DTestViewController: ColorAble3D {
-
     func updateCollection() {
         color3DCollection.reloadData()
     }
-    
-    
 }

@@ -75,9 +75,7 @@ class Skin3DTestViewController: UIViewController {
     @IBOutlet weak var customToolPicker: CustomToolPickerView!
     
     @IBOutlet weak var color3DCollection: UICollectionView!
-    //Tools
-    //
-    
+
     @IBOutlet weak var pencilLab: UILabel!
     @IBOutlet weak var pencilBtn: UIButton!
     
@@ -184,7 +182,7 @@ class Skin3DTestViewController: UIViewController {
             saveAlertView?.withExit = true
             saveAlertView?.setSkinNameSaveTextField.attributedPlaceholder = NSAttributedString(
                 string: skinNameLabel.text ?? "",
-                attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "placeholderCCRedesign")]
+                attributes: [NSAttributedString.Key.foregroundColor: UIColor(.gray)]
             )
             view.addSubview(saveAlertView!)
         }
@@ -197,7 +195,7 @@ class Skin3DTestViewController: UIViewController {
         saveAlertView?.frame = view.bounds
         saveAlertView?.setSkinNameSaveTextField.attributedPlaceholder = NSAttributedString(
             string: skinNameLabel.text ?? "",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "placeholderCCRedesign")]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(.gray)]
         )
         view.addSubview(saveAlertView!)
     }
@@ -374,8 +372,8 @@ class Skin3DTestViewController: UIViewController {
     
     private func manageSelectedToolUI(tappedTool: UIButton, tappedLab: UILabel) {
         
-        let nonSelectedColor = #colorLiteral(red: 0.1529411765, green: 0.1529411765, blue: 0.1529411765, alpha: 1)
-        let selectedColor = #colorLiteral(red: 0, green: 0.5921568627, blue: 0.3058823529, alpha: 1)
+        let nonSelectedColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        let selectedColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
         let toolBtns = [
             pencilBtn,  eraserBtn,
@@ -431,16 +429,16 @@ class Skin3DTestViewController: UIViewController {
         
         let button1 = UIButton()
         button1.setTitle("Download", for: .normal)
-        button1.backgroundColor = UIColor(named: "greenCCRedesign")
+        button1.backgroundColor = UIColor(named: "YellowSelectiveColor")
         
         button1.addTarget(self, action: #selector(downloadExportAction), for: .touchUpInside)
         button1.roundCorners(.allCorners, radius: stackHeight / 2)
         
         shareButton.setTitle("Share", for: .normal)
-        shareButton.backgroundColor = UIColor(named: "greenCCRedesign")
+        shareButton.backgroundColor = UIColor(named: "YellowSelectiveColor")
         shareButton.addTarget(self, action: #selector(shareAction), for: .touchUpInside)
         shareButton.roundCorners(.allCorners, radius: stackHeight / 2)
-                
+        
         let containerView = UIView()
         containerView.backgroundColor = .white
         view.addSubview(containerView)

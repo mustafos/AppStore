@@ -1293,8 +1293,8 @@
 				C0398D8D2A54307C00A48138 /* SaveAlertView */,
 				C0236D832A4303B700AE1FD3 /* PixelSizeView */,
 				F4AA287C2A1BB04D001B9F0A /* Skin3DTestViewController.swift */,
-				C0EC65872A45DD5F00C5B8ED /* Extension_Skin3DTestViewController+Gestures.swift */,
 				F4AA287D2A1BB04D001B9F0A /* Skin3DTestViewController.xib */,
+				C0EC65872A45DD5F00C5B8ED /* Extension_Skin3DTestViewController+Gestures.swift */,
 				639407EF2A780864007D6301 /* ColorManager3D.swift */,
 				639407F62A780C38007D6301 /* Skin3DTestViewController+Ext_Collection.swift */,
 			);

@@ -9,12 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Allerta-Regular.ttf">
-            <string>Allerta-Regular</string>
-        </array>
-        <array key="Blinker-SemiBold.ttf">
-            <string>Blinker-SemiBold</string>
-        </array>
         <array key="Montserrat-Bold.ttf">
             <string>Montserrat-Bold</string>
         </array>
@@ -28,6 +22,7 @@
                 <outlet property="backArm" destination="VNH-EJ-V4g" id="UKV-G8-scs"/>
                 <outlet property="bottomArm" destination="DvS-f2-cjV" id="YfL-ea-kDW"/>
                 <outlet property="frontArm" destination="Jc8-se-Efg" id="XGV-7j-wtM"/>
+                <outlet property="headerLabel" destination="mUC-ae-oZr" id="DUK-Xi-0KX"/>
                 <outlet property="leftArm" destination="DaX-KV-d3C" id="TNf-z9-vmL"/>
                 <outlet property="navigationBar" destination="GoM-H6-XQt" id="5Au-KU-FVi"/>
                 <outlet property="rightArm" destination="h4u-cY-QKF" id="8JL-5p-9Pa"/>
@@ -88,7 +83,7 @@
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topArm" translatesAutoresizingMaskIntoConstraints="NO" id="eIx-5U-EgI" userLabel="right arm component">
                     <rect key="frame" x="112" y="276" width="169" height="158"/>
-                    <color key="backgroundColor" white="0.9302741699" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" name="BeigeColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="eIx-5U-EgI" secondAttribute="height" multiplier="15:14" id="Hca-IJ-d7t"/>
                     </constraints>
@@ -110,7 +105,7 @@
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_arm" translatesAutoresizingMaskIntoConstraints="NO" id="h4u-cY-QKF" userLabel="right arm component">
                                     <rect key="frame" x="0.0" y="33" width="169.33333333333334" height="163"/>
-                                    <color key="backgroundColor" white="0.9302741699" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="BeigeColor"/>
                                 </imageView>
                             </subviews>
                         </stackView>
@@ -128,7 +123,7 @@
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_arm" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-se-Efg" userLabel="right arm component">
                                     <rect key="frame" x="0.0" y="33" width="169.33333333333334" height="163"/>
-                                    <color key="backgroundColor" white="0.9302741699" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="BeigeColor"/>
                                 </imageView>
                             </subviews>
                         </stackView>
@@ -146,7 +141,7 @@
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_arm" translatesAutoresizingMaskIntoConstraints="NO" id="VNH-EJ-V4g" userLabel="right arm component">
                                     <rect key="frame" x="0.0" y="33" width="169.33333333333334" height="163"/>
-                                    <color key="backgroundColor" white="0.9302741699" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="BeigeColor"/>
                                 </imageView>
                             </subviews>
                         </stackView>
@@ -158,22 +153,13 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="Waj-Ly-ez8"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                    <color key="textColor" name="BeigeColor"/>
                                     <nil key="highlightedColor"/>
-                                    <variation key="heightClass=compact-widthClass=compact">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=compact">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="16"/>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=regular">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="22"/>
-                                    </variation>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_arm" translatesAutoresizingMaskIntoConstraints="NO" id="DaX-KV-d3C" userLabel="right arm component">
                                     <rect key="frame" x="0.0" y="33" width="169.33333333333334" height="163"/>
-                                    <color key="backgroundColor" white="0.9302741699" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="BeigeColor"/>
                                 </imageView>
                             </subviews>
                         </stackView>
@@ -193,15 +179,19 @@
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topArm" translatesAutoresizingMaskIntoConstraints="NO" id="DvS-f2-cjV" userLabel="right arm component">
                     <rect key="frame" x="112" y="711" width="169" height="169.33333333333337"/>
-                    <color key="backgroundColor" white="0.9302741699" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" name="BeigeColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="DvS-f2-cjV" secondAttribute="height" multiplier="1:1" id="eX3-WV-MoR"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HANDS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUC-ae-oZr">
-                    <rect key="frame" x="163.66666666666666" y="776.33333333333337" width="66" height="26.666666666666629"/>
-                    <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="22"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hands" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUC-ae-oZr">
+                    <rect key="frame" x="20" y="749" width="353" height="54"/>
+                    <color key="backgroundColor" name="YellowSelectiveColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="bUe-CH-wRZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                    <color key="textColor" name="EerieBlackColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -214,6 +204,7 @@
                 <constraint firstItem="DvS-f2-cjV" firstAttribute="top" secondItem="sAv-33-b7M" secondAttribute="bottom" constant="5" id="5lS-tO-2lQ"/>
                 <constraint firstItem="Mj1-C6-oU1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6ai-hx-r2w"/>
                 <constraint firstItem="DvS-f2-cjV" firstAttribute="width" secondItem="ETK-MP-yX8" secondAttribute="width" id="Bav-Br-Q8k"/>
+                <constraint firstItem="mUC-ae-oZr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="IBr-oD-yvS"/>
                 <constraint firstItem="Mj1-C6-oU1" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.21" id="PTu-I7-GXF"/>
                 <constraint firstItem="eg2-Be-mix" firstAttribute="top" secondItem="GoM-H6-XQt" secondAttribute="bottom" constant="100" id="V8O-xs-Rg4"/>
                 <constraint firstItem="GoM-H6-XQt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YDc-AG-ZIT"/>
@@ -225,6 +216,7 @@
                 <constraint firstItem="sAv-33-b7M" firstAttribute="top" secondItem="Mj1-C6-oU1" secondAttribute="bottom" constant="24" id="lYq-LB-hkR"/>
                 <constraint firstItem="sAv-33-b7M" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oJd-zX-OHV"/>
                 <constraint firstItem="eg2-Be-mix" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="p1I-as-XKB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mUC-ae-oZr" secondAttribute="trailing" constant="20" id="tK1-XE-zTS"/>
                 <constraint firstItem="DvS-f2-cjV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vPR-10-luc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mUC-ae-oZr" secondAttribute="bottom" constant="15" id="w9y-Wz-SaP"/>
             </constraints>
@@ -261,6 +253,12 @@
         </namedColor>
         <namedColor name="BeigeColor">
             <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="EerieBlackColor">
+            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowSelectiveColor">
+            <color red="0.97254901960784312" green="0.80784313725490198" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

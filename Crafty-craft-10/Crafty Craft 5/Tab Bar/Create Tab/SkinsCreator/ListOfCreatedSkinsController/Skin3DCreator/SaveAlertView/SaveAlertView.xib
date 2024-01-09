@@ -51,6 +51,7 @@
                             </visualEffectView>
                         </subviews>
                     </view>
+                    <color key="backgroundColor" red="0.19215686269999999" green="0.20784313730000001" blue="0.20392156859999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                     <vibrancyEffect>
                         <blurEffect style="dark"/>
                     </vibrancyEffect>

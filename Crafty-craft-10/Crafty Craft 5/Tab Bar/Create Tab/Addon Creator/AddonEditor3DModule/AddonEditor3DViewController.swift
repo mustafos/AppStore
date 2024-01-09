@@ -41,7 +41,7 @@ class AddonEditor3DViewController: UIViewController {
     @IBOutlet weak var brashSizeView: BrashSizeView!
     
     @IBOutlet weak var smallStiveView: SCNView!
-    //    @IBOutlet weak var smallStiveView: SmallModelView!
+//        @IBOutlet weak var smallStiveView: SmallModelView!
     
     @IBOutlet weak var colorsBrashContainerView: UIView!
     
@@ -151,7 +151,7 @@ class AddonEditor3DViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         } else {
             saveAlertView = SaveAlertView()
-            saveAlertView?.dialogTextLabel.text = "Save skin before exit".uppercased()
+            saveAlertView?.dialogTextLabel.text = "Save skin before exit"
             saveAlertView?.delegate = self
             saveAlertView?.frame = view.bounds
             saveAlertView?.setSkinNameSaveTextField.isHidden = true
@@ -159,7 +159,7 @@ class AddonEditor3DViewController: UIViewController {
             
             saveAlertView?.setSkinNameSaveTextField.attributedPlaceholder = NSAttributedString(
                 string: placeholderSaveAlert,
-                attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "placeholderCCRedesign")]
+                attributes: [NSAttributedString.Key.foregroundColor: UIColor(.gray)]
             )
             view.addSubview(saveAlertView!)
         }
@@ -179,7 +179,7 @@ class AddonEditor3DViewController: UIViewController {
         saveAlertView?.withExit = true
         saveAlertView?.setSkinNameSaveTextField.attributedPlaceholder = NSAttributedString(
             string: placeholderSaveAlert,
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "placeholderCCRedesign")]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(.gray)]
         )
         view.addSubview(saveAlertView!)
     }
@@ -359,7 +359,7 @@ class AddonEditor3DViewController: UIViewController {
     private func manageSelectedToolUI(tappedTool: UIButton, tappedLab: UILabel) {
         
         let nonSelectedColor = #colorLiteral(red: 0.1529411765, green: 0.1529411765, blue: 0.1529411765, alpha: 1)
-        let selectedColor = #colorLiteral(red: 0, green: 0.5921568627, blue: 0.3058823529, alpha: 1)
+        let selectedColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
         
         let toolBtns = [
             pencilBtn,  eraserBtn,
@@ -411,7 +411,6 @@ class AddonEditor3DViewController: UIViewController {
         saveButton.isHidden = true
         rotationSkinModelButton.isHidden = true
         
-        
         customToolPicker.alpha = 0
         brashSizeView.alpha = 0
         colorsBrashContainerView.alpha = 0
@@ -434,13 +433,17 @@ class AddonEditor3DViewController: UIViewController {
         let stackHeight: CGFloat = 54
         let button1 = UIButton()
         button1.setTitle("Download", for: .normal)
-        button1.backgroundColor = UIColor(named: "greenCCRedesign")
+        button1.borderColor = .black
+        button1.borderWidth = 1
+        button1.backgroundColor = UIColor(named: "YellowSelectiveColor")
         
         button1.addTarget(self, action: #selector(downloadExportAction), for: .touchUpInside)
         button1.roundCorners(.allCorners, radius: stackHeight / 2)
         
         shareButton.setTitle("Share", for: .normal)
-        shareButton.backgroundColor = UIColor(named: "greenCCRedesign")
+        shareButton.backgroundColor = UIColor(named: "YellowSelectiveColor")
+        shareButton.borderColor = .black
+        shareButton.borderWidth = 1
         shareButton.addTarget(self, action: #selector(shareCCAction), for: .touchUpInside)
         shareButton.roundCorners(.allCorners, radius: stackHeight / 2)
                 

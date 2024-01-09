@@ -115,7 +115,6 @@ extension SkinEditorViewController: UICollectionViewDelegate, UICollectionViewDa
 }
 
 //MARK: Cell Handlers
-
 extension SkinEditorViewController {
     
     private func handleDeleteButtonTap(indexPath: IndexPath) {

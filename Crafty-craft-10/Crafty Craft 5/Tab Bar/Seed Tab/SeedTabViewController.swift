@@ -79,7 +79,6 @@ class SeedTabViewController: UIViewController {
         super.viewDidLoad()
     
         configTableView()
-        setupBackground()
         setupSearchBar()
         
         setupDataSource()
@@ -146,15 +145,6 @@ class SeedTabViewController: UIViewController {
         seedsTableView.register(UINib(nibName: "SeedTableViewCell", bundle: nil), forCellReuseIdentifier: SeedTableViewCell.identifier)
         seedsTableView.rowHeight = UITableView.automaticDimension
         seedsTableView.showsVerticalScrollIndicator = false
-    }
-    
-    private func setupBackground() {
-        let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "Green Background")
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
     }
     
     private func setupSearchBar() {

@@ -19,7 +19,7 @@ enum BodyPartEditState {
 
 class SmallModelView: UIView {
     
-    let asHiddeStateColor = UIColor.white
+    let asHiddeStateColor = UIColor.clear
     let clothesStateColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     let skinStateColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 
