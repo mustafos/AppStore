@@ -23,7 +23,7 @@ class TabBarViewController: UITabBarController {
         var title: String? = viewController.tabBarTitle
         
         if isIpad {
-            selectedImage = UIImage.resizedImage(named: "content", size: CGSize(width: 24, height: 24))
+            selectedImage = UIImage.resizedImage(named: "content", size: CGSize(width: 122, height: 52))
             unselectedImage = UIImage.resizedImage(named: "content", size: CGSize(width: 24, height: 24))
         }
         viewController.tabBarItem = UITabBarItem(title: nil, image: unselectedImage, selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
@@ -39,7 +39,7 @@ class TabBarViewController: UITabBarController {
         var title: String? = viewController.tabBarTitle
         
         if isIpad {
-            selectedImage = UIImage.resizedImage(named: "create", size: CGSize(width: 24, height: 24))
+            selectedImage = UIImage.resizedImage(named: "create", size: CGSize(width: 122, height: 52))
             unselectedImage = UIImage.resizedImage(named: "create", size: CGSize(width: 24, height: 24))
         }
         
@@ -56,7 +56,7 @@ class TabBarViewController: UITabBarController {
         var title: String? = viewController.tabBarTitle
         
         if isIpad {
-            selectedImage = UIImage.resizedImage(named: "seeds", size: CGSize(width: 24, height: 24))
+            selectedImage = UIImage.resizedImage(named: "seeds", size: CGSize(width: 122, height: 52))
             unselectedImage = UIImage.resizedImage(named: "seeds", size: CGSize(width: 24, height: 24))
         }
         
@@ -73,7 +73,7 @@ class TabBarViewController: UITabBarController {
         var title: String? = viewController.tabBarTitle
         
         if isIpad {
-            selectedImage = UIImage.resizedImage(named: "servers", size: CGSize(width: 24, height: 24))
+            selectedImage = UIImage.resizedImage(named: "servers", size: CGSize(width: 122, height: 52))
             unselectedImage = UIImage.resizedImage(named: "servers", size: CGSize(width: 24, height: 24))
         }
         

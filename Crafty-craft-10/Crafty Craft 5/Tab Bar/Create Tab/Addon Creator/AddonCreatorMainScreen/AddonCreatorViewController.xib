@@ -88,11 +88,11 @@
                         <constraint firstAttribute="bottom" secondItem="vJs-ig-OKH" secondAttribute="bottom" id="rIk-8n-evG"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="U0t-nZ-dJo">
-                    <rect key="frame" x="20" y="227" width="353" height="43.333333333333314"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="U0t-nZ-dJo">
+                    <rect key="frame" x="20" y="227" width="353" height="99"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ2-Wf-N1j">
-                            <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="43.333333333333336"/>
+                            <rect key="frame" x="0.0" y="0.0" width="72" height="27.666666666666668"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="UJ2-Wf-N1j" secondAttribute="height" multiplier="2.6:1" id="xsf-pz-JEM"/>
                             </constraints>
@@ -109,7 +109,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAG-Qu-3dv">
-                            <rect key="frame" x="120.33333333333334" y="0.0" width="112.33333333333334" height="43.333333333333336"/>
+                            <rect key="frame" x="0.0" y="35.666666666666686" width="72" height="27.666666666666671"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="IAG-Qu-3dv" secondAttribute="height" multiplier="2.6:1" id="ER4-Re-cGo"/>
                             </constraints>
@@ -126,7 +126,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhU-GT-lR5">
-                            <rect key="frame" x="240.66666666666671" y="0.0" width="112.33333333333334" height="43.333333333333336"/>
+                            <rect key="frame" x="0.0" y="71.333333333333314" width="72" height="27.666666666666671"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="FhU-GT-lR5" secondAttribute="height" multiplier="2.6:1" id="cII-Kq-Ddt"/>
                             </constraints>
@@ -146,7 +146,7 @@
                     <color key="backgroundColor" red="0.82352941180000006" green="0.43921568630000002" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </stackView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zMY-Vs-C8o">
-                    <rect key="frame" x="20" y="290.33333333333331" width="353" height="561.66666666666674"/>
+                    <rect key="frame" x="20" y="346" width="353" height="506"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qvh-qO-MJa">
                         <size key="itemSize" width="0.0" height="0.0"/>
