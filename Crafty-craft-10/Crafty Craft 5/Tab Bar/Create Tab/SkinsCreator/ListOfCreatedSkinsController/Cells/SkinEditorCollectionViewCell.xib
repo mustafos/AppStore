@@ -126,6 +126,8 @@
                 <outlet property="bodyImage" destination="NKE-aG-TVn" id="ztB-WH-Lda"/>
                 <outlet property="deleteButton" destination="5K2-MT-4Ea" id="MVL-ST-lge"/>
                 <outlet property="downloadButton" destination="sYW-wh-T6f" id="ts7-kz-WbV"/>
+                <outlet property="imageContainer" destination="llg-ja-Bd1" id="VQa-sy-tnF"/>
+                <outlet property="labelContainer" destination="aQp-8B-g9R" id="fyo-eC-rTO"/>
                 <outlet property="nameSkinLabel" destination="61G-kX-UAR" id="xtY-LU-puR"/>
             </connections>
             <point key="canvasLocation" x="107.8125" y="103.22108345534406"/>

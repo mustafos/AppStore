@@ -23,6 +23,12 @@ class SsvedAddonCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var downloadBtn: UIButton!
     
+    
+    @IBOutlet weak var labelContainer: UIView!
+    
+    @IBOutlet weak var imageContainer: UIView!
+    
+    
     @IBAction func deleteBtnTapped(_ sender: UIButton) {
         onDeleteButtonTapped?()
     }
@@ -33,8 +39,13 @@ class SsvedAddonCollectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        roundCorners()
+        labelContainer.layer.borderColor = UIColor(.black).cgColor
+        labelContainer.layer.borderWidth = 1
+        imageContainer.layer.borderColor = UIColor(.black).cgColor
+        imageContainer.layer.borderWidth = 1
+        roundCorners(.allCorners, radius: 27)
+        layer.borderWidth = 1
+        layer.borderColor = UIColor(.black).cgColor
     }
     
     override func prepareForReuse() {

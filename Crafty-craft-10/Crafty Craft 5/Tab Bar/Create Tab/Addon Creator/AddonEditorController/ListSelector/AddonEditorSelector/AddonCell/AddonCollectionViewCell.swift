@@ -28,6 +28,13 @@ class AddonCollectionViewCell: UICollectionViewCell {
     // MARK: - Private Methods
     
     private func configureView() {
-        roundCorners(12)
+        roundCorners(.allCorners, radius: 27)
+        layer.borderWidth = 1
+        layer.borderColor = UIColor(.black).cgColor
+        
+        label.layer.borderColor = UIColor(.black).cgColor
+        label.layer.borderWidth = 1
+        image.layer.borderColor = UIColor(.black).cgColor
+        image.layer.borderWidth = 1
     }
 }

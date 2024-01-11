@@ -24,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="O7Q-I7-TvH">
-                        <rect key="frame" x="12" y="12" width="144" height="228"/>
+                        <rect key="frame" x="12" y="12" width="144" height="232"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ee-jI-TSY">
                                 <rect key="frame" x="0.0" y="0.0" width="144" height="36"/>
@@ -48,10 +48,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoM-9O-mq9">
-                                <rect key="frame" x="0.0" y="40" width="144" height="136"/>
+                                <rect key="frame" x="0.0" y="40" width="144" height="140"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="TdU-ot-F7O" customClass="CustomImageLoader" customModule="Crafty_Craft_10" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="144" height="140"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="BeigeColor"/>
@@ -68,7 +68,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="GNc-5Z-fFH">
-                                <rect key="frame" x="0.0" y="180" width="144" height="48"/>
+                                <rect key="frame" x="0.0" y="184" width="144" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzX-Ye-Kzw" userLabel="downloadBtn">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -116,7 +116,7 @@
             <constraints>
                 <constraint firstItem="O7Q-I7-TvH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="1b6-iB-sm9"/>
                 <constraint firstAttribute="trailing" secondItem="O7Q-I7-TvH" secondAttribute="trailing" constant="12" id="R49-HZ-9Gd"/>
-                <constraint firstAttribute="bottom" secondItem="O7Q-I7-TvH" secondAttribute="bottom" constant="12" id="dNG-Du-ZpN"/>
+                <constraint firstAttribute="bottom" secondItem="O7Q-I7-TvH" secondAttribute="bottom" constant="8" id="dNG-Du-ZpN"/>
                 <constraint firstItem="O7Q-I7-TvH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="mbS-or-Sw6"/>
             </constraints>
             <size key="customSize" width="162" height="219"/>
@@ -125,6 +125,8 @@
                 <outlet property="addonTitleLab" destination="x6b-xR-2ZG" id="feN-5e-1ER"/>
                 <outlet property="deleteBtn" destination="TQL-QM-eIB" id="UUV-OU-qrh"/>
                 <outlet property="downloadBtn" destination="vzX-Ye-Kzw" id="h8z-Q8-Osi"/>
+                <outlet property="imageContainer" destination="zoM-9O-mq9" id="bpM-sI-0ku"/>
+                <outlet property="labelContainer" destination="7ee-jI-TSY" id="RkM-yo-HrA"/>
             </connections>
             <point key="canvasLocation" x="118.94531249999999" y="46.559297218155194"/>
         </collectionViewCell>

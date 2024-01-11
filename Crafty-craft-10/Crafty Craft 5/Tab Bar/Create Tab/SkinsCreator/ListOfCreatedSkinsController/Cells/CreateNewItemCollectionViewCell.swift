@@ -14,8 +14,7 @@ class CreateNewItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var backgroundContainerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundContainerView.roundCorners(30)
-        backgroundColor = .clear
+        backgroundContainerView.roundCorners(27)
     }
     
     func setCrateTitle(_ title: String) {

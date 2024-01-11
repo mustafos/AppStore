@@ -73,7 +73,6 @@ class AddonCreatorViewController: UIViewController {
         configureUIComponents()
         configureSearchBar()
         setupTabButtons()
-        setupBackground()
         setupCollectionViewAndNavigationBar()
         updatePageControllerUI()
         
@@ -141,18 +140,9 @@ class AddonCreatorViewController: UIViewController {
     private func setupTabButtons() {
         for view in [layouTabButton, recentTabButton, groupTabButton] {
             view?.roundCorners()
-            view?.layer.borderColor = UIColor.clear.cgColor
-            view?.layer.borderWidth = 0
+            view?.layer.borderColor = UIColor.black.cgColor
+            view?.layer.borderWidth = 1
         }
-    }
-
-    private func setupBackground() {
-        let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "Green Background")
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
     }
 
     private func setupCollectionViewAndNavigationBar() {

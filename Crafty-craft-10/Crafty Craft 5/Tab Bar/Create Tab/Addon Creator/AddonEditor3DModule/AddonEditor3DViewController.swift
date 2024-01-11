@@ -1,7 +1,6 @@
 import UIKit
 import SceneKit
 
-
 class AddonEditor3DViewController: UIViewController {
     private lazy var minecraftSkinManager: MinecraftSkinManagerProtocol = MinecraftSkinManager()
     //MARK: Properties
@@ -528,7 +527,6 @@ extension AddonEditor3DViewController: BrashSizeCangableDelegate {
 //MARK: SaveAlert Delegate
 
 extension AddonEditor3DViewController {
-    
     private func presentCustomAlert() {
         let customAlert = ColorPickerViewController()
         customAlert.delegate = self
@@ -644,8 +642,3 @@ extension AddonEditor3DViewController: SCNCameraControllerDelegate, SCNSceneRend
         }
     }
 }
-
-
-
-
-

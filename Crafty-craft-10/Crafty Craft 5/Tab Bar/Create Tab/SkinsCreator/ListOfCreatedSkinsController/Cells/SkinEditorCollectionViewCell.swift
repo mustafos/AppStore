@@ -10,13 +10,19 @@ class SkinEditorCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var bodyImage: UIImageView!
     @IBOutlet weak var backgroundContainerView: UIView!
-    
+    @IBOutlet weak var labelContainer: UIView!
+    @IBOutlet weak var imageContainer: UIView!
     @IBOutlet weak var deleteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        backgroundContainerView.roundCorners(30)
+        labelContainer.layer.borderColor = UIColor(.black).cgColor
+        labelContainer.layer.borderWidth = 1
+        imageContainer.layer.borderColor = UIColor(.black).cgColor
+        imageContainer.layer.borderWidth = 1
+        backgroundContainerView.roundCorners(.allCorners, radius: 27)
+        backgroundContainerView.layer.borderWidth = 1
+        backgroundContainerView.layer.borderColor = UIColor(.black).cgColor
         backgroundColor = .clear
     }
     

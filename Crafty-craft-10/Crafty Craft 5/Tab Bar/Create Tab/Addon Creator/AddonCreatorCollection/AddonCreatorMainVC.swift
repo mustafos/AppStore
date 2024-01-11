@@ -14,12 +14,20 @@ class AddonCreatorMainVC: UIViewController {
     @IBOutlet weak var unlockActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var unlockButton: UIButton!
     @IBOutlet private weak var tabsStackView: UIStackView!
+    
+    @IBOutlet weak var selectItemView: UIView!
+    @IBOutlet weak var selectedText: UILabel!
+    @IBOutlet weak var selectImage: UIImageView!
+    
+    @IBOutlet private var tabButtons: [UIButton]!
+    
     @IBOutlet weak var addonCollectionView: UICollectionView!
     @IBOutlet private weak var layouTabButton: UIButton!
     @IBOutlet private weak var groupTabButton: UIButton!
     @IBOutlet private weak var recentTabButton: UIButton!
     
     private var suggestionsTableView: UITableView?
+    private var isHideButtons: Bool = true
     internal weak var downloadButton: UIButton?
     
     private enum TabsPageController: Int {
@@ -94,7 +102,9 @@ class AddonCreatorMainVC: UIViewController {
     }
     
     private func configureUIComponents() {
-        tabsStackView.backgroundColor = .clear
+        tabsStackView.roundCorners(.allCorners, radius: 27)
+        tabsStackView.layer.borderColor = UIColor.black.cgColor
+        tabsStackView.layer.borderWidth = 1
         tabsPageControllMode = .layout
     }
     
@@ -117,6 +127,17 @@ class AddonCreatorMainVC: UIViewController {
         unlockButton.isUserInteractionEnabled = isEnabled
     }
     
+    private func showButtonVisibility() {
+        tabButtons.forEach { button in
+            UIView.animate(withDuration: 0.3) {
+                self.isHideButtons.toggle()
+                button.isHidden.toggle()
+                self.updateSelectButtonImage()
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
     //Should never work - validation should be done in scene
     private func validateSub(for productName: String) {
         IAPManager.shared.validateSubscriptions(productIdentifiers: [productName]) { [weak self] results in
@@ -135,6 +156,9 @@ class AddonCreatorMainVC: UIViewController {
         }
     }
     //MARK: - Action
+    @objc func selectedColorAction(_ sender: Any) {
+        showButtonVisibility()
+    }
     
     @IBAction func unlockButtonTapped(_ sender: Any) {
         //show subscrition
@@ -143,24 +167,24 @@ class AddonCreatorMainVC: UIViewController {
         navigationController?.pushViewController(nextVC, animated: true)
     }
     
-    @IBAction private func onRecentButtonTapped(_ sender: UIButton) {
-//        flushSearch()
-        tabsPageControllMode = .recent
-        model.collectionMode = .recent
+    @IBAction func onButtonTapped(_ sender: UIButton) {
+        showButtonVisibility()
+        switch tabsPageControllMode {
+        case .layout:
+            setButtonProperties(title: "Layout", image: "chevron.down")
+            tabsPageControllMode = .recent
+            model.collectionMode = .recent
+        case .group:
+            setButtonProperties(title: "Group", image: "chevron.down")
+            tabsPageControllMode = .group
+            model.collectionMode = .groups
+        case .recent:
+            setButtonProperties(title: "Recent", image: "chevron.down")
+            tabsPageControllMode = .layout
+            model.collectionMode = .savedAddons
+        }
+        addonCollectionView.reloadData()
     }
-    
-    @IBAction private func onGroupButtonTapped(_ sender: UIButton) {
-//        flushSearch()
-        tabsPageControllMode = .group
-        model.collectionMode = .groups
-    }
-    
-    @IBAction private func onLatoutButtonTapped(_ sender: UIButton) {
-//        flushSearch()
-        tabsPageControllMode = .layout
-        model.collectionMode = .savedAddons
-    }
-    
     
     //MARK: - Private Methods
     
@@ -178,13 +202,16 @@ class AddonCreatorMainVC: UIViewController {
         addonCollectionView.reloadData()
     }
     
+    private func updateSelectButtonImage() {
+        let imageName = isHideButtons ? "chevron.down" : "chevron.up"
+        selectImage.image = UIImage(systemName: imageName)
+    }
+    
     private func updateTabUI(selected: UIButton, deselected: [UIButton]) {
-        selected.backgroundColor = UIColor(named: "YellowSelectiveColor")
-        selected.tintColor = UIColor(named: "EerieBlackColor")
-        selected.setTitleColor(UIColor(named: "EerieBlackColor"), for: .normal)
+        selected.isHidden = true
         deselected.forEach { button in
-            button.backgroundColor = UIColor(named: "EerieBlackColor")
-            button.setTitleColor(UIColor(named: "BeigeColor"), for: .normal)
+            button.titleLabel?.font = UIFont(name: "Montserrat-SemiBold", size: 16)
+            button.setTitleColor(UIColor(.gray), for: .normal)
         }
     }
     
@@ -196,12 +223,14 @@ class AddonCreatorMainVC: UIViewController {
         }
     }
     
+    private func setButtonProperties(title: String, image: String) {
+        selectedText.text = title
+        selectImage.image = UIImage(systemName: image)
+    }
+    
     private func setupTabButtons() {
-        for view in [layouTabButton, recentTabButton, groupTabButton] {
-            view?.roundCorners(20)
-            view?.layer.borderColor = UIColor.clear.cgColor
-            view?.layer.borderWidth = 0
-        }
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectedColorAction(_:)))
+        selectItemView.addGestureRecognizer(tapGesture)
     }
 
     private func setupCollectionViewUI() {

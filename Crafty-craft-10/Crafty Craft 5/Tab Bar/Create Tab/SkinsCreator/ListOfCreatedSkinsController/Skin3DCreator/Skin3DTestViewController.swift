@@ -433,11 +433,15 @@ class Skin3DTestViewController: UIViewController {
         
         button1.addTarget(self, action: #selector(downloadExportAction), for: .touchUpInside)
         button1.roundCorners(.allCorners, radius: stackHeight / 2)
+        button1.borderColor = .black
+        button1.borderWidth = 1
         
         shareButton.setTitle("Share", for: .normal)
         shareButton.backgroundColor = UIColor(named: "YellowSelectiveColor")
         shareButton.addTarget(self, action: #selector(shareAction), for: .touchUpInside)
         shareButton.roundCorners(.allCorners, radius: stackHeight / 2)
+        shareButton.borderColor = .black
+        shareButton.borderWidth = 1
         
         let containerView = UIView()
         containerView.backgroundColor = .white
@@ -457,7 +461,9 @@ class Skin3DTestViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         button1.translatesAutoresizingMaskIntoConstraints = false
         shareButton.translatesAutoresizingMaskIntoConstraints = false
-        
+        toolsStackView.roundCorners(.allCorners, radius: 27)
+        toolsStackView.layer.borderColor = UIColor.black.cgColor
+        toolsStackView.layer.borderWidth = 1
         NSLayoutConstraint.activate([
             //containerConstraints
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
