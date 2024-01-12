@@ -47,7 +47,7 @@ class AddonCreatorMainVC: UIViewController {
             
             _tabsPageControllMode = newValue
             
-            updatePageControllerUI()
+//            updatePageControllerUI()
         }
         get {
             _tabsPageControllMode
@@ -62,7 +62,7 @@ class AddonCreatorMainVC: UIViewController {
         configureUIComponents()
         setupTabButtons()
         setupCollectionViewUI()
-        updatePageControllerUI()
+//        updatePageControllerUI()
         unlockActivityIndicator.isHidden = true
         
         IAPManager.shared.addonProductDelegate = self
@@ -102,7 +102,7 @@ class AddonCreatorMainVC: UIViewController {
     }
     
     private func configureUIComponents() {
-        tabsStackView.roundCorners(.allCorners, radius: 27)
+        tabsStackView.roundCorners(.allCorners, radius: 23)
         tabsStackView.layer.borderColor = UIColor.black.cgColor
         tabsStackView.layer.borderWidth = 1
         tabsPageControllMode = .layout
@@ -188,40 +188,38 @@ class AddonCreatorMainVC: UIViewController {
     
     //MARK: - Private Methods
     
-    private func updatePageControllerUI() {
-        switch tabsPageControllMode {
-        case .layout:
-            updateTabUI(selected: layouTabButton, deselected: [groupTabButton, recentTabButton])
-//            updateLabelColors(selected: layouTabButton.titleLabel!, deselected: [groupTabButton.titleLabel!, recentTabButton.titleLabel!])
-        case .group:
-            updateTabUI(selected: groupTabButton, deselected: [layouTabButton, recentTabButton])
-        case .recent:
-            updateTabUI(selected: recentTabButton, deselected: [groupTabButton, layouTabButton])
-        }
-        
-        addonCollectionView.reloadData()
-    }
+//    private func updatePageControllerUI() {
+//        switch tabsPageControllMode {
+//        case .layout:
+//            updateTabUI(selected: layouTabButton, deselected: [groupTabButton, recentTabButton])
+//        case .group:
+//            updateTabUI(selected: groupTabButton, deselected: [layouTabButton, recentTabButton])
+//        case .recent:
+//            updateTabUI(selected: recentTabButton, deselected: [groupTabButton, layouTabButton])
+//        }
+//        
+//        addonCollectionView.reloadData()
+//    }
     
     private func updateSelectButtonImage() {
         let imageName = isHideButtons ? "chevron.down" : "chevron.up"
         selectImage.image = UIImage(systemName: imageName)
     }
     
-    private func updateTabUI(selected: UIButton, deselected: [UIButton]) {
-        selected.isHidden = true
-        deselected.forEach { button in
-            button.titleLabel?.font = UIFont(name: "Montserrat-SemiBold", size: 16)
-            button.setTitleColor(UIColor(.gray), for: .normal)
-        }
-    }
+//    private func updateTabUI(selected: UIButton, deselected: [UIButton]) {
+//        deselected.forEach { button in
+//            button.titleLabel?.font = UIFont(name: "Montserrat-SemiBold", size: 16)
+//            button.setTitleColor(UIColor(.gray), for: .normal)
+//        }
+//    }
     
-    private func updateLabelColors(selected: UILabel, deselected: [UILabel]) {
-        selected.textColor = UIColor.white.withAlphaComponent(1)
-        selected.font = UIFont(name: "Montserrat-SemiBold", size: 16)
-        deselected.forEach { label in
-            label.textColor = UIColor.white.withAlphaComponent(0.3)
-        }
-    }
+//    private func updateLabelColors(selected: UILabel, deselected: [UILabel]) {
+//        selected.textColor = .black
+//        selected.font = UIFont(name: "Montserrat-SemiBold", size: 16)
+//        deselected.forEach { label in
+//            label.textColor = .gray
+//        }
+//    }
     
     private func setButtonProperties(title: String, image: String) {
         selectedText.text = title
@@ -248,7 +246,6 @@ extension AddonCreatorMainVC : UICollectionViewDelegate {
         
         if indexPath.item == 0 {
 //            flushSearch()
-            
             let nextVC = AddonCategoryOptionsViewController()
             navigationController?.pushViewController(nextVC, animated: true)
             

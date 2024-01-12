@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,9 +19,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddonCreatorMainVC" customModule="Crafty_Craft_10" customModuleProvider="target">
             <connections>
                 <outlet property="addonCollectionView" destination="h4s-Lp-gFE" id="uR9-zD-LwV"/>
-                <outlet property="groupTabButton" destination="DVE-6q-T4w" id="5SL-N6-SuU"/>
-                <outlet property="layouTabButton" destination="WkW-N8-N1s" id="IQq-ev-Vor"/>
-                <outlet property="recentTabButton" destination="ldF-ru-qYC" id="WjW-8Y-PMJ"/>
+                <outlet property="groupTabButton" destination="DVE-6q-T4w" id="2Jc-DQ-ERS"/>
+                <outlet property="layouTabButton" destination="WkW-N8-N1s" id="X0B-Ma-CRg"/>
+                <outlet property="recentTabButton" destination="ldF-ru-qYC" id="SlZ-dZ-8ii"/>
                 <outlet property="selectImage" destination="liD-GX-38R" id="nbZ-Mo-eK6"/>
                 <outlet property="selectItemView" destination="BK8-tw-Dsp" id="bTS-7Z-4mD"/>
                 <outlet property="selectedText" destination="gMN-0M-TJb" id="GOM-Ae-UhB"/>
@@ -61,14 +62,15 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Layout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMN-0M-TJb">
                                     <rect key="frame" x="20.000000000000004" y="8" width="56.333333333333343" height="30"/>
                                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
-                                    <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="liD-GX-38R">
-                                    <rect key="frame" x="303" y="8" width="30" height="30"/>
+                                    <rect key="frame" x="303" y="13.333333333333332" width="30" height="19.999999999999996"/>
+                                    <color key="tintColor" name="EerieBlackColor"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="liD-GX-38R" secondAttribute="height" multiplier="1:1" id="wD8-iW-CRh"/>
                                     </constraints>
+                                    <imageReference key="image" image="chevron.down" catalog="system" symbolScale="medium"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,31 +85,67 @@
                             </constraints>
                         </view>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkW-N8-N1s" userLabel="Layout">
-                            <rect key="frame" x="0.0" y="0.0" width="353" height="0.0"/>
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="46"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="46" id="bz6-JM-Tq3"/>
+                            </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Layout">
-                                <color key="baseForegroundColor" name="EerieBlackColor"/>
+                                <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="EerieBlackColor"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="GM9-jJ-QHv"/>
                             </connections>
                         </button>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVE-6q-T4w" userLabel="Group">
-                            <rect key="frame" x="0.0" y="0.0" width="353" height="0.0"/>
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="46"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="46" id="Oy9-6v-HC9"/>
+                            </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Group">
-                                <color key="baseForegroundColor" name="EerieBlackColor"/>
+                                <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="EerieBlackColor"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="HpB-D9-bxr"/>
                             </connections>
                         </button>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldF-ru-qYC" userLabel="Recent">
-                            <rect key="frame" x="0.0" y="0.0" width="353" height="0.0"/>
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="46"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="46" id="NrE-l5-vtX"/>
+                            </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Recent">
-                                <color key="baseForegroundColor" name="EerieBlackColor"/>
+                                <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="EerieBlackColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="dDg-qN-GWV"/>
                             </connections>
@@ -177,6 +215,7 @@
         </view>
     </objects>
     <resources>
+        <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="lock button" width="30" height="24"/>
         <namedColor name="BackgroundColor">
             <color red="0.19215686274509805" green="0.20784313725490197" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
