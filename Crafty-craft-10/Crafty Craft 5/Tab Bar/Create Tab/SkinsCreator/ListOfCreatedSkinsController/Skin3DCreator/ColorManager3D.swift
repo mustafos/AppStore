@@ -6,11 +6,7 @@
 //  Copyright © 2023 Noname Digital. All rights reserved.
 //
 
-
-
-
 import UIKit
-import Foundation
 
 protocol ColorAble3D: AnyObject {
     func updateCollection()

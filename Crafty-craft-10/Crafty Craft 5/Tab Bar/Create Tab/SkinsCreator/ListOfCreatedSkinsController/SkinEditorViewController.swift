@@ -1,7 +1,6 @@
 import UIKit
 import Photos
 
-
 // MARK: - SkinEditorViewController
 ///Class with Collection of Skins Created by user
 class SkinEditorViewController: UIViewController {

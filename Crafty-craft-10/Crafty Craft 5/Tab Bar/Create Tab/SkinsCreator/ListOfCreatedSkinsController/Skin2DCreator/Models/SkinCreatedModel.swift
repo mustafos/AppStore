@@ -1,7 +1,4 @@
-
 import UIKit
-import Foundation
-
 
 class SkinCreatedModel {
     var id: Int = 0

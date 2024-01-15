@@ -1,4 +1,5 @@
 import UIKit
+import Combine
 import PencilKit
 import CoreGraphics
 
@@ -19,7 +20,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     var magnifyingGlassView: MagnifyingGlassView?
     var currentEditableSkin: SkinCreatedModel?
     var saveAlertView: SaveAlertView?
-    
+    var cancellable: AnyCancellable?
     // MARK: - Properties
     
     private let imageDataCallback: ImageDataCallback
@@ -207,8 +208,19 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     //MARK: - ColorPickierView Actions
     
     @IBAction func paletteBtnTapped(_ sender: Any) {
-        presentCustomAlert()
-        hideMagnifyingGlass()
+        let picker = UIColorPickerViewController()
+        picker.selectedColor = self.currentDrawingColor
+        //  Subscribing selectedColor property changes.
+        self.cancellable = picker.publisher(for: \.selectedColor)
+            .sink { color in
+                //  Changing view color on main thread.
+                DispatchQueue.main.async {
+                    self.currentDrawingColor = color
+                    TransitionColor = self.currentDrawingColor
+                }
+            }
+        
+        self.present(picker, animated: true, completion: nil)
     }
     
     @IBAction func importBtnTapped(_ sender: Any) {
@@ -510,55 +522,55 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
 }
 
 // MARK: - PickerViewController Delagte Methods
-extension SkinCreatorViewController: PickerViewControllerProtocol {
-    
-    func dismissView() {
-        alertWindow?.isHidden = true
-        alertWindow = nil
-        blurView?.removeFromSuperview()
-    }
-    
-    func setColor(color: UIColor) {
-        _currentDrawingColor = color
-        TransitionColor = currentDrawingColor
-    }
-}
+//extension SkinCreatorViewController: PickerViewControllerProtocol {
+//    
+//    func dismissView() {
+//        alertWindow?.isHidden = true
+//        alertWindow = nil
+//        blurView?.removeFromSuperview()
+//    }
+//    
+//    func setColor(color: UIColor) {
+//        _currentDrawingColor = color
+//        TransitionColor = currentDrawingColor
+//    }
+//}
 
 
 // MARK: - Presenting Custom Alert
-extension SkinCreatorViewController {
-    func presentCustomAlert() {
-        let customAlert = ColorPickerViewController()
-        customAlert.delegate = self
-        
-        alertWindow = UIWindow(frame: UIScreen.main.bounds)
-        alertWindow?.windowLevel = .alert
-        alertWindow?.rootViewController = UIViewController()
-        
-        let blurEffect = UIBlurEffect(style: .dark)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = alertWindow?.bounds ?? view.bounds
-        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        alertWindow?.rootViewController?.view.addSubview(blurView)
-        
-        alertWindow?.rootViewController?.addChild(customAlert)
-        alertWindow?.rootViewController?.view.addSubview(customAlert.view)
-        customAlert.didMove(toParent: alertWindow?.rootViewController)
-        
-        customAlert.view.frame = self.view.frame
-        customAlert.view.roundCorners(10)
-        customAlert.view.clipsToBounds = true
-        
-        alertWindow?.makeKeyAndVisible()
-        alertWindow?.windowScene = view.window?.windowScene
-    }
-    
-    func dismissCustomAlert() {
-        alertWindow?.isHidden = true
-        alertWindow = nil
-        blurView?.removeFromSuperview()
-    }
-}
+//extension SkinCreatorViewController {
+//    func presentCustomAlert() {
+//        let customAlert = ColorPickerViewController()
+//        customAlert.delegate = self
+//        
+//        alertWindow = UIWindow(frame: UIScreen.main.bounds)
+//        alertWindow?.windowLevel = .alert
+//        alertWindow?.rootViewController = UIViewController()
+//        
+//        let blurEffect = UIBlurEffect(style: .dark)
+//        let blurView = UIVisualEffectView(effect: blurEffect)
+//        blurView.frame = alertWindow?.bounds ?? view.bounds
+//        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        alertWindow?.rootViewController?.view.addSubview(blurView)
+//        
+//        alertWindow?.rootViewController?.addChild(customAlert)
+//        alertWindow?.rootViewController?.view.addSubview(customAlert.view)
+//        customAlert.didMove(toParent: alertWindow?.rootViewController)
+//        
+//        customAlert.view.frame = self.view.frame
+//        customAlert.view.roundCorners(10)
+//        customAlert.view.clipsToBounds = true
+//        
+//        alertWindow?.makeKeyAndVisible()
+//        alertWindow?.windowScene = view.window?.windowScene
+//    }
+//    
+//    func dismissCustomAlert() {
+//        alertWindow?.isHidden = true
+//        alertWindow = nil
+//        blurView?.removeFromSuperview()
+//    }
+//}
 
 // MARK: - Test functionality
 extension SkinCreatorViewController {

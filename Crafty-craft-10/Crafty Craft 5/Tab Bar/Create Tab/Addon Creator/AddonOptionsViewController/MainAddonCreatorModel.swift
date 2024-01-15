@@ -1,10 +1,3 @@
-//
-//  MainAddonCreatorModel.swift
-//  Crafty Craft 5
-//
-//  Created by 1 on 07.07.2023.
-//
-
 import Foundation
 
 class AddonCategory {

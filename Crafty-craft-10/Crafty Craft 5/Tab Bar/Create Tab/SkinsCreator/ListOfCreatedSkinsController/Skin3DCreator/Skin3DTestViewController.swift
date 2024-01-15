@@ -1,6 +1,6 @@
 import UIKit
+import Combine
 import SceneKit
-
 
 enum SkinAssemblyDiagramSize {
     case size64x64
@@ -20,6 +20,11 @@ protocol SkinSavebleDialogDelegate: AnyObject {
     func cancelSave(withExit: Bool)
     func warningNameAlert(presentAlert: UIAlertController)
 }
+//
+//protocol PickerViewControllerProtocol : AnyObject {
+//    func dismissView()
+//    func setColor(color: UIColor)
+//}
 
 class Skin3DTestViewController: UIViewController {
     //MARK: Properties
@@ -32,6 +37,8 @@ class Skin3DTestViewController: UIViewController {
     var editorSkinModel: EditorSkinModel!
     
     var colorManager3D = ColorManager3D()
+    
+    var cancellable: AnyCancellable?
     
     var toolBarSelectedItem: ToolBar3DSelectedItem = .pencil {
         didSet {
@@ -201,11 +208,19 @@ class Skin3DTestViewController: UIViewController {
     }
     
     @IBAction func colorPaletButtonTapped(_ sender: UIButton) {
-        presentCustomAlert()
-        hideMagnifyingGlass()
+        let picker = UIColorPickerViewController()
+        picker.selectedColor = self.editorSkinModel.currentDrawingColor
+        //  Subscribing selectedColor property changes.
+        self.cancellable = picker.publisher(for: \.selectedColor)
+            .sink { color in
+                //  Changing view color on main thread.
+                DispatchQueue.main.async {
+                    self.editorSkinModel.currentDrawingColor = color
+                }
+            }
+        self.present(picker, animated: true, completion: nil)
     }
 
-    
     @IBAction func colorPickerButtonTapped(_ sender: UIButton) {
         sender.isSelected = true
         if magnifyingGlassView == nil {
@@ -240,7 +255,6 @@ class Skin3DTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         setupColorColletion()
 
         colorManager3D.delegate = self
@@ -530,54 +544,6 @@ extension Skin3DTestViewController: BodyPartsHiddebleDelegate {
         let state = editorSkinModel.getBodyPartEditState(by: type)
         
         completion(state)
-    }
-}
-
-extension Skin3DTestViewController {
-    
-    func presentCustomAlert() {
-        let customAlert = ColorPickerViewController()
-        customAlert.delegate = self
-        
-        alertWindow = UIWindow(frame: UIScreen.main.bounds)
-        alertWindow?.windowLevel = .alert
-        alertWindow?.rootViewController = UIViewController()
-        
-        let blurEffect = UIBlurEffect(style: .dark)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = alertWindow?.bounds ?? view.bounds
-        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        alertWindow?.rootViewController?.view.addSubview(blurView)
-        
-        alertWindow?.rootViewController?.addChild(customAlert)
-        alertWindow?.rootViewController?.view.addSubview(customAlert.view)
-        customAlert.didMove(toParent: alertWindow?.rootViewController)
-        
-        customAlert.view.frame = self.view.frame
-        customAlert.view.roundCorners(10)
-        customAlert.view.clipsToBounds = true
-        
-        alertWindow?.makeKeyAndVisible()
-        alertWindow?.windowScene = view.window?.windowScene
-    }
-    
-    func dismissCustomAlert() {
-        alertWindow?.isHidden = true
-        alertWindow = nil
-    }
-}
-
-//MARK: - PickerViewController Delagte Methods
-
-extension Skin3DTestViewController: PickerViewControllerProtocol {
-    
-    func dismissView() {
-        alertWindow?.isHidden = true
-        alertWindow = nil
-    }
-    
-    func setColor(color: UIColor) {
-        editorSkinModel.currentDrawingColor = color
     }
 }
 

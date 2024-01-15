@@ -22,7 +22,6 @@
                 <outlet property="backHeadImageView" destination="UNC-YR-SGb" id="KuM-ZX-GPc"/>
                 <outlet property="bottomHeadImageView" destination="cds-LI-qN8" id="6mu-uF-fmS"/>
                 <outlet property="frontHeadImageView" destination="uT5-Ek-qhp" id="NQS-cG-Scm"/>
-                <outlet property="headerLabel" destination="UGy-2G-k2V" id="WM7-97-jZD"/>
                 <outlet property="leftHeadImageView" destination="UwY-0R-69m" id="bnm-5k-7ua"/>
                 <outlet property="navigationBarView" destination="BVu-gC-sEb" id="KdA-xi-scu"/>
                 <outlet property="rightHeadImageView" destination="JNC-XM-ekr" id="t7i-p0-tR6"/>
@@ -194,16 +193,6 @@
                         </stackView>
                     </subviews>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Head" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGy-2G-k2V">
-                    <rect key="frame" x="20" y="749" width="353" height="54"/>
-                    <color key="backgroundColor" name="YellowSelectiveColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="54" id="A7z-gb-WrJ"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
-                    <color key="textColor" name="EerieBlackColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="BackgroundColor"/>
@@ -212,12 +201,8 @@
                 <constraint firstAttribute="trailing" secondItem="BVu-gC-sEb" secondAttribute="trailing" id="8Kf-us-DK5"/>
                 <constraint firstItem="BVu-gC-sEb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FHg-zE-A5F"/>
                 <constraint firstItem="8PU-8l-Viq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FUp-gd-9gh"/>
-                <constraint firstItem="UGy-2G-k2V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Huo-OZ-BEw"/>
-                <constraint firstItem="UGy-2G-k2V" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="S5y-t7-KfG"/>
                 <constraint firstItem="BVu-gC-sEb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UMh-ZX-T3F"/>
                 <constraint firstItem="8PU-8l-Viq" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.559859" id="g93-1q-NpN"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UGy-2G-k2V" secondAttribute="bottom" constant="15" id="sfS-DL-Nwo"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UGy-2G-k2V" secondAttribute="trailing" constant="20" id="vfp-Gi-cNa"/>
             </constraints>
             <point key="canvasLocation" x="-11.450381679389313" y="20.422535211267608"/>
         </view>
@@ -230,12 +215,6 @@
         </namedColor>
         <namedColor name="BeigeColor">
             <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="EerieBlackColor">
-            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="YellowSelectiveColor">
-            <color red="0.97254901960784312" green="0.80784313725490198" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

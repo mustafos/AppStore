@@ -10,7 +10,6 @@ import UIKit
 import SceneKit
 import Foundation
 
-
 final class AddonEditor3DVCModel {
     private(set) weak var controller: AddonEditor3DViewController!
     

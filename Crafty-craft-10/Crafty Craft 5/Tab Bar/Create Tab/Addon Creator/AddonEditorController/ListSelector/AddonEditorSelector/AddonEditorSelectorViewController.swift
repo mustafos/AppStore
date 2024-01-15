@@ -59,12 +59,9 @@ class AddonEditorSelectorViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViewButtons()
         setupSearchBar()
         setupCollectionView()
-        
-        contentView.roundCorners()
         
         hideKeyboardWhenTappedAround()
     }
@@ -97,9 +94,19 @@ class AddonEditorSelectorViewController: UIViewController {
     }
     
     func setupViewButtons() {
-        importButton.roundCorners(25)
-        doneButton.roundCorners(25)
-        cancelButton.roundCorners(25)
+        contentView.roundCorners(26)
+        contentView.layer.borderColor = UIColor.black.cgColor
+        contentView.layer.borderWidth = 1
+        
+        importButton.roundCorners(26)
+        
+        doneButton.roundCorners(26)
+        doneButton.borderColor = .black
+        doneButton.borderWidth = 1
+        
+        cancelButton.roundCorners(26)
+        cancelButton.borderColor = .black
+        cancelButton.borderWidth = 1
     }
     
     private var cellId: String {
@@ -112,6 +119,10 @@ class AddonEditorSelectorViewController: UIViewController {
         let nib = UINib(nibName: cellId, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellId)
         collectionView.backgroundColor = .white
+    }
+    
+    @IBAction func searchButtonTapped(_ sender: Any) {
+        searchBar.isHidden.toggle()
     }
     
     @IBAction func cancelTapped(_ sender: UIButton) {
@@ -282,11 +293,14 @@ extension AddonEditorSelectorViewController: UISearchBarDelegate {
         filterData(with: searchText)
     }
     
-    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        filterData(with: "")
-//        searchBar.showsCancelButton = false
-//        searchBar.text = ""
+        searchBar.isHidden = true
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        filterData(with: "")
+        //        filterData(with: "")
+        //        searchBar.showsCancelButton = false
+        //        searchBar.text = ""
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

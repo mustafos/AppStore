@@ -8,8 +8,6 @@
 import SceneKit
 import Foundation
 
-
-
 struct CubeChange {
     let touchedFace: CubeSideName
     let cubeIdentifier: String // some unique identifier for the cube

@@ -1,6 +1,4 @@
-
 import Foundation
-
 
 enum CollectionState {
     case savedAddons

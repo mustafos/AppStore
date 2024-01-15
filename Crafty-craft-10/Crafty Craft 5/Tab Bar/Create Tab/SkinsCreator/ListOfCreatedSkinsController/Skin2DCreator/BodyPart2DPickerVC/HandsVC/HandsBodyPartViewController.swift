@@ -6,12 +6,8 @@ class HandsBodyPartViewController: UIViewController {
     var hand: BodyPartSide = CubicHuman.BodyPart.rightArm
     
     //MARK: -IBOutlets
-    
     @IBOutlet weak var navigationBar: UIView!
-    @IBOutlet weak var headerLabel: UILabel!
-    
     @IBOutlet weak var rightArm: UIImageView!
-    
     @IBOutlet weak var bottomArm: UIImageView!
     @IBOutlet weak var topArm: UIImageView!
     @IBOutlet weak var leftArm: UIImageView!
@@ -125,10 +121,6 @@ class HandsBodyPartViewController: UIViewController {
     //MARK: Private Funcs
     
     func setupViews() {
-        headerLabel.roundCorners(.allCorners, radius: 27)
-        headerLabel.layer.borderWidth = 1
-        headerLabel.layer.borderColor = UIColor(.black).cgColor
-        
         let _ = [rightArm,leftArm,backArm,frontArm].map({$0?.image = UIImage(named: "general_arm")})
     }
     

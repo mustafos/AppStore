@@ -1,6 +1,5 @@
 import UIKit
 import BetterSegmentedControl
-import Foundation
 import SwiftUI
 import RealmSwift
 

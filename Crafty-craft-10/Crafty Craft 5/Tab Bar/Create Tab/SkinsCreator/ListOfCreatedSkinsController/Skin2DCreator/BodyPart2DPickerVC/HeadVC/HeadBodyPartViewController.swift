@@ -6,7 +6,6 @@ class HeadBodyPartViewController: UIViewController {
     var bodyPartSide = CubicHuman.BodyPart.head
     
     // MARK: - Outlets
-    
     @IBOutlet private weak var backHeadImageView: UIImageView!
     @IBOutlet private weak var rightHeadImageView: UIImageView!
     @IBOutlet private weak var leftHeadImageView: UIImageView!
@@ -14,11 +13,8 @@ class HeadBodyPartViewController: UIViewController {
     @IBOutlet private weak var bottomHeadImageView: UIImageView!
     @IBOutlet private weak var topHeadImageView: UIImageView!
     @IBOutlet private weak var navigationBarView: UIView!
-    
-    @IBOutlet weak var headerLabel: UILabel!
 
     // MARK: - Actions
-
     @IBAction private func onNavBarBackButtonTapped(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
@@ -65,10 +61,6 @@ class HeadBodyPartViewController: UIViewController {
         headImageViews.forEach { $0.image = UIImage(named: "general_head") }
         headImageViews.forEach{ $0.layer.magnificationFilter = .nearest }
         headImageViews.forEach{ $0.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!) }
-        
-        headerLabel.roundCorners(.allCorners, radius: 27)
-        headerLabel.layer.borderWidth = 1
-        headerLabel.layer.borderColor = UIColor(.black).cgColor
     }
     
     private func setupGestureRecognizers() {

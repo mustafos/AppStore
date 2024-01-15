@@ -1,11 +1,12 @@
 import UIKit
+import Combine
 import SceneKit
 
 class AddonEditor3DViewController: UIViewController {
     private lazy var minecraftSkinManager: MinecraftSkinManagerProtocol = MinecraftSkinManager()
     //MARK: Properties
     var vcModel: AddonEditor3DVCModel?
-    
+    var cancellable: AnyCancellable?
     lazy var toolBarSelectedItem: ToolBar3DSelectedItem = .pencil {
         didSet {
             brashSizeView.currentBrashTool = toolBarSelectedItem
@@ -52,9 +53,6 @@ class AddonEditor3DViewController: UIViewController {
     
     @IBOutlet weak var color3DCollection: UICollectionView!
 
-    //Tools
-    //
-    
     @IBOutlet weak var pencilLab: UILabel!
     @IBOutlet weak var pencilBtn: UIButton!
     
@@ -184,8 +182,17 @@ class AddonEditor3DViewController: UIViewController {
     }
     
     @IBAction func colorPaletButtonTapped(_ sender: UIButton) {
-        presentCustomAlert()
-        hideMagnifyingGlass()
+        let picker = UIColorPickerViewController()
+        picker.selectedColor = (vcModel?.editorAddonModel.currentDrawingColor)!
+        //  Subscribing selectedColor property changes.
+        self.cancellable = picker.publisher(for: \.selectedColor)
+            .sink { color in
+                //  Changing view color on main thread.
+                DispatchQueue.main.async {
+                    self.vcModel?.editorAddonModel.currentDrawingColor = color
+                }
+            }
+        self.present(picker, animated: true, completion: nil)
     }
 
     
@@ -239,6 +246,10 @@ class AddonEditor3DViewController: UIViewController {
 
         manageSelectedToolUI(tappedTool: pencilBtn, tappedLab: pencilLab)
         toolBarSelectedItem = .pencil
+        
+        toolsStackView.roundCorners(.allCorners, radius: 27)
+        toolsStackView.layer.borderColor = UIColor.black.cgColor
+        toolsStackView.layer.borderWidth = 1
     }
     
     
@@ -523,56 +534,55 @@ extension AddonEditor3DViewController: BrashSizeCangableDelegate {
     }
 }
 
-
 //MARK: SaveAlert Delegate
 
-extension AddonEditor3DViewController {
-    private func presentCustomAlert() {
-        let customAlert = ColorPickerViewController()
-        customAlert.delegate = self
-        
-        alertWindow = UIWindow(frame: UIScreen.main.bounds)
-        alertWindow?.windowLevel = .alert
-        alertWindow?.rootViewController = UIViewController()
-        
-        let blurEffect = UIBlurEffect(style: .dark)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = alertWindow?.bounds ?? view.bounds
-        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        alertWindow?.rootViewController?.view.addSubview(blurView)
-        
-        alertWindow?.rootViewController?.addChild(customAlert)
-        alertWindow?.rootViewController?.view.addSubview(customAlert.view)
-        customAlert.didMove(toParent: alertWindow?.rootViewController)
-        
-        customAlert.view.frame = self.view.frame
-        customAlert.view.roundCorners(10)
-        customAlert.view.clipsToBounds = true
-        
-        alertWindow?.makeKeyAndVisible()
-        alertWindow?.windowScene = view.window?.windowScene
-    }
-    
-    func dismissCustomAlert() {
-        alertWindow?.isHidden = true
-        alertWindow = nil
-    }
-}
+//extension AddonEditor3DViewController {
+//    private func presentCustomAlert() {
+//        let customAlert = ColorPickerViewController()
+//        customAlert.delegate = self
+//        
+//        alertWindow = UIWindow(frame: UIScreen.main.bounds)
+//        alertWindow?.windowLevel = .alert
+//        alertWindow?.rootViewController = UIViewController()
+//        
+//        let blurEffect = UIBlurEffect(style: .dark)
+//        let blurView = UIVisualEffectView(effect: blurEffect)
+//        blurView.frame = alertWindow?.bounds ?? view.bounds
+//        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        alertWindow?.rootViewController?.view.addSubview(blurView)
+//        
+//        alertWindow?.rootViewController?.addChild(customAlert)
+//        alertWindow?.rootViewController?.view.addSubview(customAlert.view)
+//        customAlert.didMove(toParent: alertWindow?.rootViewController)
+//        
+//        customAlert.view.frame = self.view.frame
+//        customAlert.view.roundCorners(10)
+//        customAlert.view.clipsToBounds = true
+//        
+//        alertWindow?.makeKeyAndVisible()
+//        alertWindow?.windowScene = view.window?.windowScene
+//    }
+//    
+//    func dismissCustomAlert() {
+//        alertWindow?.isHidden = true
+//        alertWindow = nil
+//    }
+//}
 
 //MARK: - PickerViewController Delagte Methods
-
-extension AddonEditor3DViewController: PickerViewControllerProtocol {
-    
-    func dismissView() {
-        alertWindow?.isHidden = true
-        alertWindow = nil
-    }
-    
-    func setColor(color: UIColor) {
-        vcModel?.editorAddonModel.currentDrawingColor = color
-    }
-}
-
+//
+//extension AddonEditor3DViewController: PickerViewControllerProtocol {
+//    
+//    func dismissView() {
+//        alertWindow?.isHidden = true
+//        alertWindow = nil
+//    }
+//    
+//    func setColor(color: UIColor) {
+//        vcModel?.editorAddonModel.currentDrawingColor = color
+//    }
+//}
+//
 
 //MARK: SaveAllert Delegate method
 
@@ -638,7 +648,6 @@ extension AddonEditor3DViewController: SCNCameraControllerDelegate, SCNSceneRend
                 
                 self.smallStiveView.setNeedsDisplay()
             }
-            
         }
     }
 }

@@ -16,11 +16,8 @@ class LegsBodyPartViewControllerViewController: UIViewController {
     @IBOutlet private weak var bottomLegImageView: UIImageView!
     @IBOutlet private weak var topLegImageView: UIImageView!
     @IBOutlet private weak var navigationBarView: UIView!
-    @IBOutlet weak var headerLabel: UILabel!
-    
-    
-    //MARK: - Init
 
+    //MARK: - Init
     init(currentEditableSkin: SkinCreatedModel? = nil, leg: BodyPartSide) {
         super.init(nibName: nil, bundle: nil)
         
@@ -40,8 +37,6 @@ class LegsBodyPartViewControllerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupBackground()
         setupLegImages()
         setupNavigation()
         setupGestureRecognizers()
@@ -63,15 +58,7 @@ class LegsBodyPartViewControllerViewController: UIViewController {
     }
     
     // MARK: - Setup
-
-    private func setupBackground() {
-        headerLabel.roundCorners(.allCorners, radius: 27)
-        headerLabel.layer.borderWidth = 1
-        headerLabel.layer.borderColor = UIColor(.black).cgColor
-    }
-    
     private func setupLegImages() {
-        
         let _ = [backLegImageView, leftLegImageView, frontLegImageView, rightLegImageView].map({ $0?.image = UIImage(named: "general_arm")})
     }
     

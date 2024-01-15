@@ -7,7 +7,6 @@ enum ContentFilter {
     case filter(String)
 }
 
-
 extension ContentFilter: Equatable {
     static func == (lhs: ContentFilter, rhs: ContentFilter) -> Bool {
         switch (lhs, rhs) {

@@ -8,16 +8,11 @@ class TorsoBodyPartViewController: UIViewController {
 
     @IBOutlet weak var backBody: UIImageView!
     @IBOutlet weak var leftBody: UIImageView!
-   
     @IBOutlet weak var frontBody: UIImageView!
     @IBOutlet weak var navigationBar: UIView!
     @IBOutlet weak var bottomBody: UIImageView!
     @IBOutlet weak var topBody: UIImageView!
-    
     @IBOutlet weak var rightBody: UIImageView!
-    
-    @IBOutlet weak var headerLabel: UILabel!
-    
     
     //MARK: - Init
     
@@ -40,10 +35,6 @@ class TorsoBodyPartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerLabel.roundCorners(.allCorners, radius: 27)
-        headerLabel.layer.borderWidth = 1
-        headerLabel.layer.borderColor = UIColor(.black).cgColor
-
         addTapGesture(for: backBody)
         addTapGesture(for: frontBody)
         addTapGesture(for: leftBody)

@@ -112,18 +112,300 @@
                     </constraints>
                 </view>
                 <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEn-mf-WOc">
-                    <rect key="frame" x="0.0" y="178" width="430" height="535.33333333333337"/>
+                    <rect key="frame" x="0.0" y="205.66666666666669" width="430" height="520.66666666666652"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </sceneKitView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D10-R1-Ltm" userLabel="Tools Stack View">
-                    <rect key="frame" x="10" y="713.33333333333337" width="410" height="197.66666666666663"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="D10-R1-Ltm" userLabel="Tools Stack View">
+                    <rect key="frame" x="10" y="726.33333333333337" width="410" height="184.66666666666663"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ma-6A-IHA">
+                            <rect key="frame" x="0.0" y="0.0" width="410" height="92.333333333333329"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TI5-yZ-uEY" userLabel="Custom Tool Picker" customClass="CustomToolPickerView" customModule="Crafty_Craft_10" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="410" height="92.333333333333329"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KwF-8J-KY2">
+                                            <rect key="frame" x="10.333333333333343" y="8.0000000000000036" width="389.33333333333326" height="50.333333333333343"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AjJ-SC-8ZB" userLabel="Pencil View Container">
+                                                    <rect key="frame" x="0.0" y="0.0" width="58.333333333333336" height="50.333333333333336"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q71-xB-QT1" userLabel="Pencil Button">
+                                                            <rect key="frame" x="19.000000000000004" y="9" width="19.999999999999996" height="20"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="q71-xB-QT1" secondAttribute="height" multiplier="1:1" id="Ipv-SV-Fmn"/>
+                                                                <constraint firstAttribute="width" constant="20" id="NXr-fu-YAx">
+                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                                                </constraint>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" backgroundImage="pencilNonSelected"/>
+                                                            <state key="selected" backgroundImage="Pencil Item"/>
+                                                            <connections>
+                                                                <action selector="onToolBarPencilButtonTapped:" destination="-1" eventType="touchUpInside" id="MV8-kR-Cj6"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pencil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRj-Pc-XRa">
+                                                            <rect key="frame" x="0.0" y="33.333333333333258" width="58.333333333333336" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                            <color key="textColor" name="blackCCRedesign"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=compact">
+                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                            </variation>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="19"/>
+                                                            </variation>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="q71-xB-QT1" firstAttribute="centerY" secondItem="AjJ-SC-8ZB" secondAttribute="centerY" constant="-6" id="AXu-LE-4G5"/>
+                                                        <constraint firstAttribute="bottom" secondItem="kRj-Pc-XRa" secondAttribute="bottom" id="CCZ-Zm-s1b"/>
+                                                        <constraint firstItem="kRj-Pc-XRa" firstAttribute="leading" secondItem="AjJ-SC-8ZB" secondAttribute="leading" id="M6W-T7-Qa5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="kRj-Pc-XRa" secondAttribute="trailing" id="Y6n-18-qb6"/>
+                                                        <constraint firstItem="q71-xB-QT1" firstAttribute="centerX" secondItem="AjJ-SC-8ZB" secondAttribute="centerX" id="abe-eb-4bh"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHH-ah-ida" userLabel="Eraser View Container">
+                                                    <rect key="frame" x="66.333333333333343" y="0.0" width="58" height="50.333333333333336"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGU-sT-OYX" userLabel="Eraser Button">
+                                                            <rect key="frame" x="19" y="9" width="20" height="20"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="20" id="Cee-mc-jhF">
+                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                                                </constraint>
+                                                                <constraint firstAttribute="width" secondItem="mGU-sT-OYX" secondAttribute="height" multiplier="1:1" id="gsE-5A-xXw"/>
+                                                            </constraints>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" backgroundImage="eraserNonSelected"/>
+                                                            <state key="selected" backgroundImage="Eraser Item"/>
+                                                            <connections>
+                                                                <action selector="onToolBarEraserButtonTapped:" destination="-1" eventType="touchUpInside" id="H93-wP-Bgv"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eraser" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2De-3i-r5Q">
+                                                            <rect key="frame" x="0.0" y="33.333333333333258" width="58" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                            <color key="textColor" name="blackCCRedesign"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=compact">
+                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                            </variation>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="19"/>
+                                                            </variation>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="2De-3i-r5Q" secondAttribute="bottom" id="EMv-JD-moq"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2De-3i-r5Q" secondAttribute="trailing" id="Wyf-LA-RnD"/>
+                                                        <constraint firstItem="mGU-sT-OYX" firstAttribute="centerY" secondItem="JHH-ah-ida" secondAttribute="centerY" constant="-6" id="ZXM-46-WcM"/>
+                                                        <constraint firstItem="mGU-sT-OYX" firstAttribute="centerX" secondItem="JHH-ah-ida" secondAttribute="centerX" id="iCP-Sy-VwV"/>
+                                                        <constraint firstItem="2De-3i-r5Q" firstAttribute="leading" secondItem="JHH-ah-ida" secondAttribute="leading" id="vhg-Xp-CsT"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCn-an-dg5" userLabel="Picker View Container">
+                                                    <rect key="frame" x="132.33333333333331" y="0.0" width="58.333333333333343" height="50.333333333333336"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juE-kK-GND" userLabel="Brash Button">
+                                                            <rect key="frame" x="19.333333333333343" y="9" width="20" height="20"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="juE-kK-GND" secondAttribute="height" multiplier="1:1" id="zFU-gu-zLY"/>
+                                                                <constraint firstAttribute="width" constant="20" id="zlx-nE-CDD">
+                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                                                </constraint>
+                                                            </constraints>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" backgroundImage="paletteNonSelected"/>
+                                                            <state key="selected" backgroundImage="paletteSelected"/>
+                                                            <connections>
+                                                                <action selector="onToolBarBrashButtonTapped:" destination="-1" eventType="touchUpInside" id="Vav-qj-lBy"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colorize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gh-Yc-jsf">
+                                                            <rect key="frame" x="0.0" y="33.333333333333258" width="58.333333333333336" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                            <color key="textColor" name="blackCCRedesign"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=compact">
+                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                            </variation>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="19"/>
+                                                            </variation>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="3Gh-Yc-jsf" secondAttribute="bottom" id="3J6-ET-q9M"/>
+                                                        <constraint firstItem="3Gh-Yc-jsf" firstAttribute="leading" secondItem="vCn-an-dg5" secondAttribute="leading" id="7sn-vJ-NUa"/>
+                                                        <constraint firstItem="juE-kK-GND" firstAttribute="centerY" secondItem="vCn-an-dg5" secondAttribute="centerY" constant="-6" id="8hg-GF-MeJ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3Gh-Yc-jsf" secondAttribute="trailing" id="fF7-RA-46S"/>
+                                                        <constraint firstItem="juE-kK-GND" firstAttribute="centerX" secondItem="vCn-an-dg5" secondAttribute="centerX" id="yM7-ar-XKh"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-0j-o7f" userLabel="Fill View Container">
+                                                    <rect key="frame" x="198.66666666666666" y="0.0" width="58.333333333333343" height="50.333333333333336"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5w-2X-H7d" userLabel="Fill Button">
+                                                            <rect key="frame" x="19" y="9" width="20" height="20"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="u5w-2X-H7d" secondAttribute="height" multiplier="1:1" id="Jda-Hi-7q9"/>
+                                                                <constraint firstAttribute="width" constant="20" id="oJu-34-EaV">
+                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                                                </constraint>
+                                                            </constraints>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" backgroundImage="fillNonSelected"/>
+                                                            <state key="selected" backgroundImage="Fill Item"/>
+                                                            <connections>
+                                                                <action selector="onToolBarFillButtonTapped:" destination="-1" eventType="touchUpInside" id="9a8-vq-1xf"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iS0-m1-FB5">
+                                                            <rect key="frame" x="0.0" y="33.333333333333258" width="58.333333333333336" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                            <color key="textColor" name="blackCCRedesign"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=compact">
+                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                            </variation>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="19"/>
+                                                            </variation>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="iS0-m1-FB5" secondAttribute="bottom" id="1gH-u1-2Kx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="iS0-m1-FB5" secondAttribute="trailing" id="2x4-gs-iiS"/>
+                                                        <constraint firstItem="u5w-2X-H7d" firstAttribute="centerX" secondItem="3fW-0j-o7f" secondAttribute="centerX" id="Otc-HL-tOd"/>
+                                                        <constraint firstItem="u5w-2X-H7d" firstAttribute="centerY" secondItem="3fW-0j-o7f" secondAttribute="centerY" constant="-6" id="ayA-Dp-ACG"/>
+                                                        <constraint firstItem="iS0-m1-FB5" firstAttribute="leading" secondItem="3fW-0j-o7f" secondAttribute="leading" id="f4r-mE-EGE"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VD3-GA-Ulj" userLabel="Noise View Container">
+                                                    <rect key="frame" x="265" y="0.0" width="58.333333333333314" height="50.333333333333336"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSs-NF-l7Q" userLabel="Noise Button">
+                                                            <rect key="frame" x="19" y="9" width="20" height="20"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="CSs-NF-l7Q" secondAttribute="height" multiplier="1:1" id="8b4-q2-Rin"/>
+                                                                <constraint firstAttribute="width" constant="20" id="Pth-OT-ozX">
+                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                                                </constraint>
+                                                            </constraints>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" backgroundImage="gridAltNonSelected"/>
+                                                            <state key="selected" backgroundImage="Noise Item"/>
+                                                            <connections>
+                                                                <action selector="onToolBarNoiseButtonTapped:" destination="-1" eventType="touchUpInside" id="ldT-qy-ufd"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ze-Qp-jZ4">
+                                                            <rect key="frame" x="0.0" y="33.333333333333258" width="58.333333333333336" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                            <color key="textColor" name="blackCCRedesign"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=compact">
+                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                            </variation>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="19"/>
+                                                            </variation>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="6ze-Qp-jZ4" firstAttribute="leading" secondItem="VD3-GA-Ulj" secondAttribute="leading" id="7cL-nc-EFp"/>
+                                                        <constraint firstAttribute="trailing" secondItem="6ze-Qp-jZ4" secondAttribute="trailing" id="Xu0-Bo-ZtI"/>
+                                                        <constraint firstAttribute="bottom" secondItem="6ze-Qp-jZ4" secondAttribute="bottom" id="epW-5i-f5N"/>
+                                                        <constraint firstItem="CSs-NF-l7Q" firstAttribute="centerX" secondItem="VD3-GA-Ulj" secondAttribute="centerX" id="hAv-mM-ui7"/>
+                                                        <constraint firstItem="CSs-NF-l7Q" firstAttribute="centerY" secondItem="VD3-GA-Ulj" secondAttribute="centerY" constant="-6" id="omr-IJ-caM"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnH-53-ITQ" userLabel="Undo View Container">
+                                                    <rect key="frame" x="331.33333333333337" y="0.0" width="58" height="50.333333333333336"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvg-8X-uYD" userLabel="Undo Button">
+                                                            <rect key="frame" x="19" y="9" width="20" height="20"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="20" id="dWi-Oz-gHb">
+                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                                                </constraint>
+                                                                <constraint firstAttribute="width" secondItem="Gvg-8X-uYD" secondAttribute="height" multiplier="1:1" id="fZ0-MG-8JN"/>
+                                                            </constraints>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" backgroundImage="undoNonSelected"/>
+                                                            <state key="selected" backgroundImage="Undo Item"/>
+                                                            <connections>
+                                                                <action selector="onToolBarUndoButtonTapped:" destination="-1" eventType="touchUpInside" id="dJ3-W3-AgS"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Undo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzU-DG-vO7">
+                                                            <rect key="frame" x="0.0" y="33.333333333333258" width="58" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                            <color key="textColor" name="blackCCRedesign"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=compact">
+                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
+                                                            </variation>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="19"/>
+                                                            </variation>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="jzU-DG-vO7" secondAttribute="bottom" id="8dK-Sw-dMw"/>
+                                                        <constraint firstItem="jzU-DG-vO7" firstAttribute="leading" secondItem="bnH-53-ITQ" secondAttribute="leading" id="9Vk-1C-Qeg"/>
+                                                        <constraint firstItem="Gvg-8X-uYD" firstAttribute="centerX" secondItem="bnH-53-ITQ" secondAttribute="centerX" id="UO6-En-By9"/>
+                                                        <constraint firstItem="Gvg-8X-uYD" firstAttribute="centerY" secondItem="bnH-53-ITQ" secondAttribute="centerY" constant="-6" id="djT-Ya-tsO"/>
+                                                        <constraint firstAttribute="trailing" secondItem="jzU-DG-vO7" secondAttribute="trailing" id="q5F-4n-hFH"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="YellowSelectiveColor"/>
+                                    <constraints>
+                                        <constraint firstItem="KwF-8J-KY2" firstAttribute="width" secondItem="TI5-yZ-uEY" secondAttribute="width" multiplier="0.95" id="4bb-uI-8ZF"/>
+                                        <constraint firstItem="KwF-8J-KY2" firstAttribute="top" secondItem="TI5-yZ-uEY" secondAttribute="top" constant="8" id="ZQh-n7-Zd7"/>
+                                        <constraint firstItem="KwF-8J-KY2" firstAttribute="height" secondItem="TI5-yZ-uEY" secondAttribute="height" multiplier="0.544693" id="i1I-C2-hS9"/>
+                                        <constraint firstItem="KwF-8J-KY2" firstAttribute="centerX" secondItem="TI5-yZ-uEY" secondAttribute="centerX" id="rvn-2l-JFO"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" name="lightGreenBachgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="TI5-yZ-uEY" firstAttribute="leading" secondItem="7ma-6A-IHA" secondAttribute="leading" id="0v6-2v-haW"/>
+                                <constraint firstItem="TI5-yZ-uEY" firstAttribute="top" secondItem="7ma-6A-IHA" secondAttribute="top" id="3OK-Ir-RRZ"/>
+                                <constraint firstAttribute="bottom" secondItem="TI5-yZ-uEY" secondAttribute="bottom" id="w4r-Rx-mPi"/>
+                                <constraint firstAttribute="trailing" secondItem="TI5-yZ-uEY" secondAttribute="trailing" id="wpb-oB-Iyz"/>
+                            </constraints>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="516-2I-QlD" userLabel="ColorsView">
-                            <rect key="frame" x="0.0" y="0.0" width="410" height="79.333333333333329"/>
+                            <rect key="frame" x="0.0" y="92.333333333333258" width="410" height="92.333333333333314"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGE-fi-6p0">
-                                    <rect key="frame" x="41" y="27.666666666666629" width="328" height="24"/>
+                                    <rect key="frame" x="41" y="34" width="328" height="24"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TA1-0g-4xb">
                                             <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -188,293 +470,36 @@
                                 <constraint firstItem="aGE-fi-6p0" firstAttribute="centerY" secondItem="516-2I-QlD" secondAttribute="centerY" id="zn9-de-wVD"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ma-6A-IHA">
-                            <rect key="frame" x="0.0" y="79.333333333333258" width="410" height="118.33333333333331"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TI5-yZ-uEY" userLabel="Custom Tool Picker" customClass="CustomToolPickerView" customModule="Crafty_Craft_10" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="410" height="118.33333333333333"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KwF-8J-KY2">
-                                            <rect key="frame" x="10.333333333333343" y="8" width="389.33333333333326" height="64.333333333333329"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AjJ-SC-8ZB" userLabel="Pencil View Container">
-                                                    <rect key="frame" x="0.0" y="0.0" width="58.333333333333336" height="64.333333333333329"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q71-xB-QT1" userLabel="Pencil Button">
-                                                            <rect key="frame" x="19.000000000000004" y="16.333333333333371" width="19.999999999999996" height="20"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="q71-xB-QT1" secondAttribute="height" multiplier="1:1" id="Ipv-SV-Fmn"/>
-                                                                <constraint firstAttribute="width" constant="20" id="NXr-fu-YAx">
-                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
-                                                                </constraint>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" backgroundImage="pencilNonSelected"/>
-                                                            <state key="selected" backgroundImage="Pencil Item"/>
-                                                            <connections>
-                                                                <action selector="onToolBarPencilButtonTapped:" destination="-1" eventType="touchUpInside" id="MV8-kR-Cj6"/>
-                                                            </connections>
-                                                        </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pencil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRj-Pc-XRa">
-                                                            <rect key="frame" x="0.0" y="47.333333333333371" width="58.333333333333336" height="17"/>
-                                                            <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
-                                                            <color key="textColor" name="blackCCRedesign"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <variation key="heightClass=regular-widthClass=compact">
-                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
-                                                            </variation>
-                                                            <variation key="heightClass=regular-widthClass=regular">
-                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="19"/>
-                                                            </variation>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstItem="q71-xB-QT1" firstAttribute="centerY" secondItem="AjJ-SC-8ZB" secondAttribute="centerY" constant="-6" id="AXu-LE-4G5"/>
-                                                        <constraint firstAttribute="bottom" secondItem="kRj-Pc-XRa" secondAttribute="bottom" id="CCZ-Zm-s1b"/>
-                                                        <constraint firstItem="kRj-Pc-XRa" firstAttribute="leading" secondItem="AjJ-SC-8ZB" secondAttribute="leading" id="M6W-T7-Qa5"/>
-                                                        <constraint firstAttribute="trailing" secondItem="kRj-Pc-XRa" secondAttribute="trailing" id="Y6n-18-qb6"/>
-                                                        <constraint firstItem="q71-xB-QT1" firstAttribute="centerX" secondItem="AjJ-SC-8ZB" secondAttribute="centerX" id="abe-eb-4bh"/>
-                                                    </constraints>
-                                                </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHH-ah-ida" userLabel="Eraser View Container">
-                                                    <rect key="frame" x="66.333333333333343" y="0.0" width="58" height="64.333333333333329"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGU-sT-OYX" userLabel="Eraser Button">
-                                                            <rect key="frame" x="19" y="16.333333333333371" width="20" height="20"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="20" id="Cee-mc-jhF">
-                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
-                                                                </constraint>
-                                                                <constraint firstAttribute="width" secondItem="mGU-sT-OYX" secondAttribute="height" multiplier="1:1" id="gsE-5A-xXw"/>
-                                                            </constraints>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" backgroundImage="eraserNonSelected"/>
-                                                            <state key="selected" backgroundImage="Eraser Item"/>
-                                                            <connections>
-                                                                <action selector="onToolBarEraserButtonTapped:" destination="-1" eventType="touchUpInside" id="H93-wP-Bgv"/>
-                                                            </connections>
-                                                        </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eraser" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2De-3i-r5Q">
-                                                            <rect key="frame" x="0.0" y="47.333333333333371" width="58" height="17"/>
-                                                            <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
-                                                            <color key="textColor" name="blackCCRedesign"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <variation key="heightClass=regular-widthClass=compact">
-                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
-                                                            </variation>
-                                                            <variation key="heightClass=regular-widthClass=regular">
-                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="19"/>
-                                                            </variation>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="2De-3i-r5Q" secondAttribute="bottom" id="EMv-JD-moq"/>
-                                                        <constraint firstAttribute="trailing" secondItem="2De-3i-r5Q" secondAttribute="trailing" id="Wyf-LA-RnD"/>
-                                                        <constraint firstItem="mGU-sT-OYX" firstAttribute="centerY" secondItem="JHH-ah-ida" secondAttribute="centerY" constant="-6" id="ZXM-46-WcM"/>
-                                                        <constraint firstItem="mGU-sT-OYX" firstAttribute="centerX" secondItem="JHH-ah-ida" secondAttribute="centerX" id="iCP-Sy-VwV"/>
-                                                        <constraint firstItem="2De-3i-r5Q" firstAttribute="leading" secondItem="JHH-ah-ida" secondAttribute="leading" id="vhg-Xp-CsT"/>
-                                                    </constraints>
-                                                </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCn-an-dg5" userLabel="Picker View Container">
-                                                    <rect key="frame" x="132.33333333333331" y="0.0" width="58.333333333333343" height="64.333333333333329"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juE-kK-GND" userLabel="Brash Button">
-                                                            <rect key="frame" x="19.333333333333343" y="16.333333333333371" width="20" height="20"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="juE-kK-GND" secondAttribute="height" multiplier="1:1" id="zFU-gu-zLY"/>
-                                                                <constraint firstAttribute="width" constant="20" id="zlx-nE-CDD">
-                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
-                                                                </constraint>
-                                                            </constraints>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" backgroundImage="paletteNonSelected"/>
-                                                            <state key="selected" backgroundImage="paletteSelected"/>
-                                                            <connections>
-                                                                <action selector="onToolBarBrashButtonTapped:" destination="-1" eventType="touchUpInside" id="Vav-qj-lBy"/>
-                                                            </connections>
-                                                        </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colorize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gh-Yc-jsf">
-                                                            <rect key="frame" x="0.0" y="47.333333333333371" width="58.333333333333336" height="17"/>
-                                                            <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
-                                                            <color key="textColor" name="blackCCRedesign"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <variation key="heightClass=regular-widthClass=compact">
-                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
-                                                            </variation>
-                                                            <variation key="heightClass=regular-widthClass=regular">
-                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="19"/>
-                                                            </variation>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="3Gh-Yc-jsf" secondAttribute="bottom" id="3J6-ET-q9M"/>
-                                                        <constraint firstItem="3Gh-Yc-jsf" firstAttribute="leading" secondItem="vCn-an-dg5" secondAttribute="leading" id="7sn-vJ-NUa"/>
-                                                        <constraint firstItem="juE-kK-GND" firstAttribute="centerY" secondItem="vCn-an-dg5" secondAttribute="centerY" constant="-6" id="8hg-GF-MeJ"/>
-                                                        <constraint firstAttribute="trailing" secondItem="3Gh-Yc-jsf" secondAttribute="trailing" id="fF7-RA-46S"/>
-                                                        <constraint firstItem="juE-kK-GND" firstAttribute="centerX" secondItem="vCn-an-dg5" secondAttribute="centerX" id="yM7-ar-XKh"/>
-                                                    </constraints>
-                                                </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-0j-o7f" userLabel="Fill View Container">
-                                                    <rect key="frame" x="198.66666666666666" y="0.0" width="58.333333333333343" height="64.333333333333329"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5w-2X-H7d" userLabel="Fill Button">
-                                                            <rect key="frame" x="19" y="16.333333333333371" width="20" height="20"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="u5w-2X-H7d" secondAttribute="height" multiplier="1:1" id="Jda-Hi-7q9"/>
-                                                                <constraint firstAttribute="width" constant="20" id="oJu-34-EaV">
-                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
-                                                                </constraint>
-                                                            </constraints>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" backgroundImage="fillNonSelected"/>
-                                                            <state key="selected" backgroundImage="Fill Item"/>
-                                                            <connections>
-                                                                <action selector="onToolBarFillButtonTapped:" destination="-1" eventType="touchUpInside" id="9a8-vq-1xf"/>
-                                                            </connections>
-                                                        </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iS0-m1-FB5">
-                                                            <rect key="frame" x="0.0" y="47.333333333333371" width="58.333333333333336" height="17"/>
-                                                            <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
-                                                            <color key="textColor" name="blackCCRedesign"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <variation key="heightClass=regular-widthClass=compact">
-                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
-                                                            </variation>
-                                                            <variation key="heightClass=regular-widthClass=regular">
-                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="19"/>
-                                                            </variation>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="iS0-m1-FB5" secondAttribute="bottom" id="1gH-u1-2Kx"/>
-                                                        <constraint firstAttribute="trailing" secondItem="iS0-m1-FB5" secondAttribute="trailing" id="2x4-gs-iiS"/>
-                                                        <constraint firstItem="u5w-2X-H7d" firstAttribute="centerX" secondItem="3fW-0j-o7f" secondAttribute="centerX" id="Otc-HL-tOd"/>
-                                                        <constraint firstItem="u5w-2X-H7d" firstAttribute="centerY" secondItem="3fW-0j-o7f" secondAttribute="centerY" constant="-6" id="ayA-Dp-ACG"/>
-                                                        <constraint firstItem="iS0-m1-FB5" firstAttribute="leading" secondItem="3fW-0j-o7f" secondAttribute="leading" id="f4r-mE-EGE"/>
-                                                    </constraints>
-                                                </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VD3-GA-Ulj" userLabel="Noise View Container">
-                                                    <rect key="frame" x="265" y="0.0" width="58.333333333333314" height="64.333333333333329"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSs-NF-l7Q" userLabel="Noise Button">
-                                                            <rect key="frame" x="19" y="16.333333333333371" width="20" height="20"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="CSs-NF-l7Q" secondAttribute="height" multiplier="1:1" id="8b4-q2-Rin"/>
-                                                                <constraint firstAttribute="width" constant="20" id="Pth-OT-ozX">
-                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
-                                                                </constraint>
-                                                            </constraints>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" backgroundImage="gridAltNonSelected"/>
-                                                            <state key="selected" backgroundImage="Noise Item"/>
-                                                            <connections>
-                                                                <action selector="onToolBarNoiseButtonTapped:" destination="-1" eventType="touchUpInside" id="ldT-qy-ufd"/>
-                                                            </connections>
-                                                        </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ze-Qp-jZ4">
-                                                            <rect key="frame" x="0.0" y="47.333333333333371" width="58.333333333333336" height="17"/>
-                                                            <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
-                                                            <color key="textColor" name="blackCCRedesign"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <variation key="heightClass=regular-widthClass=compact">
-                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
-                                                            </variation>
-                                                            <variation key="heightClass=regular-widthClass=regular">
-                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="19"/>
-                                                            </variation>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstItem="6ze-Qp-jZ4" firstAttribute="leading" secondItem="VD3-GA-Ulj" secondAttribute="leading" id="7cL-nc-EFp"/>
-                                                        <constraint firstAttribute="trailing" secondItem="6ze-Qp-jZ4" secondAttribute="trailing" id="Xu0-Bo-ZtI"/>
-                                                        <constraint firstAttribute="bottom" secondItem="6ze-Qp-jZ4" secondAttribute="bottom" id="epW-5i-f5N"/>
-                                                        <constraint firstItem="CSs-NF-l7Q" firstAttribute="centerX" secondItem="VD3-GA-Ulj" secondAttribute="centerX" id="hAv-mM-ui7"/>
-                                                        <constraint firstItem="CSs-NF-l7Q" firstAttribute="centerY" secondItem="VD3-GA-Ulj" secondAttribute="centerY" constant="-6" id="omr-IJ-caM"/>
-                                                    </constraints>
-                                                </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnH-53-ITQ" userLabel="Undo View Container">
-                                                    <rect key="frame" x="331.33333333333337" y="0.0" width="58" height="64.333333333333329"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvg-8X-uYD" userLabel="Undo Button">
-                                                            <rect key="frame" x="19" y="16.333333333333371" width="20" height="20"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="20" id="dWi-Oz-gHb">
-                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
-                                                                </constraint>
-                                                                <constraint firstAttribute="width" secondItem="Gvg-8X-uYD" secondAttribute="height" multiplier="1:1" id="fZ0-MG-8JN"/>
-                                                            </constraints>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" backgroundImage="undoNonSelected"/>
-                                                            <state key="selected" backgroundImage="Undo Item"/>
-                                                            <connections>
-                                                                <action selector="onToolBarUndoButtonTapped:" destination="-1" eventType="touchUpInside" id="dJ3-W3-AgS"/>
-                                                            </connections>
-                                                        </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Undo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzU-DG-vO7">
-                                                            <rect key="frame" x="0.0" y="47.333333333333371" width="58" height="17"/>
-                                                            <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
-                                                            <color key="textColor" name="blackCCRedesign"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <variation key="heightClass=regular-widthClass=compact">
-                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
-                                                            </variation>
-                                                            <variation key="heightClass=regular-widthClass=regular">
-                                                                <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="19"/>
-                                                            </variation>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="jzU-DG-vO7" secondAttribute="bottom" id="8dK-Sw-dMw"/>
-                                                        <constraint firstItem="jzU-DG-vO7" firstAttribute="leading" secondItem="bnH-53-ITQ" secondAttribute="leading" id="9Vk-1C-Qeg"/>
-                                                        <constraint firstItem="Gvg-8X-uYD" firstAttribute="centerX" secondItem="bnH-53-ITQ" secondAttribute="centerX" id="UO6-En-By9"/>
-                                                        <constraint firstItem="Gvg-8X-uYD" firstAttribute="centerY" secondItem="bnH-53-ITQ" secondAttribute="centerY" constant="-6" id="djT-Ya-tsO"/>
-                                                        <constraint firstAttribute="trailing" secondItem="jzU-DG-vO7" secondAttribute="trailing" id="q5F-4n-hFH"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <color key="backgroundColor" name="YellowSelectiveColor"/>
-                                    <constraints>
-                                        <constraint firstItem="KwF-8J-KY2" firstAttribute="width" secondItem="TI5-yZ-uEY" secondAttribute="width" multiplier="0.95" id="4bb-uI-8ZF"/>
-                                        <constraint firstItem="KwF-8J-KY2" firstAttribute="top" secondItem="TI5-yZ-uEY" secondAttribute="top" constant="8" id="ZQh-n7-Zd7"/>
-                                        <constraint firstItem="KwF-8J-KY2" firstAttribute="height" secondItem="TI5-yZ-uEY" secondAttribute="height" multiplier="0.544693" id="i1I-C2-hS9"/>
-                                        <constraint firstItem="KwF-8J-KY2" firstAttribute="centerX" secondItem="TI5-yZ-uEY" secondAttribute="centerX" id="rvn-2l-JFO"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
-                            <color key="backgroundColor" name="lightGreenBachgroundColor"/>
-                            <constraints>
-                                <constraint firstItem="TI5-yZ-uEY" firstAttribute="leading" secondItem="7ma-6A-IHA" secondAttribute="leading" id="0v6-2v-haW"/>
-                                <constraint firstItem="TI5-yZ-uEY" firstAttribute="top" secondItem="7ma-6A-IHA" secondAttribute="top" id="3OK-Ir-RRZ"/>
-                                <constraint firstAttribute="bottom" secondItem="TI5-yZ-uEY" secondAttribute="bottom" id="w4r-Rx-mPi"/>
-                                <constraint firstAttribute="trailing" secondItem="TI5-yZ-uEY" secondAttribute="trailing" id="wpb-oB-Iyz"/>
-                            </constraints>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" name="YellowSelectiveColor"/>
                 </stackView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d20-uq-IDt" userLabel="BrashSizeView" customClass="BrashSizeView" customModule="Crafty_Craft_10" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="656.33333333333337" width="430" height="70"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="POO-7v-G9g"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY NEW SKIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiI-Mh-Q6Y">
+                    <rect key="frame" x="8" y="151" width="414" height="54.666666666666657"/>
+                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
+                    <color key="textColor" name="BeigeColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfN-nT-Ult" customClass="SmallModelView" customModule="Crafty_Craft_10" customModuleProvider="target">
+                    <rect key="frame" x="20.000000000000007" y="589.66666666666663" width="116.66666666666669" height="116.66666666666663"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="MfN-nT-Ult" secondAttribute="height" multiplier="1:1" id="fuZ-MT-D7r"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glY-bF-pQp">
-                    <rect key="frame" x="356" y="639.33333333333337" width="54" height="54"/>
+                    <rect key="frame" x="356" y="621" width="54" height="54"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="54" id="ejN-7c-1g5"/>
                         <constraint firstAttribute="height" constant="54" id="q9M-uh-Yq0"/>
@@ -485,31 +510,6 @@
                         <action selector="rotationCameraControllButtonAction:" destination="-1" eventType="touchUpInside" id="Ojb-DH-Ab0"/>
                     </connections>
                 </button>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d20-uq-IDt" userLabel="BrashSizeView" customClass="BrashSizeView" customModule="Crafty_Craft_10" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="643.33333333333337" width="430" height="70"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="70" id="POO-7v-G9g"/>
-                    </constraints>
-                </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY NEW SKIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiI-Mh-Q6Y">
-                    <rect key="frame" x="8" y="151" width="414" height="27"/>
-                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
-                    <color key="textColor" name="BeigeColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfN-nT-Ult" customClass="SmallModelView" customModule="Crafty_Craft_10" customModuleProvider="target">
-                    <rect key="frame" x="20.000000000000007" y="577" width="116.66666666666669" height="116.33333333333337"/>
-                    <color key="backgroundColor" name="YellowSelectiveColor"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="MfN-nT-Ult" secondAttribute="height" multiplier="1:1" id="fuZ-MT-D7r"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <integer key="value" value="5"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="BackgroundColor"/>
@@ -519,13 +519,13 @@
                 <constraint firstItem="MfN-nT-Ult" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.125" id="3D0-QB-GYh"/>
                 <constraint firstItem="d20-uq-IDt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3kS-gJ-iOO"/>
                 <constraint firstItem="D10-R1-Ltm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="5Xt-VL-dh6"/>
-                <constraint firstItem="7ma-6A-IHA" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.127" id="FA3-AX-6Jv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EEn-mf-WOc" secondAttribute="trailing" id="IAY-2Y-FtN"/>
                 <constraint firstItem="MfN-nT-Ult" firstAttribute="bottom" secondItem="EEn-mf-WOc" secondAttribute="bottom" constant="-20" id="J2h-7a-IYv"/>
+                <constraint firstItem="glY-bF-pQp" firstAttribute="centerY" secondItem="MfN-nT-Ult" secondAttribute="centerY" id="JJB-ZI-vYG"/>
                 <constraint firstItem="lhO-Vb-FiW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Kz5-jb-ofs"/>
                 <constraint firstItem="d20-uq-IDt" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="RPw-fX-6IB"/>
                 <constraint firstAttribute="trailing" secondItem="D10-R1-Ltm" secondAttribute="trailing" constant="10" id="StB-V0-IBi"/>
-                <constraint firstItem="516-2I-QlD" firstAttribute="top" secondItem="glY-bF-pQp" secondAttribute="bottom" constant="20" id="VWY-py-Zek"/>
+                <constraint firstAttribute="bottom" secondItem="glY-bF-pQp" secondAttribute="bottom" constant="257" id="XAI-IX-31Y"/>
                 <constraint firstItem="lhO-Vb-FiW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="doZ-r9-OP0"/>
                 <constraint firstItem="oiI-Mh-Q6Y" firstAttribute="top" secondItem="lhO-Vb-FiW" secondAttribute="bottom" constant="8" id="eJ0-ms-8K7"/>
                 <constraint firstAttribute="trailing" secondItem="oiI-Mh-Q6Y" secondAttribute="trailing" constant="8" id="fHd-FE-HWq"/>
@@ -533,7 +533,7 @@
                 <constraint firstItem="MfN-nT-Ult" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="jsS-fV-jwj"/>
                 <constraint firstItem="EEn-mf-WOc" firstAttribute="top" secondItem="oiI-Mh-Q6Y" secondAttribute="bottom" id="jus-x0-FCS"/>
                 <constraint firstItem="oiI-Mh-Q6Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="k3C-Ba-Nze"/>
-                <constraint firstItem="516-2I-QlD" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.085" id="pvk-iL-f0u"/>
+                <constraint firstItem="EEn-mf-WOc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="oHf-bj-U12"/>
                 <constraint firstItem="D10-R1-Ltm" firstAttribute="top" secondItem="d20-uq-IDt" secondAttribute="bottom" id="uqx-nt-pnD"/>
                 <constraint firstItem="D10-R1-Ltm" firstAttribute="top" secondItem="EEn-mf-WOc" secondAttribute="bottom" id="wBV-Sc-Os4"/>
                 <constraint firstItem="lhO-Vb-FiW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wtk-QP-brM"/>
@@ -550,7 +550,7 @@
         <image name="Pencil Item" width="120" height="52"/>
         <image name="Picker Item" width="24" height="24"/>
         <image name="Save Item" width="44" height="44"/>
-        <image name="Undo Item" width="25" height="25"/>
+        <image name="Undo Item" width="120" height="52"/>
         <image name="dropperNonSelected" width="24" height="24"/>
         <image name="eraserNonSelected" width="24" height="24"/>
         <image name="fillNonSelected" width="24" height="24"/>

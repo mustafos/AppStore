@@ -22,7 +22,6 @@
                 <outlet property="backLegImageView" destination="qQ9-3O-Hjf" id="gqG-fC-ViC"/>
                 <outlet property="bottomLegImageView" destination="rVl-cs-vNh" id="DgE-5t-LSr"/>
                 <outlet property="frontLegImageView" destination="JIN-4Z-qUV" id="aos-3f-GhJ"/>
-                <outlet property="headerLabel" destination="DkU-6a-3H9" id="BdR-FI-III"/>
                 <outlet property="leftLegImageView" destination="Bqm-bc-sYL" id="Z0K-g8-1IM"/>
                 <outlet property="navigationBarView" destination="gLB-DK-KPD" id="lYc-Wh-mbX"/>
                 <outlet property="rightLegImageView" destination="6tE-p6-DS5" id="bKC-9P-ele"/>
@@ -178,21 +177,10 @@
                         </stackView>
                     </subviews>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkU-6a-3H9">
-                    <rect key="frame" x="20" y="793" width="374" height="54"/>
-                    <color key="backgroundColor" name="YellowSelectiveColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="54" id="Qrg-Dx-mkc"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
-                    <color key="textColor" name="EerieBlackColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
-                <constraint firstItem="DkU-6a-3H9" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="0aA-8L-23Z"/>
                 <constraint firstItem="x0h-la-f8T" firstAttribute="top" secondItem="0wM-7c-gtI" secondAttribute="bottom" constant="24" id="C8B-aQ-NLH"/>
                 <constraint firstAttribute="trailing" secondItem="gLB-DK-KPD" secondAttribute="trailing" id="Cf0-Ss-WVb"/>
                 <constraint firstItem="0wM-7c-gtI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KqM-8Z-cMs"/>
@@ -204,14 +192,11 @@
                 <constraint firstItem="rVl-cs-vNh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZQP-9e-g88"/>
                 <constraint firstItem="JEM-w2-IDp" firstAttribute="top" secondItem="gLB-DK-KPD" secondAttribute="bottom" constant="100" id="gh1-uv-e0s"/>
                 <constraint firstItem="kbr-5P-rtf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hPM-Xz-IIW"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DkU-6a-3H9" secondAttribute="trailing" constant="20" id="lvS-cm-udS"/>
-                <constraint firstItem="DkU-6a-3H9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="mC9-mx-Y1s"/>
                 <constraint firstItem="JEM-w2-IDp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mog-F9-6Ai"/>
                 <constraint firstItem="x0h-la-f8T" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.23" id="syM-FA-xAV"/>
                 <constraint firstItem="kbr-5P-rtf" firstAttribute="top" secondItem="x0h-la-f8T" secondAttribute="bottom" constant="50" id="wge-YO-bhp"/>
                 <constraint firstItem="rVl-cs-vNh" firstAttribute="top" secondItem="kbr-5P-rtf" secondAttribute="bottom" constant="5" id="xXs-Og-rPj"/>
                 <constraint firstItem="0wM-7c-gtI" firstAttribute="top" secondItem="JEM-w2-IDp" secondAttribute="bottom" constant="5" id="xeK-P8-EMr"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="DkU-6a-3H9" secondAttribute="bottom" constant="15" id="yOW-Cs-eAX"/>
             </constraints>
             <point key="canvasLocation" x="56" y="21"/>
         </view>
@@ -226,12 +211,6 @@
         </namedColor>
         <namedColor name="BeigeColor">
             <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="EerieBlackColor">
-            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="YellowSelectiveColor">
-            <color red="0.97254901960784312" green="0.80784313725490198" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

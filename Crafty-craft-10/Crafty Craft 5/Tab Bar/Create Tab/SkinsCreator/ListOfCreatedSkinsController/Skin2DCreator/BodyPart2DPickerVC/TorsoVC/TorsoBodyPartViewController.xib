@@ -22,7 +22,6 @@
                 <outlet property="backBody" destination="brD-UC-X21" id="CK9-hl-tDd"/>
                 <outlet property="bottomBody" destination="4qH-Mx-8EB" id="fas-OI-C0d"/>
                 <outlet property="frontBody" destination="t6X-0N-IJc" id="K3i-Ce-1Ps"/>
-                <outlet property="headerLabel" destination="xjO-aj-ate" id="csd-Ln-Io8"/>
                 <outlet property="leftBody" destination="s8A-GO-XAQ" id="fJx-gG-7wV"/>
                 <outlet property="navigationBar" destination="Brg-pF-hsE" id="99K-Ds-qXq"/>
                 <outlet property="rightBody" destination="dRc-TN-JfP" id="Ke8-ak-QyG"/>
@@ -200,35 +199,21 @@
                         <constraint firstAttribute="width" secondItem="nYK-kc-a9H" secondAttribute="height" multiplier="139:90" id="u8g-mI-vQj"/>
                     </constraints>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjO-aj-ate">
-                    <rect key="frame" x="20" y="588" width="335" height="54"/>
-                    <color key="backgroundColor" name="YellowSelectiveColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="54" id="YV7-4E-MEr"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
-                    <color key="textColor" name="EerieBlackColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
-                <constraint firstItem="xjO-aj-ate" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4MN-bB-9Ma"/>
                 <constraint firstItem="Brg-pF-hsE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="7nU-76-Ija"/>
                 <constraint firstItem="eHf-YA-PvY" firstAttribute="top" secondItem="0j4-XC-mg8" secondAttribute="bottom" constant="24" id="8je-C3-PSS"/>
                 <constraint firstItem="eHf-YA-PvY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="92x-H5-8Yq"/>
                 <constraint firstItem="0j4-XC-mg8" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.115023" id="GOz-Ui-6NY"/>
                 <constraint firstItem="0j4-XC-mg8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HGb-Uw-NiE"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xjO-aj-ate" secondAttribute="bottom" constant="25" id="Ssa-yz-EJT"/>
                 <constraint firstItem="eHf-YA-PvY" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.23" id="SxA-2B-e8u"/>
                 <constraint firstItem="nYK-kc-a9H" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="a5n-qa-2XG"/>
                 <constraint firstItem="Brg-pF-hsE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="b12-x1-Uea"/>
                 <constraint firstItem="nYK-kc-a9H" firstAttribute="top" secondItem="eHf-YA-PvY" secondAttribute="bottom" constant="24" id="c1o-iB-EOe"/>
                 <constraint firstItem="nYK-kc-a9H" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.115023" id="fzP-7j-kbd"/>
-                <constraint firstItem="xjO-aj-ate" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="gXC-l1-x8A"/>
                 <constraint firstItem="0j4-XC-mg8" firstAttribute="top" secondItem="Brg-pF-hsE" secondAttribute="bottom" constant="100" id="izH-Y9-pmc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xjO-aj-ate" secondAttribute="trailing" constant="20" id="sH0-Ta-5P4"/>
                 <constraint firstAttribute="trailing" secondItem="Brg-pF-hsE" secondAttribute="trailing" id="w8b-Xa-sxp"/>
             </constraints>
             <point key="canvasLocation" x="-118.32061068702289" y="19.718309859154932"/>
@@ -244,12 +229,6 @@
         </namedColor>
         <namedColor name="BeigeColor">
             <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="EerieBlackColor">
-            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="YellowSelectiveColor">
-            <color red="0.97254901960784312" green="0.80784313725490198" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

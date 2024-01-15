@@ -1,5 +1,3 @@
-
-
 import UIKit
 
 enum StivesBodyPart: String {
@@ -22,16 +20,16 @@ class SmallModelView: UIView {
     let asHiddeStateColor = UIColor.clear
     let clothesStateColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     let skinStateColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-
+    
     @IBOutlet var main3DStiveView: UIView!
-        
+    
     @IBOutlet weak var undoButton: UIButton!
     
     @IBOutlet weak var redoButton: UIButton!
     
     @IBOutlet var pointIndicatorBashSizeImages: [UIImageView]!
     
-        
+    
     weak var delegate: BodyPartsHiddebleDelegate?
     
     
@@ -52,12 +50,9 @@ class SmallModelView: UIView {
         main3DStiveView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         main3DStiveView.translatesAutoresizingMaskIntoConstraints = true
         
-       
-        
-        
         addSubview(main3DStiveView)
     }
-    
+   
     @IBAction func headButtonPressed(_ sender: UIButton) {
         delegate?.hideBodyPart(of: .head) { state in
             
@@ -70,14 +65,14 @@ class SmallModelView: UIView {
                 case.skin:
                     sender.backgroundColor = self?.skinStateColor
                 }
-
+                
             }
         }
     }
     
     @IBAction func bodyButtonPressed(_ sender: UIButton) {
         delegate?.hideBodyPart(of: .body ) { state in
-
+            
             DispatchQueue.main.async { [weak self] in
                 switch state {
                 case .clothes:
@@ -87,14 +82,14 @@ class SmallModelView: UIView {
                 case.skin:
                     sender.backgroundColor = self?.skinStateColor
                 }
-
+                
             }
         }
     }
     
     @IBAction func rightArmButtonPressed(_ sender: UIButton) {
         delegate?.hideBodyPart(of: .rightArm ) { state in
-
+            
             DispatchQueue.main.async { [weak self] in
                 switch state {
                 case .clothes:
@@ -104,14 +99,14 @@ class SmallModelView: UIView {
                 case.skin:
                     sender.backgroundColor = self?.skinStateColor
                 }
-
+                
             }
         }
     }
     
     @IBAction func leftArmButtonPressed(_ sender: UIButton) {
         delegate?.hideBodyPart(of: .leftArm) { state in
-
+            
             DispatchQueue.main.async { [weak self] in
                 switch state {
                 case .clothes:
@@ -121,14 +116,14 @@ class SmallModelView: UIView {
                 case.skin:
                     sender.backgroundColor = self?.skinStateColor
                 }
-
+                
             }
         }
     }
     
     @IBAction func rightLegButtonPressed(_ sender: UIButton) {
         delegate?.hideBodyPart(of: .rightLeg ) { state in
-
+            
             DispatchQueue.main.async { [weak self] in
                 switch state {
                 case .clothes:
@@ -138,14 +133,14 @@ class SmallModelView: UIView {
                 case.skin:
                     sender.backgroundColor = self?.skinStateColor
                 }
-
+                
             }
         }
     }
     
     @IBAction func leftLegButtonPressed(_ sender: UIButton) {
         delegate?.hideBodyPart(of: .leftLeg ) { state in
-
+            
             DispatchQueue.main.async { [weak self] in
                 switch state {
                 case .clothes:
@@ -155,13 +150,10 @@ class SmallModelView: UIView {
                 case.skin:
                     sender.backgroundColor = self?.skinStateColor
                 }
-
+                
             }
         }
     }
-    
-    
-    
     
     private func loadVolumeViewFromNib() -> UIView {
         let volNib = UINib(nibName: String(describing: type(of: self)), bundle: Bundle(for: type(of: self)))

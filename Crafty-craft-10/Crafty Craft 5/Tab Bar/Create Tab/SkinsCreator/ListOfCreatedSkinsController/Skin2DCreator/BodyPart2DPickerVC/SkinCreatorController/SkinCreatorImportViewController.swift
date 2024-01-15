@@ -145,8 +145,6 @@ final class SkinCreatorImportViewController: UIViewController {
         buttonsStackView.roundCorners()
     }
     
-    
-    
     private func processImported(image: UIImage) {
         if let width = currentBodyPartSide?.width, let height = currentBodyPartSide?.height {
             CANVAS_WIDTH = width

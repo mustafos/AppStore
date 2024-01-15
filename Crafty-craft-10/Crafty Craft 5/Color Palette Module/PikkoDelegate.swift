@@ -5,7 +5,6 @@
 //  Created by Sandra & Johannes.
 //
 
-import Foundation
 import UIKit
 
 /// Delegate which propagates color changes of the colorpicker to its delegate.

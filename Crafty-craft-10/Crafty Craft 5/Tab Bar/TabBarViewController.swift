@@ -87,7 +87,6 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         setTabBarAppearance()
-        
         setupManagers()
     }
     
@@ -101,6 +100,14 @@ class TabBarViewController: UITabBarController {
     }
     
     // MARK: - Methods -
+    private func setTabBarItemColors(_ itemAppearance: UITabBarItemAppearance) {
+        itemAppearance.normal.iconColor = .lightGray
+        itemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+         
+        itemAppearance.selected.iconColor = .white
+        itemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
+    
     private func setTabBarAppearance() {
         viewControllers = [createViewController, contentViewController, seedsViewController, serversViewController]
         
@@ -126,10 +133,16 @@ class TabBarViewController: UITabBarController {
         tabBar.layer.insertSublayer(roundLayer, at: 0)
         
         if let items = tabBar.items {
-            for (index, item) in items.enumerated() {
-                item.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+                for (index, item) in items.enumerated() {
+                    if index == 0 {
+                        item.imageInsets = UIEdgeInsets(top: 6, left: 25, bottom: -6, right: -25)
+                    } else if index == 3 {
+                        item.imageInsets = UIEdgeInsets(top: 6, left: -25, bottom: -6, right: 25)
+                    } else {
+                        item.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+                    }
+                }
             }
-        }
         
         roundLayer.strokeColor = UIColor.black.cgColor
         roundLayer.lineWidth = 1.0
