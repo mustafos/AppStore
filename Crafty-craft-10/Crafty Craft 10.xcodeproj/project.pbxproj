@@ -83,7 +83,6 @@
 		038360C22AEFD83C00751797 /* SeedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038360C02AEFD83C00751797 /* SeedDetailsViewController.swift */; };
 		038360C32AEFD83C00751797 /* SeedDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038360C12AEFD83C00751797 /* SeedDetailsViewController.xib */; };
 		03906C322ACE9C6100429FB7 /* URL+DeleteFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03906C312ACE9C6100429FB7 /* URL+DeleteFile.swift */; };
-		0394B8742AD948ED002A35B3 /* Allerta-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0394B8732AD948ED002A35B3 /* Allerta-Regular.ttf */; };
 		03981F502AE159B100C69027 /* SeedRealmSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03981F4F2AE159B100C69027 /* SeedRealmSession.swift */; };
 		0398B47D2AC1F33600810B29 /* AddonCategoryOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0398B47B2AC1F33600810B29 /* AddonCategoryOptionsViewController.xib */; };
 		0398B47E2AC1F33600810B29 /* AddonCategoryOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398B47C2AC1F33600810B29 /* AddonCategoryOptionsViewController.swift */; };
@@ -118,14 +117,6 @@
 		03ACD3532ADE6A8C00052439 /* UILabel+TextInset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ACD3522ADE6A8C00052439 /* UILabel+TextInset.swift */; };
 		03AFFD1D2AD7D68D002A131D /* CreateNewItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AFFD1B2AD7D68D002A131D /* CreateNewItemCollectionViewCell.swift */; };
 		03AFFD1E2AD7D68D002A131D /* CreateNewItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AFFD1C2AD7D68D002A131D /* CreateNewItemCollectionViewCell.xib */; };
-		03AFFD272AD7D818002A131D /* Blinker-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03AFFD1F2AD7D817002A131D /* Blinker-Bold.ttf */; };
-		03AFFD282AD7D818002A131D /* Blinker-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03AFFD202AD7D817002A131D /* Blinker-ExtraLight.ttf */; };
-		03AFFD292AD7D818002A131D /* Blinker-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03AFFD212AD7D817002A131D /* Blinker-Regular.ttf */; };
-		03AFFD2A2AD7D818002A131D /* Blinker-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03AFFD222AD7D817002A131D /* Blinker-SemiBold.ttf */; };
-		03AFFD2B2AD7D818002A131D /* Blinker-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03AFFD232AD7D818002A131D /* Blinker-Thin.ttf */; };
-		03AFFD2C2AD7D818002A131D /* Blinker-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03AFFD242AD7D818002A131D /* Blinker-Light.ttf */; };
-		03AFFD2D2AD7D818002A131D /* Blinker-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03AFFD252AD7D818002A131D /* Blinker-ExtraBold.ttf */; };
-		03AFFD2E2AD7D818002A131D /* Blinker-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03AFFD262AD7D818002A131D /* Blinker-Black.ttf */; };
 		03AFFD352AD7E584002A131D /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AFFD342AD7E584002A131D /* FontHelper.swift */; };
 		03AFFD3A2AD7F43D002A131D /* SeedTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AFFD382AD7F43D002A131D /* SeedTabViewController.swift */; };
 		03AFFD402AD7F464002A131D /* ServersTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AFFD3E2AD7F464002A131D /* ServersTabViewController.swift */; };
@@ -322,7 +313,6 @@
 		F438AA2F2A175AE0007469E7 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438AA2E2A175ADF007469E7 /* Drawing.swift */; };
 		F438AA312A17A391007469E7 /* UIImage+Resized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438AA302A17A391007469E7 /* UIImage+Resized.swift */; };
 		F46D8B642A08DB5D00A61747 /* UIView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46D8B632A08DB5D00A61747 /* UIView+RoundCorners.swift */; };
-		F48E0B502A09254800B9020D /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F48E0B4F2A09254800B9020D /* Poppins-Regular.ttf */; };
 		F48E0B532A093FC200B9020D /* TabBarConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48E0B522A093FC200B9020D /* TabBarConfigurable.swift */; };
 		F48E0B552A09498700B9020D /* UIViewController+DeviceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48E0B542A09498700B9020D /* UIViewController+DeviceOrientation.swift */; };
 		F4916C792A0B89270090E9B6 /* AddonCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4916C772A0B89270090E9B6 /* AddonCreatorViewController.swift */; };
@@ -336,8 +326,6 @@
 		F4DB05D62A0295F300E4C43D /* CreateTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DB05D42A0295F300E4C43D /* CreateTabViewController.xib */; };
 		F4DB05DB2A02962800E4C43D /* ContentTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB05D92A02962800E4C43D /* ContentTabViewController.swift */; };
 		F4DB05DC2A02962800E4C43D /* ContentTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DB05DA2A02962800E4C43D /* ContentTabViewController.xib */; };
-		F4DB05E02A02A5CC00E4C43D /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4DB05DF2A02A5CC00E4C43D /* Poppins-Bold.ttf */; };
-		F4DB05E62A03923700E4C43D /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4DB05E52A03923700E4C43D /* Poppins-SemiBold.ttf */; };
 		F4DE46762A03B157001DFB1B /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE46742A03B157001DFB1B /* ContentCollectionViewCell.swift */; };
 		F4DE46772A03B157001DFB1B /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DE46752A03B157001DFB1B /* ContentCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -451,7 +439,6 @@
 		038360C02AEFD83C00751797 /* SeedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDetailsViewController.swift; sourceTree = "<group>"; };
 		038360C12AEFD83C00751797 /* SeedDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeedDetailsViewController.xib; sourceTree = "<group>"; };
 		03906C312ACE9C6100429FB7 /* URL+DeleteFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+DeleteFile.swift"; sourceTree = "<group>"; };
-		0394B8732AD948ED002A35B3 /* Allerta-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Allerta-Regular.ttf"; sourceTree = "<group>"; };
 		03981F4F2AE159B100C69027 /* SeedRealmSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedRealmSession.swift; sourceTree = "<group>"; };
 		0398B47B2AC1F33600810B29 /* AddonCategoryOptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddonCategoryOptionsViewController.xib; sourceTree = "<group>"; };
 		0398B47C2AC1F33600810B29 /* AddonCategoryOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddonCategoryOptionsViewController.swift; sourceTree = "<group>"; };
@@ -527,14 +514,6 @@
 		03ACD3522ADE6A8C00052439 /* UILabel+TextInset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+TextInset.swift"; sourceTree = "<group>"; };
 		03AFFD1B2AD7D68D002A131D /* CreateNewItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		03AFFD1C2AD7D68D002A131D /* CreateNewItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewItemCollectionViewCell.xib; sourceTree = "<group>"; };
-		03AFFD1F2AD7D817002A131D /* Blinker-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Blinker-Bold.ttf"; sourceTree = "<group>"; };
-		03AFFD202AD7D817002A131D /* Blinker-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Blinker-ExtraLight.ttf"; sourceTree = "<group>"; };
-		03AFFD212AD7D817002A131D /* Blinker-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Blinker-Regular.ttf"; sourceTree = "<group>"; };
-		03AFFD222AD7D817002A131D /* Blinker-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Blinker-SemiBold.ttf"; sourceTree = "<group>"; };
-		03AFFD232AD7D818002A131D /* Blinker-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Blinker-Thin.ttf"; sourceTree = "<group>"; };
-		03AFFD242AD7D818002A131D /* Blinker-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Blinker-Light.ttf"; sourceTree = "<group>"; };
-		03AFFD252AD7D818002A131D /* Blinker-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Blinker-ExtraBold.ttf"; sourceTree = "<group>"; };
-		03AFFD262AD7D818002A131D /* Blinker-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Blinker-Black.ttf"; sourceTree = "<group>"; };
 		03AFFD342AD7E584002A131D /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		03AFFD382AD7F43D002A131D /* SeedTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedTabViewController.swift; sourceTree = "<group>"; };
 		03AFFD3E2AD7F464002A131D /* ServersTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersTabViewController.swift; sourceTree = "<group>"; };
@@ -716,7 +695,6 @@
 		F438AA2E2A175ADF007469E7 /* Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		F438AA302A17A391007469E7 /* UIImage+Resized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resized.swift"; sourceTree = "<group>"; };
 		F46D8B632A08DB5D00A61747 /* UIView+RoundCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorners.swift"; sourceTree = "<group>"; };
-		F48E0B4F2A09254800B9020D /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		F48E0B522A093FC200B9020D /* TabBarConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurable.swift; sourceTree = "<group>"; };
 		F48E0B542A09498700B9020D /* UIViewController+DeviceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DeviceOrientation.swift"; sourceTree = "<group>"; };
 		F4916C772A0B89270090E9B6 /* AddonCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddonCreatorViewController.swift; sourceTree = "<group>"; };
@@ -730,8 +708,6 @@
 		F4DB05D42A0295F300E4C43D /* CreateTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTabViewController.xib; sourceTree = "<group>"; };
 		F4DB05D92A02962800E4C43D /* ContentTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabViewController.swift; sourceTree = "<group>"; };
 		F4DB05DA2A02962800E4C43D /* ContentTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTabViewController.xib; sourceTree = "<group>"; };
-		F4DB05DF2A02A5CC00E4C43D /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		F4DB05E52A03923700E4C43D /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		F4DE46742A03B157001DFB1B /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4DE46752A03B157001DFB1B /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1799,18 +1775,6 @@
 				6AD931D82B332E4100961FC8 /* Montserrat-Bold.ttf */,
 				6A31826C2B3981C7009C5196 /* Montserrat-Medium.ttf */,
 				6AD8FA5F2B344ADA00C9CC3D /* Montserrat-Regular.ttf */,
-				0394B8732AD948ED002A35B3 /* Allerta-Regular.ttf */,
-				03AFFD262AD7D818002A131D /* Blinker-Black.ttf */,
-				03AFFD1F2AD7D817002A131D /* Blinker-Bold.ttf */,
-				03AFFD252AD7D818002A131D /* Blinker-ExtraBold.ttf */,
-				03AFFD202AD7D817002A131D /* Blinker-ExtraLight.ttf */,
-				03AFFD242AD7D818002A131D /* Blinker-Light.ttf */,
-				03AFFD212AD7D817002A131D /* Blinker-Regular.ttf */,
-				03AFFD222AD7D817002A131D /* Blinker-SemiBold.ttf */,
-				03AFFD232AD7D818002A131D /* Blinker-Thin.ttf */,
-				F4DB05E52A03923700E4C43D /* Poppins-SemiBold.ttf */,
-				F48E0B4F2A09254800B9020D /* Poppins-Regular.ttf */,
-				F4DB05DF2A02A5CC00E4C43D /* Poppins-Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -1987,11 +1951,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0236D872A4303E800AE1FD3 /* BrashSizeView.xib in Resources */,
-				03AFFD272AD7D818002A131D /* Blinker-Bold.ttf in Resources */,
 				6AC7664C2B4B2E0F007EDB05 /* SkinCreatorViewController.xib in Resources */,
 				D709705F2A78206B0044F81F /* ColorCollectionCell.xib in Resources */,
 				039BF2B02AA326830065EF48 /* phone.mp4 in Resources */,
-				03AFFD2E2AD7D818002A131D /* Blinker-Black.ttf in Resources */,
 				03A8F76B2ADED23E00B87A4A /* ServerTableViewCell.xib in Resources */,
 				039BF14D2AA227BE0065EF48 /* ManualInstructionViewController.xib in Resources */,
 				6A31826D2B3981C7009C5196 /* Montserrat-Medium.ttf in Resources */,
@@ -2006,7 +1968,6 @@
 				039BF2B32AA326830065EF48 /* FontsFree-Net-SFProDisplay-Regular.ttf in Resources */,
 				039BF2AF2AA326830065EF48 /* Poppins-Medium.ttf in Resources */,
 				F41A09A72A1E6ABD00ECF94C /* TorsoBodyPartViewController.xib in Resources */,
-				03AFFD2A2AD7D818002A131D /* Blinker-SemiBold.ttf in Resources */,
 				D70970362A77F6F80044F81F /* SkinCreatorImportViewController.xib in Resources */,
 				F4DB05D62A0295F300E4C43D /* CreateTabViewController.xib in Resources */,
 				03AFFD1E2AD7D68D002A131D /* CreateNewItemCollectionViewCell.xib in Resources */,
@@ -2017,19 +1978,14 @@
 				038360C32AEFD83C00751797 /* SeedDetailsViewController.xib in Resources */,
 				039BF2B52AA326830065EF48 /* Localizable.strings in Resources */,
 				033847A12A9CB41700A55021 /* DownloadContnetViewController.xib in Resources */,
-				03AFFD2B2AD7D818002A131D /* Blinker-Thin.ttf in Resources */,
 				F41F6D0F2A21078500F72851 /* SkinEditorViewController.xib in Resources */,
-				F4DB05E02A02A5CC00E4C43D /* Poppins-Bold.ttf in Resources */,
 				039BF2F32AA3294C0065EF48 /* PollerOne-Regular.ttf in Resources */,
 				039BF2B12AA326830065EF48 /* pad.mp4 in Resources */,
 				03A54F8A2AD5937C00F10AA5 /* AddonCreatorMainVC.xib in Resources */,
-				03AFFD282AD7D818002A131D /* Blinker-ExtraLight.ttf in Resources */,
-				03AFFD2C2AD7D818002A131D /* Blinker-Light.ttf in Resources */,
 				6FA9FCD22A4ECF7C001A1CD6 /* GoogleService-Info.plist in Resources */,
 				F4916C7A2A0B89270090E9B6 /* AddonCreatorViewController.xib in Resources */,
 				039BF1492AA200750065EF48 /* CraftyAlertViewController.xib in Resources */,
 				037707672ADEE24B00B8D755 /* ServerDetailsViewController.xib in Resources */,
-				F48E0B502A09254800B9020D /* Poppins-Regular.ttf in Resources */,
 				631B89F92A4969E300F66E7C /* stiv_v5.scn in Resources */,
 				033977CD2AE2B1D90096AC65 /* sub.ttf in Resources */,
 				035166A82AFA3F0900035087 /* ReusableView.xib in Resources */,
@@ -2043,21 +1999,17 @@
 				F41F6D072A20FC6B00F72851 /* ListTableViewCell.xib in Resources */,
 				F420A79A2A0283960098B849 /* LaunchScreen.storyboard in Resources */,
 				F4AA287F2A1BB04D001B9F0A /* Skin3DTestViewController.xib in Resources */,
-				03AFFD2D2AD7D818002A131D /* Blinker-ExtraBold.ttf in Resources */,
 				03A8F7612ADEA2C800B87A4A /* SeedTabViewController.xib in Resources */,
 				63EE81AD2A581362005BE8E7 /* AddonEditorViewController.xib in Resources */,
 				035166A72AFA3F0900035087 /* ReusableCell.xib in Resources */,
 				6AD931D92B332E4100961FC8 /* Montserrat-Bold.ttf in Resources */,
 				F41A099F2A1E6A8400ECF94C /* LegsBodyPartViewControllerViewController.xib in Resources */,
-				0394B8742AD948ED002A35B3 /* Allerta-Regular.ttf in Resources */,
 				039BF2AE2AA326830065EF48 /* Media.xcassets in Resources */,
-				F4DB05E62A03923700E4C43D /* Poppins-SemiBold.ttf in Resources */,
 				F41F6D132A210B7D00F72851 /* SkinEditorCollectionViewCell.xib in Resources */,
 				F4DE46772A03B157001DFB1B /* ContentCollectionViewCell.xib in Resources */,
 				F420A7972A0283960098B849 /* Assets.xcassets in Resources */,
 				F41F6D032A20F73700F72851 /* AddonOptionsViewController.xib in Resources */,
 				63CC9B362A5CB0C900136801 /* SsvedAddonCollectionCell.xib in Resources */,
-				03AFFD292AD7D818002A131D /* Blinker-Regular.ttf in Resources */,
 				0398B47D2AC1F33600810B29 /* AddonCategoryOptionsViewController.xib in Resources */,
 				F41A09A32A1E6A8F00ECF94C /* HeadBodyPartViewController.xib in Resources */,
 				035166702AFA3F0900035087 /* TransactionView.xib in Resources */,

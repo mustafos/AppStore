@@ -58,7 +58,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qh3-g6-eWn">
-                            <rect key="frame" x="175.66666666666666" y="8" width="78.666666666666657" height="68"/>
+                            <rect key="frame" x="168.33333333333334" y="8" width="93.333333333333343" height="68"/>
                             <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
                             <color key="textColor" name="BeigeColor"/>
                             <nil key="highlightedColor"/>
@@ -106,7 +106,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Skins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVj-nM-8ju">
-                                    <rect key="frame" x="40" y="19" width="34.333333333333343" height="16.333333333333329"/>
+                                    <rect key="frame" x="40" y="19" width="35.666666666666657" height="19.666666666666671"/>
                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="17"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -129,7 +129,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Maps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFH-W4-7RV">
-                                    <rect key="frame" x="38.333333333333314" y="19" width="35.333333333333343" height="16.333333333333329"/>
+                                    <rect key="frame" x="38.333333333333314" y="19" width="38.666666666666657" height="19.666666666666671"/>
                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="17"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -152,7 +152,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Addons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8k-mp-5A5">
-                                    <rect key="frame" x="30.666666666666625" y="19" width="48.666666666666657" height="16.333333333333329"/>
+                                    <rect key="frame" x="30.666666666666629" y="19" width="54" height="19.666666666666671"/>
                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="17"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>

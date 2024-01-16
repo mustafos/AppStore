@@ -1,7 +1,4 @@
-
-
 import UIKit
-
 
 enum AddonEditorMode {
     case create

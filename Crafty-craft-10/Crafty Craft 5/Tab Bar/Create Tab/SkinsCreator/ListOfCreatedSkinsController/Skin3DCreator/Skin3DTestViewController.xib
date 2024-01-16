@@ -150,7 +150,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pencil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRj-Pc-XRa">
-                                                            <rect key="frame" x="0.0" y="33.333333333333258" width="58.333333333333336" height="17"/>
+                                                            <rect key="frame" x="0.0" y="34" width="58.333333333333336" height="16.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
                                                             <color key="textColor" name="blackCCRedesign"/>
                                                             <nil key="highlightedColor"/>
@@ -192,7 +192,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eraser" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2De-3i-r5Q">
-                                                            <rect key="frame" x="0.0" y="33.333333333333258" width="58" height="17"/>
+                                                            <rect key="frame" x="0.0" y="34" width="58" height="16.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
                                                             <color key="textColor" name="blackCCRedesign"/>
                                                             <nil key="highlightedColor"/>
@@ -234,7 +234,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colorize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gh-Yc-jsf">
-                                                            <rect key="frame" x="0.0" y="33.333333333333258" width="58.333333333333336" height="17"/>
+                                                            <rect key="frame" x="0.0" y="34" width="58.333333333333336" height="16.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
                                                             <color key="textColor" name="blackCCRedesign"/>
                                                             <nil key="highlightedColor"/>
@@ -276,7 +276,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iS0-m1-FB5">
-                                                            <rect key="frame" x="0.0" y="33.333333333333258" width="58.333333333333336" height="17"/>
+                                                            <rect key="frame" x="0.0" y="34" width="58.333333333333336" height="16.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
                                                             <color key="textColor" name="blackCCRedesign"/>
                                                             <nil key="highlightedColor"/>
@@ -318,7 +318,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ze-Qp-jZ4">
-                                                            <rect key="frame" x="0.0" y="33.333333333333258" width="58.333333333333336" height="17"/>
+                                                            <rect key="frame" x="0.0" y="34" width="58.333333333333336" height="16.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
                                                             <color key="textColor" name="blackCCRedesign"/>
                                                             <nil key="highlightedColor"/>
@@ -360,7 +360,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Undo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzU-DG-vO7">
-                                                            <rect key="frame" x="0.0" y="33.333333333333258" width="58" height="17"/>
+                                                            <rect key="frame" x="0.0" y="34" width="58" height="16.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="14"/>
                                                             <color key="textColor" name="blackCCRedesign"/>
                                                             <nil key="highlightedColor"/>
@@ -474,10 +474,10 @@
                     <color key="backgroundColor" name="YellowSelectiveColor"/>
                 </stackView>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d20-uq-IDt" userLabel="BrashSizeView" customClass="BrashSizeView" customModule="Crafty_Craft_10" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="656.33333333333337" width="430" height="70"/>
+                    <rect key="frame" x="10" y="698.33333333333337" width="430" height="28"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="POO-7v-G9g"/>
+                        <constraint firstAttribute="height" constant="28" id="POO-7v-G9g"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY NEW SKIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiI-Mh-Q6Y">
@@ -517,13 +517,13 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="glY-bF-pQp" secondAttribute="trailing" constant="20" id="29i-qc-CJy"/>
                 <constraint firstAttribute="bottom" secondItem="D10-R1-Ltm" secondAttribute="bottom" constant="21" id="2Mh-1N-LWs"/>
                 <constraint firstItem="MfN-nT-Ult" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.125" id="3D0-QB-GYh"/>
-                <constraint firstItem="d20-uq-IDt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3kS-gJ-iOO"/>
+                <constraint firstItem="d20-uq-IDt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="3kS-gJ-iOO"/>
                 <constraint firstItem="D10-R1-Ltm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="5Xt-VL-dh6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EEn-mf-WOc" secondAttribute="trailing" id="IAY-2Y-FtN"/>
                 <constraint firstItem="MfN-nT-Ult" firstAttribute="bottom" secondItem="EEn-mf-WOc" secondAttribute="bottom" constant="-20" id="J2h-7a-IYv"/>
                 <constraint firstItem="glY-bF-pQp" firstAttribute="centerY" secondItem="MfN-nT-Ult" secondAttribute="centerY" id="JJB-ZI-vYG"/>
                 <constraint firstItem="lhO-Vb-FiW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Kz5-jb-ofs"/>
-                <constraint firstItem="d20-uq-IDt" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="RPw-fX-6IB"/>
+                <constraint firstItem="d20-uq-IDt" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="10" id="RPw-fX-6IB"/>
                 <constraint firstAttribute="trailing" secondItem="D10-R1-Ltm" secondAttribute="trailing" constant="10" id="StB-V0-IBi"/>
                 <constraint firstAttribute="bottom" secondItem="glY-bF-pQp" secondAttribute="bottom" constant="257" id="XAI-IX-31Y"/>
                 <constraint firstItem="lhO-Vb-FiW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="doZ-r9-OP0"/>

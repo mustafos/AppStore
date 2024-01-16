@@ -6,7 +6,6 @@
 //  Copyright © 2023 Noname Digital. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 //MARK: - Collections Delegate
@@ -61,17 +60,12 @@ extension AddonEditor3DViewController: UICollectionViewDelegateFlowLayout {
 
         return size
     }
-    
-    
 }
 
 //MARK: ColorManager Delegate
-
 extension AddonEditor3DViewController: ColorAble3D {
 
     func updateCollection() {
         color3DCollection.reloadData()
     }
-    
-    
 }

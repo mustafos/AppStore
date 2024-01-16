@@ -1,10 +1,5 @@
-
-
-import Foundation
-import SceneKit
 import UIKit
-
-
+import SceneKit
 
 extension Skin3DTestViewController {
     //MARK: Gestures

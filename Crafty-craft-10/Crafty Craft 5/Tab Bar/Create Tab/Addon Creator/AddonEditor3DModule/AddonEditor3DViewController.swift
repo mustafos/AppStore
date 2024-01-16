@@ -52,7 +52,6 @@ class AddonEditor3DViewController: UIViewController {
     @IBOutlet weak var customToolPicker: CustomToolPickerView!
     
     @IBOutlet weak var color3DCollection: UICollectionView!
-
     @IBOutlet weak var pencilLab: UILabel!
     @IBOutlet weak var pencilBtn: UIButton!
     

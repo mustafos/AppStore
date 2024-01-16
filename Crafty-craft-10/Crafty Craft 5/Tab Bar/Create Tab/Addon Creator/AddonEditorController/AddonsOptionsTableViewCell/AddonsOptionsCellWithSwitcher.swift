@@ -5,7 +5,6 @@
 //  Created by Максим Складанюк on 11.07.2023.
 //
 
-import Foundation
 import UIKit
 import PinLayout
 
@@ -46,19 +45,13 @@ class CustomTableViewCell: UITableViewCell {
     }
 }
 
-import Foundation
-import UIKit
-
 class Palette {
-    static let greenSwitchOff      = #colorLiteral(red: 0.05954889208, green: 0.2788136899, blue: 0.237821728, alpha: 1) //#0F473C
-    static let greenSwitchOn       = #colorLiteral(red: 0.08860049397, green: 0.4020657837, blue: 0.3429610133, alpha: 1) //#166757
+    static let greenSwitchOff      = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) //#0F473C
+    static let greenSwitchOn       = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1) //#166757
     static let darkGreen           = #colorLiteral(red: 0.06997044384, green: 0.2029670179, blue: 0.1755874455, alpha: 1) //#12342D
     static let gray                = #colorLiteral(red: 0.5990325809, green: 0.7051572204, blue: 0.6819415689, alpha: 1) //#12342D
     static let greenBack           = #colorLiteral(red: 0.3323229551, green: 0.7544665337, blue: 0.6677783132, alpha: 1) //#359F8A
 }
-
-import Foundation
-import UIKit
 
 extension UITextField {
     func setRightPadding(_ value: CGFloat) {

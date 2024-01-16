@@ -30,13 +30,13 @@ struct CustomTabBar: View {
                         Group {
                             switch tab {
                             case .create:
-                                Text("Hello")
+                                Text("Create Screen")
                             case .content:
-                                Text("Hello")
+                                Text("Content Screen")
                             case .seeds:
-                                Text("Hello")
+                                Text("Seeds Screen")
                             case .servers:
-                                Text("Hello")
+                                Text("Servers Screen")
                             }
                         }
                         .tag(tab)

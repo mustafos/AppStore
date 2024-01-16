@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddonEditorSelectorViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="3Aq-o6-WqR" id="aCC-Yl-vcb"/>
                 <outlet property="bottomConstrains" destination="nod-sL-lw2" id="iRt-Md-XYU"/>
                 <outlet property="cancelButton" destination="kas-gp-QdI" id="YMf-io-Kth"/>
                 <outlet property="collectionView" destination="eZg-dq-p41" id="jbz-er-ntv"/>
@@ -23,6 +24,8 @@
                 <outlet property="doneButton" destination="TEd-th-hiT" id="CkW-Cx-aPl"/>
                 <outlet property="importButton" destination="Hw8-a3-2o8" id="Ed8-Er-KmQ"/>
                 <outlet property="searchBar" destination="L44-Nq-zLr" id="fVQ-Or-bnO"/>
+                <outlet property="searchButton" destination="uXt-6Q-mAz" id="Tk8-u4-1vy"/>
+                <outlet property="titleLabel" destination="jWr-Bg-rJA" id="A6F-n2-W6Q"/>
                 <outlet property="view" destination="V7H-aQ-CaC" id="Qjm-gm-IDo"/>
             </connections>
         </placeholder>

@@ -6,12 +6,9 @@
 //  Copyright © 2023 Noname Digital. All rights reserved.
 //
 
-
 import UIKit
 
-
 //MARK: Colors Collection
-
 extension Skin3DTestViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -59,12 +56,9 @@ extension Skin3DTestViewController: UICollectionViewDelegateFlowLayout {
 
         return size
     }
-    
-    
 }
 
 //MARK: ColorManager Delegate
-
 extension Skin3DTestViewController: ColorAble3D {
     func updateCollection() {
         color3DCollection.reloadData()

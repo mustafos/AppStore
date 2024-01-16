@@ -89,55 +89,46 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="U0t-nZ-dJo">
-                    <rect key="frame" x="20" y="227" width="353" height="99"/>
+                    <rect key="frame" x="20" y="227" width="353" height="112"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ2-Wf-N1j">
-                            <rect key="frame" x="0.0" y="0.0" width="72" height="27.666666666666668"/>
+                            <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="UJ2-Wf-N1j" secondAttribute="height" multiplier="2.6:1" id="xsf-pz-JEM"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="14"/>
                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title=" Layout" image="layout_tab">
+                            <state key="normal" title=" Layout">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
-                            <variation key="heightClass=regular-widthClass=regular">
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="22"/>
-                            </variation>
                             <connections>
                                 <action selector="onLatoutButtonTapped:" destination="-1" eventType="touchUpInside" id="zok-ny-btb"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAG-Qu-3dv">
-                            <rect key="frame" x="0.0" y="35.666666666666686" width="72" height="27.666666666666671"/>
+                            <rect key="frame" x="0.0" y="40" width="83.333333333333329" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="IAG-Qu-3dv" secondAttribute="height" multiplier="2.6:1" id="ER4-Re-cGo"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="14"/>
                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title=" Group" image="group_tab">
+                            <state key="normal" title=" Group">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
-                            <variation key="heightClass=regular-widthClass=regular">
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="22"/>
-                            </variation>
                             <connections>
                                 <action selector="onGroupButtonTapped:" destination="-1" eventType="touchUpInside" id="cEA-Pn-Ny9"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhU-GT-lR5">
-                            <rect key="frame" x="0.0" y="71.333333333333314" width="72" height="27.666666666666671"/>
+                            <rect key="frame" x="0.0" y="80" width="83.333333333333329" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="FhU-GT-lR5" secondAttribute="height" multiplier="2.6:1" id="cII-Kq-Ddt"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="14"/>
                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title=" Recent" image="recent_tab">
+                            <state key="normal" title=" Recent">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
-                            <variation key="heightClass=regular-widthClass=regular">
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="22"/>
-                            </variation>
                             <connections>
                                 <action selector="onRecentButtonTapped:" destination="-1" eventType="touchUpInside" id="Ygw-Ue-ARX"/>
                             </connections>
@@ -146,7 +137,7 @@
                     <color key="backgroundColor" red="0.82352941180000006" green="0.43921568630000002" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </stackView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zMY-Vs-C8o">
-                    <rect key="frame" x="20" y="346" width="353" height="506"/>
+                    <rect key="frame" x="20" y="359" width="353" height="493"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qvh-qO-MJa">
                         <size key="itemSize" width="0.0" height="0.0"/>
@@ -196,9 +187,6 @@
     <resources>
         <image name="Back Item" width="44" height="44"/>
         <image name="Search Item" width="44" height="44"/>
-        <image name="group_tab" width="20" height="20"/>
-        <image name="layout_tab" width="15" height="15"/>
-        <image name="recent_tab" width="20" height="20"/>
         <namedColor name="BackgroundColor">
             <color red="0.19215686274509805" green="0.20784313725490197" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

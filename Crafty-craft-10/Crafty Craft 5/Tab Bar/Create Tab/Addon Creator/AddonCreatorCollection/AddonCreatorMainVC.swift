@@ -106,6 +106,7 @@ class AddonCreatorMainVC: UIViewController {
         tabsStackView.layer.borderColor = UIColor.black.cgColor
         tabsStackView.layer.borderWidth = 1
         tabsPageControllMode = .layout
+        selectedText.textColor = .black
     }
     
     private func checkProduct() {
@@ -172,12 +173,12 @@ class AddonCreatorMainVC: UIViewController {
         switch tabsPageControllMode {
         case .layout:
             setButtonProperties(title: "Layout", image: "chevron.down")
-            tabsPageControllMode = .recent
-            model.collectionMode = .recent
-        case .group:
-            setButtonProperties(title: "Group", image: "chevron.down")
             tabsPageControllMode = .group
             model.collectionMode = .groups
+        case .group:
+            setButtonProperties(title: "Group", image: "chevron.down")
+            tabsPageControllMode = .recent
+            model.collectionMode = .recent
         case .recent:
             setButtonProperties(title: "Recent", image: "chevron.down")
             tabsPageControllMode = .layout

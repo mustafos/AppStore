@@ -18,6 +18,11 @@ class AddonEditorSelectorViewController: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
     
+    
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var searchButton: UIButton!
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -118,11 +123,15 @@ class AddonEditorSelectorViewController: UIViewController {
         collectionView.dataSource = self
         let nib = UINib(nibName: cellId, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellId)
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .clear
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
         searchBar.isHidden.toggle()
+        backButton.isHidden.toggle()
+        titleLabel.isHidden.toggle()
+        searchButton.isHidden.toggle()
+        
     }
     
     @IBAction func cancelTapped(_ sender: UIButton) {
@@ -294,13 +303,13 @@ extension AddonEditorSelectorViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.isHidden = true
+        searchBar.isHidden.toggle()
+        backButton.isHidden.toggle()
+        titleLabel.isHidden.toggle()
+        searchButton.isHidden.toggle()
         searchBar.text = ""
         searchBar.resignFirstResponder()
         filterData(with: "")
-        //        filterData(with: "")
-        //        searchBar.showsCancelButton = false
-        //        searchBar.text = ""
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

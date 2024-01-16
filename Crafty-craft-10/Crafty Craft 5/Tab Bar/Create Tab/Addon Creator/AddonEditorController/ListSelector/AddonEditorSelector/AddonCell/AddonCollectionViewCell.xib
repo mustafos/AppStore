@@ -23,46 +23,49 @@
                 <rect key="frame" x="0.0" y="0.0" width="184" height="240"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zk-Ra-hzh" customClass="PaddingLabel" customModule="Crafty_Craft_10" customModuleProvider="target">
-                        <rect key="frame" x="12" y="12" width="160" height="40"/>
-                        <color key="backgroundColor" name="BeigeColor"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="40" id="IO3-yC-Iv4"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
-                        <color key="textColor" name="EerieBlackColor"/>
-                        <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="8"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
-                                <integer key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
-                                <integer key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                        </userDefinedRuntimeAttributes>
-                    </label>
-                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body" translatesAutoresizingMaskIntoConstraints="NO" id="Ds7-m8-lWh" userLabel="Content Image View" customClass="CustomImageLoader" customModule="Crafty_Craft_10" customModuleProvider="target">
-                        <rect key="frame" x="12" y="68" width="160" height="160"/>
-                        <color key="backgroundColor" name="BeigeColor"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="160" id="z9a-Gm-pmJ"/>
-                        </constraints>
-                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hMD-AH-DsR">
+                        <rect key="frame" x="12" y="12" width="160" height="216"/>
+                        <subviews>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zk-Ra-hzh" customClass="PaddingLabel" customModule="Crafty_Craft_10" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                                <color key="backgroundColor" name="BeigeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IO3-yC-Iv4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                <color key="textColor" name="EerieBlackColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body" translatesAutoresizingMaskIntoConstraints="NO" id="Ds7-m8-lWh" userLabel="Content Image View" customClass="CustomImageLoader" customModule="Crafty_Craft_10" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="48" width="160" height="168"/>
+                                <color key="backgroundColor" name="BeigeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="141" id="z9a-Gm-pmJ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                    </stackView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="Ve8-Se-Ncm"/>
             <color key="backgroundColor" name="YellowLightColor"/>
             <constraints>
-                <constraint firstItem="Ds7-m8-lWh" firstAttribute="leading" secondItem="Exx-xt-GtF" secondAttribute="leading" constant="12" id="2Kq-JP-Qow"/>
-                <constraint firstAttribute="trailing" secondItem="5zk-Ra-hzh" secondAttribute="trailing" constant="12" id="9tI-KW-9df"/>
-                <constraint firstAttribute="bottom" secondItem="Ds7-m8-lWh" secondAttribute="bottom" constant="12" id="JuF-zT-dYv"/>
-                <constraint firstAttribute="trailing" secondItem="Ds7-m8-lWh" secondAttribute="trailing" constant="12" id="QXm-0U-Jg9"/>
-                <constraint firstItem="5zk-Ra-hzh" firstAttribute="top" secondItem="Exx-xt-GtF" secondAttribute="top" constant="12" id="RI7-HC-jI3"/>
-                <constraint firstItem="5zk-Ra-hzh" firstAttribute="leading" secondItem="Exx-xt-GtF" secondAttribute="leading" constant="12" id="wpY-ah-64w"/>
+                <constraint firstItem="hMD-AH-DsR" firstAttribute="top" secondItem="Exx-xt-GtF" secondAttribute="top" constant="12" id="Yde-q0-dXY"/>
+                <constraint firstAttribute="trailing" secondItem="hMD-AH-DsR" secondAttribute="trailing" constant="12" id="a1T-cH-h8U"/>
+                <constraint firstAttribute="bottom" secondItem="hMD-AH-DsR" secondAttribute="bottom" constant="12" id="f76-YJ-b8a"/>
+                <constraint firstItem="hMD-AH-DsR" firstAttribute="leading" secondItem="Exx-xt-GtF" secondAttribute="leading" constant="12" id="mg7-Vo-uJy"/>
             </constraints>
             <size key="customSize" width="184" height="240"/>
             <connections>

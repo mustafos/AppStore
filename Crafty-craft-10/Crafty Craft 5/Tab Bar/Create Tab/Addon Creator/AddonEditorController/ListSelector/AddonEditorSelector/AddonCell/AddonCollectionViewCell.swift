@@ -34,7 +34,9 @@ class AddonCollectionViewCell: UICollectionViewCell {
         
         label.layer.borderColor = UIColor(.black).cgColor
         label.layer.borderWidth = 1
+        label.roundCorners(20)
         image.layer.borderColor = UIColor(.black).cgColor
         image.layer.borderWidth = 1
+        image.roundCorners(20)
     }
 }

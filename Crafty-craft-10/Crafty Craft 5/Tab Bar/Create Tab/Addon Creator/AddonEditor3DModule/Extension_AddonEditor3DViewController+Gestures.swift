@@ -1,9 +1,5 @@
-
-
-import Foundation
-import SceneKit
 import UIKit
-
+import SceneKit
 
 //MARK: - NoramalScene Gestures
 

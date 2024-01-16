@@ -65,6 +65,26 @@ class BrashSizeView: UIView {
         }
     }
     
+    @IBAction func sliderDidSlide(_ sender: UISlider) {
+        let value = sender.value
+        
+        switch value {
+        case 0:
+            sizes[currentBrashTool] = .one
+        case 1:
+            sizes[currentBrashTool] = .two
+        case 2:
+            sizes[currentBrashTool] = .four
+        case 3:
+            sizes[currentBrashTool] = .six
+        case 4:
+            sizes[currentBrashTool] = .eight
+        default:
+            break
+        }
+        delegate?.changeBrashSize(to: brashSize)
+    }
+    
     @objc private func handleSliderChange(_ slider: UISlider) {
         let roundedValue = round(slider.value)
         slider.value = roundedValue

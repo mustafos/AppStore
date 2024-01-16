@@ -26,10 +26,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KfS-rT-zCY" userLabel="MainContainer View">
-                    <rect key="frame" x="0.0" y="0.0" width="355" height="87"/>
+                    <rect key="frame" x="10" y="10" width="335" height="67"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="q4p-qo-8GX">
-                            <rect key="frame" x="12" y="29.666666666666671" width="331" height="28"/>
+                            <rect key="frame" x="12" y="19.666666666666671" width="311" height="28"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQy-Lu-Az7">
                                     <rect key="frame" x="0.0" y="0.0" width="34" height="28"/>
@@ -40,17 +40,20 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tNE-PN-J7k">
-                                    <rect key="frame" x="44" y="0.0" width="249" height="29"/>
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="tNE-PN-J7k">
+                                    <rect key="frame" x="44" y="0.0" width="229" height="29"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="hXD-Pg-elm"/>
                                     </constraints>
                                     <color key="minimumTrackTintColor" name="EerieBlackColor"/>
                                     <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="sliderDidSlide:" destination="-1" eventType="valueChanged" id="y0k-nY-G7T"/>
+                                    </connections>
                                 </slider>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brushDot" translatesAutoresizingMaskIntoConstraints="NO" id="8xB-t6-5it">
-                                    <rect key="frame" x="303" y="0.0" width="28" height="28"/>
+                                    <rect key="frame" x="283" y="0.0" width="28" height="28"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="28" id="WS2-s5-Ztx"/>
                                         <constraint firstAttribute="height" constant="28" id="XAa-2b-a2D"/>
@@ -74,13 +77,14 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="KfS-rT-zCY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="AZY-lC-aa8"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KfS-rT-zCY" secondAttribute="trailing" id="GnF-KU-Ttv"/>
+                <constraint firstItem="KfS-rT-zCY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="5eu-ox-1F6"/>
+                <constraint firstItem="KfS-rT-zCY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="AZY-lC-aa8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KfS-rT-zCY" secondAttribute="trailing" constant="10" id="GnF-KU-Ttv"/>
                 <constraint firstItem="KfS-rT-zCY" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Nog-Kn-0Ia"/>
-                <constraint firstAttribute="bottom" secondItem="KfS-rT-zCY" secondAttribute="bottom" id="c5C-bN-tbE"/>
-                <constraint firstItem="KfS-rT-zCY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ipG-Zr-5zX"/>
+                <constraint firstAttribute="bottom" secondItem="KfS-rT-zCY" secondAttribute="bottom" constant="10" id="c5C-bN-tbE"/>
+                <constraint firstItem="KfS-rT-zCY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="ipG-Zr-5zX"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="107.63358778625954" y="-213.73239436619718"/>

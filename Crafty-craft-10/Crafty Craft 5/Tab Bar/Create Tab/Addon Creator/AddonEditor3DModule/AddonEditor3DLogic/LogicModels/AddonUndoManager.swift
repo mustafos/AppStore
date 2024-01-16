@@ -5,6 +5,7 @@
 //  Created by 1 on 05.09.2023.
 //  Copyright © 2023 Noname Digital. All rights reserved.
 //
+
 import SceneKit
 import Foundation
 
@@ -13,7 +14,6 @@ struct CubeChange {
     let cubeIdentifier: String // some unique identifier for the cube
     let previousTexture: UIImage?
 }
-
 
 class AddonUndoManager: UndoManager {
     
@@ -70,9 +70,6 @@ class AddonUndoManager: UndoManager {
                 
                 cubeNode.geometry?.materials[face.rawValue].diffuse.contents = previousTexture
             }
-            
         }
     }
-    
 }
-
