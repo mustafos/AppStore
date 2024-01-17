@@ -18,67 +18,41 @@ class TabBarViewController: UITabBarController {
     
     private lazy var contentViewController: UIViewController = {
         let viewController = ContentTabViewController()
-        var unselectedImage: UIImage? = viewController.tabBarIcon
-        var selectedImage = viewController.tabBarSelectedIcon
-        var title: String? = viewController.tabBarTitle
-        
-        if isIpad {
-            selectedImage = UIImage.resizedImage(named: "content", size: CGSize(width: 122, height: 52))
-            unselectedImage = UIImage.resizedImage(named: "content", size: CGSize(width: 24, height: 24))
-        }
-        viewController.tabBarItem = UITabBarItem(title: nil, image: unselectedImage, selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
-        
+        viewController.tabBarItem = createCustomTabBarItem(
+            title: viewController.tabBarTitle,
+            unselectedImage: UIImage.resizedImage(named: "content", size: CGSize(width: 24, height: 24)),
+            selectedImage: UIImage.resizedImage(named: "contentSelect", size: CGSize(width: 122, height: 52))
+        )
         return viewController
     }()
     
     private lazy var createViewController: UIViewController = {
         let viewController = CreateTabViewController()
-        
-        var unselectedImage: UIImage? = viewController.tabBarIcon
-        var selectedImage = viewController.tabBarSelectedIcon
-        var title: String? = viewController.tabBarTitle
-        
-        if isIpad {
-            selectedImage = UIImage.resizedImage(named: "create", size: CGSize(width: 122, height: 52))
-            unselectedImage = UIImage.resizedImage(named: "create", size: CGSize(width: 24, height: 24))
-        }
-        
-        viewController.tabBarItem = UITabBarItem(title: nil, image: unselectedImage, selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
-        
+        viewController.tabBarItem = createCustomTabBarItem(
+            title: viewController.tabBarTitle,
+            unselectedImage: UIImage.resizedImage(named: "create", size: CGSize(width: 24, height: 24)),
+            selectedImage: UIImage.resizedImage(named: "createSelect", size: CGSize(width: 122, height: 52))
+        )
         return viewController
     }()
     
     private lazy var seedsViewController: UIViewController = {
         let viewController = SeedTabViewController()
-        
-        var unselectedImage: UIImage? = viewController.tabBarIcon
-        var selectedImage = viewController.tabBarSelectedIcon
-        var title: String? = viewController.tabBarTitle
-        
-        if isIpad {
-            selectedImage = UIImage.resizedImage(named: "seeds", size: CGSize(width: 122, height: 52))
-            unselectedImage = UIImage.resizedImage(named: "seeds", size: CGSize(width: 24, height: 24))
-        }
-        
-        viewController.tabBarItem = UITabBarItem(title: nil, image: unselectedImage, selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
-        
+        viewController.tabBarItem = createCustomTabBarItem(
+            title: viewController.tabBarTitle,
+            unselectedImage: UIImage.resizedImage(named: "seeds", size: CGSize(width: 24, height: 24)),
+            selectedImage: UIImage.resizedImage(named: "seedsSelect", size: CGSize(width: 122, height: 52))
+        )
         return viewController
     }()
     
     private lazy var serversViewController: UIViewController = {
         let viewController = ServersTabViewController()
-        
-        var unselectedImage: UIImage? = viewController.tabBarIcon
-        var selectedImage = viewController.tabBarSelectedIcon
-        var title: String? = viewController.tabBarTitle
-        
-        if isIpad {
-            selectedImage = UIImage.resizedImage(named: "servers", size: CGSize(width: 122, height: 52))
-            unselectedImage = UIImage.resizedImage(named: "servers", size: CGSize(width: 24, height: 24))
-        }
-        
-        viewController.tabBarItem = UITabBarItem(title: nil, image: unselectedImage, selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
-        
+        viewController.tabBarItem = createCustomTabBarItem(
+            title: viewController.tabBarTitle,
+            unselectedImage: UIImage.resizedImage(named: "servers", size: CGSize(width: 24, height: 24)),
+            selectedImage: UIImage.resizedImage(named: "serversSelect", size: CGSize(width: 122, height: 52))
+        )
         return viewController
     }()
     
@@ -100,14 +74,13 @@ class TabBarViewController: UITabBarController {
     }
     
     // MARK: - Methods -
-    private func setTabBarItemColors(_ itemAppearance: UITabBarItemAppearance) {
-        itemAppearance.normal.iconColor = .lightGray
-        itemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
-         
-        itemAppearance.selected.iconColor = .white
-        itemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-    }
     
+    private func createCustomTabBarItem(title: String?, unselectedImage: UIImage?, selectedImage: UIImage?) -> UITabBarItem {
+        let tabBarItem = UITabBarItem(title: nil, image: unselectedImage, selectedImage: selectedImage)
+//        tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
+        return tabBarItem
+    }
+
     private func setTabBarAppearance() {
         viewControllers = [createViewController, contentViewController, seedsViewController, serversViewController]
         
@@ -132,17 +105,17 @@ class TabBarViewController: UITabBarController {
         
         tabBar.layer.insertSublayer(roundLayer, at: 0)
         
-        if let items = tabBar.items {
-                for (index, item) in items.enumerated() {
-                    if index == 0 {
-                        item.imageInsets = UIEdgeInsets(top: 6, left: 25, bottom: -6, right: -25)
-                    } else if index == 3 {
-                        item.imageInsets = UIEdgeInsets(top: 6, left: -25, bottom: -6, right: 25)
-                    } else {
-                        item.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
-                    }
-                }
-            }
+//        if let items = tabBar.items {
+//            for (index, item) in items.enumerated() {
+//                if index == 0 {
+//                    item.imageInsets = UIEdgeInsets(top: 6, left: 25, bottom: -6, right: -25)
+//                } else if index == 3 {
+//                    item.imageInsets = UIEdgeInsets(top: 6, left: -25, bottom: -6, right: 25)
+//                } else {
+//                    item.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+//                }
+//            }
+//        }
         
         roundLayer.strokeColor = UIColor.black.cgColor
         roundLayer.lineWidth = 1.0
