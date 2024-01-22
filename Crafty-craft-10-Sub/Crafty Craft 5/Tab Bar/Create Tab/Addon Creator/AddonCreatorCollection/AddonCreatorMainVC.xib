@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddonCreatorMainVC" customModule="Crafty_Craft_10_2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddonCreatorMainVC" customModule="Crafty_Craft_10" customModuleProvider="target">
             <connections>
                 <outlet property="addonCollectionView" destination="h4s-Lp-gFE" id="uR9-zD-LwV"/>
                 <outlet property="groupTabButton" destination="DVE-6q-T4w" id="2Jc-DQ-ERS"/>
@@ -26,6 +26,8 @@
                 <outlet property="selectItemView" destination="BK8-tw-Dsp" id="bTS-7Z-4mD"/>
                 <outlet property="selectedText" destination="gMN-0M-TJb" id="GOM-Ae-UhB"/>
                 <outlet property="tabsStackView" destination="IQa-rC-wgl" id="spF-hd-ltK"/>
+                <outlet property="unlockActivityIndicator" destination="e1E-TZ-ZOY" id="W6Z-ZF-P5a"/>
+                <outlet property="unlockButton" destination="J2d-qH-iWG" id="tPm-an-bIg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="tabButtons" destination="WkW-N8-N1s" collectionClass="NSMutableArray" id="YFS-Jx-fZv"/>
                 <outletCollection property="tabButtons" destination="DVE-6q-T4w" collectionClass="NSMutableArray" id="QsA-2T-G8z"/>
@@ -146,15 +148,61 @@
                     </subviews>
                     <color key="backgroundColor" name="YellowSelectiveColor"/>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J2d-qH-iWG">
+                    <rect key="frame" x="21.666666666666657" y="384.66666666666669" width="350" height="108"/>
+                    <color key="backgroundColor" name="YellowSelectiveColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="108" id="iHn-T4-tdn"/>
+                        <constraint firstAttribute="width" constant="350" id="jSj-Jd-E84"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="12" maxY="0.0"/>
+                    <state key="normal" title="Unlock to create skins" image="lock button">
+                        <attributedString key="attributedTitle">
+                            <fragment content="To enter this area, you'll need a premium subscription.">
+                                <attributes>
+                                    <font key="NSFont" metaFont="system" size="20"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <color key="titleColor" name="EerieBlackColor"/>
+                    </state>
+                    <buttonConfiguration key="configuration" style="plain" image="lock button" imagePlacement="top" title="To enter this area, you'll need a premium subscription." imagePadding="12">
+                        <fontDescription key="titleFontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="20"/>
+                        <color key="baseForegroundColor" name="EerieBlackColor"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" name="EerieBlackColor"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="unlockButtonTapped:" destination="-1" eventType="touchUpInside" id="SpU-R1-a5B"/>
+                    </connections>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="e1E-TZ-ZOY">
+                    <rect key="frame" x="178" y="420" width="37" height="37"/>
+                    <color key="color" name="EerieBlackColor"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
+                <constraint firstItem="J2d-qH-iWG" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="2oc-Pv-pVE"/>
+                <constraint firstItem="e1E-TZ-ZOY" firstAttribute="centerY" secondItem="J2d-qH-iWG" secondAttribute="centerY" id="5Xl-Zh-VEZ"/>
                 <constraint firstItem="h4s-Lp-gFE" firstAttribute="top" secondItem="BK8-tw-Dsp" secondAttribute="bottom" constant="20" id="6gl-cD-KfO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IQa-rC-wgl" secondAttribute="trailing" constant="20" id="9AF-lW-1uB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h4s-Lp-gFE" secondAttribute="trailing" constant="16" id="Icz-iE-vpR"/>
+                <constraint firstItem="J2d-qH-iWG" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="buT-EC-Ofu"/>
                 <constraint firstItem="IQa-rC-wgl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fq8-JP-Olf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="h4s-Lp-gFE" secondAttribute="bottom" id="jaL-ms-B7D"/>
+                <constraint firstItem="e1E-TZ-ZOY" firstAttribute="centerX" secondItem="J2d-qH-iWG" secondAttribute="centerX" id="kpw-09-wnN"/>
                 <constraint firstItem="h4s-Lp-gFE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="kzz-Ht-V7f"/>
                 <constraint firstItem="IQa-rC-wgl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="u6p-rW-Ddi"/>
             </constraints>
@@ -162,7 +210,8 @@
         </view>
     </objects>
     <resources>
-        <image name="chevron.down" catalog="system" width="32" height="32"/>
+        <image name="chevron.down" catalog="system" width="128" height="70"/>
+        <image name="lock button" width="30" height="24"/>
         <namedColor name="BackgroundColor">
             <color red="0.19215686274509805" green="0.20784313725490197" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

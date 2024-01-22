@@ -1,6 +1,3 @@
-
-
-// MARK: ios 13+ only
 import UIKit
 import PencilKit
 import CoreGraphics
@@ -144,11 +141,9 @@ final class SkinCreatorImportViewController: UIViewController {
         navigationBar.backgroundColor = .clear
         
         saveButton.isEnabled = false
-        
+        canvasContainer.roundCorners()
         buttonsStackView.roundCorners()
     }
-    
-    
     
     private func processImported(image: UIImage) {
         if let width = currentBodyPartSide?.width, let height = currentBodyPartSide?.height {
@@ -188,7 +183,7 @@ final class SkinCreatorImportViewController: UIViewController {
         saveAlertView?.setSkinNameSaveTextField.isHidden = true
         saveAlertView?.setSkinNameSaveTextField.attributedPlaceholder = NSAttributedString(
             string: currentEditableSkin?.name ?? "",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "placeholderCCRedesign")]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(.gray)]
         )
         view.addSubview(saveAlertView!)
     }

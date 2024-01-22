@@ -3,7 +3,6 @@ import Combine
 import PencilKit
 import CoreGraphics
 
-
 class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerObserver, UIActionSheetDelegate {
     
     typealias ImageDataCallback = (SkinCreatedModel) -> Void

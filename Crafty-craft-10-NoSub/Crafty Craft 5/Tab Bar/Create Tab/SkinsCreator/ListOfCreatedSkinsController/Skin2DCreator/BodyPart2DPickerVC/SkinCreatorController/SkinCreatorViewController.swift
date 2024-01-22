@@ -1,10 +1,7 @@
-
-
-// MARK: ios 13+ only
 import UIKit
+import Combine
 import PencilKit
 import CoreGraphics
-
 
 class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerObserver, UIActionSheetDelegate {
     
@@ -22,7 +19,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     var magnifyingGlassView: MagnifyingGlassView?
     var currentEditableSkin: SkinCreatedModel?
     var saveAlertView: SaveAlertView?
-    
+    var cancellable: AnyCancellable?
     // MARK: - Properties
     
     private let imageDataCallback: ImageDataCallback
@@ -102,10 +99,6 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     
     // MARK: - IBOutlets
     
-    @IBOutlet var toolItemsViewContainers: [UIView]!
-    
-    @IBOutlet weak var customToolPicker: CustomToolPickerView!
-    
     //Pencil kit
     @IBOutlet weak var canvasContainer: UIView!
     
@@ -121,22 +114,16 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     @IBOutlet weak var colorsBrashContainerView: UIView!
     @IBOutlet var toolButtons: [UIButton]!
     
-    @IBOutlet weak var pencilLab: UILabel!
     @IBOutlet weak var pencilBtn: UIButton!
-    
-    @IBOutlet weak var eraserLab: UILabel!
+
     @IBOutlet weak var eraserBtn: UIButton!
-    
-    @IBOutlet weak var dropperLab: UILabel!
+
     @IBOutlet weak var dropperBtn: UIButton!
-    
-    @IBOutlet weak var fillLab: UILabel!
+
     @IBOutlet weak var fillBtn: UIButton!
-    
-    @IBOutlet weak var noiseLab: UILabel!
+
     @IBOutlet weak var noiseBtn: UIButton!
-    
-    @IBOutlet weak var undoLab: UILabel!
+
     @IBOutlet weak var undoBtn: UIButton!
     
     @IBOutlet weak var importBtn: UIButton!
@@ -152,7 +139,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     
     @IBAction func onToolBarPencilButtonTapped(_ sender: UIButton) {
         hideMagnifyingGlass()
-        manageSelectedToolUI(tappedTool: sender, tappedLab: pencilLab)
+        manageSelectedToolUI(tappedTool: sender)
                 TransitionColor = currentDrawingColor
         toolBarSelectedItem = .pencil
         currentTool = Paintbrush()
@@ -160,40 +147,36 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     
     @IBAction func onToolBarEraserButtonTapped(_ sender: UIButton) {
         hideMagnifyingGlass()
-        manageSelectedToolUI(tappedTool: sender, tappedLab: eraserLab)
+        manageSelectedToolUI(tappedTool: sender)
         toolBarSelectedItem = .eraser
         currentTool = Paintbrush()
     }
     
     @IBAction func onToolBarPickerButtonTapped(_ sender: UIButton) {
         hideMagnifyingGlass()
-        manageSelectedToolUI(tappedTool: sender, tappedLab: dropperLab)
+        manageSelectedToolUI(tappedTool: sender)
         toolBarSelectedItem = .picker
-        
-//        if sender.isSelected == false {
-//            colorsBrashContainerView.isHidden = true
-//        }
         currentTool = Paintbrush()
         
     }
     
     @IBAction func onToolBarFillButtonTapped(_ sender: UIButton) {
         hideMagnifyingGlass()
-        manageSelectedToolUI(tappedTool: sender, tappedLab: fillLab)
+        manageSelectedToolUI(tappedTool: sender)
         toolBarSelectedItem = .fill
         currentTool = Bucket()
     }
     
     @IBAction func onToolBarNoiseButtonTapped(_ sender: UIButton) {
         hideMagnifyingGlass()
-        manageSelectedToolUI(tappedTool: sender, tappedLab: noiseLab)
+        manageSelectedToolUI(tappedTool: sender)
         toolBarSelectedItem = .noise
         currentTool = NoiseTool()
     }
     
     @IBAction func onToolBarUndoButtonTapped(_ sender: UIButton) {
         hideMagnifyingGlass()
-        manageSelectedToolUI(tappedTool: sender, tappedLab: undoLab)
+        manageSelectedToolUI(tappedTool: sender)
         toolBarSelectedItem = .undo
         commandManager.undo()
     }
@@ -207,7 +190,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
         saveAlertView?.setSkinNameSaveTextField.isHidden = true
         saveAlertView?.setSkinNameSaveTextField.attributedPlaceholder = NSAttributedString(
             string: currentEditableSkin?.name ?? "",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "placeholderCCRedesign")]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(.gray)]
         )
         view.addSubview(saveAlertView!)
     }
@@ -216,8 +199,19 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     //MARK: - ColorPickierView Actions
     
     @IBAction func paletteBtnTapped(_ sender: Any) {
-        presentCustomAlert()
-        hideMagnifyingGlass()
+        let picker = UIColorPickerViewController()
+        picker.selectedColor = self.currentDrawingColor
+        //  Subscribing selectedColor property changes.
+        self.cancellable = picker.publisher(for: \.selectedColor)
+            .sink { color in
+                //  Changing view color on main thread.
+                DispatchQueue.main.async {
+                    self.currentDrawingColor = color
+                    TransitionColor = self.currentDrawingColor
+                }
+            }
+        
+        self.present(picker, animated: true, completion: nil)
     }
     
     @IBAction func importBtnTapped(_ sender: Any) {
@@ -267,17 +261,6 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
          
         self.present(alert, animated: true)
-        
-        
-        
-//        if let currentBodyPartSide {
-//            navigationController?.pushViewController(SkinCreatorImportViewController(bodyPartSide: currentBodyPartSide, currentEditableSkin: currentEditableSkin, delegate: self), animated: true)
-//        } else {
-//            navigationController?.pushViewController(SkinCreatorImportViewController(canvasWidth: CANVAS_WIDTH,
-//                                                                                     canvasHeight: CANVAS_HEIGHT,
-//                                                                                     currentEditableSkin: currentEditableSkin, delegate: self), animated: true)
-//        }
-        
     }
     
     private func processImported(image: UIImage) {
@@ -324,8 +307,6 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
         
         let previousDrawing = Drawing(colorArray: canvasColorArray, width: canvasWidth, height: canvasHeight)
         let pictureExporter = PictureExporter(drawing: previousDrawing)
-        
-//        guard let side = currentBodyPartSide else { return }
         
         let width = currentBodyPartSide?.width ?? CANVAS_WIDTH
         let height = currentBodyPartSide?.height ?? CANVAS_HEIGHT
@@ -467,40 +448,34 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     }
     
     private func configureView() {
-        let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "Green Background")
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
-        
-        
-        toolItemsViewContainers.forEach { $0.backgroundColor = .clear }
         toolButtons.forEach { $0.backgroundColor = .clear }
         
         backgroundImageView.backgroundColor = .clear
         backgroundImageView.contentMode = .scaleToFill
-        navigationBar.backgroundColor = .clear
+        backgroundImageView.roundCorners(.allCorners, radius: 12)
+        backgroundImageView.layer.borderColor = UIColor(.black).cgColor
+        backgroundImageView.layer.borderWidth = 1
         
-        manageSelectedToolUI(tappedTool: pencilBtn, tappedLab: pencilLab)
+        canvasContainer.roundCorners(.allCorners, radius: 12)
+        canvasContainer.layer.borderColor = UIColor(.black).cgColor
+        canvasContainer.layer.borderWidth = 1
+        
+        toolsStackView.roundCorners(.allCorners, radius: 34)
+        toolsStackView.layer.borderColor = UIColor(.black).cgColor
+        toolsStackView.layer.borderWidth = 1
+        
+        manageSelectedToolUI(tappedTool: pencilBtn)
     }
     
-    private func manageSelectedToolUI(tappedTool: UIButton, tappedLab: UILabel) {
-        let nonSelectedColor = UIColor(named: "blackCCRedesign")
-        let selectedColor = UIColor(named: "greenCCRedesign")
-        
+    private func manageSelectedToolUI(tappedTool: UIButton) {
         let toolBtns = [
             pencilBtn,  eraserBtn, dropperBtn, fillBtn, noiseBtn, undoBtn]
-        
-        let toolLabs = [pencilLab,  eraserLab, dropperLab, fillLab, noiseLab, undoLab]
         
         if tappedTool == dropperBtn && tappedTool.isSelected == true {
             hideMagnifyingGlass()
         }
         
-        toolLabs.forEach({ $0?.textColor = nonSelectedColor })
         toolBtns.forEach({ $0?.isSelected = false })
-        tappedLab.textColor = selectedColor
         tappedTool.isSelected = true
 
     }
@@ -523,61 +498,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     }
 }
 
-//MARK: - PickerViewController Delagte Methods
-
-extension SkinCreatorViewController: PickerViewControllerProtocol {
-    
-    func dismissView() {
-        alertWindow?.isHidden = true
-        alertWindow = nil
-        blurView?.removeFromSuperview()
-    }
-    
-    func setColor(color: UIColor) {
-        _currentDrawingColor = color
-        TransitionColor = currentDrawingColor
-    }
-}
-
-
-//MARK: - Presenting Custom Alert
-
-extension SkinCreatorViewController {
-    func presentCustomAlert() {
-        let customAlert = ColorPickerViewController()
-        customAlert.delegate = self
-        
-        alertWindow = UIWindow(frame: UIScreen.main.bounds)
-        alertWindow?.windowLevel = .alert
-        alertWindow?.rootViewController = UIViewController()
-        
-        let blurEffect = UIBlurEffect(style: .dark)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = alertWindow?.bounds ?? view.bounds
-        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        alertWindow?.rootViewController?.view.addSubview(blurView)
-        
-        alertWindow?.rootViewController?.addChild(customAlert)
-        alertWindow?.rootViewController?.view.addSubview(customAlert.view)
-        customAlert.didMove(toParent: alertWindow?.rootViewController)
-        
-        customAlert.view.frame = self.view.frame
-        customAlert.view.roundCorners(10)
-        customAlert.view.clipsToBounds = true
-        
-        alertWindow?.makeKeyAndVisible()
-        alertWindow?.windowScene = view.window?.windowScene
-    }
-    
-    func dismissCustomAlert() {
-        alertWindow?.isHidden = true
-        alertWindow = nil
-        blurView?.removeFromSuperview()
-    }
-}
-
-//MARK: - Test functionality
-
+// MARK: - Test functionality
 extension SkinCreatorViewController {
     
     func saveImageAsPNG(image: UIImage) {

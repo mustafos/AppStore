@@ -1,16 +1,11 @@
-
 import UIKit
 import SpriteKit
 import CoreGraphics
 
-
 extension SkinCreatorViewController : UIGestureRecognizerDelegate {
-
-
+    
     // MARK: - General Attributes.
-
      func registerGestureRecognizer() {
-
 //         navigatorGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanFrom(_:)))
         navigatorGestureRecognizer.minimumNumberOfTouches = 2
         navigatorGestureRecognizer.delegate = self
@@ -86,8 +81,6 @@ extension SkinCreatorViewController : UIGestureRecognizerDelegate {
              break
          }
      }
-    
-    
 }
 
 extension SkinCreatorViewController {
@@ -95,4 +88,3 @@ extension SkinCreatorViewController {
         return true
     }
 }
-

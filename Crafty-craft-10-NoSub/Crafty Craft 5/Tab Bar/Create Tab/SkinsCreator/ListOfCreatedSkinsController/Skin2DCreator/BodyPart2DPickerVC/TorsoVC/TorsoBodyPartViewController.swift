@@ -8,14 +8,11 @@ class TorsoBodyPartViewController: UIViewController {
 
     @IBOutlet weak var backBody: UIImageView!
     @IBOutlet weak var leftBody: UIImageView!
-   
     @IBOutlet weak var frontBody: UIImageView!
     @IBOutlet weak var navigationBar: UIView!
     @IBOutlet weak var bottomBody: UIImageView!
     @IBOutlet weak var topBody: UIImageView!
-    
     @IBOutlet weak var rightBody: UIImageView!
-    
     
     //MARK: - Init
     
@@ -38,17 +35,6 @@ class TorsoBodyPartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "Green Background")
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
-        
-        navigationBar.backgroundColor = .clear
-        
-
         addTapGesture(for: backBody)
         addTapGesture(for: frontBody)
         addTapGesture(for: leftBody)
@@ -130,7 +116,7 @@ class TorsoBodyPartViewController: UIViewController {
         
         let imageViews: [UIImageView] = [topBody, bottomBody, leftBody, rightBody, frontBody, backBody]
         imageViews.forEach({ $0.layer.magnificationFilter = .nearest })
-        imageViews.forEach({ $0.setBorder(size: 2, color: UIColor(named: "greenCCRedesign")!) })
+        imageViews.forEach({ $0.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!) })
             
         let sides = [
             body.top,

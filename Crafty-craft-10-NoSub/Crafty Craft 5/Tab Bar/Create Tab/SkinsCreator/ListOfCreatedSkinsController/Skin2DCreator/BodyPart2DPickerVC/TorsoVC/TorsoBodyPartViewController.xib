@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Allerta-Regular.ttf">
-            <string>Allerta-Regular</string>
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
         </array>
-        <array key="Blinker-Regular.ttf">
-            <string>Blinker-Regular</string>
-        </array>
-        <array key="Poppins-Bold.ttf">
-            <string>Poppins-Bold</string>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TorsoBodyPartViewController" customModule="Crafty_Craft_5" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TorsoBodyPartViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
             <connections>
                 <outlet property="backBody" destination="brD-UC-X21" id="CK9-hl-tDd"/>
                 <outlet property="bottomBody" destination="4qH-Mx-8EB" id="fas-OI-C0d"/>
@@ -38,10 +35,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Brg-pF-hsE" userLabel="Navigation Bar">
-                    <rect key="frame" x="0.0" y="15" width="375" height="50"/>
+                    <rect key="frame" x="0.0" y="35" width="375" height="84"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5W-TD-iBT" userLabel="Back Button">
-                            <rect key="frame" x="16" y="12" width="26" height="26"/>
+                            <rect key="frame" x="20" y="20" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="g5W-TD-iBT" secondAttribute="height" multiplier="1:1" id="Vn6-hr-MYz"/>
                             </constraints>
@@ -52,50 +49,40 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKIN CREATOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bh-Ci-fpU">
-                            <rect key="frame" x="50" y="8" width="283" height="34"/>
-                            <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="26"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <rect key="frame" x="101" y="28.5" width="173" height="27"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                            <color key="textColor" name="BeigeColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="3Bh-Ci-fpU" secondAttribute="bottom" constant="8" id="A9F-sa-qxX"/>
-                        <constraint firstItem="3Bh-Ci-fpU" firstAttribute="leading" secondItem="g5W-TD-iBT" secondAttribute="trailing" constant="8" id="Eqd-rc-MM3"/>
-                        <constraint firstAttribute="height" constant="50" id="NEc-2o-c8k">
+                        <constraint firstItem="3Bh-Ci-fpU" firstAttribute="centerY" secondItem="Brg-pF-hsE" secondAttribute="centerY" id="21i-en-JBt"/>
+                        <constraint firstItem="3Bh-Ci-fpU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="g5W-TD-iBT" secondAttribute="trailing" constant="8" id="Eqd-rc-MM3"/>
+                        <constraint firstItem="3Bh-Ci-fpU" firstAttribute="centerX" secondItem="Brg-pF-hsE" secondAttribute="centerX" id="Gdf-HY-CMc"/>
+                        <constraint firstAttribute="height" constant="84" id="NEc-2o-c8k">
                             <variation key="heightClass=regular-widthClass=regular" constant="64"/>
                         </constraint>
-                        <constraint firstItem="g5W-TD-iBT" firstAttribute="top" secondItem="Brg-pF-hsE" secondAttribute="top" constant="12" id="VBd-q3-GIn"/>
-                        <constraint firstAttribute="bottom" secondItem="g5W-TD-iBT" secondAttribute="bottom" constant="12" id="Zc3-K6-4Ai"/>
-                        <constraint firstItem="g5W-TD-iBT" firstAttribute="leading" secondItem="Brg-pF-hsE" secondAttribute="leading" constant="16" id="d1J-na-94g"/>
-                        <constraint firstItem="3Bh-Ci-fpU" firstAttribute="top" secondItem="Brg-pF-hsE" secondAttribute="top" constant="8" id="eVu-ck-aMj"/>
-                        <constraint firstAttribute="trailing" secondItem="3Bh-Ci-fpU" secondAttribute="trailing" constant="42" id="pLP-bf-aXs"/>
+                        <constraint firstItem="g5W-TD-iBT" firstAttribute="top" secondItem="Brg-pF-hsE" secondAttribute="top" constant="20" id="VBd-q3-GIn"/>
+                        <constraint firstAttribute="bottom" secondItem="g5W-TD-iBT" secondAttribute="bottom" constant="20" id="Zc3-K6-4Ai"/>
+                        <constraint firstItem="g5W-TD-iBT" firstAttribute="leading" secondItem="Brg-pF-hsE" secondAttribute="leading" constant="20" id="d1J-na-94g"/>
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0j4-XC-mg8" userLabel="TopStack">
-                    <rect key="frame" x="133" y="165" width="109" height="76.5"/>
+                    <rect key="frame" x="133" y="219" width="109" height="76.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQx-3l-vp1">
                             <rect key="frame" x="0.0" y="0.0" width="109" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="28" id="lgC-D7-3j3"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="12"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                            <color key="textColor" name="BeigeColor"/>
                             <nil key="highlightedColor"/>
-                            <variation key="heightClass=compact-widthClass=compact">
-                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="12"/>
-                            </variation>
-                            <variation key="heightClass=regular-widthClass=compact">
-                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                            </variation>
-                            <variation key="heightClass=regular-widthClass=regular">
-                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="20"/>
-                            </variation>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_h_body" translatesAutoresizingMaskIntoConstraints="NO" id="OGX-z5-2gF" userLabel="body component">
                             <rect key="frame" x="0.0" y="33" width="109" height="43.5"/>
-                            <color key="backgroundColor" white="0.95042480210000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" name="BeigeColor"/>
                         </imageView>
                     </subviews>
                     <constraints>
@@ -103,7 +90,7 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eHf-YA-PvY">
-                    <rect key="frame" x="40.5" y="265.5" width="294" height="153.5"/>
+                    <rect key="frame" x="40.5" y="319.5" width="294" height="153.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aJx-W0-C3V">
                             <rect key="frame" x="0.0" y="0.0" width="43" height="153.5"/>
@@ -113,22 +100,13 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="G9s-De-foY"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="12"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                    <color key="textColor" name="BeigeColor"/>
                                     <nil key="highlightedColor"/>
-                                    <variation key="heightClass=compact-widthClass=compact">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="12"/>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=compact">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=regular">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="20"/>
-                                    </variation>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_arm" translatesAutoresizingMaskIntoConstraints="NO" id="dRc-TN-JfP" userLabel="right arm component">
                                     <rect key="frame" x="0.0" y="33" width="43" height="120.5"/>
-                                    <color key="backgroundColor" white="0.95042480210000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="BeigeColor"/>
                                 </imageView>
                             </subviews>
                             <constraints>
@@ -143,22 +121,13 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="CKQ-fD-Wcb"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="12"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                    <color key="textColor" name="BeigeColor"/>
                                     <nil key="highlightedColor"/>
-                                    <variation key="heightClass=compact-widthClass=compact">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="12"/>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=compact">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=regular">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="20"/>
-                                    </variation>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_body" translatesAutoresizingMaskIntoConstraints="NO" id="t6X-0N-IJc" userLabel="body component">
                                     <rect key="frame" x="0.0" y="33" width="86" height="120.5"/>
-                                    <color key="backgroundColor" white="0.95042480210000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="BeigeColor"/>
                                 </imageView>
                             </subviews>
                             <constraints>
@@ -173,22 +142,13 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="bhM-X0-oHp"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="12"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                    <color key="textColor" name="BeigeColor"/>
                                     <nil key="highlightedColor"/>
-                                    <variation key="heightClass=compact-widthClass=compact">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="12"/>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=compact">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=regular">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="20"/>
-                                    </variation>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_arm" translatesAutoresizingMaskIntoConstraints="NO" id="s8A-GO-XAQ" userLabel="right arm component">
                                     <rect key="frame" x="0.0" y="33" width="43" height="120.5"/>
-                                    <color key="backgroundColor" white="0.95042480210000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="BeigeColor"/>
                                 </imageView>
                             </subviews>
                             <constraints>
@@ -203,22 +163,13 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="UwK-CY-sV9"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="12"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                    <color key="textColor" name="BeigeColor"/>
                                     <nil key="highlightedColor"/>
-                                    <variation key="heightClass=compact-widthClass=compact">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="12"/>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=compact">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=regular">
-                                        <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="20"/>
-                                    </variation>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_body" translatesAutoresizingMaskIntoConstraints="NO" id="brD-UC-X21" userLabel="body component">
                                     <rect key="frame" x="0.0" y="33" width="86" height="120.5"/>
-                                    <color key="backgroundColor" white="0.95042480210000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="BeigeColor"/>
                                 </imageView>
                             </subviews>
                             <constraints>
@@ -228,57 +179,40 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nYK-kc-a9H" userLabel="BotStack">
-                    <rect key="frame" x="128.5" y="443" width="118" height="77"/>
+                    <rect key="frame" x="128.5" y="497" width="118" height="77"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOTTOM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csL-dD-tcJ">
                             <rect key="frame" x="0.0" y="0.0" width="118" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="28" id="rGp-Zw-v0m"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="12"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                            <color key="textColor" name="BeigeColor"/>
                             <nil key="highlightedColor"/>
-                            <variation key="heightClass=compact-widthClass=compact">
-                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="12"/>
-                            </variation>
-                            <variation key="heightClass=regular-widthClass=compact">
-                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
-                            </variation>
-                            <variation key="heightClass=regular-widthClass=regular">
-                                <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="20"/>
-                            </variation>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general_h_body" translatesAutoresizingMaskIntoConstraints="NO" id="4qH-Mx-8EB" userLabel="body component">
                             <rect key="frame" x="0.0" y="33" width="118" height="44"/>
-                            <color key="backgroundColor" white="0.95042480210000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" name="BeigeColor"/>
                         </imageView>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="nYK-kc-a9H" secondAttribute="height" multiplier="139:90" id="u8g-mI-vQj"/>
                     </constraints>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BODY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjO-aj-ate">
-                    <rect key="frame" x="161.5" y="615.5" width="52" height="26.5"/>
-                    <fontDescription key="fontDescription" name="Blinker-Regular" family="Blinker" pointSize="22"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
                 <constraint firstItem="Brg-pF-hsE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="7nU-76-Ija"/>
                 <constraint firstItem="eHf-YA-PvY" firstAttribute="top" secondItem="0j4-XC-mg8" secondAttribute="bottom" constant="24" id="8je-C3-PSS"/>
                 <constraint firstItem="eHf-YA-PvY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="92x-H5-8Yq"/>
                 <constraint firstItem="0j4-XC-mg8" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.115023" id="GOz-Ui-6NY"/>
                 <constraint firstItem="0j4-XC-mg8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HGb-Uw-NiE"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xjO-aj-ate" secondAttribute="bottom" constant="25" id="Ssa-yz-EJT"/>
                 <constraint firstItem="eHf-YA-PvY" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.23" id="SxA-2B-e8u"/>
                 <constraint firstItem="nYK-kc-a9H" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="a5n-qa-2XG"/>
                 <constraint firstItem="Brg-pF-hsE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="b12-x1-Uea"/>
                 <constraint firstItem="nYK-kc-a9H" firstAttribute="top" secondItem="eHf-YA-PvY" secondAttribute="bottom" constant="24" id="c1o-iB-EOe"/>
                 <constraint firstItem="nYK-kc-a9H" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.115023" id="fzP-7j-kbd"/>
-                <constraint firstItem="xjO-aj-ate" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="gXC-l1-x8A"/>
                 <constraint firstItem="0j4-XC-mg8" firstAttribute="top" secondItem="Brg-pF-hsE" secondAttribute="bottom" constant="100" id="izH-Y9-pmc"/>
                 <constraint firstAttribute="trailing" secondItem="Brg-pF-hsE" secondAttribute="trailing" id="w8b-Xa-sxp"/>
             </constraints>
@@ -286,15 +220,15 @@
         </view>
     </objects>
     <resources>
-        <image name="Back Item" width="32" height="32"/>
-        <image name="general_arm" width="46" height="140"/>
-        <image name="general_body" width="93" height="140"/>
+        <image name="Back Item" width="44" height="44"/>
+        <image name="general_arm" width="38" height="129"/>
+        <image name="general_body" width="88" height="129"/>
         <image name="general_h_body" width="139" height="68"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="BackgroundColor">
+            <color red="0.19215686274509805" green="0.20784313725490197" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BeigeColor">
+            <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -163,6 +163,15 @@
       }
     },
     {
+      "identity" : "pushwoosh-xcframework",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Pushwoosh/Pushwoosh-XCFramework.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "4bcfbb0604594b2b48cf556405268148825a963d"
+      }
+    },
+    {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core.git",

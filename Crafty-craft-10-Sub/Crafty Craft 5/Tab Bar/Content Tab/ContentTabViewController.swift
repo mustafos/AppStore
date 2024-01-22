@@ -524,18 +524,6 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         }
     }
     
-//    private func updateSegmentedControlUI(selected: UIButton, deselected: UIButton) {
-//        selected.backgroundColor = UIColor(named: "darkGreenBackground")
-//        selected.layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
-//        selected.layer.borderWidth = 1.0
-//        selected.setTitleColor(.white, for: .normal)
-//        
-//        deselected.backgroundColor = UIColor(named: "lightGreenBachgroundColor")
-//        deselected.layer.borderColor = UIColor.clear.cgColor
-//        deselected.layer.borderWidth = 0
-//        deselected.setTitleColor(.lightGray, for: .normal)
-//    }
-    
     @IBAction private func onNavBarSearchButtonTapped(_ sender: UIButton) {
         navbarSearchMode.toggle()
     }

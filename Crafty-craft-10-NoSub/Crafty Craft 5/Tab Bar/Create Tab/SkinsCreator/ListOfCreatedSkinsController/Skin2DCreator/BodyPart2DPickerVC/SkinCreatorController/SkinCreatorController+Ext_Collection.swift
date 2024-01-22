@@ -5,10 +5,8 @@
 //  Created by 1 on 31.07.2023.
 //  Copyright © 2023 Noname Digital. All rights reserved.
 //
+
 import UIKit
-
-
-//MARK: Colors Collection
 
 extension SkinCreatorViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
 
@@ -65,10 +63,7 @@ extension SkinCreatorViewController: UICollectionViewDelegateFlowLayout {
 //MARK: ColorManager Delegate
 
 extension SkinCreatorViewController: ColorAble {
-
     func updateCollection() {
         colorsCollection.reloadData()
     }
-    
-    
 }

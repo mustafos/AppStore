@@ -139,7 +139,7 @@ enum CubicHuman {
             left: Side(name: "leftLegLeft1", width: 4, height: 12, startX: 8, startY: 52),
             back: Side(name: "leftLegBack1", width: 4, height: 12, startX: 12, startY: 52)
         )
-    
+        
         static let rightLeg = BodyPartSide(
             top: Side(name: "rightLegTop", width: 4, height: 4, startX: 4, startY: 16),
             bottom: Side(name: "rightLegBottom", width: 4, height: 4, startX: 8, startY: 16),
@@ -223,8 +223,5 @@ enum CubicHuman {
             ]
             return sides
         }
-
     }
-
 }
-

@@ -1,6 +1,4 @@
-
 import UIKit
-
 
 class HandsBodyPartViewController: UIViewController {
     
@@ -8,12 +6,8 @@ class HandsBodyPartViewController: UIViewController {
     var hand: BodyPartSide = CubicHuman.BodyPart.rightArm
     
     //MARK: -IBOutlets
-    
     @IBOutlet weak var navigationBar: UIView!
-    @IBOutlet weak var headerLabel: UILabel!
-    
     @IBOutlet weak var rightArm: UIImageView!
-    
     @IBOutlet weak var bottomArm: UIImageView!
     @IBOutlet weak var topArm: UIImageView!
     @IBOutlet weak var leftArm: UIImageView!
@@ -127,14 +121,6 @@ class HandsBodyPartViewController: UIViewController {
     //MARK: Private Funcs
     
     func setupViews() {
-        
-        let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "Green Background")
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
-        
         let _ = [rightArm,leftArm,backArm,frontArm].map({$0?.image = UIImage(named: "general_arm")})
     }
     
@@ -143,7 +129,7 @@ class HandsBodyPartViewController: UIViewController {
         let imageViews: [UIImageView] = [rightArm, leftArm, backArm, frontArm, topArm, bottomArm]
             
         imageViews.forEach({ $0.layer.magnificationFilter = .nearest })
-        imageViews.forEach({ $0.setBorder(size: 2, color: UIColor(named: "greenCCRedesign")!)})
+        imageViews.forEach({ $0.setBorder(size: 2, color: UIColor(named: "EerieBlackColor")!)})
         
         let sides = [
             hand.top,

@@ -16,10 +16,8 @@ class LegsBodyPartViewControllerViewController: UIViewController {
     @IBOutlet private weak var bottomLegImageView: UIImageView!
     @IBOutlet private weak var topLegImageView: UIImageView!
     @IBOutlet private weak var navigationBarView: UIView!
-    
-    
-    //MARK: - Init
 
+    //MARK: - Init
     init(currentEditableSkin: SkinCreatedModel? = nil, leg: BodyPartSide) {
         super.init(nibName: nil, bundle: nil)
         
@@ -39,14 +37,12 @@ class LegsBodyPartViewControllerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupBackground()
         setupLegImages()
         setupNavigation()
         setupGestureRecognizers()
         
         topLegImageView.layer.borderWidth = 2
-        topLegImageView.layer.borderColor = UIColor(named: "greenCCRedesign")?.cgColor
+        topLegImageView.layer.borderColor = UIColor(named: "EerieBlackColor")?.cgColor
         
         updateImageFor(imageView: topLegImageView, image: nil)
         updateImageFor(imageView: bottomLegImageView, image: nil)
@@ -62,18 +58,7 @@ class LegsBodyPartViewControllerViewController: UIViewController {
     }
     
     // MARK: - Setup
-
-    private func setupBackground() {
-        let backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = UIImage(named: "Green Background")
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
-    }
-    
     private func setupLegImages() {
-        
         let _ = [backLegImageView, leftLegImageView, frontLegImageView, rightLegImageView].map({ $0?.image = UIImage(named: "general_arm")})
     }
     

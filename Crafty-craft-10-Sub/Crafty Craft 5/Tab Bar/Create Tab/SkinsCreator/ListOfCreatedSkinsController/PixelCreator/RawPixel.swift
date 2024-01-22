@@ -1,3 +1,4 @@
+import Foundation
 import UIKit
 
 let RAWPIXEL_CONVERSION_ERR_CODE = 2619

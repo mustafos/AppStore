@@ -41,7 +41,7 @@ class SkinVariantsViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.heightAnchor.constraint(equalToConstant: titleHeight).isActive = true
         label.textAlignment = .center
-        label.textColor = .beige
+        label.textColor = UIColor(named: "BeigeColor")
         label.font = UIFont.montserratFont(.bold, size: 22)
         label.text = state == .new ? "NEW SKIN" : "EDIT SKIN"
         return label
@@ -269,7 +269,7 @@ class SkinVariantsViewController: UIViewController {
         button.setTitle(text, for: .normal)
         button.titleLabel?.font = UIFont.montserratFont(.bold, size: 18)
         button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .yellowSelective
+        button.backgroundColor = UIColor(named: "YellowSelectiveColor")
         button.cornerRadius = buttonHeight/2
         button.borderWidth = 1
         button.borderColor = .black

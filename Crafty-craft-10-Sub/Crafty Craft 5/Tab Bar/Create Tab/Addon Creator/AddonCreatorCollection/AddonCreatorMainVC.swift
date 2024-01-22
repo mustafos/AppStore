@@ -11,6 +11,8 @@ import UIKit
 class AddonCreatorMainVC: UIViewController {
     var model = CreatedAddonsModel()
     
+    @IBOutlet weak var unlockActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var unlockButton: UIButton!
     @IBOutlet private weak var tabsStackView: UIStackView!
     
     @IBOutlet weak var selectItemView: UIView!
@@ -60,12 +62,29 @@ class AddonCreatorMainVC: UIViewController {
         configureUIComponents()
         setupTabButtons()
         setupCollectionViewUI()
+//        updatePageControllerUI()
+        unlockActivityIndicator.isHidden = true
+        
+        IAPManager.shared.addonProductDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        model.updateCreatedAddons()
-        addonCollectionView.reloadData()
+        if isSubscriptionAvailable {
+            model.updateCreatedAddons()
+            addonCollectionView.reloadData()
+        }
+        unlockButton.titleLabel?.textAlignment = .center
+        unlockButton.roundCorners(.allCorners, radius: 30)
+        unlockButton.isHidden = isSubscriptionAvailable
+        addonCollectionView.isHidden = !isSubscriptionAvailable
+        addonCollectionView.isHidden = !isSubscriptionAvailable
+        
+        checkProduct()
+    }
+
+    private var isSubscriptionAvailable: Bool {
+        IAPManager.shared.addonCreatorIsValid ?? false
     }
     
     //MARK: - SetUp UI
@@ -90,9 +109,63 @@ class AddonCreatorMainVC: UIViewController {
         selectedText.textColor = .black
     }
     
+    private func checkProduct() {
+        //CheckSkinProduct
+        if IAPManager.shared.addonCreatorIsValid == nil {    // nil - if subscription have not loaded in sceneDelegate
+            validateSub(for: Configurations.unlockFuncSubscriptionID)
+            disableOrEnableCreateAddons(isEnabled: false)
+        }
+    }
+    
+    private func disableOrEnableCreateAddons(isEnabled: Bool) {
+        if isEnabled == true {
+            unlockActivityIndicator.stopAnimating()
+        } else {
+            unlockActivityIndicator.startAnimating()
+        }
+        unlockActivityIndicator.isHidden = isEnabled
+        unlockButton.isEnabled = isEnabled
+        unlockButton.isUserInteractionEnabled = isEnabled
+    }
+    
+    private func showButtonVisibility() {
+        tabButtons.forEach { button in
+            UIView.animate(withDuration: 0.3) {
+                self.isHideButtons.toggle()
+                button.isHidden.toggle()
+                self.updateSelectButtonImage()
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    //Should never work - validation should be done in scene
+    private func validateSub(for productName: String) {
+        IAPManager.shared.validateSubscriptions(productIdentifiers: [productName]) { [weak self] results in
+            switch productName {
+            case Configurations.unlockFuncSubscriptionID:
+                if let value = results[Configurations.unlockFuncSubscriptionID] {
+                    IAPManager.shared.addonCreatorIsValid = value
+                }
+                DispatchQueue.main.async { [weak self] in
+                    self?.disableOrEnableCreateAddons(isEnabled: true)
+                }
+            default:
+                break
+                
+            }
+        }
+    }
     //MARK: - Action
     @objc func selectedColorAction(_ sender: Any) {
         showButtonVisibility()
+    }
+    
+    @IBAction func unlockButtonTapped(_ sender: Any) {
+        //show subscrition
+        let nextVC = PremiumMainController()
+        nextVC.productBuy = .unlockFuncProduct
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
     @IBAction func onButtonTapped(_ sender: UIButton) {
@@ -100,26 +173,54 @@ class AddonCreatorMainVC: UIViewController {
         switch tabsPageControllMode {
         case .layout:
             setButtonProperties(title: "Layout", image: "chevron.down")
-            tabsPageControllMode = .layout
-            model.collectionMode = .savedAddons
-        case .group:
-            setButtonProperties(title: "Group", image: "chevron.down")
             tabsPageControllMode = .group
             model.collectionMode = .groups
-        case .recent:
-            setButtonProperties(title: "Recent", image: "chevron.down")
+        case .group:
+            setButtonProperties(title: "Group", image: "chevron.down")
             tabsPageControllMode = .recent
             model.collectionMode = .recent
+        case .recent:
+            setButtonProperties(title: "Recent", image: "chevron.down")
+            tabsPageControllMode = .layout
+            model.collectionMode = .savedAddons
         }
         addonCollectionView.reloadData()
     }
     
     //MARK: - Private Methods
-
+    
+//    private func updatePageControllerUI() {
+//        switch tabsPageControllMode {
+//        case .layout:
+//            updateTabUI(selected: layouTabButton, deselected: [groupTabButton, recentTabButton])
+//        case .group:
+//            updateTabUI(selected: groupTabButton, deselected: [layouTabButton, recentTabButton])
+//        case .recent:
+//            updateTabUI(selected: recentTabButton, deselected: [groupTabButton, layouTabButton])
+//        }
+//        
+//        addonCollectionView.reloadData()
+//    }
+    
     private func updateSelectButtonImage() {
         let imageName = isHideButtons ? "chevron.down" : "chevron.up"
         selectImage.image = UIImage(systemName: imageName)
     }
+    
+//    private func updateTabUI(selected: UIButton, deselected: [UIButton]) {
+//        deselected.forEach { button in
+//            button.titleLabel?.font = UIFont(name: "Montserrat-SemiBold", size: 16)
+//            button.setTitleColor(UIColor(.gray), for: .normal)
+//        }
+//    }
+    
+//    private func updateLabelColors(selected: UILabel, deselected: [UILabel]) {
+//        selected.textColor = .black
+//        selected.font = UIFont(name: "Montserrat-SemiBold", size: 16)
+//        deselected.forEach { label in
+//            label.textColor = .gray
+//        }
+//    }
     
     private func setButtonProperties(title: String, image: String) {
         selectedText.text = title
@@ -293,6 +394,9 @@ extension AddonCreatorMainVC {
             return
         }
         
+
+        
+        
         // Check if the file exists at the specified URL.
         if FileManager.default.fileExists(atPath: url.path) {
             share(url: url, from: downloadButton)
@@ -307,5 +411,23 @@ extension AddonCreatorMainVC: CollectionSearchable {
     func filterData(with text: String?) {
         filterText = text
         addonCollectionView.reloadData()
+    }
+}
+
+extension AddonCreatorMainVC: IAPManagerAddonPurchaseProtocol {
+    func addonCreatorDidUnlocked() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            if let _ = navigationController?.viewControllers.last as? PremiumMainController {
+                navigationController?.popViewController(animated: true)
+            }
+            model.updateCreatedAddons()
+            addonCollectionView.reloadData()
+            
+            unlockButton.isHidden = isSubscriptionAvailable
+            addonCollectionView.isHidden = !isSubscriptionAvailable
+            addonCollectionView.isHidden = !isSubscriptionAvailable
+            disableOrEnableCreateAddons(isEnabled: true)
+        }
     }
 }

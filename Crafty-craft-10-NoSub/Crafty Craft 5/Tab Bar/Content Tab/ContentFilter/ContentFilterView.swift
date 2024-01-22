@@ -29,8 +29,8 @@ struct ContentFilterView: View {
             .padding(.vertical, 8)
             .frame(width: 350, height: 48, alignment: .center)
             .font(Font.custom("Montserrat", size: 16).weight(.semibold))
-            .foregroundColor(.eerieBlack)
-            .background(.yellowSelective)
+            .foregroundColor(.black)
+            .background(Color("YellowSelectiveColor"))
             .cornerRadius(40)
             .overlay(
                 RoundedRectangle(cornerRadius: 40)
