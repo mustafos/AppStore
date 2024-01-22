@@ -1,7 +1,6 @@
+import UIKit
 import ImageIO
 import MobileCoreServices
-import Foundation
-import UIKit
 
 // Handles the exporting of images to Photos library.
 class PictureExporter: NSObject {

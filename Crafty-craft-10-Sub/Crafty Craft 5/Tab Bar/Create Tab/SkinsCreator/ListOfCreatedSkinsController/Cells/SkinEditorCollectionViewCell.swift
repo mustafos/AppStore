@@ -1,6 +1,5 @@
 import UIKit
 
-
 class SkinEditorCollectionViewCell: UICollectionViewCell {
     
     var onDownloadButtonTapped: ((UIButton) -> Void)?
