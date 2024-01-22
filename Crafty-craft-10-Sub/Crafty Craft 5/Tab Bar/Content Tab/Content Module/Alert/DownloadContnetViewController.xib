@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DownloadContnetViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
+            <connections>
+                <outlet property="installAddonView" destination="LUp-vj-S9q" id="ZWo-zC-eDF"/>
+                <outlet property="manualInstallAddonView" destination="Tka-kp-xNk" id="omh-dK-z2f"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="268" height="324"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Addon ready to install" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMD-rZ-SPL">
+                    <rect key="frame" x="16" y="12" width="236" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="nj1-Ab-ek9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                    <color key="textColor" name="EerieBlackColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap “Install Addon” and choose Minecraft or manual installation to install directly into Minecraft worlds." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcH-6b-S9J">
+                    <rect key="frame" x="20.333333333333329" y="198" width="227.33333333333337" height="48"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViA-Hb-1BK">
+                    <rect key="frame" x="16" y="260" width="236" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="Bw9-VG-ZGU"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                        <backgroundConfiguration key="background" cornerRadius="26" strokeWidth="0.0">
+                            <color key="backgroundColor" name="YellowLightColor"/>
+                            <color key="strokeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </backgroundConfiguration>
+                        <fontDescription key="titleFontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                        <color key="baseForegroundColor" name="EerieBlackColor"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" name="EerieBlackColor"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="26"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="ZpA-hi-v1d"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="La0-3z-ew9">
+                    <rect key="frame" x="16" y="58" width="236" height="120"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUp-vj-S9q">
+                            <rect key="frame" x="0.0" y="0.0" width="236" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="8CE-A2-gyr"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Install Addon">
+                                <backgroundConfiguration key="background" cornerRadius="26" strokeWidth="0.0">
+                                    <color key="backgroundColor" name="YellowSelectiveColor"/>
+                                    <color key="strokeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </backgroundConfiguration>
+                                <fontDescription key="titleFontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                <color key="baseForegroundColor" name="EerieBlackColor"/>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="EerieBlackColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="26"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="installAddonAction:" destination="-1" eventType="touchUpInside" id="uwH-MJ-7Ef"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tka-kp-xNk">
+                            <rect key="frame" x="0.0" y="66" width="236" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="Tfw-7O-E0c"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Install Manually">
+                                <backgroundConfiguration key="background" cornerRadius="26" strokeWidth="0.0">
+                                    <color key="backgroundColor" name="BeigeColor"/>
+                                    <color key="strokeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </backgroundConfiguration>
+                                <fontDescription key="titleFontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                <color key="baseForegroundColor" name="EerieBlackColor"/>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="EerieBlackColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="26"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="manualAddonAction:" destination="-1" eventType="touchUpInside" id="dpz-Ta-icO"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="7mV-Sw-0sa"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="La0-3z-ew9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="29A-sF-Q3J"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ViA-Hb-1BK" secondAttribute="trailing" constant="16" id="5a2-2r-Zuu"/>
+                <constraint firstAttribute="trailing" secondItem="VMD-rZ-SPL" secondAttribute="trailing" constant="16" id="9MU-ed-TWv"/>
+                <constraint firstItem="YcH-6b-S9J" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Jxt-R9-pDU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="La0-3z-ew9" secondAttribute="trailing" constant="16" id="Qcs-Su-WPF"/>
+                <constraint firstItem="ViA-Hb-1BK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="SuT-9I-kCv"/>
+                <constraint firstItem="YcH-6b-S9J" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="TWQ-nb-daA"/>
+                <constraint firstItem="VMD-rZ-SPL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="UkQ-l5-auo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YcH-6b-S9J" secondAttribute="trailing" constant="16" id="Vtk-Id-EXA"/>
+                <constraint firstItem="ViA-Hb-1BK" firstAttribute="top" secondItem="YcH-6b-S9J" secondAttribute="bottom" constant="14" id="hqM-ZJ-Teg"/>
+                <constraint firstItem="YcH-6b-S9J" firstAttribute="top" secondItem="La0-3z-ew9" secondAttribute="bottom" constant="20" id="ln1-7L-THz"/>
+                <constraint firstItem="La0-3z-ew9" firstAttribute="top" secondItem="VMD-rZ-SPL" secondAttribute="bottom" constant="14" id="u5m-3H-bqO"/>
+                <constraint firstItem="ViA-Hb-1BK" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="-10" id="uD7-of-Ryd"/>
+                <constraint firstItem="VMD-rZ-SPL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="12" id="uns-ee-SQ0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="129.7709923664122" y="23.239436619718312"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="BeigeColor">
+            <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="EerieBlackColor">
+            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowLightColor">
+            <color red="0.98000001907348633" green="0.90600001811981201" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowSelectiveColor">
+            <color red="0.97254901960784312" green="0.80784313725490198" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

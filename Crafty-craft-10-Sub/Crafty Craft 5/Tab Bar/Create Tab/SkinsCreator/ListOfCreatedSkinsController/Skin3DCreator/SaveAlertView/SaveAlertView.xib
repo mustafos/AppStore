@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SaveAlertView" customModule="Crafty_Craft_10" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelSaveSkButton" destination="PNe-OA-PSa" id="7tw-zt-9qm"/>
+                <outlet property="defoultDarkBlureEffectView" destination="YA0-gb-Kdo" id="3Xq-yg-0SY"/>
+                <outlet property="dialogTextLabel" destination="fxh-CP-jWx" id="h9m-YZ-9Is"/>
+                <outlet property="mainSaveAlertView" destination="iN0-l3-epB" id="DDu-X3-ESt"/>
+                <outlet property="saveSkButton" destination="vmO-T2-zUZ" id="6Dv-5B-GTR"/>
+                <outlet property="setSkinNameSaveTextField" destination="G93-2w-UwU" id="Vej-KB-vNU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="732"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YA0-gb-Kdo">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="732"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="deo-8u-heR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="732"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UcE-rr-FiY">
+                                <rect key="frame" x="0.0" y="0.0" width="153" height="604"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yGc-6U-XWM">
+                                    <rect key="frame" x="0.0" y="0.0" width="153" height="604"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <vibrancyEffect>
+                                    <blurEffect style="regular"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                        </subviews>
+                    </view>
+                    <color key="backgroundColor" red="0.19215686269999999" green="0.20784313730000001" blue="0.20392156859999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                    <vibrancyEffect>
+                        <blurEffect style="dark"/>
+                    </vibrancyEffect>
+                </visualEffectView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3M-n8-HyF">
+                    <rect key="frame" x="59" y="183.66666666666663" width="275" height="262"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jn8-Gt-cEn">
+                            <rect key="frame" x="16" y="16" width="243" height="230"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a name for your skin." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxh-CP-jWx">
+                                    <rect key="frame" x="0.0" y="0.0" width="243" height="44"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                                    <color key="textColor" name="EerieBlackColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="G93-2w-UwU">
+                                    <rect key="frame" x="0.0" y="52" width="243" height="54"/>
+                                    <color key="backgroundColor" name="YellowSelectiveColor"/>
+                                    <color key="textColor" name="EerieBlackColor"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="27"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmO-T2-zUZ">
+                                    <rect key="frame" x="0.0" y="114.00000000000003" width="243" height="54"/>
+                                    <color key="backgroundColor" name="YellowSelectiveColor"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Save">
+                                        <color key="titleColor" name="EerieBlackColor"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="28"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="EerieBlackColor"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="saveSkButtonPressed:" destination="-1" eventType="touchUpInside" id="ViN-G8-8L9"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="PNe-OA-PSa">
+                                    <rect key="frame" x="0.0" y="176.00000000000003" width="243" height="54"/>
+                                    <color key="backgroundColor" name="BeigeColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="54" id="Wmo-td-FJ2"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" name="EerieBlackColor"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="28"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="EerieBlackColor"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="cancelSaveSkButtonPressed:" destination="-1" eventType="touchUpInside" id="zU4-NV-QQr"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="vmO-T2-zUZ" firstAttribute="height" secondItem="PNe-OA-PSa" secondAttribute="height" id="9Qv-Hb-h3Q"/>
+                                <constraint firstItem="G93-2w-UwU" firstAttribute="height" secondItem="PNe-OA-PSa" secondAttribute="height" id="zeI-X9-9YV"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Jn8-Gt-cEn" firstAttribute="leading" secondItem="H3M-n8-HyF" secondAttribute="leading" constant="16" id="JwH-DJ-Vh0"/>
+                        <constraint firstAttribute="trailing" secondItem="Jn8-Gt-cEn" secondAttribute="trailing" constant="16" id="bgh-oY-Lco"/>
+                        <constraint firstAttribute="bottom" secondItem="Jn8-Gt-cEn" secondAttribute="bottom" constant="16" id="dfD-Sg-2Cs"/>
+                        <constraint firstItem="Jn8-Gt-cEn" firstAttribute="top" secondItem="H3M-n8-HyF" secondAttribute="top" constant="16" id="kff-iT-ytl"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="YA0-gb-Kdo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3Pa-Hj-R22"/>
+                <constraint firstItem="H3M-n8-HyF" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.7" id="3W0-5c-U9m"/>
+                <constraint firstItem="YA0-gb-Kdo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9ea-zv-YqY"/>
+                <constraint firstAttribute="trailing" secondItem="YA0-gb-Kdo" secondAttribute="trailing" id="AIe-ax-dF5"/>
+                <constraint firstAttribute="bottom" secondItem="YA0-gb-Kdo" secondAttribute="bottom" id="FJY-D5-UiR"/>
+                <constraint firstItem="H3M-n8-HyF" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-64" id="UZg-M5-Ddf"/>
+                <constraint firstItem="H3M-n8-HyF" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.5" id="aVw-qh-rlL"/>
+                <constraint firstItem="H3M-n8-HyF" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="v5r-jo-MAi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="aVw-qh-rlL"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=regular">
+                <mask key="constraints">
+                    <exclude reference="3W0-5c-U9m"/>
+                    <include reference="aVw-qh-rlL"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="139.69465648854961" y="73.943661971830991"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="BeigeColor">
+            <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="EerieBlackColor">
+            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowSelectiveColor">
+            <color red="0.97254901960784312" green="0.80784313725490198" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

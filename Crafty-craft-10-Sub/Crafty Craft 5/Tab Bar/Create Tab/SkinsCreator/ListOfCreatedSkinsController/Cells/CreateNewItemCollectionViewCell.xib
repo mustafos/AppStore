@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CreateNewItemCollectionViewCell" id="gTV-IL-0wX" userLabel="CreateNewItemCollectionViewCell" customClass="CreateNewItemCollectionViewCell" customModule="Crafty_Craft_10" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="168" height="252"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="168" height="252"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bM7-wM-ZJ4">
+                        <rect key="frame" x="0.0" y="0.0" width="168" height="252"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="H7m-Bc-IRk">
+                                <rect key="frame" x="36.666666666666664" y="95.333333333333329" width="94.666666666666686" height="61.666666666666671"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add skin" translatesAutoresizingMaskIntoConstraints="NO" id="kVc-ku-hFT">
+                                        <rect key="frame" x="0.0" y="0.0" width="94.666666666666671" height="34"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create skin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSm-RX-hH7">
+                                        <rect key="frame" x="0.0" y="42.000000000000014" width="94.666666666666671" height="19.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                        <color key="textColor" name="EerieBlackColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="BeigeColor"/>
+                        <constraints>
+                            <constraint firstItem="H7m-Bc-IRk" firstAttribute="centerX" secondItem="bM7-wM-ZJ4" secondAttribute="centerX" id="19G-zq-SdB"/>
+                            <constraint firstItem="H7m-Bc-IRk" firstAttribute="centerY" secondItem="bM7-wM-ZJ4" secondAttribute="centerY" id="Veg-dd-Ajj"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="bM7-wM-ZJ4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1nj-sJ-mLC"/>
+                <constraint firstAttribute="bottom" secondItem="bM7-wM-ZJ4" secondAttribute="bottom" id="7qV-TL-wKu"/>
+                <constraint firstAttribute="trailing" secondItem="bM7-wM-ZJ4" secondAttribute="trailing" id="AaK-Ms-Wz6"/>
+                <constraint firstItem="bM7-wM-ZJ4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hMa-DX-qZK"/>
+            </constraints>
+            <connections>
+                <outlet property="backgroundContainerView" destination="bM7-wM-ZJ4" id="zNQ-w6-h7z"/>
+                <outlet property="titleLabel" destination="rSm-RX-hH7" id="hfo-Ni-8uE"/>
+            </connections>
+            <point key="canvasLocation" x="105.34351145038167" y="20.422535211267608"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="add skin" width="34" height="34"/>
+        <namedColor name="BeigeColor">
+            <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="EerieBlackColor">
+            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

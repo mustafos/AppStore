@@ -1,0 +1,12 @@
+diff a/Crafty Craft 5/SceneDelegate.swift b/Crafty Craft 5/SceneDelegate.swift	(rejected hunks)
+@@ -21,8 +21,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                     switch isPur {
+                     case true: self.l0adApp()
+-//                    case false: self.l0adApp()
+-                    case false: self.loadSubscription()
++                    case false: self.l0adApp()
++//                    case false: self.loadSubscription()
+                     }
+                 }
+                 //             Validate ContentProductSub

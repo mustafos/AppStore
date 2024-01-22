@@ -1,0 +1,73 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Denne prøveperiode fornyes automatisk til et betalt abonnement og fortsætter med at blive automatisk fornyet, indtil du annullerer. * Du skal abonnere for at bruge denne app. Intet gratis indhold. * Abonnementsbetalinger vil blive debiteret din iTunes-konto ved bekræftelse af dit køb. * Abonnementer fornyes automatisk, og betalingen vil blive debiteret din iTunes-konto, medmindre automatisk fornyelse er slået fra mindst 24 timer før udgangen af ​​den aktuelle periode. Omkostningerne ved fornyelsen afhænger af din abonnementsplan. Vores standard abonnementsplaner er: * 1-uges abonnement ($4,99) For andre valutaer svarer prisen til det samme prisniveau på App Stores prismatrix. * Abonnement med en gratis prøveperiode fornyes automatisk til et betalt abonnement. Du kan annullere eller administrere din gratis prøveperiodes automatiske fornyelse i dine kontoindstillinger efter køb. Opsigelsen træder i kraft 24 timer efter den sidste dag i den aktuelle abonnementsperiode, og du vil blive nedgraderet til den gratis tjeneste. * Bemærk venligst: enhver ubrugt del af en gratis prøveperiode på 3 dage (hvis den tilbydes) vil blive fortabt, når du køber et premium-abonnement i den gratis prøveperiode. Se venligst vores privatlivspolitik og vilkår for brug for mere information.";
+/**/
+"iOSButtonID"="BLIVE VED";
+/**/
+"iOSStart3daysTitleID"="START 3-DAGE GRATIS, SÆT 5,99 USD/UGE";
+
+/**/
+"LoadingID"="INDLÆSER";
+
+/**/
+"PrivacyID"="Fortrolighedspolitik";
+
+/**/
+"restore"="Gendan";
+
+/**/
+"TermsID"="Vilkår for brug";
+
+/**/
+"SliderID1"="FÅ EN HÆRDIG GUDDOMSPANSERPLACERING";
+/**/
+"SliderID2"="FIND 5 EVNER HOS SAGENE OG KOROK SKOVEN";
+/**/
+"SliderID3"="ALLE HULLER OG BRØNDE PÅ KORTET";
+/**/
+"SliderID4"="ALLE 152 HELLIGHEDER PÅ DET INTERAKTIVE KORT";
+/**/
+"SliderID5"="SAMLER ALLE SPANNINGSÆT EFTER PLACERING";
+
+/**/
+"TextTitle1ID"="VÆLG DIT PANSESÆT";
+
+/**/
+"TextTitle2ID"="VÆLG DEN ØNSKEDE EVNE";
+
+/**/
+"Text1ID"="Amiibo-evne";
+
+/**/
+"Text2ID"="Sikringsevne";
+
+/**/
+"Text3ID"="Opstigningsevne";
+
+/**/
+"Text4ID"="Genkaldeevne";
+
+/**/
+"Text5ID"="Kamera evne";
+
+/**/
+
+"ConnectivityTitle"="Forbindelsesproblem";
+"ConnectivityDescription"="Internetforbindelse ser ud til at være offline ☹️";
+
+"error_iap" = "Error";
+"inval_prod_id" = "Looks like you have bad Internet connection";
+
+
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+
+
