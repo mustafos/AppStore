@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SkinCreatorImportViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SkinCreatorImportViewController" customModule="Crafty_Craft_10_2" customModuleProvider="target">
             <connections>
                 <outlet property="aspectCanvasContainerConstraint" destination="RpA-C1-bif" id="tAT-Az-Jtr"/>
                 <outlet property="buttonsStackView" destination="gaF-01-BlZ" id="Snn-CR-cg3"/>
@@ -31,11 +31,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Skin Creator Canvas Background" translatesAutoresizingMaskIntoConstraints="NO" id="TwB-uC-Qx8" userLabel="Background Image">
-                    <rect key="frame" x="20" y="143" width="390" height="575.33333333333337"/>
+                    <rect key="frame" x="20" y="132.66666666666663" width="390" height="596"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gE-hK-9XT" userLabel="CanvasContainer View">
-                    <rect key="frame" x="20" y="143" width="390" height="575.33333333333337"/>
+                    <rect key="frame" x="20" y="132.66666666666663" width="390" height="596"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="1gE-hK-9XT" secondAttribute="height" multiplier="366:559" priority="998" id="RpA-C1-bif"/>
@@ -68,7 +68,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKIN CREATOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHL-SD-var" userLabel="Header Label">
-                            <rect key="frame" x="128.66666666666666" y="0.0" width="172.99999999999997" height="84"/>
+                            <rect key="frame" x="128.66666666666666" y="28.666666666666671" width="172.99999999999997" height="27"/>
                             <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
                             <color key="textColor" name="BeigeColor"/>
                             <nil key="highlightedColor"/>
@@ -76,21 +76,15 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="yCe-G3-JFx" firstAttribute="leading" secondItem="WYr-f4-eo3" secondAttribute="leading" constant="20" id="6Ow-XL-uEA"/>
-                        <constraint firstItem="eY5-QP-LMn" firstAttribute="top" secondItem="WYr-f4-eo3" secondAttribute="top" constant="20" id="HSE-le-wJF"/>
-                        <constraint firstAttribute="bottom" secondItem="cHL-SD-var" secondAttribute="bottom" id="Hlb-in-bYj"/>
-                        <constraint firstItem="cHL-SD-var" firstAttribute="centerX" secondItem="WYr-f4-eo3" secondAttribute="centerX" id="LI0-j2-paT"/>
-                        <constraint firstItem="cHL-SD-var" firstAttribute="centerY" secondItem="WYr-f4-eo3" secondAttribute="centerY" id="Mfg-0f-DQH"/>
-                        <constraint firstAttribute="bottom" secondItem="yCe-G3-JFx" secondAttribute="bottom" constant="20" id="UTY-gl-fmw"/>
-                        <constraint firstItem="cHL-SD-var" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yCe-G3-JFx" secondAttribute="trailing" constant="8" id="Uuf-eU-o2D"/>
-                        <constraint firstAttribute="height" constant="84" id="YyZ-cv-5LG">
-                            <variation key="heightClass=regular-widthClass=regular" constant="64"/>
-                        </constraint>
-                        <constraint firstItem="yCe-G3-JFx" firstAttribute="top" secondItem="WYr-f4-eo3" secondAttribute="top" constant="20" id="cce-0r-aOU"/>
-                        <constraint firstAttribute="bottom" secondItem="eY5-QP-LMn" secondAttribute="bottom" constant="20" id="cgT-v3-EVL"/>
-                        <constraint firstAttribute="trailing" secondItem="eY5-QP-LMn" secondAttribute="trailing" constant="20" id="px7-51-9qb"/>
-                        <constraint firstItem="cHL-SD-var" firstAttribute="top" secondItem="WYr-f4-eo3" secondAttribute="top" id="tbv-2c-uMU"/>
-                        <constraint firstItem="eY5-QP-LMn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cHL-SD-var" secondAttribute="trailing" constant="8" id="usZ-AY-w3X"/>
+                        <constraint firstAttribute="bottom" secondItem="eY5-QP-LMn" secondAttribute="bottom" constant="20" id="8Fu-yC-Vhd"/>
+                        <constraint firstAttribute="height" constant="84" id="RRG-3c-KBY"/>
+                        <constraint firstItem="cHL-SD-var" firstAttribute="centerY" secondItem="WYr-f4-eo3" secondAttribute="centerY" id="X9t-Jj-ufS"/>
+                        <constraint firstAttribute="bottom" secondItem="yCe-G3-JFx" secondAttribute="bottom" constant="20" id="a3m-k7-Ett"/>
+                        <constraint firstItem="cHL-SD-var" firstAttribute="centerX" secondItem="WYr-f4-eo3" secondAttribute="centerX" id="jtt-qY-aQF"/>
+                        <constraint firstItem="eY5-QP-LMn" firstAttribute="top" secondItem="WYr-f4-eo3" secondAttribute="top" constant="20" id="jx4-8v-7RZ"/>
+                        <constraint firstAttribute="trailing" secondItem="eY5-QP-LMn" secondAttribute="trailing" constant="20" id="nfR-kv-9nQ"/>
+                        <constraint firstItem="yCe-G3-JFx" firstAttribute="leading" secondItem="WYr-f4-eo3" secondAttribute="leading" constant="20" id="spm-QK-aZu"/>
+                        <constraint firstItem="yCe-G3-JFx" firstAttribute="top" secondItem="WYr-f4-eo3" secondAttribute="top" constant="20" id="wFa-5C-rWW"/>
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gaF-01-BlZ">
@@ -169,30 +163,30 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
-                <constraint firstItem="1gE-hK-9XT" firstAttribute="top" secondItem="WYr-f4-eo3" secondAttribute="bottom" id="4g6-rL-nAz"/>
+                <constraint firstItem="WYr-f4-eo3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="23q-3q-d6i"/>
                 <constraint firstItem="TwB-uC-Qx8" firstAttribute="top" secondItem="1gE-hK-9XT" secondAttribute="top" id="HX9-o5-EaT"/>
+                <constraint firstItem="1gE-hK-9XT" firstAttribute="top" secondItem="WYr-f4-eo3" secondAttribute="bottom" constant="-10.333333333333314" id="IcR-MU-3uH"/>
                 <constraint firstItem="1gE-hK-9XT" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.75" priority="998" id="Kwm-GC-xEA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gaF-01-BlZ" secondAttribute="trailing" id="Lhg-7V-gdU"/>
                 <constraint firstItem="gaF-01-BlZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OOj-Dr-Num"/>
-                <constraint firstItem="WYr-f4-eo3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Qn6-1Z-sIm"/>
                 <constraint firstItem="1gE-hK-9XT" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.9" id="Ro7-R4-zYZ"/>
+                <constraint firstItem="WYr-f4-eo3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="SjZ-kI-vof"/>
                 <constraint firstItem="gaF-01-BlZ" firstAttribute="bottomMargin" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="TGL-CZ-bkp"/>
-                <constraint firstItem="WYr-f4-eo3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Y0n-P2-Fwx"/>
                 <constraint firstItem="TwB-uC-Qx8" firstAttribute="bottom" secondItem="1gE-hK-9XT" secondAttribute="bottom" id="Yck-ci-izn"/>
                 <constraint firstItem="TwB-uC-Qx8" firstAttribute="trailing" secondItem="1gE-hK-9XT" secondAttribute="trailing" id="cMF-a0-q4S"/>
                 <constraint firstItem="gaF-01-BlZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1gE-hK-9XT" secondAttribute="bottom" priority="999" constant="8" id="cns-k9-PxD"/>
                 <constraint firstItem="1gE-hK-9XT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" priority="999" id="e7x-7V-eVa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1gE-hK-9XT" secondAttribute="trailing" constant="20" id="foI-8P-WpT"/>
                 <constraint firstItem="TwB-uC-Qx8" firstAttribute="leading" secondItem="1gE-hK-9XT" secondAttribute="leading" id="gpt-e4-5lo"/>
-                <constraint firstItem="WYr-f4-eo3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hEE-NP-qcV"/>
                 <constraint firstItem="1gE-hK-9XT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="p9f-gs-tZj"/>
+                <constraint firstItem="WYr-f4-eo3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yxK-LL-4Bh"/>
             </constraints>
             <point key="canvasLocation" x="32.093023255813954" y="19.95708154506438"/>
         </view>
     </objects>
     <resources>
         <image name="Back Item" width="44" height="44"/>
-        <image name="Picker Item" width="20" height="20"/>
+        <image name="Picker Item" width="24" height="24"/>
         <image name="Save Item" width="44" height="44"/>
         <image name="Skin Creator Canvas Background" width="1400" height="2000"/>
         <image name="import-library" width="80" height="80"/>

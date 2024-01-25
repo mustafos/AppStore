@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeadBodyPartViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeadBodyPartViewController" customModule="Crafty_Craft_10_2" customModuleProvider="target">
             <connections>
                 <outlet property="backHeadImageView" destination="UNC-YR-SGb" id="KuM-ZX-GPc"/>
                 <outlet property="bottomHeadImageView" destination="cds-LI-qN8" id="6mu-uF-fmS"/>
@@ -57,14 +57,12 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="Dza-YI-0YO" firstAttribute="leading" secondItem="BVu-gC-sEb" secondAttribute="leading" constant="20" id="PD9-Tj-Y5h"/>
-                        <constraint firstItem="Dza-YI-0YO" firstAttribute="top" secondItem="BVu-gC-sEb" secondAttribute="top" constant="20" id="PoL-cx-V6D"/>
-                        <constraint firstAttribute="height" constant="84" id="S6P-kj-asY">
-                            <variation key="heightClass=regular-widthClass=regular" constant="64"/>
-                        </constraint>
-                        <constraint firstItem="iVo-Eb-o9r" firstAttribute="centerX" secondItem="BVu-gC-sEb" secondAttribute="centerX" id="g00-gJ-0C5"/>
-                        <constraint firstAttribute="bottom" secondItem="Dza-YI-0YO" secondAttribute="bottom" constant="20" id="rSc-ql-01F"/>
-                        <constraint firstItem="iVo-Eb-o9r" firstAttribute="centerY" secondItem="BVu-gC-sEb" secondAttribute="centerY" id="wsN-V5-gAs"/>
+                        <constraint firstItem="iVo-Eb-o9r" firstAttribute="centerY" secondItem="BVu-gC-sEb" secondAttribute="centerY" id="3NT-DH-S3R"/>
+                        <constraint firstAttribute="bottom" secondItem="Dza-YI-0YO" secondAttribute="bottom" constant="20" id="54L-et-U16"/>
+                        <constraint firstItem="Dza-YI-0YO" firstAttribute="top" secondItem="BVu-gC-sEb" secondAttribute="top" constant="20" id="8tf-hh-S6A"/>
+                        <constraint firstItem="Dza-YI-0YO" firstAttribute="leading" secondItem="BVu-gC-sEb" secondAttribute="leading" constant="20" id="L5i-re-ie0"/>
+                        <constraint firstAttribute="height" constant="84" id="bfN-eQ-pko"/>
+                        <constraint firstItem="iVo-Eb-o9r" firstAttribute="centerX" secondItem="BVu-gC-sEb" secondAttribute="centerX" id="doP-UR-ti6"/>
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="8PU-8l-Viq">
@@ -198,11 +196,11 @@
             <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
                 <constraint firstItem="8PU-8l-Viq" firstAttribute="top" secondItem="BVu-gC-sEb" secondAttribute="bottom" constant="80" id="1kb-Ej-oMI"/>
-                <constraint firstAttribute="trailing" secondItem="BVu-gC-sEb" secondAttribute="trailing" id="8Kf-us-DK5"/>
-                <constraint firstItem="BVu-gC-sEb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FHg-zE-A5F"/>
                 <constraint firstItem="8PU-8l-Viq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FUp-gd-9gh"/>
-                <constraint firstItem="BVu-gC-sEb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UMh-ZX-T3F"/>
+                <constraint firstItem="BVu-gC-sEb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Mwq-Wv-ai9"/>
+                <constraint firstItem="BVu-gC-sEb" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="O4Y-1y-SzG"/>
                 <constraint firstItem="8PU-8l-Viq" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.559859" id="g93-1q-NpN"/>
+                <constraint firstItem="BVu-gC-sEb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s2O-XA-Zz4"/>
             </constraints>
             <point key="canvasLocation" x="-11.450381679389313" y="20.422535211267608"/>
         </view>

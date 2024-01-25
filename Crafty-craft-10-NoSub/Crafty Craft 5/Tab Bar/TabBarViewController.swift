@@ -1,51 +1,48 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-    // MARK: - Private properties -
-    private let isIpad = Device.iPad
     
+    // MARK: - Private properties -
     private let networkingMonitor = NetworkStatusMonitor.shared
     
-    private var tabBarTitleHorizontalOffset: CGFloat { isIpad ? 80 : 40 }
+    private let isIpad = Device.iPad
     
-    private lazy var contentViewController: UIViewController = {
-        let viewController = ContentTabViewController()
-        var unselectedImage: UIImage? = viewController.tabBarIcon
-        var selectedImage = viewController.tabBarSelectedIcon
-        viewController.tabBarItem = createCustomTabBarItem(unselectedImage: unselectedImage, selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
-        return viewController
-    }()
+    private let createTab = CustomTabBarItem(
+        index: 0,
+        icon: CreateTabViewController().tabBarIcon?.withTintColor(.black, renderingMode: .alwaysOriginal),
+        selectedIcon: CreateTabViewController().tabBarSelectedIcon?.withRenderingMode(.alwaysOriginal),
+        viewController: CreateTabViewController())
     
-    private lazy var createViewController: UIViewController = {
-        let viewController = CreateTabViewController()
-        var unselectedImage: UIImage? = viewController.tabBarIcon
-        var selectedImage = viewController.tabBarSelectedIcon
-        viewController.tabBarItem = createCustomTabBarItem(unselectedImage: unselectedImage, selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
-        return viewController
-    }()
+    private let contentTab = CustomTabBarItem(
+        index: 1,
+        icon: ContentTabViewController().tabBarIcon?.withTintColor(.black, renderingMode: .alwaysOriginal),
+        selectedIcon: ContentTabViewController().tabBarSelectedIcon?.withRenderingMode(.alwaysOriginal),
+        viewController: ContentTabViewController())
     
-    private lazy var seedsViewController: UIViewController = {
-        let viewController = SeedTabViewController()
-        var unselectedImage: UIImage? = viewController.tabBarIcon
-        var selectedImage = viewController.tabBarSelectedIcon
-        viewController.tabBarItem = createCustomTabBarItem(unselectedImage: unselectedImage, selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
-        return viewController
-    }()
+    private let seedsTab = CustomTabBarItem(
+        index: 2,
+        icon: SeedTabViewController().tabBarIcon?.withTintColor(.black, renderingMode: .alwaysOriginal),
+        selectedIcon: SeedTabViewController().tabBarSelectedIcon?.withRenderingMode(.alwaysOriginal),
+        viewController: SeedTabViewController())
     
-    private lazy var serversViewController: UIViewController = {
-        let viewController = ServersTabViewController()
-        var unselectedImage: UIImage? = viewController.tabBarIcon
-        var selectedImage = viewController.tabBarSelectedIcon
-        viewController.tabBarItem = createCustomTabBarItem(unselectedImage: unselectedImage, selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
-        return viewController
-    }()
+    private let serverTab = CustomTabBarItem(
+        index: 3,
+        icon: ServersTabViewController().tabBarIcon?.withTintColor(.black, renderingMode: .alwaysOriginal),
+        selectedIcon: ServersTabViewController().tabBarSelectedIcon?.withRenderingMode(.alwaysOriginal),
+        viewController: ServersTabViewController())
+    
+    private lazy var tabBarTabs: [CustomTabBarItem] = [createTab, contentTab, seedsTab, serverTab]
+    
+    private var customTabBar: CustomTabBar!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        setTabBarAppearance()
+        setupCustomTabBar()
+        setupConstraints()
+        setupProperties()
         setupManagers()
+        view.layoutIfNeeded()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,112 +50,54 @@ class TabBarViewController: UITabBarController {
         if !networkingMonitor.isNetworkAvailable {
             showMess()
         }
-        
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    
-    
     // MARK: - Methods -
-    private func createCustomTabBarItem(unselectedImage: UIImage?, selectedImage: UIImage?) -> UITabBarItem {
-        return UITabBarItem(title: nil, image: unselectedImage, selectedImage: selectedImage)
+    
+    private func setupCustomTabBar() {
+        self.customTabBar = CustomTabBar(tabBarTabs: tabBarTabs, onTabSelected: { [weak self] index in
+            self?.selectTabWith(index: index)
+        })
     }
     
-    private func setTabBarAppearance() {
-        viewControllers = [createViewController, contentViewController, seedsViewController, serversViewController]
-        
-        let positionOnX: CGFloat = 10
-        let positionOnY: CGFloat = 14
-        let width = tabBar.bounds.width - positionOnX * 2
-        let height = tabBar.bounds.height + positionOnY * 2
-        
-        let roundLayer = CAShapeLayer()
-        
-        let bezierPath = UIBezierPath(
-            roundedRect: CGRect(
-                x: positionOnX,
-                y: tabBar.bounds.minY - positionOnY,
-                width: width,
-                height: height
-            ),
-            cornerRadius: height / 2
-        )
-        
-        roundLayer.path = bezierPath.cgPath
-        
-        tabBar.layer.insertSublayer(roundLayer, at: 0)
-        
-        tabBar.itemPositioning = .centered
-        
-        roundLayer.strokeColor = UIColor.black.cgColor
-        roundLayer.lineWidth = 1.0
-        roundLayer.fillColor = UIColor(red: 0.97, green: 0.81, blue: 0.38, alpha: 1).cgColor
-        roundLayer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        roundLayer.shadowOpacity = 1
-        roundLayer.shadowRadius = 4
-        roundLayer.shadowOffset = CGSize(width: 0, height: 4)
-        
-        tabBar.unselectedItemTintColor = UIColor(named: "EerieBlackColor")
-        
-        if let items = tabBar.items {
-            for (index, item) in items.enumerated() {
-                if index == 0 {
-                    item.imageInsets = UIEdgeInsets(top: 6, left: min(25, tabBar.bounds.width / 2 - 10), bottom: -6, right: -min(25, tabBar.bounds.width / 2 - 10))
-                } else if index == 3 {
-                    item.imageInsets = UIEdgeInsets(top: 6, left: -min(25, tabBar.bounds.width / 2 - 10), bottom: -6, right: min(25, tabBar.bounds.width / 2 - 10))
-                } else {
-                    item.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
-                }
-            }
+    private func setupConstraints() {
+        view.addSubview(customTabBar)
+        customTabBar.translatesAutoresizingMaskIntoConstraints = false
+        if isIpad {
+            NSLayoutConstraint.activate([
+                customTabBar.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+                customTabBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                customTabBar.heightAnchor.constraint(equalToConstant: 76),
+                customTabBar.widthAnchor.constraint(equalToConstant: 370)
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                customTabBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12),
+                customTabBar.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: 10),
+                customTabBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -12),
+                customTabBar.heightAnchor.constraint(equalToConstant: 76)
+            ])
         }
+    }
+    
+    private func setupProperties() {
+        tabBar.isHidden = true
+        customTabBar.addShadow()
+        
+        self.selectedIndex = 0
+        let controllers = tabBarTabs.map { item in
+            return item.viewController
+        }
+        self.setViewControllers(controllers, animated: true)
+    }
+    
+    private func selectTabWith(index: Int) {
+        self.selectedIndex = index
     }
     
     private func setupManagers() {
         self.networkingMonitor.delegate = self
-    }
-}
-
-// MARK: - UITabBarControllerDelegate
-extension TabBarViewController: UITabBarControllerDelegate {
-    
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-
-        let index = self.tabBar.items?.firstIndex(of: item)
-        let subView = tabBar.subviews[index!+1].subviews.first as! UIImageView
-        self.performSpringAnimation(imgView: subView)
-    }
-
-    //func to perform spring animation on imageview
-    private func performSpringAnimation(imgView: UIImageView) {
-
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
-
-            imgView.transform = CGAffineTransform.init(scaleX: 1.4, y: 1.4)
-
-            //reducing the size
-            UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
-                imgView.transform = CGAffineTransform.init(scaleX: 1, y: 1)
-            }) { (flag) in
-            }
-        }) { (flag) in
-
-        }
-    }
-    
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        // Add your custom transition animation here
-        if let items = tabBar.items, let selectedIndex = viewControllers?.firstIndex(of: viewController) {
-            let transition = CATransition()
-            transition.duration = 0.3
-            transition.type = .fade
-            tabBar.layer.add(transition, forKey: nil)
-            
-            for (index, item) in items.enumerated() {
-                if index == selectedIndex {
-                    // Apply animation or customization when the selected item is changed
-                }
-            }
-        }
     }
 }
 

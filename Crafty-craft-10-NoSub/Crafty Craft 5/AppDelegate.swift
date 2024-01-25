@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupTabBarchik() {
         let appearance = UITabBarItem.appearance()
-        let tabbarFont = UIFont(name: "Poppins-Medium", size: Device.iPhone ? 12 : 16)
+        let tabbarFont = UIFont(name: "Montserrat-Medium", size: Device.iPhone ? 12 : 16)
 
         let attributes = [NSAttributedString.Key.font: tabbarFont, NSAttributedString.Key.foregroundColor: UIColor(red: 0.929, green: 0.823, blue: 0.674, alpha: 1)]
         let attributes2 = [NSAttributedString.Key.font: tabbarFont, NSAttributedString.Key.foregroundColor: UIColor(red: 0.235, green: 0.373, blue: 0.388, alpha: 1)]

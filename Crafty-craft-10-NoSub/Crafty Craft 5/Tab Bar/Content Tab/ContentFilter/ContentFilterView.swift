@@ -27,7 +27,7 @@ struct ContentFilterView: View {
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 8)
-            .frame(width: 350, height: 48, alignment: .center)
+            .frame(width: .infinity, height: 50, alignment: .center)
             .font(Font.custom("Montserrat", size: 16).weight(.semibold))
             .foregroundColor(.black)
             .background(Color("YellowSelectiveColor"))

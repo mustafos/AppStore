@@ -44,7 +44,6 @@ class SkinEditorViewController: UIViewController {
         menuCollectionView.reloadData()
     }
     
-    
     // MARK: - Setup
     
     private func setupNavigationBar() {

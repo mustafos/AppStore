@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HandsBodyPartViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HandsBodyPartViewController" customModule="Crafty_Craft_10_2" customModuleProvider="target">
             <connections>
                 <outlet property="backArm" destination="VNH-EJ-V4g" id="UKV-G8-scs"/>
                 <outlet property="bottomArm" destination="DvS-f2-cjV" id="YfL-ea-kDW"/>
@@ -49,7 +49,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKIN CREATOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfg-ND-EJG">
-                            <rect key="frame" x="110" y="0.0" width="173" height="84"/>
+                            <rect key="frame" x="110" y="28.666666666666671" width="173" height="27"/>
                             <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
                             <color key="textColor" name="BeigeColor"/>
                             <nil key="highlightedColor"/>
@@ -57,17 +57,12 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="84" id="0nr-jc-Sia">
-                            <variation key="heightClass=regular-widthClass=regular" constant="64"/>
-                        </constraint>
-                        <constraint firstItem="MET-tN-8sM" firstAttribute="top" secondItem="GoM-H6-XQt" secondAttribute="top" constant="20" id="D5Y-Yr-9e8"/>
-                        <constraint firstAttribute="bottom" secondItem="MET-tN-8sM" secondAttribute="bottom" constant="20" id="HMW-Dw-lXh"/>
-                        <constraint firstItem="MET-tN-8sM" firstAttribute="leading" secondItem="GoM-H6-XQt" secondAttribute="leading" constant="20" id="KKI-tC-jUG"/>
-                        <constraint firstItem="Lfg-ND-EJG" firstAttribute="centerX" secondItem="GoM-H6-XQt" secondAttribute="centerX" id="XA9-ob-Eje"/>
-                        <constraint firstItem="Lfg-ND-EJG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MET-tN-8sM" secondAttribute="trailing" constant="8" id="YaI-aQ-Lda"/>
-                        <constraint firstItem="Lfg-ND-EJG" firstAttribute="centerY" secondItem="GoM-H6-XQt" secondAttribute="centerY" id="bJz-TL-Hn4"/>
-                        <constraint firstItem="Lfg-ND-EJG" firstAttribute="top" secondItem="GoM-H6-XQt" secondAttribute="top" id="jmv-8f-2r3"/>
-                        <constraint firstAttribute="bottom" secondItem="Lfg-ND-EJG" secondAttribute="bottom" id="wXO-E4-yac"/>
+                        <constraint firstItem="MET-tN-8sM" firstAttribute="top" secondItem="GoM-H6-XQt" secondAttribute="top" constant="20" id="3K1-Hz-FHJ"/>
+                        <constraint firstAttribute="bottom" secondItem="MET-tN-8sM" secondAttribute="bottom" constant="20" id="4L7-4z-dqy"/>
+                        <constraint firstAttribute="height" constant="84" id="Dg9-ZB-5q2"/>
+                        <constraint firstItem="Lfg-ND-EJG" firstAttribute="centerX" secondItem="GoM-H6-XQt" secondAttribute="centerX" id="Szb-80-p5w"/>
+                        <constraint firstItem="MET-tN-8sM" firstAttribute="leading" secondItem="GoM-H6-XQt" secondAttribute="leading" constant="20" id="swj-1J-2Wa"/>
+                        <constraint firstItem="Lfg-ND-EJG" firstAttribute="centerY" secondItem="GoM-H6-XQt" secondAttribute="centerY" id="zAa-sD-z1n"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg2-Be-mix">
@@ -189,18 +184,18 @@
             <constraints>
                 <constraint firstItem="eIx-5U-EgI" firstAttribute="width" secondItem="ETK-MP-yX8" secondAttribute="width" id="1wo-8E-v3V"/>
                 <constraint firstItem="eIx-5U-EgI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2Af-oh-g2c"/>
-                <constraint firstItem="GoM-H6-XQt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4fb-e1-a6h"/>
                 <constraint firstItem="DvS-f2-cjV" firstAttribute="top" secondItem="sAv-33-b7M" secondAttribute="bottom" constant="5" id="5lS-tO-2lQ"/>
                 <constraint firstItem="Mj1-C6-oU1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6ai-hx-r2w"/>
                 <constraint firstItem="DvS-f2-cjV" firstAttribute="width" secondItem="ETK-MP-yX8" secondAttribute="width" id="Bav-Br-Q8k"/>
                 <constraint firstItem="Mj1-C6-oU1" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.21" id="PTu-I7-GXF"/>
-                <constraint firstItem="eg2-Be-mix" firstAttribute="top" secondItem="GoM-H6-XQt" secondAttribute="bottom" constant="100" id="V8O-xs-Rg4"/>
-                <constraint firstItem="GoM-H6-XQt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YDc-AG-ZIT"/>
+                <constraint firstItem="eg2-Be-mix" firstAttribute="top" secondItem="GoM-H6-XQt" secondAttribute="bottom" priority="950" constant="100" id="V8O-xs-Rg4"/>
                 <constraint firstItem="Mj1-C6-oU1" firstAttribute="top" secondItem="eIx-5U-EgI" secondAttribute="bottom" constant="24" id="ZqS-tO-WcJ"/>
+                <constraint firstItem="GoM-H6-XQt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="d2y-Yf-cXc"/>
                 <constraint firstItem="eIx-5U-EgI" firstAttribute="top" secondItem="eg2-Be-mix" secondAttribute="bottom" constant="5" id="dH8-ua-zqp"/>
-                <constraint firstAttribute="trailing" secondItem="GoM-H6-XQt" secondAttribute="trailing" id="eMt-2W-Lvd"/>
+                <constraint firstItem="GoM-H6-XQt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dMd-B7-WuQ"/>
                 <constraint firstItem="Mj1-C6-oU1" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.23" id="god-qI-5fT"/>
                 <constraint firstItem="sAv-33-b7M" firstAttribute="top" secondItem="Mj1-C6-oU1" secondAttribute="bottom" constant="24" id="lYq-LB-hkR"/>
+                <constraint firstItem="GoM-H6-XQt" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="nM5-Jt-DaR"/>
                 <constraint firstItem="sAv-33-b7M" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oJd-zX-OHV"/>
                 <constraint firstItem="eg2-Be-mix" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="p1I-as-XKB"/>
                 <constraint firstItem="DvS-f2-cjV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vPR-10-luc"/>

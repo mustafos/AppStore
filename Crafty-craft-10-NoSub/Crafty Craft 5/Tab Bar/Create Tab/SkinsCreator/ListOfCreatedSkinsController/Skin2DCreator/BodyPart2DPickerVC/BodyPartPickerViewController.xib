@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BodyPartPickerViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BodyPartPickerViewController" customModule="Crafty_Craft_10_2" customModuleProvider="target">
             <connections>
                 <outlet property="bodyComponentView" destination="CbH-wi-X2b" id="s1J-p6-odw"/>
                 <outlet property="bodyPartsContainer" destination="Pnv-aH-El4" id="FSC-er-4PK"/>
@@ -56,13 +56,12 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="gAt-LD-z83" secondAttribute="bottom" constant="20" id="1pg-j1-Mwx"/>
-                        <constraint firstItem="gAt-LD-z83" firstAttribute="top" secondItem="0XI-7f-nBV" secondAttribute="top" constant="20" id="34P-1c-PSW"/>
-                        <constraint firstItem="BNE-ol-vcM" firstAttribute="centerX" secondItem="0XI-7f-nBV" secondAttribute="centerX" id="Foo-Tb-nRv"/>
-                        <constraint firstAttribute="height" constant="84" id="Uhv-aS-Z6a"/>
-                        <constraint firstItem="BNE-ol-vcM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gAt-LD-z83" secondAttribute="trailing" constant="8" id="Wfa-Ef-KOT"/>
-                        <constraint firstItem="gAt-LD-z83" firstAttribute="leading" secondItem="0XI-7f-nBV" secondAttribute="leading" constant="20" id="prh-Lf-qnk"/>
-                        <constraint firstItem="BNE-ol-vcM" firstAttribute="centerY" secondItem="0XI-7f-nBV" secondAttribute="centerY" id="vJB-0s-K9G"/>
+                        <constraint firstAttribute="height" constant="84" id="E0a-lL-v4a"/>
+                        <constraint firstItem="BNE-ol-vcM" firstAttribute="centerY" secondItem="0XI-7f-nBV" secondAttribute="centerY" id="NUS-6a-YKh"/>
+                        <constraint firstItem="gAt-LD-z83" firstAttribute="top" secondItem="0XI-7f-nBV" secondAttribute="top" constant="20" id="a4O-mC-Lmd"/>
+                        <constraint firstAttribute="bottom" secondItem="gAt-LD-z83" secondAttribute="bottom" constant="20" id="e14-xp-OEq"/>
+                        <constraint firstItem="gAt-LD-z83" firstAttribute="leading" secondItem="0XI-7f-nBV" secondAttribute="leading" constant="20" id="uQR-FQ-Cfp"/>
+                        <constraint firstItem="BNE-ol-vcM" firstAttribute="centerX" secondItem="0XI-7f-nBV" secondAttribute="centerX" id="xu7-Ve-oWF"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1GI-C5-0LV" userLabel="Control 2" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
@@ -130,14 +129,14 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
-                <constraint firstItem="1GI-C5-0LV" firstAttribute="top" secondItem="0XI-7f-nBV" secondAttribute="bottom" id="3IK-aK-dLT"/>
-                <constraint firstItem="0XI-7f-nBV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3h7-dR-LQr"/>
-                <constraint firstItem="0XI-7f-nBV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5pX-py-g7B"/>
                 <constraint firstItem="Pnv-aH-El4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Alw-n7-afx"/>
+                <constraint firstItem="0XI-7f-nBV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ura-wo-97Y"/>
                 <constraint firstItem="Pnv-aH-El4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="40" id="WGQ-Ie-ydV"/>
                 <constraint firstItem="1GI-C5-0LV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ZFp-m3-Xoy"/>
-                <constraint firstItem="0XI-7f-nBV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gPx-Hu-bkU"/>
+                <constraint firstItem="0XI-7f-nBV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="gAD-Zm-rFv"/>
+                <constraint firstItem="0XI-7f-nBV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nEw-Qu-OU2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1GI-C5-0LV" secondAttribute="trailing" constant="20" id="qwD-Zd-ntO"/>
+                <constraint firstItem="1GI-C5-0LV" firstAttribute="top" secondItem="0XI-7f-nBV" secondAttribute="bottom" id="t7x-bo-P1z"/>
             </constraints>
             <point key="canvasLocation" x="-116" y="23.645320197044335"/>
         </view>

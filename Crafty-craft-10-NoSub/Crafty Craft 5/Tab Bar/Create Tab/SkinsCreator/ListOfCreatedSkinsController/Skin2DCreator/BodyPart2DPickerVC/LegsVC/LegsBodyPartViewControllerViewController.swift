@@ -135,7 +135,7 @@ class LegsBodyPartViewControllerViewController: UIViewController {
         
         let imageViews: [UIImageView] = [topLegImageView, bottomLegImageView, leftLegImageView, rightLegImageView, frontLegImageView, backLegImageView]
         imageViews.forEach({ $0.layer.magnificationFilter = .nearest })
-        imageViews.forEach({ $0.setBorder(size: 2, color: UIColor(named: "greenCCRedesign")!) })
+        imageViews.forEach({ $0.setBorder(size: 2, color: .black) })
         
         let sides = [
             leg.top,

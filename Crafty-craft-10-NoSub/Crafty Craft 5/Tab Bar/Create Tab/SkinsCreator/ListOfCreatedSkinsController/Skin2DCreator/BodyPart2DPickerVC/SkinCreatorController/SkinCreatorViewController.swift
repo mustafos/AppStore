@@ -110,7 +110,6 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     
     @IBOutlet weak var toolsStackView: UIStackView!
     
-    
     @IBOutlet weak var colorsBrashContainerView: UIView!
     @IBOutlet var toolButtons: [UIButton]!
     
@@ -452,15 +451,15 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
         
         backgroundImageView.backgroundColor = .clear
         backgroundImageView.contentMode = .scaleToFill
-        backgroundImageView.roundCorners(.allCorners, radius: 12)
+        backgroundImageView.roundCorners(12)
         backgroundImageView.layer.borderColor = UIColor(.black).cgColor
         backgroundImageView.layer.borderWidth = 1
         
-        canvasContainer.roundCorners(.allCorners, radius: 12)
+        canvasContainer.roundCorners(12)
         canvasContainer.layer.borderColor = UIColor(.black).cgColor
         canvasContainer.layer.borderWidth = 1
         
-        toolsStackView.roundCorners(.allCorners, radius: 34)
+        toolsStackView.roundCorners(36)
         toolsStackView.layer.borderColor = UIColor(.black).cgColor
         toolsStackView.layer.borderWidth = 1
         
