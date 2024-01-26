@@ -66,16 +66,17 @@ class TabBarViewController: UITabBarController {
         customTabBar.translatesAutoresizingMaskIntoConstraints = false
         if isIpad {
             NSLayoutConstraint.activate([
+                customTabBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
+                customTabBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),
                 customTabBar.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
                 customTabBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                customTabBar.heightAnchor.constraint(equalToConstant: 76),
-                customTabBar.widthAnchor.constraint(equalToConstant: 370)
+                customTabBar.heightAnchor.constraint(equalToConstant: 76)
             ])
         } else {
             NSLayoutConstraint.activate([
-                customTabBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12),
+                customTabBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
                 customTabBar.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: 10),
-                customTabBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -12),
+                customTabBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
                 customTabBar.heightAnchor.constraint(equalToConstant: 76)
             ])
         }

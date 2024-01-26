@@ -1,6 +1,6 @@
 //
 //  ContentFilterView.swift
-//  Crafty Craft 5
+//  Crafty Craft 10
 //
 //  Created by dev on 01.08.2023.
 //  Copyright © 2023 Noname Digital. All rights reserved.
@@ -10,38 +10,82 @@ import SwiftUI
 
 struct ContentFilterView: View {
     @ObservedObject var viewModel: ContentFilterViewModel
+    @State var show: Bool = true
+    @State var name: String = "Item 1"
+    
     var body: some View {
-        Menu {
-            ForEach(0..<viewModel.buttons.count, id: \.self) { index in
-                Button {
-                    viewModel.selectButton(at: index)
-                } label: {
-                    Text(viewModel.buttons[index].label)
+        VStack {
+            ZStack {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                    ScrollView(showsIndicators: false) {
+                        VStack(spacing: 17) {
+                            ForEach(viewModel.buttons.indices, id: \.self) { item in
+                                if item != 0 {
+                                    Rectangle().frame(height: 1)
+                                        .foregroundStyle(.gray)
+                                }
+                                Button {
+                                    withAnimation {
+                                        viewModel.selectButton(at: item)
+                                        name = viewModel.buttons[item].label
+                                        show.toggle()
+                                    }
+                                } label: {
+                                    HStack {
+                                        Text(viewModel.buttons[item].label)
+                                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                                            .foregroundStyle(.black)
+                                        Spacer()
+                                        if let icon = viewModel.buttons[item].icon {
+                                            Image(uiImage: icon)
+                                                .resizable()
+                                                .frame(width: 20, height: 20)
+                                        }
+                                    }
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.vertical, 15)
+                    }
+                }
+                .overlay {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(lineWidth: 1)
+                        .foregroundStyle(.gray)
+                        .padding(1)
+                }
+                .frame(height: show ? 200 : 50)
+                .offset(y: show ? 0 : -135)
+                .foregroundStyle(.ultraThinMaterial)
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10).frame(height: 60)
+                        .foregroundStyle(.white)
+                    HStack {
+                        Text(name)
+                            .font(.title2)
+                        Spacer()
+                        Image(systemName: "chevron.down")
+                            .rotationEffect(.degrees(show ? -180 : 0))
+                    }
+                    .padding(.horizontal)
+                    .foregroundStyle(.black)
+                    RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1).frame(height: 60)
+                        .padding(1)
+                }
+                .offset(y: -133)
+                .onTapGesture {
+                    withAnimation {
+                        show.toggle()
+                    }
                 }
             }
-        } label: {
-            HStack {
-                Text(viewModel.buttons[viewModel.selectedIndex].label)
-                Spacer()
-                Image(systemName: "chevron.down")
-            }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 8)
-            .frame(width: .infinity, height: 50, alignment: .center)
-            .font(Font.custom("Montserrat", size: 16).weight(.semibold))
-            .foregroundColor(.black)
-            .background(Color("YellowSelectiveColor"))
-            .cornerRadius(40)
-            .overlay(
-                RoundedRectangle(cornerRadius: 40)
-                    .stroke(Color("EerieBlackColor"),lineWidth: 1)
-                    .shadow(color: Color.black, radius: 2, x: -2, y: -2)
-                    .clipShape(
-                        RoundedRectangle(cornerRadius: 40)
-                    )
-            )
         }
-        .shadow(radius: 5, x: 3, y: 3)
+        .padding()
+        .frame(height: 280).offset(y: 40)
     }
     
     func updateButtons(newButtons: [ContentFilterModel], selectedIndex: Int = 0) {
@@ -52,8 +96,6 @@ struct ContentFilterView: View {
     }
 }
 
-struct ContentFilterView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentFilterView(viewModel: ContentFilterViewModel(buttons: [], onSelect: {_ in }))
-    }
+#Preview {
+    ContentFilterView(viewModel: ContentFilterViewModel(buttons: [], onSelect: {_ in }))
 }

@@ -69,7 +69,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     var drawingHistory: [PKDrawing] = []
     var toolBarSelectedItem: ToolBarSelectedItem = .pencil {
         didSet {
-            colorsBrashContainerView.isHidden = false
+            toolsStackView.isHidden = false
             
             switch toolBarSelectedItem {
             case .pencil, .fill, .noise, .undo:
@@ -85,7 +85,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     
     var blurView: UIVisualEffectView?
     var alertWindow: UIWindow?
-    
+    private let isIpad = Device.iPad
     /// Attribute making sure that you cannot draw while you're pinching or panning
     /// around the screen.
     var canDraw = true
@@ -108,9 +108,8 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     
     //MARK: - Tools Outlets
     
-    @IBOutlet weak var toolsStackView: UIStackView!
+    @IBOutlet weak var toolsStackView: UIView!
     
-    @IBOutlet weak var colorsBrashContainerView: UIView!
     @IBOutlet var toolButtons: [UIButton]!
     
     @IBOutlet weak var pencilBtn: UIButton!
@@ -370,6 +369,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
         
         setupColorColletion()
         configureView()
+        setupConstraint()
         setUpCanvasContainerConstraints()
         setUpCanvasView()
         registerGestureRecognizer()
@@ -459,11 +459,30 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
         canvasContainer.layer.borderColor = UIColor(.black).cgColor
         canvasContainer.layer.borderWidth = 1
         
-        toolsStackView.roundCorners(36)
-        toolsStackView.layer.borderColor = UIColor(.black).cgColor
+        toolsStackView.roundCorners(.allCorners, radius: 36)
+        toolsStackView.backgroundColor = UIColor(named: "YellowSelectiveColor")
+        toolsStackView.layer.borderColor = UIColor.black.cgColor
         toolsStackView.layer.borderWidth = 1
         
         manageSelectedToolUI(tappedTool: pencilBtn)
+    }
+    
+    private func setupConstraint() {
+        view.addSubview(toolsStackView)
+        toolsStackView.translatesAutoresizingMaskIntoConstraints = false
+        if isIpad {
+            NSLayoutConstraint.activate([
+                toolsStackView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+                toolsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                toolsStackView.widthAnchor.constraint(equalToConstant: 370)
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                toolsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+                toolsStackView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: 10),
+                toolsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10)
+            ])
+        }
     }
     
     private func manageSelectedToolUI(tappedTool: UIButton) {
