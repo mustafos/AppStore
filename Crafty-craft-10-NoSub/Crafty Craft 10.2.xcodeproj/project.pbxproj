@@ -54,6 +54,7 @@
 		63BCE0E72AE01C5F005B1608 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BCE0E62AE01C5F005B1608 /* SettingsModel.swift */; };
 		63E876732A2A0C6B00B486B1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 63E876722A2A0C6B00B486B1 /* Realm */; };
 		63E876752A2A0C6B00B486B1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 63E876742A2A0C6B00B486B1 /* RealmSwift */; };
+		6A3D70A92B66FD9D00B631E8 /* ContentTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D70A82B66FD9D00B631E8 /* ContentTabViewController.swift */; };
 		6A59426C2B5FC032009E4BD0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A59426B2B5FC032009E4BD0 /* GoogleService-Info.plist */; };
 		6A59426E2B5FD35E009E4BD0 /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A59426D2B5FD35E009E4BD0 /* TabBarItemView.swift */; };
 		6A5942742B61135E009E4BD0 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5942732B61135E009E4BD0 /* CustomTabBar.swift */; };
@@ -76,7 +77,6 @@
 		6AB028C22B5E6341005586CC /* SeedTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028BE2B5E6341005586CC /* SeedTabViewController.xib */; };
 		6AB028C52B5E6350005586CC /* SeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028C32B5E6350005586CC /* SeedTableViewCell.xib */; };
 		6AB028C62B5E6350005586CC /* SeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB028C42B5E6350005586CC /* SeedTableViewCell.swift */; };
-		6AB028CB2B5E652F005586CC /* ContentTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB028C72B5E652F005586CC /* ContentTabViewController.swift */; };
 		6AB028CC2B5E6530005586CC /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB028C82B5E652F005586CC /* ContentCollectionViewCell.swift */; };
 		6AB028CD2B5E6530005586CC /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028C92B5E652F005586CC /* ContentCollectionViewCell.xib */; };
 		6AB028CE2B5E6530005586CC /* ContentTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028CA2B5E652F005586CC /* ContentTabViewController.xib */; };
@@ -342,6 +342,7 @@
 		639407D92A77D097007D6301 /* UIColor+Ext_encode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext_encode.swift"; sourceTree = "<group>"; };
 		63A8C1522A32045F005A117B /* NSLayoutConstraint_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint_Ext.swift; sourceTree = "<group>"; };
 		63BCE0E62AE01C5F005B1608 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		6A3D70A82B66FD9D00B631E8 /* ContentTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabViewController.swift; sourceTree = "<group>"; };
 		6A59426B2B5FC032009E4BD0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A59426D2B5FD35E009E4BD0 /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
 		6A5942732B61135E009E4BD0 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -364,7 +365,6 @@
 		6AB028BE2B5E6341005586CC /* SeedTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SeedTabViewController.xib; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Seed Tab/SeedTabViewController.xib"; sourceTree = "<group>"; };
 		6AB028C32B5E6350005586CC /* SeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SeedTableViewCell.xib; path = "../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Seed Tab/Cell/SeedTableViewCell.xib"; sourceTree = "<group>"; };
 		6AB028C42B5E6350005586CC /* SeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeedTableViewCell.swift; path = "../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Seed Tab/Cell/SeedTableViewCell.swift"; sourceTree = "<group>"; };
-		6AB028C72B5E652F005586CC /* ContentTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentTabViewController.swift; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Content Tab/ContentTabViewController.swift"; sourceTree = "<group>"; };
 		6AB028C82B5E652F005586CC /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentCollectionViewCell.swift; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Content Tab/ContentCollectionViewCell.swift"; sourceTree = "<group>"; };
 		6AB028C92B5E652F005586CC /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentCollectionViewCell.xib; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Content Tab/ContentCollectionViewCell.xib"; sourceTree = "<group>"; };
 		6AB028CA2B5E652F005586CC /* ContentTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentTabViewController.xib; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Content Tab/ContentTabViewController.xib"; sourceTree = "<group>"; };
@@ -1396,7 +1396,7 @@
 				F42CEC5B2A09226C00A6D2D6 /* Content Module */,
 				6AB028C82B5E652F005586CC /* ContentCollectionViewCell.swift */,
 				6AB028C92B5E652F005586CC /* ContentCollectionViewCell.xib */,
-				6AB028C72B5E652F005586CC /* ContentTabViewController.swift */,
+				6A3D70A82B66FD9D00B631E8 /* ContentTabViewController.swift */,
 				6AB028CA2B5E652F005586CC /* ContentTabViewController.xib */,
 				6FA9FC7C2A4DBB7D001A1CD6 /* Models */,
 			);
@@ -1695,7 +1695,6 @@
 				F438AA202A14C442007469E7 /* RSColourSlider.swift in Sources */,
 				6AB028D72B5E655D005586CC /* ContentViewController.swift in Sources */,
 				6AB0291D2B5E6742005586CC /* MCAddonFileManager.swift in Sources */,
-				6AB028CB2B5E652F005586CC /* ContentTabViewController.swift in Sources */,
 				F438AA172A14BB0D007469E7 /* HueView.swift in Sources */,
 				6AB029812B5E6B43005586CC /* Extension_EditorSkinModel+hideBodyParts.swift in Sources */,
 				63A8C1532A32045F005A117B /* NSLayoutConstraint_Ext.swift in Sources */,
@@ -1794,6 +1793,7 @@
 				6AB0290B2B5E66B6005586CC /* AddonOptionsViewController.swift in Sources */,
 				D7FB3E932A7BFC0B00D78B57 /* UIViewController+ActivityView.swift in Sources */,
 				D7310D722A842F810020D42F /* Image+Trim.swift in Sources */,
+				6A3D70A92B66FD9D00B631E8 /* ContentTabViewController.swift in Sources */,
 				D70970122A77B1DA0044F81F /* TintedTextField.swift in Sources */,
 				F40415DC2A126CD700066473 /* Constants.swift in Sources */,
 				035166712AFA3F0900035087 /* extensions-freeform.swift in Sources */,

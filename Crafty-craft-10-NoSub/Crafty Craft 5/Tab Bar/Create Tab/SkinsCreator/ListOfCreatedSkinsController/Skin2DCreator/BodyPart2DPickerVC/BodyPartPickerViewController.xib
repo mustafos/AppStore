@@ -86,43 +86,74 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnv-aH-El4" userLabel="partsContainer View">
-                    <rect key="frame" x="93.666666666666686" y="233.66666666666663" width="188" height="425"/>
+                    <rect key="frame" x="94.666666666666671" y="233.66666666666663" width="185.66666666666663" height="425"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fLD-Nx-lwi" userLabel="head component">
-                            <rect key="frame" x="48.999999999999993" y="0.0" width="89.333333333333314" height="89.333333333333329"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" name="BeigeColor"/>
-                        </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-wi-X2b" userLabel="body component">
-                            <rect key="frame" x="48.999999999999993" y="94.333333333333314" width="89.333333333333314" height="164"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" name="BeigeColor"/>
-                        </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33k-ux-xnD" userLabel="right arm component">
-                            <rect key="frame" x="143.66666666666666" y="94.333333333333314" width="44" height="164"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" name="BeigeColor"/>
-                        </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YP9-4z-M6R" userLabel="left arm component">
-                            <rect key="frame" x="0.0" y="94.333333333333314" width="43.666666666666664" height="164"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" name="BeigeColor"/>
-                        </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9KT-BE-xfe" userLabel="left leg component">
-                            <rect key="frame" x="49" y="261.33333333333331" width="43.666666666666657" height="163.66666666666669"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" name="BeigeColor"/>
-                        </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E1S-6Y-GRr" userLabel="right leg component">
-                            <rect key="frame" x="94.666666666666671" y="261.33333333333331" width="43.666666666666671" height="163.66666666666669"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" name="BeigeColor"/>
-                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ew5-5D-z6F">
+                            <rect key="frame" x="-2" y="22.333333333333343" width="190" height="380"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fLD-Nx-lwi" userLabel="head component">
+                                    <rect key="frame" x="48.999999999999986" y="0.0" width="92.000000000000014" height="92"/>
+                                    <color key="backgroundColor" name="BeigeColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="fLD-Nx-lwi" secondAttribute="height" multiplier="1:1" id="Ym1-oO-Fq5"/>
+                                        <constraint firstAttribute="width" constant="92" id="xeC-7z-1ao"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="FTK-78-dGq">
+                                    <rect key="frame" x="0.0" y="95" width="190" height="140"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YP9-4z-M6R" userLabel="left arm component">
+                                            <rect key="frame" x="0.0" y="0.0" width="46" height="140"/>
+                                            <color key="backgroundColor" name="BeigeColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="46" id="Avj-NA-lBH"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-wi-X2b" userLabel="body component">
+                                            <rect key="frame" x="48.999999999999986" y="0.0" width="92.000000000000014" height="140"/>
+                                            <color key="backgroundColor" name="BeigeColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="92" id="61r-z8-Ujx"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="33k-ux-xnD" userLabel="right arm component">
+                                            <rect key="frame" x="144" y="0.0" width="46" height="140"/>
+                                            <color key="backgroundColor" name="BeigeColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="46" id="5td-o6-s7h"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="140" id="M0u-2H-62d"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="OWK-4k-zhe">
+                                    <rect key="frame" x="48.999999999999986" y="238" width="92.000000000000014" height="142"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9KT-BE-xfe" userLabel="left leg component">
+                                            <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="142"/>
+                                            <color key="backgroundColor" name="BeigeColor"/>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E1S-6Y-GRr" userLabel="right leg component">
+                                            <rect key="frame" x="47.333333333333343" y="0.0" width="44.666666666666657" height="142"/>
+                                            <color key="backgroundColor" name="BeigeColor"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="92" id="R7K-1E-SsI"/>
+                                        <constraint firstAttribute="height" constant="142" id="jZt-r3-gdo"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="188" id="LUw-hP-U1s"/>
-                        <constraint firstAttribute="height" constant="425" id="TvF-Ip-dfl"/>
+                        <constraint firstAttribute="height" constant="425" id="6WP-dM-Caw"/>
+                        <constraint firstItem="Ew5-5D-z6F" firstAttribute="centerY" secondItem="Pnv-aH-El4" secondAttribute="centerY" id="BuN-cg-mG2"/>
+                        <constraint firstItem="Ew5-5D-z6F" firstAttribute="centerX" secondItem="Pnv-aH-El4" secondAttribute="centerX" id="OUU-mU-d4V"/>
+                        <constraint firstAttribute="width" secondItem="Pnv-aH-El4" secondAttribute="height" multiplier="7:16" id="ZcK-wo-x3S"/>
                     </constraints>
                 </view>
             </subviews>

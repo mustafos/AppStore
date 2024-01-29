@@ -176,6 +176,10 @@ final class SkinCreatorImportViewController: UIViewController {
     }
     
     private func displaySaveDialog() {
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = view.bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         saveAlertView = SaveAlertView()
         saveAlertView?.delegate = self
         saveAlertView?.frame = view.bounds
@@ -185,6 +189,7 @@ final class SkinCreatorImportViewController: UIViewController {
             string: currentEditableSkin?.name ?? "",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor(.gray)]
         )
+        saveAlertView?.insertSubview(blurView, at: 0)
         view.addSubview(saveAlertView!)
     }
     

@@ -23,7 +23,7 @@ extension ContentFilter: Equatable {
 
 struct ContentFilterModel {
     let icon: UIImage? = nil
-    let cornerIcon: UIImage? = UIImage(named: "lock button")  // New property for corner icon
+    let cornerIcon: UIImage? = UIImage(named: "lock button")
     let label: String
     let filter: ContentFilter
     var isLocked: Bool = false
@@ -56,5 +56,49 @@ class ContentFilterViewModel: ObservableObject {
         }
         // Callback about selected button
         onSelect(buttons[selectedIndex].filter)
+    }
+    
+    @ViewBuilder
+    func buttonView(for index: Int) -> some View {
+        Button(action: {
+            self.selectButton(at: index)
+        }) {
+            ZStack(alignment: .trailing) {  // Align content to the trailing edge
+                HStack {
+                    if let icon = buttons[index].icon {
+                        Image(uiImage: icon)
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                    }
+                    Text(buttons[index].label)
+                        .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
+                        .font(Font.custom("Montserrat-SemiBold", size: 16))
+                }
+                .frame(height: 30)
+                .background(
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                            .fill(selectedIndex == index ? Color.white : Color.clear)
+                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                            .stroke(.white, lineWidth: selectedIndex == index ? 0 : 1)
+                            .padding(1)
+                    }
+                )
+                .foregroundColor(
+                    selectedIndex == index ? Color.black : Color.white
+                )
+                
+                if buttons[index].isLocked == true {
+                    // Display corner icon only if contentFilterView is false or for indices other than latest and popular
+                    if let cornerIcon = buttons[index].cornerIcon {
+                        Image(uiImage: cornerIcon)
+                            .resizable()
+                            .frame(width: 16, height: 16)
+                            .offset(x: 4, y: -6)  // Position the corner icon outside the button
+                    }
+                }
+            }
+        }
+        .padding(.init(top: 0, leading: 1, bottom: 0, trailing: 1))
     }
 }

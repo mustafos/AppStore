@@ -96,7 +96,7 @@ extension SkinCreatorMainVC: UICollectionViewDelegate, UICollectionViewDataSourc
         
         if indexPath.row == 0 {
             let cell = menuCollectionView.dequeueReusableCell(withReuseIdentifier: "CreateNewItemCollectionViewCell", for: indexPath) as! CreateNewItemCollectionViewCell
-            cell.setCrateTitle("CREATE SKIN")
+            cell.setCrateTitle("Create skin")
             return cell
             
         } else {

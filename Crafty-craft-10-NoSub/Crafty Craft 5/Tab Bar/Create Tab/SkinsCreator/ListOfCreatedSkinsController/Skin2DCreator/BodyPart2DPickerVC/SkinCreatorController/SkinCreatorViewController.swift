@@ -180,6 +180,10 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
     }
     
     @IBAction func onNavBarBackButtonTapped(_ sender: UIButton) {
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = view.bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         saveAlertView = SaveAlertView()
         saveAlertView?.delegate = self
         saveAlertView?.dialogTextLabel.text = "Save skin before exit".uppercased()
@@ -190,6 +194,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
             string: currentEditableSkin?.name ?? "",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor(.gray)]
         )
+        saveAlertView?.insertSubview(blurView, at: 0)
         view.addSubview(saveAlertView!)
     }
     
@@ -459,7 +464,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
         canvasContainer.layer.borderColor = UIColor(.black).cgColor
         canvasContainer.layer.borderWidth = 1
         
-        toolsStackView.roundCorners(.allCorners, radius: 36)
+        toolsStackView.roundCorners(36)
         toolsStackView.backgroundColor = UIColor(named: "YellowSelectiveColor")
         toolsStackView.layer.borderColor = UIColor.black.cgColor
         toolsStackView.layer.borderWidth = 1
@@ -479,7 +484,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
         } else {
             NSLayoutConstraint.activate([
                 toolsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-                toolsStackView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: 10),
+                toolsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -21),
                 toolsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10)
             ])
         }
