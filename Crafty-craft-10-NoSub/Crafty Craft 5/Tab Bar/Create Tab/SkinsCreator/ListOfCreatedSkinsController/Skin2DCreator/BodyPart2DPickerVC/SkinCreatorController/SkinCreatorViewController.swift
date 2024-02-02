@@ -184,6 +184,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = view.bounds
         blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
         saveAlertView = SaveAlertView()
         saveAlertView?.delegate = self
         saveAlertView?.dialogTextLabel.text = "Save skin before exit".uppercased()

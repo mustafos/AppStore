@@ -20,7 +20,6 @@ extension ContentFilter: Equatable {
     }
 }
 
-
 struct ContentFilterModel {
     let icon: UIImage? = nil
     let cornerIcon: UIImage? = UIImage(named: "lock button")

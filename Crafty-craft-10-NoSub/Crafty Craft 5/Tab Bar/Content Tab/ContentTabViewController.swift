@@ -19,8 +19,7 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
     @IBOutlet private weak var contentCollectionView: UICollectionView!
     @IBOutlet private var roundedViewContainers: [UIView]!
     @IBOutlet private weak var sortButtonsContainerView: UIView!
-    
-    
+    private var contentFilterHeightConstraint: NSLayoutConstraint?
     @IBOutlet weak var controlSwitcher: BetterSegmentedControl!
     
     @IBOutlet private weak var tabChooseStackView: UIStackView!
@@ -43,7 +42,6 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
     private var skinNotifictionToken: NotificationToken?
     private var mapsNotifictionToken: NotificationToken?
     private var addonNotifictionToken: NotificationToken?
-    
     
     // MARK: - Properties
     
@@ -384,20 +382,22 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         
         // Create a UIHostingController with the SwiftUI view
         let hostingController = UIHostingController(rootView: contentFilterView)
-        hostingController.view.backgroundColor = .clear
+        hostingController.view.backgroundColor = .systemIndigo
         
         // Add as a child of the current view controller
         addChild(hostingController)
-        // TODO: – Fix Scrollable DropDown Button
+        
         // Add the SwiftUI view to the view controller view hierarchy
         sortButtonsContainerView.addSubview(hostingController.view)
+        
         // Set constraints to define the SwiftUI view's layout
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             hostingController.view.leadingAnchor.constraint(equalTo: sortButtonsContainerView.leadingAnchor),
             hostingController.view.trailingAnchor.constraint(equalTo: sortButtonsContainerView.trailingAnchor),
             hostingController.view.topAnchor.constraint(equalTo: sortButtonsContainerView.topAnchor),
-            hostingController.view.bottomAnchor.constraint(equalTo: sortButtonsContainerView.bottomAnchor)
+//            sortButtonsContainerView.heightAnchor.constraint(equalToConstant: 48)
         ])
         
         // Notify the hosting controller that it has moved to the parent view controller
@@ -673,44 +673,44 @@ extension ContentTabViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func showSuggestionsTableView() {
-        if tableViewContainer == nil {
-            let y: CGFloat = navigationBarContainerView.frame.height / 2 + 1
-            let yPhone: CGFloat = navigationBarContainerView.frame.height - 5
-            tableViewContainer = UIView(frame: CGRect(x: searchBarView.frame.origin.x,
+            if tableViewContainer == nil {
+                let y: CGFloat = navigationBarContainerView.frame.height / 2 + 1
+                let yPhone: CGFloat = navigationBarContainerView.frame.height - 5
+                tableViewContainer = UIView(frame: CGRect(x: searchBarView.frame.origin.x,
                                                           y: isIpad ? y : yPhone,
                                                           width: searchBarView.frame.width,
                                                           height: tableViewContainerHeight))
-            
-            suggestionsTableView = UITableView(frame: CGRect(x: 0,
-                                                             y: searchBarView.frame.size.height,
-                                                             width: tableViewContainer!.frame.width,
-                                                             height: tableViewContainer!.frame.size.height - searchBarView.frame.size.height))
-            
-            suggestionsTableView?.register(UINib(nibName: "SearchSuggestionCell", bundle: nil), forCellReuseIdentifier: SearchSuggestionCell.identifier)
-            suggestionsTableView?.delegate = self
-            suggestionsTableView?.dataSource = self
-            suggestionsTableView?.contentInsetAdjustmentBehavior = .never
-            suggestionsTableView?.backgroundColor = .clear
-            
-            tableViewContainer?.backgroundColor = UIColor(named: "YellowSelectiveColor")
-
-            // corners
-            tableViewContainer?.layer.borderWidth = 1
-            tableViewContainer?.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
-            tableViewContainer?.clipsToBounds = true
-            tableViewContainer?.layer.cornerRadius = 30
-            
-            suggestionsTableView?.separatorStyle = .singleLine
-            suggestionsTableView?.layoutMargins = UIEdgeInsets.zero
-            suggestionsTableView?.separatorInset = UIEdgeInsets.zero
-            suggestionsTableView?.separatorColor = UIColor(named: "EerieBlackColor")
-            
-            view.bringSubviewToFront(navigationBarContainerView!)
-            
-            tableViewContainer!.addSubview(suggestionsTableView!)
-            
-            view.insertSubview(tableViewContainer!, belowSubview: navigationBarContainerView)
-        }
+                
+                suggestionsTableView = UITableView(frame: CGRect(x: 0,
+                                                                 y: searchBarView.frame.size.height,
+                                                                 width: tableViewContainer!.frame.width,
+                                                                 height: tableViewContainer!.frame.size.height - searchBarView.frame.size.height))
+                
+                suggestionsTableView?.register(UINib(nibName: "SearchSuggestionCell", bundle: nil), forCellReuseIdentifier: SearchSuggestionCell.identifier)
+                suggestionsTableView?.delegate = self
+                suggestionsTableView?.dataSource = self
+                suggestionsTableView?.contentInsetAdjustmentBehavior = .never
+                suggestionsTableView?.backgroundColor = .clear
+                
+                tableViewContainer?.backgroundColor = UIColor(named: "YellowSelectiveColor")
+                
+                // corners
+                tableViewContainer?.layer.borderWidth = 1
+                tableViewContainer?.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
+                tableViewContainer?.clipsToBounds = true
+                tableViewContainer?.layer.cornerRadius = 30
+                
+                suggestionsTableView?.separatorStyle = .singleLine
+                suggestionsTableView?.layoutMargins = UIEdgeInsets.zero
+                suggestionsTableView?.separatorInset = UIEdgeInsets.zero
+                suggestionsTableView?.separatorColor = UIColor(named: "EerieBlackColor")
+                
+                view.bringSubviewToFront(navigationBarContainerView!)
+                
+                tableViewContainer!.addSubview(suggestionsTableView!)
+                
+                view.insertSubview(tableViewContainer!, belowSubview: navigationBarContainerView)
+            }
     }
     
     func removeSuggestionsTableView() {
