@@ -59,8 +59,6 @@
 		6A59426E2B5FD35E009E4BD0 /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A59426D2B5FD35E009E4BD0 /* TabBarItemView.swift */; };
 		6A5942742B61135E009E4BD0 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5942732B61135E009E4BD0 /* CustomTabBar.swift */; };
 		6A5942762B611572009E4BD0 /* CustomTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5942752B611572009E4BD0 /* CustomTabItem.swift */; };
-		6A81E3132B68FE6A002104FD /* ContentFilterView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A81E3112B68FE6A002104FD /* ContentFilterView1.swift */; };
-		6A81E3142B68FE6A002104FD /* ContentFilterView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A81E3122B68FE6A002104FD /* ContentFilterView1.xib */; };
 		6AB028A72B5E61C9005586CC /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028A32B5E61C8005586CC /* Montserrat-Medium.ttf */; };
 		6AB028A82B5E61C9005586CC /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028A42B5E61C8005586CC /* Montserrat-Bold.ttf */; };
 		6AB028A92B5E61C9005586CC /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028A52B5E61C9005586CC /* Montserrat-Regular.ttf */; };
@@ -349,8 +347,6 @@
 		6A59426D2B5FD35E009E4BD0 /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
 		6A5942732B61135E009E4BD0 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		6A5942752B611572009E4BD0 /* CustomTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabItem.swift; sourceTree = "<group>"; };
-		6A81E3112B68FE6A002104FD /* ContentFilterView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFilterView1.swift; sourceTree = "<group>"; };
-		6A81E3122B68FE6A002104FD /* ContentFilterView1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentFilterView1.xib; sourceTree = "<group>"; };
 		6AB028A32B5E61C8005586CC /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Medium.ttf"; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Resources/Fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		6AB028A42B5E61C8005586CC /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Resources/Fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		6AB028A52B5E61C9005586CC /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Resources/Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -1145,8 +1141,6 @@
 			children = (
 				D72306DA2A79266D0000F6B3 /* ContentFilterView.swift */,
 				D72306DC2A7926940000F6B3 /* ContentFilterViewModel.swift */,
-				6A81E3112B68FE6A002104FD /* ContentFilterView1.swift */,
-				6A81E3122B68FE6A002104FD /* ContentFilterView1.xib */,
 			);
 			path = ContentFilter;
 			sourceTree = "<group>";
@@ -1641,7 +1635,6 @@
 				631B89F92A4969E300F66E7C /* stiv_v5.scn in Resources */,
 				6AB0292D2B5E67C8005586CC /* SsvedAddonCollectionCell.xib in Resources */,
 				6AB029472B5E6963005586CC /* ColorPickerViewController.xib in Resources */,
-				6A81E3142B68FE6A002104FD /* ContentFilterView1.xib in Resources */,
 				F420A79A2A0283960098B849 /* LaunchScreen.storyboard in Resources */,
 				6AB028AD2B5E629F005586CC /* SettingsViewController.xib in Resources */,
 				6AB028CE2B5E6530005586CC /* ContentTabViewController.xib in Resources */,
@@ -1688,7 +1681,6 @@
 				6AB028D82B5E655D005586CC /* ContentViewController+SaveImage.swift in Sources */,
 				D70970142A77B62D0044F81F /* UIImage+Resource.swift in Sources */,
 				6AB029152B5E670B005586CC /* AddonEditorSelectorViewController.swift in Sources */,
-				6A81E3132B68FE6A002104FD /* ContentFilterView1.swift in Sources */,
 				03AFFD452AD847D0002A131D /* SkinVariantsViewController.swift in Sources */,
 				039F50F42B03798B00250C0D /* UIView+Constraints.swift in Sources */,
 				6AB0297F2B5E6B43005586CC /* EditorSkinModel.swift in Sources */,

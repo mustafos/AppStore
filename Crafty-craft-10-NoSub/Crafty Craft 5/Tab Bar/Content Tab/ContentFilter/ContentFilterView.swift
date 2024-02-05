@@ -21,7 +21,6 @@ struct ContentFilterView: View {
     var onStateChange: ((DropDownPickerState) -> Void)?
     @SceneStorage("drop_down_zindex") private var index = 100.0
     @State var zindex = 100.0
-    
     var body: some View {
         GeometryReader { geometry in
             VStack {

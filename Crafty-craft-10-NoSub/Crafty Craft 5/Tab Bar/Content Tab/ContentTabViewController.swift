@@ -400,6 +400,15 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         // Notify the hosting controller that it has moved to the parent view controller
         hostingController.didMove(toParent: self)
         
+        // Add the state change handler
+        contentFilterView.onStateChange = { [weak self] state in
+            // Update sortButtonsContainerView position based on the state change
+            if state == .up {
+                self?.updateSortButtonsContainerViewPosition(isTapped: false)
+            } else {
+                self?.updateSortButtonsContainerViewPosition(isTapped: true)
+            }
+        }
         // Add tap gesture recognizer to sortButtonsContainerView
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(sortButtonsContainerViewTapped))
         sortButtonsContainerView.addGestureRecognizer(tapGesture)
