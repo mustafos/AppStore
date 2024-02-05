@@ -16,9 +16,12 @@ enum Device {
     static var iPad: Bool {
         return UIDevice().userInterfaceIdiom == .pad
     }
+
+    static var smallDevice: Bool {
+        return ScreenSize.height <= 834.0
+    }
 }
 
 enum ScreenSize {
-    static var width = UIScreen.main.bounds.size.width
     static var height = UIScreen.main.bounds.size.height
 }
