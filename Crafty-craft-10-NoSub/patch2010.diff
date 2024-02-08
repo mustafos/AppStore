@@ -1,0 +1,103 @@
+From a0ca6271d315a7b1f28ea35c7f3188ac0d65c347 Mon Sep 17 00:00:00 2001
+From: VitalyPolezhay <>
+Date: Wed, 20 Sep 2023 16:21:43 +0300
+Subject: [PATCH] fixed crash on save 3d model, fixed bug with noise color
+
+---
+ .../Skin3DCreator/3dModel/EditorSkinModel.swift  | 16 +++++++++++++++-
+ .../Skin3DCreator/ColorManager3D.swift           | 11 ++++++++++-
+ ...nsion_Skin3DTestViewController+Gestures.swift |  2 +-
+ .../Extension_UIColor+luminosity.swift           |  6 ++++++
+ 4 files changed, 32 insertions(+), 3 deletions(-)
+
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/3dModel/EditorSkinModel.swift b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/3dModel/EditorSkinModel.swift
+index ec0e901..7fb798e 100644
+--- a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/3dModel/EditorSkinModel.swift	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/3dModel/EditorSkinModel.swift	
+@@ -494,6 +494,19 @@ class EditorSkinModel {
+         return finalImage
+     }
+     
++    private func noNanColor(_ color: UIColor) -> UIColor? {
++        guard let components = color.cgColor.components else { return nil}
++        let red: CGFloat = components.count > 0 ? components[0] : 0
++        let green: CGFloat = components.count > 1 ? components[1] : 0
++        let blue: CGFloat = components.count > 2 ? components[2] : 0
++        
++        
++        return .init(red: red.isNaN ? 255 : red,
++                     green: green.isNaN ? 255 : green,
++                     blue: blue.isNaN ? 255 : blue,
++                     alpha: color.cgColor.alpha.isNaN ? 1 : color.cgColor.alpha)
++    }
++    
+     private func changeContect(myContext: inout CGContext, bodyPartSide: Side, colorsArray: [UIColor]) {
+         var correctIndex = 0
+         
+@@ -504,7 +517,8 @@ class EditorSkinModel {
+                     continue
+                 }
+                 
+-                let rawPixel = colorsArray[correctIndex]
++                let rawPixel = noNanColor(colorsArray[correctIndex]) ?? UIColor.clear
++                
+                 let color = UIColor(
+                     red: CGFloat(rawPixel.rgb()?.0 ?? 255) / 255.0,
+                     green: CGFloat(rawPixel.rgb()?.1 ?? 255) / 255.0,
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/ColorManager3D.swift b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/ColorManager3D.swift
+index a3652c4..53d2461 100644
+--- a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/ColorManager3D.swift	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/ColorManager3D.swift	
+@@ -16,9 +16,18 @@ protocol ColorAble3D {
+     func updateCollection()
+ }
+ 
++extension UIColor {
++    static var blackColor: UIColor {
++        .init(red: 0, green: 0, blue: 0, alpha: 1)
++    }
++    static var whiteColor: UIColor {
++        .init(red: 1, green: 1, blue: 1, alpha: 1)
++    }
++}
++
+ class ColorManager3D {
+ 
+-    private let defaultColors: [UIColor] = [.black, .white, .red, .green, .yellow, .blue, .cyan, .purple]
++    private let defaultColors: [UIColor] = [UIColor.blackColor, UIColor.whiteColor, .red, .green, .yellow, .blue, .cyan, .purple]
+     private var colorsArr: [UIColor] = []
+     var delegate: ColorAble3D?
+     var selectedColorIndex = 0
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Extension_Skin3DTestViewController+Gestures.swift b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Extension_Skin3DTestViewController+Gestures.swift
+index 63a6e4b..e2f14c4 100644
+--- a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Extension_Skin3DTestViewController+Gestures.swift	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Extension_Skin3DTestViewController+Gestures.swift	
+@@ -57,7 +57,7 @@ extension Skin3DTestViewController {
+             }
+             
+         case .ended:
+-            guard !sceneView.allowsCameraControl else { return }
++            guard !Self.cameraControll else { return }
+             editorSkinModel.panEndedToDrawingOnSkin()
+         case .cancelled, .possible, .failed:
+             break
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/SupportExtensions/Extension_UIColor+luminosity.swift b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/SupportExtensions/Extension_UIColor+luminosity.swift
+index ecba513..f9c4061 100644
+--- a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/SupportExtensions/Extension_UIColor+luminosity.swift	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/SupportExtensions/Extension_UIColor+luminosity.swift	
+@@ -116,6 +116,12 @@ extension UIColor {
+         if saturation == 0 {
+             return UIColor(red: 1.0 * luminosity, green: 1.0 * luminosity, blue: 1.0 * luminosity, alpha: alpha)
+         }
++        if saturation.isNaN {
++            if red != 1 {
++                luminosity = 1 - luminosity
++            }
++            return UIColor(red: 1.0 * luminosity, green: 1.0 * luminosity, blue: 1.0 * luminosity, alpha: alpha)
++        }
+ 
+         var temporaryVariableOne: CGFloat = 0
+         if luminosity < 0.5 {
+-- 
+2.37.0
+

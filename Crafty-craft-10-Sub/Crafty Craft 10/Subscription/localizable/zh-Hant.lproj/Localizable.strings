@@ -1,0 +1,73 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* 此試用會自動續訂為付費訂閱，並將繼續自動續訂，直至您取消。 * 您需要訂閱才能使用此應用程序。沒有免費內容。 * 確認購買後，訂閱費用將從您的 iTunes 帳戶中扣除。 * 訂閱將自動續訂，付款將從您的 iTunes 帳戶中扣除，除非在當前訂閱期結束前至少 24 小時關閉自動續訂。續訂費用取決於您的訂閱計劃。我們的標準訂閱計劃是： * 1 週訂閱（4.99 美元） 對於其他貨幣，價格與 App Store 定價矩陣上的相同價格等級相對應。 * 具有免費試用期的訂閱將自動續訂為付費訂閱。購買後，您可以在帳戶設置中取消或管理免費試用的自​​動續訂。取消將在當前訂閱期最後一天后 24 小時後生效，您將降級為免費服務。 * 請注意：如果您在免費試用期內購買高級訂閱，則 3 天免費試用期（如果提供）的任何未使用部分將被沒收。請參閱我們的隱私政策和使用條款了解更多信息。";
+/**/
+"iOSButtonID"="繼續";
+/**/
+"iOSStart3daysTitleID"="開始 3 天免費，然後每週 4.99 美元";
+
+/**/
+"LoadingID"="加載中";
+
+/**/
+"PrivacyID"="隱私政策";
+
+/**/
+"restore"="恢復";
+
+/**/
+"TermsID"="使用條款";
+
+/**/
+"SliderID1"="獲得兇猛的神鎧位置";
+/**/
+"SliderID2"="找到賢者和科洛克森林的 5 項能力";
+/**/
+"SliderID3"="地圖上的所有洞穴和水井";
+/**/
+"SliderID4"="互動地圖上的全部 152 個神社";
+/**/
+"SliderID5"="按地點收集所有盔甲套裝";
+
+/**/
+"TextTitle1ID"="選擇你的盔甲套裝";
+
+/**/
+"TextTitle2ID"="選擇所需的能力";
+
+/**/
+"Text1ID"="Amiibo能力";
+
+/**/
+"Text2ID"="熔斷能力";
+
+/**/
+"Text3ID"="提升能力";
+
+/**/
+"Text4ID"="回憶能力";
+
+/**/
+"Text5ID"="拍照能力";
+
+/**/
+
+"ConnectivityTitle"="連接問題";
+"ConnectivityDescription"="互聯網連接似乎已離線 ☹️";
+
+"error_iap" = "Error";
+"inval_prod_id" = "Looks like you have bad Internet connection";
+
+
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+
+

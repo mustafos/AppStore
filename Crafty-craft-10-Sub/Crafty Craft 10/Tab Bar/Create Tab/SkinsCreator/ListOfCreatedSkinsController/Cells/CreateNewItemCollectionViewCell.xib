@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Blinker-SemiBold.ttf">
+            <string>Blinker-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CreateNewItemCollectionViewCell" id="gTV-IL-0wX" userLabel="CreateNewItemCollectionViewCell" customClass="CreateNewItemCollectionViewCell" customModule="Crafty_Craft_5" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="229" height="326"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="229" height="326"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bM7-wM-ZJ4">
+                        <rect key="frame" x="0.0" y="0.0" width="229" height="326"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add skin" translatesAutoresizingMaskIntoConstraints="NO" id="kVc-ku-hFT">
+                                <rect key="frame" x="0.0" y="111.66666666666669" width="229" height="53"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE SKIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSm-RX-hH7">
+                                <rect key="frame" x="72" y="184.66666666666666" width="85" height="18.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="16"/>
+                                <color key="textColor" name="greenCCRedesign"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kVc-ku-hFT" firstAttribute="centerY" secondItem="bM7-wM-ZJ4" secondAttribute="centerY" constant="-25" id="7x1-ta-tb9"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rSm-RX-hH7" secondAttribute="trailing" constant="2" id="AZV-WH-Aff"/>
+                            <constraint firstItem="rSm-RX-hH7" firstAttribute="centerX" secondItem="bM7-wM-ZJ4" secondAttribute="centerX" id="EVR-kn-Cxq"/>
+                            <constraint firstAttribute="trailing" secondItem="kVc-ku-hFT" secondAttribute="trailing" id="GsS-UP-Fur"/>
+                            <constraint firstItem="rSm-RX-hH7" firstAttribute="top" secondItem="kVc-ku-hFT" secondAttribute="bottom" constant="20" id="JlW-4s-E0d"/>
+                            <constraint firstItem="kVc-ku-hFT" firstAttribute="leading" secondItem="bM7-wM-ZJ4" secondAttribute="leading" id="lHx-vC-nxm"/>
+                            <constraint firstItem="rSm-RX-hH7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bM7-wM-ZJ4" secondAttribute="leading" constant="2" id="vGP-Uj-5Rz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bM7-wM-ZJ4" secondAttribute="bottom" id="KSh-qg-A9L"/>
+                <constraint firstItem="bM7-wM-ZJ4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Loi-14-Svr"/>
+                <constraint firstItem="bM7-wM-ZJ4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VGC-YQ-A1p"/>
+                <constraint firstAttribute="trailing" secondItem="bM7-wM-ZJ4" secondAttribute="trailing" id="iO6-6S-92L"/>
+            </constraints>
+            <connections>
+                <outlet property="backgroundContainerView" destination="bM7-wM-ZJ4" id="zNQ-w6-h7z"/>
+                <outlet property="titleLabel" destination="rSm-RX-hH7" id="hfo-Ni-8uE"/>
+            </connections>
+            <point key="canvasLocation" x="106.10687022900763" y="20.422535211267608"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="add skin" width="54" height="53"/>
+        <namedColor name="greenCCRedesign">
+            <color red="0.0" green="0.59215686274509804" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

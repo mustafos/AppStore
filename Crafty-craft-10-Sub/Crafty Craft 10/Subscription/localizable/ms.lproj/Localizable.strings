@@ -1,0 +1,73 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Percubaan ini diperbaharui secara automatik menjadi langganan berbayar dan akan terus diperbaharui secara automatik sehingga anda membatalkannya. * Anda perlu melanggan untuk menggunakan aplikasi ini. Tiada kandungan percuma. * Bayaran langganan akan dicaj ke akaun iTunes anda pada pengesahan pembelian anda. * Langganan akan diperbaharui secara automatik dan bayaran akan dicaj ke akaun iTunes anda melainkan pembaharuan automatik dimatikan sekurang-kurangnya 24 jam sebelum akhir tempoh semasa. Kos pembaharuan bergantung pada Pelan Langganan anda. Pelan Langganan standard kami ialah: * Langganan 1 minggu ($4.99) Untuk mata wang lain, harga sepadan dengan peringkat harga yang sama pada Matriks Harga App Store. * Langganan dengan tempoh percubaan percuma akan diperbaharui secara automatik kepada langganan berbayar. Anda boleh membatalkan atau mengurus pembaharuan automatik percubaan percuma anda dalam Tetapan Akaun anda selepas pembelian. Pembatalan akan berkuat kuasa 24 jam selepas hari terakhir tempoh langganan semasa dan anda akan diturunkan taraf kepada perkhidmatan percuma. * Sila ambil perhatian: mana-mana bahagian yang tidak digunakan dalam tempoh percubaan percuma selama 3 hari (jika ditawarkan) akan dibatalkan apabila anda membeli langganan premium semasa tempoh percubaan percuma. Sila, untuk mendapatkan maklumat lanjut lihat Dasar Privasi dan Syarat Penggunaan kami.";
+/**/
+"iOSButtonID"="TERUSKAN";
+/**/
+"iOSStart3daysTitleID"="MULAKAN 3-HARI PERCUMA KEMUDIAN $4.99/MINGGU";
+
+/**/
+"LoadingID"="MEMBUAT";
+
+/**/
+"PrivacyID"="Dasar Privasi";
+
+/**/
+"restore"="Pulihkan";
+
+/**/
+"TermsID"="Syarat Penggunaan";
+
+/**/
+"SliderID1"="DAPATKAN LOKASI PERisai Dewa GAS";
+/**/
+"SliderID2"="CARI 5 KEBOLEHAN PARA SAGES DAN HUTAN KOROK";
+/**/
+"SliderID3"="SEMUA GUA DAN PERGI DI PETA";
+/**/
+"SliderID4"="SEMUA 152 SHRINES PADA PETA INTERAKTIF";
+/**/
+"SliderID5"="KUMPUL SEMUA SET PERISAI MENGIKUT LOKASI";
+
+/**/
+"TextTitle1ID"="PILIH SET ARMOR ANDA";
+
+/**/
+"TextTitle2ID"="PILIH KEMAMPUAN YANG DIINGINKAN";
+
+/**/
+"Text1ID"="Keupayaan Amiibo";
+
+/**/
+"Text2ID"="Keupayaan fius";
+
+/**/
+"Text3ID"="Keupayaan naik";
+
+/**/
+"Text4ID"="Kebolehan mengingat kembali";
+
+/**/
+"Text5ID"="Keupayaan kamera";
+
+/**/
+
+"ConnectivityTitle"="Isu Ketersambungan";
+"ConnectivityDescription"="Sambungan Internet kelihatan di luar talian ☹️";
+
+"error_iap" = "Error";
+"inval_prod_id" = "Looks like you have bad Internet connection";
+
+
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+
+

@@ -1,0 +1,81 @@
+diff a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/3dModel/EditorSkinModel.swift b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/3dModel/EditorSkinModel.swift	(rejected hunks)
+@@ -2,6 +2,7 @@
+ 
+ import Foundation
+ import UIKit
++import SceneKit
+ 
+ enum BrashSize: Int, CaseIterable {
+     case one = 1
+@@ -91,7 +92,9 @@ class EditorSkinModel {
+                     if sideNode.name == rNodeName {
+                         sideNode.childNodes.forEach { pixelNode in
+                             if Int(pixelNode.name ?? "0") == command.indexes[i] {
+-                                pixelNode.geometry?.firstMaterial?.diffuse.contents = command.colors[i]
++                                if let color = pixelNode.geometry?.firstMaterial?.diffuse.contents as? UIColor, color == command.colors[i] {} else {
++                                    pixelNode.geometry?.firstMaterial?.diffuse.contents = command.colors[i]
++                                }
+                             }
+                         }
+                     }
+@@ -165,7 +168,9 @@ class EditorSkinModel {
+                 if sideNode.name == nameRootNod {
+                     sideNode.childNodes.forEach { pixelNode in
+                         if pixelNode.name != nameRootNod {
+-                            pixelNode.geometry?.firstMaterial?.diffuse.contents = currentDrawingColor
++                            if let color = pixelNode.geometry?.firstMaterial?.diffuse.contents as? UIColor, color == currentDrawingColor {} else {
++                                pixelNode.geometry?.firstMaterial?.diffuse.contents = currentDrawingColor
++                            }
+                         }
+                     }
+                 }
+@@ -197,10 +202,9 @@ class EditorSkinModel {
+     
+     private func changePixelArray(indexArray: [Int], color: UIColor, nameRootNod: String, gestureState: UIGestureRecognizer.State) {
+         if let node = controller.sceneView.scene!.rootNode.childNodes.first(where: { $0.name == nameRootNod }) {
+-            if let _ = node.childNodes.first(where: { $0.name != node.name && Int($0.name ?? "0") == (indexArray.first ?? 0) }) {
+-                
+-                let oldColors = getColorsFromSkinNodes(by: indexArray, nameRootNod: nameRootNod)
+-                
++            if node.childNodes.contains(where: { $0.name != node.name && Int($0.name ?? "0") == (indexArray.first ?? 0) }) {
++                let oldColors = getColorsFromSkinNodes(by: indexArray, node: node)
++
+                 if gestureState == .ended {
+                     if drawSkinCommands.undoCommands.count > commandIndex {
+                         drawSkinCommands.undoCommands.removeLast(drawSkinCommands.undoCommands.count - commandIndex)
+@@ -250,10 +254,16 @@ class EditorSkinModel {
+                         break
+                     }
+                     colorlForSideNodes[nameRootNod]?[i] = newColor
+-                    node.childNodes[i].geometry?.firstMaterial?.diffuse.contents = newColor
++                    if let color = node.childNodes[i].geometry?.firstMaterial?.diffuse.contents as? UIColor, color == newColor {
++                        
++                    } else {
++                        print("NOT REUSE")
++                        node.childNodes[i].geometry?.firstMaterial?.diffuse.contents = newColor
++                    }
++                    
+                 }
+                 
+-                let newColors = getColorsFromSkinNodes(by: indexArray, nameRootNod: nameRootNod)
++                let newColors = getColorsFromSkinNodes(by: indexArray, node: node)
+                 
+                 if gestureState == .ended {
+                     drawSkinCommands.redoCommands.append(SkinCommand(indexes: indexArray, colors: newColors, nodeName: Array(repeating: nameRootNod, count: indexArray.count)))
+@@ -393,6 +403,16 @@ class EditorSkinModel {
+         return color
+     }
+     
++    private func getColorsFromSkinNodes(by indexArray: [Int], node: SCNNode) -> [UIColor] {
++        var nodeColors = [UIColor]()
++        for i in indexArray {
++            if let nodeColor = node.childNodes[i].geometry?.firstMaterial?.diffuse.contents as? UIColor {
++                nodeColors.append(nodeColor)
++            }
++        }
++        return nodeColors
++    }
++    
+     private func getColorsFromSkinNodes(by indexArray: [Int], nameRootNod: String) -> [UIColor] {
+         var nodeColors = [UIColor]()
+         for i in indexArray {

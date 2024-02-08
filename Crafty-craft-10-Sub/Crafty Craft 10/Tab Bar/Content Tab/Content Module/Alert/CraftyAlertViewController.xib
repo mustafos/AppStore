@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Allerta-Regular.ttf">
+            <string>Allerta-Regular</string>
+        </array>
+        <array key="Blinker-SemiBold.ttf">
+            <string>Blinker-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CraftyAlertViewController" customModule="Crafty_Craft_5" customModuleProvider="target">
+            <connections>
+                <outlet property="mainButton" destination="37F-zW-Lx9" id="fpV-lu-rtj"/>
+                <outlet property="subTitleLbl" destination="OaV-RR-mqe" id="pLy-4f-cEX"/>
+                <outlet property="titleLbl" destination="Kkq-do-R9G" id="eVL-Bz-Vna"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkq-do-R9G">
+                    <rect key="frame" x="150" y="14" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" name="Blinker-SemiBold" family="Blinker" pointSize="22"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaV-RR-mqe">
+                    <rect key="frame" x="150" y="24" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" name="Allerta-Regular" family="Allerta" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37F-zW-Lx9">
+                    <rect key="frame" x="15" y="181" width="270" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="sgH-yU-jOJ"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                        <backgroundConfiguration key="background" cornerRadius="27" strokeWidth="0.0">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="strokeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </backgroundConfiguration>
+                        <fontDescription key="titleFontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="15"/>
+                        <color key="baseForegroundColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="buttonDidTapped:" destination="-1" eventType="touchUpInside" id="OxS-ZN-XIJ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OaV-RR-mqe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="1M9-P9-VSJ"/>
+                <constraint firstItem="Kkq-do-R9G" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="14" id="3qv-69-kJH"/>
+                <constraint firstItem="OaV-RR-mqe" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="7Gr-SN-it6"/>
+                <constraint firstAttribute="bottom" secondItem="37F-zW-Lx9" secondAttribute="bottom" constant="15" id="Hd5-v7-Wev"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OaV-RR-mqe" secondAttribute="trailing" constant="5" id="MNc-xp-BNL"/>
+                <constraint firstItem="Kkq-do-R9G" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="QdL-n7-CyI"/>
+                <constraint firstItem="Kkq-do-R9G" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="T0T-uq-RPA"/>
+                <constraint firstItem="37F-zW-Lx9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="gDX-Vv-2L2"/>
+                <constraint firstItem="OaV-RR-mqe" firstAttribute="top" secondItem="Kkq-do-R9G" secondAttribute="bottom" constant="10" id="jfJ-hs-ZO2"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kkq-do-R9G" secondAttribute="trailing" constant="5" id="oAx-pu-gsB"/>
+                <constraint firstItem="37F-zW-Lx9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OaV-RR-mqe" secondAttribute="bottom" constant="10" id="vHw-VS-vxj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="37F-zW-Lx9" secondAttribute="trailing" constant="15" id="wpQ-Xj-2Dc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="132" y="-11"/>
+        </view>
+    </objects>
+</document>
