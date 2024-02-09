@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BrashSizeView" customModule="Crafty_Craft_10" customModuleProvider="target">
+            <connections>
+                <outlet property="brashSizeSlider" destination="tNE-PN-J7k" id="XQo-CQ-Sny"/>
+                <outlet property="mainBrashSizeView" destination="iN0-l3-epB" id="MXV-lt-Kyd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="87"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KfS-rT-zCY" userLabel="MainContainer View">
+                    <rect key="frame" x="10" y="10" width="335" height="67"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="q4p-qo-8GX">
+                            <rect key="frame" x="12" y="19.666666666666671" width="311" height="28"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQy-Lu-Az7">
+                                    <rect key="frame" x="0.0" y="0.0" width="34" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="34" id="rXU-K0-JdY"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="tNE-PN-J7k">
+                                    <rect key="frame" x="44" y="0.0" width="229" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="hXD-Pg-elm"/>
+                                    </constraints>
+                                    <color key="minimumTrackTintColor" name="EerieBlackColor"/>
+                                    <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="sliderDidSlide:" destination="-1" eventType="valueChanged" id="y0k-nY-G7T"/>
+                                    </connections>
+                                </slider>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brushDot" translatesAutoresizingMaskIntoConstraints="NO" id="8xB-t6-5it">
+                                    <rect key="frame" x="283" y="0.0" width="28" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="28" id="WS2-s5-Ztx"/>
+                                        <constraint firstAttribute="height" constant="28" id="XAa-2b-a2D"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="YellowSelectiveColor"/>
+                    <constraints>
+                        <constraint firstItem="q4p-qo-8GX" firstAttribute="leading" secondItem="KfS-rT-zCY" secondAttribute="leading" constant="12" id="JHS-xD-Zp6"/>
+                        <constraint firstItem="q4p-qo-8GX" firstAttribute="centerY" secondItem="KfS-rT-zCY" secondAttribute="centerY" id="Rb2-CH-tj0"/>
+                        <constraint firstAttribute="trailing" secondItem="q4p-qo-8GX" secondAttribute="trailing" constant="12" id="V0g-q7-wSb"/>
+                        <constraint firstItem="q4p-qo-8GX" firstAttribute="centerX" secondItem="KfS-rT-zCY" secondAttribute="centerX" id="v7A-gd-L14"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="KfS-rT-zCY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="5eu-ox-1F6"/>
+                <constraint firstItem="KfS-rT-zCY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="AZY-lC-aa8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KfS-rT-zCY" secondAttribute="trailing" constant="10" id="GnF-KU-Ttv"/>
+                <constraint firstItem="KfS-rT-zCY" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Nog-Kn-0Ia"/>
+                <constraint firstAttribute="bottom" secondItem="KfS-rT-zCY" secondAttribute="bottom" constant="10" id="c5C-bN-tbE"/>
+                <constraint firstItem="KfS-rT-zCY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="ipG-Zr-5zX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="107.63358778625954" y="-213.73239436619718"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="brushDot" width="28" height="28"/>
+        <namedColor name="EerieBlackColor">
+            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowSelectiveColor">
+            <color red="0.97254901960784312" green="0.80784313725490198" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
