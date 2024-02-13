@@ -1,0 +1,73 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Táto skúšobná verzia sa automaticky obnoví na platené predplatné a bude sa automaticky obnovovať, kým ho nezrušíte. * Ak chcete používať túto aplikáciu, musíte sa prihlásiť na odber. Žiadny bezplatný obsah. * Platby za predplatné budú účtované na váš účet iTunes pri potvrdení nákupu. * Predplatné sa automaticky obnoví a platba bude účtovaná na váš účet iTunes, pokiaľ sa automatické obnovenie nevypne aspoň 24 hodín pred koncom aktuálneho obdobia. Náklady na obnovenie závisia od vášho plánu predplatného. Naše štandardné plány predplatného sú: * 1-týždňové predplatné (4,99 USD) V prípade iných mien cena zodpovedá rovnakej cenovej úrovni v cenovej matici App Store. * Predplatné s bezplatným skúšobným obdobím sa automaticky obnoví na platené predplatné. Automatické obnovenie bezplatnej skúšobnej verzie môžete po zakúpení zrušiť alebo spravovať v nastaveniach účtu. Zrušenie nadobudne účinnosť 24 hodín po poslednom dni aktuálneho obdobia predplatného a prejdete na bezplatnú službu. * Poznámka: Akákoľvek nevyužitá časť 3-dňového bezplatného skúšobného obdobia (ak je ponúkané) prepadne, keď si počas bezplatného skúšobného obdobia zakúpite prémiové predplatné. Pre viac informácií si prosím pozrite naše Zásady ochrany osobných údajov a Podmienky používania.";
+/**/
+"iOSButtonID"="ĎALEJ";
+/**/
+"iOSStart3daysTitleID"="ZAČNITE 3 DNI ZADARMO, POTOM 5,99 $/TÝŽDEŇ";
+
+/**/
+"LoadingID"="NAČÍTAVA";
+
+/**/
+"PrivacyID"="Zásady ochrany \nosobných údajov";
+
+/**/
+"restore"="Obnoviť";
+
+/**/
+"TermsID"="Podmienky \npoužívania";
+
+/**/
+"SliderID1"="ZÍSKAJTE UMIESTNENIE BOŽSTVA BRNENIA";
+/**/
+"SliderID2"="NÁJDITE 5 SCHOPNOSTÍ MUDROV A LES KOROK";
+/**/
+"SliderID3"="VŠETKY JASKYNE A STUDNE NA MAPE";
+/**/
+"SliderID4"="VŠETKÝCH 152 SVÄTNÍKOV NA INTERAKTÍVNEJ MAPE";
+/**/
+"SliderID5"="ZBIERAJTE VŠETKY SÚPRAVY BRNENÍ PODĽA MIEST";
+
+/**/
+"TextTitle1ID"="VYBERTE SI SVOJ SÚPRAVU BRNENÍ";
+
+/**/
+"TextTitle2ID"="VYBERTE SI POŽADOVANÚ SCHOPNOSŤ";
+
+/**/
+"Text1ID"="Schopnosť Amiibo";
+
+/**/
+"Text2ID"="Schopnosť poistky";
+
+/**/
+"Text3ID"="Vzostupová schopnosť";
+
+/**/
+"Text4ID"="Schopnosť vyvolať";
+
+/**/
+"Text5ID"="Schopnosť fotoaparátu";
+
+/**/
+
+"ConnectivityTitle"="Problém s pripojením";
+"ConnectivityDescription"="Zdá sa, že internetové pripojenie je offline ☹️";
+
+
+"error_iap" = "Error";
+"inval_prod_id" = "Looks like you have bad Internet connection";
+
+
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+

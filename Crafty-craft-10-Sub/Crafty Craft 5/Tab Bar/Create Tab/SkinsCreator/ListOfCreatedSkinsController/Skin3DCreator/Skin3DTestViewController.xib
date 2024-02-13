@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Skin3DTestViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
+            <connections>
+                <outlet property="brashSizeView" destination="d20-uq-IDt" id="tND-CG-abk"/>
+                <outlet property="color3DCollection" destination="VKe-nd-IgU" id="Dcc-YM-qkX"/>
+                <outlet property="dropperBtn" destination="juE-kK-GND" id="nco-tu-zde"/>
+                <outlet property="dropperButton" destination="wWy-7J-gOy" id="j0d-ky-vPH"/>
+                <outlet property="eraserBtn" destination="mGU-sT-OYX" id="fVW-2n-PI5"/>
+                <outlet property="fillBtn" destination="u5w-2X-H7d" id="Q8p-TT-vJO"/>
+                <outlet property="homeButton" destination="OkP-RY-yMd" id="eMU-X5-mh0"/>
+                <outlet property="noiseBtn" destination="CSs-NF-l7Q" id="1Nb-cp-IvZ"/>
+                <outlet property="pencilBtn" destination="q71-xB-QT1" id="JrE-zT-4Dr"/>
+                <outlet property="rotationSkinModelButton" destination="glY-bF-pQp" id="LjT-XA-AoA"/>
+                <outlet property="saveButton" destination="g6A-Ls-lEA" id="Nhc-wY-hAK"/>
+                <outlet property="sceneView" destination="EEn-mf-WOc" id="xFD-6m-J0f"/>
+                <outlet property="skinNameLabel" destination="oiI-Mh-Q6Y" id="hpN-AI-u2u"/>
+                <outlet property="smallStiveView" destination="MfN-nT-Ult" id="93c-kV-dZo"/>
+                <outlet property="toolsStackView" destination="DSC-lg-Jq8" id="oyL-r3-agL"/>
+                <outlet property="undoBtn" destination="Gvg-8X-uYD" id="jWs-iH-LQO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhO-Vb-FiW" userLabel="Navigation Bar">
+                    <rect key="frame" x="0.0" y="59" width="430" height="84"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKIN EDITOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wy-8u-y8C">
+                            <rect key="frame" x="140" y="28.666666666666671" width="150" height="27"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                            <color key="textColor" name="BeigeColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkP-RY-yMd" userLabel="Home Button">
+                            <rect key="frame" x="20" y="20" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="OkP-RY-yMd" secondAttribute="height" multiplier="1:1" id="ote-Qm-cDC"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="Back Item"/>
+                            <connections>
+                                <action selector="onNavBarBackButtonTapped:" destination="-1" eventType="touchUpInside" id="0Em-t6-w8Z"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6A-Ls-lEA">
+                            <rect key="frame" x="366" y="20" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="g6A-Ls-lEA" secondAttribute="height" multiplier="1:1" id="4y3-Nn-mM2"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="Save Item"/>
+                            <connections>
+                                <action selector="onNavBarSafeButtonTapped:" destination="-1" eventType="touchUpInside" id="sIO-oR-QE1"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="g6A-Ls-lEA" secondAttribute="trailing" constant="20" id="6aH-Wp-Akc"/>
+                        <constraint firstItem="g6A-Ls-lEA" firstAttribute="top" secondItem="lhO-Vb-FiW" secondAttribute="top" constant="20" id="GFY-XI-heK"/>
+                        <constraint firstAttribute="bottom" secondItem="g6A-Ls-lEA" secondAttribute="bottom" constant="20" id="Hey-d8-DXQ"/>
+                        <constraint firstAttribute="height" constant="84" id="V1m-vB-Lcl"/>
+                        <constraint firstItem="OkP-RY-yMd" firstAttribute="leading" secondItem="lhO-Vb-FiW" secondAttribute="leading" constant="20" id="d7D-QW-RkV"/>
+                        <constraint firstItem="8wy-8u-y8C" firstAttribute="centerY" secondItem="lhO-Vb-FiW" secondAttribute="centerY" id="edE-dy-3WP"/>
+                        <constraint firstAttribute="bottom" secondItem="OkP-RY-yMd" secondAttribute="bottom" constant="20" id="ll7-zx-4mU"/>
+                        <constraint firstItem="8wy-8u-y8C" firstAttribute="centerX" secondItem="lhO-Vb-FiW" secondAttribute="centerX" id="mZo-A3-3Yc"/>
+                        <constraint firstItem="OkP-RY-yMd" firstAttribute="top" secondItem="lhO-Vb-FiW" secondAttribute="top" constant="20" id="pbe-Lc-5m7"/>
+                    </constraints>
+                </view>
+                <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEn-mf-WOc">
+                    <rect key="frame" x="0.0" y="170" width="430" height="592"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </sceneKitView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY NEW SKIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiI-Mh-Q6Y">
+                    <rect key="frame" x="8" y="143" width="414" height="27"/>
+                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
+                    <color key="textColor" name="BeigeColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfN-nT-Ult" customClass="SmallModelView" customModule="Crafty_Craft_10" customModuleProvider="target">
+                    <rect key="frame" x="20.000000000000007" y="635.66666666666663" width="116.66666666666669" height="116.33333333333337"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="MfN-nT-Ult" secondAttribute="height" multiplier="1:1" id="fuZ-MT-D7r"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glY-bF-pQp">
+                    <rect key="frame" x="356" y="698" width="54" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="54" id="ejN-7c-1g5"/>
+                        <constraint firstAttribute="height" constant="54" id="q9M-uh-Yq0"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" backgroundImage="3drotate"/>
+                    <connections>
+                        <action selector="rotationCameraControllButtonAction:" destination="-1" eventType="touchUpInside" id="Ojb-DH-Ab0"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DSC-lg-Jq8" userLabel="Tools Picker">
+                    <rect key="frame" x="10" y="770" width="410" height="128"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" axis="vertical" distribution="equalCentering" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="D10-R1-Ltm" userLabel="Tools Stack View">
+                            <rect key="frame" x="12" y="12" width="386" height="104"/>
+                            <subviews>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d20-uq-IDt" userLabel="BrashSizeView" customClass="BrashSizeView" customModule="Crafty_Craft_10" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="386" height="28"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="grl-7X-W3J"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gj-kF-Pwg">
+                                    <rect key="frame" x="0.0" y="0.0" width="386" height="52"/>
+                                    <subviews>
+                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFE-Lb-Ub1">
+                                            <rect key="frame" x="0.0" y="0.0" width="386" height="52"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="KwF-8J-KY2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="406" height="52"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q71-xB-QT1" userLabel="Pencil Button">
+                                                            <rect key="frame" x="0.0" y="0.0" width="48" height="52"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" backgroundImage="pencilNonSelected"/>
+                                                            <state key="selected" backgroundImage="Pencil Item"/>
+                                                            <connections>
+                                                                <action selector="onToolBarPencilButtonTapped:" destination="-1" eventType="touchUpInside" id="MV8-kR-Cj6"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGU-sT-OYX" userLabel="Eraser Button">
+                                                            <rect key="frame" x="72" y="0.0" width="48" height="52"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" backgroundImage="eraserNonSelected"/>
+                                                            <state key="selected" backgroundImage="Eraser Item"/>
+                                                            <connections>
+                                                                <action selector="onToolBarEraserButtonTapped:" destination="-1" eventType="touchUpInside" id="H93-wP-Bgv"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juE-kK-GND" userLabel="Brash Button">
+                                                            <rect key="frame" x="144" y="0.0" width="48" height="52"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" backgroundImage="paletteNonSelected"/>
+                                                            <state key="selected" backgroundImage="paletteSelected"/>
+                                                            <connections>
+                                                                <action selector="onToolBarBrashButtonTapped:" destination="-1" eventType="touchUpInside" id="Vav-qj-lBy"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5w-2X-H7d" userLabel="Fill Button">
+                                                            <rect key="frame" x="216" y="0.0" width="48" height="52"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" backgroundImage="fillNonSelected"/>
+                                                            <state key="selected" backgroundImage="Fill Item"/>
+                                                            <connections>
+                                                                <action selector="onToolBarFillButtonTapped:" destination="-1" eventType="touchUpInside" id="9a8-vq-1xf"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSs-NF-l7Q" userLabel="Noise Button">
+                                                            <rect key="frame" x="288" y="0.0" width="46" height="52"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" backgroundImage="gridAltNonSelected"/>
+                                                            <state key="selected" backgroundImage="Noise Item"/>
+                                                            <connections>
+                                                                <action selector="onToolBarNoiseButtonTapped:" destination="-1" eventType="touchUpInside" id="ldT-qy-ufd"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvg-8X-uYD" userLabel="Undo Button">
+                                                            <rect key="frame" x="358" y="0.0" width="48" height="52"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" backgroundImage="undoNonSelected"/>
+                                                            <state key="selected" backgroundImage="Undo Item"/>
+                                                            <connections>
+                                                                <action selector="onToolBarUndoButtonTapped:" destination="-1" eventType="touchUpInside" id="dJ3-W3-AgS"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="KwF-8J-KY2" secondAttribute="trailing" id="IfG-WB-RLc"/>
+                                                <constraint firstItem="KwF-8J-KY2" firstAttribute="leading" secondItem="OFE-Lb-Ub1" secondAttribute="leading" id="OdL-4K-H9j"/>
+                                                <constraint firstItem="KwF-8J-KY2" firstAttribute="bottom" secondItem="OFE-Lb-Ub1" secondAttribute="bottom" id="RXi-Xq-dge"/>
+                                                <constraint firstItem="KwF-8J-KY2" firstAttribute="top" secondItem="OFE-Lb-Ub1" secondAttribute="top" id="s8w-Zs-AlR"/>
+                                            </constraints>
+                                            <viewLayoutGuide key="contentLayoutGuide" id="sAX-KH-STg"/>
+                                            <viewLayoutGuide key="frameLayoutGuide" id="0AI-Yn-3yk"/>
+                                        </scrollView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="OFE-Lb-Ub1" firstAttribute="top" secondItem="0gj-kF-Pwg" secondAttribute="top" id="APk-9J-XU1"/>
+                                        <constraint firstAttribute="trailing" secondItem="OFE-Lb-Ub1" secondAttribute="trailing" id="Sxt-fG-Y8b"/>
+                                        <constraint firstItem="OFE-Lb-Ub1" firstAttribute="leading" secondItem="0gj-kF-Pwg" secondAttribute="leading" id="bJx-9P-HPf"/>
+                                        <constraint firstAttribute="height" constant="52" id="dav-JO-bmm"/>
+                                        <constraint firstAttribute="bottom" secondItem="OFE-Lb-Ub1" secondAttribute="bottom" id="ocC-M0-mAq"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sVQ-Ls-AcE">
+                                    <rect key="frame" x="0.0" y="64" width="386" height="40"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TA1-0g-4xb">
+                                            <rect key="frame" x="0.0" y="8" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="TA1-0g-4xb" secondAttribute="height" multiplier="1:1" id="HOw-zW-aUU"/>
+                                                <constraint firstAttribute="height" constant="24" id="yNg-Ji-HJ7"/>
+                                            </constraints>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" backgroundImage="paletteDef"/>
+                                            <state key="selected" backgroundImage="palette"/>
+                                            <connections>
+                                                <action selector="colorPaletButtonTapped:" destination="-1" eventType="touchUpInside" id="Euy-Pl-Mp4"/>
+                                            </connections>
+                                        </button>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="VKe-nd-IgU">
+                                            <rect key="frame" x="44" y="0.0" width="298" height="40"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="ktl-G0-OUv"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="h7A-Sg-pLa">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWy-7J-gOy">
+                                            <rect key="frame" x="362" y="8" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="wWy-7J-gOy" secondAttribute="height" multiplier="1:1" id="7Sz-Bc-pjl"/>
+                                                <constraint firstAttribute="height" constant="24" id="tcF-Ty-yxH"/>
+                                            </constraints>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" backgroundImage="dropperNonSelected"/>
+                                            <state key="selected" backgroundImage="Picker Item"/>
+                                            <connections>
+                                                <action selector="colorPickerButtonTapped:" destination="-1" eventType="touchUpInside" id="kGu-Zf-RCQ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="4By-K4-2TV"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="d20-uq-IDt" firstAttribute="leading" secondItem="D10-R1-Ltm" secondAttribute="leading" id="Dwa-bi-bHH"/>
+                                <constraint firstItem="d20-uq-IDt" firstAttribute="top" secondItem="D10-R1-Ltm" secondAttribute="top" id="Pvl-GM-xq1"/>
+                                <constraint firstAttribute="trailing" secondItem="d20-uq-IDt" secondAttribute="trailing" id="W4N-Z2-Bny"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="D10-R1-Ltm" firstAttribute="top" secondItem="DSC-lg-Jq8" secondAttribute="top" constant="12" id="9Ky-z0-hdN"/>
+                        <constraint firstAttribute="trailing" secondItem="D10-R1-Ltm" secondAttribute="trailing" constant="12" id="K7O-sJ-r5o"/>
+                        <constraint firstAttribute="bottom" secondItem="D10-R1-Ltm" secondAttribute="bottom" constant="12" id="LzJ-X9-5wD"/>
+                        <constraint firstItem="D10-R1-Ltm" firstAttribute="leading" secondItem="DSC-lg-Jq8" secondAttribute="leading" constant="12" id="XeW-XV-Ro5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="glY-bF-pQp" secondAttribute="trailing" constant="20" id="29i-qc-CJy"/>
+                <constraint firstItem="MfN-nT-Ult" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.125" id="3D0-QB-GYh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="EEn-mf-WOc" secondAttribute="bottom" constant="136" id="A1G-Aq-Mvc"/>
+                <constraint firstItem="EEn-mf-WOc" firstAttribute="leading" secondItem="lhO-Vb-FiW" secondAttribute="leading" id="FXW-Pt-7Z3"/>
+                <constraint firstItem="glY-bF-pQp" firstAttribute="bottom" secondItem="MfN-nT-Ult" secondAttribute="bottom" id="JJB-ZI-vYG"/>
+                <constraint firstItem="EEn-mf-WOc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="WJj-TR-H9c"/>
+                <constraint firstAttribute="bottom" secondItem="glY-bF-pQp" secondAttribute="bottom" constant="180" id="XAI-IX-31Y"/>
+                <constraint firstItem="lhO-Vb-FiW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="agS-wD-zR5"/>
+                <constraint firstItem="EEn-mf-WOc" firstAttribute="top" secondItem="oiI-Mh-Q6Y" secondAttribute="bottom" id="cYV-2C-ORi"/>
+                <constraint firstItem="oiI-Mh-Q6Y" firstAttribute="top" secondItem="lhO-Vb-FiW" secondAttribute="bottom" id="eJ0-ms-8K7"/>
+                <constraint firstAttribute="trailing" secondItem="oiI-Mh-Q6Y" secondAttribute="trailing" constant="8" id="fHd-FE-HWq"/>
+                <constraint firstItem="MfN-nT-Ult" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="jsS-fV-jwj"/>
+                <constraint firstItem="oiI-Mh-Q6Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="k3C-Ba-Nze"/>
+                <constraint firstItem="EEn-mf-WOc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kJI-pz-cdb"/>
+                <constraint firstItem="lhO-Vb-FiW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ltD-TC-yuq"/>
+                <constraint firstItem="lhO-Vb-FiW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="sgH-2U-eHB"/>
+            </constraints>
+            <point key="canvasLocation" x="135.34883720930233" y="19.95708154506438"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="3drotate" width="56" height="56"/>
+        <image name="Back Item" width="44" height="44"/>
+        <image name="Eraser Item" width="120" height="52"/>
+        <image name="Fill Item" width="120" height="52"/>
+        <image name="Noise Item" width="120" height="52"/>
+        <image name="Pencil Item" width="120" height="52"/>
+        <image name="Picker Item" width="24" height="24"/>
+        <image name="Save Item" width="44" height="44"/>
+        <image name="Undo Item" width="120" height="52"/>
+        <image name="dropperNonSelected" width="24" height="24"/>
+        <image name="eraserNonSelected" width="48" height="52"/>
+        <image name="fillNonSelected" width="48" height="52"/>
+        <image name="gridAltNonSelected" width="46" height="52"/>
+        <image name="palette" width="32" height="32"/>
+        <image name="paletteDef" width="20" height="20"/>
+        <image name="paletteNonSelected" width="48" height="52"/>
+        <image name="paletteSelected" width="120" height="52"/>
+        <image name="pencilNonSelected" width="48" height="52"/>
+        <image name="undoNonSelected" width="48" height="52"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.19215686274509805" green="0.20784313725490197" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BeigeColor">
+            <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

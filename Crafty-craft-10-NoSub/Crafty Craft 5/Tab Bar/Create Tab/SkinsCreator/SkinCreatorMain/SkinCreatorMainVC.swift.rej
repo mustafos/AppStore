@@ -1,0 +1,9 @@
+diff a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/SkinCreatorMain/SkinCreatorMainVC.swift b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/SkinCreatorMain/SkinCreatorMainVC.swift	(rejected hunks)
+@@ -58,7 +58,6 @@ class SkinCreatorMainVC: UIViewController {
+     
+     override func viewDidLayoutSubviews() {
+         super.viewDidLayoutSubviews()
+-        print("AAAAA")
+         menuCollectionView.reloadData()
+     }
+     

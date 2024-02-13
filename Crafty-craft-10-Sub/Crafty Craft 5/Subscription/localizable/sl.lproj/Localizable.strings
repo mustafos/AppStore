@@ -1,0 +1,73 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* To preskusno obdobje se samodejno obnovi v plačljivo naročnino in se samodejno podaljšuje, dokler ne prekličete. * Za uporabo te aplikacije morate biti naročeni. Ni brezplačne vsebine. * Plačila naročnine bodo zaračunana vašemu računu iTunes ob potrditvi nakupa. * Naročnine se bodo samodejno obnovile in plačilo bo zaračunano vašemu iTunes računu, razen če je samodejno podaljšanje izklopljeno vsaj 24 ur pred koncem trenutnega obdobja. Stroški podaljšanja so odvisni od vašega naročniškega načrta. Naši standardni naročniški načrti so: * 1-tedenska naročnina (4,99 USD) Za druge valute cena ustreza isti cenovni stopnji v App Store Pricing Matrix. * Naročnina z brezplačnim preizkusnim obdobjem se bo samodejno obnovila v plačljivo naročnino. Samodejno podaljšanje brezplačnega preizkusa lahko prekličete ali upravljate v nastavitvah računa po nakupu. Preklic bo začel veljati 24 ur po zadnjem dnevu trenutnega naročniškega obdobja in prešli boste na brezplačno storitev. * Prosimo, upoštevajte: vsak neuporabljen del brezplačnega preskusnega obdobja 3 dni (če je na voljo) bo izgubljen, ko kupite premium naročnino med brezplačnim preskusnim obdobjem. Za več informacij si oglejte naš pravilnik o zasebnosti in pogoje uporabe.";
+/**/
+"iOSButtonID"="NADALJUJ";
+/**/
+"iOSStart3daysTitleID"="ZAČNITE 3 DNI BREZPLAČNO, NATO 5,99 USD/TEDEN";
+
+/**/
+"LoadingID"="NALAGANJE";
+
+/**/
+"PrivacyID"="Politika \nzasebnosti";
+
+/**/
+"restore"="Obnovi";
+
+/**/
+"TermsID"="Pogoji \nuporabe";
+
+/**/
+"SliderID1"="PRIDOBITE LOKACIJO FIERCE DEITY ARMOR";
+/**/
+"SliderID2"="NAJDI 5 SPOSOBNOSTI MODRECEV IN GOZDA KOROK";
+/**/
+"SliderID3"="VSE JAME IN VODNJAKI NA ZEMLJEVIDU";
+/**/
+"SliderID4"="VSEH 152 SVETIŠČ NA INTERAKTIVNEM ZEMLJEVIDU";
+/**/
+"SliderID5"="ZBERI VSE KOMPLETE OKLOPOV PO LOKACIJAH";
+
+/**/
+"TextTitle1ID"="IZBERITE SVOJ OKLEPNIK";
+
+/**/
+"TextTitle2ID"="IZBERITE ŽELENO SPOSOBNOST";
+
+/**/
+"Text1ID"="Sposobnost amiibo";
+
+/**/
+"Text2ID"="Sposobnost varovalke";
+
+/**/
+"Text3ID"="Sposobnost vzpona";
+
+/**/
+"Text4ID"="Sposobnost odpoklica";
+
+/**/
+"Text5ID"="Sposobnost kamere";
+
+/**/
+
+"ConnectivityTitle"="Težava s povezljivostjo";
+"ConnectivityDescription"="Internetna povezava je videti brez povezave ☹️";
+
+"error_iap" = "Error";
+"inval_prod_id" = "Looks like you have bad Internet connection";
+
+
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+
+

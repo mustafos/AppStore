@@ -1,0 +1,12 @@
+diff a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/BodyPart2DPickerVC/SkinCreatorController/SkinCreatorImportViewController.swift b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/BodyPart2DPickerVC/SkinCreatorController/SkinCreatorImportViewController.swift	(rejected hunks)
+@@ -105,8 +115,9 @@ final class SkinCreatorImportViewController: UIViewController {
+     
+     private func setUpCanvasView() {
+         
++        
++        
+         let colorsArr = currentEditableSkin?.skinAssemblyDiagram?
+-            .rotate(radians: CGFloat.pi/2)?
+             .extractPixelColors(width: currentBodyPartSide?.width,
+                                                                                      height: currentBodyPartSide?.height,
+                                                                                      startX: currentBodyPartSide?.startX,

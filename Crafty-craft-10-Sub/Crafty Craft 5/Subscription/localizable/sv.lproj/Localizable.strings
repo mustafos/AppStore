@@ -1,0 +1,73 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Den här provperioden förnyas automatiskt till en betald prenumeration och kommer att fortsätta att förnyas automatiskt tills du avbryter. * Du måste prenumerera för att använda den här appen. Inget gratis innehåll. * Prenumerationsbetalningar kommer att debiteras ditt iTunes-konto vid bekräftelse av ditt köp. * Prenumerationer förnyas automatiskt och betalning kommer att debiteras ditt iTunes-konto om inte automatisk förnyelse är avstängd minst 24 timmar före slutet av den aktuella perioden. Kostnaden för förnyelsen beror på din prenumerationsplan. Våra standardprenumerationsplaner är: * En veckas prenumeration ($4,99) För andra valutor motsvarar priset samma prisnivå i App Stores prismatris. * Prenumeration med en gratis provperiod förnyas automatiskt till en betald prenumeration. Du kan avbryta eller hantera din kostnadsfria provperiods automatiska förnyelse i dina kontoinställningar efter köpet. Uppsägningen träder i kraft 24 timmar efter den sista dagen av den aktuella prenumerationsperioden och du kommer att nedgraderas till gratistjänsten. * Observera: all oanvänd del av en kostnadsfri provperiod på 3 dagar (om sådan erbjuds) kommer att förverkas när du köper en premiumprenumeration under den kostnadsfria provperioden. Se vår integritetspolicy och användarvillkor för mer information.";
+/**/
+"iOSButtonID"="FORTSÄTTA";
+/**/
+"iOSStart3daysTitleID"="BÖRJA 3 DAGAR GRATIS, SEDAN 5,99 USD/VECKA";
+
+/**/
+"LoadingID"="LÄSER IN";
+
+/**/
+"PrivacyID"="Integritetspolicy";
+
+/**/
+"restore"="Återställ";
+
+/**/
+"TermsID"="Villkor";
+
+/**/
+"SliderID1"="FÅ PLACERING AV HELT GUDOMENS SPANSKAP";
+/**/
+"SliderID2"="HITTA 5 FÖRMÅGA HOS SAGES OCH KOROK SKOGEN";
+/**/
+"SliderID3"="ALLA GROTTOR OCH BRUNNAR PÅ KARTAN";
+/**/
+"SliderID4"="ALLA 152 HELDOMAR PÅ DEN INTERAKTIVA KARTAN";
+/**/
+"SliderID5"="SAMLA ALLA PANSARSETS PER PLATSER";
+
+/**/
+"TextTitle1ID"="VÄLJ DITT ARMORSET";
+
+/**/
+"TextTitle2ID"="VÄLJ DEN ÖNSKADE Förmågan";
+
+/**/
+"Text1ID"="Amiibo förmåga";
+
+/**/
+"Text2ID"="Säkringsförmåga";
+
+/**/
+"Text3ID"="Uppstigningsförmåga";
+
+/**/
+"Text4ID"="Återkallningsförmåga";
+
+/**/
+"Text5ID"="Kameraförmåga";
+
+/**/
+
+"ConnectivityTitle"="Anslutningsproblem";
+"ConnectivityDescription"="Internetanslutningen verkar vara offline ☹️";
+
+"error_iap" = "Error";
+"inval_prod_id" = "Looks like you have bad Internet connection";
+
+
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+
+

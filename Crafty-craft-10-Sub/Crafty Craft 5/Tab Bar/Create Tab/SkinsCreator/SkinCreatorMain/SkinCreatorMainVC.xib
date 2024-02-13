@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SkinCreatorMainVC" customModule="Crafty_Craft_10_Sub" customModuleProvider="target">
+            <connections>
+                <outlet property="menuCollectionView" destination="2Ku-9n-obd" id="jJ0-16-rVZ"/>
+                <outlet property="unlockActivityIndicator" destination="b91-cL-lDt" id="lvU-JW-7Fh"/>
+                <outlet property="unlockButton" destination="vJK-bY-fTh" id="Kuc-Rr-dN4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2Ku-9n-obd">
+                    <rect key="frame" x="16" y="16" width="361" height="836"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V4o-pw-avJ">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="24"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJK-bY-fTh">
+                    <rect key="frame" x="46.666666666666657" y="384.66666666666669" width="300" height="108"/>
+                    <color key="backgroundColor" name="YellowSelectiveColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="108" id="UId-5M-ORM"/>
+                        <constraint firstAttribute="width" constant="300" id="vhK-H8-Yqy"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Unlock to create skins" image="lock button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="lock button" imagePlacement="top" title="To enter this area, you'll need a premium subscription." imagePadding="10">
+                        <fontDescription key="titleFontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
+                        <color key="baseForegroundColor" name="EerieBlackColor"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="27"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="unlockButtonTapped:" destination="-1" eventType="touchUpInside" id="KAc-yb-2T8"/>
+                    </connections>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="b91-cL-lDt">
+                    <rect key="frame" x="178" y="420" width="37" height="37"/>
+                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="b91-cL-lDt" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="3ON-lz-eX2"/>
+                <constraint firstItem="vJK-bY-fTh" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="VI1-Wl-mWi"/>
+                <constraint firstItem="2Ku-9n-obd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="XRQ-he-FZT"/>
+                <constraint firstItem="2Ku-9n-obd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="fak-EA-G5C"/>
+                <constraint firstItem="b91-cL-lDt" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="hYr-Mo-PKh"/>
+                <constraint firstAttribute="bottom" secondItem="2Ku-9n-obd" secondAttribute="bottom" id="nl7-2A-htY"/>
+                <constraint firstAttribute="trailing" secondItem="2Ku-9n-obd" secondAttribute="trailing" constant="16" id="sjQ-LY-aUH"/>
+                <constraint firstItem="vJK-bY-fTh" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="xE6-Lh-IcA"/>
+            </constraints>
+            <point key="canvasLocation" x="5.343511450381679" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="lock button" width="30" height="24"/>
+        <namedColor name="EerieBlackColor">
+            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowSelectiveColor">
+            <color red="0.97254901960784312" green="0.80784313725490198" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

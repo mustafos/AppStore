@@ -1,0 +1,73 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Bản dùng thử này tự động gia hạn thành đăng ký trả phí và sẽ tiếp tục tự động gia hạn cho đến khi bạn hủy. * Bạn cần đăng ký để sử dụng ứng dụng này. Không có nội dung miễn phí. * Thanh toán đăng ký sẽ được tính vào tài khoản iTunes của bạn khi xác nhận giao dịch mua của bạn. * Đăng ký sẽ tự động gia hạn và thanh toán sẽ được tính vào tài khoản iTunes của bạn trừ khi tắt tự động gia hạn ít nhất 24 giờ trước khi kết thúc giai đoạn hiện tại. Chi phí gia hạn tùy thuộc vào Gói đăng ký của bạn. Gói đăng ký tiêu chuẩn của chúng tôi là: * Đăng ký 1 tuần ($4,99) Đối với các loại tiền tệ khác, giá tương ứng với cùng một mức giá trên Ma trận giá của App Store. * Đăng ký có thời gian dùng thử miễn phí sẽ tự động gia hạn thành đăng ký trả phí. Bạn có thể hủy hoặc quản lý việc tự động gia hạn bản dùng thử miễn phí của mình trong Cài đặt tài khoản sau khi mua. Việc hủy bỏ sẽ có hiệu lực sau 24 giờ kể từ ngày cuối cùng của thời hạn đăng ký hiện tại và bạn sẽ bị hạ cấp xuống dịch vụ miễn phí. * Xin lưu ý: mọi phần chưa sử dụng trong thời gian dùng thử miễn phí 3 ngày (nếu được cung cấp) sẽ bị mất khi bạn mua đăng ký trả phí trong thời gian dùng thử miễn phí. Vui lòng, để biết thêm thông tin, hãy xem Chính sách quyền riêng tư và Điều khoản sử dụng của chúng tôi.";
+/**/
+"iOSButtonID"="TIẾP TỤC";
+/**/
+"iOSStart3daysTitleID"="BẮT ĐẦU 3 NGÀY MIỄN PHÍ SAU ĐÓ $5,99/TUẦN";
+
+/**/
+"LoadingID"="ĐANG TẢI";
+
+/**/
+"PrivacyID"="Chính sách bảo mật";
+
+/**/
+"restore"="Khôi phục";
+
+/**/
+"TermsID"="Điều khoản sử dụng";
+
+/**/
+"SliderID1"="GET FIERCE DEITY ARMOR VỊ TRÍ";
+/**/
+"SliderID2"="TÌM 5 KHẢ NĂNG CỦA CÁC THẦY VÀ RỪNG KOROK";
+/**/
+"SliderID3"="TẤT CẢ CÁC Hang VÀ Giếng TRÊN BẢN ĐỒ";
+/**/
+"SliderID4"="TẤT CẢ 152 THỜ TRÊN BẢN ĐỒ TƯƠNG TÁC";
+/**/
+"SliderID5"="THU THẬP TẤT CẢ CÁC BỘ GIÁP THEO VỊ TRÍ";
+
+/**/
+"TextTitle1ID"="CHỌN BỘ GIÁP CỦA BẠN";
+
+/**/
+"TextTitle2ID"="CHỌN KHẢ NĂNG MONG MUỐN";
+
+/**/
+"Text1ID"="Khả năng Amiibo";
+
+/**/
+"Text2ID"="khả năng cầu chì";
+
+/**/
+"Text3ID"="khả năng đi lên";
+
+/**/
+"Text4ID"="khả năng nhớ lại";
+
+/**/
+"Text5ID"="khả năng máy ảnh";
+
+/**/
+
+"ConnectivityTitle"="Sự cố kết nối";
+"ConnectivityDescription"="Kết nối Internet dường như đang ngoại tuyến ☹️";
+
+
+"error_iap" = "Error";
+"inval_prod_id" = "Looks like you have bad Internet connection";
+
+
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+

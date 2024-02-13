@@ -1,0 +1,73 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Este teste é renovado automaticamente em uma assinatura paga e continuará a ser renovado automaticamente até que você cancele. * Você precisa ser assinante para usar este aplicativo. Nenhum conteúdo gratuito. * Os pagamentos de assinatura serão cobrados em sua conta do iTunes na confirmação de sua compra. * As assinaturas serão renovadas automaticamente e o pagamento será cobrado em sua conta do iTunes, a menos que a renovação automática seja desativada pelo menos 24 horas antes do final do período atual. O custo da renovação depende do seu Plano de Assinatura. Nossos planos de assinatura padrão são: * Assinatura de 1 semana (US$ 4,99) Para outras moedas, o preço corresponde ao mesmo nível de preço na Matriz de preços da App Store. * A assinatura com um período de teste gratuito será renovada automaticamente para uma assinatura paga. Você pode cancelar ou gerenciar a renovação automática de sua avaliação gratuita nas configurações da sua conta após a compra. O cancelamento entrará em vigor 24 horas após o último dia do período de assinatura atual e você será rebaixado para o serviço gratuito. * Observação: qualquer parte não utilizada de um período de teste gratuito de 3 dias (se oferecido) será perdida quando você adquirir uma assinatura premium durante o período de teste gratuito. Por favor, para mais informações consulte nossa Política de Privacidade e Termos de Uso.";
+/**/
+"iOSButtonID"="CONTINUAR";
+/**/
+"iOSStart3daysTitleID"="COMECE 3 DIAS GRÁTIS DEPOIS US$ 5,99/SEMANA";
+
+/**/
+"LoadingID"="CARREGANDO";
+
+/**/
+"PrivacyID"="Política de Privacidade";
+
+/**/
+"restore"="Restaurar";
+
+/**/
+"TermsID"="Termos de uso";
+
+/**/
+"SliderID1"="OBTENHA LOCAL DE ARMADURA DA DEIDADE FIERCE";
+/**/
+"SliderID2"="ENCONTRE 5 HABILIDADES DOS SÁBIOS E DA FLORESTA DE KOROK";
+/**/
+"SliderID3"="TODAS AS CAVERNAS E POÇOS NO MAPA";
+/**/
+"SliderID4"="TODOS OS 152 SANTUÁRIOS NO MAPA INTERATIVO";
+/**/
+"SliderID5"="COLETE TODOS OS CONJUNTOS DE ARMADURA POR LOCALIZAÇÃO";
+
+/**/
+"TextTitle1ID"="ESCOLHA SEU CONJUNTO DE ARMADURA";
+
+/**/
+"TextTitle2ID"="ESCOLHA A HABILIDADE DESEJADA";
+
+/**/
+"Text1ID"="Habilidade Amiibo";
+
+/**/
+"Text2ID"="Capacidade de fusão";
+
+/**/
+"Text3ID"="Ascend habilidade";
+
+/**/
+"Text4ID"="Capacidade de recordar";
+
+/**/
+"Text5ID"="Habilidade da câmera";
+
+/**/
+
+"ConnectivityTitle"="Problema de conectividade";
+"ConnectivityDescription"="A conexão com a Internet parece estar offline ☹️";
+
+"error_iap" = "Error";
+"inval_prod_id" = "Looks like you have bad Internet connection";
+
+
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+
+

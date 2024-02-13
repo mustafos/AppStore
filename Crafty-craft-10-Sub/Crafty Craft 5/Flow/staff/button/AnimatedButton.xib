@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimatedButton" customModule="template" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundSelf" destination="UIz-Cr-0Jo" id="n4m-aO-zck"/>
+                <outlet property="contentSelf" destination="iN0-l3-epB" id="cXf-dq-Scd"/>
+                <outlet property="titleSelf" destination="SWl-HE-dzn" id="YUu-Ke-HGl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UIz-Cr-0Jo">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="SWl-HE-dzn">
+                    <rect key="frame" x="8" y="5" width="398" height="16"/>
+                    <string key="text">Start 3-days for  FREE
+$4.99/week after</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="UIz-Cr-0Jo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7ej-H3-UbG"/>
+                <constraint firstAttribute="trailing" secondItem="SWl-HE-dzn" secondAttribute="trailing" constant="8" id="AX9-II-JCo"/>
+                <constraint firstItem="SWl-HE-dzn" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="H8q-ib-V8i"/>
+                <constraint firstItem="SWl-HE-dzn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="JDj-BU-dCe"/>
+                <constraint firstItem="UIz-Cr-0Jo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LgB-mo-c0v"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="SWl-HE-dzn" secondAttribute="bottom" constant="5" id="Vmh-gE-Cgw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UIz-Cr-0Jo" secondAttribute="trailing" id="db9-P1-zfv"/>
+                <constraint firstItem="SWl-HE-dzn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="eBP-Ua-cpC"/>
+                <constraint firstAttribute="bottom" secondItem="UIz-Cr-0Jo" secondAttribute="bottom" id="lXp-Sx-EgG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.8840579710145" y="144.64285714285714"/>
+        </view>
+    </objects>
+</document>

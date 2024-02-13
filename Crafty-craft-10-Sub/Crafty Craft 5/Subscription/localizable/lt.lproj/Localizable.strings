@@ -1,0 +1,73 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Šis bandomasis laikotarpis automatiškai atnaujinamas į mokamą prenumeratą ir bus automatiškai atnaujinamas, kol atšauksite. * Norėdami naudotis šia programa, turite užsiprenumeruoti. Nėra nemokamo turinio. * Prenumeratos mokėjimai bus nuskaityti iš jūsų iTunes paskyros patvirtinus pirkinį. * Prenumeratos bus automatiškai atnaujintos, o mokėjimas bus apmokestintas iš jūsų iTunes paskyros, nebent automatinis atnaujinimas bus išjungtas likus bent 24 valandoms iki dabartinio laikotarpio pabaigos. Atnaujinimo kaina priklauso nuo jūsų prenumeratos plano. Mūsų standartiniai prenumeratos planai yra šie: * 1 savaitės prenumerata (4,99 USD) Kitomis valiutomis kaina atitinka tą patį kainų lygį „App Store Pricing Matrix“. * Prenumerata su nemokamu bandomuoju laikotarpiu automatiškai atnaujinama į mokamą prenumeratą. Galite atšaukti arba tvarkyti nemokamo bandomojo laikotarpio automatinį atnaujinimą paskyros nustatymuose po pirkimo. Atšaukimas įsigalios praėjus 24 valandoms po paskutinės dabartinio prenumeratos laikotarpio dienos ir būsite grąžinti į nemokamą paslaugą. * Atkreipkite dėmesį: bet kokia nepanaudota 3 dienų nemokamo bandomojo laikotarpio dalis (jei siūloma) bus prarasta, kai nemokamu bandomuoju laikotarpiu įsigysite aukščiausios kokybės prenumeratą. Daugiau informacijos rasite mūsų privatumo politikoje ir naudojimo sąlygose.";
+/**/
+"iOSButtonID"="TĘSTI";
+/**/
+"iOSStart3daysTitleID"="PRADĖKITE 3 DIENAS NEMOKAMAI, TAI 5,99 USD per savaitę";
+
+/**/
+"LoadingID"="Įkeliama";
+
+/**/
+"PrivacyID"="Privatumo politika";
+
+/**/
+"restore"="Atkurti";
+
+/**/
+"TermsID"="Naudojimo sąlygos";
+
+/**/
+"SliderID1"="GAUKITE NUOŠIAUS DIEVŲ ŠARVŲ VIETĄ";
+/**/
+"SliderID2"="RASTI 5 IŠMINIŲ IR KOROK MIŠKO GEBĖJIMUS";
+/**/
+"SliderID3"="VISI URVAI IR ŠULINIAI Žemėlapyje";
+/**/
+"SliderID4"="VISOS 152 ŠVENTOVOS INTERAKTYVIUME ŽEMĖLAPIE";
+/**/
+"SliderID5"="SURINKITE VISUS ŠARVŲ RINKINYS PAGAL VIETAS";
+
+/**/
+"TextTitle1ID"="PASIRINKITE SAVO ŠARVŲ RINKINĮ";
+
+/**/
+"TextTitle2ID"="PASIRINKITE NORIMUS GEBĖJIMUS";
+
+/**/
+"Text1ID"="Amiibo gebėjimas";
+
+/**/
+"Text2ID"="Saugiklio gebėjimas";
+
+/**/
+"Text3ID"="Pakilimo gebėjimas";
+
+/**/
+"Text4ID"="Prisiminimo gebėjimas";
+
+/**/
+"Text5ID"="Kameros galimybės";
+
+/**/
+
+"ConnectivityTitle"="Ryšio problema";
+"ConnectivityDescription"="Atrodo, kad interneto ryšys neprisijungęs ☹️";
+
+
+"error_iap" = "Error";
+"inval_prod_id" = "Looks like you have bad Internet connection";
+
+
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+

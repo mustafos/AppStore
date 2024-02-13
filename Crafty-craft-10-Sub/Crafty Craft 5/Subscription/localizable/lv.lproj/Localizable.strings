@@ -1,0 +1,73 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Šis izmēģinājuma periods tiek automātiski atjaunots par maksas abonementu, un tas tiks automātiski atjaunots, līdz atcelsiet abonementu. * Lai izmantotu šo lietotni, jums ir jābūt abonētam. Nav bezmaksas satura. * Abonēšanas maksājumi tiks iekasēti no jūsu iTunes konta, apstiprinot pirkumu. * Abonementi tiks automātiski atjaunoti, un maksājums tiks iekasēts no jūsu iTunes konta, ja vien automātiskā atjaunošana netiks izslēgta vismaz 24 stundas pirms pašreizējā perioda beigām. Atjaunošanas izmaksas ir atkarīgas no jūsu abonēšanas plāna. Mūsu standarta abonēšanas plāni ir: * 1 nedēļas abonements (4,99 $) Citām valūtām cena atbilst tam pašam cenu līmenim App Store cenu matricā. * Abonements ar bezmaksas izmēģinājuma periodu tiks automātiski atjaunots uz maksas abonementu. Pēc pirkuma konta iestatījumos varat atcelt vai pārvaldīt bezmaksas izmēģinājuma perioda automātisko atjaunošanu. Atcelšana stāsies spēkā 24 stundas pēc pašreizējā abonēšanas perioda pēdējās dienas, un jūs tiksit pazemināts uz bezmaksas pakalpojumu. * Lūdzu, ņemiet vērā: jebkura neizmantotā 3 dienu bezmaksas izmēģinājuma perioda daļa (ja tiek piedāvāta) tiks konfiscēta, kad bezmaksas izmēģinājuma perioda laikā iegādāsieties premium klases abonementu. Lai iegūtu papildinformāciju, lūdzu, skatiet mūsu konfidencialitātes politiku un lietošanas noteikumus.";
+/**/
+"iOSButtonID"="TURPINĀT";
+/**/
+"iOSStart3daysTitleID"="SĀCIET 3 DIENAS BEZ MAKSAS, TAD 5,99 ASV dolāri NEDĒĻĀ";
+
+/**/
+"LoadingID"="NOTIEK IELĀDE";
+
+/**/
+"PrivacyID"="Privātuma politika";
+
+/**/
+"restore"="Atjaunot";
+
+/**/
+"TermsID"="Lietošanas noteikumi";
+
+/**/
+"SliderID1"="IEGĀDĀJIET SĪGO DIEVU BRUŅU ATRAŠANĀS VIETAS";
+/**/
+"SliderID2"="ATRASTI 5 GUDRIŅU UN KOROKAS MEŽA SPĒJAS";
+/**/
+"SliderID3"="VISAS ALAS UN AKAS KARTĒ";
+/**/
+"SliderID4"="VISAS 152 SVĒTvietas INTERAKTĪVĀ KARTĒ";
+/**/
+"SliderID5"="SAVĀK VISUS BRUŅU KOMPLEKTS PĒC ATRAŠANĀS VIETAS";
+
+/**/
+"TextTitle1ID"="IZVĒLIES SAVU BRUŅU KOMPLEKTU";
+
+/**/
+"TextTitle2ID"="IZVĒLIES VĒLAMĀS SPĒJAS";
+
+/**/
+"Text1ID"="Amiibo spēja";
+
+/**/
+"Text2ID"="Drošinātāja spēja";
+
+/**/
+"Text3ID"="Pacelšanās spēja";
+
+/**/
+"Text4ID"="Atsaukt spējas";
+
+/**/
+"Text5ID"="Kameras spēja";
+
+/**/
+
+"ConnectivityTitle"="Savienojamības problēma";
+"ConnectivityDescription"="Šķiet, ka interneta savienojums ir bezsaistē ☹️";
+
+
+"error_iap" = "Error";
+"inval_prod_id" = "Looks like you have bad Internet connection";
+
+
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+

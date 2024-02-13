@@ -1,0 +1,73 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Toto zkušební období se automaticky obnovuje na placené předplatné a bude se automaticky obnovovat, dokud jej nezrušíte. * Chcete-li používat tuto aplikaci, musíte být přihlášeni k odběru. Žádný bezplatný obsah. * Platby za předplatné budou účtovány na váš účet iTunes při potvrzení nákupu. * Předplatné se automaticky obnoví a platba bude účtována na váš účet iTunes, pokud není automatické obnovení vypnuto alespoň 24 hodin před koncem aktuálního období. Cena obnovení závisí na vašem plánu předplatného. Naše standardní plány předplatného jsou: * 1týdenní předplatné (4,99 $) U ostatních měn odpovídá cena stejné cenové úrovni v cenové matici App Store. * Předplatné s bezplatným zkušebním obdobím se automaticky obnoví na placené předplatné. Automatické obnovení bezplatné zkušební verze můžete po nákupu zrušit nebo spravovat v Nastavení účtu. Zrušení vstoupí v platnost 24 hodin po posledním dni aktuálního období předplatného a budete převedeni na bezplatnou službu. * Poznámka: Jakákoli nevyužitá část bezplatného zkušebního období 3 dnů (pokud je nabízeno) propadne, když si během bezplatného zkušebního období zakoupíte prémiové předplatné. Pro více informací si prosím přečtěte naše Zásady ochrany osobních údajů a Podmínky použití.";
+/**/
+"iOSButtonID"="POKRAČOVAT";
+/**/
+"iOSStart3daysTitleID"="ZAČNĚTE 3 DNY ZDARMA, PAK 5,99 $/TÝDEN";
+
+/**/
+"LoadingID"="NAČÍTÁNÍ";
+
+/**/
+"PrivacyID"="Zásady ochrany osobních údajů";
+
+/**/
+"restore"="Obnovit";
+
+/**/
+"TermsID"="Podmínky použití";
+
+/**/
+"SliderID1"="ZÍSKEJTE UMÍSTĚNÍ BRNĚNÍ BOŽSTVA";
+/**/
+"SliderID2"="NAJDĚTE 5 SCHOPNOSTÍ MUDRŮ A LESA KOROK";
+/**/
+"SliderID3"="VŠECHNY JESKYNĚ A STUDNY NA MAPĚ";
+/**/
+"SliderID4"="VŠECH 152 SVATYŇ NA INTERAKTIVNÍ MAPĚ";
+/**/
+"SliderID5"="SBÍREJTE VŠECHNY SADY ZBRNĚNÍ PODLE MÍST";
+
+/**/
+"TextTitle1ID"="VYBERTE SI SOUPRAVU BRNĚNÍ";
+
+/**/
+"TextTitle2ID"="VYBERTE SI POŽADOVANOU SCHOPNOST";
+
+/**/
+"Text1ID"="Schopnost Amiibo";
+
+/**/
+"Text2ID"="Schopnost pojistky";
+
+/**/
+"Text3ID"="Schopnost vzestupu";
+
+/**/
+"Text4ID"="Schopnost vyvolání";
+
+/**/
+"Text5ID"="Schopnost fotoaparátu";
+
+/**/
+
+"ConnectivityTitle"="Problém s připojením";
+"ConnectivityDescription"="Zdá se, že připojení k internetu je offline ☹️";
+
+"error_iap" = "Error";
+"inval_prod_id" = "Looks like you have bad Internet connection";
+
+
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+
+
