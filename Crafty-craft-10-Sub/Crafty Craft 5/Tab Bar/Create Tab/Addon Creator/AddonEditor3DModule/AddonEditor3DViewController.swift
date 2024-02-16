@@ -29,7 +29,7 @@ class AddonEditor3DViewController: UIViewController {
     private let isIpad = Device.iPad
     //MARK: IBOotlet
     
-//    @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var homeButton: UIButton!
     
     @IBOutlet weak var saveButton: UIButton!
     
