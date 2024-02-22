@@ -1,0 +1,124 @@
+From 8df7f033258ffc840973594447692cd4ced2d2c4 Mon Sep 17 00:00:00 2001
+From: VitalyPolezhay <>
+Date: Tue, 12 Sep 2023 13:46:17 +0300
+Subject: [PATCH] fixed bug with tool tap area
+
+---
+ .../3dModel/EditorSkinModel.swift             |  1 -
+ .../Skin3DTestViewController.swift            | 32 +++++++++++++++++++
+ .../Skin3DTestViewController.xib              |  8 ++++-
+ 3 files changed, 39 insertions(+), 2 deletions(-)
+
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/3dModel/EditorSkinModel.swift b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/3dModel/EditorSkinModel.swift
+index 44933b8..e6bb247 100644
+--- a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/3dModel/EditorSkinModel.swift	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/3dModel/EditorSkinModel.swift	
+@@ -81,7 +81,6 @@ class EditorSkinModel {
+     }
+     
+     func makeUndoDrawCommand() {
+-        print("commandIndex - \(commandIndex)")
+         if commandIndex > 0 {
+             let command = drawSkinCommands.undoCommands[commandIndex - 1]
+             for i in 0..<command.indexes.count {
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.swift b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.swift
+index ec696b5..c772b27 100755
+--- a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.swift	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.swift	
+@@ -123,6 +123,13 @@ class Skin3DTestViewController: UIViewController {
+     @IBOutlet weak var undoLab: UILabel!
+     @IBOutlet weak var undoBtn: UIButton!
+     
++    @IBOutlet weak var undoContainerView: UIView!
++    @IBOutlet weak var noiseContainerView: UIView!
++    @IBOutlet weak var pencilContainerView: UIView!
++    @IBOutlet weak var eraserContainerView: UIView!
++    @IBOutlet weak var pickerContainerView: UIView!
++    @IBOutlet weak var fillContainerView: UIView!
++    
+ //    @IBOutlet var colorButtonsOutletCollection: [UIButton]!
+     @IBOutlet weak var dropperButton: UIButton!
+     
+@@ -262,6 +269,7 @@ class Skin3DTestViewController: UIViewController {
+         setupMyScene()
+         
+         setupUI()
++        setupToolBarAction()
+     }
+     
+     deinit {
+@@ -276,6 +284,30 @@ class Skin3DTestViewController: UIViewController {
+         color3DCollection.register(UINib(nibName: "Color3DCollectionCell", bundle: nil), forCellWithReuseIdentifier: "Color3DCollectionCell")
+     }
+     
++    private func setupToolBarAction() {
++        undoContainerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(undoTap)))
++        pencilContainerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pencilTap)))
++        eraserContainerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(eraserTap)))
++        pickerContainerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pickerTap)))
++        fillContainerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(fillTap)))
++    }
++    
++    @objc func undoTap() {
++        undoBtn.sendActions(for: .touchUpInside)
++    }
++    @objc func pencilTap() {
++        pencilBtn.sendActions(for: .touchUpInside)
++    }
++    @objc func eraserTap() {
++        eraserBtn.sendActions(for: .touchUpInside)
++    }
++    @objc func pickerTap() {
++        dropperBtn.sendActions(for: .touchUpInside)
++    }
++    @objc func fillTap() {
++        fillBtn.sendActions(for: .touchUpInside)
++    }
++    
+     private func setupMyScene() {
+         
+         sceneView.scene = scnModel.scene
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.xib b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.xib
+index 5820968..e59300f 100755
+--- a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.xib	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.xib	
+@@ -31,14 +31,19 @@
+                 <outlet property="dropperButton" destination="wWy-7J-gOy" id="j0d-ky-vPH"/>
+                 <outlet property="dropperLab" destination="3Gh-Yc-jsf" id="iKf-Ck-lIu"/>
+                 <outlet property="eraserBtn" destination="mGU-sT-OYX" id="fVW-2n-PI5"/>
++                <outlet property="eraserContainerView" destination="JHH-ah-ida" id="Vr7-VW-4qg"/>
+                 <outlet property="eraserLab" destination="2De-3i-r5Q" id="e5N-QV-JBD"/>
+                 <outlet property="fillBtn" destination="u5w-2X-H7d" id="Q8p-TT-vJO"/>
++                <outlet property="fillContainerView" destination="3fW-0j-o7f" id="Zym-zH-wLp"/>
+                 <outlet property="fillLab" destination="iS0-m1-FB5" id="zQH-gl-EVX"/>
+                 <outlet property="homeButton" destination="OkP-RY-yMd" id="eMU-X5-mh0"/>
+                 <outlet property="noiseBtn" destination="CSs-NF-l7Q" id="1Nb-cp-IvZ"/>
++                <outlet property="noiseContainerView" destination="VD3-GA-Ulj" id="qdL-AW-HzZ"/>
+                 <outlet property="noiseLab" destination="6ze-Qp-jZ4" id="kk0-7c-WgR"/>
+                 <outlet property="pencilBtn" destination="q71-xB-QT1" id="JrE-zT-4Dr"/>
++                <outlet property="pencilContainerView" destination="AjJ-SC-8ZB" id="bLm-da-F4V"/>
+                 <outlet property="pencilLab" destination="kRj-Pc-XRa" id="WmS-t2-rID"/>
++                <outlet property="pickerContainerView" destination="vCn-an-dg5" id="ezm-t2-j51"/>
+                 <outlet property="rotationSkinModelButton" destination="glY-bF-pQp" id="LjT-XA-AoA"/>
+                 <outlet property="saveButton" destination="g6A-Ls-lEA" id="Nhc-wY-hAK"/>
+                 <outlet property="sceneView" destination="EEn-mf-WOc" id="xFD-6m-J0f"/>
+@@ -46,6 +51,7 @@
+                 <outlet property="smallStiveView" destination="MfN-nT-Ult" id="93c-kV-dZo"/>
+                 <outlet property="toolsStackView" destination="D10-R1-Ltm" id="x1Y-6o-cO9"/>
+                 <outlet property="undoBtn" destination="Gvg-8X-uYD" id="jWs-iH-LQO"/>
++                <outlet property="undoContainerView" destination="bnH-53-ITQ" id="SPl-Hw-bHI"/>
+                 <outlet property="undoLab" destination="jzU-DG-vO7" id="zxI-xw-Avx"/>
+                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+             </connections>
+@@ -424,7 +430,7 @@
+                                                             <state key="normal" backgroundImage="undoNonSelected"/>
+                                                             <state key="selected" backgroundImage="Undo Item"/>
+                                                             <connections>
+-                                                                <action selector="onToolBarUndoButtonTapped:" destination="-1" eventType="touchUpInside" id="laF-B4-NCd"/>
++                                                                <action selector="onToolBarUndoButtonTapped:" destination="-1" eventType="touchUpInside" id="dJ3-W3-AgS"/>
+                                                             </connections>
+                                                         </button>
+                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Undo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzU-DG-vO7">
+-- 
+2.37.0
+

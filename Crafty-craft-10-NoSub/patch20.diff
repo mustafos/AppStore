@@ -1,0 +1,116 @@
+From 1527a084e7088f0c92c1b825e54024ce2e9ba823 Mon Sep 17 00:00:00 2001
+From: VitalyPolezhay <>
+Date: Mon, 20 Nov 2023 15:08:03 +0200
+Subject: [PATCH] fixed bugs 20
+
+---
+ .../AddonEditor3DModule/AddonEditor3DViewController.swift  | 2 +-
+ .../AddonEditorController/AddonEditorViewController.swift  | 7 ++++++-
+ .../AddonEditorController/AddonEditorViewController.xib    | 2 +-
+ .../SkinCreatorController/SkinCreatorViewController.swift  | 2 +-
+ .../Skin3DCreator/Skin3DTestViewController.swift           | 2 +-
+ .../Tab Bar/Seed Tab/SeedTabViewController.swift           | 4 +++-
+ 6 files changed, 13 insertions(+), 6 deletions(-)
+
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditor3DModule/AddonEditor3DViewController.swift b/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditor3DModule/AddonEditor3DViewController.swift
+index 4da2821..facbe93 100755
+--- a/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditor3DModule/AddonEditor3DViewController.swift	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditor3DModule/AddonEditor3DViewController.swift	
+@@ -151,7 +151,7 @@ class AddonEditor3DViewController: UIViewController {
+             navigationController?.popViewController(animated: true)
+         } else {
+             saveAlertView = SaveAlertView()
+-            saveAlertView?.dialogTextLabel.text = "Save skin before exitting".uppercased()
++            saveAlertView?.dialogTextLabel.text = "Save skin before exit".uppercased()
+             saveAlertView?.delegate = self
+             saveAlertView?.frame = view.bounds
+             saveAlertView?.setSkinNameSaveTextField.isHidden = true
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/AddonEditorViewController.swift b/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/AddonEditorViewController.swift
+index ed2ddab..8843fb0 100644
+--- a/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/AddonEditorViewController.swift	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/AddonEditorViewController.swift	
+@@ -166,6 +166,7 @@ class AddonEditorViewController: UIViewController {
+     }
+     private func setupCustomNavBar() {
+         customNavBarView.backgroundColor = .clear
++        saveBtn.setImage(UIImage(named: !isCurrentAddonIsNew ? "Save Item" : "Dowmload Item"), for: .normal)
+     }
+     
+     private func setupTopContainerView() {
+@@ -402,6 +403,10 @@ extension AddonEditorViewController: ModPropertiesChangeable {
+         }
+     }
+     
++    private var isCurrentAddonIsNew: Bool {
++        RealmService.shared.getArrayOfSavedAddons().contains(where: {$0.idshka == model.addonModel.idshka}) == false
++    }
++    
+     private func saveNewAddon() {
+         
+         let realm = RealmService.shared
+@@ -411,7 +416,7 @@ extension AddonEditorViewController: ModPropertiesChangeable {
+         
+         
+         
+-        let isNewAddon = realm.getArrayOfSavedAddons().contains(where: {$0.idshka == model.addonModel.idshka}) == false
++        let isNewAddon = isCurrentAddonIsNew
+         
+         if !isNewAddon {
+             addon = realm.getArrayOfSavedAddons().first(where: {$0.idshka == model.addonModel.idshka})
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/AddonEditorViewController.xib b/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/AddonEditorViewController.xib
+index eef64aa..dfd1a65 100644
+--- a/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/AddonEditorViewController.xib	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/AddonEditorViewController.xib	
+@@ -65,7 +65,7 @@
+                                 <constraint firstAttribute="width" secondItem="EoG-nA-FgJ" secondAttribute="height" multiplier="1:1" id="Atb-x2-9cs"/>
+                             </constraints>
+                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+-                            <state key="normal" backgroundImage="Dowmload Item"/>
++                            <state key="normal" image="Dowmload Item"/>
+                             <connections>
+                                 <action selector="saveBtnTapped:" destination="-1" eventType="touchUpInside" id="pp7-Tg-Flx"/>
+                             </connections>
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/BodyPart2DPickerVC/SkinCreatorController/SkinCreatorViewController.swift b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/BodyPart2DPickerVC/SkinCreatorController/SkinCreatorViewController.swift
+index 1561b3d..e8a2218 100755
+--- a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/BodyPart2DPickerVC/SkinCreatorController/SkinCreatorViewController.swift	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/BodyPart2DPickerVC/SkinCreatorController/SkinCreatorViewController.swift	
+@@ -201,7 +201,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
+     @IBAction func onNavBarBackButtonTapped(_ sender: UIButton) {
+         saveAlertView = SaveAlertView()
+         saveAlertView?.delegate = self
+-        saveAlertView?.dialogTextLabel.text = "Save skin before exitting".uppercased()
++        saveAlertView?.dialogTextLabel.text = "Save skin before exit".uppercased()
+         saveAlertView?.frame = view.bounds
+         saveAlertView?.withoutTextField = true
+         saveAlertView?.setSkinNameSaveTextField.isHidden = true
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.swift b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.swift
+index 3477bf0..d5aff5c 100755
+--- a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.swift	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.swift	
+@@ -178,7 +178,7 @@ class Skin3DTestViewController: UIViewController {
+         } else {
+             saveAlertView = SaveAlertView()
+             saveAlertView?.delegate = self
+-            saveAlertView?.dialogTextLabel.text = "Save skin before exitting".uppercased()
++            saveAlertView?.dialogTextLabel.text = "Save skin before exit".uppercased()
+             saveAlertView?.frame = view.bounds
+             saveAlertView?.setSkinNameSaveTextField.isHidden = true
+             saveAlertView?.withExit = true
+diff --git a/Crafty Craft 5/Tab Bar/Seed Tab/SeedTabViewController.swift b/Crafty Craft 5/Tab Bar/Seed Tab/SeedTabViewController.swift
+index 0610a3e..5ba6e9b 100644
+--- a/Crafty Craft 5/Tab Bar/Seed Tab/SeedTabViewController.swift	
++++ b/Crafty Craft 5/Tab Bar/Seed Tab/SeedTabViewController.swift	
+@@ -233,7 +233,9 @@ extension SeedTabViewController: UITableViewDataSource, UITableViewDelegate {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         if tableView == suggestionsTableView{
+             let cell = tableView.dequeueReusableCell(withIdentifier: SearchSuggestionCell.identifier) as! SearchSuggestionCell
+-            cell.titleLabel.text = dataSourceSeed[indexPath.row].name
++            if dataSourceSeed.count > indexPath.row {
++                cell.titleLabel.text = dataSourceSeed[indexPath.row].name
++            }
+             cell.selectionStyle = .none
+             return cell
+         }
+-- 
+2.37.0
+

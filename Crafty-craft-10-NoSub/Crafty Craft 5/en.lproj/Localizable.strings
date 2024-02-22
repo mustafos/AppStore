@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Crafty Craft 5
+
+  Created by Vitaliy Polezhay on 15.11.2023.
+  Copyright © 2023 Noname Digital. All rights reserved.
+*/
+
+
+"connectivityIssue" = "Connectivity Issue";
+"connectivityAlert" = "Internet connection appears to be offline";
