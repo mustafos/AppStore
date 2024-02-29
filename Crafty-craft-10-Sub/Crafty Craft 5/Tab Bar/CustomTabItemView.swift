@@ -71,4 +71,3 @@ class CustomTabItemView: UIView {
         callback(item.index)
     }
 }
-

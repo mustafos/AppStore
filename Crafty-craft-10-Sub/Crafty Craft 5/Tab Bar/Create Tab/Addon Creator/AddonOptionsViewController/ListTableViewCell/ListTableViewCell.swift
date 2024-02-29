@@ -18,7 +18,6 @@ class ListTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         backgroundViewContainer.roundCorners(Self.backgroundCellHeight/2)
     }
     
@@ -32,10 +31,10 @@ class ListTableViewCell: UITableViewCell {
         
         self.nameLabel.text = addonModel.displayName
         
-        if let imageData = addonModel.displayImageData, let image = UIImage(data: imageData) {
-            cellImage.image = image
-        } else {
-            addLoader()
+//        if let imageData = addonModel.displayImageData, let image = UIImage(data: imageData) {
+//            cellImage.image = image
+//        } else {
+//            addLoader()
             DropBoxParserFiles.shared.getBloodyImageURLFromDropBox(img: addonModel.displayImage) { [weak self] imgPAth in
                 if let imgPath = imgPAth {
                     self?.cellImage.loadImage(from: imgPath, id: addonModel.idshka) { [weak self] img in
@@ -45,16 +44,16 @@ class ListTableViewCell: UITableViewCell {
                         }
                     }
                 }
-            }
+//            }
         }
     }
     
     func configCategory(category: AddonCategory) {
         self.nameLabel.text = category.categoryName
-        if let imageData = category.displayImageData, let image = UIImage(data: imageData) {
-            cellImage.image = image
-        } else {
-            addLoader()
+//        if let imageData = category.displayImageData, let image = UIImage(data: imageData) {
+//            cellImage.image = image
+//        } else {
+//            addLoader()
             DropBoxParserFiles.shared.getBloodyImageURLFromDropBox(img: category.imagePathName) { [weak self] imgPAth in
                 if let imgPath = imgPAth {
                     self?.cellImage.loadImage(from: imgPath, id: category.imagePathName) { [weak self] img in
@@ -64,9 +63,8 @@ class ListTableViewCell: UITableViewCell {
                         }
                     }
                 }
-            }
+//            }
         }
-        
     }
     
     private func addLoader() {
