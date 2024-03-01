@@ -54,7 +54,6 @@ enum Configurations {
     }
 }
 
-
 enum ConfigurationMediaSub {
     static let nameFileVideoForPhone = "phone"
     static let nameFileVideoForPad = "pad"

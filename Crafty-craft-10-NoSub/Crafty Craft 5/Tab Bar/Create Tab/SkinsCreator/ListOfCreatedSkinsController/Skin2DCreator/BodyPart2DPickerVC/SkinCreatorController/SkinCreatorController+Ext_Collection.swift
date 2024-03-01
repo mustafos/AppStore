@@ -27,7 +27,6 @@ extension SkinCreatorViewController: UICollectionViewDelegate, UICollectionViewD
         
         cell.configCell(bgColor: cellColor, isSelected: cellIsSelcted)
         
-
         return cell
     }
     
@@ -38,30 +37,28 @@ extension SkinCreatorViewController: UICollectionViewDelegate, UICollectionViewD
         _currentDrawingColor = colorsManager.getColor(by: indexPath.item)
         
         cell?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-//        colorsManager.selectedColorIndex = indexPath.item
-//        updateCollection()
     }
-    
-
 }
 
 extension SkinCreatorViewController: UICollectionViewDelegateFlowLayout {
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+        
         let cellHeight = colorsCollection.bounds.size.height - 8
         let cellWidth = cellHeight
-
+        
         let size = CGSize(width: cellHeight, height: cellWidth)
-
+        
         return size
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        // Set the padding for the first cell only
+        let padding: CGFloat = 10
+        return UIEdgeInsets(top: 0, left: padding, bottom: 0, right: 0)
+    }
 }
 
 //MARK: ColorManager Delegate
-
 extension SkinCreatorViewController: ColorAble {
     func updateCollection() {
         colorsCollection.reloadData()

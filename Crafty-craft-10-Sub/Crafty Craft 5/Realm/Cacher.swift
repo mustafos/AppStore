@@ -7,7 +7,7 @@ open class CustomImageLoader: UIImageView {
     private var task: URLSessionTask?
     private lazy var loader = {
         let activityView = UIActivityIndicatorView(style: .large)
-        activityView.tintColor = .white
+        activityView.tintColor = .black
         return activityView
     }()
     
@@ -44,7 +44,7 @@ open class CustomImageLoader: UIImageView {
     }
     
     func addLoader() {
-        loader.color = .white
+        loader.color = .black
         addSubview(loader)
         bringSubviewToFront(loader)
         loader.translatesAutoresizingMaskIntoConstraints = false

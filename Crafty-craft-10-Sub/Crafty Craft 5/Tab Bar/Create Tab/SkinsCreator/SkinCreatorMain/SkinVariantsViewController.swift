@@ -179,6 +179,7 @@ class SkinVariantsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        containerView.alpha = 0
         setupView()
         setupConstraints()
     }
@@ -277,7 +278,7 @@ class SkinVariantsViewController: UIViewController {
     }
     
     func animateContainerHeight(_ height: CGFloat) {
-        UIView.animate(withDuration: 0.4) {
+        UIView.animate(withDuration: 0.3) {
             // Update container height
             self.containerViewHeightConstraint?.constant = height
             // Call this to trigger refresh constraint
@@ -298,25 +299,20 @@ class SkinVariantsViewController: UIViewController {
     }
     
     func animateShowDimmedView() {
-        containerView.alpha = 0
-        UIView.animate(withDuration: 0.4) {
-            self.containerView.alpha = self.maxDimmedAlpha
-        }
+        UIView.animate(withDuration: 0.3) {
+                self.containerView.alpha = self.maxDimmedAlpha
+            }
     }
     
     func animateDismissView() {
-        // hide blur view
-        containerView.alpha = maxDimmedAlpha
-        UIView.animate(withDuration: 0.4) {
+        UIView.animate(withDuration: 0.3, animations: {
             self.containerView.alpha = 0
-        } completion: { _ in
-            // once done, dismiss without animation
+        }) { _ in
             self.dismiss(animated: false)
         }
-        // hide main view by updating bottom constraint in animation block
+        // Update the bottom constraint
         UIView.animate(withDuration: 0.3) {
             self.containerViewBottomConstraint?.constant = self.defaultHeight
-            // call this to trigger refresh constraint
             self.view.layoutIfNeeded()
         }
     }

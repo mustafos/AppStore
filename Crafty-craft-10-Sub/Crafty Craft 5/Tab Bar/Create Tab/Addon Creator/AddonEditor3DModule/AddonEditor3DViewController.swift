@@ -15,6 +15,7 @@ class AddonEditor3DViewController: UIViewController {
         }
     }
     
+    
     var magnifyingGlassView: MagnifyingGlassView?
     var saveAlertView: SaveAlertView?
     
@@ -35,6 +36,7 @@ class AddonEditor3DViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    private var backgroundImageView: UIImageView = UIImageView()
     private var shareButton: UIButton = UIButton()
     private var dowmloadButton: UIButton = UIButton()
     
@@ -357,7 +359,7 @@ class AddonEditor3DViewController: UIViewController {
         smallStiveView.showsStatistics = false
         
         let backgroundImage = UIImage(named: "small3D")
-        let backgroundImageView = UIImageView(image: backgroundImage)
+        backgroundImageView = UIImageView(image: backgroundImage)
         backgroundImageView.contentMode = .scaleAspectFit // Adjust the content mode based on your preference
         view.addSubview(backgroundImageView)
         
@@ -418,8 +420,7 @@ class AddonEditor3DViewController: UIViewController {
             brashSizeView.isHidden = toolBarSelectedItem != item
         }
     }
-    
-    
+
     private func showSavedSkin() {
         skinNameLabel.isHidden = true
         saveButton.isHidden = true
@@ -434,6 +435,7 @@ class AddonEditor3DViewController: UIViewController {
         
         sceneView.allowsCameraControl = true
         smallStiveView.isHidden = true
+        backgroundImageView.isHidden = true
         
         setupDownloadAndShareButtons()
     }

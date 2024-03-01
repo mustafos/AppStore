@@ -46,14 +46,14 @@ class SeedTabViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var seedsTableView: UITableView!
     private var emptyMessageLabel: UILabel?
+    private var footerCell: UIView?
     private var navbarSearchMode: Bool = false {
         didSet {
             navBarSearchMode(predicate: navbarSearchMode)
         }
     }
     
-    var seeds: [Seed] = [
-    ]
+    var seeds: [Seed] = []
     private var notifictionToken: NotificationToken?
     
     private var filteredText: String? = nil {
@@ -177,6 +177,13 @@ class SeedTabViewController: UIViewController {
         seedsTableView.register(UINib(nibName: "SeedTableViewCell", bundle: nil), forCellReuseIdentifier: SeedTableViewCell.identifier)
         seedsTableView.rowHeight = UITableView.automaticDimension
         seedsTableView.showsVerticalScrollIndicator = false
+        addFooterView()
+    }
+    
+    private func addFooterView() {
+        footerCell = UIView(frame: CGRect(x: 0, y: 0, width: seedsTableView.bounds.width, height: 70))
+        footerCell?.backgroundColor = UIColor.clear
+        seedsTableView.tableFooterView = footerCell
     }
     
     private func setupSearchBar() {

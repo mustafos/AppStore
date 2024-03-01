@@ -93,6 +93,7 @@ class ServersTabViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var serversTableView: UITableView!
     private var emptyMessageLabel: UILabel?
+    private var footerCell: UIView?
     private lazy var dropboxQueue: DispatchQueue = {
         let queue = DispatchQueue(label: "com.acme.serial")
         
@@ -156,6 +157,13 @@ class ServersTabViewController: UIViewController {
         serversTableView.register(UINib(nibName: "ServerTableViewCell", bundle: nil), forCellReuseIdentifier: ServerTableViewCell.identifier)
         serversTableView.rowHeight = UITableView.automaticDimension
         serversTableView.showsVerticalScrollIndicator = false
+        addFooterView()
+    }
+    
+    private func addFooterView() {
+        footerCell = UIView(frame: CGRect(x: 0, y: 0, width: serversTableView.bounds.width, height: 70))
+        footerCell?.backgroundColor = UIColor.clear
+        serversTableView.tableFooterView = footerCell
     }
     
     private func setUpPageModel() {

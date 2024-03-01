@@ -138,7 +138,10 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         guard let firstCategory = sortedCategory.first else { return }
         self.lockedCategoryName = firstCategory
         
-        buttons.append(contentsOf: sortedCategory.map({ ContentFilterModel(label: $0, filter: .filter($0), isLocked: false) }))
+        buttons.append(contentsOf: sortedCategory.map({ ContentFilterModel(
+            label: $0, filter: .filter($0),
+            isLocked: !purchIsValid &&  ($0 == firstCategory)) })
+        )
         
         contentFilterView.updateButtons(newButtons: buttons, selectedIndex: selectedIndex)
     }
@@ -168,12 +171,10 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         validateSub()
         updateData()
         registerForKeyboardNotifications()
-//        flushSearch()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         unregisterFromKeyboardNotifications()
     }
     
@@ -217,12 +218,6 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         }
     }
     
-    private func updateEmptyMessageLabel() {
-            if emptyMessageLabel != nil {
-                emptyMessageLabel?.text = "Nothing found in \(tabsPageControllMode.name)"
-            }
-        }
-    
     private func updateDataSourceIfNeeded() {
         guard pageModel.count != setUpPageModel().count else { return }
         pageModel = setUpPageModel()
@@ -230,6 +225,12 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         
         if contentFilterView.viewModel.buttons.count < 2 {
             setupFilterView()
+        }
+    }
+    
+    private func updateEmptyMessageLabel() {
+        if emptyMessageLabel != nil {
+            emptyMessageLabel?.text = "Nothing found in \(tabsPageControllMode.name)"
         }
     }
     
@@ -398,7 +399,6 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         ]) { [weak self] filter in
             self?.flushSearch()
             self?.applyContent(filter: filter)
-//            self?.updateSortButtonsContainerViewPosition(isTapped: true)
         }
         
         // Create the SwiftUI view

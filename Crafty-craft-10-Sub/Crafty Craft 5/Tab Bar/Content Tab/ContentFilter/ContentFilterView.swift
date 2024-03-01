@@ -74,37 +74,36 @@ struct ContentFilterView: View {
     func OptionsView() -> some View {
         ScrollView {
             VStack {
-                ForEach(viewModel.buttons.indices, id: \.self) { option in
-                    if selection != viewModel.buttons[option].label {
-                        HStack {
-                            Text(viewModel.buttons[option].label)
-                            Spacer()
-                            
-                            if option == 2 {
-                                Image("lock button")
-                                    .resizable()
-                                    .frame(width: 20, height: 16)
-                            }
+                ForEach(viewModel.buttons.indices.filter { selection != viewModel.buttons[$0].label }, id: \.self) { option in
+                    let button = viewModel.buttons[option]
+                    HStack {
+                        Text(button.label)
+                        Spacer()
+                        
+                        if button.isLocked, let cornerIcon = button.cornerIcon {
+                            Image(uiImage: cornerIcon)
+                                .resizable()
+                                .frame(width: 20, height: 16)
                         }
-                        .foregroundStyle(Color("PopularGrayColor"))
-                        .animation(.none, value: selection)
-                        .frame(height: 48)
-                        .contentShape(.rect)
-                        .padding(.horizontal, 20)
-                        .overlay(
-                            Rectangle()
-                                .frame(height: 1)
-                                .foregroundColor(.black)
-                                .padding(.horizontal, 20)
-                                .padding(.bottom, 60)
-                        )
-                        .onTapGesture {
-                            withAnimation(.snappy) {
-                                viewModel.selectButton(at: option)
-                                selection = viewModel.buttons[option].label
-                                showFilters.toggle()
-                                onStateChange?(showFilters ? .up : .down)
-                            }
+                    }
+                    .foregroundStyle(Color("PopularGrayColor"))
+                    .animation(.none, value: selection)
+                    .frame(height: 48)
+                    .contentShape(Rectangle())
+                    .padding(.horizontal, 20)
+                    .overlay(
+                        Rectangle()
+                            .frame(height: 1)
+                            .foregroundColor(.black)
+                            .padding(.horizontal, 20)
+                            .padding(.bottom, 60)
+                    )
+                    .onTapGesture {
+                        withAnimation(.snappy) {
+                            viewModel.selectButton(at: option)
+                            selection = button.isLocked ? viewModel.buttons[2].label : viewModel.buttons[option].label
+                            showFilters.toggle()
+                            onStateChange?(showFilters ? .up : .down)
                         }
                     }
                 }
@@ -115,13 +114,9 @@ struct ContentFilterView: View {
     }
     
     func updateButtons(newButtons: [ContentFilterModel], selectedIndex: Int = 0) {
-        viewModel.updateButtons(newButtons: newButtons, selectedIdx: selectedIndex)
+        viewModel.updateButtons(newButtons: [newButtons[0]], selectedIdx: selectedIndex)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            viewModel.updateButtons(newButtons: newButtons, selectedIdx: selectedIndex)
+        }
     }
-    
-//    func updateButtons(newButtons: [ContentFilterModel], selectedIndex: Int = 0) {
-//        viewModel.updateButtons(newButtons: [newButtons[0]], selectedIdx: selectedIndex)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//            viewModel.updateButtons(newButtons: newButtons, selectedIdx: selectedIndex)
-//        }
-//    }
 }

@@ -12,7 +12,6 @@ class SeedDetailsViewController: UIViewController {
     typealias ImageDataCallback = (Data?) -> Void
     
     let seed: SeedRealmSession
-    var blurEffectView: UIVisualEffectView?
     
     @IBOutlet weak var doneView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -23,9 +22,10 @@ class SeedDetailsViewController: UIViewController {
     @IBOutlet weak var titleContainer: UIView! 
     private lazy var dropboxQueue: DispatchQueue = {
         let queue = DispatchQueue(label: "com.seed.serialSeed")
-        
         return queue
     }()
+    
+    private var blurEffectView: UIVisualEffectView?
     
     private let imageSemaphore = DispatchSemaphore(value: 0)
     private var imageUrl: URL?
@@ -54,7 +54,6 @@ class SeedDetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -92,14 +91,16 @@ class SeedDetailsViewController: UIViewController {
     @IBAction func shareAction(_ sender: UIButton) {
         self.share(string: seed.seed, from: sender)
     }
-    //MARK: - private method
     
+    // MARK: - private method
     private func setupUI() {
         descSeedLabel.text = seed.seedDescrip
         titleLabel.text = seed.name
+        
         let isDescSeedLabelScrollable = descSeedLabel.frame.size.height > 356
         scrollView.isScrollEnabled = isDescSeedLabelScrollable
         descSeedLabel.isScrollEnabled = isDescSeedLabelScrollable
+        
         if let imageData = seed.seedImageData {
             seedIcon.image = UIImage(data: imageData)
         } else {

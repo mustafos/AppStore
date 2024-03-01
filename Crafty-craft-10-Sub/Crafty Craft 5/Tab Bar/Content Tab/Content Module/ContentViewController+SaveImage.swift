@@ -74,7 +74,6 @@ extension ContentViewController {
     
     private func presenAlert(with titleInfo: String, and massageInfo: String?) {
         let alertController = UIAlertController(title: titleInfo, message: massageInfo, preferredStyle: .alert)
-        
         let cancelAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertController.addAction(cancelAction)
         

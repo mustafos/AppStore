@@ -286,8 +286,6 @@
 		D719CE9E2A6BD83500936868 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D719CE9D2A6BD83500936868 /* ImageService.swift */; };
 		D72306DB2A79266D0000F6B3 /* ContentFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72306DA2A79266D0000F6B3 /* ContentFilterView.swift */; };
 		D72306DD2A7926940000F6B3 /* ContentFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72306DC2A7926940000F6B3 /* ContentFilterViewModel.swift */; };
-		D72306E42A79310B0000F6B3 /* UIColor+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72306E32A79310B0000F6B3 /* UIColor+Resource.swift */; };
-		D72306E62A7932470000F6B3 /* Color+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72306E52A7932470000F6B3 /* Color+Resource.swift */; };
 		D72E49C52A73C6100031AEBE /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = D72E49C42A73C6100031AEBE /* Cache */; };
 		D72E49C72A73C6B20031AEBE /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72E49C62A73C6B20031AEBE /* ImageCacheManager.swift */; };
 		D72F56562A61A00A00CE85E6 /* URL+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F56552A61A00A00CE85E6 /* URL+List.swift */; };
@@ -299,7 +297,6 @@
 		D7C842B92A6A78A6006F5020 /* MinecraftSkinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C842B82A6A78A6006F5020 /* MinecraftSkinManager.swift */; };
 		D7C842BB2A6A8A11006F5020 /* FileManager+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C842BA2A6A8A11006F5020 /* FileManager+Path.swift */; };
 		D7D06C462A6FF2D20063A44C /* UIButton+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D06C452A6FF2D20063A44C /* UIButton+Icon.swift */; };
-		D7D4021E2A6FEA1200883C6D /* UITabBar+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4021D2A6FEA1200883C6D /* UITabBar+Title.swift */; };
 		D7E807812A6916240007CA10 /* PhotoGalleryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E807802A6916240007CA10 /* PhotoGalleryManager.swift */; };
 		D7FB3E932A7BFC0B00D78B57 /* UIViewController+ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB3E922A7BFC0B00D78B57 /* UIViewController+ActivityView.swift */; };
 		D7FB3E9F2A7C12D100D78B57 /* UIImage+Save.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB3E9E2A7C12D100D78B57 /* UIImage+Save.swift */; };
@@ -670,8 +667,6 @@
 		D719CE9D2A6BD83500936868 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		D72306DA2A79266D0000F6B3 /* ContentFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFilterView.swift; sourceTree = "<group>"; };
 		D72306DC2A7926940000F6B3 /* ContentFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFilterViewModel.swift; sourceTree = "<group>"; };
-		D72306E32A79310B0000F6B3 /* UIColor+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Resource.swift"; sourceTree = "<group>"; };
-		D72306E52A7932470000F6B3 /* Color+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Resource.swift"; sourceTree = "<group>"; };
 		D72E49C62A73C6B20031AEBE /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		D72F56552A61A00A00CE85E6 /* URL+List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+List.swift"; sourceTree = "<group>"; };
 		D72F56572A61A7BF00CE85E6 /* Decodable+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Dictionary.swift"; sourceTree = "<group>"; };
@@ -682,7 +677,6 @@
 		D7C842B82A6A78A6006F5020 /* MinecraftSkinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinecraftSkinManager.swift; sourceTree = "<group>"; };
 		D7C842BA2A6A8A11006F5020 /* FileManager+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Path.swift"; sourceTree = "<group>"; };
 		D7D06C452A6FF2D20063A44C /* UIButton+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Icon.swift"; sourceTree = "<group>"; };
-		D7D4021D2A6FEA1200883C6D /* UITabBar+Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+Title.swift"; sourceTree = "<group>"; };
 		D7E807802A6916240007CA10 /* PhotoGalleryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryManager.swift; sourceTree = "<group>"; };
 		D7FB3E922A7BFC0B00D78B57 /* UIViewController+ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityView.swift"; sourceTree = "<group>"; };
 		D7FB3E9E2A7C12D100D78B57 /* UIImage+Save.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Save.swift"; sourceTree = "<group>"; };
@@ -1601,7 +1595,6 @@
 				03435CCB2B05183F00423598 /* UIColor+Equatable.swift */,
 				D7310D712A842F810020D42F /* Image+Trim.swift */,
 				6F6F55B72A4ED41A0093F556 /* CheckParameters.swift */,
-				D72306E52A7932470000F6B3 /* Color+Resource.swift */,
 				D72F56572A61A7BF00CE85E6 /* Decodable+Dictionary.swift */,
 				D70705792A6147D90098A501 /* FileManager+Copy.swift */,
 				D7C842BA2A6A8A11006F5020 /* FileManager+Path.swift */,
@@ -1609,11 +1602,9 @@
 				D7D06C452A6FF2D20063A44C /* UIButton+Icon.swift */,
 				639407D92A77D097007D6301 /* UIColor+Ext_encode.swift */,
 				F428B9282A13BCD0005D575F /* UIColor+isEqual.swift */,
-				D72306E32A79310B0000F6B3 /* UIColor+Resource.swift */,
 				F438AA302A17A391007469E7 /* UIImage+Resized.swift */,
 				D70970132A77B62D0044F81F /* UIImage+Resource.swift */,
 				D7FB3E9E2A7C12D100D78B57 /* UIImage+Save.swift */,
-				D7D4021D2A6FEA1200883C6D /* UITabBar+Title.swift */,
 				F46D8B632A08DB5D00A61747 /* UIView+RoundCorners.swift */,
 				F412BCB22A26268500073525 /* UIView+Snapshot.swift */,
 				D7FB3E922A7BFC0B00D78B57 /* UIViewController+ActivityView.swift */,
@@ -2070,7 +2061,6 @@
 				03A674CD2AC316650062A3A8 /* UIViewController+Alert.swift in Sources */,
 				6AB6CD472B7531A6008A3491 /* SceneLogicModelAddon3D.swift in Sources */,
 				6AB6CC7B2B74E1B6008A3491 /* SeedTabViewController.swift in Sources */,
-				D72306E62A7932470000F6B3 /* Color+Resource.swift in Sources */,
 				6AB6CC812B74E1BF008A3491 /* SeedTableViewCell.swift in Sources */,
 				F438AA202A14C442007469E7 /* RSColourSlider.swift in Sources */,
 				6AB6CCEA2B74E894008A3491 /* Skin3DTestViewController.swift in Sources */,
@@ -2208,7 +2198,6 @@
 				035166A62AFA3F0900035087 /* ReusableCell.swift in Sources */,
 				635281932A589ECA00F3EB23 /* RealmService.swift in Sources */,
 				6AB6CCED2B74E894008A3491 /* Extension_UIColor+luminosity.swift in Sources */,
-				D72306E42A79310B0000F6B3 /* UIColor+Resource.swift in Sources */,
 				035166872AFA3F0900035087 /* ConstraintDSL.swift in Sources */,
 				6AB6CD942B75330E008A3491 /* AddonCreatorViewController.swift in Sources */,
 				035166A52AFA3F0900035087 /* PremiumMainController.swift in Sources */,
@@ -2241,7 +2230,6 @@
 				6AB6CC892B74E445008A3491 /* GeneralAlertViewController.swift in Sources */,
 				6AB6CD092B753029008A3491 /* Extension_EditorSkinModel+hideBodyParts.swift in Sources */,
 				6AB6CC7A2B74E1B6008A3491 /* SeedDetailsViewController.swift in Sources */,
-				D7D4021E2A6FEA1200883C6D /* UITabBar+Title.swift in Sources */,
 				6AB6CD852B7532BA008A3491 /* AddonEditorSelectorViewController.swift in Sources */,
 				635281982A589ECB00F3EB23 /* RealmServiceDropBox.swift in Sources */,
 				6AB6CD062B753029008A3491 /* Extension_EditorSkinModel+SaveAndShare.swift in Sources */,

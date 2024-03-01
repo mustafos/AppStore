@@ -28,13 +28,10 @@ class ColorCollectionCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-
         contentView.layer.cornerRadius = contentView.frame.width / 2
         contentView.clipsToBounds = true
         contentView.layer.borderWidth = 1
@@ -46,6 +43,4 @@ class ColorCollectionCell: UICollectionViewCell {
         contentView.backgroundColor = bgColor
         self.isSelected = isSelected
     }
-
-
 }

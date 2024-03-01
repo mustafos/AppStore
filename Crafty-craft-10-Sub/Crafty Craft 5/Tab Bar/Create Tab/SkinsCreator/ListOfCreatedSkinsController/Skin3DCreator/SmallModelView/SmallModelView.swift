@@ -16,8 +16,8 @@ enum BodyPartEditState {
 }
 
 class SmallModelView: UIView {
-    let asHiddeStateColor = UIColor.white
-    let clothesStateColor = UIColor.clear
+    let asHiddeStateColor = UIColor.clear
+    let clothesStateColor = UIColor.white
     let skinStateColor = UIColor.black
     
     @IBOutlet var main3DStiveView: UIView!
