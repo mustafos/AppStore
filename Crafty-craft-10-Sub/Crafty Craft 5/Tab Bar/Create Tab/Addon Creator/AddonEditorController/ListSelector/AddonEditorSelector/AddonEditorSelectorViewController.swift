@@ -18,7 +18,6 @@ class AddonEditorSelectorViewController: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
     
-    
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var searchButton: UIButton!
@@ -67,7 +66,6 @@ class AddonEditorSelectorViewController: UIViewController {
         setupViewButtons()
         setupSearchBar()
         setupCollectionView()
-        
         hideKeyboardWhenTappedAround()
     }
     
@@ -123,6 +121,7 @@ class AddonEditorSelectorViewController: UIViewController {
         collectionView.dataSource = self
         let nib = UINib(nibName: cellId, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellId)
+        collectionView.register(FooterCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "FooterCell")
         collectionView.backgroundColor = .clear
     }
     
@@ -263,7 +262,20 @@ extension AddonEditorSelectorViewController : UICollectionViewDataSource {
     }
 }
 
-extension AddonEditorSelectorViewController : UICollectionViewDelegateFlowLayout{
+extension AddonEditorSelectorViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionFooter:
+            return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FooterCell", for: indexPath)
+        default:
+            fatalError("Unexpected element kind")
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 136)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = collectionView.frame.size.width / 2 - 11
         let cellHeight = cellWidth * 1.3
@@ -280,7 +292,6 @@ extension AddonEditorSelectorViewController : UICollectionViewDelegateFlowLayout
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-
         return .init(top: 4, left: 8, bottom: 4, right: 8)
     }
 }

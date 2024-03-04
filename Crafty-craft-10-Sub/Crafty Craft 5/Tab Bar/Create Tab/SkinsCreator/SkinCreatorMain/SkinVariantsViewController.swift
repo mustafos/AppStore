@@ -119,9 +119,27 @@ class SkinVariantsViewController: UIViewController {
         presenterDelegate?.create3d128Tapped()
     }
     
+//    @objc func importButtonTapped() {
+//        self.animateDismissView()
+//        presenterDelegate?.importTapped()
+//    }
+    
     @objc func importButtonTapped() {
-        self.animateDismissView()
-        presenterDelegate?.importTapped()
+        let alert = UIAlertController(title: "Import", message: "Do you want to import?", preferredStyle: .alert)
+
+        let importAction = UIAlertAction(title: "Import", style: .default) { [weak self] _ in
+            // Dismiss the screen after importing
+            self?.animateDismissView()
+            // Notify the presenter
+            self?.presenterDelegate?.importTapped()
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+        alert.addAction(importAction)
+        alert.addAction(cancelAction)
+
+        present(alert, animated: true, completion: nil)
     }
     
     @objc func cancelButtonTapped() {
@@ -164,9 +182,6 @@ class SkinVariantsViewController: UIViewController {
             return buttonHeight*3 + titleHeight + itemSpacing*4 + bottomOffset
         }
     }
-    
-    
-    
     
     lazy var dismissibleHeight: CGFloat = defaultHeight * 0.8
     let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 64

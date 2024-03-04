@@ -188,7 +188,6 @@ class ServerDetailsViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { [weak self] in
             guard let self else { return }
-           
             UIView.transition(with: self.doneView, duration: 0.3,
                               options: .curveEaseOut,
                               animations: { [weak self] in

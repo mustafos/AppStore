@@ -24,6 +24,7 @@ class AddonCreatorMainVC: UIViewController {
     @IBOutlet private weak var recentTabButton: UIButton!
     
     private var suggestionsTableView: UITableView?
+    private var footerCell: UIView?
     private var isHideButtons: Bool = true
     internal weak var downloadButton: UIButton?
     
@@ -56,6 +57,7 @@ class AddonCreatorMainVC: UIViewController {
         
         hideKeyboardWhenTappedAround()
         setupCollectionView()
+        addFooterView()
         configureUIComponents()
         setupCollectionViewUI()
         updatePageControllerUI()
@@ -99,6 +101,12 @@ class AddonCreatorMainVC: UIViewController {
         
         let nib2 = UINib(nibName: "CreateNewItemCollectionViewCell", bundle: nil)
         addonCollectionView.register(nib2, forCellWithReuseIdentifier: "CreateNewItemCollectionViewCell")
+    }
+    
+    private func addFooterView() {
+        footerCell = UIView(frame: CGRect(x: 0, y: 0, width: addonCollectionView.bounds.width, height: 70))
+        footerCell?.backgroundColor = UIColor.clear
+        addonCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "FooterView")
     }
     
     private func configureUIComponents() {
@@ -287,6 +295,15 @@ extension AddonCreatorMainVC : UICollectionViewDataSource {
             return cell
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionFooter {
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FooterView", for: indexPath)
+            footerView.backgroundColor = UIColor.clear
+            return footerView
+        }
+        return UICollectionReusableView()
+    }
 }
 
 extension AddonCreatorMainVC: UICollectionViewDelegateFlowLayout {
@@ -296,13 +313,14 @@ extension AddonCreatorMainVC: UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: cellWidth, height: cellHeight)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 70)
+    }
 }
 
-
 //MARK: Cell Handlers
-
 extension AddonCreatorMainVC {
-    
     private func handleDeleteButtonTap(indexPath: IndexPath) {
         
         let alert = UIAlertController(title: "Delete Addon", message: "Are you sure you want to delete this Addon?", preferredStyle: .alert)

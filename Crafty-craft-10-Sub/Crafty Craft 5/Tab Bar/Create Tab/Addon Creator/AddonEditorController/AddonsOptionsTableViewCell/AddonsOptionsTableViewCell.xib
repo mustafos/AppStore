@@ -48,7 +48,7 @@
                         <color key="textColor" name="EerieBlackColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uwe-9J-a2w">
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" preferredStyle="sliding" translatesAutoresizingMaskIntoConstraints="NO" id="uwe-9J-a2w">
                         <rect key="frame" x="340" y="65" width="51" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="pdB-Ch-yOU"/>

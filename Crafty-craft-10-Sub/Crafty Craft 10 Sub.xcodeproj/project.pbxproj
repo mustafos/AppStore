@@ -105,6 +105,7 @@
 		63A8C1532A32045F005A117B /* NSLayoutConstraint_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A8C1522A32045F005A117B /* NSLayoutConstraint_Ext.swift */; };
 		63E876732A2A0C6B00B486B1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 63E876722A2A0C6B00B486B1 /* Realm */; };
 		63E876752A2A0C6B00B486B1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 63E876742A2A0C6B00B486B1 /* RealmSwift */; };
+		6A45BF732B947DD3005DFE6B /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A45BF722B947DD3005DFE6B /* FooterCell.swift */; };
 		6A507DD22B909BDF0099B310 /* ServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A507D992B909BDF0099B310 /* ServicesManager.swift */; };
 		6A507DD32B909BDF0099B310 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A507D9B2B909BDF0099B310 /* Media.xcassets */; };
 		6A507DD42B909BDF0099B310 /* PollerOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A507D9C2B909BDF0099B310 /* PollerOne-Regular.ttf */; };
@@ -453,6 +454,7 @@
 		637038292A594AA20003A220 /* Cacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacher.swift; sourceTree = "<group>"; };
 		639407D92A77D097007D6301 /* UIColor+Ext_encode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext_encode.swift"; sourceTree = "<group>"; };
 		63A8C1522A32045F005A117B /* NSLayoutConstraint_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint_Ext.swift; sourceTree = "<group>"; };
+		6A45BF722B947DD3005DFE6B /* FooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
 		6A507D992B909BDF0099B310 /* ServicesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesManager.swift; sourceTree = "<group>"; };
 		6A507D9B2B909BDF0099B310 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		6A507D9C2B909BDF0099B310 /* PollerOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PollerOne-Regular.ttf"; sourceTree = "<group>"; };
@@ -1448,6 +1450,7 @@
 		6F1CADE82A667C2500735EAB /* AddonEditorSelector */ = {
 			isa = PBXGroup;
 			children = (
+				6A45BF722B947DD3005DFE6B /* FooterCell.swift */,
 				6AB6CD832B7532BA008A3491 /* AddonEditorSelectorViewController.swift */,
 				6AB6CD822B7532BA008A3491 /* AddonEditorSelectorViewController.xib */,
 				6F1CADEF2A667C3A00735EAB /* AddonCell */,
@@ -2131,6 +2134,7 @@
 				6AB6CD7F2B7532A0008A3491 /* AddonsOptionsTableViewCell.swift in Sources */,
 				6AB6CCF32B74E98A008A3491 /* SkinCreatorController+Ext_Collection.swift in Sources */,
 				0351668D2AFA3F0900035087 /* ConstraintConfig.swift in Sources */,
+				6A45BF732B947DD3005DFE6B /* FooterCell.swift in Sources */,
 				6AB6CCE82B74E894008A3491 /* Extension_Skin3DTestViewController+Gestures.swift in Sources */,
 				6AB6CD502B7531BB008A3491 /* AddonEditor3DModel.swift in Sources */,
 				6FA9FC7E2A4DBBC7001A1CD6 /* ContentTabModels.swift in Sources */,

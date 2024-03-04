@@ -142,7 +142,6 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
             label: $0, filter: .filter($0),
             isLocked: !purchIsValid &&  ($0 == firstCategory)) })
         )
-        
         contentFilterView.updateButtons(newButtons: buttons, selectedIndex: selectedIndex)
     }
     
@@ -400,21 +399,12 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
             self?.flushSearch()
             self?.applyContent(filter: filter)
         }
-        
-        // Create the SwiftUI view
+
         contentFilterView = ContentFilterView(viewModel: contentFilterViewModel)
-        
-        // Create a UIHostingController with the SwiftUI view
         let hostingController = UIHostingController(rootView: contentFilterView)
         hostingController.view.backgroundColor = .clear
-        
-        // Add as a child of the current view controller
         addChild(hostingController)
-        
-        // Add the SwiftUI view to the view controller view hierarchy
         sortButtonsContainerView.addSubview(hostingController.view)
-        
-        // Set constraints to define the SwiftUI view's layout
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -426,31 +416,7 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         
         // Notify the hosting controller that it has moved to the parent view controller
         hostingController.didMove(toParent: self)
-        
-        // Add the state change handler
-//        contentFilterView.onStateChange = { [weak self] state in
-//            if state == .up {
-//                self?.updateSortButtonsContainerViewPosition(isTapped: false)
-//            } else {
-//                self?.updateSortButtonsContainerViewPosition(isTapped: true)
-//            }
-//        }
-//        // Add tap gesture recognizer to sortButtonsContainerView
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(sortButtonsContainerViewTapped))
-//        sortButtonsContainerView.addGestureRecognizer(tapGesture)
     }
-    
-//    @objc private func sortButtonsContainerViewTapped() {
-//        updateSortButtonsContainerViewPosition(isTapped: false)
-//    }
-//
-//    private func updateSortButtonsContainerViewPosition(isTapped: Bool) {
-//        if isTapped {
-//            view.bringSubviewToFront(sortButtonsContainerView)
-//        } else {
-//            view.sendSubviewToBack(sortButtonsContainerView)
-//        }
-//    }
     
     private func createResponderButtons(for views: [UIView]) -> [UIButton] {
         return views.map { view in
@@ -692,7 +658,6 @@ extension ContentTabViewController: UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: cellWidth, height: cellHeight)
     }
-    
 }
 
 //MARK: KeyboardStateDelegate

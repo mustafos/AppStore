@@ -20,5 +20,4 @@ class CreateNewItemCollectionViewCell: UICollectionViewCell {
     func setCrateTitle(_ title: String) {
         titleLabel.text = title
     }
-
 }

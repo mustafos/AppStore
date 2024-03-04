@@ -53,7 +53,7 @@ extension SkinCreatorViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         // Set the padding for the first cell only
-        let padding: CGFloat = 10
+        let padding: CGFloat = 5
         return UIEdgeInsets(top: 0, left: padding, bottom: 0, right: 0)
     }
 }

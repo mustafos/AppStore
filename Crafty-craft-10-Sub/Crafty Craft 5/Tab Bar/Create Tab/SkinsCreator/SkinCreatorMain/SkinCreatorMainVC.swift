@@ -35,18 +35,15 @@ class SkinCreatorMainVC: UIViewController {
     
     
     // MARK: - Outlets
-    
-    
+    private var footerCell: UIView?
     private weak var downloadButton: UIButton?
     private var filterText: String?
     
-    // MARK: - Actions
-    
     // MARK: - View Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMenuCollectionView()
+        addFooterView()
         IAPManager.shared.skinProductDelegate = self
         unlockActivityIndicator.isHidden = true
     }
@@ -90,6 +87,7 @@ class SkinCreatorMainVC: UIViewController {
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
         menuCollectionView.backgroundColor = .clear
+        menuCollectionView.showsVerticalScrollIndicator = false
         
         unlockButton.roundCorners(36)
         unlockButton.borderColor = .black
@@ -100,6 +98,12 @@ class SkinCreatorMainVC: UIViewController {
         menuCollectionView.register(nib, forCellWithReuseIdentifier: "SkinEditorCollectionViewCell")
         let nib2 = UINib(nibName: "CreateNewItemCollectionViewCell", bundle: nil)
         menuCollectionView.register(nib2, forCellWithReuseIdentifier: "CreateNewItemCollectionViewCell")
+    }
+    
+    private func addFooterView() {
+        footerCell = UIView(frame: CGRect(x: 0, y: 0, width: menuCollectionView.bounds.width, height: 70))
+        footerCell?.backgroundColor = UIColor.clear
+        menuCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "FooterView")
     }
     
     private func checkProduct() {
@@ -140,90 +144,6 @@ class SkinCreatorMainVC: UIViewController {
     }
 }
 
-
-// MARK: - CustomAlertViewControllerDelegate
-//
-//extension SkinCreatorMainVC: CustomAlertViewControllerDelegate {
-//    
-//    func open2DEditor() {
-//        
-//        let selectedSkin = model.getSelectedSkinModel()
-//        let nextVC = BodyPartPickerViewController(currentEditableSkin: selectedSkin)
-//        
-//        dismissCustomAlert()
-//        navigationController?.pushViewController(nextVC, animated: true)
-//    }
-//    
-//    func open3DEditor() {
-//        let nextVC = Skin3DTestViewController(currentEditableSkin: model.getSelectedSkinModel(), skinAssemblyDiagramSize: .size64x64)
-//        
-//        dismissCustomAlert()
-//        navigationController?.pushViewController(nextVC, animated: true)
-//    }
-//    
-//    func open3DEditor128x128() {
-//        let nextVC = Skin3DTestViewController(currentEditableSkin: model.getSelectedSkinModel(), skinAssemblyDiagramSize: .size128x128)
-//        
-//        dismissCustomAlert()
-//        navigationController?.pushViewController(nextVC, animated: true)
-//    }
-//    
-//    func importSkinFromGallery() {
-//        dismissCustomAlert()
-//        
-//        photoGalleryManager.getImageFromPhotoLibrary(from: self) { [unowned self] image in
-//            
-//            let selectedSkin = model.getSelectedSkinModel()
-//            guard let pixelizedImg = image.resizeAspectFit(targetScale: 1).squared else { return }
-//            
-//            selectedSkin.skinAssemblyDiagram = pixelizedImg
-//            let nextVC = Skin3DTestViewController(currentEditableSkin: selectedSkin, skinAssemblyDiagramSize: .size64x64)
-//            
-//            navigationController?.pushViewController(nextVC, animated: true)
-//        }
-//    }
-//    
-//    func dismissCustomAlert() {
-//        alertWindow?.isHidden = true
-//        alertWindow = nil
-//        blurView?.removeFromSuperview()
-//    }
-//    
-//    private func presentCustomAlert(savedSkin: Bool, is128sizeSkin: Bool?) {
-//        
-//        let customAlert = PopUpViewController(showFor: savedSkin, is128sizeSkin: is128sizeSkin, delegate: self)
-//        
-//        let alertWindow = UIWindow(frame: view.frame)
-//        alertWindow.windowLevel = .alert
-//        alertWindow.rootViewController = UIViewController()
-//        
-//        let blurEffect = UIBlurEffect(style: .dark)
-//        let blurView = UIVisualEffectView(effect: blurEffect)
-//        blurView.frame = alertWindow.bounds
-//        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        alertWindow.rootViewController?.view.addSubview(blurView)
-//        
-//        alertWindow.rootViewController?.addChild(customAlert)
-//        alertWindow.rootViewController?.view.addSubview(customAlert.view)
-//        customAlert.didMove(toParent: alertWindow.rootViewController)
-//        
-//        alertWindow.makeKeyAndVisible()
-//        alertWindow.windowScene = view.window?.windowScene
-//        
-//        customAlert.view.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            customAlert.view.topAnchor.constraint(equalTo: alertWindow.rootViewController!.view.topAnchor),
-//            customAlert.view.bottomAnchor.constraint(equalTo: alertWindow.rootViewController!.view.bottomAnchor),
-//            customAlert.view.leadingAnchor.constraint(equalTo: alertWindow.rootViewController!.view.leadingAnchor),
-//            customAlert.view.trailingAnchor.constraint(equalTo: alertWindow.rootViewController!.view.trailingAnchor)
-//        ])
-//        
-//        self.alertWindow = alertWindow
-//        self.blurView = blurView
-//    }
-//}
-
-
 //MARK: Collection Delegate Methods
 
 extension SkinCreatorMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -240,11 +160,10 @@ extension SkinCreatorMainVC: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
         if indexPath.row == 0 {
             let cell = menuCollectionView.dequeueReusableCell(withReuseIdentifier: "CreateNewItemCollectionViewCell", for: indexPath) as! CreateNewItemCollectionViewCell
             cell.setCrateTitle("Create skin")
+            
             return cell
             
         } else {
@@ -274,6 +193,15 @@ extension SkinCreatorMainVC: UICollectionViewDelegate, UICollectionViewDataSourc
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionFooter {
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FooterView", for: indexPath)
+            footerView.backgroundColor = UIColor.clear
+            return footerView
+        }
+        return UICollectionReusableView()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         model.selectedSkinIndex = indexPath.item - 1 //to get correct index of choosed skin, as we always have +1 cell because of plusMode
         
@@ -281,8 +209,6 @@ extension SkinCreatorMainVC: UICollectionViewDelegate, UICollectionViewDataSourc
             pickerShowerDelegate?.showSkinPicker(for: model.getSelectedSkinModel())
         } else {
             pickerShowerDelegate?.showEditSkinPicker(for: model.getSelectedSkinModel())
-//            let is128Value = model.getSkinByIndex(index: (indexPath.item - 1))?.is128sizeSkin
-//            presentCustomAlert(savedSkin: true, is128sizeSkin: is128Value)
         }
         model.updateSkinsArray()
     }
@@ -311,7 +237,6 @@ extension SkinCreatorMainVC {
     }
     
     private func performSkinDeletion(at indexPath: IndexPath) {
-        
         // Animate the deletion
         if let selectedCell = self.menuCollectionView.cellForItem(at: indexPath) {
             UIView.animate(withDuration: 0.3, animations: {
@@ -354,7 +279,6 @@ extension SkinCreatorMainVC {
 }
 
 // MARK: - FlowLayout
-
 extension SkinCreatorMainVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -362,6 +286,10 @@ extension SkinCreatorMainVC: UICollectionViewDelegateFlowLayout {
         let cellHeight = cellWidth * 1.15
         
         return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 70)
     }
 }
 

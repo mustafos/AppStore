@@ -1,4 +1,3 @@
-
 import UIKit
 
 @objc public protocol RSColourSliderDelegate {

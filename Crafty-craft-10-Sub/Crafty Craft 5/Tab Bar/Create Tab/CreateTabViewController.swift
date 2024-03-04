@@ -9,7 +9,7 @@ private enum CreateTabState {
 final class CreateTabViewController: UIViewController {
     private var skinCollectonScreen: SkinCreatorMainVC?
     private var addonCollectionScreen: AddonCreatorMainVC?
-    
+    private var isSkinAndAddonPresent: Bool = false
     private lazy var photoGalleryManager: PhotoGalleryManagerProtocol = PhotoGalleryManager()
     
     // MARK: - Properties
@@ -32,6 +32,7 @@ final class CreateTabViewController: UIViewController {
     
     private var suggestionsTableView: UITableView?
     private var tableViewContainer: UIView?
+    private var emptyMessageLabel: UILabel?
     private var selectedSkinModel: SkinCreatedModel?
     
     // MARK: - Lifecycle
@@ -39,8 +40,10 @@ final class CreateTabViewController: UIViewController {
         super.viewDidLoad()
         configureView()
         setupSearchBar()
+        checkFirstCellSearch()
         updateCollectionForCurrentState()
     }
+
     // MARK: - Actions
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -84,7 +87,6 @@ final class CreateTabViewController: UIViewController {
                 self.addChild(self.skinCollectonScreen!)
                 self.collectionContainer.addSubview(self.skinCollectonScreen!.view)
             }
-            
             self.addonCollectionScreen?.view.isHidden = true
             self.skinCollectonScreen?.view.isHidden = false
         case .addon:
@@ -97,7 +99,6 @@ final class CreateTabViewController: UIViewController {
             self.addonCollectionScreen?.view.isHidden = false
             self.skinCollectonScreen?.view.isHidden = true
         }
-        
         self.view.layoutIfNeeded()
     }
     
@@ -145,6 +146,15 @@ final class CreateTabViewController: UIViewController {
                                                          selectedTextColor: UIColor(named: "BeigeColor"))
     }
     
+    private func checkFirstCellSearch() -> Void {
+        if let _ = self.tabBarController?.viewControllers?.first(where: { $0 is SkinCreatorMainVC }) {
+            isSkinAndAddonPresent = true
+        }
+        if let _ = self.tabBarController?.viewControllers?.first(where: { $0 is AddonCreatorMainVC }) {
+            isSkinAndAddonPresent = true
+        }
+    }
+    
     @IBAction func segmentControlChangeAction(_ sender: BetterSegmentedControl) {
         switch sender.index {
         case 0: // SKINS
@@ -186,16 +196,47 @@ final class CreateTabViewController: UIViewController {
         searchBarView.searchTextField.text = nil
         self.filterData(with: "")
     }
-    
+
     private func filterData(with searchText: String) {
         let search: String? = !searchText.isEmpty ? searchText : nil
-            
         switch state {
         case .skin:
             self.skinCollectonScreen?.filterData(with: search)
+            if let skins = self.skinCollectonScreen?.filteredSkins(), skins.isEmpty {
+                showEmptyMessage()
+            } else {
+                collectionContainer.isHidden = false
+                emptyMessageLabel?.isHidden = true
+            }
         case .addon:
             self.addonCollectionScreen?.filterData(with: search)
+            if let addons = self.addonCollectionScreen?.filteredAddon(), addons.isEmpty {
+                showEmptyMessage()
+            } else {
+                collectionContainer.isHidden = false
+                emptyMessageLabel?.isHidden = true
+            }
         }
+    }
+    
+    private func showEmptyMessage() {
+        if emptyMessageLabel == nil {
+            emptyMessageLabel = UILabel()
+            emptyMessageLabel?.text = "Nothing found in \(state == .skin ? "skins" : "addons")"
+            emptyMessageLabel?.font = UIFont(name: "Montserrat-Bold", size: 16)
+            emptyMessageLabel?.textColor = UIColor(named: "BeigeColor")
+            emptyMessageLabel?.textAlignment = .center
+            emptyMessageLabel?.translatesAutoresizingMaskIntoConstraints = false
+            
+            view.addSubview(emptyMessageLabel!)
+            
+            NSLayoutConstraint.activate([
+                emptyMessageLabel!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                emptyMessageLabel!.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            ])
+        }
+        collectionContainer.isHidden = true
+        emptyMessageLabel?.isHidden = false
     }
 }
 
