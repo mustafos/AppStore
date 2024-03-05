@@ -31,6 +31,7 @@
                 <outlet property="skinsButtonRoundedView" destination="QB2-Xg-5Pu" id="Ldi-sC-U2A"/>
                 <outlet property="skinsPageControllerLabel" destination="SVj-nM-8ju" id="Nwc-W3-JWv"/>
                 <outlet property="sortButtonsContainerView" destination="BJY-NW-qu5" id="Qs8-Zv-AR3"/>
+                <outlet property="sortViewHeight" destination="VB1-nf-am5" id="QdI-4D-K8n"/>
                 <outlet property="tabChooseStackView" destination="tFp-IV-Kjp" id="oj3-o6-t8T"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="roundedViewContainers" destination="QB2-Xg-5Pu" collectionClass="NSMutableArray" id="INq-sX-XJw"/>
@@ -218,9 +219,9 @@
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJY-NW-qu5">
                     <rect key="frame" x="20" y="215" width="390" height="240"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" systemColor="tableCellBlueTextColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="240" id="qXf-x9-n6N"/>
+                        <constraint firstAttribute="height" constant="240" id="VB1-nf-am5"/>
                     </constraints>
                 </view>
             </subviews>
@@ -267,5 +268,8 @@
         <namedColor name="greenBackgroundDeep">
             <color red="0.59600001573562622" green="0.70599997043609619" blue="0.68199998140335083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="tableCellBlueTextColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

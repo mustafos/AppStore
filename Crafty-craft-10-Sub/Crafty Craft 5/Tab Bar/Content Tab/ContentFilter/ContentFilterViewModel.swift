@@ -58,34 +58,60 @@ class ContentFilterViewModel: ObservableObject {
     
     @ViewBuilder
     func buttonView(for index: Int) -> some View {
-        HStack {
-            Text(buttons[index].label)
-            Spacer()
-            
-            if buttons[index].isLocked == true {
-                if let cornerIcon = buttons[index].cornerIcon {
-                    Image(uiImage: cornerIcon)
-                        .resizable()
-                        .frame(width: 20, height: 16)
+        Button {
+            self.selectButton(at: index)
+        } label: {
+            HStack {
+                Text(buttons[index].label)
+                Spacer()
+                if buttons[index].isLocked == true {
+                    if let cornerIcon = buttons[index].cornerIcon {
+                        Image(uiImage: cornerIcon)
+                            .resizable()
+                            .frame(width: 20, height: 16)
+                    }
                 }
             }
+            .foregroundStyle(Color("PopularGrayColor"))
+            .animation(.none, value: index)
+            .frame(height: 48)
+            .contentShape(Rectangle())
+            .padding(.horizontal, 20)
+            .overlay(
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 60)
+            )
         }
-        .foregroundStyle(Color("PopularGrayColor"))
-        .animation(.none, value: index)
-        .frame(height: 48)
-        .contentShape(Rectangle())
-        .padding(.horizontal, 20)
-        .overlay(
-            Rectangle()
-                .frame(height: 1)
-                .foregroundColor(.black)
-                .padding(.horizontal, 20)
-                .padding(.bottom, 60)
-        )
-        .onTapGesture {
-            withAnimation(.snappy) {
-                self.selectButton(at: index)
-            }
-        }
+//        HStack {
+//            Text(buttons[index].label)
+//            Spacer()
+//            if buttons[index].isLocked == true {
+//                if let cornerIcon = buttons[index].cornerIcon {
+//                    Image(uiImage: cornerIcon)
+//                        .resizable()
+//                        .frame(width: 20, height: 16)
+//                }
+//            }
+//        }
+//        .foregroundStyle(Color("PopularGrayColor"))
+//        .animation(.none, value: index)
+//        .frame(height: 48)
+//        .contentShape(Rectangle())
+//        .padding(.horizontal, 20)
+//        .overlay(
+//            Rectangle()
+//                .frame(height: 1)
+//                .foregroundColor(.black)
+//                .padding(.horizontal, 20)
+//                .padding(.bottom, 60)
+//        )
+//        .onTapGesture {
+//            withAnimation(.snappy) {
+//                self.selectButton(at: index)
+//            }
+//        }
     }
 }

@@ -19,6 +19,7 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
     @IBOutlet private weak var contentCollectionView: UICollectionView!
     @IBOutlet private var roundedViewContainers: [UIView]!
     @IBOutlet private weak var sortButtonsContainerView: UIView!
+    @IBOutlet weak var sortViewHeight: NSLayoutConstraint!
     @IBOutlet weak var controlSwitcher: BetterSegmentedControl!
     
     @IBOutlet private weak var tabChooseStackView: UIStackView!
@@ -64,7 +65,7 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
             }
         }
     }
-    
+
     private var filteredPageModel: [TabPagesCollectionCellModel] = []
     private var pageModel: [TabPagesCollectionCellModel] = []
     
@@ -165,7 +166,6 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         navigationController?.setNavigationBarHidden(true, animated: false)
         validateSub()
         updateData()
@@ -312,7 +312,6 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
             
         }
     }
-
     
     private func setUpFilter(name: String) {
         let selectedFilterNames = [name]
@@ -382,7 +381,7 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
             } else {
                 segmentedControllMode = .latest
                 setupFilterView()
-
+                
                 let nextVC = PremiumMainController()
                 nextVC.productBuy = .unlockContentProduct
                 navigationController?.pushViewController(nextVC, animated: true)
@@ -399,19 +398,22 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
             self?.flushSearch()
             self?.applyContent(filter: filter)
         }
-
+        
         contentFilterView = ContentFilterView(viewModel: contentFilterViewModel)
         let hostingController = UIHostingController(rootView: contentFilterView)
         hostingController.view.backgroundColor = .clear
         addChild(hostingController)
         sortButtonsContainerView.addSubview(hostingController.view)
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(sortButtonsContainerViewTapped))
+        sortButtonsContainerView.addGestureRecognizer(tapGesture)
+
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             hostingController.view.leadingAnchor.constraint(equalTo: sortButtonsContainerView.leadingAnchor),
             hostingController.view.trailingAnchor.constraint(equalTo: sortButtonsContainerView.trailingAnchor),
-            hostingController.view.topAnchor.constraint(equalTo: sortButtonsContainerView.topAnchor),
-            sortButtonsContainerView.heightAnchor.constraint(equalToConstant: 240)
+            hostingController.view.topAnchor.constraint(equalTo: sortButtonsContainerView.topAnchor)
         ])
         
         // Notify the hosting controller that it has moved to the parent view controller
@@ -461,8 +463,7 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
     }
     
     
-    //MARK: UPD Methods
-    
+    // MARK: UPD Methods
     private func flushSearch() {
         navbarSearchMode = false
         searchBarView.searchTextField.resignFirstResponder()
@@ -528,18 +529,17 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
             emptyMessageLabel?.textColor = UIColor(named: "BeigeColor")
             emptyMessageLabel?.textAlignment = .center
             emptyMessageLabel?.translatesAutoresizingMaskIntoConstraints = false
-
+            
             view.addSubview(emptyMessageLabel!)
-
+            
             NSLayoutConstraint.activate([
                 emptyMessageLabel!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 emptyMessageLabel!.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             ])
         }
-
         emptyMessageLabel?.isHidden = false
     }
-
+    
     private func hideEmptyMessage() {
         emptyMessageLabel?.isHidden = true
     }
@@ -557,15 +557,20 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
         navbarSearchMode.toggle()
     }
     
+    @IBAction func settingsBtnTapped(_ sender: UIButton) {
+        let nextVC = SettingsViewController()
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
     @objc private func tabButtonTapped(_ sender: UIButton) {
         guard let selectedTab = TabsPageController(rawValue: sender.tag) else { return }
         flushSearch()
         tabsPageControllMode = selectedTab
+        sortViewHeight.constant = 240
     }
     
-    @IBAction func settingsBtnTapped(_ sender: UIButton) {
-        let nextVC = SettingsViewController()
-        navigationController?.pushViewController(nextVC, animated: true)
+    @objc private func sortButtonsContainerViewTapped() {
+        sortViewHeight.constant = 48
     }
     
     private func configureView() {
@@ -594,6 +599,7 @@ extension ContentTabViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let contentViewController = ContentViewController(model: filteredPageModel[indexPath.item], mode: tabsPageControllMode )
         presentFullScreenViewController(contentViewController)
+        sortViewHeight.constant = 240
     }
 }
 
