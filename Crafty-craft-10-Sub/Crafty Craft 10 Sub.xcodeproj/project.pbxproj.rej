@@ -1,0 +1,33 @@
+diff a/Crafty Craft 5.xcodeproj/project.pbxproj b/Crafty Craft 5.xcodeproj/project.pbxproj	(rejected hunks)
+@@ -17,6 +17,7 @@
+ 		033847A42A9CBA1700A55021 /* EzPopup in Frameworks */ = {isa = PBXBuildFile; productRef = 033847A32A9CBA1700A55021 /* EzPopup */; };
+ 		033847A62A9CBE9A00A55021 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033847A52A9CBE9A00A55021 /* DocumentPicker.swift */; };
+ 		033977CD2AE2B1D90096AC65 /* sub.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 033977CC2AE2B1D90096AC65 /* sub.ttf */; };
++		03435CCC2B05183F00423598 /* UIColor+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03435CCB2B05183F00423598 /* UIColor+Equatable.swift */; };
+ 		0351666F2AFA3F0900035087 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035166272AFA3F0900035087 /* TransactionView.swift */; };
+ 		035166702AFA3F0900035087 /* TransactionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035166282AFA3F0900035087 /* TransactionView.xib */; };
+ 		035166712AFA3F0900035087 /* extensions-freeform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0351662A2AFA3F0900035087 /* extensions-freeform.swift */; };
+@@ -381,6 +382,7 @@
+ 		0338479F2A9CB41700A55021 /* DownloadContnetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DownloadContnetViewController.xib; sourceTree = "<group>"; };
+ 		033847A52A9CBE9A00A55021 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+ 		033977CC2AE2B1D90096AC65 /* sub.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sub.ttf; sourceTree = "<group>"; };
++		03435CCB2B05183F00423598 /* UIColor+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Equatable.swift"; sourceTree = "<group>"; };
+ 		035166272AFA3F0900035087 /* TransactionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+ 		035166282AFA3F0900035087 /* TransactionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionView.xib; sourceTree = "<group>"; };
+ 		0351662A2AFA3F0900035087 /* extensions-freeform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extensions-freeform.swift"; sourceTree = "<group>"; };
+@@ -1646,6 +1648,7 @@
+ 		F420A7A32A0284B30098B849 /* Extensions */ = {
+ 			isa = PBXGroup;
+ 			children = (
++				03435CCB2B05183F00423598 /* UIColor+Equatable.swift */,
+ 				D7310D712A842F810020D42F /* Image+Trim.swift */,
+ 				6F6F55B72A4ED41A0093F556 /* CheckParameters.swift */,
+ 				D72306E52A7932470000F6B3 /* Color+Resource.swift */,
+@@ -2158,6 +2161,7 @@
+ 				03AFFD452AD847D0002A131D /* SkinVariantsViewController.swift in Sources */,
+ 				0351669D2AFA3F0900035087 /* ConstraintRelatableTarget.swift in Sources */,
+ 				F438AA182A14BB0D007469E7 /* Pikko.swift in Sources */,
++				03435CCC2B05183F00423598 /* UIColor+Equatable.swift in Sources */,
+ 				C040CE032A56EEA600F28F54 /* Extension_EditorSkinModel+SaveAndShare.swift in Sources */,
+ 				03981F502AE159B100C69027 /* SeedRealmSession.swift in Sources */,
+ 				035166902AFA3F0900035087 /* ConstraintLayoutGuide.swift in Sources */,

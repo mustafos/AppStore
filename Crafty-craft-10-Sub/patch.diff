@@ -1,0 +1,919 @@
+From 7e7438d187592a77c65c34a4b457d3e69a6fccf9 Mon Sep 17 00:00:00 2001
+From: VitalyPolezhay <>
+Date: Wed, 6 Sep 2023 16:14:28 +0300
+Subject: [PATCH] hot fix 9.10
+
+---
+ .../ContentFilterViewModel.swift              |   6 +-
+ .../ContentTabViewController.swift            |  12 +-
+ .../Content Tab/ContentTabViewController.xib  |  18 +-
+ .../AddonCreatorViewController.xib            |  32 +-
+ .../CustomViews/CustomToolPickerView.swift    |   2 +-
+ .../SkinCreatorViewController.swift           |  12 +-
+ .../Skin3DTestViewController.xib              | 480 +++++++++---------
+ 7 files changed, 297 insertions(+), 265 deletions(-)
+
+diff --git a/Crafty Craft 5/Tab Bar/Content Tab/ContentFilter/ContentFilterViewModel.swift b/Crafty Craft 5/Tab Bar/Content Tab/ContentFilter/ContentFilterViewModel.swift
+index 787e515..ff85a41 100644
+--- a/Crafty Craft 5/Tab Bar/Content Tab/ContentFilter/ContentFilterViewModel.swift	
++++ b/Crafty Craft 5/Tab Bar/Content Tab/ContentFilter/ContentFilterViewModel.swift	
+@@ -75,13 +75,13 @@ class ContentFilterViewModel: ObservableObject {
+                 .background(
+                     ZStack {
+                         RoundedRectangle(cornerRadius: 8, style: .continuous)
+-                            .fill(selectedIndex == index ? Color.green : Color.gray)
++                            .fill(selectedIndex == index ? Color.darkGreenBackground : Color.clear)
+                         RoundedRectangle(cornerRadius: 8, style: .continuous)
+-                            .stroke(.white, lineWidth: selectedIndex == index ? 1 : 0)
++                            .stroke(.white, lineWidth: selectedIndex == index ? 0 : 1)
+                             .padding(1)
+                     }
+                 )
+-                .foregroundColor(selectedIndex == index ? Color.white : Color.white.opacity(0.3))
++                .foregroundColor(Color.white)
+                 
+                 if buttons[index].isLocked == true {
+                     // Display corner icon only if contentFilterView is false or for indices other than latest and popular
+diff --git a/Crafty Craft 5/Tab Bar/Content Tab/ContentTabViewController.swift b/Crafty Craft 5/Tab Bar/Content Tab/ContentTabViewController.swift
+index 7ebfbb3..2c4a85c 100755
+--- a/Crafty Craft 5/Tab Bar/Content Tab/ContentTabViewController.swift	
++++ b/Crafty Craft 5/Tab Bar/Content Tab/ContentTabViewController.swift	
+@@ -130,7 +130,7 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
+         validateSub()
+         updateData()
+         registerForKeyboardNotifications()
+-        
++        updateSerachFilter()
+     }
+     
+     override func viewWillDisappear(_ animated: Bool) {
+@@ -159,6 +159,12 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
+ 
+     }
+     
++    private func updateSerachFilter() {
++        if let searchText = self.searchBarView.searchTextField.text, !searchText.isEmpty {
++            self.filterData(with: searchText)
++        }
++    }
++    
+     private func updateData() {
+         pageModel = setUpPageModel()
+         
+@@ -345,6 +351,10 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
+     private func setupSearchBar() {
+         searchBarView.buttonTapAction = { [weak self] in
+             self?.navbarSearchMode.toggle()
++            if let isSearchViewShow = self?.navbarSearchMode, !isSearchViewShow {
++                self?.searchBarView.searchTextField.text = nil
++                self?.updateFilteredData()
++            }
+         }
+         searchBarView.onTextChanged = { [weak self] searchText in
+             self?.filterData(with: searchText)
+diff --git a/Crafty Craft 5/Tab Bar/Content Tab/ContentTabViewController.xib b/Crafty Craft 5/Tab Bar/Content Tab/ContentTabViewController.xib
+index 50abc21..d0d13f7 100755
+--- a/Crafty Craft 5/Tab Bar/Content Tab/ContentTabViewController.xib	
++++ b/Crafty Craft 5/Tab Bar/Content Tab/ContentTabViewController.xib	
+@@ -1,9 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
++<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+     <device id="retina6_5" orientation="portrait" appearance="light"/>
+     <dependencies>
+         <deployment identifier="iOS"/>
+-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
++        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+         <capability name="Named colors" minToolsVersion="9.0"/>
+         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+@@ -59,7 +59,7 @@
+                 </collectionView>
+                 <view contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="dAp-YO-bQq" userLabel="Sort Buttons View Container">
+                     <rect key="frame" x="16" y="230" width="382" height="40"/>
+-                    <color key="backgroundColor" red="0.058823529411764705" green="0.27843137254901962" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
++                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                     <constraints>
+                         <constraint firstAttribute="height" constant="40" id="gbZ-hC-7GZ"/>
+                     </constraints>
+@@ -86,7 +86,7 @@
+                                             </constraints>
+                                         </imageView>
+                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="SKINS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVj-nM-8ju">
+-                                            <rect key="frame" x="30.666666666666668" y="34" width="39.666666666666657" height="50"/>
++                                            <rect key="frame" x="31.333333333333332" y="34" width="38.333333333333343" height="50"/>
+                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="17"/>
+                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                             <nil key="highlightedColor"/>
+@@ -127,7 +127,7 @@
+                                             </constraints>
+                                         </imageView>
+                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ADDONS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFH-W4-7RV">
+-                                            <rect key="frame" x="20.666666666666689" y="34" width="59.333333333333343" height="50"/>
++                                            <rect key="frame" x="21" y="34" width="59" height="50"/>
+                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="17"/>
+                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                             <nil key="highlightedColor"/>
+@@ -168,7 +168,7 @@
+                                             </constraints>
+                                         </imageView>
+                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="MAPS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8k-mp-5A5">
+-                                            <rect key="frame" x="31" y="34" width="39" height="50"/>
++                                            <rect key="frame" x="31.333333333333371" y="34" width="38" height="50"/>
+                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="17"/>
+                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                             <nil key="highlightedColor"/>
+@@ -216,7 +216,7 @@
+                             <nil key="highlightedColor"/>
+                         </label>
+                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4b-J7-CrD" customClass="SearchBarView" customModule="Crafty_Craft_5" customModuleProvider="target">
+-                            <rect key="frame" x="32" y="2" width="350" height="46"/>
++                            <rect key="frame" x="16" y="2" width="382" height="46"/>
+                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                         </view>
+                     </subviews>
+@@ -224,14 +224,14 @@
+                     <constraints>
+                         <constraint firstItem="TQf-ds-rOz" firstAttribute="top" secondItem="TqS-y1-XYy" secondAttribute="top" constant="12" id="1K9-ku-eli"/>
+                         <constraint firstAttribute="trailing" secondItem="TQf-ds-rOz" secondAttribute="trailing" constant="16" id="1KW-6A-mgB"/>
+-                        <constraint firstItem="c4b-J7-CrD" firstAttribute="leading" secondItem="TqS-y1-XYy" secondAttribute="leading" constant="32" id="E6Y-sO-5ro"/>
++                        <constraint firstItem="c4b-J7-CrD" firstAttribute="leading" secondItem="TqS-y1-XYy" secondAttribute="leading" constant="16" id="E6Y-sO-5ro"/>
+                         <constraint firstItem="P3I-OQ-GoJ" firstAttribute="top" secondItem="TqS-y1-XYy" secondAttribute="top" constant="8" id="EwL-om-L56"/>
+                         <constraint firstAttribute="height" constant="50" id="Yrw-8x-UcD">
+                             <variation key="heightClass=regular-widthClass=regular" constant="64"/>
+                         </constraint>
+                         <constraint firstItem="P3I-OQ-GoJ" firstAttribute="centerX" secondItem="TqS-y1-XYy" secondAttribute="centerX" id="e9i-Ih-hx1"/>
+                         <constraint firstItem="TQf-ds-rOz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P3I-OQ-GoJ" secondAttribute="trailing" constant="8" id="iss-UT-wfM"/>
+-                        <constraint firstAttribute="trailing" secondItem="c4b-J7-CrD" secondAttribute="trailing" constant="32" id="nR6-rF-Zym"/>
++                        <constraint firstAttribute="trailing" secondItem="c4b-J7-CrD" secondAttribute="trailing" constant="16" id="nR6-rF-Zym"/>
+                         <constraint firstAttribute="bottom" secondItem="P3I-OQ-GoJ" secondAttribute="bottom" constant="8" id="nux-h5-iGw"/>
+                         <constraint firstAttribute="bottom" secondItem="TQf-ds-rOz" secondAttribute="bottom" constant="12" id="pTC-3h-jpZ"/>
+                         <constraint firstItem="c4b-J7-CrD" firstAttribute="top" secondItem="TqS-y1-XYy" secondAttribute="top" constant="2" id="qa9-1l-cDv"/>
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonCreatorMainScreen/AddonCreatorViewController.xib b/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonCreatorMainScreen/AddonCreatorViewController.xib
+index b91f661..d8972f8 100755
+--- a/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonCreatorMainScreen/AddonCreatorViewController.xib	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonCreatorMainScreen/AddonCreatorViewController.xib	
+@@ -1,9 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
++<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+     <device id="retina6_12" orientation="portrait" appearance="light"/>
+     <dependencies>
+         <deployment identifier="iOS"/>
+-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
++        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+@@ -87,15 +87,15 @@
+                     </constraints>
+                 </view>
+                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="U0t-nZ-dJo">
+-                    <rect key="frame" x="31.333333333333343" y="193" width="330.33333333333326" height="43.666666666666657"/>
++                    <rect key="frame" x="16" y="193" width="361" height="44.333333333333343"/>
+                     <subviews>
+                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ2-Wf-N1j">
+-                            <rect key="frame" x="0.0" y="0.0" width="104.66666666666667" height="43.666666666666664"/>
++                            <rect key="frame" x="0.0" y="0.0" width="115" height="44.333333333333336"/>
+                             <constraints>
+-                                <constraint firstAttribute="width" secondItem="UJ2-Wf-N1j" secondAttribute="height" multiplier="2.4:1" id="xsf-pz-JEM"/>
++                                <constraint firstAttribute="width" secondItem="UJ2-Wf-N1j" secondAttribute="height" multiplier="2.6:1" id="xsf-pz-JEM"/>
+                             </constraints>
+                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="14"/>
+-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
++                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                             <state key="normal" title=" Layout" image="layout_tab">
+                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                             </state>
+@@ -107,12 +107,12 @@
+                             </connections>
+                         </button>
+                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAG-Qu-3dv">
+-                            <rect key="frame" x="112.66666666666669" y="0.0" width="105" height="43.666666666666664"/>
++                            <rect key="frame" x="123" y="0.0" width="115" height="44.333333333333336"/>
+                             <constraints>
+-                                <constraint firstAttribute="width" secondItem="IAG-Qu-3dv" secondAttribute="height" multiplier="2.4:1" id="ER4-Re-cGo"/>
++                                <constraint firstAttribute="width" secondItem="IAG-Qu-3dv" secondAttribute="height" multiplier="2.6:1" id="ER4-Re-cGo"/>
+                             </constraints>
+                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="14"/>
+-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
++                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                             <state key="normal" title=" Group" image="group_tab">
+                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                             </state>
+@@ -124,12 +124,12 @@
+                             </connections>
+                         </button>
+                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhU-GT-lR5">
+-                            <rect key="frame" x="225.66666666666666" y="0.0" width="104.66666666666666" height="43.666666666666664"/>
++                            <rect key="frame" x="246" y="0.0" width="115" height="44.333333333333336"/>
+                             <constraints>
+-                                <constraint firstAttribute="width" secondItem="FhU-GT-lR5" secondAttribute="height" multiplier="2.4:1" id="cII-Kq-Ddt"/>
++                                <constraint firstAttribute="width" secondItem="FhU-GT-lR5" secondAttribute="height" multiplier="2.6:1" id="cII-Kq-Ddt"/>
+                             </constraints>
+                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="14"/>
+-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
++                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                             <state key="normal" title=" Recent" image="recent_tab">
+                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                             </state>
+@@ -144,7 +144,7 @@
+                     <color key="backgroundColor" red="0.82352941180000006" green="0.43921568630000002" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                 </stackView>
+                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zMY-Vs-C8o">
+-                    <rect key="frame" x="16" y="244.66666666666669" width="361" height="607.33333333333326"/>
++                    <rect key="frame" x="16" y="245.33333333333331" width="361" height="606.66666666666674"/>
+                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qvh-qO-MJa">
+                         <size key="itemSize" width="0.0" height="0.0"/>
+@@ -158,7 +158,7 @@
+                     </connections>
+                 </collectionView>
+                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1D9-EK-baz" customClass="TintedTextField" customModule="Crafty_Craft_5" customModuleProvider="target">
+-                    <rect key="frame" x="39.333333333333343" y="143" width="314.33333333333326" height="34"/>
++                    <rect key="frame" x="16" y="143" width="361" height="34"/>
+                     <color key="backgroundColor" red="0.086274509799999996" green="0.4039215686" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                     <constraints>
+@@ -176,17 +176,17 @@
+                 <constraint firstAttribute="bottom" secondItem="zMY-Vs-C8o" secondAttribute="bottom" id="2ac-eU-BbU"/>
+                 <constraint firstItem="Z2K-Qb-hgo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="99h-cT-IKU"/>
+                 <constraint firstItem="Z2K-Qb-hgo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="E0G-RW-Gvn"/>
+-                <constraint firstItem="U0t-nZ-dJo" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.840543" id="Fhl-ah-awc"/>
++                <constraint firstItem="1D9-EK-baz" firstAttribute="width" secondItem="zMY-Vs-C8o" secondAttribute="width" id="EXc-jI-sxY"/>
+                 <constraint firstItem="Z2K-Qb-hgo" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="I33-wk-1gu"/>
+                 <constraint firstItem="U0t-nZ-dJo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MbC-ea-3L5"/>
+                 <constraint firstItem="U0t-nZ-dJo" firstAttribute="top" secondItem="1D9-EK-baz" secondAttribute="bottom" constant="16" id="R9e-0A-bS4"/>
+                 <constraint firstItem="zMY-Vs-C8o" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WHd-Sz-Cha"/>
+                 <constraint firstItem="zMY-Vs-C8o" firstAttribute="top" secondItem="U0t-nZ-dJo" secondAttribute="bottom" constant="8" id="XdU-vZ-XIZ"/>
+                 <constraint firstItem="1D9-EK-baz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bYF-M9-uAJ"/>
++                <constraint firstItem="U0t-nZ-dJo" firstAttribute="width" secondItem="zMY-Vs-C8o" secondAttribute="width" id="fGe-KB-dhw"/>
+                 <constraint firstItem="1D9-EK-baz" firstAttribute="top" secondItem="Z2K-Qb-hgo" secondAttribute="bottom" constant="18" id="fnk-eV-SNi"/>
+                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zMY-Vs-C8o" secondAttribute="trailing" constant="16" id="rSH-WB-dim"/>
+                 <constraint firstItem="zMY-Vs-C8o" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="vqR-ym-W70"/>
+-                <constraint firstItem="1D9-EK-baz" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="xIK-eQ-ToK"/>
+             </constraints>
+             <point key="canvasLocation" x="125.95419847328243" y="21.83098591549296"/>
+         </view>
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/BodyPart2DPickerVC/SkinCreatorController/CustomViews/CustomToolPickerView.swift b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/BodyPart2DPickerVC/SkinCreatorController/CustomViews/CustomToolPickerView.swift
+index b6c1470..859d3ff 100755
+--- a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/BodyPart2DPickerVC/SkinCreatorController/CustomViews/CustomToolPickerView.swift	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/BodyPart2DPickerVC/SkinCreatorController/CustomViews/CustomToolPickerView.swift	
+@@ -15,7 +15,7 @@ class CustomToolPickerView : UIView {
+     override func draw(_ rect: CGRect) {
+         addShape()
+     }
+-
++    
+     // MARK: - Private Methods
+ 
+     private func addShape() {
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/BodyPart2DPickerVC/SkinCreatorController/SkinCreatorViewController.swift b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/BodyPart2DPickerVC/SkinCreatorController/SkinCreatorViewController.swift
+index a849909..3762bf1 100755
+--- a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/BodyPart2DPickerVC/SkinCreatorController/SkinCreatorViewController.swift	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/BodyPart2DPickerVC/SkinCreatorController/SkinCreatorViewController.swift	
+@@ -66,6 +66,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
+     var drawingHistory: [PKDrawing] = []
+     var toolBarSelectedItem: ToolBarSelectedItem = .pencil {
+         didSet {
++            
+             dropperButton.isHidden = true
+             switch toolBarSelectedItem {
+             case .pencil, .fill, .noise, .undo:
+@@ -149,6 +150,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
+     //MARK: - IBActions
+     
+     @IBAction func onToolBarPencilButtonTapped(_ sender: UIButton) {
++        hideMagnifyingGlass()
+         manageSelectedToolUI(tappedTool: sender, tappedLab: pencilLab)
+                 TransitionColor = currentDrawingColor
+         toolBarSelectedItem = .pencil
+@@ -156,12 +158,14 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
+     }
+     
+     @IBAction func onToolBarEraserButtonTapped(_ sender: UIButton) {
++        hideMagnifyingGlass()
+         manageSelectedToolUI(tappedTool: sender, tappedLab: eraserLab)
+         toolBarSelectedItem = .eraser
+         currentTool = Paintbrush()
+     }
+     
+     @IBAction func onToolBarPickerButtonTapped(_ sender: UIButton) {
++        hideMagnifyingGlass()
+         manageSelectedToolUI(tappedTool: sender, tappedLab: dropperLab)
+         toolBarSelectedItem = .picker
+         
+@@ -173,19 +177,21 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
+     }
+     
+     @IBAction func onToolBarFillButtonTapped(_ sender: UIButton) {
++        hideMagnifyingGlass()
+         manageSelectedToolUI(tappedTool: sender, tappedLab: fillLab)
+         toolBarSelectedItem = .fill
+         currentTool = Bucket()
+     }
+     
+-    
+     @IBAction func onToolBarNoiseButtonTapped(_ sender: UIButton) {
++        hideMagnifyingGlass()
+         manageSelectedToolUI(tappedTool: sender, tappedLab: noiseLab)
+         toolBarSelectedItem = .noise
+         currentTool = NoiseTool()
+     }
+     
+     @IBAction func onToolBarUndoButtonTapped(_ sender: UIButton) {
++        hideMagnifyingGlass()
+         manageSelectedToolUI(tappedTool: sender, tappedLab: undoLab)
+         toolBarSelectedItem = .undo
+         commandManager.undo()
+@@ -206,6 +212,7 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
+     
+     @IBAction func paletteBtnTapped(_ sender: Any) {
+         presentCustomAlert()
++        hideMagnifyingGlass()
+     }
+     
+     @IBAction func importBtnTapped(_ sender: Any) {
+@@ -241,6 +248,9 @@ class SkinCreatorViewController: UIViewController, PKCanvasViewDelegate, PKToolP
+             magnifyingGlassView?.backgroundColor = .white
+             
+             canvasPixelView?.addSubview(magnifyingGlassView!)
++        } else {
++            hideMagnifyingGlass()
++            sender.isSelected = false
+         }
+     }
+     
+diff --git a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.xib b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.xib
+index 783ae15..5820968 100755
+--- a/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.xib	
++++ b/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.xib	
+@@ -1,9 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
++<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+     <device id="retina6_72" orientation="portrait" appearance="light"/>
+     <dependencies>
+         <deployment identifier="iOS"/>
+-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
++        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+         <capability name="Named colors" minToolsVersion="9.0"/>
+         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+@@ -197,266 +197,278 @@
+                                 <constraint firstItem="aGE-fi-6p0" firstAttribute="centerY" secondItem="516-2I-QlD" secondAttribute="centerY" id="zn9-de-wVD"/>
+                             </constraints>
+                         </view>
+-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TI5-yZ-uEY" userLabel="Custom Tool Picker" customClass="CustomToolPickerView" customModule="Crafty_Craft_5" customModuleProvider="target">
++                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ma-6A-IHA">
+                             <rect key="frame" x="0.0" y="84" width="430" height="121"/>
+                             <subviews>
+-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KwF-8J-KY2">
+-                                    <rect key="frame" x="29" y="10" width="372" height="66"/>
++                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TI5-yZ-uEY" userLabel="Custom Tool Picker" customClass="CustomToolPickerView" customModule="Crafty_Craft_5" customModuleProvider="target">
++                                    <rect key="frame" x="0.0" y="0.0" width="430" height="121"/>
+                                     <subviews>
+-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AjJ-SC-8ZB" userLabel="Pencil View Container">
+-                                            <rect key="frame" x="0.0" y="0.0" width="55.333333333333336" height="66"/>
++                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KwF-8J-KY2">
++                                            <rect key="frame" x="29" y="10" width="372" height="66"/>
+                                             <subviews>
+-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q71-xB-QT1" userLabel="Pencil Button">
+-                                                    <rect key="frame" x="17.666666666666664" y="23" width="20" height="20"/>
++                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AjJ-SC-8ZB" userLabel="Pencil View Container">
++                                                    <rect key="frame" x="0.0" y="0.0" width="55.333333333333336" height="66"/>
++                                                    <subviews>
++                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q71-xB-QT1" userLabel="Pencil Button">
++                                                            <rect key="frame" x="17.666666666666664" y="23" width="20" height="20"/>
++                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
++                                                            <constraints>
++                                                                <constraint firstAttribute="width" secondItem="q71-xB-QT1" secondAttribute="height" multiplier="1:1" id="Ipv-SV-Fmn"/>
++                                                                <constraint firstAttribute="width" constant="20" id="NXr-fu-YAx">
++                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
++                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
++                                                                </constraint>
++                                                            </constraints>
++                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
++                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
++                                                            <state key="normal" backgroundImage="pencilNonSelected"/>
++                                                            <state key="selected" backgroundImage="Pencil Item"/>
++                                                            <connections>
++                                                                <action selector="onToolBarPencilButtonTapped:" destination="-1" eventType="touchUpInside" id="MV8-kR-Cj6"/>
++                                                            </connections>
++                                                        </button>
++                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pencil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRj-Pc-XRa">
++                                                            <rect key="frame" x="5" y="50" width="43" height="13"/>
++                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
++                                                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
++                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
++                                                            <nil key="highlightedColor"/>
++                                                            <variation key="heightClass=regular-widthClass=compact">
++                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
++                                                            </variation>
++                                                            <variation key="heightClass=regular-widthClass=regular">
++                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
++                                                            </variation>
++                                                        </label>
++                                                    </subviews>
+                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                     <constraints>
+-                                                        <constraint firstAttribute="width" secondItem="q71-xB-QT1" secondAttribute="height" multiplier="1:1" id="Ipv-SV-Fmn"/>
+-                                                        <constraint firstAttribute="width" constant="20" id="NXr-fu-YAx">
+-                                                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+-                                                            <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+-                                                        </constraint>
++                                                        <constraint firstItem="q71-xB-QT1" firstAttribute="centerY" secondItem="AjJ-SC-8ZB" secondAttribute="centerY" id="AXu-LE-4G5"/>
++                                                        <constraint firstItem="q71-xB-QT1" firstAttribute="centerX" secondItem="AjJ-SC-8ZB" secondAttribute="centerX" id="abe-eb-4bh"/>
+                                                     </constraints>
+-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+-                                                    <state key="normal" backgroundImage="pencilNonSelected"/>
+-                                                    <state key="selected" backgroundImage="Pencil Item"/>
+-                                                    <connections>
+-                                                        <action selector="onToolBarPencilButtonTapped:" destination="-1" eventType="touchUpInside" id="MV8-kR-Cj6"/>
+-                                                    </connections>
+-                                                </button>
+-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pencil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRj-Pc-XRa">
+-                                                    <rect key="frame" x="5" y="50" width="43" height="13"/>
+-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+-                                                    <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
+-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+-                                                    <nil key="highlightedColor"/>
+-                                                    <variation key="heightClass=regular-widthClass=compact">
+-                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
+-                                                    </variation>
+-                                                    <variation key="heightClass=regular-widthClass=regular">
+-                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
+-                                                    </variation>
+-                                                </label>
+-                                            </subviews>
+-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+-                                            <constraints>
+-                                                <constraint firstItem="q71-xB-QT1" firstAttribute="centerY" secondItem="AjJ-SC-8ZB" secondAttribute="centerY" id="AXu-LE-4G5"/>
+-                                                <constraint firstItem="q71-xB-QT1" firstAttribute="centerX" secondItem="AjJ-SC-8ZB" secondAttribute="centerX" id="abe-eb-4bh"/>
+-                                            </constraints>
+-                                        </view>
+-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHH-ah-ida" userLabel="Eraser View Container">
+-                                            <rect key="frame" x="63.333333333333329" y="0.0" width="55.333333333333329" height="66"/>
+-                                            <subviews>
+-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGU-sT-OYX" userLabel="Eraser Button">
+-                                                    <rect key="frame" x="17.666666666666671" y="23" width="20" height="20"/>
++                                                </view>
++                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHH-ah-ida" userLabel="Eraser View Container">
++                                                    <rect key="frame" x="63.333333333333329" y="0.0" width="55.333333333333329" height="66"/>
++                                                    <subviews>
++                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGU-sT-OYX" userLabel="Eraser Button">
++                                                            <rect key="frame" x="17.666666666666671" y="23" width="20" height="20"/>
++                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
++                                                            <constraints>
++                                                                <constraint firstAttribute="width" constant="20" id="Cee-mc-jhF">
++                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
++                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
++                                                                </constraint>
++                                                                <constraint firstAttribute="width" secondItem="mGU-sT-OYX" secondAttribute="height" multiplier="1:1" id="gsE-5A-xXw"/>
++                                                            </constraints>
++                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
++                                                            <state key="normal" backgroundImage="eraserNonSelected"/>
++                                                            <state key="selected" backgroundImage="Eraser Item"/>
++                                                            <connections>
++                                                                <action selector="onToolBarEraserButtonTapped:" destination="-1" eventType="touchUpInside" id="H93-wP-Bgv"/>
++                                                            </connections>
++                                                        </button>
++                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Eraser" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2De-3i-r5Q">
++                                                            <rect key="frame" x="0.0" y="50" width="55" height="13"/>
++                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
++                                                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
++                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
++                                                            <nil key="highlightedColor"/>
++                                                            <variation key="heightClass=regular-widthClass=compact">
++                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
++                                                            </variation>
++                                                            <variation key="heightClass=regular-widthClass=regular">
++                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
++                                                            </variation>
++                                                        </label>
++                                                    </subviews>
+                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                     <constraints>
+-                                                        <constraint firstAttribute="width" constant="20" id="Cee-mc-jhF">
+-                                                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+-                                                            <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+-                                                        </constraint>
+-                                                        <constraint firstAttribute="width" secondItem="mGU-sT-OYX" secondAttribute="height" multiplier="1:1" id="gsE-5A-xXw"/>
++                                                        <constraint firstItem="mGU-sT-OYX" firstAttribute="centerY" secondItem="JHH-ah-ida" secondAttribute="centerY" id="ZXM-46-WcM"/>
++                                                        <constraint firstItem="mGU-sT-OYX" firstAttribute="centerX" secondItem="JHH-ah-ida" secondAttribute="centerX" id="iCP-Sy-VwV"/>
+                                                     </constraints>
+-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+-                                                    <state key="normal" backgroundImage="eraserNonSelected"/>
+-                                                    <state key="selected" backgroundImage="Eraser Item"/>
+-                                                    <connections>
+-                                                        <action selector="onToolBarEraserButtonTapped:" destination="-1" eventType="touchUpInside" id="H93-wP-Bgv"/>
+-                                                    </connections>
+-                                                </button>
+-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Eraser" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2De-3i-r5Q">
+-                                                    <rect key="frame" x="0.0" y="50" width="55" height="13"/>
+-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+-                                                    <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
+-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+-                                                    <nil key="highlightedColor"/>
+-                                                    <variation key="heightClass=regular-widthClass=compact">
+-                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
+-                                                    </variation>
+-                                                    <variation key="heightClass=regular-widthClass=regular">
+-                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
+-                                                    </variation>
+-                                                </label>
+-                                            </subviews>
+-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+-                                            <constraints>
+-                                                <constraint firstItem="mGU-sT-OYX" firstAttribute="centerY" secondItem="JHH-ah-ida" secondAttribute="centerY" id="ZXM-46-WcM"/>
+-                                                <constraint firstItem="mGU-sT-OYX" firstAttribute="centerX" secondItem="JHH-ah-ida" secondAttribute="centerX" id="iCP-Sy-VwV"/>
+-                                            </constraints>
+-                                        </view>
+-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCn-an-dg5" userLabel="Picker View Container">
+-                                            <rect key="frame" x="126.66666666666664" y="0.0" width="55.333333333333329" height="66"/>
+-                                            <subviews>
+-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juE-kK-GND" userLabel="Brash Button">
+-                                                    <rect key="frame" x="17.666666666666686" y="23" width="20" height="20"/>
++                                                </view>
++                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCn-an-dg5" userLabel="Picker View Container">
++                                                    <rect key="frame" x="126.66666666666664" y="0.0" width="55.333333333333329" height="66"/>
++                                                    <subviews>
++                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juE-kK-GND" userLabel="Brash Button">
++                                                            <rect key="frame" x="17.666666666666686" y="23" width="20" height="20"/>
++                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
++                                                            <constraints>
++                                                                <constraint firstAttribute="width" secondItem="juE-kK-GND" secondAttribute="height" multiplier="1:1" id="zFU-gu-zLY"/>
++                                                                <constraint firstAttribute="width" constant="20" id="zlx-nE-CDD">
++                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
++                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
++                                                                </constraint>
++                                                            </constraints>
++                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
++                                                            <state key="normal" backgroundImage="paletteNonSelected"/>
++                                                            <state key="selected" backgroundImage="paletteSelected"/>
++                                                            <connections>
++                                                                <action selector="onToolBarBrashButtonTapped:" destination="-1" eventType="touchUpInside" id="Vav-qj-lBy"/>
++                                                            </connections>
++                                                        </button>
++                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Picker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gh-Yc-jsf">
++                                                            <rect key="frame" x="2" y="50" width="51" height="13"/>
++                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
++                                                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
++                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
++                                                            <nil key="highlightedColor"/>
++                                                            <variation key="heightClass=regular-widthClass=compact">
++                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
++                                                            </variation>
++                                                            <variation key="heightClass=regular-widthClass=regular">
++                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
++                                                            </variation>
++                                                        </label>
++                                                    </subviews>
+                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                     <constraints>
+-                                                        <constraint firstAttribute="width" secondItem="juE-kK-GND" secondAttribute="height" multiplier="1:1" id="zFU-gu-zLY"/>
+-                                                        <constraint firstAttribute="width" constant="20" id="zlx-nE-CDD">
+-                                                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+-                                                            <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+-                                                        </constraint>
++                                                        <constraint firstItem="juE-kK-GND" firstAttribute="centerY" secondItem="vCn-an-dg5" secondAttribute="centerY" id="8hg-GF-MeJ"/>
++                                                        <constraint firstItem="juE-kK-GND" firstAttribute="centerX" secondItem="vCn-an-dg5" secondAttribute="centerX" id="yM7-ar-XKh"/>
+                                                     </constraints>
+-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+-                                                    <state key="normal" backgroundImage="paletteNonSelected"/>
+-                                                    <state key="selected" backgroundImage="paletteSelected"/>
+-                                                    <connections>
+-                                                        <action selector="onToolBarBrashButtonTapped:" destination="-1" eventType="touchUpInside" id="Vav-qj-lBy"/>
+-                                                    </connections>
+-                                                </button>
+-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Picker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gh-Yc-jsf">
+-                                                    <rect key="frame" x="2" y="50" width="51" height="13"/>
+-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+-                                                    <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
+-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+-                                                    <nil key="highlightedColor"/>
+-                                                    <variation key="heightClass=regular-widthClass=compact">
+-                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
+-                                                    </variation>
+-                                                    <variation key="heightClass=regular-widthClass=regular">
+-                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
+-                                                    </variation>
+-                                                </label>
+-                                            </subviews>
+-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+-                                            <constraints>
+-                                                <constraint firstItem="juE-kK-GND" firstAttribute="centerY" secondItem="vCn-an-dg5" secondAttribute="centerY" id="8hg-GF-MeJ"/>
+-                                                <constraint firstItem="juE-kK-GND" firstAttribute="centerX" secondItem="vCn-an-dg5" secondAttribute="centerX" id="yM7-ar-XKh"/>
+-                                            </constraints>
+-                                        </view>
+-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-0j-o7f" userLabel="Fill View Container">
+-                                            <rect key="frame" x="190" y="0.0" width="55.333333333333343" height="66"/>
+-                                            <subviews>
+-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5w-2X-H7d" userLabel="Fill Button">
+-                                                    <rect key="frame" x="17.666666666666657" y="23" width="20" height="20"/>
++                                                </view>
++                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-0j-o7f" userLabel="Fill View Container">
++                                                    <rect key="frame" x="190" y="0.0" width="55.333333333333343" height="66"/>
++                                                    <subviews>
++                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5w-2X-H7d" userLabel="Fill Button">
++                                                            <rect key="frame" x="17.666666666666657" y="23" width="20" height="20"/>
++                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
++                                                            <constraints>
++                                                                <constraint firstAttribute="width" secondItem="u5w-2X-H7d" secondAttribute="height" multiplier="1:1" id="Jda-Hi-7q9"/>
++                                                                <constraint firstAttribute="width" constant="20" id="oJu-34-EaV">
++                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
++                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
++                                                                </constraint>
++                                                            </constraints>
++                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
++                                                            <state key="normal" backgroundImage="fillNonSelected"/>
++                                                            <state key="selected" backgroundImage="Fill Item"/>
++                                                            <connections>
++                                                                <action selector="onToolBarFillButtonTapped:" destination="-1" eventType="touchUpInside" id="9a8-vq-1xf"/>
++                                                            </connections>
++                                                        </button>
++                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FIll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iS0-m1-FB5">
++                                                            <rect key="frame" x="0.0" y="49" width="57" height="16"/>
++                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
++                                                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
++                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
++                                                            <nil key="highlightedColor"/>
++                                                            <variation key="heightClass=regular-widthClass=compact">
++                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
++                                                            </variation>
++                                                            <variation key="heightClass=regular-widthClass=regular">
++                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
++                                                            </variation>
++                                                        </label>
++                                                    </subviews>
+                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                     <constraints>
+-                                                        <constraint firstAttribute="width" secondItem="u5w-2X-H7d" secondAttribute="height" multiplier="1:1" id="Jda-Hi-7q9"/>
+-                                                        <constraint firstAttribute="width" constant="20" id="oJu-34-EaV">
+-                                                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+-                                                            <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+-                                                        </constraint>
++                                                        <constraint firstItem="u5w-2X-H7d" firstAttribute="centerX" secondItem="3fW-0j-o7f" secondAttribute="centerX" id="Otc-HL-tOd"/>
++                                                        <constraint firstItem="u5w-2X-H7d" firstAttribute="centerY" secondItem="3fW-0j-o7f" secondAttribute="centerY" id="ayA-Dp-ACG"/>
+                                                     </constraints>
+-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+-                                                    <state key="normal" backgroundImage="fillNonSelected"/>
+-                                                    <state key="selected" backgroundImage="Fill Item"/>
+-                                                    <connections>
+-                                                        <action selector="onToolBarFillButtonTapped:" destination="-1" eventType="touchUpInside" id="9a8-vq-1xf"/>
+-                                                    </connections>
+-                                                </button>
+-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FIll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iS0-m1-FB5">
+-                                                    <rect key="frame" x="0.0" y="49" width="57" height="16"/>
+-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+-                                                    <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
+-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+-                                                    <nil key="highlightedColor"/>
+-                                                    <variation key="heightClass=regular-widthClass=compact">
+-                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
+-                                                    </variation>
+-                                                    <variation key="heightClass=regular-widthClass=regular">
+-                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
+-                                                    </variation>
+-                                                </label>
+-                                            </subviews>
+-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+-                                            <constraints>
+-                                                <constraint firstItem="u5w-2X-H7d" firstAttribute="centerX" secondItem="3fW-0j-o7f" secondAttribute="centerX" id="Otc-HL-tOd"/>
+-                                                <constraint firstItem="u5w-2X-H7d" firstAttribute="centerY" secondItem="3fW-0j-o7f" secondAttribute="centerY" id="ayA-Dp-ACG"/>
+-                                            </constraints>
+-                                        </view>
+-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VD3-GA-Ulj" userLabel="Noise View Container">
+-                                            <rect key="frame" x="253.33333333333334" y="0.0" width="55.333333333333343" height="66"/>
+-                                            <subviews>
+-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSs-NF-l7Q" userLabel="Noise Button">
+-                                                    <rect key="frame" x="17.666666666666686" y="23" width="20" height="20"/>
++                                                </view>
++                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VD3-GA-Ulj" userLabel="Noise View Container">
++                                                    <rect key="frame" x="253.33333333333334" y="0.0" width="55.333333333333343" height="66"/>
++                                                    <subviews>
++                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSs-NF-l7Q" userLabel="Noise Button">
++                                                            <rect key="frame" x="17.666666666666686" y="23" width="20" height="20"/>
++                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
++                                                            <constraints>
++                                                                <constraint firstAttribute="width" secondItem="CSs-NF-l7Q" secondAttribute="height" multiplier="1:1" id="8b4-q2-Rin"/>
++                                                                <constraint firstAttribute="width" constant="20" id="Pth-OT-ozX">
++                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
++                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
++                                                                </constraint>
++                                                            </constraints>
++                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
++                                                            <state key="normal" backgroundImage="gridAltNonSelected"/>
++                                                            <state key="selected" backgroundImage="Noise Item"/>
++                                                            <connections>
++                                                                <action selector="onToolBarNoiseButtonTapped:" destination="-1" eventType="touchUpInside" id="ldT-qy-ufd"/>
++                                                            </connections>
++                                                        </button>
++                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Noise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ze-Qp-jZ4">
++                                                            <rect key="frame" x="0.0" y="50" width="55" height="13"/>
++                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
++                                                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
++                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
++                                                            <nil key="highlightedColor"/>
++                                                            <variation key="heightClass=regular-widthClass=compact">
++                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
++                                                            </variation>
++                                                            <variation key="heightClass=regular-widthClass=regular">
++                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
++                                                            </variation>
++                                                        </label>
++                                                    </subviews>
+                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                     <constraints>
+-                                                        <constraint firstAttribute="width" secondItem="CSs-NF-l7Q" secondAttribute="height" multiplier="1:1" id="8b4-q2-Rin"/>
+-                                                        <constraint firstAttribute="width" constant="20" id="Pth-OT-ozX">
+-                                                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+-                                                            <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+-                                                        </constraint>
++                                                        <constraint firstItem="CSs-NF-l7Q" firstAttribute="centerX" secondItem="VD3-GA-Ulj" secondAttribute="centerX" id="hAv-mM-ui7"/>
++                                                        <constraint firstItem="CSs-NF-l7Q" firstAttribute="centerY" secondItem="VD3-GA-Ulj" secondAttribute="centerY" id="omr-IJ-caM"/>
+                                                     </constraints>
+-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+-                                                    <state key="normal" backgroundImage="gridAltNonSelected"/>
+-                                                    <state key="selected" backgroundImage="Noise Item"/>
+-                                                    <connections>
+-                                                        <action selector="onToolBarNoiseButtonTapped:" destination="-1" eventType="touchUpInside" id="ldT-qy-ufd"/>
+-                                                    </connections>
+-                                                </button>
+-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Noise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ze-Qp-jZ4">
+-                                                    <rect key="frame" x="0.0" y="50" width="55" height="13"/>
+-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+-                                                    <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
+-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+-                                                    <nil key="highlightedColor"/>
+-                                                    <variation key="heightClass=regular-widthClass=compact">
+-                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
+-                                                    </variation>
+-                                                    <variation key="heightClass=regular-widthClass=regular">
+-                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
+-                                                    </variation>
+-                                                </label>
+-                                            </subviews>
+-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+-                                            <constraints>
+-                                                <constraint firstItem="CSs-NF-l7Q" firstAttribute="centerX" secondItem="VD3-GA-Ulj" secondAttribute="centerX" id="hAv-mM-ui7"/>
+-                                                <constraint firstItem="CSs-NF-l7Q" firstAttribute="centerY" secondItem="VD3-GA-Ulj" secondAttribute="centerY" id="omr-IJ-caM"/>
+-                                            </constraints>
+-                                        </view>
+-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnH-53-ITQ" userLabel="Undo View Container">
+-                                            <rect key="frame" x="316.66666666666669" y="0.0" width="55.333333333333314" height="66"/>
+-                                            <subviews>
+-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvg-8X-uYD" userLabel="Undo Button">
+-                                                    <rect key="frame" x="17.666666666666629" y="23" width="20" height="20"/>
++                                                </view>
++                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnH-53-ITQ" userLabel="Undo View Container">
++                                                    <rect key="frame" x="316.66666666666669" y="0.0" width="55.333333333333314" height="66"/>
++                                                    <subviews>
++                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvg-8X-uYD" userLabel="Undo Button">
++                                                            <rect key="frame" x="17.666666666666629" y="23" width="20" height="20"/>
++                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
++                                                            <constraints>
++                                                                <constraint firstAttribute="width" constant="20" id="dWi-Oz-gHb">
++                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
++                                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
++                                                                </constraint>
++                                                                <constraint firstAttribute="width" secondItem="Gvg-8X-uYD" secondAttribute="height" multiplier="1:1" id="fZ0-MG-8JN"/>
++                                                            </constraints>
++                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
++                                                            <state key="normal" backgroundImage="undoNonSelected"/>
++                                                            <state key="selected" backgroundImage="Undo Item"/>
++                                                            <connections>
++                                                                <action selector="onToolBarUndoButtonTapped:" destination="-1" eventType="touchUpInside" id="laF-B4-NCd"/>
++                                                            </connections>
++                                                        </button>
++                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Undo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzU-DG-vO7">
++                                                            <rect key="frame" x="0.0" y="50" width="52" height="13"/>
++                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
++                                                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
++                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
++                                                            <nil key="highlightedColor"/>
++                                                            <variation key="heightClass=regular-widthClass=compact">
++                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
++                                                            </variation>
++                                                            <variation key="heightClass=regular-widthClass=regular">
++                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
++                                                            </variation>
++                                                        </label>
++                                                    </subviews>
+                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                     <constraints>
+-                                                        <constraint firstAttribute="width" constant="20" id="dWi-Oz-gHb">
+-                                                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+-                                                            <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+-                                                        </constraint>
+-                                                        <constraint firstAttribute="width" secondItem="Gvg-8X-uYD" secondAttribute="height" multiplier="1:1" id="fZ0-MG-8JN"/>
++                                                        <constraint firstItem="Gvg-8X-uYD" firstAttribute="centerX" secondItem="bnH-53-ITQ" secondAttribute="centerX" id="UO6-En-By9"/>
++                                                        <constraint firstItem="Gvg-8X-uYD" firstAttribute="centerY" secondItem="bnH-53-ITQ" secondAttribute="centerY" id="djT-Ya-tsO"/>
+                                                     </constraints>
+-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+-                                                    <state key="normal" backgroundImage="undoNonSelected"/>
+-                                                    <state key="selected" backgroundImage="Undo Item"/>
+-                                                    <connections>
+-                                                        <action selector="onToolBarUndoButtonTapped:" destination="-1" eventType="touchUpInside" id="laF-B4-NCd"/>
+-                                                    </connections>
+-                                                </button>
+-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Undo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzU-DG-vO7">
+-                                                    <rect key="frame" x="0.0" y="50" width="52" height="13"/>
+-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+-                                                    <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
+-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+-                                                    <nil key="highlightedColor"/>
+-                                                    <variation key="heightClass=regular-widthClass=compact">
+-                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="10"/>
+-                                                    </variation>
+-                                                    <variation key="heightClass=regular-widthClass=regular">
+-                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
+-                                                    </variation>
+-                                                </label>
++                                                </view>
+                                             </subviews>
+-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+-                                            <constraints>
+-                                                <constraint firstItem="Gvg-8X-uYD" firstAttribute="centerX" secondItem="bnH-53-ITQ" secondAttribute="centerX" id="UO6-En-By9"/>
+-                                                <constraint firstItem="Gvg-8X-uYD" firstAttribute="centerY" secondItem="bnH-53-ITQ" secondAttribute="centerY" id="djT-Ya-tsO"/>
+-                                            </constraints>
+-                                        </view>
++                                        </stackView>
+                                     </subviews>
+-                                </stackView>
++                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
++                                    <constraints>
++                                        <constraint firstItem="KwF-8J-KY2" firstAttribute="width" secondItem="TI5-yZ-uEY" secondAttribute="width" multiplier="0.86514" id="4bb-uI-8ZF"/>
++                                        <constraint firstItem="KwF-8J-KY2" firstAttribute="top" secondItem="TI5-yZ-uEY" secondAttribute="top" constant="10" id="ZQh-n7-Zd7"/>
++                                        <constraint firstItem="KwF-8J-KY2" firstAttribute="height" secondItem="TI5-yZ-uEY" secondAttribute="height" multiplier="0.545455" id="i1I-C2-hS9"/>
++                                        <constraint firstItem="KwF-8J-KY2" firstAttribute="centerX" secondItem="TI5-yZ-uEY" secondAttribute="centerX" id="rvn-2l-JFO"/>
++                                    </constraints>
++                                </view>
+                             </subviews>
+-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
++                            <color key="backgroundColor" name="lightGreenBachgroundColor"/>
+                             <constraints>
+-                                <constraint firstItem="KwF-8J-KY2" firstAttribute="width" secondItem="TI5-yZ-uEY" secondAttribute="width" multiplier="0.86514" id="4bb-uI-8ZF"/>
+-                                <constraint firstItem="KwF-8J-KY2" firstAttribute="top" secondItem="TI5-yZ-uEY" secondAttribute="top" constant="10" id="ZQh-n7-Zd7"/>
+-                                <constraint firstItem="KwF-8J-KY2" firstAttribute="height" secondItem="TI5-yZ-uEY" secondAttribute="height" multiplier="0.545455" id="i1I-C2-hS9"/>
+-                                <constraint firstItem="KwF-8J-KY2" firstAttribute="centerX" secondItem="TI5-yZ-uEY" secondAttribute="centerX" id="rvn-2l-JFO"/>
++                                <constraint firstItem="TI5-yZ-uEY" firstAttribute="leading" secondItem="7ma-6A-IHA" secondAttribute="leading" id="0v6-2v-haW"/>
++                                <constraint firstItem="TI5-yZ-uEY" firstAttribute="top" secondItem="7ma-6A-IHA" secondAttribute="top" id="3OK-Ir-RRZ"/>
++                                <constraint firstAttribute="bottom" secondItem="TI5-yZ-uEY" secondAttribute="bottom" id="w4r-Rx-mPi"/>
++                                <constraint firstAttribute="trailing" secondItem="TI5-yZ-uEY" secondAttribute="trailing" id="wpb-oB-Iyz"/>
+                             </constraints>
+                         </view>
+                     </subviews>
+-                    <color key="backgroundColor" red="0.084466956560000001" green="0.40569052100000003" blue="0.34084653850000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
++                    <color key="backgroundColor" name="lightGreenBachgroundColor"/>
+                 </stackView>
+                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glY-bF-pQp">
+                     <rect key="frame" x="358" y="148" width="56" height="56"/>
+@@ -499,10 +511,10 @@
+                 <constraint firstAttribute="bottom" secondItem="D10-R1-Ltm" secondAttribute="bottom" id="2Mh-1N-LWs"/>
+                 <constraint firstItem="MfN-nT-Ult" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.125" id="3D0-QB-GYh"/>
+                 <constraint firstItem="D10-R1-Ltm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5Xt-VL-dh6"/>
++                <constraint firstItem="7ma-6A-IHA" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.13" id="FA3-AX-6Jv"/>
+                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EEn-mf-WOc" secondAttribute="trailing" id="IAY-2Y-FtN"/>
+                 <constraint firstItem="MfN-nT-Ult" firstAttribute="bottom" secondItem="EEn-mf-WOc" secondAttribute="bottom" constant="-20" id="J2h-7a-IYv"/>
+                 <constraint firstItem="lhO-Vb-FiW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Kz5-jb-ofs"/>
+-                <constraint firstItem="TI5-yZ-uEY" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.13" id="Lg3-fZ-CLz"/>
+                 <constraint firstItem="UER-0E-SS7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PL4-Hq-pDB"/>
+                 <constraint firstItem="d20-uq-IDt" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.13" id="Q7h-e9-Xhh"/>
+                 <constraint firstAttribute="trailing" secondItem="D10-R1-Ltm" secondAttribute="trailing" id="StB-V0-IBi"/>
+-- 
+2.37.0
+
+From f47822ff7e92caca2c3e6047adac66c6613de458 Mon Sep 17 00:00:00 2001
+From: VitalyPolezhay <>
+Date: Wed, 6 Sep 2023 16:49:36 +0300
+Subject: [PATCH] updated submodule
+
+---
+ Crafty Craft 5.xcodeproj/project.pbxproj | 1 +
+ submodules/unity-crafty-craft-5          | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/Crafty Craft 5.xcodeproj/project.pbxproj b/Crafty Craft 5.xcodeproj/project.pbxproj
+index 3feafed..1b787b1 100644
+--- a/Crafty Craft 5.xcodeproj/project.pbxproj	
++++ b/Crafty Craft 5.xcodeproj/project.pbxproj	
+@@ -1822,6 +1822,7 @@
+ 		D792A9202A5D668800EF7382 /* MinecrafSkinsEditor.app */ = {
+ 			isa = PBXReferenceProxy;
+ 			fileType = wrapper.application;
++			name = "Unity-Target-New.app";
+ 			path = MinecrafSkinsEditor.app;
+ 			remoteRef = D792A91F2A5D668800EF7382 /* PBXContainerItemProxy */;
+ 			sourceTree = BUILT_PRODUCTS_DIR;
+diff --git a/submodules/unity-crafty-craft-5 b/submodules/unity-crafty-craft-5
+index e8082ba..70a9803 160000
+--- a/submodules/unity-crafty-craft-5
++++ b/submodules/unity-crafty-craft-5
+@@ -1 +1 @@
+-Subproject commit e8082bab6b2c87b44092f7e417332dd550ad9a1f
++Subproject commit 70a9803783b388f6beb64e0db5db53d275cf5ceb
+-- 
+2.37.0
+

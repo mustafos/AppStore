@@ -1,28 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gsc-Yb-n1G">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YTh-ip-mYB">
+                                <rect key="frame" x="16" y="147" width="361" height="671"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H5O-ch-0iU">
+                                    <size key="itemSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="24"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="2pE-Sw-cqy">
+                                <rect key="frame" x="20" y="79" width="353" height="195"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUu-Aa-dEr">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="48"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Layout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnn-oO-cTY">
+                                                <rect key="frame" x="20.000000000000004" y="8" width="56.333333333333343" height="32"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                                <color key="textColor" name="EerieBlackColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OKZ-7c-mCL">
+                                                <rect key="frame" x="301" y="8" width="32" height="32"/>
+                                                <color key="tintColor" name="EerieBlackColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="OKZ-7c-mCL" secondAttribute="height" multiplier="1:1" id="Ejm-OU-xjz"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="YellowSelectiveColor"/>
+                                        <constraints>
+                                            <constraint firstItem="OKZ-7c-mCL" firstAttribute="top" secondItem="sUu-Aa-dEr" secondAttribute="top" constant="8" id="0vn-du-vFt"/>
+                                            <constraint firstAttribute="trailing" secondItem="OKZ-7c-mCL" secondAttribute="trailing" constant="20" id="1wT-rP-j5z"/>
+                                            <constraint firstAttribute="bottom" secondItem="OKZ-7c-mCL" secondAttribute="bottom" constant="8" id="EZS-JO-7E1"/>
+                                            <constraint firstItem="pnn-oO-cTY" firstAttribute="leading" secondItem="sUu-Aa-dEr" secondAttribute="leading" constant="20" id="ek0-fF-RIs"/>
+                                            <constraint firstAttribute="bottom" secondItem="pnn-oO-cTY" secondAttribute="bottom" constant="8" id="fc5-sv-iBn"/>
+                                            <constraint firstAttribute="height" constant="48" id="jrC-a0-7wr"/>
+                                            <constraint firstItem="pnn-oO-cTY" firstAttribute="top" secondItem="sUu-Aa-dEr" secondAttribute="top" constant="8" id="yAs-8y-0KT"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRh-Md-qrb" userLabel="Layout">
+                                        <rect key="frame" x="0.0" y="49" width="353" height="48"/>
+                                        <color key="backgroundColor" name="YellowSelectiveColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Layout">
+                                            <fontDescription key="titleFontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                            <color key="baseForegroundColor" name="PopularGrayColor"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L62-p6-66f" userLabel="Group">
+                                        <rect key="frame" x="0.0" y="98" width="353" height="48"/>
+                                        <color key="backgroundColor" name="YellowSelectiveColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Group">
+                                            <fontDescription key="titleFontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                            <color key="baseForegroundColor" name="PopularGrayColor"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzc-G9-r8E" userLabel="Recent">
+                                        <rect key="frame" x="0.0" y="147" width="353" height="48"/>
+                                        <color key="backgroundColor" name="YellowSelectiveColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Recent">
+                                            <fontDescription key="titleFontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                            <color key="baseForegroundColor" name="PopularGrayColor"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="EerieBlackColor"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bef-1V-1Dj"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bef-1V-1Dj" firstAttribute="bottom" secondItem="YTh-ip-mYB" secondAttribute="bottom" id="GUJ-sX-ud6"/>
+                            <constraint firstItem="YTh-ip-mYB" firstAttribute="leading" secondItem="bef-1V-1Dj" secondAttribute="leading" constant="16" id="H4Q-Km-hss"/>
+                            <constraint firstItem="bef-1V-1Dj" firstAttribute="trailing" secondItem="2pE-Sw-cqy" secondAttribute="trailing" constant="20" id="Kdq-tr-mfR"/>
+                            <constraint firstItem="YTh-ip-mYB" firstAttribute="top" secondItem="sUu-Aa-dEr" secondAttribute="bottom" constant="20" id="aEk-kV-4NJ"/>
+                            <constraint firstItem="2pE-Sw-cqy" firstAttribute="leading" secondItem="bef-1V-1Dj" secondAttribute="leading" constant="20" id="jA3-5s-WMO"/>
+                            <constraint firstItem="2pE-Sw-cqy" firstAttribute="top" secondItem="bef-1V-1Dj" secondAttribute="top" constant="20" id="rNM-GW-jVL"/>
+                            <constraint firstItem="bef-1V-1Dj" firstAttribute="trailing" secondItem="YTh-ip-mYB" secondAttribute="trailing" constant="16" id="tCW-RR-VqP"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="87" y="-2"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="BackgroundColor">
+            <color red="0.19215686274509805" green="0.20784313725490197" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="EerieBlackColor">
+            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PopularGrayColor">
+            <color red="0.34900000691413879" green="0.34900000691413879" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowSelectiveColor">
+            <color red="0.97254901960784312" green="0.80784313725490198" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

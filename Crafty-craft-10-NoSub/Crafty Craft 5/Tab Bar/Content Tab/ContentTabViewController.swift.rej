@@ -1,0 +1,44 @@
+diff a/Crafty Craft 5/Tab Bar/Content Tab/ContentTabViewController.swift b/Crafty Craft 5/Tab Bar/Content Tab/ContentTabViewController.swift	(rejected hunks)
+@@ -31,8 +31,10 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
+     
+     private var purchIsValid: Bool = false {
+         didSet {
+-            segmentedControllMode = .latest
+-            setupFilterView()
++            if !oldValue {
++                segmentedControllMode = .latest
++                setupFilterView()
++            }
+         }
+     }
+     
+@@ -130,7 +132,7 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
+         validateSub()
+         updateData()
+         registerForKeyboardNotifications()
+-        updateSerachFilter()
++        flushSearch()
+     }
+     
+     override func viewWillDisappear(_ animated: Bool) {
+@@ -159,12 +161,6 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
+ 
+     }
+     
+-    private func updateSerachFilter() {
+-        if let searchText = self.searchBarView.searchTextField.text, !searchText.isEmpty {
+-            self.filterData(with: searchText)
+-        }
+-    }
+-    
+     private func updateData() {
+         pageModel = setUpPageModel()
+         
+@@ -283,6 +290,7 @@ class ContentTabViewController: UIViewController, TabBarConfigurable {
+             segmentedControllMode = .popular
+         case .filter(let name):
+             if purchIsValid {
++                segmentedControllMode = .filter(name)
+                 setUpFilter(name: name)
+             } else {
+                 segmentedControllMode = .latest
