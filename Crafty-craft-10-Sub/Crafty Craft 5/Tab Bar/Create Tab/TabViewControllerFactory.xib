@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabViewControllerFactory" customModule="Crafty_Craft_10_Sub" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionContainer" destination="LE0-Vs-WIu" id="wj6-tJ-w7m"/>
+                <outlet property="controlSwitcher" destination="lV8-0p-fAZ" id="Vl4-5h-bhf"/>
+                <outlet property="navigationBarContainerView" destination="QAF-Uc-EcY" id="cij-5a-IyM"/>
+                <outlet property="searchBarView" destination="cGj-ya-wXd" id="IF7-5U-zTW"/>
+                <outlet property="searchButton" destination="7Bv-3c-Ufg" id="Fep-fH-h3s"/>
+                <outlet property="settingsButton" destination="8xq-tc-lIg" id="yso-gq-7sc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" horizontalHuggingPriority="255" verticalHuggingPriority="255" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" translatesAutoresizingMaskIntoConstraints="NO" id="QAF-Uc-EcY" userLabel="NavigationBarContainer">
+                    <rect key="frame" x="0.0" y="59" width="430" height="84"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xq-tc-lIg">
+                            <rect key="frame" x="20" y="20" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="8xq-tc-lIg" secondAttribute="height" multiplier="1:1" id="TJo-02-bZU"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="Settings Item"/>
+                            <connections>
+                                <action selector="settingButtonTapped:" destination="-1" eventType="touchUpInside" id="dTU-MA-uVZ"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0b3-dH-6tG">
+                            <rect key="frame" x="169.33333333333334" y="28.666666666666671" width="91.666666666666657" height="27"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                            <color key="textColor" name="BeigeColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bv-3c-Ufg" userLabel="SearchButton">
+                            <rect key="frame" x="366" y="20" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="7Bv-3c-Ufg" secondAttribute="height" multiplier="1:1" id="UeK-yS-qqO"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="Search Item"/>
+                            <connections>
+                                <action selector="searchButtonTapped:" destination="-1" eventType="touchUpInside" id="gVm-hM-WoN"/>
+                            </connections>
+                        </button>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGj-ya-wXd" customClass="SearchBarView" customModule="Crafty_Craft_10_Sub" customModuleProvider="target">
+                            <rect key="frame" x="20" y="20" width="390" height="44"/>
+                        </view>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="XO2-5y-yu0"/>
+                    <constraints>
+                        <constraint firstItem="cGj-ya-wXd" firstAttribute="top" secondItem="XO2-5y-yu0" secondAttribute="top" constant="20" id="1Uk-wv-Lfl"/>
+                        <constraint firstItem="cGj-ya-wXd" firstAttribute="leading" secondItem="XO2-5y-yu0" secondAttribute="leading" constant="20" id="5yK-Wr-Rp8"/>
+                        <constraint firstItem="XO2-5y-yu0" firstAttribute="trailing" secondItem="cGj-ya-wXd" secondAttribute="trailing" constant="20" id="65M-wc-Vdk"/>
+                        <constraint firstItem="0b3-dH-6tG" firstAttribute="centerY" secondItem="XO2-5y-yu0" secondAttribute="centerY" id="828-aR-b4x"/>
+                        <constraint firstItem="XO2-5y-yu0" firstAttribute="bottom" secondItem="cGj-ya-wXd" secondAttribute="bottom" constant="20" id="98L-02-Rir"/>
+                        <constraint firstItem="0b3-dH-6tG" firstAttribute="centerX" secondItem="XO2-5y-yu0" secondAttribute="centerX" id="C8G-hK-a7t"/>
+                        <constraint firstAttribute="height" constant="84" id="Cmm-oD-pfx"/>
+                        <constraint firstItem="7Bv-3c-Ufg" firstAttribute="top" secondItem="XO2-5y-yu0" secondAttribute="top" constant="20" id="OS1-Gj-MfQ"/>
+                        <constraint firstItem="8xq-tc-lIg" firstAttribute="leading" secondItem="XO2-5y-yu0" secondAttribute="leading" constant="20" id="WfI-Fm-Jxa"/>
+                        <constraint firstItem="XO2-5y-yu0" firstAttribute="bottom" secondItem="7Bv-3c-Ufg" secondAttribute="bottom" constant="20" id="ak4-c0-jww"/>
+                        <constraint firstItem="8xq-tc-lIg" firstAttribute="top" secondItem="XO2-5y-yu0" secondAttribute="top" constant="20" id="cfI-yA-Md3"/>
+                        <constraint firstItem="XO2-5y-yu0" firstAttribute="trailing" secondItem="7Bv-3c-Ufg" secondAttribute="trailing" constant="20" id="mvF-Wo-m56"/>
+                        <constraint firstItem="XO2-5y-yu0" firstAttribute="bottom" secondItem="8xq-tc-lIg" secondAttribute="bottom" constant="20" id="sGY-iB-QzF"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lV8-0p-fAZ" userLabel="Control 2" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                    <rect key="frame" x="20" y="143" width="390" height="60"/>
+                    <color key="backgroundColor" name="YellowSelectiveColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="LUt-UY-Pdg"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="indicatorViewBackgroundColor">
+                            <color key="value" name="EerieBlackColor"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="indicatorViewBorderColor">
+                            <color key="value" name="YellowSelectiveColor"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="segmentControlChangeAction:" destination="-1" eventType="valueChanged" id="0EE-hf-doY"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LE0-Vs-WIu">
+                    <rect key="frame" x="0.0" y="203" width="430" height="729"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LE0-Vs-WIu" secondAttribute="trailing" id="0fS-aX-9XV"/>
+                <constraint firstItem="QAF-Uc-EcY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1EU-pB-LWW"/>
+                <constraint firstItem="LE0-Vs-WIu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2AW-xB-r3e"/>
+                <constraint firstItem="QAF-Uc-EcY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7U2-cy-5xn"/>
+                <constraint firstItem="QAF-Uc-EcY" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8tX-Up-nDV"/>
+                <constraint firstItem="lV8-0p-fAZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="GLM-T6-T5W"/>
+                <constraint firstItem="LE0-Vs-WIu" firstAttribute="top" secondItem="lV8-0p-fAZ" secondAttribute="bottom" id="P4y-6K-lbF"/>
+                <constraint firstAttribute="bottom" secondItem="LE0-Vs-WIu" secondAttribute="bottom" id="UXp-tp-2Uu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lV8-0p-fAZ" secondAttribute="trailing" constant="20" id="iGT-4D-KXA"/>
+                <constraint firstItem="lV8-0p-fAZ" firstAttribute="top" secondItem="QAF-Uc-EcY" secondAttribute="bottom" id="mu8-mE-Xgj"/>
+            </constraints>
+            <point key="canvasLocation" x="107.44186046511628" y="19.313304721030043"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Search Item" width="44" height="44"/>
+        <image name="Settings Item" width="44" height="44"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.19215686274509805" green="0.20784313725490197" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BeigeColor">
+            <color red="1" green="0.96899998188018799" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="EerieBlackColor">
+            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowSelectiveColor">
+            <color red="0.97254901960784312" green="0.80784313725490198" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

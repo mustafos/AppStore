@@ -1,0 +1,24 @@
+//
+//  FontManager.swift
+//  Crafty Craft 10
+//
+//  Created by Zolux Rex on 08.02.2024.
+//  Copyright © 2024 Noname Digital. All rights reserved.
+//
+
+import UIKit
+
+enum MontserratFont: String {
+    case semiBold = "Montserrat-SemiBold"
+    case bold = "Montserrat-Bold"
+    case regural = "Montserrat-Regular"
+}
+
+extension UIFont {
+    static func montserratFont(_ type: MontserratFont, size: CGFloat) -> UIFont {
+        guard let customFont = UIFont(name: type.rawValue, size: size) else {
+            return .systemFont(ofSize: size)
+        }
+        return customFont
+    }
+}

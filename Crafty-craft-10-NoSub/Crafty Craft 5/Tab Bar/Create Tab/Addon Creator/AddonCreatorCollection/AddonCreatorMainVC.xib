@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddonCreatorMainVC" customModule="Crafty_Craft_10_NoSub" customModuleProvider="target">
+            <connections>
+                <outlet property="addonCollectionView" destination="7lg-f6-aOP" id="8Yq-uK-lB6"/>
+                <outlet property="groupTabButton" destination="fMy-zh-i0F" id="3nQ-4O-TJt"/>
+                <outlet property="layouTabButton" destination="kyd-1T-uLI" id="Jhj-Hu-QSx"/>
+                <outlet property="recentTabButton" destination="OYh-q4-Wbq" id="umH-r7-Bvz"/>
+                <outlet property="selectImage" destination="t5H-9K-wop" id="83c-7d-Rwo"/>
+                <outlet property="selectItemView" destination="AiW-e1-eqQ" id="xxa-sG-4aq"/>
+                <outlet property="selectedText" destination="sHo-c4-RDz" id="0Ua-q6-l8Q"/>
+                <outlet property="tabsStackView" destination="lEs-Xu-2w5" id="R2m-nP-7BW"/>
+                <outlet property="view" destination="tnm-HW-i6h" id="xJU-dD-0L1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="tnm-HW-i6h">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7lg-f6-aOP">
+                    <rect key="frame" x="16" y="147" width="361" height="671"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Idl-h8-9cl">
+                        <size key="itemSize" width="0.0" height="0.0"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="24"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="gVb-af-Qm6"/>
+                        <outlet property="delegate" destination="-1" id="HvY-hZ-EK1"/>
+                    </connections>
+                </collectionView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="lEs-Xu-2w5">
+                    <rect key="frame" x="20" y="79" width="353" height="195"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AiW-e1-eqQ">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="48"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Layout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHo-c4-RDz">
+                                    <rect key="frame" x="20.000000000000004" y="8" width="56.333333333333343" height="32"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                    <color key="textColor" name="EerieBlackColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t5H-9K-wop">
+                                    <rect key="frame" x="301" y="8" width="32" height="32"/>
+                                    <color key="tintColor" name="EerieBlackColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="t5H-9K-wop" secondAttribute="height" multiplier="1:1" id="9IB-O9-Iod"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" name="YellowSelectiveColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="t5H-9K-wop" secondAttribute="trailing" constant="20" id="4Sd-TG-mwx"/>
+                                <constraint firstItem="t5H-9K-wop" firstAttribute="top" secondItem="AiW-e1-eqQ" secondAttribute="top" constant="8" id="Pxu-U4-Aga"/>
+                                <constraint firstItem="sHo-c4-RDz" firstAttribute="leading" secondItem="AiW-e1-eqQ" secondAttribute="leading" constant="20" id="Wdg-AQ-PLh"/>
+                                <constraint firstAttribute="bottom" secondItem="sHo-c4-RDz" secondAttribute="bottom" constant="8" id="ai7-0U-26m"/>
+                                <constraint firstItem="sHo-c4-RDz" firstAttribute="top" secondItem="AiW-e1-eqQ" secondAttribute="top" constant="8" id="igi-wG-44L"/>
+                                <constraint firstAttribute="bottom" secondItem="t5H-9K-wop" secondAttribute="bottom" constant="8" id="rLv-Hg-KFX"/>
+                                <constraint firstAttribute="height" constant="48" id="vA1-5I-0Pb"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyd-1T-uLI" userLabel="Layout">
+                            <rect key="frame" x="0.0" y="49" width="353" height="48"/>
+                            <color key="backgroundColor" name="YellowSelectiveColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Layout">
+                                <fontDescription key="titleFontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                <color key="baseForegroundColor" name="PopularGrayColor"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="onLatoutButtonTapped:" destination="-1" eventType="touchUpInside" id="SMg-Nc-SO9"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMy-zh-i0F" userLabel="Group">
+                            <rect key="frame" x="0.0" y="98" width="353" height="48"/>
+                            <color key="backgroundColor" name="YellowSelectiveColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Group">
+                                <fontDescription key="titleFontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                <color key="baseForegroundColor" name="PopularGrayColor"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="onGroupButtonTapped:" destination="-1" eventType="touchUpInside" id="fQa-Cf-K6x"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYh-q4-Wbq" userLabel="Recent">
+                            <rect key="frame" x="0.0" y="147" width="353" height="48"/>
+                            <color key="backgroundColor" name="YellowSelectiveColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Recent">
+                                <fontDescription key="titleFontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                <color key="baseForegroundColor" name="PopularGrayColor"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="onRecentButtonTapped:" destination="-1" eventType="touchUpInside" id="Zkh-2l-gfG"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="EerieBlackColor"/>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="MLd-Wd-pf0"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
+            <constraints>
+                <constraint firstItem="7lg-f6-aOP" firstAttribute="top" secondItem="AiW-e1-eqQ" secondAttribute="bottom" constant="20" id="2eu-tG-aRe"/>
+                <constraint firstItem="7lg-f6-aOP" firstAttribute="leading" secondItem="MLd-Wd-pf0" secondAttribute="leading" constant="16" id="7ee-cV-pYq"/>
+                <constraint firstItem="lEs-Xu-2w5" firstAttribute="leading" secondItem="MLd-Wd-pf0" secondAttribute="leading" constant="20" id="EE7-CL-KpR"/>
+                <constraint firstItem="MLd-Wd-pf0" firstAttribute="trailing" secondItem="lEs-Xu-2w5" secondAttribute="trailing" constant="20" id="Lz3-ry-oo2"/>
+                <constraint firstItem="MLd-Wd-pf0" firstAttribute="bottom" secondItem="7lg-f6-aOP" secondAttribute="bottom" id="O8I-27-4Sd"/>
+                <constraint firstItem="lEs-Xu-2w5" firstAttribute="top" secondItem="MLd-Wd-pf0" secondAttribute="top" constant="20" id="bWK-vu-Isg"/>
+                <constraint firstItem="MLd-Wd-pf0" firstAttribute="trailing" secondItem="7lg-f6-aOP" secondAttribute="trailing" constant="16" id="uM1-dq-8eE"/>
+            </constraints>
+            <point key="canvasLocation" x="136.64122137404578" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="0.19215686274509805" green="0.20784313725490197" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="EerieBlackColor">
+            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PopularGrayColor">
+            <color red="0.34900000691413879" green="0.34900000691413879" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowSelectiveColor">
+            <color red="0.97254901960784312" green="0.80784313725490198" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

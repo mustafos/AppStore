@@ -1,0 +1,121 @@
+From ba91c2052b1ffe38eba0c9898528545d3a84db29 Mon Sep 17 00:00:00 2001
+From: VitalyPolezhay <>
+Date: Fri, 8 Sep 2023 15:36:23 +0300
+Subject: [PATCH] updated install addon popup
+
+---
+ .../Alert/DownloadContnetViewController.xib   | 29 +++++++++----------
+ .../ContentViewController.swift               |  2 +-
+ 2 files changed, 14 insertions(+), 17 deletions(-)
+
+diff --git a/Crafty Craft 5/Tab Bar/Content Tab/Content Module/Alert/DownloadContnetViewController.xib b/Crafty Craft 5/Tab Bar/Content Tab/Content Module/Alert/DownloadContnetViewController.xib
+index a877e4a..7981a0b 100644
+--- a/Crafty Craft 5/Tab Bar/Content Tab/Content Module/Alert/DownloadContnetViewController.xib	
++++ b/Crafty Craft 5/Tab Bar/Content Tab/Content Module/Alert/DownloadContnetViewController.xib	
+@@ -28,7 +28,7 @@
+         </placeholder>
+         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+-            <rect key="frame" x="0.0" y="0.0" width="300" height="350"/>
++            <rect key="frame" x="0.0" y="0.0" width="300" height="320"/>
+             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+             <subviews>
+                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMD-rZ-SPL">
+@@ -42,17 +42,14 @@
+                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                     <nil key="highlightedColor"/>
+                 </label>
+-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcH-6b-S9J">
+-                    <rect key="frame" x="31.000000000000014" y="181.66666666666666" width="238.33333333333337" height="83.999999999999972"/>
+-                    <string key="text">Нажмите кнопу "Утановить Аддон" и выбере Minecraft
+-или 
+-Нажимте "Ручная Установка" для прямой установки в мирах Minecraft</string>
++                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap “Install Addon” and choose Minecraft or manual installation to install directly into Minecraft worlds." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcH-6b-S9J">
++                    <rect key="frame" x="17" y="183.66666666666666" width="266" height="50.666666666666657"/>
+                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                     <nil key="highlightedColor"/>
+                 </label>
+                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViA-Hb-1BK">
+-                    <rect key="frame" x="14" y="305" width="272" height="30"/>
++                    <rect key="frame" x="14" y="275" width="272" height="30"/>
+                     <constraints>
+                         <constraint firstAttribute="height" constant="30" id="Bw9-VG-ZGU"/>
+                     </constraints>
+@@ -69,17 +66,17 @@
+                     </connections>
+                 </button>
+                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5N-sb-eAY">
+-                    <rect key="frame" x="157.66666666666666" y="76.666666666666671" width="127.33333333333334" height="100.00000000000001"/>
++                    <rect key="frame" x="157.66666666666666" y="76.666666666666671" width="117.33333333333334" height="92.000000000000014"/>
+                     <subviews>
+                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="manual_add_addon_icon" translatesAutoresizingMaskIntoConstraints="NO" id="N8A-Z0-uln">
+-                            <rect key="frame" x="47.666666666666686" y="7" width="32" height="32"/>
++                            <rect key="frame" x="42.666666666666686" y="7" width="32" height="32"/>
+                             <constraints>
+                                 <constraint firstAttribute="width" secondItem="N8A-Z0-uln" secondAttribute="height" multiplier="1:1" id="Gh2-o3-N0u"/>
+                                 <constraint firstAttribute="height" constant="32" id="VBm-RL-G8d"/>
+                             </constraints>
+                         </imageView>
+                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-gq-gOZ">
+-                            <rect key="frame" x="27.333333333333343" y="49" width="72.666666666666671" height="39.333333333333343"/>
++                            <rect key="frame" x="22.666666666666686" y="49" width="72" height="39.333333333333343"/>
+                             <string key="text">INSTALL
+ MANUALLY</string>
+                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="14"/>
+@@ -98,17 +95,17 @@ MANUALLY</string>
+                     </constraints>
+                 </view>
+                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEb-Do-Mgt">
+-                    <rect key="frame" x="15.000000000000007" y="76.666666666666671" width="127.66666666666669" height="100.00000000000001"/>
++                    <rect key="frame" x="25.000000000000007" y="76.666666666666671" width="117.66666666666669" height="92.000000000000014"/>
+                     <subviews>
+                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="install_addon_icon" translatesAutoresizingMaskIntoConstraints="NO" id="lI9-4m-NHb">
+-                            <rect key="frame" x="47.666666666666664" y="7" width="31.999999999999993" height="32"/>
++                            <rect key="frame" x="42.666666666666671" y="7" width="32" height="32"/>
+                             <constraints>
+                                 <constraint firstAttribute="width" secondItem="lI9-4m-NHb" secondAttribute="height" multiplier="1:1" id="9Fk-zK-Fh6"/>
+                                 <constraint firstAttribute="height" constant="32" id="j1F-b2-yVB"/>
+                             </constraints>
+                         </imageView>
+                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbL-tZ-gaK">
+-                            <rect key="frame" x="37.666666666666657" y="49" width="52.333333333333343" height="39.333333333333343"/>
++                            <rect key="frame" x="33" y="49" width="51.333333333333343" height="39.333333333333343"/>
+                             <string key="text">INSTALL
+ ADDON</string>
+                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="14"/>
+@@ -137,15 +134,15 @@ ADDON</string>
+                 <constraint firstItem="YcH-6b-S9J" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Jxt-R9-pDU"/>
+                 <constraint firstItem="oEb-Do-Mgt" firstAttribute="top" secondItem="VMD-rZ-SPL" secondAttribute="bottom" constant="5" id="NsA-x0-NO3"/>
+                 <constraint firstItem="oEb-Do-Mgt" firstAttribute="centerY" secondItem="W5N-sb-eAY" secondAttribute="centerY" id="OnU-x6-BdT"/>
+-                <constraint firstItem="YcH-6b-S9J" firstAttribute="top" secondItem="oEb-Do-Mgt" secondAttribute="bottom" constant="5" id="P7p-so-hqV"/>
+-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="W5N-sb-eAY" secondAttribute="trailing" constant="15" id="QS2-gz-tJ8"/>
++                <constraint firstItem="YcH-6b-S9J" firstAttribute="top" secondItem="oEb-Do-Mgt" secondAttribute="bottom" constant="15" id="P7p-so-hqV"/>
++                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="W5N-sb-eAY" secondAttribute="trailing" constant="25" id="QS2-gz-tJ8"/>
+                 <constraint firstItem="ViA-Hb-1BK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="14" id="SuT-9I-kCv"/>
+                 <constraint firstItem="YcH-6b-S9J" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="TWQ-nb-daA"/>
+                 <constraint firstItem="VMD-rZ-SPL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="UkQ-l5-auo"/>
+                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YcH-6b-S9J" secondAttribute="trailing" constant="5" id="Vtk-Id-EXA"/>
+                 <constraint firstItem="ViA-Hb-1BK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="YcH-6b-S9J" secondAttribute="bottom" constant="2" id="hqM-ZJ-Teg"/>
+                 <constraint firstItem="W5N-sb-eAY" firstAttribute="leading" secondItem="oEb-Do-Mgt" secondAttribute="trailing" constant="15" id="jv4-ZW-fn0"/>
+-                <constraint firstItem="oEb-Do-Mgt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="pyG-dp-oba"/>
++                <constraint firstItem="oEb-Do-Mgt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="pyG-dp-oba"/>
+                 <constraint firstItem="ViA-Hb-1BK" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="-15" id="uD7-of-Ryd"/>
+                 <constraint firstItem="VMD-rZ-SPL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="uns-ee-SQ0"/>
+             </constraints>
+diff --git a/Crafty Craft 5/Tab Bar/Content Tab/Content Module/ContentViewController.swift b/Crafty Craft 5/Tab Bar/Content Tab/Content Module/ContentViewController.swift
+index baf6f34..9dd202e 100755
+--- a/Crafty Craft 5/Tab Bar/Content Tab/Content Module/ContentViewController.swift	
++++ b/Crafty Craft 5/Tab Bar/Content Tab/Content Module/ContentViewController.swift	
+@@ -288,7 +288,7 @@ extension ContentViewController {
+             present(popupVC, animated: true)
+         }
+         
+-        let popupVC = PopupViewController(contentController: downloadContnetVC, popupWidth: 300, popupHeight: 350)
++        let popupVC = PopupViewController(contentController: downloadContnetVC, popupWidth: 300, popupHeight: 320)
+         present(popupVC, animated: true)
+     }
+     
+-- 
+2.37.0
+
