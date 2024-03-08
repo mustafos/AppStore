@@ -24,7 +24,7 @@ struct ContentFilterView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                if state == .up && showFilters {
+                if state == .up && !showFilters {
                     ScrollView {
                         VStack {
                             ForEach(0..<viewModel.buttons.count, id: \.self) { index in

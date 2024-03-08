@@ -133,8 +133,8 @@ class TransactionView: UIView,AnimatedButtonEvent,IAPManagerProtocol, NetworkSta
         policyBtn.titleLabel?.textAlignment = .center
         policyBtn.setTitleColor(.white, for: .normal)
         policyBtn.tintColor = .white
-        privacyBtn.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 12)
-        policyBtn.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 12)
+        privacyBtn.titleLabel?.font = UIFont(name: "Poppins-Medium", size: 12)
+        policyBtn.titleLabel?.font = UIFont(name: "Poppins-Medium", size: 12)
     }
     
     //MARK: config button

@@ -207,7 +207,7 @@ final class AnatomyPartPickerViewController: UIViewController {
             } else {
                 leg = CubicHuman.BodyPart.rightLeg1
             }
-            navigationController?.pushViewController(LegsAnatomyPartViewControllerViewController(currentEditableSkin: currentEditableSkin, leg: leg), animated: true)
+            navigationController?.pushViewController(LegsAnatomyPartViewController(currentEditableSkin: currentEditableSkin, leg: leg), animated: true)
             
         case leftLegComponentView:
             var leg: BodyPartSide
@@ -216,7 +216,7 @@ final class AnatomyPartPickerViewController: UIViewController {
             } else {
                 leg = CubicHuman.BodyPart.leftLeg1
             }
-            navigationController?.pushViewController(LegsAnatomyPartViewControllerViewController(currentEditableSkin: currentEditableSkin, leg: leg), animated: true)
+            navigationController?.pushViewController(LegsAnatomyPartViewController(currentEditableSkin: currentEditableSkin, leg: leg), animated: true)
             
         case bodyComponentView:
             var body: BodyPartSide

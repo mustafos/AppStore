@@ -772,7 +772,7 @@ extension ContentTabViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension ContentTabViewController: IAPManagerContentProtocol{
+extension ContentTabViewController: IAPManagerContentProtocol {
     func contnetDidUnlocked() {
         // update UI
         if let _ = navigationController?.viewControllers.last as? PremiumMainController {

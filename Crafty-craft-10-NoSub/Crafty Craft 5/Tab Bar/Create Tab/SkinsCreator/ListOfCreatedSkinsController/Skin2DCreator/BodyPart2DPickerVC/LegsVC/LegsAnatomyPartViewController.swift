@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - LegsBodyPartViewController
 
-class LegsAnatomyPartViewControllerViewController: UIViewController {
+class LegsAnatomyPartViewController: UIViewController {
     
     var currentEditableSkin: AnatomyCreatedModel?
     var leg: BodyPartSide = CubicHuman.BodyPart.rightLeg

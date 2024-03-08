@@ -9,7 +9,7 @@
 import UIKit
 
 class AddonCreatorMainVC: UIViewController {
-    var model = CreatedAddonsModel()
+    var model = EdditionalAddonModel()
     
     @IBOutlet private weak var tabsStackView: UIStackView!
     @IBOutlet weak var addonCollectionView: UICollectionView!
@@ -184,7 +184,7 @@ extension AddonCreatorMainVC : UICollectionViewDelegate {
 }
 
 extension AddonCreatorMainVC : UICollectionViewDataSource {
-    func filteredAddon() -> [SavedAddon] {
+    func filteredAddon() -> [SavedAddonEnch] {
         if let filterText, !filterText.isEmpty {
             return model.filteringCreatedAddon.filter({$0.displayName.containsCaseInsesetive(filterText)})
         } else {
@@ -292,7 +292,7 @@ extension AddonCreatorMainVC {
         }
     }
     
-    private func handleDownloadButtonTap(savedAddon: SavedAddon?) {
+    private func handleDownloadButtonTap(savedAddon: SavedAddonEnch?) {
         
         guard let savedAddon else {
             AppDelegate.log("savedAddon is nil")

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LegsAnatomyPartViewControllerViewController" customModule="Crafty_Craft_10_2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LegsAnatomyPartViewController" customModule="Crafty_Craft_10_Sub" customModuleProvider="target">
             <connections>
                 <outlet property="backLegImageView" destination="qQ9-3O-Hjf" id="gqG-fC-ViC"/>
                 <outlet property="bottomLegImageView" destination="rVl-cs-vNh" id="DgE-5t-LSr"/>
@@ -48,7 +49,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKIN CREATOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWv-s6-2Bu">
-                            <rect key="frame" x="128" y="29" width="158" height="26"/>
+                            <rect key="frame" x="120.5" y="28.5" width="173" height="27"/>
                             <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
                             <color key="textColor" name="BeigeColor"/>
                             <nil key="highlightedColor"/>
@@ -65,7 +66,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEM-w2-IDp">
-                    <rect key="frame" x="193" y="232" width="28" height="28"/>
+                    <rect key="frame" x="192" y="232" width="30" height="28"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="VJm-cx-cc7"/>
                     </constraints>
@@ -81,7 +82,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOTTOM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbr-5P-rtf">
-                    <rect key="frame" x="177.5" y="749" width="59.5" height="28"/>
+                    <rect key="frame" x="175.5" y="749" width="63.5" height="28"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="DIQ-PO-L7V"/>
                     </constraints>

@@ -49,7 +49,7 @@ class IAPManager: NSObject, SKPaymentTransactionObserver, SKProductsRequestDeleg
     weak var addonProductDelegate: IAPManagerAddonPurchaseProtocol?
     weak var contentProductDelegate: IAPManagerContentProtocol?
     
-    public var localizablePrice = "$4.99"
+    public var  localizablePrice = "$4.99"
     public var productBuy : PremiumMainControllerStyle = .mainProduct
     public var productBought: [PremiumMainControllerStyle] = []
     

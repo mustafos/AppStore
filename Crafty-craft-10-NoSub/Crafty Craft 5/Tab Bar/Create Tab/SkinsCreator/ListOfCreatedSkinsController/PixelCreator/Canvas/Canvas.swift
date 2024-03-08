@@ -8,7 +8,7 @@ class Canvas: SKSpriteNode {
     
     /// Amount of pixels on a vertical scale.
     private var height: Int = 0
-    private var pixelArray = [Pixel]()
+    private var pixelArray = [PictureElement]()
     
     init(width: Int, height: Int) {
         self.width = width
@@ -24,7 +24,7 @@ class Canvas: SKSpriteNode {
         setUpPixelGrid(colorArray: colorArray)
     }
     
-    func getPixelArray() -> [Pixel] {
+    func getPixelArray() -> [PictureElement] {
         return pixelArray
     }
     
@@ -59,7 +59,7 @@ class Canvas: SKSpriteNode {
     /// Helper method that returns a pixel based on the x/y. The x and y position are
     /// ordinated along the standard cartesian axis by the following system: x increasing
     /// in the right direction and y increasing in the up direction.
-    func getPixel(x: Int, y: Int) -> Pixel? {
+    func getPixel(x: Int, y: Int) -> PictureElement? {
         let translatedXPosition = x * height
         let translatedYPosition = y
         
@@ -74,7 +74,7 @@ class Canvas: SKSpriteNode {
     
     /// Gets the correct indices for a given pixel node according to the cartesian
     /// coordinate system. Note `getPixel()` for more information.
-    func getPosition(pixel forPixel: Pixel) -> (Int, Int) {
+    func getPosition(pixel forPixel: ScnPixel) -> (Int, Int) {
         let currentIndex = pixelArray.firstIndex(where: {$0 == forPixel})
         let translatedXPosition = currentIndex! / height
         let translatedYPosition = currentIndex! % height
@@ -107,7 +107,7 @@ class Canvas: SKSpriteNode {
         //var correctIndexx = 0
         for x in 0..<self.width {
             for y in 0..<self.height {
-                let pixel = Pixel()
+                let pixel = PictureElement()
                 //
                 //                 This is nasty, but SpriteKit has a stupid bug...
                 let xPos = Int(-self.size.width / 2) + x * Int(PIXEL_SIZE)
@@ -155,14 +155,14 @@ class Canvas: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    static func draw(pixel: Pixel, color: UIColor) {
+    static func draw(pixel: PictureElement, color: UIColor) {
         pixel.fillColor = color
     }
     
 }
 
 extension Canvas {
-    func getPixel(at location: CGPoint) -> Pixel? {
+    func getPixel(at location: CGPoint) -> PictureElement? {
         // Convert the touch location to the coordinate system of the canvas
         let locationInCanvas = convert(location, from: self.scene!)
 

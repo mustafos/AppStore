@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabViewControllerFactory" customModule="Crafty_Craft_10_Sub" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabViewControllerFactory" customModule="Crafty_Craft_10_NoSub" customModuleProvider="target">
             <connections>
                 <outlet property="collectionContainer" destination="LE0-Vs-WIu" id="wj6-tJ-w7m"/>
                 <outlet property="controlSwitcher" destination="lV8-0p-fAZ" id="Vl4-5h-bhf"/>
@@ -61,7 +61,7 @@
                                 <action selector="searchButtonTapped:" destination="-1" eventType="touchUpInside" id="gVm-hM-WoN"/>
                             </connections>
                         </button>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGj-ya-wXd" customClass="SearchBarView" customModule="Crafty_Craft_10_Sub" customModuleProvider="target">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGj-ya-wXd" customClass="SearchBarView" customModule="Crafty_Craft_10_NoSub" customModuleProvider="target">
                             <rect key="frame" x="20" y="20" width="390" height="44"/>
                         </view>
                     </subviews>

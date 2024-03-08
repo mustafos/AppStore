@@ -175,7 +175,7 @@ extension RealmService {
         coreRM.addObjects(addons)
     }
     
-    func deleteAddon(addon: SavedAddon) {
+    func deleteAddon(addon: SavedAddonEnch) {
         guard let addonForDeleting = self.getSavedAddonRM(by: addon.idshka) else {
             return
         }
@@ -217,7 +217,7 @@ extension RealmService {
         coreRM.addObject(addon)
     }
     
-    func editCreatedSkinName(addon: SavedAddonRM, newAddon: SavedAddon) {
+    func editCreatedSkinName(addon: SavedAddonRM, newAddon: SavedAddonEnch) {
         coreRM.update(addon, with: ["idshka" : newAddon.idshka])
         coreRM.update(addon, with: ["displayName" : newAddon.displayName])
         coreRM.update(addon, with: ["displayImage" : newAddon.displayImage])

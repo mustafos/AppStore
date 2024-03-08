@@ -115,9 +115,9 @@
 		6AB029152B5E670B005586CC /* AddonEditorSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029132B5E670B005586CC /* AddonEditorSelectorViewController.swift */; };
 		6AB029162B5E670B005586CC /* AddonEditorSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029142B5E670B005586CC /* AddonEditorSelectorViewController.xib */; };
 		6AB0291C2B5E6742005586CC /* AddonEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029172B5E6741005586CC /* AddonEditorViewController.swift */; };
-		6AB0291D2B5E6742005586CC /* MCAddonFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029182B5E6741005586CC /* MCAddonFileManager.swift */; };
+		6AB0291D2B5E6742005586CC /* MicroConAddonFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029182B5E6741005586CC /* MicroConAddonFileManager.swift */; };
 		6AB0291E2B5E6742005586CC /* AddonEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029192B5E6741005586CC /* AddonEditorViewController.xib */; };
-		6AB0291F2B5E6742005586CC /* AddonEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0291A2B5E6741005586CC /* AddonEditorModel.swift */; };
+		6AB0291F2B5E6742005586CC /* EnhancementEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0291A2B5E6741005586CC /* EnhancementEditorModel.swift */; };
 		6AB029202B5E6742005586CC /* ResourcePackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0291B2B5E6742005586CC /* ResourcePackModel.swift */; };
 		6AB029262B5E6798005586CC /* AddonsOptionsCellWithTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029212B5E6797005586CC /* AddonsOptionsCellWithTextField.swift */; };
 		6AB029272B5E6798005586CC /* AddonsOptionsCellWithSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029222B5E6797005586CC /* AddonsOptionsCellWithSwitcher.swift */; };
@@ -135,60 +135,60 @@
 		6AB0294D2B5E6991005586CC /* BucketTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029492B5E6990005586CC /* BucketTool.swift */; };
 		6AB0294E2B5E6991005586CC /* NoiseTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0294A2B5E6990005586CC /* NoiseTool.swift */; };
 		6AB0294F2B5E6991005586CC /* PaintBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0294B2B5E6991005586CC /* PaintBrush.swift */; };
-		6AB029502B5E6991005586CC /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0294C2B5E6991005586CC /* Tool.swift */; };
-		6AB029582B5E69B7005586CC /* GroupDrawCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029512B5E69B6005586CC /* GroupDrawCommand.swift */; };
-		6AB029592B5E69B7005586CC /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029522B5E69B6005586CC /* Pixel.swift */; };
-		6AB0295A2B5E69B7005586CC /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029532B5E69B6005586CC /* Drawing.swift */; };
-		6AB0295B2B5E69B7005586CC /* DrawCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029542B5E69B6005586CC /* DrawCommand.swift */; };
-		6AB0295C2B5E69B7005586CC /* MultiCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029552B5E69B6005586CC /* MultiCommand.swift */; };
-		6AB0295D2B5E69B7005586CC /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029562B5E69B6005586CC /* Command.swift */; };
-		6AB0295E2B5E69B7005586CC /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029572B5E69B6005586CC /* CommandManager.swift */; };
-		6AB029642B5E6A29005586CC /* ColorManager3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0295F2B5E6A28005586CC /* ColorManager3D.swift */; };
+		6AB029502B5E6991005586CC /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0294C2B5E6991005586CC /* Instrument.swift */; };
+		6AB029582B5E69B7005586CC /* GroupDrawDirective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029512B5E69B6005586CC /* GroupDrawDirective.swift */; };
+		6AB029592B5E69B7005586CC /* PictureElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029522B5E69B6005586CC /* PictureElement.swift */; };
+		6AB0295A2B5E69B7005586CC /* Painting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029532B5E69B6005586CC /* Painting.swift */; };
+		6AB0295B2B5E69B7005586CC /* DrawDirective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029542B5E69B6005586CC /* DrawDirective.swift */; };
+		6AB0295C2B5E69B7005586CC /* MultiDirective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029552B5E69B6005586CC /* MultiDirective.swift */; };
+		6AB0295D2B5E69B7005586CC /* Directive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029562B5E69B6005586CC /* Directive.swift */; };
+		6AB0295E2B5E69B7005586CC /* DirectiveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029572B5E69B6005586CC /* DirectiveManager.swift */; };
+		6AB029642B5E6A29005586CC /* ThreeDColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0295F2B5E6A28005586CC /* ThreeDColorManager.swift */; };
 		6AB029652B5E6A29005586CC /* Extension_Skin3DTestViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029602B5E6A28005586CC /* Extension_Skin3DTestViewController+Gestures.swift */; };
-		6AB029662B5E6A29005586CC /* Skin3DTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029612B5E6A28005586CC /* Skin3DTestViewController.xib */; };
-		6AB029672B5E6A29005586CC /* Skin3DTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029622B5E6A29005586CC /* Skin3DTestViewController.swift */; };
+		6AB029662B5E6A29005586CC /* ThreeDSkinTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029612B5E6A28005586CC /* ThreeDSkinTestViewController.xib */; };
+		6AB029672B5E6A29005586CC /* ThreeDSkinTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029622B5E6A29005586CC /* ThreeDSkinTestViewController.swift */; };
 		6AB029682B5E6A29005586CC /* Skin3DTestViewController+Ext_Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029632B5E6A29005586CC /* Skin3DTestViewController+Ext_Collection.swift */; };
-		6AB0296B2B5E6A64005586CC /* BrashSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029692B5E6A64005586CC /* BrashSizeView.swift */; };
-		6AB0296C2B5E6A65005586CC /* BrashSizeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB0296A2B5E6A64005586CC /* BrashSizeView.xib */; };
-		6AB0296F2B5E6A84005586CC /* SaveAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0296D2B5E6A84005586CC /* SaveAlertView.swift */; };
-		6AB029702B5E6A84005586CC /* SaveAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB0296E2B5E6A84005586CC /* SaveAlertView.xib */; };
+		6AB0296B2B5E6A64005586CC /* BrushSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029692B5E6A64005586CC /* BrushSizeView.swift */; };
+		6AB0296C2B5E6A65005586CC /* BrushSizeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB0296A2B5E6A64005586CC /* BrushSizeView.xib */; };
+		6AB0296F2B5E6A84005586CC /* SaveConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0296D2B5E6A84005586CC /* SaveConfirmationView.swift */; };
+		6AB029702B5E6A84005586CC /* SaveConfirmationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB0296E2B5E6A84005586CC /* SaveConfirmationView.xib */; };
 		6AB029732B5E6B00005586CC /* SmallModelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029712B5E6B00005586CC /* SmallModelView.xib */; };
 		6AB029742B5E6B00005586CC /* SmallModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029722B5E6B00005586CC /* SmallModelView.swift */; };
 		6AB029852B5E6B80005586CC /* Color3DCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029832B5E6B80005586CC /* Color3DCollectionCell.swift */; };
 		6AB029862B5E6B80005586CC /* Color3DCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029842B5E6B80005586CC /* Color3DCollectionCell.xib */; };
-		6AB029952B5E6DBC005586CC /* CreateTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029932B5E6DBC005586CC /* CreateTabViewController.swift */; };
-		6AB029962B5E6DBC005586CC /* CreateTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029942B5E6DBC005586CC /* CreateTabViewController.xib */; };
+		6AB029952B5E6DBC005586CC /* TabViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029932B5E6DBC005586CC /* TabViewControllerFactory.swift */; };
+		6AB029962B5E6DBC005586CC /* TabViewControllerFactory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029942B5E6DBC005586CC /* TabViewControllerFactory.xib */; };
 		6AB0299E2B5E719D005586CC /* SkinEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB0299B2B5E719D005586CC /* SkinEditorViewController.xib */; };
 		6AB0299F2B5E719D005586CC /* SkinEditorVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0299C2B5E719D005586CC /* SkinEditorVCModel.swift */; };
 		6AB029A02B5E719D005586CC /* SkinEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0299D2B5E719D005586CC /* SkinEditorViewController.swift */; };
 		6AB029A32B5EB2B8005586CC /* Pushwoosh in Frameworks */ = {isa = PBXBuildFile; productRef = 6AB029A22B5EB2B8005586CC /* Pushwoosh */; };
-		6AB029A62B5EB9F7005586CC /* BodyPartPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029A42B5EB9F4005586CC /* BodyPartPickerViewController.xib */; };
-		6AB029A72B5EB9F7005586CC /* BodyPartPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029A52B5EB9F7005586CC /* BodyPartPickerViewController.swift */; };
+		6AB029A62B5EB9F7005586CC /* AnatomyPartPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029A42B5EB9F4005586CC /* AnatomyPartPickerViewController.xib */; };
+		6AB029A72B5EB9F7005586CC /* AnatomyPartPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029A52B5EB9F7005586CC /* AnatomyPartPickerViewController.swift */; };
 		6AB029AA2B5EBA66005586CC /* ColorCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029A82B5EBA63005586CC /* ColorCollectionCell.xib */; };
 		6AB029AB2B5EBA66005586CC /* ColorCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029A92B5EBA66005586CC /* ColorCollectionCell.swift */; };
-		6AB029B32B5EBAAC005586CC /* SkinCreatorImportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029AC2B5EBAA0005586CC /* SkinCreatorImportViewController.xib */; };
+		6AB029B32B5EBAAC005586CC /* AnatomyCreatorImportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029AC2B5EBAA0005586CC /* AnatomyCreatorImportViewController.xib */; };
 		6AB029B42B5EBAAC005586CC /* SkinCreatorViewController+PixelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029AD2B5EBAA2005586CC /* SkinCreatorViewController+PixelView.swift */; };
-		6AB029B52B5EBAAC005586CC /* SkinCreatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029AE2B5EBAA3005586CC /* SkinCreatorViewController.xib */; };
-		6AB029B62B5EBAAC005586CC /* ColorManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029AF2B5EBAA6005586CC /* ColorManger.swift */; };
+		6AB029B52B5EBAAC005586CC /* SkinDesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029AE2B5EBAA3005586CC /* SkinDesignViewController.xib */; };
+		6AB029B62B5EBAAC005586CC /* ColorsTraitManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029AF2B5EBAA6005586CC /* ColorsTraitManger.swift */; };
 		6AB029B72B5EBAAC005586CC /* SkinCreatorController+Ext_Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029B02B5EBAA8005586CC /* SkinCreatorController+Ext_Collection.swift */; };
-		6AB029B82B5EBAAC005586CC /* SkinCreatorImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029B12B5EBAAA005586CC /* SkinCreatorImportViewController.swift */; };
-		6AB029B92B5EBAAC005586CC /* SkinCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029B22B5EBAAC005586CC /* SkinCreatorViewController.swift */; };
-		6AB029BC2B5EBACF005586CC /* HeadBodyPartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029BA2B5EBACC005586CC /* HeadBodyPartViewController.xib */; };
-		6AB029BD2B5EBACF005586CC /* HeadBodyPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029BB2B5EBACF005586CC /* HeadBodyPartViewController.swift */; };
-		6AB029C02B5EBAE9005586CC /* HandsBodyPartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029BE2B5EBAE7005586CC /* HandsBodyPartViewController.xib */; };
-		6AB029C12B5EBAE9005586CC /* HandsBodyPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029BF2B5EBAE9005586CC /* HandsBodyPartViewController.swift */; };
-		6AB029C42B5EBB00005586CC /* LegsBodyPartViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029C22B5EBAFE005586CC /* LegsBodyPartViewControllerViewController.swift */; };
-		6AB029C52B5EBB00005586CC /* LegsBodyPartViewControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029C32B5EBB00005586CC /* LegsBodyPartViewControllerViewController.xib */; };
-		6AB029C82B5EBB16005586CC /* TorsoBodyPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029C62B5EBB13005586CC /* TorsoBodyPartViewController.swift */; };
-		6AB029C92B5EBB16005586CC /* TorsoBodyPartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029C72B5EBB16005586CC /* TorsoBodyPartViewController.xib */; };
+		6AB029B82B5EBAAC005586CC /* AnatomyCreatorImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029B12B5EBAAA005586CC /* AnatomyCreatorImportViewController.swift */; };
+		6AB029B92B5EBAAC005586CC /* SkinDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029B22B5EBAAC005586CC /* SkinDesignViewController.swift */; };
+		6AB029BC2B5EBACF005586CC /* HeadAnatomyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029BA2B5EBACC005586CC /* HeadAnatomyViewController.xib */; };
+		6AB029BD2B5EBACF005586CC /* HeadAnatomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029BB2B5EBACF005586CC /* HeadAnatomyViewController.swift */; };
+		6AB029C02B5EBAE9005586CC /* HandsAnatomyPartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029BE2B5EBAE7005586CC /* HandsAnatomyPartViewController.xib */; };
+		6AB029C12B5EBAE9005586CC /* HandsAnatomyPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029BF2B5EBAE9005586CC /* HandsAnatomyPartViewController.swift */; };
+		6AB029C42B5EBB00005586CC /* LegsAnatomyPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029C22B5EBAFE005586CC /* LegsAnatomyPartViewController.swift */; };
+		6AB029C52B5EBB00005586CC /* LegsAnatomyPartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029C32B5EBB00005586CC /* LegsAnatomyPartViewController.xib */; };
+		6AB029C82B5EBB16005586CC /* TorsoAnatomyPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029C62B5EBB13005586CC /* TorsoAnatomyPartViewController.swift */; };
+		6AB029C92B5EBB16005586CC /* TorsoAnatomyPartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029C72B5EBB16005586CC /* TorsoAnatomyPartViewController.xib */; };
 		6AB30A382B7630BB00FC5EA6 /* ServersTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB30A342B7630BB00FC5EA6 /* ServersTabViewController.swift */; };
 		6AB30A392B7630BB00FC5EA6 /* ServerDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB30A352B7630BB00FC5EA6 /* ServerDetailsViewController.xib */; };
 		6AB30A3A2B7630BB00FC5EA6 /* ServersTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB30A362B7630BB00FC5EA6 /* ServersTabViewController.xib */; };
 		6AB30A3B2B7630BB00FC5EA6 /* ServerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB30A372B7630BB00FC5EA6 /* ServerDetailsViewController.swift */; };
-		6AB30A402B7631AD00FC5EA6 /* AddonCreatorViewController + UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB30A3C2B7631AD00FC5EA6 /* AddonCreatorViewController + UICollectionView.swift */; };
-		6AB30A412B7631AD00FC5EA6 /* AddonCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB30A3D2B7631AD00FC5EA6 /* AddonCreatorViewController.swift */; };
-		6AB30A422B7631AD00FC5EA6 /* AddonCreatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB30A3E2B7631AD00FC5EA6 /* AddonCreatorViewController.xib */; };
-		6AB30A432B7631AD00FC5EA6 /* CreatedAddonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB30A3F2B7631AD00FC5EA6 /* CreatedAddonsModel.swift */; };
+		6AB30A402B7631AD00FC5EA6 /* EnhancementCreatorViewController + UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB30A3C2B7631AD00FC5EA6 /* EnhancementCreatorViewController + UICollectionView.swift */; };
+		6AB30A412B7631AD00FC5EA6 /* EnhancementCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB30A3D2B7631AD00FC5EA6 /* EnhancementCreatorViewController.swift */; };
+		6AB30A422B7631AD00FC5EA6 /* EnhancementCreatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB30A3E2B7631AD00FC5EA6 /* EnhancementCreatorViewController.xib */; };
+		6AB30A432B7631AD00FC5EA6 /* EdditionalAddonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB30A3F2B7631AD00FC5EA6 /* EdditionalAddonModel.swift */; };
 		6AB6CDA72B761BD4008A3491 /* Extension_EditorSkinModel+hideBodyParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6CDA02B761BC4008A3491 /* Extension_EditorSkinModel+hideBodyParts.swift */; };
 		6AB6CDA82B761BD4008A3491 /* SceneLogicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6CDA12B761BC6008A3491 /* SceneLogicModel.swift */; };
 		6AB6CDA92B761BD4008A3491 /* EditorSkinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6CDA22B761BC9008A3491 /* EditorSkinModel.swift */; };
@@ -404,9 +404,9 @@
 		6AB029132B5E670B005586CC /* AddonEditorSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddonEditorSelectorViewController.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/ListSelector/AddonEditorSelector/AddonEditorSelectorViewController.swift"; sourceTree = "<group>"; };
 		6AB029142B5E670B005586CC /* AddonEditorSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddonEditorSelectorViewController.xib; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/ListSelector/AddonEditorSelector/AddonEditorSelectorViewController.xib"; sourceTree = "<group>"; };
 		6AB029172B5E6741005586CC /* AddonEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddonEditorViewController.swift; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/AddonEditorViewController.swift"; sourceTree = "<group>"; };
-		6AB029182B5E6741005586CC /* MCAddonFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCAddonFileManager.swift; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/MCAddonFileManager.swift"; sourceTree = "<group>"; };
+		6AB029182B5E6741005586CC /* MicroConAddonFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MicroConAddonFileManager.swift; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/MicroConAddonFileManager.swift"; sourceTree = "<group>"; };
 		6AB029192B5E6741005586CC /* AddonEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddonEditorViewController.xib; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/AddonEditorViewController.xib"; sourceTree = "<group>"; };
-		6AB0291A2B5E6741005586CC /* AddonEditorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddonEditorModel.swift; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/AddonEditorModel.swift"; sourceTree = "<group>"; };
+		6AB0291A2B5E6741005586CC /* EnhancementEditorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnhancementEditorModel.swift; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/EnhancementEditorModel.swift"; sourceTree = "<group>"; };
 		6AB0291B2B5E6742005586CC /* ResourcePackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourcePackModel.swift; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/ResourcePackModel.swift"; sourceTree = "<group>"; };
 		6AB029212B5E6797005586CC /* AddonsOptionsCellWithTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddonsOptionsCellWithTextField.swift; path = "../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/AddonsOptionsTableViewCell/AddonsOptionsCellWithTextField.swift"; sourceTree = "<group>"; };
 		6AB029222B5E6797005586CC /* AddonsOptionsCellWithSwitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddonsOptionsCellWithSwitcher.swift; path = "../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonEditorController/AddonsOptionsTableViewCell/AddonsOptionsCellWithSwitcher.swift"; sourceTree = "<group>"; };
@@ -424,59 +424,59 @@
 		6AB029492B5E6990005586CC /* BucketTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BucketTool.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/Tools/BucketTool.swift"; sourceTree = "<group>"; };
 		6AB0294A2B5E6990005586CC /* NoiseTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoiseTool.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/Tools/NoiseTool.swift"; sourceTree = "<group>"; };
 		6AB0294B2B5E6991005586CC /* PaintBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaintBrush.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/Tools/PaintBrush.swift"; sourceTree = "<group>"; };
-		6AB0294C2B5E6991005586CC /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tool.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/Tools/Tool.swift"; sourceTree = "<group>"; };
-		6AB029512B5E69B6005586CC /* GroupDrawCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupDrawCommand.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/GroupDrawCommand.swift"; sourceTree = "<group>"; };
-		6AB029522B5E69B6005586CC /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pixel.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/Pixel.swift"; sourceTree = "<group>"; };
-		6AB029532B5E69B6005586CC /* Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Drawing.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/Drawing.swift"; sourceTree = "<group>"; };
-		6AB029542B5E69B6005586CC /* DrawCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrawCommand.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/DrawCommand.swift"; sourceTree = "<group>"; };
-		6AB029552B5E69B6005586CC /* MultiCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiCommand.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/MultiCommand.swift"; sourceTree = "<group>"; };
-		6AB029562B5E69B6005586CC /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/Command.swift"; sourceTree = "<group>"; };
-		6AB029572B5E69B6005586CC /* CommandManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandManager.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/CommandManager.swift"; sourceTree = "<group>"; };
-		6AB0295F2B5E6A28005586CC /* ColorManager3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorManager3D.swift; path = "../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/ColorManager3D.swift"; sourceTree = "<group>"; };
+		6AB0294C2B5E6991005586CC /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Instrument.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/Tools/Instrument.swift"; sourceTree = "<group>"; };
+		6AB029512B5E69B6005586CC /* GroupDrawDirective.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupDrawDirective.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/GroupDrawDirective.swift"; sourceTree = "<group>"; };
+		6AB029522B5E69B6005586CC /* PictureElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureElement.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/PictureElement.swift"; sourceTree = "<group>"; };
+		6AB029532B5E69B6005586CC /* Painting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Painting.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/Painting.swift"; sourceTree = "<group>"; };
+		6AB029542B5E69B6005586CC /* DrawDirective.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrawDirective.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/DrawDirective.swift"; sourceTree = "<group>"; };
+		6AB029552B5E69B6005586CC /* MultiDirective.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiDirective.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/MultiDirective.swift"; sourceTree = "<group>"; };
+		6AB029562B5E69B6005586CC /* Directive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Directive.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/Directive.swift"; sourceTree = "<group>"; };
+		6AB029572B5E69B6005586CC /* DirectiveManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectiveManager.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/DirectiveManager.swift"; sourceTree = "<group>"; };
+		6AB0295F2B5E6A28005586CC /* ThreeDColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThreeDColorManager.swift; path = "../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/ThreeDColorManager.swift"; sourceTree = "<group>"; };
 		6AB029602B5E6A28005586CC /* Extension_Skin3DTestViewController+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Extension_Skin3DTestViewController+Gestures.swift"; path = "../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Extension_Skin3DTestViewController+Gestures.swift"; sourceTree = "<group>"; };
-		6AB029612B5E6A28005586CC /* Skin3DTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Skin3DTestViewController.xib; path = "../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.xib"; sourceTree = "<group>"; };
-		6AB029622B5E6A29005586CC /* Skin3DTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Skin3DTestViewController.swift; path = "../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController.swift"; sourceTree = "<group>"; };
+		6AB029612B5E6A28005586CC /* ThreeDSkinTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ThreeDSkinTestViewController.xib; path = "../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/ThreeDSkinTestViewController.xib"; sourceTree = "<group>"; };
+		6AB029622B5E6A29005586CC /* ThreeDSkinTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThreeDSkinTestViewController.swift; path = "../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/ThreeDSkinTestViewController.swift"; sourceTree = "<group>"; };
 		6AB029632B5E6A29005586CC /* Skin3DTestViewController+Ext_Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Skin3DTestViewController+Ext_Collection.swift"; path = "../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Skin3DTestViewController+Ext_Collection.swift"; sourceTree = "<group>"; };
-		6AB029692B5E6A64005586CC /* BrashSizeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrashSizeView.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/PixelSizeView/BrashSizeView.swift"; sourceTree = "<group>"; };
-		6AB0296A2B5E6A64005586CC /* BrashSizeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BrashSizeView.xib; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/PixelSizeView/BrashSizeView.xib"; sourceTree = "<group>"; };
-		6AB0296D2B5E6A84005586CC /* SaveAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveAlertView.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/SaveAlertView/SaveAlertView.swift"; sourceTree = "<group>"; };
-		6AB0296E2B5E6A84005586CC /* SaveAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SaveAlertView.xib; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/SaveAlertView/SaveAlertView.xib"; sourceTree = "<group>"; };
+		6AB029692B5E6A64005586CC /* BrushSizeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrushSizeView.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/PixelSizeView/BrushSizeView.swift"; sourceTree = "<group>"; };
+		6AB0296A2B5E6A64005586CC /* BrushSizeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BrushSizeView.xib; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/PixelSizeView/BrushSizeView.xib"; sourceTree = "<group>"; };
+		6AB0296D2B5E6A84005586CC /* SaveConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveConfirmationView.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/SaveAlertView/SaveConfirmationView.swift"; sourceTree = "<group>"; };
+		6AB0296E2B5E6A84005586CC /* SaveConfirmationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SaveConfirmationView.xib; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/SaveAlertView/SaveConfirmationView.xib"; sourceTree = "<group>"; };
 		6AB029712B5E6B00005586CC /* SmallModelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SmallModelView.xib; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/SmallModelView/SmallModelView.xib"; sourceTree = "<group>"; };
 		6AB029722B5E6B00005586CC /* SmallModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmallModelView.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/SmallModelView/SmallModelView.swift"; sourceTree = "<group>"; };
 		6AB029832B5E6B80005586CC /* Color3DCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color3DCollectionCell.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Cell/Color3DCollectionCell.swift"; sourceTree = "<group>"; };
 		6AB029842B5E6B80005586CC /* Color3DCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Color3DCollectionCell.xib; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin3DCreator/Cell/Color3DCollectionCell.xib"; sourceTree = "<group>"; };
-		6AB029932B5E6DBC005586CC /* CreateTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTabViewController.swift; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/CreateTabViewController.swift"; sourceTree = "<group>"; };
-		6AB029942B5E6DBC005586CC /* CreateTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateTabViewController.xib; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/CreateTabViewController.xib"; sourceTree = "<group>"; };
+		6AB029932B5E6DBC005586CC /* TabViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabViewControllerFactory.swift; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/TabViewControllerFactory.swift"; sourceTree = "<group>"; };
+		6AB029942B5E6DBC005586CC /* TabViewControllerFactory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TabViewControllerFactory.xib; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/TabViewControllerFactory.xib"; sourceTree = "<group>"; };
 		6AB0299B2B5E719D005586CC /* SkinEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkinEditorViewController.xib; sourceTree = "<group>"; };
 		6AB0299C2B5E719D005586CC /* SkinEditorVCModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinEditorVCModel.swift; sourceTree = "<group>"; };
 		6AB0299D2B5E719D005586CC /* SkinEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinEditorViewController.swift; sourceTree = "<group>"; };
-		6AB029A42B5EB9F4005586CC /* BodyPartPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BodyPartPickerViewController.xib; sourceTree = "<group>"; };
-		6AB029A52B5EB9F7005586CC /* BodyPartPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPartPickerViewController.swift; sourceTree = "<group>"; };
+		6AB029A42B5EB9F4005586CC /* AnatomyPartPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnatomyPartPickerViewController.xib; sourceTree = "<group>"; };
+		6AB029A52B5EB9F7005586CC /* AnatomyPartPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnatomyPartPickerViewController.swift; sourceTree = "<group>"; };
 		6AB029A82B5EBA63005586CC /* ColorCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorCollectionCell.xib; sourceTree = "<group>"; };
 		6AB029A92B5EBA66005586CC /* ColorCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionCell.swift; sourceTree = "<group>"; };
-		6AB029AC2B5EBAA0005586CC /* SkinCreatorImportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkinCreatorImportViewController.xib; sourceTree = "<group>"; };
+		6AB029AC2B5EBAA0005586CC /* AnatomyCreatorImportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnatomyCreatorImportViewController.xib; sourceTree = "<group>"; };
 		6AB029AD2B5EBAA2005586CC /* SkinCreatorViewController+PixelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SkinCreatorViewController+PixelView.swift"; sourceTree = "<group>"; };
-		6AB029AE2B5EBAA3005586CC /* SkinCreatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkinCreatorViewController.xib; sourceTree = "<group>"; };
-		6AB029AF2B5EBAA6005586CC /* ColorManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManger.swift; sourceTree = "<group>"; };
+		6AB029AE2B5EBAA3005586CC /* SkinDesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkinDesignViewController.xib; sourceTree = "<group>"; };
+		6AB029AF2B5EBAA6005586CC /* ColorsTraitManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsTraitManger.swift; sourceTree = "<group>"; };
 		6AB029B02B5EBAA8005586CC /* SkinCreatorController+Ext_Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SkinCreatorController+Ext_Collection.swift"; sourceTree = "<group>"; };
-		6AB029B12B5EBAAA005586CC /* SkinCreatorImportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinCreatorImportViewController.swift; sourceTree = "<group>"; };
-		6AB029B22B5EBAAC005586CC /* SkinCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinCreatorViewController.swift; sourceTree = "<group>"; };
-		6AB029BA2B5EBACC005586CC /* HeadBodyPartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadBodyPartViewController.xib; sourceTree = "<group>"; };
-		6AB029BB2B5EBACF005586CC /* HeadBodyPartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadBodyPartViewController.swift; sourceTree = "<group>"; };
-		6AB029BE2B5EBAE7005586CC /* HandsBodyPartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HandsBodyPartViewController.xib; sourceTree = "<group>"; };
-		6AB029BF2B5EBAE9005586CC /* HandsBodyPartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandsBodyPartViewController.swift; sourceTree = "<group>"; };
-		6AB029C22B5EBAFE005586CC /* LegsBodyPartViewControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegsBodyPartViewControllerViewController.swift; sourceTree = "<group>"; };
-		6AB029C32B5EBB00005586CC /* LegsBodyPartViewControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LegsBodyPartViewControllerViewController.xib; sourceTree = "<group>"; };
-		6AB029C62B5EBB13005586CC /* TorsoBodyPartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorsoBodyPartViewController.swift; sourceTree = "<group>"; };
-		6AB029C72B5EBB16005586CC /* TorsoBodyPartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TorsoBodyPartViewController.xib; sourceTree = "<group>"; };
+		6AB029B12B5EBAAA005586CC /* AnatomyCreatorImportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnatomyCreatorImportViewController.swift; sourceTree = "<group>"; };
+		6AB029B22B5EBAAC005586CC /* SkinDesignViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinDesignViewController.swift; sourceTree = "<group>"; };
+		6AB029BA2B5EBACC005586CC /* HeadAnatomyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadAnatomyViewController.xib; sourceTree = "<group>"; };
+		6AB029BB2B5EBACF005586CC /* HeadAnatomyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadAnatomyViewController.swift; sourceTree = "<group>"; };
+		6AB029BE2B5EBAE7005586CC /* HandsAnatomyPartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HandsAnatomyPartViewController.xib; sourceTree = "<group>"; };
+		6AB029BF2B5EBAE9005586CC /* HandsAnatomyPartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandsAnatomyPartViewController.swift; sourceTree = "<group>"; };
+		6AB029C22B5EBAFE005586CC /* LegsAnatomyPartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegsAnatomyPartViewController.swift; sourceTree = "<group>"; };
+		6AB029C32B5EBB00005586CC /* LegsAnatomyPartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LegsAnatomyPartViewController.xib; sourceTree = "<group>"; };
+		6AB029C62B5EBB13005586CC /* TorsoAnatomyPartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorsoAnatomyPartViewController.swift; sourceTree = "<group>"; };
+		6AB029C72B5EBB16005586CC /* TorsoAnatomyPartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TorsoAnatomyPartViewController.xib; sourceTree = "<group>"; };
 		6AB30A342B7630BB00FC5EA6 /* ServersTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServersTabViewController.swift; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/ServersTabViewController.swift"; sourceTree = "<group>"; };
 		6AB30A352B7630BB00FC5EA6 /* ServerDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ServerDetailsViewController.xib; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/ServerDetailsViewController.xib"; sourceTree = "<group>"; };
 		6AB30A362B7630BB00FC5EA6 /* ServersTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ServersTabViewController.xib; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/ServersTabViewController.xib"; sourceTree = "<group>"; };
 		6AB30A372B7630BB00FC5EA6 /* ServerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerDetailsViewController.swift; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/ServerDetailsViewController.swift"; sourceTree = "<group>"; };
-		6AB30A3C2B7631AD00FC5EA6 /* AddonCreatorViewController + UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AddonCreatorViewController + UICollectionView.swift"; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonCreatorMainScreen/Cell/AddonCreatorViewController + UICollectionView.swift"; sourceTree = "<group>"; };
-		6AB30A3D2B7631AD00FC5EA6 /* AddonCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddonCreatorViewController.swift; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonCreatorMainScreen/Cell/AddonCreatorViewController.swift"; sourceTree = "<group>"; };
-		6AB30A3E2B7631AD00FC5EA6 /* AddonCreatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddonCreatorViewController.xib; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonCreatorMainScreen/Cell/AddonCreatorViewController.xib"; sourceTree = "<group>"; };
-		6AB30A3F2B7631AD00FC5EA6 /* CreatedAddonsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatedAddonsModel.swift; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonCreatorMainScreen/Cell/CreatedAddonsModel.swift"; sourceTree = "<group>"; };
+		6AB30A3C2B7631AD00FC5EA6 /* EnhancementCreatorViewController + UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EnhancementCreatorViewController + UICollectionView.swift"; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonCreatorMainScreen/Cell/EnhancementCreatorViewController + UICollectionView.swift"; sourceTree = "<group>"; };
+		6AB30A3D2B7631AD00FC5EA6 /* EnhancementCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnhancementCreatorViewController.swift; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonCreatorMainScreen/Cell/EnhancementCreatorViewController.swift"; sourceTree = "<group>"; };
+		6AB30A3E2B7631AD00FC5EA6 /* EnhancementCreatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EnhancementCreatorViewController.xib; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonCreatorMainScreen/Cell/EnhancementCreatorViewController.xib"; sourceTree = "<group>"; };
+		6AB30A3F2B7631AD00FC5EA6 /* EdditionalAddonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EdditionalAddonModel.swift; path = "../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/Addon Creator/AddonCreatorMainScreen/Cell/EdditionalAddonModel.swift"; sourceTree = "<group>"; };
 		6AB6CDA02B761BC4008A3491 /* Extension_EditorSkinModel+hideBodyParts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension_EditorSkinModel+hideBodyParts.swift"; sourceTree = "<group>"; };
 		6AB6CDA12B761BC6008A3491 /* SceneLogicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneLogicModel.swift; sourceTree = "<group>"; };
 		6AB6CDA22B761BC9008A3491 /* EditorSkinModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSkinModel.swift; sourceTree = "<group>"; };
@@ -769,8 +769,8 @@
 		638DF5D42A371FD7000A8952 /* LegsVC */ = {
 			isa = PBXGroup;
 			children = (
-				6AB029C22B5EBAFE005586CC /* LegsBodyPartViewControllerViewController.swift */,
-				6AB029C32B5EBB00005586CC /* LegsBodyPartViewControllerViewController.xib */,
+				6AB029C22B5EBAFE005586CC /* LegsAnatomyPartViewController.swift */,
+				6AB029C32B5EBB00005586CC /* LegsAnatomyPartViewController.xib */,
 			);
 			path = LegsVC;
 			sourceTree = "<group>";
@@ -778,8 +778,8 @@
 		638DF5D52A372005000A8952 /* HeadVC */ = {
 			isa = PBXGroup;
 			children = (
-				6AB029BB2B5EBACF005586CC /* HeadBodyPartViewController.swift */,
-				6AB029BA2B5EBACC005586CC /* HeadBodyPartViewController.xib */,
+				6AB029BB2B5EBACF005586CC /* HeadAnatomyViewController.swift */,
+				6AB029BA2B5EBACC005586CC /* HeadAnatomyViewController.xib */,
 			);
 			path = HeadVC;
 			sourceTree = "<group>";
@@ -787,8 +787,8 @@
 		638DF5D62A37201F000A8952 /* TorsoVC */ = {
 			isa = PBXGroup;
 			children = (
-				6AB029C62B5EBB13005586CC /* TorsoBodyPartViewController.swift */,
-				6AB029C72B5EBB16005586CC /* TorsoBodyPartViewController.xib */,
+				6AB029C62B5EBB13005586CC /* TorsoAnatomyPartViewController.swift */,
+				6AB029C72B5EBB16005586CC /* TorsoAnatomyPartViewController.xib */,
 			);
 			path = TorsoVC;
 			sourceTree = "<group>";
@@ -873,13 +873,13 @@
 		63A5DFD92A334F640037D65B /* DrawLogic */ = {
 			isa = PBXGroup;
 			children = (
-				6AB029562B5E69B6005586CC /* Command.swift */,
-				6AB029572B5E69B6005586CC /* CommandManager.swift */,
-				6AB029542B5E69B6005586CC /* DrawCommand.swift */,
-				6AB029532B5E69B6005586CC /* Drawing.swift */,
-				6AB029512B5E69B6005586CC /* GroupDrawCommand.swift */,
-				6AB029552B5E69B6005586CC /* MultiCommand.swift */,
-				6AB029522B5E69B6005586CC /* Pixel.swift */,
+				6AB029562B5E69B6005586CC /* Directive.swift */,
+				6AB029572B5E69B6005586CC /* DirectiveManager.swift */,
+				6AB029542B5E69B6005586CC /* DrawDirective.swift */,
+				6AB029532B5E69B6005586CC /* Painting.swift */,
+				6AB029512B5E69B6005586CC /* GroupDrawDirective.swift */,
+				6AB029552B5E69B6005586CC /* MultiDirective.swift */,
+				6AB029522B5E69B6005586CC /* PictureElement.swift */,
 			);
 			path = DrawLogic;
 			sourceTree = "<group>";
@@ -890,7 +890,7 @@
 				6AB029492B5E6990005586CC /* BucketTool.swift */,
 				6AB0294A2B5E6990005586CC /* NoiseTool.swift */,
 				6AB0294B2B5E6991005586CC /* PaintBrush.swift */,
-				6AB0294C2B5E6991005586CC /* Tool.swift */,
+				6AB0294C2B5E6991005586CC /* Instrument.swift */,
 				F438AA212A14F5BA007469E7 /* ColorPickerTool */,
 			);
 			path = Tools;
@@ -914,10 +914,10 @@
 				C0EC656F2A44484C00C5B8ED /* SmallModelView */,
 				C0398D8D2A54307C00A48138 /* SaveAlertView */,
 				C0236D832A4303B700AE1FD3 /* PixelSizeView */,
-				6AB0295F2B5E6A28005586CC /* ColorManager3D.swift */,
+				6AB0295F2B5E6A28005586CC /* ThreeDColorManager.swift */,
 				6AB029602B5E6A28005586CC /* Extension_Skin3DTestViewController+Gestures.swift */,
-				6AB029622B5E6A29005586CC /* Skin3DTestViewController.swift */,
-				6AB029612B5E6A28005586CC /* Skin3DTestViewController.xib */,
+				6AB029622B5E6A29005586CC /* ThreeDSkinTestViewController.swift */,
+				6AB029612B5E6A28005586CC /* ThreeDSkinTestViewController.xib */,
 				6AB029632B5E6A29005586CC /* Skin3DTestViewController+Ext_Collection.swift */,
 			);
 			path = Skin3DCreator;
@@ -926,8 +926,8 @@
 		63A893C52A371F8D00A1220B /* HandsVC */ = {
 			isa = PBXGroup;
 			children = (
-				6AB029BF2B5EBAE9005586CC /* HandsBodyPartViewController.swift */,
-				6AB029BE2B5EBAE7005586CC /* HandsBodyPartViewController.xib */,
+				6AB029BF2B5EBAE9005586CC /* HandsAnatomyPartViewController.swift */,
+				6AB029BE2B5EBAE7005586CC /* HandsAnatomyPartViewController.xib */,
 			);
 			path = HandsVC;
 			sourceTree = "<group>";
@@ -955,10 +955,10 @@
 			isa = PBXGroup;
 			children = (
 				63CC9B312A5CB07100136801 /* Cell */,
-				6AB30A3C2B7631AD00FC5EA6 /* AddonCreatorViewController + UICollectionView.swift */,
-				6AB30A3D2B7631AD00FC5EA6 /* AddonCreatorViewController.swift */,
-				6AB30A3E2B7631AD00FC5EA6 /* AddonCreatorViewController.xib */,
-				6AB30A3F2B7631AD00FC5EA6 /* CreatedAddonsModel.swift */,
+				6AB30A3C2B7631AD00FC5EA6 /* EnhancementCreatorViewController + UICollectionView.swift */,
+				6AB30A3D2B7631AD00FC5EA6 /* EnhancementCreatorViewController.swift */,
+				6AB30A3E2B7631AD00FC5EA6 /* EnhancementCreatorViewController.xib */,
+				6AB30A3F2B7631AD00FC5EA6 /* EdditionalAddonModel.swift */,
 			);
 			path = AddonCreatorMainScreen;
 			sourceTree = "<group>";
@@ -989,10 +989,10 @@
 			isa = PBXGroup;
 			children = (
 				D7D268582A653DF7006D745B /* ListSelector */,
-				6AB0291A2B5E6741005586CC /* AddonEditorModel.swift */,
+				6AB0291A2B5E6741005586CC /* EnhancementEditorModel.swift */,
 				6AB029172B5E6741005586CC /* AddonEditorViewController.swift */,
 				6AB029192B5E6741005586CC /* AddonEditorViewController.xib */,
-				6AB029182B5E6741005586CC /* MCAddonFileManager.swift */,
+				6AB029182B5E6741005586CC /* MicroConAddonFileManager.swift */,
 				6AB0291B2B5E6742005586CC /* ResourcePackModel.swift */,
 				63EE81A82A58123B005BE8E7 /* AddonsOptionsTableViewCell */,
 			);
@@ -1015,12 +1015,12 @@
 		63F971D72A37237D005D102E /* SkinCreatorController */ = {
 			isa = PBXGroup;
 			children = (
-				6AB029AF2B5EBAA6005586CC /* ColorManger.swift */,
+				6AB029AF2B5EBAA6005586CC /* ColorsTraitManger.swift */,
 				6AB029B02B5EBAA8005586CC /* SkinCreatorController+Ext_Collection.swift */,
-				6AB029B12B5EBAAA005586CC /* SkinCreatorImportViewController.swift */,
-				6AB029AC2B5EBAA0005586CC /* SkinCreatorImportViewController.xib */,
-				6AB029B22B5EBAAC005586CC /* SkinCreatorViewController.swift */,
-				6AB029AE2B5EBAA3005586CC /* SkinCreatorViewController.xib */,
+				6AB029B12B5EBAAA005586CC /* AnatomyCreatorImportViewController.swift */,
+				6AB029AC2B5EBAA0005586CC /* AnatomyCreatorImportViewController.xib */,
+				6AB029B22B5EBAAC005586CC /* SkinDesignViewController.swift */,
+				6AB029AE2B5EBAA3005586CC /* SkinDesignViewController.xib */,
 				6AB029AD2B5EBAA2005586CC /* SkinCreatorViewController+PixelView.swift */,
 				D709705B2A78206A0044F81F /* Cell */,
 			);
@@ -1081,8 +1081,8 @@
 		C0236D832A4303B700AE1FD3 /* PixelSizeView */ = {
 			isa = PBXGroup;
 			children = (
-				6AB029692B5E6A64005586CC /* BrashSizeView.swift */,
-				6AB0296A2B5E6A64005586CC /* BrashSizeView.xib */,
+				6AB029692B5E6A64005586CC /* BrushSizeView.swift */,
+				6AB0296A2B5E6A64005586CC /* BrushSizeView.xib */,
 			);
 			path = PixelSizeView;
 			sourceTree = "<group>";
@@ -1090,8 +1090,8 @@
 		C0398D8D2A54307C00A48138 /* SaveAlertView */ = {
 			isa = PBXGroup;
 			children = (
-				6AB0296D2B5E6A84005586CC /* SaveAlertView.swift */,
-				6AB0296E2B5E6A84005586CC /* SaveAlertView.xib */,
+				6AB0296D2B5E6A84005586CC /* SaveConfirmationView.swift */,
+				6AB0296E2B5E6A84005586CC /* SaveConfirmationView.xib */,
 			);
 			path = SaveAlertView;
 			sourceTree = "<group>";
@@ -1191,8 +1191,8 @@
 		F41A09972A1E696D00ECF94C /* BodyPart2DPickerVC */ = {
 			isa = PBXGroup;
 			children = (
-				6AB029A52B5EB9F7005586CC /* BodyPartPickerViewController.swift */,
-				6AB029A42B5EB9F4005586CC /* BodyPartPickerViewController.xib */,
+				6AB029A52B5EB9F7005586CC /* AnatomyPartPickerViewController.swift */,
+				6AB029A42B5EB9F4005586CC /* AnatomyPartPickerViewController.xib */,
 				63F971D72A37237D005D102E /* SkinCreatorController */,
 				638DF5D52A372005000A8952 /* HeadVC */,
 				63A893C52A371F8D00A1220B /* HandsVC */,
@@ -1384,8 +1384,8 @@
 		F4DB05D72A0295FD00E4C43D /* Create Tab */ = {
 			isa = PBXGroup;
 			children = (
-				6AB029932B5E6DBC005586CC /* CreateTabViewController.swift */,
-				6AB029942B5E6DBC005586CC /* CreateTabViewController.xib */,
+				6AB029932B5E6DBC005586CC /* TabViewControllerFactory.swift */,
+				6AB029942B5E6DBC005586CC /* TabViewControllerFactory.xib */,
 				63A5DFD82A334A360037D65B /* SkinsCreator */,
 				F4916C762A0B88240090E9B6 /* Addon Creator */,
 			);
@@ -1596,45 +1596,45 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AB029B32B5EBAAC005586CC /* SkinCreatorImportViewController.xib in Resources */,
+				6AB029B32B5EBAAC005586CC /* AnatomyCreatorImportViewController.xib in Resources */,
 				6AB028FC2B5E6663005586CC /* AddonEditor3DViewController.xib in Resources */,
 				6AB028AA2B5E61C9005586CC /* Montserrat-SemiBold.ttf in Resources */,
 				6AB028E62B5E65A2005586CC /* GeneralAlertViewController.xib in Resources */,
 				6AB029042B5E669C005586CC /* ListTableViewCell.xib in Resources */,
 				039BF2B32AA326830065EF48 /* FontsFree-Net-SFProDisplay-Regular.ttf in Resources */,
-				6AB029662B5E6A29005586CC /* Skin3DTestViewController.xib in Resources */,
+				6AB029662B5E6A29005586CC /* ThreeDSkinTestViewController.xib in Resources */,
 				039BF2AF2AA326830065EF48 /* Poppins-Medium.ttf in Resources */,
 				6AB30A3A2B7630BB00FC5EA6 /* ServersTabViewController.xib in Resources */,
-				6AB029BC2B5EBACF005586CC /* HeadBodyPartViewController.xib in Resources */,
+				6AB029BC2B5EBACF005586CC /* HeadAnatomyViewController.xib in Resources */,
 				6AB0293C2B5E68A7005586CC /* SkinEditorCollectionViewCell.xib in Resources */,
 				6AB0290A2B5E66B6005586CC /* AddonOptionsViewController.xib in Resources */,
 				6AB028C22B5E6341005586CC /* SeedTabViewController.xib in Resources */,
 				6AB029732B5E6B00005586CC /* SmallModelView.xib in Resources */,
 				6AB028B92B5E62E3005586CC /* ServerTableViewCell.xib in Resources */,
-				6AB029B52B5EBAAC005586CC /* SkinCreatorViewController.xib in Resources */,
-				6AB029A62B5EB9F7005586CC /* BodyPartPickerViewController.xib in Resources */,
+				6AB029B52B5EBAAC005586CC /* SkinDesignViewController.xib in Resources */,
+				6AB029A62B5EB9F7005586CC /* AnatomyPartPickerViewController.xib in Resources */,
 				6AB028C52B5E6350005586CC /* SeedTableViewCell.xib in Resources */,
 				03435CC62B04C91B00423598 /* Localizable.strings in Resources */,
 				6AB029AA2B5EBA66005586CC /* ColorCollectionCell.xib in Resources */,
 				03A54F8F2AD597A800F10AA5 /* SkinCreatorMainVC.xib in Resources */,
 				6AB028A82B5E61C9005586CC /* Montserrat-Bold.ttf in Resources */,
-				6AB029962B5E6DBC005586CC /* CreateTabViewController.xib in Resources */,
+				6AB029962B5E6DBC005586CC /* TabViewControllerFactory.xib in Resources */,
 				6AB029282B5E6798005586CC /* AddonsOptionsTableViewCell.xib in Resources */,
 				6AB028E42B5E65A2005586CC /* ManualInstructionViewController.xib in Resources */,
-				6AB029702B5E6A84005586CC /* SaveAlertView.xib in Resources */,
-				6AB0296C2B5E6A65005586CC /* BrashSizeView.xib in Resources */,
+				6AB029702B5E6A84005586CC /* SaveConfirmationView.xib in Resources */,
+				6AB0296C2B5E6A65005586CC /* BrushSizeView.xib in Resources */,
 				6AB029862B5E6B80005586CC /* Color3DCollectionCell.xib in Resources */,
 				6AB028C02B5E6341005586CC /* SeedDetailsViewController.xib in Resources */,
-				6AB029C92B5EBB16005586CC /* TorsoBodyPartViewController.xib in Resources */,
+				6AB029C92B5EBB16005586CC /* TorsoAnatomyPartViewController.xib in Resources */,
 				6AB029122B5E66F8005586CC /* AddonCollectionViewCell.xib in Resources */,
 				6A59426C2B5FC032009E4BD0 /* GoogleService-Info.plist in Resources */,
 				6AB029162B5E670B005586CC /* AddonEditorSelectorViewController.xib in Resources */,
 				039BF2F32AA3294C0065EF48 /* PollerOne-Regular.ttf in Resources */,
 				6AB0299E2B5E719D005586CC /* SkinEditorViewController.xib in Resources */,
 				6AB028DA2B5E655D005586CC /* FilterTableViewCell.xib in Resources */,
-				6AB029C52B5EBB00005586CC /* LegsBodyPartViewControllerViewController.xib in Resources */,
+				6AB029C52B5EBB00005586CC /* LegsAnatomyPartViewController.xib in Resources */,
 				631B89F92A4969E300F66E7C /* stiv_v5.scn in Resources */,
-				6AB30A422B7631AD00FC5EA6 /* AddonCreatorViewController.xib in Resources */,
+				6AB30A422B7631AD00FC5EA6 /* EnhancementCreatorViewController.xib in Resources */,
 				6AB0292D2B5E67C8005586CC /* SsvedAddonCollectionCell.xib in Resources */,
 				6AB029472B5E6963005586CC /* ColorPickerViewController.xib in Resources */,
 				6AB30A392B7630BB00FC5EA6 /* ServerDetailsViewController.xib in Resources */,
@@ -1644,7 +1644,7 @@
 				F420A7972A0283960098B849 /* Assets.xcassets in Resources */,
 				6AB0291E2B5E6742005586CC /* AddonEditorViewController.xib in Resources */,
 				6AB0293E2B5E68A7005586CC /* CreateNewItemCollectionViewCell.xib in Resources */,
-				6AB029C02B5EBAE9005586CC /* HandsBodyPartViewController.xib in Resources */,
+				6AB029C02B5EBAE9005586CC /* HandsAnatomyPartViewController.xib in Resources */,
 				6A182D8C2B97A8C8002DADD0 /* AddonCreatorMainVC.xib in Resources */,
 				6AB028D52B5E655D005586CC /* ContentViewController.xib in Resources */,
 				6AB028EA2B5E65BF005586CC /* SearchSuggestionCell.xib in Resources */,
@@ -1675,8 +1675,8 @@
 				635281902A589ECA00F3EB23 /* DBParserFile.swift in Sources */,
 				635281952A589ECA00F3EB23 /* SkinsRealmSession.swift in Sources */,
 				D72F56562A61A00A00CE85E6 /* URL+List.swift in Sources */,
-				6AB30A402B7631AD00FC5EA6 /* AddonCreatorViewController + UICollectionView.swift in Sources */,
-				6AB029502B5E6991005586CC /* Tool.swift in Sources */,
+				6AB30A402B7631AD00FC5EA6 /* EnhancementCreatorViewController + UICollectionView.swift in Sources */,
+				6AB029502B5E6991005586CC /* Instrument.swift in Sources */,
 				6AB029742B5E6B00005586CC /* SmallModelView.swift in Sources */,
 				6AB0294F2B5E6991005586CC /* PaintBrush.swift in Sources */,
 				039BF2AD2AA326830065EF48 /* ServicesManager.swift in Sources */,
@@ -1692,41 +1692,41 @@
 				6AB6CDAB2B761BD4008A3491 /* SkinCommand.swift in Sources */,
 				F438AA182A14BB0D007469E7 /* Pikko.swift in Sources */,
 				03981F502AE159B100C69027 /* SeedRealmSession.swift in Sources */,
-				6AB029582B5E69B7005586CC /* GroupDrawCommand.swift in Sources */,
+				6AB029582B5E69B7005586CC /* GroupDrawDirective.swift in Sources */,
 				F438AA1E2A14BB0D007469E7 /* HueDelegate.swift in Sources */,
 				03A674CD2AC316650062A3A8 /* UIViewController+Alert.swift in Sources */,
 				D72306E62A7932470000F6B3 /* Color+Resource.swift in Sources */,
 				F438AA202A14C442007469E7 /* RSColourSlider.swift in Sources */,
 				6AB028D72B5E655D005586CC /* ContentViewController.swift in Sources */,
-				6AB0291D2B5E6742005586CC /* MCAddonFileManager.swift in Sources */,
+				6AB0291D2B5E6742005586CC /* MicroConAddonFileManager.swift in Sources */,
 				6AB6CDAA2B761BD4008A3491 /* CanvasPixel.swift in Sources */,
 				F438AA172A14BB0D007469E7 /* HueView.swift in Sources */,
 				63A8C1532A32045F005A117B /* NSLayoutConstraint_Ext.swift in Sources */,
 				635281992A589ECB00F3EB23 /* RealmEntities.swift in Sources */,
-				6AB30A432B7631AD00FC5EA6 /* CreatedAddonsModel.swift in Sources */,
-				6AB029642B5E6A29005586CC /* ColorManager3D.swift in Sources */,
-				6AB029B62B5EBAAC005586CC /* ColorManger.swift in Sources */,
+				6AB30A432B7631AD00FC5EA6 /* EdditionalAddonModel.swift in Sources */,
+				6AB029642B5E6A29005586CC /* ThreeDColorManager.swift in Sources */,
+				6AB029B62B5EBAAC005586CC /* ColorsTraitManger.swift in Sources */,
 				6AB029022B5E669C005586CC /* ListTableViewCell.swift in Sources */,
 				F420A78E2A0283940098B849 /* AppDelegate.swift in Sources */,
 				6AB0290D2B5E66B6005586CC /* AddonCategoryOptionsViewController.swift in Sources */,
-				6AB30A412B7631AD00FC5EA6 /* AddonCreatorViewController.swift in Sources */,
+				6AB30A412B7631AD00FC5EA6 /* EnhancementCreatorViewController.swift in Sources */,
 				F420A7A22A0284AC0098B849 /* UIViewController+loadFromNib.swift in Sources */,
 				635281962A589ECA00F3EB23 /* MapRealmSession.swift in Sources */,
 				D7FB3E9F2A7C12D100D78B57 /* UIImage+Save.swift in Sources */,
-				6AB029C12B5EBAE9005586CC /* HandsBodyPartViewController.swift in Sources */,
+				6AB029C12B5EBAE9005586CC /* HandsAnatomyPartViewController.swift in Sources */,
 				6AB029202B5E6742005586CC /* ResourcePackModel.swift in Sources */,
 				6AB30A382B7630BB00FC5EA6 /* ServersTabViewController.swift in Sources */,
 				635281972A589ECB00F3EB23 /* AddonsRealmSession.swift in Sources */,
 				6AB028F12B5E6638005586CC /* SceneLogicModelAddon3D.swift in Sources */,
-				6AB029B82B5EBAAC005586CC /* SkinCreatorImportViewController.swift in Sources */,
-				6AB029A72B5EB9F7005586CC /* BodyPartPickerViewController.swift in Sources */,
+				6AB029B82B5EBAAC005586CC /* AnatomyCreatorImportViewController.swift in Sources */,
+				6AB029A72B5EB9F7005586CC /* AnatomyPartPickerViewController.swift in Sources */,
 				F46D8B642A08DB5D00A61747 /* UIView+RoundCorners.swift in Sources */,
 				6AB028BF2B5E6341005586CC /* SeedTabViewController.swift in Sources */,
 				F438AA1D2A14BB0D007469E7 /* PikkoDelegate.swift in Sources */,
 				6AB028FA2B5E6663005586CC /* AddonEditor3DViewController.swift in Sources */,
 				035166732AFA3F0900035087 /* NetworkStatusMonitor.swift in Sources */,
-				6AB029952B5E6DBC005586CC /* CreateTabViewController.swift in Sources */,
-				6AB029B92B5EBAAC005586CC /* SkinCreatorViewController.swift in Sources */,
+				6AB029952B5E6DBC005586CC /* TabViewControllerFactory.swift in Sources */,
+				6AB029B92B5EBAAC005586CC /* SkinDesignViewController.swift in Sources */,
 				D719CE9C2A6BD81E00936868 /* CancellableProtocol.swift in Sources */,
 				6A5942762B611572009E4BD0 /* CustomTabItem.swift in Sources */,
 				6AD127042B979BEE00482717 /* AddonCreatorMainVC.swift in Sources */,
@@ -1742,15 +1742,15 @@
 				F438AA192A14BB0D007469E7 /* BrightnessSaturationView.swift in Sources */,
 				6AB0291C2B5E6742005586CC /* AddonEditorViewController.swift in Sources */,
 				6AB30A3B2B7630BB00FC5EA6 /* ServerDetailsViewController.swift in Sources */,
-				6AB0295A2B5E69B7005586CC /* Drawing.swift in Sources */,
+				6AB0295A2B5E69B7005586CC /* Painting.swift in Sources */,
 				6AB028C12B5E6341005586CC /* SeedDetailsViewController.swift in Sources */,
-				6AB029C82B5EBB16005586CC /* TorsoBodyPartViewController.swift in Sources */,
-				6AB0295B2B5E69B7005586CC /* DrawCommand.swift in Sources */,
-				6AB029592B5E69B7005586CC /* Pixel.swift in Sources */,
+				6AB029C82B5EBB16005586CC /* TorsoAnatomyPartViewController.swift in Sources */,
+				6AB0295B2B5E69B7005586CC /* DrawDirective.swift in Sources */,
+				6AB029592B5E69B7005586CC /* PictureElement.swift in Sources */,
 				03AFFD352AD7E584002A131D /* FontHelper.swift in Sources */,
 				6AB6CDA72B761BD4008A3491 /* Extension_EditorSkinModel+hideBodyParts.swift in Sources */,
 				6370382A2A594AA20003A220 /* Cacher.swift in Sources */,
-				6AB0295E2B5E69B7005586CC /* CommandManager.swift in Sources */,
+				6AB0295E2B5E69B7005586CC /* DirectiveManager.swift in Sources */,
 				6AB029482B5E6964005586CC /* ColorPickerViewController.swift in Sources */,
 				6AB028AE2B5E629F005586CC /* SettingsViewController.swift in Sources */,
 				6AB029292B5E6798005586CC /* AddonsOptionsContainerCell.swift in Sources */,
@@ -1762,10 +1762,10 @@
 				6FA9FC7E2A4DBBC7001A1CD6 /* ContentTabModels.swift in Sources */,
 				6AB028E92B5E65BF005586CC /* SearchSuggestionCell.swift in Sources */,
 				D7D06C462A6FF2D20063A44C /* UIButton+Icon.swift in Sources */,
-				6AB0291F2B5E6742005586CC /* AddonEditorModel.swift in Sources */,
+				6AB0291F2B5E6742005586CC /* EnhancementEditorModel.swift in Sources */,
 				F428B9292A13BCD0005D575F /* UIColor+isEqual.swift in Sources */,
 				03906C322ACE9C6100429FB7 /* URL+DeleteFile.swift in Sources */,
-				6AB029BD2B5EBACF005586CC /* HeadBodyPartViewController.swift in Sources */,
+				6AB029BD2B5EBACF005586CC /* HeadAnatomyViewController.swift in Sources */,
 				6AB6CDA82B761BD4008A3491 /* SceneLogicModel.swift in Sources */,
 				6AB028CC2B5E6530005586CC /* ContentCollectionViewCell.swift in Sources */,
 				6AB0292E2B5E67C8005586CC /* SsvedAddonCollectionCell.swift in Sources */,
@@ -1779,7 +1779,7 @@
 				6A59426E2B5FD35E009E4BD0 /* TabBarItemView.swift in Sources */,
 				6AB0290E2B5E66B6005586CC /* MainAddonCreatorModel.swift in Sources */,
 				6A5942742B61135E009E4BD0 /* CustomTabBar.swift in Sources */,
-				6AB029C42B5EBB00005586CC /* LegsBodyPartViewControllerViewController.swift in Sources */,
+				6AB029C42B5EBB00005586CC /* LegsAnatomyPartViewController.swift in Sources */,
 				C0EC65C52A4C948400C5B8ED /* Extension_UIColor+luminosity.swift in Sources */,
 				D72F56582A61A7BF00CE85E6 /* Decodable+Dictionary.swift in Sources */,
 				6AB028E32B5E65A2005586CC /* DownloadContnetViewController.swift in Sources */,
@@ -1811,7 +1811,7 @@
 				633030422A348FB400CDCD4A /* SkinCreatedModel.swift in Sources */,
 				6AB028FD2B5E6663005586CC /* AddonEditor3DModel.swift in Sources */,
 				D77112642A8D061A009AE952 /* UINavigationController+Pop.swift in Sources */,
-				6AB0296F2B5E6A84005586CC /* SaveAlertView.swift in Sources */,
+				6AB0296F2B5E6A84005586CC /* SaveConfirmationView.swift in Sources */,
 				6AB028FB2B5E6663005586CC /* Extension_AddonEditor3DViewController+Gestures.swift in Sources */,
 				6AB028F32B5E6638005586CC /* EditorAddonModel.swift in Sources */,
 				D70705802A6169E10098A501 /* URL+Remove.swift in Sources */,
@@ -1827,20 +1827,20 @@
 				6AB0293B2B5E68A7005586CC /* SkinEditorCollectionViewCell.swift in Sources */,
 				D79055442A657F2F00FA0F60 /* URL+Create.swift in Sources */,
 				6AB028E22B5E65A2005586CC /* ManualInstructionViewController.swift in Sources */,
-				6AB0296B2B5E6A64005586CC /* BrashSizeView.swift in Sources */,
-				6AB0295C2B5E69B7005586CC /* MultiCommand.swift in Sources */,
+				6AB0296B2B5E6A64005586CC /* BrushSizeView.swift in Sources */,
+				6AB0295C2B5E69B7005586CC /* MultiDirective.swift in Sources */,
 				635281912A589ECA00F3EB23 /* DropB0ksKeys.swift in Sources */,
 				6352819A2A589ECB00F3EB23 /* RealmCore.swift in Sources */,
 				635026FB2A95FF800086FE4B /* Array+substracting_ext.swift in Sources */,
 				F438AA1C2A14BB0D007469E7 /* Animations.swift in Sources */,
 				F420A7902A0283940098B849 /* SceneDelegate.swift in Sources */,
 				D7D4021E2A6FEA1200883C6D /* UITabBar+Title.swift in Sources */,
-				6AB0295D2B5E69B7005586CC /* Command.swift in Sources */,
+				6AB0295D2B5E69B7005586CC /* Directive.swift in Sources */,
 				635281982A589ECB00F3EB23 /* RealmServiceDropBox.swift in Sources */,
 				6AB028F22B5E6638005586CC /* SaveRecsourceManager.swift in Sources */,
 				635281922A589ECA00F3EB23 /* DBModelFile.swift in Sources */,
 				6AB0294D2B5E6991005586CC /* BucketTool.swift in Sources */,
-				6AB029672B5E6A29005586CC /* Skin3DTestViewController.swift in Sources */,
+				6AB029672B5E6A29005586CC /* ThreeDSkinTestViewController.swift in Sources */,
 				07817DA82A6E8C7500D1A95B /* Configurations.swift in Sources */,
 				D7C842BB2A6A8A11006F5020 /* FileManager+Path.swift in Sources */,
 				03A54F8E2AD597A800F10AA5 /* SkinCreatorMainVC.swift in Sources */,
