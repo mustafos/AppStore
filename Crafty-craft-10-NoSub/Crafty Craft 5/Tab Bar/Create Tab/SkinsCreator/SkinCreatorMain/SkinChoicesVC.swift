@@ -1,5 +1,5 @@
 //
-//  SkinVariantsViewController.swift
+//  SkinChoicesVC.swift
 //  Crafty Craft 5
 //
 //  Created by Vitaliy Polezhay on 12.10.2023.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-protocol SkinVariantsPrsenter: AnyObject {
+protocol SkinChoicesPresenter: AnyObject {
     func create2dTapped()
     func create3dTapped()
     func create3d128Tapped()
     func importTapped()
     
-    func edit2dTapped()
-    func edit3dTapped()
+    func amenable2dTap()
+    func amenable3dTap()
 }
 
-class SkinVariantsViewController: UIViewController {
+class SkinChoicesVC: UIViewController {
     enum State {
         case new
         case edit
@@ -30,7 +30,7 @@ class SkinVariantsViewController: UIViewController {
     private let titleHeight: CGFloat = 44
     private let bottomOffset: CGFloat = 70
     
-    weak var presenterDelegate: SkinVariantsPrsenter?
+    weak var presenterDelegate: SkinChoicesPresenter?
     
     var state: State = .new
     
@@ -96,12 +96,12 @@ class SkinVariantsViewController: UIViewController {
     
     @objc func edit2dButtonTapped() {
         self.animateDismissView()
-        presenterDelegate?.edit2dTapped()
+        presenterDelegate?.amenable2dTap()
     }
-    
+
     @objc func edit3dButtonTapped() {
         self.animateDismissView()
-        presenterDelegate?.edit3dTapped()
+        presenterDelegate?.amenable3dTap()
     }
     
     @objc func createNew2dButtonTapped() {

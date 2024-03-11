@@ -32,6 +32,8 @@ class ServerDetailsViewController: UIViewController {
     private var imageUrl: URL?
     private var image: UIImage?
     
+    private var isScrollingEnabled: Bool = true
+    
     private lazy var imageService = ImageService()
     private var imageRequest: Cancellable?
     private var imageDataCallback: ImageDataCallback?
@@ -48,6 +50,7 @@ class ServerDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.delegate = self
         setupUI()
         setupLayers()
     }
@@ -233,5 +236,17 @@ class ServerDetailsViewController: UIViewController {
     
     private func removeLoader() {
         loader.removeFromSuperview()
+    }
+}
+
+extension ServerDetailsViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // Check if the user is at the bottom of the content
+        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
+        if bottomEdge >= scrollView.contentSize.height {
+            scrollView.isScrollEnabled = false // Disable scrolling if at the bottom
+        } else {
+            scrollView.isScrollEnabled = true // Enable scrolling otherwise
+        }
     }
 }

@@ -11,7 +11,7 @@ import BetterSegmentedControl
 import SwiftUI
 import RealmSwift
 
-class ContentTabViewController: UIViewController, TabBarConfigurable {
+class ContentTabViewController: UIViewController, TabBarVersatile {
     
     // MARK: - Outlets
     @IBOutlet private weak var navigationBarContainerView: UIView!

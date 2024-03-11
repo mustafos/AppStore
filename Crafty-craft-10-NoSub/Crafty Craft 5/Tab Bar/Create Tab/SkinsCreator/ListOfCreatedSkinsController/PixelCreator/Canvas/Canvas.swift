@@ -74,7 +74,7 @@ class Canvas: SKSpriteNode {
     
     /// Gets the correct indices for a given pixel node according to the cartesian
     /// coordinate system. Note `getPixel()` for more information.
-    func getPosition(pixel forPixel: ScnPixel) -> (Int, Int) {
+    func getPosition(pixel forPixel: PictureElement) -> (Int, Int) {
         let currentIndex = pixelArray.firstIndex(where: {$0 == forPixel})
         let translatedXPosition = currentIndex! / height
         let translatedYPosition = currentIndex! % height

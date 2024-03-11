@@ -57,12 +57,12 @@ final class TabViewControllerFactory: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
-                dismissKeyboardOnTapOutside()
+        dismissKeyboardOnTapOutside()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        view.endEditing(true) 
+        view.endEditing(true)
     }
     
     override func viewDidLayoutSubviews() {
@@ -138,7 +138,7 @@ final class TabViewControllerFactory: UIViewController {
     }
     
     @IBAction func onCreateSkinButtonTapped(_ sender: UIButton) {
-        let nextVC = SkinModificationViewController() // ListOfCreatedSkinsController
+        let nextVC = SkinModificationViewController() // SkinEditorViewController()
         navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -192,6 +192,7 @@ final class TabViewControllerFactory: UIViewController {
         }
         searchBarView.searchTextField.resignFirstResponder()
         self.flushSearch()
+        isInNavBarSearchMode = false
     }
     
     private func setupSearchBar() {
@@ -238,26 +239,24 @@ final class TabViewControllerFactory: UIViewController {
         switch state {
         case .skin:
             self.skinCollectonScreen?.filterData(with: search)
-            if let skins = self.skinCollectonScreen?.filteredSkins(), skins.isEmpty {
-                showEmptyMessage()
+            if !searchBarView.isHidden {
+                showEmptyMessageIfNeeded()
             } else {
-                collectionContainer.isHidden = false
-                emptyMessageLabel?.isHidden = true
+                hideEmptyMessage()
             }
         case .addon:
             self.addonCollectionScreen?.filterData(with: search)
-            if let addons = self.addonCollectionScreen?.filteredAddon(), addons.isEmpty {
-                showEmptyMessage()
+            if !searchBarView.isHidden {
+                showEmptyMessageIfNeeded()
             } else {
-                collectionContainer.isHidden = false
-                emptyMessageLabel?.isHidden = true
+                hideEmptyMessage()
             }
         }
     }
     
     func listSquared(_ m: Int, _ n: Int) -> [(Int, Int)] {
         var result: [(Int, Int)] = []
-
+        
         func sumOfSquaredDivisors(_ num: Int) -> Int {
             var sum = 0
             for i in 1...num {
@@ -267,7 +266,7 @@ final class TabViewControllerFactory: UIViewController {
             }
             return sum
         }
-
+        
         for number in m...n {
             let sum = sumOfSquaredDivisors(number)
             let squareRoot = Int(Double(sum).squareRoot())
@@ -275,8 +274,21 @@ final class TabViewControllerFactory: UIViewController {
                 result.append((number, sum))
             }
         }
-
+        
         return result
+    }
+    
+    private func showEmptyMessageIfNeeded() {
+        if let skins = self.skinCollectonScreen?.filteredSkins(), skins.isEmpty {
+            showEmptyMessage()
+        } else if let addons = self.addonCollectionScreen?.filteredAddon(), addons.isEmpty {
+            showEmptyMessage()
+        }
+    }
+    
+    private func hideEmptyMessage() {
+        emptyMessageLabel?.isHidden = true
+        collectionContainer.isHidden = false
     }
     
     private func showEmptyMessage() {
@@ -440,25 +452,25 @@ extension TabViewControllerFactory: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension TabViewControllerFactory: SkinHandlingPicker {
-    func showEditPickerSkin(for item: AnatomyCreatedModel) {
+    func showPickSkin(for item: AnatomyCreatedModel) { // showSkinPicker
         selectedSkinModel = item
-        let vc = SkinChoicesVC()
+        let vc = SkinChoicesVC() // SkinVariantsViewController()
         vc.state = .edit
         vc.presenterDelegate = self
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: false)
     }
     
-    func showPickSkin(for item: AnatomyCreatedModel) {
+    func showEditPickerSkin(for item: AnatomyCreatedModel) { // showEditSkinPicker
         selectedSkinModel = item
-        let vc = SkinChoicesVC()
+        let vc = SkinChoicesVC() // SkinVariantsViewController()
         vc.presenterDelegate = self
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: false)
     }
 }
 
-extension TabViewControllerFactory: SkinChoicesPresenter {
+extension TabViewControllerFactory: SkinChoicesPresenter { // SkinVariantsPrsenter
     func amenable2dTap() {
         create2dTapped()
     }

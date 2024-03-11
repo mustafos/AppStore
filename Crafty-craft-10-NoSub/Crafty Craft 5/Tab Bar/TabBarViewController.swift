@@ -1,3 +1,10 @@
+//
+//  TabBarViewController.swift
+//  Crafty Craft 10
+//
+//  Created by Zolux Rex on 08.02.2024.
+//  Copyright © 2024 Noname Digital. All rights reserved.
+//
 import UIKit
 
 class TabBarViewController: UITabBarController {
@@ -9,9 +16,9 @@ class TabBarViewController: UITabBarController {
     
     private let createTab = CustomTabBarItem(
         index: 0,
-        icon: CreateTabViewController().tabBarIcon?.withTintColor(.black, renderingMode: .alwaysOriginal),
-        selectedIcon: CreateTabViewController().tabBarSelectedIcon?.withRenderingMode(.alwaysOriginal),
-        viewController: CreateTabViewController())
+        icon: TabViewControllerFactory().tabBarIcon?.withTintColor(.black, renderingMode: .alwaysOriginal),
+        selectedIcon: TabViewControllerFactory().tabBarSelectedIcon?.withRenderingMode(.alwaysOriginal),
+        viewController: TabViewControllerFactory())
     
     private let contentTab = CustomTabBarItem(
         index: 1,

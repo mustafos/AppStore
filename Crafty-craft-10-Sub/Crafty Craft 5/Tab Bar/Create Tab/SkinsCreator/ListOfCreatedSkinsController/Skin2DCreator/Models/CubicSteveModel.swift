@@ -26,7 +26,6 @@ extension BodyPartSide {
     }
 }
 
-
 struct Side {
     let name: String
     let width: Int

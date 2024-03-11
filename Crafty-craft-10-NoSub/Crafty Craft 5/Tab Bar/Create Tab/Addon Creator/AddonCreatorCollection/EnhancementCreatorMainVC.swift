@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EnhancementCreatorMainVC: UIViewController {
+class AddonCreatorMainVC: UIViewController {
     var model = EdditionalAddonModel()
     
     @IBOutlet private weak var tabsStackView: UIStackView!
@@ -53,7 +53,7 @@ class EnhancementCreatorMainVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dismissKeyboardOnTapOutside()
+        hideKeyboardWhenTappedAround()
         setupCollectionView()
         addFooterView()
         configureUIComponents()
@@ -157,7 +157,7 @@ class EnhancementCreatorMainVC: UIViewController {
 
 
 
-extension EnhancementCreatorMainVC : UICollectionViewDelegate {
+extension AddonCreatorMainVC : UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -183,7 +183,7 @@ extension EnhancementCreatorMainVC : UICollectionViewDelegate {
     }
 }
 
-extension EnhancementCreatorMainVC : UICollectionViewDataSource {
+extension AddonCreatorMainVC : UICollectionViewDataSource {
     func filteredAddon() -> [SavedAddonEnch] {
         if let filterText, !filterText.isEmpty {
             return model.filteringCreatedAddon.filter({$0.displayName.containsCaseInsesetive(filterText)})
@@ -238,7 +238,7 @@ extension EnhancementCreatorMainVC : UICollectionViewDataSource {
     }
 }
 
-extension EnhancementCreatorMainVC: UICollectionViewDelegateFlowLayout {
+extension AddonCreatorMainVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = collectionView.frame.size.width / (Device.iPad ? 4 : 2) - 8
         let cellHeight = cellWidth * 1.3
@@ -252,7 +252,7 @@ extension EnhancementCreatorMainVC: UICollectionViewDelegateFlowLayout {
 }
 
 //MARK: Cell Handlers
-extension EnhancementCreatorMainVC {
+extension AddonCreatorMainVC {
     private func handleDeleteButtonTap(indexPath: IndexPath) {
         
         let alert = UIAlertController(title: "Delete Addon", message: "Are you sure you want to delete this Addon?", preferredStyle: .alert)
@@ -330,7 +330,7 @@ extension EnhancementCreatorMainVC {
     }
 }
 
-extension EnhancementCreatorMainVC: CollectionSearchable {
+extension AddonCreatorMainVC: CollectionSearchable {
     func filterData(with text: String?) {
         filterText = text
         addonCollectionView.reloadData()

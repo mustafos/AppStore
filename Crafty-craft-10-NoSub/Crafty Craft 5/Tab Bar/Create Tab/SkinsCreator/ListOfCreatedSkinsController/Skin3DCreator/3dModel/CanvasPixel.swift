@@ -1,7 +1,6 @@
 import SceneKit
 import Foundation
 
-
 class ScnPixel: SCNNode {
     
     var fillColor: UIColor = .systemGray4 {

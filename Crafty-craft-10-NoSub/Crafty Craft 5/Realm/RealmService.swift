@@ -1,38 +1,18 @@
+//
+//  RealmService.swift
+//  Crafty Craft 10
+//
+//  Created by Zolux Rex on 08.02.2024.
+//  Copyright © 2024 Noname Digital. All rights reserved.
+//
 
 import UIKit
 import RealmSwift
-import Foundation
 
-//
-/// Service of basic functions to work with differernt RealmObjects
-//
 public class RealmService {
-    
     public static let shared = RealmService()
     private var coreRM = RealmCore.shared
-    
-    
-//    //MARK: DataBase functions
-//
-//    func getRealmCacheSizeInKB() -> Double {
-//        let defaultRealmPath = Realm.Configuration.defaultConfiguration.fileURL
-//        guard let filePath = defaultRealmPath else { return 0.0 }
-//
-//        do {
-//            let fileAttributes = try FileManager.default.attributesOfItem(atPath: filePath.path)
-//            if let fileSizeNumber = fileAttributes[FileAttributeKey.size] as? NSNumber {
-//                let fileSize = fileSizeNumber.doubleValue
-//                return fileSize / 1024.0 // Convert bytes to KB
-//            }
-//        } catch {
-//            print("Failed to get file size: \(error.localizedDescription)")
-//        }
-//
-//        return 0.0
-//    }
-    
-    
-    
+
     //MARK: Add & Delete from Realm
     
     /// Save new skins into DB
@@ -42,7 +22,7 @@ public class RealmService {
     }
     
     ///Delete Created skins
-    func deleteSkin(skin: SkinCreatedModel) {
+    func deleteSkin(skin: AnatomyCreatedModel) {
         guard let skinForDeleting = self.getCreatedSkinByID(skinID: skin.id) else { return }
         coreRM.delete(skinForDeleting)
     }
@@ -75,7 +55,7 @@ public class RealmService {
     
     //MARK: Edit Obj Functions
     
-    func editCreatedSkinAssemblyDiagram(createdSkin: SkinCreatedModel?, newDiagram: UIImage?) {
+    func editCreatedSkinAssemblyDiagram(createdSkin: AnatomyCreatedModel?, newDiagram: UIImage?) {
         
         guard let diagram = newDiagram else { return }
         guard let localCreatedSkin = createdSkin else { return }
@@ -88,7 +68,7 @@ public class RealmService {
         coreRM.update(realmedSkin, with: ["skinAssemblyDiagram":diagramData])
     }
     
-    func editCreatedSkinAssemblyDiagram128(createdSkin: SkinCreatedModel?, newDiagram: UIImage?) {
+    func editCreatedSkinAssemblyDiagram128(createdSkin: AnatomyCreatedModel?, newDiagram: UIImage?) {
         
         guard let diagram = newDiagram else { return }
         guard let localCreatedSkin = createdSkin else { return }
@@ -98,7 +78,7 @@ public class RealmService {
         coreRM.update(realmedSkin, with: ["skinAssemblyDiagram128":diagramData])
     }
     
-    func editIsThe128(createdSkin: SkinCreatedModel?, newValue: Bool?) {
+    func editIsThe128(createdSkin: AnatomyCreatedModel?, newValue: Bool?) {
         
         guard let _ = newValue else { return }
         guard let localCreatedSkin = createdSkin else { return }
@@ -107,7 +87,7 @@ public class RealmService {
         coreRM.update(realmedSkin, with: ["is128sizeSkin":newValue])
     }
     
-    func editCreatedSkinPreview(createdSkin: SkinCreatedModel?, newPreview: UIImage?) {
+    func editCreatedSkinPreview(createdSkin: AnatomyCreatedModel?, newPreview: UIImage?) {
         
         guard let diagram = newPreview else { return }
         guard let localCreatedSkin = createdSkin else { return }
@@ -119,7 +99,7 @@ public class RealmService {
     
     //use only for hatDiagram, will be deleted in future versions
     //thats why I duplicated the code
-    func editHatDiagram(createdSkin: SkinCreatedModel?, newHatDiagram: UIImage?) {
+    func editHatDiagram(createdSkin: AnatomyCreatedModel?, newHatDiagram: UIImage?) {
         guard let newHatDiagram = newHatDiagram else { return }
         guard let localCreatedSkin = createdSkin else { return }
         guard let realmedSkin = self.getCreatedSkinByID(skinID: localCreatedSkin.id) else { return }
@@ -127,7 +107,7 @@ public class RealmService {
         coreRM.update(realmedSkin, with: ["hatDiagram":diagramData])
     }
     
-    func editCreatedSkinName(createdSkin: SkinCreatedModel?, newName: String) {
+    func editCreatedSkinName(createdSkin: AnatomyCreatedModel?, newName: String) {
         
         guard let localCreatedSkin = createdSkin else { return }
         guard let realmedSkin = self.getCreatedSkinByID(skinID: localCreatedSkin.id) else { return }
@@ -141,7 +121,7 @@ public class RealmService {
 
 extension RealmService {
     
-    func convertSkinCreatedModel(skinModel: SkinCreatedModel) -> CreatedSkinRM {
+    func convertSkinCreatedModel(skinModel: AnatomyCreatedModel) -> CreatedSkinRM {
         let realmedModel = CreatedSkinRM()
         realmedModel.id = skinModel.id
         realmedModel.name = skinModel.name

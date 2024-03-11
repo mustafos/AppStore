@@ -3,10 +3,10 @@ import Photos
 
 // MARK: - SkinEditorViewController
 ///Class with Collection of Skins Created by user
-class SkinEditorViewController: UIViewController {
+class SkinModificationViewController: UIViewController {
     
-    private lazy var photoGalleryManager: PhotoGalleryManagerProtocol = PhotoGalleryManager()
-    private lazy var minecraftSkinManager: MinecraftSkinManagerProtocol = MinecraftSkinManager()
+    private lazy var photoGalleryManager: ImageGalleryCoordinatorProtocol = ImageGalleryCoordinator()
+    private lazy var minecraftSkinManager: SkinCraftManagerProtocol = SkinCraftManager()
     
     var alertWindow: UIWindow?
     
@@ -71,7 +71,7 @@ class SkinEditorViewController: UIViewController {
 
 //MARK: Collection Delegate Methods
 
-extension SkinEditorViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SkinModificationViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.getSkins().count + 1 // +1 for first cell for plusMode
@@ -113,7 +113,7 @@ extension SkinEditorViewController: UICollectionViewDelegate, UICollectionViewDa
 }
 
 //MARK: Cell Handlers
-extension SkinEditorViewController {
+extension SkinModificationViewController {
     
     private func handleDeleteButtonTap(indexPath: IndexPath) {
         
@@ -178,7 +178,7 @@ extension SkinEditorViewController {
 
 // MARK: - FlowLayout
 
-extension SkinEditorViewController: UICollectionViewDelegateFlowLayout {
+extension SkinModificationViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = collectionView.frame.size.width / (Device.iPad ? 4 : 2) - 8

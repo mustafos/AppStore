@@ -1,4 +1,11 @@
-import Foundation
+//
+//  Constants.swif
+//  Crafty Craft 10
+//
+//  Created by Zolux Rex on 08.03.2024.
+//  Copyright © 2024 Noname Digital. All rights reserved.
+//
+
 import UIKit
 
 let DARK_GREY = UIColor(red: 0.10, green: 0.10, blue: 0.10, alpha: 1.0)

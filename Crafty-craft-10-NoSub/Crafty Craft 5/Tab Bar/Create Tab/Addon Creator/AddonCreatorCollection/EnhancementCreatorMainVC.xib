@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddonCreatorMainVC" customModule="Crafty_Craft_10_NoSub" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EnhancementCreatorMainVC" customModule="Crafty_Craft_10_NoSub" customModuleProvider="target">
             <connections>
                 <outlet property="addonCollectionView" destination="7lg-f6-aOP" id="8Yq-uK-lB6"/>
                 <outlet property="groupTabButton" destination="fMy-zh-i0F" id="3nQ-4O-TJt"/>

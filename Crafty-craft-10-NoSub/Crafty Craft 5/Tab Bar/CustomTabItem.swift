@@ -1,8 +1,8 @@
 //
 //  CustomTabItem.swift
-//  Crafty Craft 10.2
+//  Crafty Craft 10
 //
-//  Created by dev on 24.01.2024.
+//  Created by Zolux Rex on 08.02.2024.
 //  Copyright © 2024 Noname Digital. All rights reserved.
 //
 

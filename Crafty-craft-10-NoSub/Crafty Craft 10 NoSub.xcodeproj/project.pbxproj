@@ -34,7 +34,7 @@
 		07817DA82A6E8C7500D1A95B /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07817DA72A6E8C7500D1A95B /* Configurations.swift */; };
 		1C2983CC2A5EADE500E936BA /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 1C2983CB2A5EADE500E936BA /* PinLayout */; };
 		631B89F92A4969E300F66E7C /* stiv_v5.scn in Resources */ = {isa = PBXBuildFile; fileRef = 631B89F82A4969E300F66E7C /* stiv_v5.scn */; };
-		633030422A348FB400CDCD4A /* SkinCreatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633030412A348FB400CDCD4A /* SkinCreatedModel.swift */; };
+		633030422A348FB400CDCD4A /* AnatomyCreatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633030412A348FB400CDCD4A /* AnatomyCreatedModel.swift */; };
 		635026FB2A95FF800086FE4B /* Array+substracting_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635026FA2A95FF800086FE4B /* Array+substracting_ext.swift */; };
 		635281902A589ECA00F3EB23 /* DBParserFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635281822A589EC900F3EB23 /* DBParserFile.swift */; };
 		635281912A589ECA00F3EB23 /* DropB0ksKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635281832A589EC900F3EB23 /* DropB0ksKeys.swift */; };
@@ -132,9 +132,9 @@
 		6AB0293E2B5E68A7005586CC /* CreateNewItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB0293A2B5E68A7005586CC /* CreateNewItemCollectionViewCell.xib */; };
 		6AB029472B5E6963005586CC /* ColorPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029452B5E6963005586CC /* ColorPickerViewController.xib */; };
 		6AB029482B5E6964005586CC /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029462B5E6963005586CC /* ColorPickerViewController.swift */; };
-		6AB0294D2B5E6991005586CC /* BucketTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029492B5E6990005586CC /* BucketTool.swift */; };
+		6AB0294D2B5E6991005586CC /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029492B5E6990005586CC /* Bucket.swift */; };
 		6AB0294E2B5E6991005586CC /* NoiseTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0294A2B5E6990005586CC /* NoiseTool.swift */; };
-		6AB0294F2B5E6991005586CC /* PaintBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0294B2B5E6991005586CC /* PaintBrush.swift */; };
+		6AB0294F2B5E6991005586CC /* Artbrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0294B2B5E6991005586CC /* Artbrush.swift */; };
 		6AB029502B5E6991005586CC /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0294C2B5E6991005586CC /* Instrument.swift */; };
 		6AB029582B5E69B7005586CC /* GroupDrawDirective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029512B5E69B6005586CC /* GroupDrawDirective.swift */; };
 		6AB029592B5E69B7005586CC /* PictureElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029522B5E69B6005586CC /* PictureElement.swift */; };
@@ -231,11 +231,11 @@
 		D77112642A8D061A009AE952 /* UINavigationController+Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77112632A8D061A009AE952 /* UINavigationController+Pop.swift */; };
 		D79055442A657F2F00FA0F60 /* URL+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79055432A657F2F00FA0F60 /* URL+Create.swift */; };
 		D7A6CCEC2A68026D007EC907 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6CCEB2A68026D007EC907 /* UIViewController+Keyboard.swift */; };
-		D7C842B92A6A78A6006F5020 /* MinecraftSkinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C842B82A6A78A6006F5020 /* MinecraftSkinManager.swift */; };
+		D7C842B92A6A78A6006F5020 /* SkinCraftManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C842B82A6A78A6006F5020 /* SkinCraftManager.swift */; };
 		D7C842BB2A6A8A11006F5020 /* FileManager+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C842BA2A6A8A11006F5020 /* FileManager+Path.swift */; };
 		D7D06C462A6FF2D20063A44C /* UIButton+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D06C452A6FF2D20063A44C /* UIButton+Icon.swift */; };
 		D7D4021E2A6FEA1200883C6D /* UITabBar+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4021D2A6FEA1200883C6D /* UITabBar+Title.swift */; };
-		D7E807812A6916240007CA10 /* PhotoGalleryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E807802A6916240007CA10 /* PhotoGalleryManager.swift */; };
+		D7E807812A6916240007CA10 /* ImageGalleryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E807802A6916240007CA10 /* ImageGalleryCoordinator.swift */; };
 		D7FB3E932A7BFC0B00D78B57 /* UIViewController+ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB3E922A7BFC0B00D78B57 /* UIViewController+ActivityView.swift */; };
 		D7FB3E9F2A7C12D100D78B57 /* UIImage+Save.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB3E9E2A7C12D100D78B57 /* UIImage+Save.swift */; };
 		F40415D62A126C2100066473 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40415D52A126C2100066473 /* CanvasView.swift */; };
@@ -258,11 +258,11 @@
 		F438AA1D2A14BB0D007469E7 /* PikkoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438AA152A14BB0D007469E7 /* PikkoDelegate.swift */; };
 		F438AA1E2A14BB0D007469E7 /* HueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438AA162A14BB0D007469E7 /* HueDelegate.swift */; };
 		F438AA202A14C442007469E7 /* RSColourSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438AA1F2A14C442007469E7 /* RSColourSlider.swift */; };
-		F438AA292A17593B007469E7 /* PictureExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438AA282A17593A007469E7 /* PictureExporter.swift */; };
-		F438AA2B2A175989007469E7 /* RawPixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438AA2A2A175989007469E7 /* RawPixel.swift */; };
+		F438AA292A17593B007469E7 /* UnprocessedPixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438AA282A17593A007469E7 /* UnprocessedPixel.swift */; };
+		F438AA2B2A175989007469E7 /* ImageExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438AA2A2A175989007469E7 /* ImageExporter.swift */; };
 		F438AA312A17A391007469E7 /* UIImage+Resized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438AA302A17A391007469E7 /* UIImage+Resized.swift */; };
 		F46D8B642A08DB5D00A61747 /* UIView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46D8B632A08DB5D00A61747 /* UIView+RoundCorners.swift */; };
-		F48E0B532A093FC200B9020D /* TabBarConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48E0B522A093FC200B9020D /* TabBarConfigurable.swift */; };
+		F48E0B532A093FC200B9020D /* TabBarVersatile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48E0B522A093FC200B9020D /* TabBarVersatile.swift */; };
 		F48E0B552A09498700B9020D /* UIViewController+DeviceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48E0B542A09498700B9020D /* UIViewController+DeviceOrientation.swift */; };
 		F4DB05D02A02959000E4C43D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB05CE2A02959000E4C43D /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
@@ -325,7 +325,7 @@
 		03AFFD442AD847D0002A131D /* SkinVariantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinVariantsViewController.swift; sourceTree = "<group>"; };
 		07817DA72A6E8C7500D1A95B /* Configurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		631B89F82A4969E300F66E7C /* stiv_v5.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = stiv_v5.scn; sourceTree = "<group>"; };
-		633030412A348FB400CDCD4A /* SkinCreatedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinCreatedModel.swift; sourceTree = "<group>"; };
+		633030412A348FB400CDCD4A /* AnatomyCreatedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnatomyCreatedModel.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/Models/AnatomyCreatedModel.swift"; sourceTree = "<group>"; };
 		635026FA2A95FF800086FE4B /* Array+substracting_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+substracting_ext.swift"; sourceTree = "<group>"; };
 		635281822A589EC900F3EB23 /* DBParserFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBParserFile.swift; sourceTree = "<group>"; };
 		635281832A589EC900F3EB23 /* DropB0ksKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropB0ksKeys.swift; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 		6352818D2A589ECA00F3EB23 /* RealmServiceDropBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmServiceDropBox.swift; sourceTree = "<group>"; };
 		6352818E2A589ECA00F3EB23 /* RealmEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmEntities.swift; sourceTree = "<group>"; };
 		6352818F2A589ECA00F3EB23 /* RealmCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCore.swift; sourceTree = "<group>"; };
-		6368CAC42A3094A30055E2AC /* CubicSteveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicSteveModel.swift; sourceTree = "<group>"; };
+		6368CAC42A3094A30055E2AC /* CubicSteveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CubicSteveModel.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/Models/CubicSteveModel.swift"; sourceTree = "<group>"; };
 		637038292A594AA20003A220 /* Cacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacher.swift; sourceTree = "<group>"; };
 		639407D92A77D097007D6301 /* UIColor+Ext_encode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext_encode.swift"; sourceTree = "<group>"; };
 		63A8C1522A32045F005A117B /* NSLayoutConstraint_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint_Ext.swift; sourceTree = "<group>"; };
@@ -421,9 +421,9 @@
 		6AB0293A2B5E68A7005586CC /* CreateNewItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateNewItemCollectionViewCell.xib; path = "../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Cells/CreateNewItemCollectionViewCell.xib"; sourceTree = "<group>"; };
 		6AB029452B5E6963005586CC /* ColorPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColorPickerViewController.xib; path = "../../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/Tools/ColorPickerTool/ColorPickerViewController.xib"; sourceTree = "<group>"; };
 		6AB029462B5E6963005586CC /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPickerViewController.swift; path = "../../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/Tools/ColorPickerTool/ColorPickerViewController.swift"; sourceTree = "<group>"; };
-		6AB029492B5E6990005586CC /* BucketTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BucketTool.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/Tools/BucketTool.swift"; sourceTree = "<group>"; };
+		6AB029492B5E6990005586CC /* Bucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bucket.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/Tools/Bucket.swift"; sourceTree = "<group>"; };
 		6AB0294A2B5E6990005586CC /* NoiseTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoiseTool.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/Tools/NoiseTool.swift"; sourceTree = "<group>"; };
-		6AB0294B2B5E6991005586CC /* PaintBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaintBrush.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/Tools/PaintBrush.swift"; sourceTree = "<group>"; };
+		6AB0294B2B5E6991005586CC /* Artbrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Artbrush.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/Tools/Artbrush.swift"; sourceTree = "<group>"; };
 		6AB0294C2B5E6991005586CC /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Instrument.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/Tools/Instrument.swift"; sourceTree = "<group>"; };
 		6AB029512B5E69B6005586CC /* GroupDrawDirective.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupDrawDirective.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/GroupDrawDirective.swift"; sourceTree = "<group>"; };
 		6AB029522B5E69B6005586CC /* PictureElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureElement.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/DrawLogic/PictureElement.swift"; sourceTree = "<group>"; };
@@ -510,11 +510,11 @@
 		D77112632A8D061A009AE952 /* UINavigationController+Pop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Pop.swift"; sourceTree = "<group>"; };
 		D79055432A657F2F00FA0F60 /* URL+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Create.swift"; sourceTree = "<group>"; };
 		D7A6CCEB2A68026D007EC907 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
-		D7C842B82A6A78A6006F5020 /* MinecraftSkinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinecraftSkinManager.swift; sourceTree = "<group>"; };
+		D7C842B82A6A78A6006F5020 /* SkinCraftManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkinCraftManager.swift; path = "../../../Crafty-craft-10-Sub/Crafty Craft 5/Manager/SkinCraftManager.swift"; sourceTree = "<group>"; };
 		D7C842BA2A6A8A11006F5020 /* FileManager+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Path.swift"; sourceTree = "<group>"; };
 		D7D06C452A6FF2D20063A44C /* UIButton+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Icon.swift"; sourceTree = "<group>"; };
 		D7D4021D2A6FEA1200883C6D /* UITabBar+Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+Title.swift"; sourceTree = "<group>"; };
-		D7E807802A6916240007CA10 /* PhotoGalleryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryManager.swift; sourceTree = "<group>"; };
+		D7E807802A6916240007CA10 /* ImageGalleryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageGalleryCoordinator.swift; path = "../../../Crafty-craft-10-Sub/Crafty Craft 5/Manager/ImageGalleryCoordinator.swift"; sourceTree = "<group>"; };
 		D7FB3E922A7BFC0B00D78B57 /* UIViewController+ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityView.swift"; sourceTree = "<group>"; };
 		D7FB3E9E2A7C12D100D78B57 /* UIImage+Save.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Save.swift"; sourceTree = "<group>"; };
 		F40415D52A126C2100066473 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
@@ -539,11 +539,11 @@
 		F438AA152A14BB0D007469E7 /* PikkoDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PikkoDelegate.swift; sourceTree = "<group>"; };
 		F438AA162A14BB0D007469E7 /* HueDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HueDelegate.swift; sourceTree = "<group>"; };
 		F438AA1F2A14C442007469E7 /* RSColourSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSColourSlider.swift; sourceTree = "<group>"; };
-		F438AA282A17593A007469E7 /* PictureExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureExporter.swift; sourceTree = "<group>"; };
-		F438AA2A2A175989007469E7 /* RawPixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawPixel.swift; sourceTree = "<group>"; };
+		F438AA282A17593A007469E7 /* UnprocessedPixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnprocessedPixel.swift; path = "../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/UnprocessedPixel.swift"; sourceTree = "<group>"; };
+		F438AA2A2A175989007469E7 /* ImageExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageExporter.swift; path = "../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/PixelCreator/ImageExporter.swift"; sourceTree = "<group>"; };
 		F438AA302A17A391007469E7 /* UIImage+Resized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resized.swift"; sourceTree = "<group>"; };
 		F46D8B632A08DB5D00A61747 /* UIView+RoundCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorners.swift"; sourceTree = "<group>"; };
-		F48E0B522A093FC200B9020D /* TabBarConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurable.swift; sourceTree = "<group>"; };
+		F48E0B522A093FC200B9020D /* TabBarVersatile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarVersatile.swift; path = "../../../Crafty-craft-10-Sub/Crafty Craft 5/Protocols/TabBarVersatile.swift"; sourceTree = "<group>"; };
 		F48E0B542A09498700B9020D /* UIViewController+DeviceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DeviceOrientation.swift"; sourceTree = "<group>"; };
 		F4DB05CE2A02959000E4C43D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -761,7 +761,7 @@
 			isa = PBXGroup;
 			children = (
 				6368CAC42A3094A30055E2AC /* CubicSteveModel.swift */,
-				633030412A348FB400CDCD4A /* SkinCreatedModel.swift */,
+				633030412A348FB400CDCD4A /* AnatomyCreatedModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -887,9 +887,9 @@
 		63A5DFDA2A334FCC0037D65B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				6AB029492B5E6990005586CC /* BucketTool.swift */,
+				6AB029492B5E6990005586CC /* Bucket.swift */,
 				6AB0294A2B5E6990005586CC /* NoiseTool.swift */,
-				6AB0294B2B5E6991005586CC /* PaintBrush.swift */,
+				6AB0294B2B5E6991005586CC /* Artbrush.swift */,
 				6AB0294C2B5E6991005586CC /* Instrument.swift */,
 				F438AA212A14F5BA007469E7 /* ColorPickerTool */,
 			);
@@ -1151,8 +1151,8 @@
 		D72B781C2A67C596005A6D80 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				D7C842B82A6A78A6006F5020 /* MinecraftSkinManager.swift */,
-				D7E807802A6916240007CA10 /* PhotoGalleryManager.swift */,
+				D7C842B82A6A78A6006F5020 /* SkinCraftManager.swift */,
+				D7E807802A6916240007CA10 /* ImageGalleryCoordinator.swift */,
 				D72E49C62A73C6B20031AEBE /* ImageCacheManager.swift */,
 				03AFFD342AD7E584002A131D /* FontHelper.swift */,
 			);
@@ -1182,8 +1182,8 @@
 				63A5DFD92A334F640037D65B /* DrawLogic */,
 				63A5DFDA2A334FCC0037D65B /* Tools */,
 				F40415DB2A126CD700066473 /* Constants.swift */,
-				F438AA2A2A175989007469E7 /* RawPixel.swift */,
-				F438AA282A17593A007469E7 /* PictureExporter.swift */,
+				F438AA2A2A175989007469E7 /* ImageExporter.swift */,
+				F438AA282A17593A007469E7 /* UnprocessedPixel.swift */,
 			);
 			path = PixelCreator;
 			sourceTree = "<group>";
@@ -1338,7 +1338,7 @@
 		F48E0B512A093FA800B9020D /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				F48E0B522A093FC200B9020D /* TabBarConfigurable.swift */,
+				F48E0B522A093FC200B9020D /* TabBarVersatile.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1678,7 +1678,7 @@
 				6AB30A402B7631AD00FC5EA6 /* EnhancementCreatorViewController + UICollectionView.swift in Sources */,
 				6AB029502B5E6991005586CC /* Instrument.swift in Sources */,
 				6AB029742B5E6B00005586CC /* SmallModelView.swift in Sources */,
-				6AB0294F2B5E6991005586CC /* PaintBrush.swift in Sources */,
+				6AB0294F2B5E6991005586CC /* Artbrush.swift in Sources */,
 				039BF2AD2AA326830065EF48 /* ServicesManager.swift in Sources */,
 				6AB0294E2B5E6991005586CC /* NoiseTool.swift in Sources */,
 				F412BCB32A26268500073525 /* UIView+Snapshot.swift in Sources */,
@@ -1730,11 +1730,11 @@
 				D719CE9C2A6BD81E00936868 /* CancellableProtocol.swift in Sources */,
 				6A5942762B611572009E4BD0 /* CustomTabItem.swift in Sources */,
 				6AD127042B979BEE00482717 /* AddonCreatorMainVC.swift in Sources */,
-				F438AA2B2A175989007469E7 /* RawPixel.swift in Sources */,
+				F438AA2B2A175989007469E7 /* ImageExporter.swift in Sources */,
 				6AB028BA2B5E62E3005586CC /* ServerTableViewCell.swift in Sources */,
-				D7E807812A6916240007CA10 /* PhotoGalleryManager.swift in Sources */,
+				D7E807812A6916240007CA10 /* ImageGalleryCoordinator.swift in Sources */,
 				D719CE9E2A6BD83500936868 /* ImageService.swift in Sources */,
-				D7C842B92A6A78A6006F5020 /* MinecraftSkinManager.swift in Sources */,
+				D7C842B92A6A78A6006F5020 /* SkinCraftManager.swift in Sources */,
 				6AB029032B5E669C005586CC /* CategoryOptionHeaderSection.swift in Sources */,
 				F4DB05D02A02959000E4C43D /* TabBarViewController.swift in Sources */,
 				03435CCA2B04F6A200423598 /* UIColor+Equatable.swift in Sources */,
@@ -1808,7 +1808,7 @@
 				D72306DD2A7926940000F6B3 /* ContentFilterViewModel.swift in Sources */,
 				6AB0293D2B5E68A7005586CC /* CreateNewItemCollectionViewCell.swift in Sources */,
 				D72E49C72A73C6B20031AEBE /* ImageCacheManager.swift in Sources */,
-				633030422A348FB400CDCD4A /* SkinCreatedModel.swift in Sources */,
+				633030422A348FB400CDCD4A /* AnatomyCreatedModel.swift in Sources */,
 				6AB028FD2B5E6663005586CC /* AddonEditor3DModel.swift in Sources */,
 				D77112642A8D061A009AE952 /* UINavigationController+Pop.swift in Sources */,
 				6AB0296F2B5E6A84005586CC /* SaveConfirmationView.swift in Sources */,
@@ -1823,7 +1823,7 @@
 				6AB028FE2B5E6663005586CC /* Extension_AddonEditor3DViewController+CollectionDelegate.swift in Sources */,
 				6AB028F42B5E6638005586CC /* AddonUndoManager.swift in Sources */,
 				6AB029272B5E6798005586CC /* AddonsOptionsCellWithSwitcher.swift in Sources */,
-				F48E0B532A093FC200B9020D /* TabBarConfigurable.swift in Sources */,
+				F48E0B532A093FC200B9020D /* TabBarVersatile.swift in Sources */,
 				6AB0293B2B5E68A7005586CC /* SkinEditorCollectionViewCell.swift in Sources */,
 				D79055442A657F2F00FA0F60 /* URL+Create.swift in Sources */,
 				6AB028E22B5E65A2005586CC /* ManualInstructionViewController.swift in Sources */,
@@ -1839,7 +1839,7 @@
 				635281982A589ECB00F3EB23 /* RealmServiceDropBox.swift in Sources */,
 				6AB028F22B5E6638005586CC /* SaveRecsourceManager.swift in Sources */,
 				635281922A589ECA00F3EB23 /* DBModelFile.swift in Sources */,
-				6AB0294D2B5E6991005586CC /* BucketTool.swift in Sources */,
+				6AB0294D2B5E6991005586CC /* Bucket.swift in Sources */,
 				6AB029672B5E6A29005586CC /* ThreeDSkinTestViewController.swift in Sources */,
 				07817DA82A6E8C7500D1A95B /* Configurations.swift in Sources */,
 				D7C842BB2A6A8A11006F5020 /* FileManager+Path.swift in Sources */,
@@ -1848,7 +1848,7 @@
 				6AB029682B5E6A29005586CC /* Skin3DTestViewController+Ext_Collection.swift in Sources */,
 				6F6F55B82A4ED41A0093F556 /* CheckParameters.swift in Sources */,
 				6AB0299F2B5E719D005586CC /* SkinEditorVCModel.swift in Sources */,
-				F438AA292A17593B007469E7 /* PictureExporter.swift in Sources */,
+				F438AA292A17593B007469E7 /* UnprocessedPixel.swift in Sources */,
 				6AB028E12B5E65A2005586CC /* GeneralAlertViewController.swift in Sources */,
 				03ACD3532ADE6A8C00052439 /* UILabel+TextInset.swift in Sources */,
 			);

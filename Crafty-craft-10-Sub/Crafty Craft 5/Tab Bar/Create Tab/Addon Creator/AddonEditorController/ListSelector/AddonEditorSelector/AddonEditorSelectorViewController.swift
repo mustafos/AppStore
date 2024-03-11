@@ -66,7 +66,7 @@ class AddonEditorSelectorViewController: UIViewController {
         setupViewButtons()
         setupSearchBar()
         setupCollectionView()
-                dismissKeyboardOnTapOutside()
+        dismissKeyboardOnTapOutside()
     }
     
     override func viewWillAppear(_ animated: Bool) {

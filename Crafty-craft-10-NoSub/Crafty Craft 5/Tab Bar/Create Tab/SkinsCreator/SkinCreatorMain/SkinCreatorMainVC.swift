@@ -1,9 +1,9 @@
 //
 //  SkinCreatorMainVC.swift
-//  Crafty Craft 5
+//  Crafty Craft 10
 //
-//  Created by Vitaliy Polezhay on 10.10.2023.
-//  Copyright © 2023 Noname Digital. All rights reserved.
+//  Created by Zolux Rex on 08.02.2024.
+//  Copyright © 2024 Noname Digital. All rights reserved.
 //
 
 import UIKit
@@ -12,21 +12,21 @@ protocol CollectionSearchable {
     func filterData(with text: String?)
 }
 
-protocol SkinPikerHandler: AnyObject {
-    func showSkinPicker(for item: SkinCreatedModel)
-    func showEditSkinPicker(for item: SkinCreatedModel)
+protocol SkinHandlingPicker: AnyObject {
+    func showSkinPicker(for item: AnatomyCreatedModel)
+    func showEditSkinPicker(for item: AnatomyCreatedModel)
 }
 
 class SkinCreatorMainVC: UIViewController {
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
-    private lazy var photoGalleryManager: PhotoGalleryManagerProtocol = PhotoGalleryManager()
-    private lazy var minecraftSkinManager: MinecraftSkinManagerProtocol = MinecraftSkinManager()
+    private lazy var imageGalleryCoordinator: ImageGalleryCoordinatorProtocol = ImageGalleryCoordinator()
+    private lazy var minecraftSkinManager: SkinCraftManagerProtocol = SkinCraftManager()
     
     var alertWindow: UIWindow?
     var blurView: UIVisualEffectView?
     
-    weak var pickerShowerDelegate: SkinPikerHandler?
+    weak var pickerShowerDelegate: SkinHandlingPicker?
     
     var selectedSkinIndex = Int()
     lazy var model = SkinEditorVCModel()
@@ -81,7 +81,7 @@ class SkinCreatorMainVC: UIViewController {
 //MARK: Collection Delegate Methods
 
 extension SkinCreatorMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
-    func filteredSkins() -> [SkinCreatedModel] {
+    func filteredSkins() -> [AnatomyCreatedModel] {
         if let filterText, !filterText.isEmpty {
             return model.getSkins().filter({$0.name.containsCaseInsesetive(filterText)})
         } else {

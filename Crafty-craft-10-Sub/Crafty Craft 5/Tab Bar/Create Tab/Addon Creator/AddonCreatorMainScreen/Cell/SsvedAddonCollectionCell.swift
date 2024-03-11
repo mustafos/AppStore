@@ -6,13 +6,6 @@
 //  Copyright © 2024 Noname Digital. All rights reserved.
 //
 
-func chooseBestSum(_ t: Int, _ k: Int, _ ls: [Int]) -> Int {
-    return ls.reduce([]){ (sum, i) in sum + [[i]] + sum.map{ j in j + [i] } }.reduce(-1) {
-        let value = $1.reduce(0, +)
-        return ($1.count == k && value <= t && value > $0) ? value : $0
-    }
-}
-
 import UIKit
 
 class SsvedAddonCollectionCell: UICollectionViewCell {

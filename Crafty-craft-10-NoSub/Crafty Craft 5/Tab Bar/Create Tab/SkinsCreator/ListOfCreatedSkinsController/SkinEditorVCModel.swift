@@ -5,7 +5,7 @@ import Foundation
 final class SkinEditorVCModel {
     
     var selectedSkinIndex = Int()
-    private var skinsCreatedModelArray = [SkinCreatedModel]()
+    private var skinsCreatedModelArray = [AnatomyCreatedModel]()
 
     //MARK: INIT
     
@@ -15,11 +15,11 @@ final class SkinEditorVCModel {
     
     //MARK: Open Methods
     
-    func getSkins() -> [SkinCreatedModel] {
+    func getSkins() -> [AnatomyCreatedModel] {
         return skinsCreatedModelArray
     }
     
-    func getSkinByIndex(index: Int) -> SkinCreatedModel? {
+    func getSkinByIndex(index: Int) -> AnatomyCreatedModel? {
         guard skinsCreatedModelArray.indices.contains(index) == true else {
             return nil
         }
@@ -28,8 +28,8 @@ final class SkinEditorVCModel {
     }
     
     ///if user want to create new skin, creates new Instance of SkinCreatedModel and saves it into Realm
-    func getSelectedSkinModel() -> SkinCreatedModel {
-        //-1 because first place in our array is always plusmode 
+    func getSelectedSkinModel() -> AnatomyCreatedModel {
+        //-1 because first place in our array is always plusmode
         if selectedSkinIndex == -1 {
             let skinForRealm = CreatedSkinRM()
             skinForRealm.id = RealmService.shared.generateID(object: skinForRealm)
@@ -47,7 +47,7 @@ final class SkinEditorVCModel {
                 skinForRealm.skinAssemblyDiagram128 = emptyData
             }
             
-            return SkinCreatedModel.init(realmedModel: skinForRealm)
+            return AnatomyCreatedModel.init(realmedModel: skinForRealm)
             
         } else {
             return skinsCreatedModelArray[selectedSkinIndex]
@@ -55,7 +55,7 @@ final class SkinEditorVCModel {
     }
     
     func updateSkinsArray() {
-        skinsCreatedModelArray = RealmService.shared.getCreatedSkinsArray().map({ SkinCreatedModel(realmedModel: $0) })
+        skinsCreatedModelArray = RealmService.shared.getCreatedSkinsArray().map({ AnatomyCreatedModel(realmedModel: $0) })
     }
     
     func deleteSkin(at index: Int) {
