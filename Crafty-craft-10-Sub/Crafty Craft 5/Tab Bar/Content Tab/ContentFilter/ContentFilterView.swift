@@ -1,3 +1,159 @@
+class ContentFilterViewModel: ObservableObject {
+    typealias OnSelection = (ContentFilter) -> Void
+    
+    @Published var selectedIndex: Int = 0
+    @Published var isDropdownVisible: Bool = false // Track dropdown visibility
+    private(set) var buttons: [ContentFilterModel]
+    private let onSelect: OnSelection
+    
+    init(buttons: [ContentFilterModel], onSelect: @escaping OnSelection) {
+        self.buttons = buttons
+        self.onSelect = onSelect
+    }
+    
+    func updateButtons(newButtons: [ContentFilterModel], selectedIdx: Int) {
+        buttons = newButtons
+        if selectedIdx > newButtons.count {
+            selectedIndex = 0
+        } else {
+            selectedIndex = selectedIdx
+        }
+    }
+    
+    func selectButton(at index: Int) {
+        if selectedIndex != index {
+            selectedIndex = index
+        }
+        onSelect(buttons[selectedIndex].filter)
+        isDropdownVisible = false // Hide dropdown when button is tapped
+    }
+    
+    @ViewBuilder
+    func buttonView(for index: Int) -> some View {
+        Button {
+            self.selectButton(at: index)
+        } label: {
+            HStack {
+                Text(buttons[index].label)
+                Spacer()
+                if buttons[index].isLocked == true {
+                    if let cornerIcon = buttons[index].cornerIcon {
+                        Image(uiImage: cornerIcon)
+                            .resizable()
+                            .frame(width: 20, height: 16)
+                    }
+                }
+            }
+            .foregroundStyle(Color("PopularGrayColor"))
+            .animation(.none, value: index)
+            .frame(height: 48)
+            .contentShape(Rectangle())
+            .padding(.horizontal, 20)
+            .overlay(
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 60)
+            )
+        }
+    }
+}
+
+struct ContentFilterView: View {
+    @ObservedObject var viewModel: ContentFilterViewModel
+    @State var showFilters = false
+    var state: DropDownPickerState = .down
+    var onStateChange: ((DropDownPickerState) -> Void)?
+    @SceneStorage("drop_down_zindex") private var index = 100.0
+    @State var zindex = 100.0
+    
+    var body: some View {
+        GeometryReader { geometry in
+            VStack {
+                if state == .up && showFilters {
+                    ScrollView {
+                        VStack {
+                            ForEach(0..<viewModel.buttons.count, id: \.self) { index in
+                                viewModel.buttonView(for: index)
+                                    .onTapGesture {
+                                        withAnimation(.snappy) {
+                                            viewModel.selectButton(at: index) // Hide dropdown on button tap
+                                            onStateChange?(showFilters ? .up : .down)
+                                        }
+                                    }
+                            }
+                        }
+                        .transition(.move(edge: state == .up ? .bottom : .top))
+                        .zIndex(1)
+                    }
+                    .frame(maxHeight: geometry.size.height - 48)
+                }
+                
+                HStack {
+                    Text(viewModel.buttons[viewModel.selectedIndex].label)
+                        .foregroundColor(.black)
+                    
+                    Spacer()
+                    
+                    Image(systemName: state == .up ? "chevron.up" : "chevron.down")
+                        .font(.title3)
+                        .foregroundColor(.black)
+                        .rotationEffect(.degrees((showFilters ? -180 : 0)))
+                }
+                .padding(.horizontal, 20)
+                .frame(maxWidth: .infinity, maxHeight: 48)
+                .background(Color("YellowSelectiveColor"))
+                .contentShape(.rect)
+                .onTapGesture {
+                    withAnimation(.snappy) {
+                        showFilters.toggle()
+                    }
+                }
+                .zIndex(10)
+                
+                if state == .down && showFilters {
+                    ScrollView {
+                        VStack {
+                            ForEach(0..<viewModel.buttons.count, id: \.self) { index in
+                                if index != viewModel.selectedIndex {
+                                    viewModel.buttonView(for: index)
+                                        .onTapGesture {
+                                            withAnimation(.snappy) {
+                                                viewModel.selectButton(at: index) // Hide dropdown on button tap
+                                                onStateChange?(showFilters ? .up : .down)
+                                            }
+                                        }
+                                }
+                            }
+                        }
+                        .transition(.move(edge: state == .up ? .bottom : .top))
+                        .zIndex(1)
+                    }
+                }
+            }
+            .clipped()
+            .background(Color("YellowSelectiveColor"))
+            .cornerRadius(24)
+            .overlay {
+                RoundedRectangle(cornerRadius: 24)
+                    .stroke(.black)
+            }
+            .frame(height: showFilters ? 240 : 48, alignment: state == .up ? .bottom : .top)
+            
+        }
+        .frame(width: .infinity, height: 240)
+        .zIndex(zindex)
+    }
+
+    func updateButtons(newButtons: [ContentFilterModel], selectedIndex: Int = 0) {
+        viewModel.updateButtons(newButtons: [newButtons[0]], selectedIdx: selectedIndex)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            viewModel.updateButtons(newButtons: newButtons, selectedIdx: selectedIndex)
+        }
+    }
+}
+
 //
 //  ContentFilterView.swift
 //  Crafty Craft 5

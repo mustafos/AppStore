@@ -13,8 +13,8 @@ protocol CollectionSearchable {
 }
 
 protocol SkinHandlingPicker: AnyObject {
-    func showSkinPicker(for item: AnatomyCreatedModel)
-    func showEditSkinPicker(for item: AnatomyCreatedModel)
+    func showPickSkin(for item: AnatomyCreatedModel)
+    func showEditPickerSkin(for item: AnatomyCreatedModel)
 }
 
 class SkinCreatorMainVC: UIViewController {
@@ -141,9 +141,9 @@ extension SkinCreatorMainVC: UICollectionViewDelegate, UICollectionViewDataSourc
         model.selectedSkinIndex = indexPath.item - 1 //to get correct index of choosed skin, as we always have +1 cell because of plusMode
         
         if indexPath.item == 0 {
-            pickerShowerDelegate?.showSkinPicker(for: model.getSelectedSkinModel())
+            pickerShowerDelegate?.showPickSkin(for: model.getSelectedSkinModel())
         } else {
-            pickerShowerDelegate?.showEditSkinPicker(for: model.getSelectedSkinModel())
+            pickerShowerDelegate?.showEditPickerSkin(for: model.getSelectedSkinModel())
         }
         model.updateSkinsArray()
     }

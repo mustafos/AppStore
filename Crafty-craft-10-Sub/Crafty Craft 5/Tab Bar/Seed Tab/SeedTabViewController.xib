@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SeedTabViewController" customModule="Crafty_Craft_10_2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SeedTabViewController" customModule="Crafty_Craft_10_Sub" customModuleProvider="target">
             <connections>
                 <outlet property="navigationBarContainerView" destination="RP9-ab-gd5" id="SAr-Gy-syx"/>
                 <outlet property="searchBarView" destination="qcm-aJ-lc1" id="Cpp-Xa-GYt"/>
@@ -50,7 +50,7 @@
                             <color key="textColor" name="BeigeColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcm-aJ-lc1" customClass="SearchBarView" customModule="Crafty_Craft_10_2" customModuleProvider="target">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcm-aJ-lc1" customClass="SearchBarView" customModule="Crafty_Craft_10_Sub" customModuleProvider="target">
                             <rect key="frame" x="20" y="20" width="353" height="44"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>

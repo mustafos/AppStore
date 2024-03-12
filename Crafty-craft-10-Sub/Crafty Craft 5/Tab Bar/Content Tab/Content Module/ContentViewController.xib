@@ -17,12 +17,13 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContentViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContentViewController" customModule="Crafty_Craft_10_NoSub" customModuleProvider="target">
             <connections>
                 <outlet property="downloadBtnActivity" destination="mIc-WW-AoM" id="GsM-C6-Qx5"/>
                 <outlet property="downloadButton" destination="HEa-C2-mTh" id="9ee-lJ-WCV"/>
                 <outlet property="favoriteButton" destination="qw8-lE-a4G" id="Orp-An-gdi"/>
                 <outlet property="generalContainer" destination="I6Y-4t-Mec" id="7QZ-Af-6vE"/>
+                <outlet property="heightGeneralView" destination="iTm-Hr-7Fb" id="xLX-Gf-31B"/>
                 <outlet property="isNewImage" destination="VXC-kI-df6" id="HAh-cw-MtZ"/>
                 <outlet property="navigationBarContainerView" destination="Kaz-4c-gpU" id="nbw-9P-Yfz"/>
                 <outlet property="pageImage" destination="S8Y-02-oAp" id="kfz-IB-556"/>

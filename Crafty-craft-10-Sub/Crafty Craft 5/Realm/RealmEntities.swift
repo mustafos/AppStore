@@ -1,5 +1,8 @@
+
 import UIKit
 import RealmSwift
+
+import Foundation
 
 final class CreatedSkinRM: Object  {
     @Persisted var id = 0

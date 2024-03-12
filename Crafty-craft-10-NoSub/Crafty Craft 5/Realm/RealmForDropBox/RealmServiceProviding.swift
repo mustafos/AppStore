@@ -1,8 +1,9 @@
 //
-//  Skin.swift
-//  json
+//  RealmServiceProviding.swift
+//  Crafty Craft 10
 //
-//  Created by Igor Kononov on 06.07.2023.
+//  Created by Zolux Rex on 08.02.2024.
+//  Copyright © 2024 Noname Digital. All rights reserved.
 //
 
 import Foundation
@@ -183,53 +184,6 @@ class RealmServiceProviding {
         realmService.update(skinRealm, with: ["mapImageData": mapImageData])
     }
 }
-//
-//extension RealmServiceProviding {
-//
-//    //MARK: Addons Editor
-//    private func getAllAddonsEdotorSession() -> [AddonsEdotorRealmSession] {
-//        return getAllObjectsSession()
-//    }
-//
-//    func getAllAddonsEdotor() -> [AddonItem] {
-//        getAllAddonsSession().map { realmModel in
-//            let addonImages = Array(realmModel.addonImages)
-//            return AddonItem(idshka: <#T##String#>,
-//                             displayName: <#T##String#>,
-//                             displayImage: <#T##String#>,
-//                             skin_variants: <#T##[SkinVariants]#>,
-//                             id: <#T##String#>,
-//                             type: <#T##String#>,
-//                             ranged_attack: <#T##[RangedAttack]#>,
-//                             health: <#T##Int#>,
-//                             move_speed: <#T##Int#>,
-//                             type_family: <#T##String#>)
-//
-//        }
-//    }
-//
-//    func addNewAddonsEdotor(addonImages: [String], addonDescription: String, addonTitle: String, isNew: String, isFavorite: Bool, addonImageData: Data?, filterCategory: String) {
-//        var model: AddonsRealmSession
-//        model = AddonsRealmSession(addonImages: addonImages, addonDescription: addonDescription, addonTitle: addonTitle, isNew: isNew, isFavorite: isFavorite, addonImageData: addonImageData, filterCategory: filterCategory)
-//        self.realmService.create(model)
-//    }
-//
-//    private func getAddonsEdotorWithID(id: String) -> AddonsRealmSession? {
-//        getAllAddonsSession().first(where: {$0.id == id}) ?? nil
-//    }
-//
-//    func updateAddonsEdotor(id: String, isFavorit: Bool) {
-//
-//        guard let addonRealm = getAddonWithID(id: id) else { return }
-//        realmService.update(addonRealm, with: ["isFavorite": isFavorit])
-//    }
-//
-//    func loadAddonsEdotorImage(id: String, addonImageData: Data) {
-//
-//        guard let skinRealm = getAddonWithID(id: id) else { return }
-//        realmService.update(skinRealm, with: ["addonImageData": addonImageData])
-//    }
-//}
 
 extension RealmServiceProviding {
     
@@ -243,5 +197,4 @@ extension RealmServiceProviding {
         realmService.update(realmObj, with: [keyToUpdate: newVal])
         
     }
-
 }

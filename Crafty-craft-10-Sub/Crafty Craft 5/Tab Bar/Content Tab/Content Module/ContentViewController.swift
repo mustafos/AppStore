@@ -15,6 +15,8 @@ class ContentViewController: UIViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var textView: UITextView!
     
+    @IBOutlet weak var heightGeneralView: NSLayoutConstraint!
+    
     @IBOutlet weak var skinsImage: UIImageView!
     @IBOutlet private weak var pageImage: UIImageView!
     @IBOutlet private weak var pageLabel: UILabel!
@@ -78,6 +80,11 @@ class ContentViewController: UIViewController {
         updateTitleLabel()
         
         documentPicker = DocumentPicker(presentationController: self, delegate: self)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateHeightGeneralView()
     }
     
     private func setUpPropertys() {
@@ -221,6 +228,18 @@ class ContentViewController: UIViewController {
     private func hideActivityIndicator() {
         activityIndicator?.removeFromSuperview()
         activityIndicator = nil
+    }
+    
+    private func updateHeightGeneralView() {
+        let defaultHeight: CGFloat = 21
+        let maxHeight: CGFloat = 56
+        let textViewHeight = textView.contentSize.height
+        
+        if textViewHeight <= 500 {
+            heightGeneralView.constant = maxHeight
+        } else {
+            heightGeneralView.constant = defaultHeight
+        }
     }
     
     private func updateFavoriteButton() {
@@ -479,7 +498,7 @@ extension ContentViewController {
             installCurrentAddonTo(desinationURL: url)
         } else {
             // show error popup
-            showAlert(title: "ERROR", message: "You have selected the wrong folder. Select the \"resource_packs\" or \"behavior_packs\" in the Minecraft folder", cancelTitle: "Cancel")
+            showAlert(title: "ERROR", message: "You have selected the wrong folder. Select the Minecraft folder from the list.", cancelTitle: "Cancel")
         }
     }
     

@@ -161,7 +161,7 @@ class ServersTabViewController: UIViewController {
     }
     
     private func addFooterView() {
-        footerCell = UIView(frame: CGRect(x: 0, y: 0, width: serversTableView.bounds.width, height: 70))
+        footerCell = UIView(frame: CGRect(x: 0, y: 0, width: serversTableView.bounds.width, height: Device.iPad ? 100 : 70))
         footerCell?.backgroundColor = UIColor.clear
         serversTableView.tableFooterView = footerCell
     }

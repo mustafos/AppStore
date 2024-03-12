@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeneralAlertViewController" customModule="Crafty_Craft_10_Sub" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeneralAlertViewController" customModule="Crafty_Craft_10_NoSub" customModuleProvider="target">
             <connections>
                 <outlet property="mainButton" destination="37F-zW-Lx9" id="fpV-lu-rtj"/>
                 <outlet property="subTitleLbl" destination="OaV-RR-mqe" id="pLy-4f-cEX"/>

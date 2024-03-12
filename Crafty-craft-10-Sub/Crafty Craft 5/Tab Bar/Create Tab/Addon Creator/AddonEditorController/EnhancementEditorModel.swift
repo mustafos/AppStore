@@ -214,7 +214,6 @@ class StaticTextProperty: AddonPropertiable {
     }
 }
 
-
 class SavedAddonEnch {
     
     var idshka: String = ""

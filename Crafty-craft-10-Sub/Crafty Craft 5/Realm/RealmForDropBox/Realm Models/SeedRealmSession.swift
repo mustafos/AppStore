@@ -1,9 +1,9 @@
 //
 //  SeedRealmModel.swift
-//  Crafty Craft 10
+//  Crafty Craft 5
 //
-//  Created by Zolux Rex on 08.02.2024.
-//  Copyright © 2024 Noname Digital. All rights reserved.
+//  Created by Vitaliy Polezhay on 19.10.2023.
+//  Copyright © 2023 Noname Digital. All rights reserved.
 //
 
 import Foundation

@@ -138,7 +138,7 @@ final class TabViewControllerFactory: UIViewController {
     }
     
     @IBAction func onCreateSkinButtonTapped(_ sender: UIButton) {
-        let nextVC = SkinModificationViewController() // SkinEditorViewController()
+        let nextVC = SkinModificationViewController()
         navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -294,7 +294,7 @@ final class TabViewControllerFactory: UIViewController {
     private func showEmptyMessage() {
         if emptyMessageLabel == nil {
             emptyMessageLabel = UILabel()
-            emptyMessageLabel?.text = "Nothing found in \(state == .skin ? "skins" : "addons")"
+            emptyMessageLabel?.text = "Nothing found"
             emptyMessageLabel?.font = UIFont(name: "Montserrat-Bold", size: 16)
             emptyMessageLabel?.textColor = UIColor(named: "BeigeColor")
             emptyMessageLabel?.textAlignment = .center
@@ -452,25 +452,25 @@ extension TabViewControllerFactory: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension TabViewControllerFactory: SkinHandlingPicker {
-    func showPickSkin(for item: AnatomyCreatedModel) { // showSkinPicker
+    func showPickSkin(for item: AnatomyCreatedModel) {
         selectedSkinModel = item
-        let vc = SkinChoicesVC() // SkinVariantsViewController()
+        let vc = SkinChoicesVC()
         vc.state = .edit
         vc.presenterDelegate = self
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: false)
     }
     
-    func showEditPickerSkin(for item: AnatomyCreatedModel) { // showEditSkinPicker
+    func showEditPickerSkin(for item: AnatomyCreatedModel) {
         selectedSkinModel = item
-        let vc = SkinChoicesVC() // SkinVariantsViewController()
+        let vc = SkinChoicesVC()
         vc.presenterDelegate = self
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: false)
     }
 }
 
-extension TabViewControllerFactory: SkinChoicesPresenter { // SkinVariantsPrsenter
+extension TabViewControllerFactory: SkinChoicesPresenter {
     func amenable2dTap() {
         create2dTapped()
     }

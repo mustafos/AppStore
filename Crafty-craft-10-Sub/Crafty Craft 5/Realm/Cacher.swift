@@ -1,11 +1,3 @@
-//
-//  CustomImageLoader.swift
-//  Crafty Craft 10
-//
-//  Created by Zolux Rex on 08.02.2024.
-//  Copyright © 2024 Noname Digital. All rights reserved.
-//
-
 import UIKit
 
 open class CustomImageLoader: UIImageView {
@@ -15,7 +7,7 @@ open class CustomImageLoader: UIImageView {
     private var task: URLSessionTask?
     private lazy var loader = {
         let activityView = UIActivityIndicatorView(style: .large)
-        activityView.tintColor = .black
+        activityView.tintColor = .white
         return activityView
     }()
     
@@ -52,7 +44,7 @@ open class CustomImageLoader: UIImageView {
     }
     
     func addLoader() {
-        loader.color = .black
+        loader.color = .white
         addSubview(loader)
         bringSubviewToFront(loader)
         loader.translatesAutoresizingMaskIntoConstraints = false

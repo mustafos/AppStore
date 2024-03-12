@@ -1,5 +1,5 @@
 //
-//  AddonCreatorMainVC.swift
+//  EnhancementCreatorMainVC.swift
 //  Crafty Craft 10
 //
 //  Created by Mustafa Bekirov on 05.03.2024.
@@ -155,14 +155,11 @@ class EnhancementCreatorMainVC: UIViewController {
     }
 }
 
-
-
 extension EnhancementCreatorMainVC : UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if indexPath.item == 0 {
-            //flushSearch()
             let nextVC = AddonCategoryOptionsViewController()
             navigationController?.pushViewController(nextVC, animated: true)
             
