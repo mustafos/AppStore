@@ -30,6 +30,7 @@ class ContentFilterViewModel: ObservableObject {
     typealias OnSelection = (ContentFilter) -> Void
     
     @Published var selectedIndex: Int = 0
+    @Published var isDropdownVisible: Bool = false
     private(set) var buttons: [ContentFilterModel]
     private let onSelect: OnSelection
     
@@ -52,6 +53,7 @@ class ContentFilterViewModel: ObservableObject {
             selectedIndex = index
         }
         onSelect(buttons[selectedIndex].filter)
+        isDropdownVisible = false
     }
     
     @ViewBuilder

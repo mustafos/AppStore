@@ -15,24 +15,23 @@ enum DropDownPickerState {
 
 struct ContentFilterView: View {
     @ObservedObject var viewModel: ContentFilterViewModel
-    @State var showFilters = false
-    var state: DropDownPickerState = .down
+    @State private var state: DropDownPickerState = .down
     var onStateChange: ((DropDownPickerState) -> Void)?
     @SceneStorage("drop_down_zindex") private var index = 100.0
-    @State var zindex = 100.0
+    @State private var zindex = 100.0
     
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                if state == .up && !showFilters {
+                if state == .up && !viewModel.isDropdownVisible {
                     ScrollView {
                         VStack {
                             ForEach(0..<viewModel.buttons.count, id: \.self) { index in
                                 viewModel.buttonView(for: index)
                                     .onTapGesture {
                                         withAnimation(.snappy) {
-                                            showFilters.toggle()
-                                            onStateChange?(showFilters ? .up : .down)
+                                            viewModel.selectButton(at: index)
+                                            onStateChange?(viewModel.isDropdownVisible ? .up : .down)
                                         }
                                     }
                             }
@@ -52,7 +51,7 @@ struct ContentFilterView: View {
                     Image(systemName: state == .up ? "chevron.up" : "chevron.down")
                         .font(.title3)
                         .foregroundColor(.black)
-                        .rotationEffect(.degrees((showFilters ? -180 : 0)))
+                        .rotationEffect(.degrees((viewModel.isDropdownVisible ? -180 : 0)))
                 }
                 .padding(.horizontal, 20)
                 .frame(maxWidth: .infinity, maxHeight: 48)
@@ -60,12 +59,12 @@ struct ContentFilterView: View {
                 .contentShape(.rect)
                 .onTapGesture {
                     withAnimation(.snappy) {
-                        showFilters.toggle()
+                        viewModel.isDropdownVisible.toggle()
                     }
                 }
                 .zIndex(10)
                 
-                if state == .down && showFilters {
+                if state == .down && viewModel.isDropdownVisible {
                     ScrollView {
                         VStack {
                             ForEach(0..<viewModel.buttons.count, id: \.self) { index in
@@ -73,8 +72,8 @@ struct ContentFilterView: View {
                                     viewModel.buttonView(for: index)
                                         .onTapGesture {
                                             withAnimation(.snappy) {
-                                                showFilters.toggle()
-                                                onStateChange?(showFilters ? .up : .down)
+                                                viewModel.selectButton(at: index)
+                                                onStateChange?(viewModel.isDropdownVisible ? .up : .down)
                                             }
                                         }
                                 }
@@ -92,7 +91,7 @@ struct ContentFilterView: View {
                 RoundedRectangle(cornerRadius: 24)
                     .stroke(.black)
             }
-            .frame(height: showFilters ? 240 : 48, alignment: state == .up ? .bottom : .top)
+            .frame(height: viewModel.isDropdownVisible ? 240 : 48, alignment: state == .up ? .bottom : .top)
             
         }
         .frame(width: .infinity, height: 240)

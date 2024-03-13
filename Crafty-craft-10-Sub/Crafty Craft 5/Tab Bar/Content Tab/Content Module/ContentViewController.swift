@@ -14,7 +14,6 @@ class ContentViewController: UIViewController {
     @IBOutlet private weak var isNewImage: UIImageView!
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var textView: UITextView!
-    
     @IBOutlet weak var heightGeneralView: NSLayoutConstraint!
     
     @IBOutlet weak var skinsImage: UIImageView!
@@ -70,9 +69,9 @@ class ContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpPropertys()
-        
+        textView.delegate = self
+        updateContainerBottomConstraint()
         isPageFavorite = model.isFavorite
         
         updateFavoriteButton()
@@ -81,12 +80,7 @@ class ContentViewController: UIViewController {
         
         documentPicker = DocumentPicker(presentationController: self, delegate: self)
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        updateHeightGeneralView()
-    }
-    
+
     private func setUpPropertys() {
         if let image = model.imageData {
             if mode == .skins {
@@ -230,15 +224,11 @@ class ContentViewController: UIViewController {
         activityIndicator = nil
     }
     
-    private func updateHeightGeneralView() {
-        let defaultHeight: CGFloat = 21
-        let maxHeight: CGFloat = 56
-        let textViewHeight = textView.contentSize.height
-        
-        if textViewHeight <= 500 {
-            heightGeneralView.constant = maxHeight
+    private func updateContainerBottomConstraint() {
+        if textView.text.count < 500 {
+            heightGeneralView.constant = 250
         } else {
-            heightGeneralView.constant = defaultHeight
+            heightGeneralView.constant = 21
         }
     }
     
@@ -424,9 +414,8 @@ class ContentViewController: UIViewController {
     }
 }
 
-extension ContentViewController{
+extension ContentViewController {
     var fileName: String? {
-        
         switch mode {
         case .addons:
             guard let fileName = model.file else { return nil }
@@ -573,5 +562,11 @@ extension ContentViewController: DocumentDelegate{
     func didPickURL(_ url: URL?) {
         guard let url else { return }
         self.documentPicker(didPickDocumentAt: url)
+    }
+}
+
+extension ContentViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        updateContainerBottomConstraint()
     }
 }

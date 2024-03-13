@@ -594,7 +594,7 @@ class ContentTabViewController: UIViewController, TabBarVersatile {
             break
         }
         sortViewHeight.constant = 240
-        contentFilterView.showFilters = false
+        contentFilterView.viewModel.isDropdownVisible = false
     }
 }
 

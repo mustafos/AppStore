@@ -1,3 +1,11 @@
+//
+//  ContentFilterModel.swift
+//  Crafty Craft 10
+//
+//  Created by Zolux Rex on 08.03.2024.
+//  Copyright © 2024 Noname Digital. All rights reserved.
+//
+
 import SwiftUI
 import UIKit
 
@@ -32,6 +40,7 @@ class ContentFilterViewModel: ObservableObject {
     typealias OnSelection = (ContentFilter) -> Void
     
     @Published var selectedIndex: Int = 0
+    @Published var isDropdownVisible: Bool = false
     private(set) var buttons: [ContentFilterModel]
     private let onSelect: OnSelection
     
@@ -54,6 +63,7 @@ class ContentFilterViewModel: ObservableObject {
             selectedIndex = index
         }
         onSelect(buttons[selectedIndex].filter)
+        isDropdownVisible = false
     }
     
     @ViewBuilder
