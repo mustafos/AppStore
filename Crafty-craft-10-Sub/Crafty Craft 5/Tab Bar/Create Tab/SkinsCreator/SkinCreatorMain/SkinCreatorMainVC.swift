@@ -22,8 +22,8 @@ class SkinCreatorMainVC: UIViewController {
     @IBOutlet weak var unlockButton: UIButton!
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var unlockActivityIndicator: UIActivityIndicatorView!
-    private lazy var imageGalleryCoordinator: ImageGalleryCoordinatorProtocol = ImageGalleryCoordinator()
-    private lazy var minecraftSkinManager: SkinCraftManagerProtocol = SkinCraftManager()
+    private lazy var imageGalleryCoordinator: PhotoGalleryManagerProtocol = PhotoGalleryManager()
+    private lazy var minecraftSkinManager: MinecraftSkinManagerProtocol = MinecraftSkinManager()
     
     var alertWindow: UIWindow?
     var blurView: UIVisualEffectView?

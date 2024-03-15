@@ -18,7 +18,7 @@ final class TabViewControllerFactory: UIViewController {
     private var skinCollectonScreen: SkinCreatorMainVC?
     private var addonCollectionScreen: EnhancementCreatorMainVC?
     private var isSkinAndAddonPresent: Bool = false
-    private lazy var photoGalleryManager: ImageGalleryCoordinatorProtocol = ImageGalleryCoordinator()
+    private lazy var photoGalleryManager: PhotoGalleryManagerProtocol = PhotoGalleryManager()
     
     // MARK: - Properties
     

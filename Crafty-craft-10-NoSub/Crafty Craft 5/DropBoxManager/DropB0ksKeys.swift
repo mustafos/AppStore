@@ -9,10 +9,16 @@
 import Foundation
 
 struct DropB0ksKeys {
-    static let appkey = "mw1tbgguqjwvxgt"
-    static let appSecret = "42pwd5wlt62u6s1"
-    static let token = "czHFetFkAxAAAAAAAAAF79ZJgvXKnXf8B0R292HV1_w"
-    static let refresh_token = "T2k4tXv8So4AAAAAAAAAAUmDE9Ta-ftEyUvn5EMAOdxVW53eOQzJ_SBdw5Qciq-x"
+//    static let appkey = "mw1tbgguqjwvxgt"
+//    static let appSecret = "42pwd5wlt62u6s1"
+//    static let token = "czHFetFkAxAAAAAAAAAF79ZJgvXKnXf8B0R292HV1_w"
+//    static let refresh_token = "T2k4tXv8So4AAAAAAAAAAUmDE9Ta-ftEyUvn5EMAOdxVW53eOQzJ_SBdw5Qciq-x"
+//    static let apiLink = "https://api.dropboxapi.com/oauth2/token"
+    
+    static let appkey = "un3m97msjptkuj8"
+    static let appSecret = "g6qkowzbmqwgt42"
+    static let token = "czHFetFkAxAAAAAAAAAEGGVAQkGuNrwvQOB57yo3f4g"
+    static let refresh_token = "dpDkxP-kO0wAAAAAAAAAAbyKnlJDfgPT1ewktvTO8-aufsPfRie8IzcqQnOI3neS"
     static let apiLink = "https://api.dropboxapi.com/oauth2/token"
     
     static let skinsFilePath = "/content.json"

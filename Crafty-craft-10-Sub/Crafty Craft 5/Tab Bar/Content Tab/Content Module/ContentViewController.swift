@@ -5,7 +5,7 @@ import ZIPFoundation
 class ContentViewController: UIViewController {
     typealias ImageDataCallback = (Data?) -> Void
     
-    private lazy var minecraftSkinManager: SkinCraftManagerProtocol = SkinCraftManager()
+    private lazy var minecraftSkinManager: MinecraftSkinManagerProtocol = MinecraftSkinManager()
     
     @IBOutlet private weak var navigationBarContainerView: UIView!
     

@@ -14,7 +14,7 @@ protocol AddonEditorSelectorDelegate: AnyObject {
 
 class AddonEditorSelectorViewController: UIViewController {
     
-    private lazy var photoGalleryManager: ImageGalleryCoordinatorProtocol = ImageGalleryCoordinator()
+    private lazy var photoGalleryManager: PhotoGalleryManagerProtocol = PhotoGalleryManager()
     
     @IBOutlet weak var contentView: UIView!
     

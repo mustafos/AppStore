@@ -33,7 +33,7 @@ protocol SkinSaveDialogDelegate: AnyObject {
 
 class ThreeDSkinTestViewController: AppViewController {
     //MARK: Properties
-    private lazy var minecraftSkinManager: SkinCraftManagerProtocol = SkinCraftManager()
+    private lazy var minecraftSkinManager: MinecraftSkinManagerProtocol = MinecraftSkinManager()
     
     //MARK: Properties
     

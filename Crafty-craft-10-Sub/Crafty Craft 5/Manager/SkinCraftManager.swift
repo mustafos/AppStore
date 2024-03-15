@@ -8,16 +8,16 @@
 
 import Foundation
 
-protocol SkinCraftManagerProtocol {
-    typealias GetCraftSkinFulfillment = (URL) -> ()
+protocol MinecraftSkinManagerProtocol {
+    typealias GetSkinCompletion = (URL) -> ()
     
-    var completion: GetCraftSkinFulfillment? { get }
+    var completion: GetSkinCompletion? { get }
     
-    func start(_ imagePath: URL, completion: @escaping GetCraftSkinFulfillment)
+    func start(_ imagePath: URL, completion: @escaping GetSkinCompletion)
 }
 
-class SkinCraftManager: SkinCraftManagerProtocol {
-    private(set) var completion: GetCraftSkinFulfillment?
+class MinecraftSkinManager: MinecraftSkinManagerProtocol {
+    private(set) var completion: GetSkinCompletion?
     
     private let fileManager = FileManager.default
     private var urls: [URL] = []
@@ -26,7 +26,7 @@ class SkinCraftManager: SkinCraftManagerProtocol {
     
     var errorInternal: NSError?
     
-    func start(_ imagePath: URL, completion: @escaping GetCraftSkinFulfillment) {
+    func start(_ imagePath: URL, completion: @escaping GetSkinCompletion) {
         
         self.completion = completion
         
@@ -41,7 +41,7 @@ class SkinCraftManager: SkinCraftManagerProtocol {
     }
 }
 
-extension SkinCraftManager {
+extension MinecraftSkinManager {
     
     private func makeFolders() -> URL {
         let fileUrl = fileManager.cachesDirectory.appendingPathComponent(name)
@@ -92,18 +92,6 @@ extension SkinCraftManager {
         }
     }
     
-    func parseJimiTextil(data: Data) -> [String: Any]? {
-        do {
-            // Try to convert JSON data to a dictionary
-            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                return json
-            }
-        } catch {
-            print("Error parsing JSON: \(error.localizedDescription)")
-        }
-        return nil
-    }
-    
     private func createJSONForSkins(name: String, texture: String) {
         let fileUrl = currentPathDirr.appendingPathComponent("skins.json")
         let dictonary: [String : Any] = ["skins":[["localization_name":"\(name)",
@@ -126,7 +114,7 @@ extension SkinCraftManager {
     private func createLocalizeFile(name: String) {
         let fileName = "en_US.lang"
         let text: String = "skinpack.\(name)=\(name) \n skin.\(name).\(name)=\(name)"
-        let localizeDirection = generateLocalizationFileDirectory()
+        let localizeDirection = makeFolderForLocalizeFile()
         let fileURL = localizeDirection.appendingPathComponent(fileName)
         
         do {
@@ -137,7 +125,7 @@ extension SkinCraftManager {
         }
     }
     
-    private func generateLocalizationFileDirectory() -> URL {
+    private func makeFolderForLocalizeFile() -> URL {
         let fileUrl = currentPathDirr.appendingPathComponent("texts")
         var url = URL(fileURLWithPath: "")
         if !fileManager.fileExists(atPath: fileUrl.path) {
@@ -151,7 +139,7 @@ extension SkinCraftManager {
         } else {
             do {
                 try fileManager.removeItem(atPath: fileUrl.path)
-                url = generateLocalizationFileDirectory()
+                url = makeFolderForLocalizeFile()
             } catch {
                 AppDelegate.log(error.localizedDescription)
             }
@@ -179,7 +167,7 @@ extension SkinCraftManager {
         fileCoordinator.coordinate(readingItemAt: currentPathDirr, options: [.forUploading], error: &error) { [weak fileManager, self] zipUrl in
             
             guard let destinationUrl = fileManager?.cachesDirectory.appendingPathComponent("skinTmp") else {
-                self.errorInternal = NSError(domain: "SkinCraftManager", code: 1001, userInfo: [NSLocalizedDescriptionKey : "can't  create temp dir"])
+                self.errorInternal = NSError(domain: "MinecraftSkinManager", code: 1001, userInfo: [NSLocalizedDescriptionKey : "can't  create temp dir"])
                 return
             }
             
@@ -191,7 +179,7 @@ extension SkinCraftManager {
                 try fileManager?.secureMoveItem(at: zipUrl, to: tmpUrl)
                 archiveUrl = tmpUrl
             } catch {
-                self.errorInternal = NSError(domain: "SkinCraftManager", code: 1002, userInfo: [NSLocalizedDescriptionKey : "can't move archived file"])
+                self.errorInternal = NSError(domain: "MinecraftSkinManager", code: 1002, userInfo: [NSLocalizedDescriptionKey : "can't move archived file"])
             }
         }
         

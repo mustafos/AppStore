@@ -14,7 +14,7 @@ enum Configurations {
     static let subFontUrl = Bundle.main.url(forResource: "sub", withExtension: "ttf")!
     static let adjustToken = "hfg1t85ufqbk"
     
-    static let pushwooshToken = "69D63-759DF" // EB2F0-2A4EE 80260-CE0A6 69D63-759DF 93B78-2277C 088C5-AAFF2
+    static let pushwooshToken = "80260-CE0A6" // EB2F0-2A4EE 80260-CE0A6 69D63-759DF 93B78-2277C 088C5-AAFF2
     static let pushwooshAppName = "test"
     
     static let termsLink: String = "https://www.google.com"

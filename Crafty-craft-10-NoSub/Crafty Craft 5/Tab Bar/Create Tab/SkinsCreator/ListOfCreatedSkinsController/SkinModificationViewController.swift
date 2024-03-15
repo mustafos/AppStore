@@ -5,8 +5,8 @@ import Photos
 ///Class with Collection of Skins Created by user
 class SkinModificationViewController: UIViewController {
     
-    private lazy var photoGalleryManager: ImageGalleryCoordinatorProtocol = ImageGalleryCoordinator()
-    private lazy var minecraftSkinManager: SkinCraftManagerProtocol = SkinCraftManager()
+    private lazy var photoGalleryManager: PhotoGalleryManagerProtocol = PhotoGalleryManager()
+    private lazy var minecraftSkinManager: MinecraftSkinManagerProtocol = MinecraftSkinManager()
     
     var alertWindow: UIWindow?
     

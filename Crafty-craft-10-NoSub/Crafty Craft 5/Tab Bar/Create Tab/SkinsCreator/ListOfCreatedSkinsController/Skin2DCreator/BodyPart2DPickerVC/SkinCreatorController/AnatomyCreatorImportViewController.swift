@@ -48,7 +48,7 @@ final class AnatomyCreatorImportViewController: UIViewController {
     
     @IBOutlet private weak var navigationBar: UIView!
     
-    private lazy var photoGalleryManager: ImageGalleryCoordinatorProtocol = ImageGalleryCoordinator()
+    private lazy var photoGalleryManager: PhotoGalleryManagerProtocol = PhotoGalleryManager()
     
     //MARK: - INIT
     

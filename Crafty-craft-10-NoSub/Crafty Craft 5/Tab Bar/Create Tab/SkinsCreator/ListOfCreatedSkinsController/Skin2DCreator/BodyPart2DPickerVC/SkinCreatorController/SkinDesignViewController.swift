@@ -32,7 +32,7 @@ class SkinDesignViewController: UIViewController, PKCanvasViewDelegate, PKToolPi
     
     private let imageDataCallback: ImageDataCallback
     
-    private lazy var photoGalleryManager: ImageGalleryCoordinatorProtocol = ImageGalleryCoordinator()
+    private lazy var photoGalleryManager: PhotoGalleryManagerProtocol = PhotoGalleryManager()
     
     var currentBodyPartSide: Side? {
         didSet {

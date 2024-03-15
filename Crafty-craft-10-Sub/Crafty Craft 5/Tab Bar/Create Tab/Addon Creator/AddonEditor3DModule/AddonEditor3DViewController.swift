@@ -3,7 +3,7 @@ import Combine
 import SceneKit
 
 class AddonEditor3DViewController: UIViewController {
-    private lazy var minecraftSkinManager: SkinCraftManagerProtocol = SkinCraftManager()
+    private lazy var minecraftSkinManager: MinecraftSkinManagerProtocol = MinecraftSkinManager()
     //MARK: Properties
     var vcModel: AddonEditor3DVCModel?
     var cancellable: AnyCancellable?

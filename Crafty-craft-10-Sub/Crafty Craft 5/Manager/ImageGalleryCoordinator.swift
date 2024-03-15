@@ -9,21 +9,21 @@
 import UIKit
 import Photos
 
-protocol ImageGalleryCoordinatorProtocol {
-    typealias GetPhotoCompleat = (UIImage) -> ()
+protocol PhotoGalleryManagerProtocol {
+    typealias GetImageCompletion = (UIImage) -> ()
     
-    func getImageFromPhotoLibrary(from viewController: UIViewController, completion: @escaping GetPhotoCompleat)
+    func getImageFromPhotoLibrary(from viewController: UIViewController, completion: @escaping GetImageCompletion)
     
-    func getImageFromCamera(from viewController: UIViewController, completion: @escaping GetPhotoCompleat)
+    func getImageFromCamera(from viewController: UIViewController, completion: @escaping GetImageCompletion)
     
-    func saveImageToMediaLibrary(image: UIImage, at viewController: UIViewController)
+    func saveImageToPhotoLibrary(image: UIImage, from viewController: UIViewController)
 }
 
-class ImageGalleryCoordinator: NSObject, ImageGalleryCoordinatorProtocol {
+class PhotoGalleryManager: NSObject, PhotoGalleryManagerProtocol {
     
-    private var getImageCompletion: GetPhotoCompleat?
+    private var getImageCompletion: GetImageCompletion?
     
-    func getImageFromPhotoLibrary(from viewController: UIViewController, completion: @escaping GetPhotoCompleat) {
+    func getImageFromPhotoLibrary(from viewController: UIViewController, completion: @escaping GetImageCompletion) {
         
         self.getImageCompletion = completion
         
@@ -45,11 +45,11 @@ class ImageGalleryCoordinator: NSObject, ImageGalleryCoordinatorProtocol {
         }
     }
     
-    func getImageFromCamera(from viewController: UIViewController, completion: @escaping GetPhotoCompleat) {
+    func getImageFromCamera(from viewController: UIViewController, completion: @escaping GetImageCompletion) {
         
         self.getImageCompletion = completion
         
-        handleCameraAuthorization(on: viewController) { [weak self] granted, vc in
+        proceedWithCameraAccess(from: viewController) { [weak self] granted, vc in
             DispatchQueue.main.async {
                 
                 guard let me = self else {
@@ -67,7 +67,7 @@ class ImageGalleryCoordinator: NSObject, ImageGalleryCoordinatorProtocol {
         }
     }
     
-    func saveImageToMediaLibrary(image: UIImage, at viewController: UIViewController) {
+    func saveImageToPhotoLibrary(image: UIImage, from viewController: UIViewController) {
         guard let pngData = image.pngData() else {
             return
         }
@@ -85,7 +85,7 @@ class ImageGalleryCoordinator: NSObject, ImageGalleryCoordinatorProtocol {
                             AppDelegate.log("Error saving image: \(String(describing: error))")
                         } else {
                             AppDelegate.log("Skin saved successfully!")
-                            self?.showSystemAlert(with: "Skin saved successfully!", and: nil, in: vc)
+                            self?.presentAlert(with: "Skin saved successfully!", and: nil, in: vc)
                         }
                     })
                 }
@@ -99,7 +99,7 @@ class ImageGalleryCoordinator: NSObject, ImageGalleryCoordinatorProtocol {
             case .authorized:
                 completion(true, viewController)
             case .denied, .restricted:
-                self?.presentPermissionAlert(from: viewController)
+                self?.showPermissionAlert(in: viewController)
                 completion(false, viewController)
             case .notDetermined:
                 // Request not handled. Probably, the user hasn't made a choice yet.
@@ -113,17 +113,17 @@ class ImageGalleryCoordinator: NSObject, ImageGalleryCoordinatorProtocol {
     }
     
 
-    func handleCameraAuthorization(on viewController: UIViewController, to: @escaping (Bool, UIViewController?) -> ()) {
+    func proceedWithCameraAccess(from viewController: UIViewController, completion: @escaping (Bool, UIViewController?) -> ()) {
         // Check if the device supports a camera
         guard AVCaptureDevice.authorizationStatus(for: .video) != .authorized else {
-            to(true, viewController)
+            completion(true, viewController)
             return
         }
 
         AVCaptureDevice.requestAccess(for: .video) { success in
             DispatchQueue.main.async {
                 if success { // If request is granted (success is true)
-                    to(true, viewController)
+                    completion(true, viewController)
                 } else { // If request is denied (success is false)
                     // Create Alert
                     let alert = UIAlertController(title: "Camera", message: "Camera access is absolutely necessary to use this app", preferredStyle: .alert)
@@ -148,7 +148,7 @@ class ImageGalleryCoordinator: NSObject, ImageGalleryCoordinatorProtocol {
     }
 
     
-    private func presentPermissionAlert(from viewController: UIViewController) {
+    private func showPermissionAlert(in viewController: UIViewController) {
         let alertController = UIAlertController(title: "Photo Library Access Denied",
                                                 message: "Please allow access to your photo library to save images.",
                                                 preferredStyle: .alert)
@@ -173,7 +173,7 @@ class ImageGalleryCoordinator: NSObject, ImageGalleryCoordinatorProtocol {
         }
     }
     
-    private func showSystemAlert(with titleInfo: String, and massageInfo: String?, in viewController: UIViewController?) {
+    private func presentAlert(with titleInfo: String, and massageInfo: String?, in viewController: UIViewController?) {
         let alertController = UIAlertController(title: titleInfo, message: massageInfo, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -185,7 +185,7 @@ class ImageGalleryCoordinator: NSObject, ImageGalleryCoordinatorProtocol {
     }
 }
 
-extension ImageGalleryCoordinator: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+extension PhotoGalleryManager: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         picker.dismiss(animated: true)
