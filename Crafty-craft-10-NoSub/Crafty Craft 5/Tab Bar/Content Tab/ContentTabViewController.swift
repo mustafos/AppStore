@@ -349,6 +349,22 @@ class ContentTabViewController: UIViewController, TabBarVersatile {
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(sortButtonsContainerViewTapped))
         sortButtonsContainerView.addGestureRecognizer(tapGesture)
+        
+        searchBarView.onStartSearch = { [weak self] in
+            guard let self = self else { return }
+            // Determine if the sortButtonsContainerView is currently visible
+            let sortButtonsContainerViewFrame = self.sortButtonsContainerView.convert(self.sortButtonsContainerView.bounds, to: self.view)
+            let searchBarFrame = self.searchBarView.convert(self.searchBarView.bounds, to: self.view)
+            let searchBarMaxY = searchBarFrame.maxY
+            
+            if sortButtonsContainerViewFrame.intersects(CGRect(x: 0, y: searchBarMaxY, width: self.view.bounds.width, height: self.view.bounds.height - searchBarMaxY)) {
+                self.showSuggestionsTableView()
+                self.view.bringSubviewToFront(self.tableViewContainer!) // Bring tableViewContainer to foreground
+            } else {
+                // Bring sortButtonsContainerView to foreground
+                self.view.bringSubviewToFront(self.sortButtonsContainerView)
+            }
+        }
 
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         
