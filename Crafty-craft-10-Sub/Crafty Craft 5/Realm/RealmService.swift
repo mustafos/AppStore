@@ -1,18 +1,13 @@
-
 import UIKit
 import RealmSwift
 import Foundation
 
-//
-/// Service of basic functions to work with differernt RealmObjects
-//
 public class RealmService {
     
     public static let shared = RealmService()
     private var coreRM = RealmCore.shared
 
     //MARK: Add & Delete from Realm
-    
     /// Save new skins into DB
     func addNewSkin(skin:  CreatedSkinRM ) {
         //        skin.id = generateID(object: skin)

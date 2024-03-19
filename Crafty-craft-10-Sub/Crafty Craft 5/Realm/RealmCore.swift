@@ -1,9 +1,6 @@
 import Foundation
 import RealmSwift
 
-///
-///Class for LowLevel interaction with RealmType Classes. Set of instruments: save, delete, edit, insert etc.
-///
 final class RealmCore: NSObject {
     
     public static let shared = RealmCore()
@@ -114,10 +111,6 @@ final class RealmCore: NSObject {
             return false
         }
     }
-    
-//    func toArray<T>(results: Results<T>) -> [T] {
-//        return Array(results)
-//    }
 }
 
 extension Results {

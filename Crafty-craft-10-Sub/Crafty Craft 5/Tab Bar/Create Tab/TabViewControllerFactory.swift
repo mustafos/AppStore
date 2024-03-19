@@ -455,7 +455,7 @@ extension TabViewControllerFactory: SkinHandlingPicker {
     func showPickSkin(for item: AnatomyCreatedModel) {
         selectedSkinModel = item
         let vc = SkinChoicesVC()
-        vc.state = .edit
+        vc.state = .new
         vc.presenterDelegate = self
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: false)
@@ -464,6 +464,7 @@ extension TabViewControllerFactory: SkinHandlingPicker {
     func showEditPickerSkin(for item: AnatomyCreatedModel) {
         selectedSkinModel = item
         let vc = SkinChoicesVC()
+        vc.state = .edit
         vc.presenterDelegate = self
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: false)

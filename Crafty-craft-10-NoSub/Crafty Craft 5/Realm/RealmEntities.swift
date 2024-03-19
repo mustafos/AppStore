@@ -1,3 +1,10 @@
+//
+//  CreatedSkinRM.swift
+//  Crafty Craft 10
+//
+//  Created by Zolux Rex on 08.03.2024.
+//  Copyright © 2024 Noname Digital. All rights reserved.
+//
 
 import UIKit
 import RealmSwift

@@ -117,19 +117,19 @@ class ImageExporter: NSObject {
         
         return snapshotImage
     }
-
+    
     
     // MARK: Test colorinig and saving
     ///    canvas colors into png  skinAssemblyDiagram
     func generateImageFromRawPixels(anatomyPartSide: Side, image: UIImage?) -> UIImage? {
-
+        
         let imgSize = CGSize(width: 64, height: 64)
         UIGraphicsBeginImageContextWithOptions(imgSize, false, 1)
         
         guard let context = UIGraphicsGetCurrentContext() else {
             return nil
         }
-
+        
         guard let bitmapContext = context.data else {
             return nil
         }
@@ -172,6 +172,68 @@ class ImageExporter: NSObject {
                 correctIndex += 1
             }
         }
+        let finalImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return finalImage
+    }
+    
+    func createImageWithRawPixels(size: CGSize) -> UIImage? {
+
+        let pixelSize: Double = 4
+        let imgSize: CGSize = .init(width: size.width * pixelSize, height: size.height * pixelSize)
+        UIGraphicsBeginImageContextWithOptions(imgSize, false, 1)
+        
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+
+        guard let bitmapContext = context.data else {
+            return nil
+        }
+        
+        let pixelBuffer = bitmapContext.bindMemory(to: UInt32.self,
+                                                   capacity: Int(imgSize.width) * Int(imgSize.height))
+        pixelBuffer.initialize(repeating: 0, count: Int(imgSize.width) * Int(imgSize.height))
+        
+        // Draw the original image
+        UIImage().draw(in: CGRect(origin: .zero, size: imgSize))
+        
+        // Set the blending mode to copy
+        context.setBlendMode(.copy)
+        
+        
+        var correctIndex = 0
+        
+        // Draw the raw pixels, note that x & y are changed,
+        //because of colorArray that is set from sceneKit,
+        //where coordinates begit at left bottom corner.
+        for x in 0..<Int(size.width) {
+            for y in (0..<Int(size.height)).reversed() {
+                let index = y * Int(size.width) + x
+                guard index < rawPixelArray.count else {
+                    continue
+                }
+                
+                let rawPixel = rawPixelArray[correctIndex]
+                let color = UIColor(
+                    red: CGFloat(rawPixel.r) / 255.0,
+                    green: CGFloat(rawPixel.g) / 255.0,
+                    blue: CGFloat(rawPixel.b) / 255.0,
+                    alpha: CGFloat(rawPixel.a) / 255.0
+                )
+                
+                context.setFillColor(color.cgColor)
+                context.fill(CGRect(x: Double(x) * pixelSize,
+                                    y: Double(y) * pixelSize,
+                                    width: pixelSize, height: pixelSize))
+                correctIndex += 1
+            }
+        }
+        
+//        guard let cgImageFromContext = context.makeImage() else { return nil }
+        
+//        let finalImage = UIImage(cgImage: cgImageFromContext)
         let finalImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         

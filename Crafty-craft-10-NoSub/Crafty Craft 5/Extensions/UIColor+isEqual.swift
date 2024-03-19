@@ -48,4 +48,21 @@ public extension UIColor {
             return nil
         }
     }
+    
+    func rgbDouble() -> (Double, Double, Double, Double)? {
+        var fRed: CGFloat = 0
+        var fGreen: CGFloat = 0
+        var fBlue: CGFloat = 0
+        var fAlpha: CGFloat = 0
+        if self.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha) {
+            let iRed = Double(fRed)
+            let iGreen = Double(fGreen)
+            let iBlue = Double(fBlue)
+            let iAlpha = Double(fAlpha)
+
+            return (iRed, iGreen, iBlue, iAlpha)
+        } else {
+            return nil
+        }
+    }
 }

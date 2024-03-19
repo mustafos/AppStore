@@ -109,16 +109,19 @@ class SettingsViewController: UIViewController {
     
     @objc func termsViewIsTapped(_ sender: UITapGestureRecognizer) {
         // Action when the view is tapped
-        model?.openUrl(urlToOpen: Configurations.termsLink)
+        model?.openUrl(urlToOpen: Configurations_REFACTOR.termsLink)
     }
     
     @objc func privacyViewIsTapped(_ sender: UITapGestureRecognizer) {
         // Action when the view is tapped
-        model?.openUrl(urlToOpen: Configurations.policyLink)
+        model?.openUrl(urlToOpen: Configurations_REFACTOR.policyLink)
     }
     
     //clearCacheBtn
     @objc func clearCacheIsTapped(_ sender: UITapGestureRecognizer) {
+        guard let cacheSize = model?.cacheInKB else { return }
+        guard let cacheInKB = Double(cacheSize.replacingOccurrences(of: " KB", with: "")), cacheInKB > 0 else { return }
+        
         addBlurEffectToBackground()
         doneView.roundCorners(.allCorners, radius: 25)
         doneView.isHidden = false

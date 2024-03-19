@@ -51,15 +51,12 @@ class SkinCreatorMainVC: UIViewController {
         menuCollectionView.reloadData()
     }
     
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         menuCollectionView.reloadData()
     }
     
-    
     // MARK: - Setup
-    
     private func setupMenuCollectionView() {
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self

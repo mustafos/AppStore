@@ -13,7 +13,7 @@ let LIGHT_GREY = UIColor(red: 0.19, green: 0.19, blue: 0.19, alpha: 1.0)
 let MID_GREY = #colorLiteral(red: 0.1373, green: 0.1373, blue: 0.1373, alpha: 1) /* #232323 */
 
 let PIXEL_SIZE = 8
-
+let MAX_ADDON_2D_GRID_SIZE = 16
 
 // FIXME: Make this dynamic
 var SCREEN_HEIGHT = UIScreen.main.bounds.size.height

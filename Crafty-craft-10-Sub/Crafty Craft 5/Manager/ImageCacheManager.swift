@@ -51,4 +51,8 @@ class ImageCacheManager {
     public func image(forKey key: String) -> Image? {
         try? storage?.entry(forKey: key).object ?? .none
     }
+    
+    public func allImageKeys() -> [String]? {
+        storage?.allKeys
+    }
 }

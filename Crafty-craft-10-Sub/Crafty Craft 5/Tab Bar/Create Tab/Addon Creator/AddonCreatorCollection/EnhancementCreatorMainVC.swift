@@ -129,7 +129,7 @@ class EnhancementCreatorMainVC: UIViewController {
     private func checkProduct() {
         //CheckSkinProduct
         if IAPManager.shared.addonCreatorIsValid == nil {    // nil - if subscription have not loaded in sceneDelegate
-            validateSub(for: Configurations.unlockFuncSubscriptionID)
+            validateSub(for: Configurations_REFACTOR.unlockFuncSubscriptionID)
             disableOrEnableCreateAddons(isEnabled: false)
         }
     }
@@ -147,10 +147,10 @@ class EnhancementCreatorMainVC: UIViewController {
     
     //Should never work - validation should be done in scene
     private func validateSub(for productName: String) {
-        IAPManager.shared.validateSubscriptions(productIdentifiers: [productName]) { [weak self] results in
+        IAPManager.shared.validateSubscriptions_REFACTOR(productIdentifiers: [productName]) { [weak self] results in
             switch productName {
-            case Configurations.unlockFuncSubscriptionID:
-                if let value = results[Configurations.unlockFuncSubscriptionID] {
+            case Configurations_REFACTOR.unlockFuncSubscriptionID:
+                if let value = results[Configurations_REFACTOR.unlockFuncSubscriptionID] {
                     IAPManager.shared.addonCreatorIsValid = value
                 }
                 DispatchQueue.main.async { [weak self] in

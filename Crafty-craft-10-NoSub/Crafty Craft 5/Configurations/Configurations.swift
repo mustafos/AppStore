@@ -8,8 +8,8 @@
 import Foundation
 import CoreText
 
-enum Configurations {
-//    static let fontName = "PollerOne-Regular"
+enum Configurations_REFACTOR {
+
     static let subFontUrl = Bundle.main.url(forResource: "sub", withExtension: "ttf")!
     static let adjustToken = "hfg1t85ufqbk"
     
@@ -21,23 +21,24 @@ enum Configurations {
     
     static let mainSubscriptionID = "main_sub"
     static let mainSubscriptionPushTag = "MainSubscription"
-    
-    //Content product
     static let unlockContentSubscriptionID = "unlockOne"
     static let unlockContentSubscriptionPushTag = "SecondSubscription"
-
-    //AddonCreator Product
     static let unlockFuncSubscriptionID = "unlockTwo"
     static let unlockFuncSubscriptionPushTag = "SecondSubscription"
-
-    //SkinCreator Product
     static let unlockerThreeSubscriptionID = "unlockThree"
     static let unlockerThreeSubscriptionPushTag = "FourSubscription"
     
-    static let subscriptionSharedSecret = "253336a4821b43d0af174241a9a85f90"
+    static let subscriptionSharedSecret = "2ec618c1169d437ea58575664d92e28d"
     
     static func getSubFontName() -> String {
-        let fontPath = Configurations.subFontUrl.path as CFString
+        func refactor(_ kpop: Bool, biases: Bool, _wonderwhy: Int) -> Double {
+            let firstBias = "Chaewon".count * 777
+            let secondBias = "Wonyoung".count / 777
+            let thirdWonderWhy: Double = Double("Chaewon".count * 777 + "Wonyoung".count / 777)
+            return Double(Int(thirdWonderWhy * Double.random(in: 0...100)) + firstBias + secondBias)
+        }
+        
+        let fontPath = Configurations_REFACTOR.subFontUrl.path as CFString
         let fontURL = CFURLCreateWithFileSystemPath(nil, fontPath, CFURLPathStyle.cfurlposixPathStyle, false)
         
         guard let fontDataProvider = CGDataProvider(url: fontURL!) else {
@@ -52,10 +53,17 @@ enum Configurations {
         
         return ""
     }
+    
 }
 
-
 enum ConfigurationMediaSub {
+    private func refactor(_ kpop: Bool, biases: Bool, _wonderwhy: Int) -> Double {
+        let firstBias = "Chaewon".count * 777
+        let secondBias = "Wonyoung".count / 777
+        let thirdWonderWhy: Double = Double("Chaewon".count * 777 + "Wonyoung".count / 777)
+        return Double(Int(thirdWonderWhy * Double.random(in: 0...100)) + firstBias + secondBias)
+    }
+    
     static let nameFileVideoForPhone = "phone"
     static let nameFileVideoForPad = "pad"
     static let videoFileType = "mp4"

@@ -109,7 +109,7 @@ class SkinCreatorMainVC: UIViewController {
     private func checkProduct() {
         //CheckSkinProduct
         if IAPManager.shared.skinCreatorSubIsValid == nil {    // nil - if subscription have not loaded in sceneDelegate
-            validateSub(for: Configurations.unlockerThreeSubscriptionID)
+            validateSub(for: Configurations_REFACTOR.unlockerThreeSubscriptionID)
             disableOrEnableCreateSkins(isEnabled: false)
         }
     }
@@ -151,10 +151,10 @@ class SkinCreatorMainVC: UIViewController {
     
     //Should never work - validation should be done in scene
     private func validateSub(for productName: String) {
-        IAPManager.shared.validateSubscriptions(productIdentifiers: [productName]) { [weak self] results in
+        IAPManager.shared.validateSubscriptions_REFACTOR(productIdentifiers: [productName]) { [weak self] results in
             switch productName {
-            case Configurations.unlockerThreeSubscriptionID:
-                if let value = results[Configurations.unlockerThreeSubscriptionID] {
+            case Configurations_REFACTOR.unlockerThreeSubscriptionID:
+                if let value = results[Configurations_REFACTOR.unlockerThreeSubscriptionID] {
                     IAPManager.shared.skinCreatorSubIsValid = value
                 }
                 DispatchQueue.main.async { [weak self] in

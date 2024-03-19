@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnatomyPartPickerViewController" customModule="Crafty_Craft_10_2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnatomyPartPickerViewController" customModule="Crafty_Craft_10_NoSub" customModuleProvider="target">
             <connections>
                 <outlet property="bodyComponentView" destination="CbH-wi-X2b" id="s1J-p6-odw"/>
                 <outlet property="bodyPartsContainer" destination="Pnv-aH-El4" id="FSC-er-4PK"/>
@@ -47,7 +48,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKIN CREATOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNE-ol-vcM">
-                            <rect key="frame" x="108.66666666666669" y="29.333333333333329" width="158" height="25.666666666666671"/>
+                            <rect key="frame" x="101" y="28.666666666666671" width="173" height="27"/>
                             <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
                             <color key="textColor" name="BeigeColor"/>
                             <nil key="highlightedColor"/>
@@ -88,10 +89,10 @@
                     <rect key="frame" x="94.666666666666671" y="233.66666666666663" width="185.66666666666663" height="425"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ew5-5D-z6F">
-                            <rect key="frame" x="-2" y="22.333333333333343" width="190" height="380"/>
+                            <rect key="frame" x="2" y="22.333333333333343" width="182" height="380"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fLD-Nx-lwi" userLabel="head component">
-                                    <rect key="frame" x="48.999999999999986" y="0.0" width="92.000000000000014" height="92"/>
+                                    <rect key="frame" x="44.999999999999986" y="0.0" width="92.000000000000014" height="92"/>
                                     <color key="backgroundColor" name="BeigeColor"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="fLD-Nx-lwi" secondAttribute="height" multiplier="1:1" id="Ym1-oO-Fq5"/>
@@ -99,27 +100,27 @@
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="FTK-78-dGq">
-                                    <rect key="frame" x="0.0" y="95" width="190" height="140"/>
+                                    <rect key="frame" x="0.0" y="95" width="182" height="140"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YP9-4z-M6R" userLabel="left arm component">
-                                            <rect key="frame" x="0.0" y="0.0" width="46" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="42" height="140"/>
                                             <color key="backgroundColor" name="BeigeColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="46" id="Avj-NA-lBH"/>
+                                                <constraint firstAttribute="width" constant="42" id="Avj-NA-lBH"/>
                                             </constraints>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-wi-X2b" userLabel="body component">
-                                            <rect key="frame" x="48.999999999999986" y="0.0" width="92.000000000000014" height="140"/>
+                                            <rect key="frame" x="44.999999999999986" y="0.0" width="92.000000000000014" height="140"/>
                                             <color key="backgroundColor" name="BeigeColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="92" id="61r-z8-Ujx"/>
                                             </constraints>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="33k-ux-xnD" userLabel="right arm component">
-                                            <rect key="frame" x="144" y="0.0" width="46" height="140"/>
+                                            <rect key="frame" x="140" y="0.0" width="42" height="140"/>
                                             <color key="backgroundColor" name="BeigeColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="46" id="5td-o6-s7h"/>
+                                                <constraint firstAttribute="width" constant="42" id="5td-o6-s7h"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
@@ -128,7 +129,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="OWK-4k-zhe">
-                                    <rect key="frame" x="48.999999999999986" y="238" width="92.000000000000014" height="142"/>
+                                    <rect key="frame" x="44.999999999999986" y="238" width="92.000000000000014" height="142"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9KT-BE-xfe" userLabel="left leg component">
                                             <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="142"/>

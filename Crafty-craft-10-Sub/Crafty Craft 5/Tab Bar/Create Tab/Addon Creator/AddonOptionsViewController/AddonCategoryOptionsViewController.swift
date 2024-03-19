@@ -112,7 +112,9 @@ extension AddonCategoryOptionsViewController: UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let title = section == AddonCategoryOptionsSection.category.rawValue ? "Groups" : "Items"
-        return CategoryOptionHeaderSection(frame: .init(x: 0, y: 0, width: tableView.bounds.width, height: 28), title: title)
+        let headerView = CategoryOptionHeaderSection(frame: .init(x: 0, y: 0, width: tableView.bounds.width, height: 28), title: title)
+        headerView.title.textColor = .white
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

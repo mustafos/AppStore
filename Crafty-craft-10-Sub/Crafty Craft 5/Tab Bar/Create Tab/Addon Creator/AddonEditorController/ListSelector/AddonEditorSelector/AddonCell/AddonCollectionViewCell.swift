@@ -9,13 +9,12 @@
 import UIKit
 
 class AddonCollectionViewCell: UICollectionViewCell {
-    // MARK: - Outlets
     
+    // MARK: - Outlets
     @IBOutlet weak var image: CustomImageLoader!
     @IBOutlet weak var label: UILabel!
     
     // MARK: - Lifecycle
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureView()
@@ -23,10 +22,10 @@ class AddonCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        image.removeLoader()
     }
     
     // MARK: - Private Methods
-    
     private func configureView() {
         roundCorners(.allCorners, radius: 27)
         layer.borderWidth = 1
@@ -38,5 +37,9 @@ class AddonCollectionViewCell: UICollectionViewCell {
         image.layer.borderColor = UIColor(.black).cgColor
         image.layer.borderWidth = 1
         image.roundCorners(20)
+    }
+    
+    func showLoaderIndicator() {
+        image.addLoader()
     }
 }

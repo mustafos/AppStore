@@ -1,8 +1,9 @@
 //
 //  AddonsRealmSession.swift
-//  json
+//  Crafty Craft 10
 //
-//  Created by Igor Kononov on 06.07.2023.
+//  Created by Zolux Rex on 08.02.2024.
+//  Copyright © 2024 Noname Digital. All rights reserved.
 //
 
 import Foundation

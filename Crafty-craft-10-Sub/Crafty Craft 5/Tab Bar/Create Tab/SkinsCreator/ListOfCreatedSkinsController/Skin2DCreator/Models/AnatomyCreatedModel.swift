@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class AnatomyCreatedModel {
     var id: Int = 0
@@ -31,22 +32,6 @@ class AnatomyCreatedModel {
         preview = UIImage(data: data, scale: 1)
         skinAssemblyDiagram = preview
         name = "edit"
-    }
-    
-    func dist(_ v: Double, _ mu: Double) -> Double {
-        let g = 9.81 // m/s^2
-        let v_metersPerSecond = v * (1000.0 / 3600.0) // Convert km/h to m/s
-        let d1 = v_metersPerSecond * v_metersPerSecond / (2 * mu * g)
-        let d2 = v_metersPerSecond // Reaction distance is equal to speed
-        return d1 + d2
-    }
-
-    func speed(_ d: Double, _ mu: Double) -> Double {
-        let g = 9.81 // m/s^2
-        let v_squared = d * mu * g * 2
-        let v_metersPerSecond = sqrt(v_squared)
-        let v_kilometersPerHour = v_metersPerSecond * (3600.0 / 1000.0) // Convert m/s to km/h
-        return v_kilometersPerHour
     }
     
     func getRealmModelToSave() -> CreatedSkinRM {

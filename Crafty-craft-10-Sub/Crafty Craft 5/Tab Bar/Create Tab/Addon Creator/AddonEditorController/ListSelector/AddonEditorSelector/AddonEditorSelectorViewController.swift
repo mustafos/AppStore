@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import SceneKit
 
 protocol AddonEditorSelectorDelegate: AnyObject {
     func didSaveAddon(at url: URL, preview: Data)
+}
+
+struct PreviewMakingHelper {
+    var currnetShowingModelName: String?
+    var isMakingScreenshot = false
+    var scene: SCNScene?
 }
 
 class AddonEditorSelectorViewController: UIViewController {
@@ -18,6 +25,7 @@ class AddonEditorSelectorViewController: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var sceneView: SCNView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var searchButton: UIButton!
@@ -30,6 +38,12 @@ class AddonEditorSelectorViewController: UIViewController {
     @IBOutlet weak var importButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    
+    lazy var allResourcePackNamesSet: Set<String> = {
+        Set(resourcePack.map { $0.name})
+    }()
+    
+    private var previewHelper = PreviewMakingHelper()
     
     private let addonModel: SavedAddonEnch
     
@@ -71,14 +85,25 @@ class AddonEditorSelectorViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         registerForKeyboardNotifications()
+        updatePreviewIfNeeded()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         unregisterFromKeyboardNotifications()
+    }
+    
+    private func updatePreviewIfNeeded() {
+        guard !isAllPreviewExist() else { return }
+        guard let firstWithoutPreview = resourcePackNamesWithoutPreview().first else { return }
+        guard let cellModel = resourcePack.first(where: { $0.name == firstWithoutPreview}) else { return }
+        let model = SceneLogicModelAddon3D(resourcePack: cellModel)
+        sceneView.scene = model.scene
+        previewHelper.scene = model.scene
+        previewHelper.currnetShowingModelName = cellModel.name
+        sceneView.showsStatistics = false
+        sceneView.delegate = self
     }
     
     private func filterData(with searchText: String) {
@@ -143,14 +168,10 @@ class AddonEditorSelectorViewController: UIViewController {
     
     @IBAction func importTapped(_ sender: UIButton) {
         photoGalleryManager.getImageFromPhotoLibrary(from: self) { [weak self] image in
-                        
             guard let resourcePack = self?.resourcePack.first else { return }
-            
             let texture = UIImage(data: resourcePack.image)
             
-            guard let size = texture?.size, let newImage = image.pixelateAndResize(to: size)?.resizeAspectFit(to: size, targetScale: 1) else {
-                return
-            }
+            guard let size = texture?.size, let newImage = image.pixelateAndResize(to: size)?.resizeAspectFit(to: size, targetScale: 1) else { return }
             
             let newPack = resourcePack.copy(with: newImage.pngData()!)
             
@@ -180,14 +201,10 @@ extension AddonEditorSelectorViewController: AddonSaveable {
     func saved(name: String, geometry: URL, texture: URL, preview: URL) -> URL? {
         guard let resource = selectedResourcePack else {
             assert(false, "missed Resource Pack")
-            
             return nil
         }
         
-        guard let saveUrl = mcAddonFileManager.save(resource, name: name, geometry: geometry, texture: texture, preview: preview) else {
-            
-            return nil
-        }
+        guard let saveUrl = mcAddonFileManager.save(resource, name: name, geometry: geometry, texture: texture, preview: preview) else { return nil }
         
         var previewData: Data?
         
@@ -205,9 +222,7 @@ extension AddonEditorSelectorViewController: AddonSaveable {
             }
         }
         
-        guard let textureData = try? Data(contentsOf: texture) else {
-            return nil
-        }
+        guard let textureData = try? Data(contentsOf: texture) else { return nil }
         
         delegate?.didSaveAddon(at: saveUrl, preview: previewData ?? textureData)
         
@@ -243,18 +258,7 @@ extension AddonEditorSelectorViewController : UICollectionViewDataSource {
         if let image = ImageCacheManager.shared.image(forKey: cellModel.name) {
             cell.image.image = image
         } else {
-            if let skinVariant = addonModel.skin_variants.first(where: { $0.name == skinName }) {
-                DropBoxParserFiles.shared.getBloodyImageURLFromDropBox(img: skinVariant.path) { url in
-                    guard url != nil else {
-                        cell.image.image = UIImage(data: cellModel.image)
-                        return
-                    }
-                    
-                    cell.image.loadImage(from: url!, id: cellModel.name) { _ in }
-                }
-            } else {
-                cell.image.image = UIImage(data: cellModel.image)
-            }
+            cell.showLoaderIndicator()
         }
         
         return cell
@@ -325,5 +329,63 @@ extension AddonEditorSelectorViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         filterData(with: "")
         searchBar.resignFirstResponder()
+    }
+}
+
+extension AddonEditorSelectorViewController: SCNSceneRendererDelegate {
+    func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: TimeInterval) {
+        guard previewHelper.scene == scene else { return }
+        guard !previewHelper.isMakingScreenshot, !isAllPreviewExist() else { return }
+        
+        guard let imageName = previewHelper.currnetShowingModelName else { return }
+        previewHelper.isMakingScreenshot = true
+        captureScreenshotWithKey { [weak self] screenshot in
+            guard let self else { return }
+            previewHelper.isMakingScreenshot = false
+            
+            //save to cache
+            ImageCacheManager.shared.set(screenshot, forKey: previewHelper.currnetShowingModelName!)
+            
+            //get new screenshot or update UI
+            if isAllPreviewExist() {
+                previewHelper.currnetShowingModelName = nil
+                previewHelper.scene = nil
+                self.collectionView.reloadData()
+            } else {
+                guard let firstWithoutPreview = resourcePackNamesWithoutPreview().first else { return }
+                guard let cellModel = resourcePack.first(where: { $0.name == firstWithoutPreview}) else { return }
+                
+                let model = SceneLogicModelAddon3D(resourcePack: cellModel)
+                // update scene to triger render functionality
+                sceneView.scene = model.scene
+                previewHelper.scene = model.scene
+                previewHelper.currnetShowingModelName = cellModel.name
+            }
+        }
+    }
+
+    func captureScreenshotWithKey(_ completion: @escaping (UIImage) -> Void){
+        DispatchQueue.main.async() {
+            let screenshot = self.sceneView.snapshot()
+            completion(screenshot)
+        }
+    }
+    
+    func isAllPreviewExist() -> Bool {
+        let allImageCachedKey = Set<String>(ImageCacheManager.shared.allImageKeys() ?? [])
+        let keysIntersection = allImageCachedKey.intersection(self.allResourcePackNamesSet)
+        
+        //if all keys exist in cache
+        return keysIntersection.count == self.allResourcePackNamesSet.count
+    }
+    
+    func resourcePackNamesWithoutPreview() -> [String] {
+        let allImageCachedKey = Set<String>(ImageCacheManager.shared.allImageKeys() ?? [])
+        let keysIntersection = allImageCachedKey.intersection(self.allResourcePackNamesSet)
+        
+        var keyWitoutPreview = keysIntersection
+        keyWitoutPreview.formSymmetricDifference(self.allResourcePackNamesSet)
+        
+        return Array(keyWitoutPreview)
     }
 }

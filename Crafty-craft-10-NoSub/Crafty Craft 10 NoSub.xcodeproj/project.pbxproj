@@ -33,7 +33,6 @@
 		03AFFD452AD847D0002A131D /* SkinChoicesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AFFD442AD847D0002A131D /* SkinChoicesVC.swift */; };
 		07817DA82A6E8C7500D1A95B /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07817DA72A6E8C7500D1A95B /* Configurations.swift */; };
 		1C2983CC2A5EADE500E936BA /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 1C2983CB2A5EADE500E936BA /* PinLayout */; };
-		631B89F92A4969E300F66E7C /* stiv_v5.scn in Resources */ = {isa = PBXBuildFile; fileRef = 631B89F82A4969E300F66E7C /* stiv_v5.scn */; };
 		633030422A348FB400CDCD4A /* AnatomyCreatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633030412A348FB400CDCD4A /* AnatomyCreatedModel.swift */; };
 		635026FB2A95FF800086FE4B /* Array+substracting_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635026FA2A95FF800086FE4B /* Array+substracting_ext.swift */; };
 		635281902A589ECA00F3EB23 /* DBParserFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635281822A589EC900F3EB23 /* DBParserFile.swift */; };
@@ -61,6 +60,7 @@
 		6A59426E2B5FD35E009E4BD0 /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A59426D2B5FD35E009E4BD0 /* TabBarItemView.swift */; };
 		6A5942742B61135E009E4BD0 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5942732B61135E009E4BD0 /* CustomTabBar.swift */; };
 		6A5942762B611572009E4BD0 /* CustomTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5942752B611572009E4BD0 /* CustomTabItem.swift */; };
+		6AAA56B22BA7F2CB006D35C8 /* stiv_v5.scn in Resources */ = {isa = PBXBuildFile; fileRef = 6AAA56B12BA7F2CB006D35C8 /* stiv_v5.scn */; };
 		6AB028A72B5E61C9005586CC /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028A32B5E61C8005586CC /* Montserrat-Medium.ttf */; };
 		6AB028A82B5E61C9005586CC /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028A42B5E61C8005586CC /* Montserrat-Bold.ttf */; };
 		6AB028A92B5E61C9005586CC /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028A52B5E61C9005586CC /* Montserrat-Regular.ttf */; };
@@ -324,7 +324,6 @@
 		03AFFD422AD807A2002A131D /* UIButton+CornerInspectebleRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+CornerInspectebleRadius.swift"; sourceTree = "<group>"; };
 		03AFFD442AD847D0002A131D /* SkinChoicesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinChoicesVC.swift; sourceTree = "<group>"; };
 		07817DA72A6E8C7500D1A95B /* Configurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
-		631B89F82A4969E300F66E7C /* stiv_v5.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = stiv_v5.scn; sourceTree = "<group>"; };
 		633030412A348FB400CDCD4A /* AnatomyCreatedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnatomyCreatedModel.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/Models/AnatomyCreatedModel.swift"; sourceTree = "<group>"; };
 		635026FA2A95FF800086FE4B /* Array+substracting_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+substracting_ext.swift"; sourceTree = "<group>"; };
 		635281822A589EC900F3EB23 /* DBParserFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBParserFile.swift; sourceTree = "<group>"; };
@@ -350,6 +349,7 @@
 		6A59426D2B5FD35E009E4BD0 /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
 		6A5942732B61135E009E4BD0 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		6A5942752B611572009E4BD0 /* CustomTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabItem.swift; sourceTree = "<group>"; };
+		6AAA56B12BA7F2CB006D35C8 /* stiv_v5.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = stiv_v5.scn; sourceTree = "<group>"; };
 		6AB028A32B5E61C8005586CC /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Medium.ttf"; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Resources/Fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		6AB028A42B5E61C8005586CC /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Resources/Fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		6AB028A52B5E61C9005586CC /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Resources/Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -1073,7 +1073,7 @@
 				6AB6CDA62B761BD4008A3491 /* MagnifyingGlassView.swift */,
 				6AB6CDA12B761BC6008A3491 /* SceneLogicModel.swift */,
 				6AB6CDA42B761BCF008A3491 /* SkinCommand.swift */,
-				631B89F82A4969E300F66E7C /* stiv_v5.scn */,
+				6AAA56B12BA7F2CB006D35C8 /* stiv_v5.scn */,
 			);
 			path = 3dModel;
 			sourceTree = "<group>";
@@ -1611,6 +1611,7 @@
 				6AB028C22B5E6341005586CC /* SeedTabViewController.xib in Resources */,
 				6AB029732B5E6B00005586CC /* SmallModelView.xib in Resources */,
 				6AB028B92B5E62E3005586CC /* ServerTableViewCell.xib in Resources */,
+				6AAA56B22BA7F2CB006D35C8 /* stiv_v5.scn in Resources */,
 				6AB029B52B5EBAAC005586CC /* SkinDesignViewController.xib in Resources */,
 				6AB029A62B5EB9F7005586CC /* AnatomyPartPickerViewController.xib in Resources */,
 				6AB028C52B5E6350005586CC /* SeedTableViewCell.xib in Resources */,
@@ -1633,7 +1634,6 @@
 				6AB0299E2B5E719D005586CC /* SkinEditorViewController.xib in Resources */,
 				6AB028DA2B5E655D005586CC /* FilterTableViewCell.xib in Resources */,
 				6AB029C52B5EBB00005586CC /* LegsAnatomyPartViewController.xib in Resources */,
-				631B89F92A4969E300F66E7C /* stiv_v5.scn in Resources */,
 				6AB30A422B7631AD00FC5EA6 /* EnhancementCreatorViewController.xib in Resources */,
 				6AB0292D2B5E67C8005586CC /* SsvedAddonCollectionCell.xib in Resources */,
 				6AB029472B5E6963005586CC /* ColorPickerViewController.xib in Resources */,
@@ -2251,7 +2251,7 @@
 			repositoryURL = "https://github.com/hyperoslo/Cache";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
+				minimumVersion = 6.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

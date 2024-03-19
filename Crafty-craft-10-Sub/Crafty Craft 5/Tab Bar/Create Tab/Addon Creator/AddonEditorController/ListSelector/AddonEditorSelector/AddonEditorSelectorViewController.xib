@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddonEditorSelectorViewController" customModule="Crafty_Craft_10" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddonEditorSelectorViewController" customModule="Crafty_Craft_10_NoSub" customModuleProvider="target">
             <connections>
                 <outlet property="backButton" destination="3Aq-o6-WqR" id="aCC-Yl-vcb"/>
                 <outlet property="bottomConstrains" destination="nod-sL-lw2" id="iRt-Md-XYU"/>
@@ -23,6 +23,7 @@
                 <outlet property="contentView" destination="GNP-J7-2iB" id="hxD-4q-QSJ"/>
                 <outlet property="doneButton" destination="TEd-th-hiT" id="CkW-Cx-aPl"/>
                 <outlet property="importButton" destination="Hw8-a3-2o8" id="Ed8-Er-KmQ"/>
+                <outlet property="sceneView" destination="KGF-e9-G7w" id="r7B-Ts-Xvp"/>
                 <outlet property="searchBar" destination="L44-Nq-zLr" id="fVQ-Or-bnO"/>
                 <outlet property="searchButton" destination="uXt-6Q-mAz" id="Tk8-u4-1vy"/>
                 <outlet property="titleLabel" destination="jWr-Bg-rJA" id="A6F-n2-W6Q"/>
@@ -186,6 +187,10 @@
                     <rect key="frame" x="16" y="75" width="398" height="807"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
+                <sceneKitView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KGF-e9-G7w">
+                    <rect key="frame" x="0.0" y="46" width="430" height="839"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </sceneKitView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="05W-ZF-eKA"/>
             <color key="backgroundColor" name="BackgroundColor"/>

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class EnhancementEditorModel {
     
@@ -64,7 +65,7 @@ class EnhancementEditorModel {
     
     let mcAddonFileManager: AddonFileManagerProtocol
     
-    init(addonModel: SavedAddonEnch, mcAddonFileManager: AddonFileManagerProtocol = MicroConAddonFileManager()) {
+    init(addonModel: SavedAddonEnch, mcAddonFileManager: AddonFileManagerProtocol = AddonFileManager()) {
         self.addonModel = addonModel
         self.mcAddonFileManager = mcAddonFileManager
         
@@ -285,6 +286,6 @@ class SavedAddonEnch {
         self.amount = realmModel.amount
         self.editingDate = realmModel.editingDate
         
-        self.file = realmModel.file ?? ""        
+        self.file = realmModel.file ?? ""
     }
 }

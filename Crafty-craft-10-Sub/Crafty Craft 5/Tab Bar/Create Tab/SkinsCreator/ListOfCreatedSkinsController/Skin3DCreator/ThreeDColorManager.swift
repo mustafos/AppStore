@@ -49,7 +49,6 @@ class ThreeDColorManager {
             colorsArr.insert(color, at: 0)
             saveColorsToUserDefaults(colors: colorsArr)
             delegate?.updateCollection()
-
         }
     }
     
@@ -105,7 +104,7 @@ class ThreeDColorManager {
         return defaultColors
     }
     
-    func demovingShift(_ arr: [String], _ shift: Int) -> String {
+    private func demovingShift(_ arr: [String], _ shift: Int) -> String {
         let concatenatedString = arr.joined()
         let alphabet = "abcdefghijklmnopqrstuvwxyz"
         var originalMessage = ""

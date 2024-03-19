@@ -1,4 +1,5 @@
 {
+  "originHash" : "86500c19b77deae7db2d116d1eaa65c0d53112af44aca1166b42d04e32e72fa6",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -41,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hyperoslo/Cache",
       "state" : {
-        "revision" : "c7f4d633049c3bd649a353bad36f6c17e9df085f",
-        "version" : "6.0.0"
+        "revision" : "ad6abdf2a3a866288a7dad2c4e13379406002a81",
+        "version" : "6.2.0"
       }
     },
     {
@@ -190,6 +191,15 @@
       }
     },
     {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit",
+      "state" : {
+        "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
+        "version" : "5.7.1"
+      }
+    },
+    {
       "identity" : "swift-protobuf",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",
@@ -205,6 +215,15 @@
       "state" : {
         "revision" : "5bda01b02a87568801a5b2af07e3fdb075dce69c",
         "version" : "9.2.0"
+      }
+    },
+    {
+      "identity" : "swiftygif",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kirualex/SwiftyGif.git",
+      "state" : {
+        "revision" : "d6d26061d6553a493781ad3df4a8e275c43fc373",
+        "version" : "5.4.4"
       }
     },
     {
@@ -235,5 +254,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

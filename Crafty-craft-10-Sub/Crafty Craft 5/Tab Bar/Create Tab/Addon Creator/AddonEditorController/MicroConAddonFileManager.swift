@@ -1,5 +1,5 @@
 //
-//  MicroConAddonFileManager.swif
+//  AddonFileManager.swif
 //  Crafty Craft 10
 //
 //  Created by Zolux Rex on 08.03.2024.
@@ -17,7 +17,7 @@ protocol AddonFileManagerProtocol {
     func save(_ resource: ResourcePack, name: String, geometry: URL, texture: URL, preview: URL) -> URL?
 }
 
-class MicroConAddonFileManager: AddonFileManagerProtocol {
+class AddonFileManager: AddonFileManagerProtocol {
     private enum Constant {
         static let mcAddonExtension = "mcaddon"
         static let mcAddonRPackExtension = "mcpack"
@@ -152,7 +152,7 @@ class MicroConAddonFileManager: AddonFileManagerProtocol {
     
     func save(_ resource: ResourcePack, name: String, geometry: URL, texture: URL, preview: URL) -> URL? {
         
-        let fileManager = FileManager.default        
+        let fileManager = FileManager.default
         
         resource.texturePath.remove()
         

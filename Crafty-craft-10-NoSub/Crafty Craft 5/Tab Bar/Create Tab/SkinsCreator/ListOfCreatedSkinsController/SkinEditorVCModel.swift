@@ -58,10 +58,13 @@ final class SkinEditorVCModel {
         skinsCreatedModelArray = RealmService.shared.getCreatedSkinsArray().map({ AnatomyCreatedModel(realmedModel: $0) })
     }
     
+    func deleteSkin(_ skin: AnatomyCreatedModel) {
+        RealmService.shared.deleteSkin(skin: skin)
+        updateSkinsArray()
+    }
+    
     func deleteSkin(at index: Int) {
-        guard skinsCreatedModelArray.indices.contains(index) else {
-            return
-        }
+        guard skinsCreatedModelArray.indices.contains(index) else { return }
         AppDelegate.log("index ",index)
         AppDelegate.log(skinsCreatedModelArray.count)
         let skinToDelete = skinsCreatedModelArray[index]

@@ -28,7 +28,6 @@ extension ThreeDSkinTestViewController: UICollectionViewDelegate, UICollectionVi
         
         cell.configCell(bgColor: cellColor, isSelected: cellIsSelcted)
         
-
         return cell
     }
     
@@ -41,8 +40,6 @@ extension ThreeDSkinTestViewController: UICollectionViewDelegate, UICollectionVi
         cell?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
 
     }
-    
-
 }
 
 extension ThreeDSkinTestViewController: UICollectionViewDelegateFlowLayout {

@@ -1,9 +1,9 @@
 //
 //  SkinChoicesVC.swift
-//  Crafty Craft 5
+//  Crafty Craft 10
 //
-//  Created by Vitaliy Polezhay on 12.10.2023.
-//  Copyright © 2023 Noname Digital. All rights reserved.
+//  Created by Zolux Rex on 08.02.2024.
+//  Copyright © 2024 Noname Digital. All rights reserved.
 //
 
 import UIKit
@@ -98,7 +98,7 @@ class SkinChoicesVC: UIViewController {
         self.animateDismissView()
         presenterDelegate?.amenable2dTap()
     }
-
+    
     @objc func edit3dButtonTapped() {
         self.animateDismissView()
         presenterDelegate?.amenable3dTap()
@@ -157,7 +157,6 @@ class SkinChoicesVC: UIViewController {
         let stackView = UIStackView(arrangedSubviews: currentButtonArray)
         stackView.axis = .vertical
         stackView.distribution = .fill
-
         stackView.spacing = 12
         return stackView
     }()
@@ -313,8 +312,8 @@ class SkinChoicesVC: UIViewController {
     
     func animateShowDimmedView() {
         UIView.animate(withDuration: 0.3) {
-                self.containerView.alpha = self.maxDimmedAlpha
-            }
+            self.containerView.alpha = self.maxDimmedAlpha
+        }
     }
     
     func animateDismissView() {

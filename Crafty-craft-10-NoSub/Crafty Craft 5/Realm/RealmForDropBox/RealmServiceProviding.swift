@@ -76,7 +76,7 @@ class RealmServiceProviding {
     
     
     //MARK: Skins
-
+    
     private func getAllSkinsSession() -> [SkinsRealmSession] {
         return getAllObjectsSession()
     }
@@ -98,7 +98,7 @@ class RealmServiceProviding {
     private func getSkinWithID(id: String) -> SkinsRealmSession? {
         getAllSkinsSession().first(where: {$0.id == id}) ?? nil
     }
-
+    
     func updateSkin(id: String, isFavorit: Bool) {
         
         guard let skinRealm = getSkinWithID(id: id) else { return }
@@ -134,7 +134,7 @@ class RealmServiceProviding {
     private func getAddonWithID(id: String) -> AddonsRealmSession? {
         getAllAddonsSession().first(where: {$0.id == id}) ?? nil
     }
-
+    
     func updateAddon(id: String, isFavorit: Bool) {
         
         guard let addonRealm = getAddonWithID(id: id) else { return }
@@ -171,7 +171,7 @@ class RealmServiceProviding {
     private func getMapWithID(id: String) -> MapsRealmSession? {
         getAllMapsSession().first(where: {$0.id == id}) ?? nil
     }
-
+    
     func updateMap(id: String, isFavorit: Bool) {
         
         guard let mapRealm = getMapWithID(id: id) else { return }
@@ -189,12 +189,11 @@ extension RealmServiceProviding {
     
     func getAllRealmSessionObjects<T: Object>(of type: T.Type) -> [T]? {
         let resultArray = Array(realmService.readAll(T.self) )
-
+        
         return resultArray
     }
     
     func updateRealmObj<T: Object, V> (realmObj: T, keyToUpdate: String, newVal: V?) {
         realmService.update(realmObj, with: [keyToUpdate: newVal])
-        
     }
 }
