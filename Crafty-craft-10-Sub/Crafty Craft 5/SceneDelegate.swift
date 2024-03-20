@@ -24,7 +24,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //#else
         if NetworkStatusMonitor.shared.isNetworkAvailable {
             //              Validate MainProductSub
-            IAPManager.shared.validateSubscriptionWithCompletionHandler_REFACTOR(productIdentifier: Configurations_REFACTOR.mainSubscriptionID) { isPur in
+            IAPManager.shared.validateSubscriptionWithCompletionHandler(productIdentifier: Configurations_REFACTOR.mainSubscriptionID) { isPur in
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     switch isPur {
@@ -34,20 +34,20 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     }
                 }
                 //             Validate ContentProductSub
-                IAPManager.shared.validateSubscriptionWithCompletionHandler_REFACTOR(productIdentifier: Configurations_REFACTOR.unlockContentSubscriptionID) { isPur in
+                IAPManager.shared.validateSubscriptionWithCompletionHandler(productIdentifier: Configurations_REFACTOR.unlockContentSubscriptionID) { isPur in
 
                     DispatchQueue.main.async() {
                         IAPManager.shared.contentSubIsVaild = isPur
                     }
                     
                     //             Validate AddonCreatorProductSub
-                    IAPManager.shared.validateSubscriptionWithCompletionHandler_REFACTOR(productIdentifier: Configurations_REFACTOR.unlockFuncSubscriptionID) { isPur in
+                    IAPManager.shared.validateSubscriptionWithCompletionHandler(productIdentifier: Configurations_REFACTOR.unlockFuncSubscriptionID) { isPur in
                         DispatchQueue.main.async() {
                             IAPManager.shared.addonCreatorIsValid = isPur
                         }
                         
                         //             Validate SkinCreatorProductSub
-                        IAPManager.shared.validateSubscriptionWithCompletionHandler_REFACTOR(productIdentifier: Configurations_REFACTOR.unlockerThreeSubscriptionID) { isPur in
+                        IAPManager.shared.validateSubscriptionWithCompletionHandler(productIdentifier: Configurations_REFACTOR.unlockerThreeSubscriptionID) { isPur in
                             DropBoxParserFiles.shared.zetupDropBox()
                             DispatchQueue.main.async() {
                                 IAPManager.shared.skinCreatorSubIsValid = isPur

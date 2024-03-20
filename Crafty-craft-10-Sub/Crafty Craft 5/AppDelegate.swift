@@ -35,9 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let thirdPartyServicesManager = ThirdPartyServicesManager.shared
-        thirdPartyServicesManager.initializeAdjust_REFACTOR()
-        thirdPartyServicesManager.initializePushwoosh_REFACTOR(delegate: self)
-        thirdPartyServicesManager.initializeInApps_REFACTOR()
+        thirdPartyServicesManager.initializeAdjust()
+        thirdPartyServicesManager.initializePushwoosh(delegate: self)
+        thirdPartyServicesManager.initializeInApps()
         
         setupTabBarchik()
 

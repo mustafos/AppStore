@@ -151,7 +151,7 @@ class SkinCreatorMainVC: UIViewController {
     
     //Should never work - validation should be done in scene
     private func validateSub(for productName: String) {
-        IAPManager.shared.validateSubscriptions_REFACTOR(productIdentifiers: [productName]) { [weak self] results in
+        IAPManager.shared.validateSubscriptions(productIdentifiers: [productName]) { [weak self] results in
             switch productName {
             case Configurations_REFACTOR.unlockerThreeSubscriptionID:
                 if let value = results[Configurations_REFACTOR.unlockerThreeSubscriptionID] {
