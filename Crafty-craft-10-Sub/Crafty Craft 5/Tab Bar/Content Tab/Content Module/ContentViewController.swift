@@ -80,7 +80,7 @@ class ContentViewController: UIViewController {
         
         documentPicker = DocumentPicker(presentationController: self, delegate: self)
     }
-
+    
     private func setUpPropertys() {
         if let image = model.imageData {
             if mode == .skins {
@@ -265,7 +265,7 @@ class ContentViewController: UIViewController {
         case .maps:
             RealmServiceProviding.shared.updateMap(id: model.id, isFavorit: isPageFavorite)
         }
-                
+        
         updateFavoriteButton()
     }
     
@@ -447,7 +447,7 @@ extension ContentViewController {
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = view.bounds
         blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    
+        
         let downloadContnetVC = DownloadContnetViewController()
         downloadContnetVC.shareAddonAction = { [weak self] in
             guard let self else { return }
@@ -462,7 +462,7 @@ extension ContentViewController {
                 // show document picker
                 self.documentPicker?.displayPicker()
             }
-            let popupVC = PopupViewController(contentController: instructionVC, popupWidth: 302, popupHeight: 470)
+            let popupVC = PopupViewController(contentController: instructionVC, popupWidth: 302, popupHeight: 540)
             popupVC.view.insertSubview(blurView, at: 0)
             self.present(popupVC, animated: true)
         }
@@ -478,7 +478,7 @@ extension ContentViewController {
             // Handle the failure here.
             return
         }
-
+        
         // Make sure you release the security-scoped resource when you finish.
         defer { url.stopAccessingSecurityScopedResource() }
         
@@ -487,33 +487,33 @@ extension ContentViewController {
             installCurrentAddonTo(desinationURL: url)
         } else {
             // show error popup
-            showAlert(title: "ERROR", message: "You have selected the wrong folder. Select the Minecraft folder from the list.", cancelTitle: "Cancel")
+            showAlert(title: "Error", message: "You have selected the wrong folder. Select the Minecraft folder from the list.", cancelTitle: "Cancel")
         }
     }
     
     private func installCurrentAddonTo(desinationURL: URL) {
         let fileManager = FileManager()
-         var destinationURL = desinationURL
-         destinationURL.appendPathComponent(model.name)
- 
-         do {
-             guard let downloadedTmpUrl = dowloadedURL else {
-                 showAlert(title: "Error", message: "Something went wrong")
-                 return
-             }
-             let zipURL = downloadedTmpUrl.deletingPathExtension().appendingPathExtension("zip")
-             try FileManager.default.moveItem(at: downloadedTmpUrl, to: zipURL)
-     
-             try fileManager.createDirectory(at: destinationURL, withIntermediateDirectories: true, attributes: nil)
-             try fileManager.unzipItem(at: zipURL, to: destinationURL)
-             showAlert(title: "Success", message: "Addon successfuly installed")
-         } catch {
-             if (error as NSError).code == 516 {
-                 showAlert(title: "Error", message: "Addon already installed in this folder.")
-             } else {
-                 showAlert(title: "Error", message: "Something went wrong")
-             }
-         }
+        var destinationURL = desinationURL
+        destinationURL.appendPathComponent(model.name)
+        
+        do {
+            guard let downloadedTmpUrl = dowloadedURL else {
+                showAlert(title: "Error", message: "Something went wrong")
+                return
+            }
+            let zipURL = downloadedTmpUrl.deletingPathExtension().appendingPathExtension("zip")
+            try FileManager.default.moveItem(at: downloadedTmpUrl, to: zipURL)
+            
+            try fileManager.createDirectory(at: destinationURL, withIntermediateDirectories: true, attributes: nil)
+            try fileManager.unzipItem(at: zipURL, to: destinationURL)
+            showAlert(title: "Success", message: "Addon successfuly installed")
+        } catch {
+            if (error as NSError).code == 516 {
+                showAlert(title: "Error", message: "Addon already installed in this folder.")
+            } else {
+                showAlert(title: "Error", message: "Something went wrong")
+            }
+        }
     }
     
     private func isFileTheMinecraftRootFolder(fileList: FileManager.DirectoryEnumerator) -> Bool {
@@ -536,12 +536,10 @@ extension ContentViewController {
 // save image
 extension ContentViewController {
     func writeToPhotoAlbum(image: UIImage) {
-           UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveCompleted), nil)
-       }
-
-       @objc func saveCompleted(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-           
-       }
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveCompleted), nil)
+    }
+    
+    @objc func saveCompleted(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {}
 }
 
 extension ContentViewController {

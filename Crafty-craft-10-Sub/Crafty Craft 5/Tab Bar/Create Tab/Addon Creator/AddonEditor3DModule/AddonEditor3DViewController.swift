@@ -273,7 +273,6 @@ class AddonEditor3DViewController: UIViewController {
         sceneView.autoenablesDefaultLighting = true
         sceneView.allowsCameraControl = true // <--- when user go to edit mode
         sceneView.showsStatistics = false
-//        sceneView.defaultCameraController.delegate = self
         sceneView.delegate = self
         sceneView.defaultCameraController.inertiaEnabled = false
         startingPointOfView = sceneView.pointOfView

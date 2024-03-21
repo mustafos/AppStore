@@ -71,6 +71,8 @@ class ThreeDSkinTestViewController: AppViewController {
     private var shareButton: UIButton = UIButton()
     private var dowmloadButton: UIButton = UIButton()
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
     @IBOutlet weak var skinNameLabel: UILabel!
     
     @IBOutlet weak var sceneView: SCNView!
@@ -463,6 +465,8 @@ class ThreeDSkinTestViewController: AppViewController {
     private func setupDownloadAndShareButtons() {
         dowmloadButton.setImage(UIImage(named: "Save Item"), for: .normal)
         dowmloadButton.addTarget(self, action: #selector(downloadExportAction), for: .touchUpInside)
+        
+        titleLabel.text = "FINAL SKIN"
         
         shareButton.setImage(UIImage(named: "Dowmload Item"), for: .normal)
         shareButton.addTarget(self, action: #selector(shareAction), for: .touchUpInside)

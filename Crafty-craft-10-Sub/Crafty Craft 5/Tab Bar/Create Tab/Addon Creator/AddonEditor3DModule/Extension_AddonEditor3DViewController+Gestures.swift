@@ -149,7 +149,6 @@ extension AddonEditor3DViewController {
             
         case .ended, .cancelled:
             if let pickedColor = magnifyingGlassView?.backgroundColor {
-//                vcModel.editorAddonModel.colorManager3D.updateColorsArr(with: pickedColor)
                 vcModel.editorAddonModel.colorManager3D.addNewColor(color: pickedColor)
 
                 vcModel.editorAddonModel.currentDrawingColor = pickedColor
@@ -163,7 +162,6 @@ extension AddonEditor3DViewController {
     
     @objc func doubleTapOnSceneAction(_ recognizer: UITapGestureRecognizer) {
         if recognizer.state == .recognized {
-            //            scnModel.becomeToDefoultPosition()
         }
     }
 }

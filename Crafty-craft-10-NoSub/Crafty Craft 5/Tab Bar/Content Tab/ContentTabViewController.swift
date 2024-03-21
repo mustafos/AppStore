@@ -514,6 +514,7 @@ class ContentTabViewController: UIViewController, TabBarVersatile {
     
     @IBAction private func onNavBarSearchButtonTapped(_ sender: UIButton) {
         navbarSearchMode.toggle()
+        contentFilterView.viewModel.isDropdownVisible = false
     }
     
     @IBAction func settingsBtnTapped(_ sender: UIButton) {
@@ -552,6 +553,7 @@ class ContentTabViewController: UIViewController, TabBarVersatile {
             break
         }
         sortViewHeight.constant = 240
+        navbarSearchMode = false
         contentFilterView.viewModel.isDropdownVisible = false
     }
 }

@@ -5,6 +5,7 @@ class SearchBarView: UIView, UITextFieldDelegate {
     var buttonTapAction: (() -> Void)?
     var onStartSearch: (() -> Void)?
     var onEndSearch: (() -> Void)?
+    var isShowSearchResult = false
     
     lazy var searchTextField: TintedTextField = {
         let textField = TintedTextField()
@@ -67,6 +68,7 @@ class SearchBarView: UIView, UITextFieldDelegate {
         
         // Call the onTextChanged closure
         onTextChanged?(updatedText)
+        isShowSearchResult.toggle()
         
         return true
     }
@@ -94,8 +96,7 @@ class SearchBarView: UIView, UITextFieldDelegate {
         layer.borderWidth = 1
         layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
         
-        setDeafultBackground()
-        roundCorners(23)
+        setDeafultBackgroundWithCorner()
         
         NSLayoutConstraint.activate([
             searchIcon.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),
@@ -105,7 +106,7 @@ class SearchBarView: UIView, UITextFieldDelegate {
             
             searchTextField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8),
             searchTextField.leadingAnchor.constraint(equalTo: searchIcon.trailingAnchor, constant: 10),
-            searchTextField.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.6),
+            searchTextField.trailingAnchor.constraint(equalTo: closeButton.leadingAnchor, constant: -5),
             searchTextField.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             
             closeButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8),
@@ -115,7 +116,12 @@ class SearchBarView: UIView, UITextFieldDelegate {
         ])
     }
     
-    private func setDeafultBackground() {
+    private func setDeafultBackgroundWithCorner() {
         backgroundColor = UIColor(named: "YellowSelectiveColor")
+        if isShowSearchResult {
+            roundCorners([.topLeft, .topRight], radius: 23)
+        } else {
+            roundCorners(23)
+        }
     }
 }

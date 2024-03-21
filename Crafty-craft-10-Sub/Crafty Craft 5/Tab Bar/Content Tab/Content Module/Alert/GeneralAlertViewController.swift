@@ -32,7 +32,7 @@ class GeneralAlertViewController: UIViewController {
         self.view.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
         self.view.layer.masksToBounds = true
     }
-
+    
     @IBAction func buttonDidTapped(_ sender: Any) {
         dismiss(animated: true)
     }

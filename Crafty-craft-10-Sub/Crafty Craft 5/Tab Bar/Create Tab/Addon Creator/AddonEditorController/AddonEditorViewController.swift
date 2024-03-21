@@ -346,9 +346,6 @@ extension AddonEditorViewController: AddonEditorSelectorDelegate {
         case .modify:
             updateAddon(name: name, file: url, preview: preview)
         }
-        
-//        navigationController?.pop(to: AddonCreatorViewController.self)
-    
     }
 }
 

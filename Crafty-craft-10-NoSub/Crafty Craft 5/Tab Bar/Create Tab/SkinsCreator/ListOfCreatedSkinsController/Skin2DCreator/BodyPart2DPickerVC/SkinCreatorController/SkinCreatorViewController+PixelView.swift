@@ -25,7 +25,6 @@ extension SkinDesignViewController : UIGestureRecognizerDelegate {
 
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapFrom(_:)))
 
-
         // Add to view
          canvasPixelView!.addGestureRecognizer(navigatorGestureRecognizer)
          canvasPixelView!.addGestureRecognizer(drawGestureRecognizer)
