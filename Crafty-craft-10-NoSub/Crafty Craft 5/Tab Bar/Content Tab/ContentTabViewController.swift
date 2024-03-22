@@ -628,6 +628,12 @@ extension ContentTabViewController: UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: cellWidth, height: cellHeight)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        // Add bottom padding of 70 points after the last cell
+        let bottomPadding: CGFloat = Device.iPad ? 100 : 70
+        return UIEdgeInsets(top: 0, left: 0, bottom: bottomPadding, right: 0)
+    }
 }
 
 //MARK: KeyboardStateDelegate

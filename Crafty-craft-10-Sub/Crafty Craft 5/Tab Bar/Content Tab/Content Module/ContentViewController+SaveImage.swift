@@ -67,7 +67,7 @@ extension ContentViewController {
                 AppDelegate.log("Error saving image: \(String(describing: error))")
             } else {
                 AppDelegate.log("Image saved successfully!")
-                self?.presenAlert(with: "Success", and: "Skin is saved in your Photo Gallery. To use it, go to Minecraft >> Dressing Room >> EDIT CHARACTER >> OWNED >> tap Import >> CHOOSE NEW SKIN >> this will take you to your camera roll >> select the skin >> you are all to explore your custom skin")
+                self?.presenAlert(with: "Success", and: "Your skin has been saved in your Photo Gallery. To use it, navigate to Minecraft >> Dressing Room >> EDIT CHARACTER >> OWNED >> tap Import >> CHOOSE NEW SKIN >> this will direct you to your camera roll >> choose the skin >> now you can explore your customized skin.")
             }
         })
     }
