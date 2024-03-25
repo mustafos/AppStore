@@ -52,7 +52,7 @@ class ServerRealmSession: Object, Identifiable {
 
 struct Server: Codable {
     enum Status: String, Codable {
-        case Online
+        case Online 
         case Offline
     }
     
