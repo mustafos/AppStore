@@ -238,10 +238,10 @@ class ContentTabViewController: UIViewController, TabBarVersatile {
             updatePurchaseStatus(isPurchased: localPurchIsValid, isAfterSubscription: isShowedSubsription)
             isShowedSubsription = false
         } else {
-            IAPManager.shared.validateSubscriptions(productIdentifiers: [Configurations_REFACTOR.unlockContentSubscriptionID]) { [weak self] results in
+            IAPManager.shared.validateSubscriptions(productIdentifiers: [Configurations.unlockContentSubscriptionID]) { [weak self] results in
                 // Vaildate Content
                 guard let self else { return }
-                if let value = results[Configurations_REFACTOR.unlockContentSubscriptionID] {
+                if let value = results[Configurations.unlockContentSubscriptionID] {
                     self.updatePurchaseStatus(isPurchased: value)
                 } else {
                     self.updatePurchaseStatus(isPurchased: self.isShowedSubsription)

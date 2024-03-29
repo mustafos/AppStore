@@ -109,12 +109,12 @@ class SettingsViewController: UIViewController {
     
     @objc func termsViewIsTapped(_ sender: UITapGestureRecognizer) {
         // Action when the view is tapped
-        model?.openUrl(urlToOpen: Configurations_REFACTOR.termsLink)
+        model?.openUrl(urlToOpen: Configurations.termsLink)
     }
     
     @objc func privacyViewIsTapped(_ sender: UITapGestureRecognizer) {
         // Action when the view is tapped
-        model?.openUrl(urlToOpen: Configurations_REFACTOR.policyLink)
+        model?.openUrl(urlToOpen: Configurations.policyLink)
     }
     
     //clearCacheBtn

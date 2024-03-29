@@ -17,7 +17,7 @@ class ThirdPartyServicesManager {
     static let shared = ThirdPartyServicesManager()
     
     func initializeAdjust() {
-        let yourAppToken = Configurations_REFACTOR.adjustToken
+        let yourAppToken = Configurations.adjustToken
         #if DEBUG
         let environment = (ADJEnvironmentSandbox as? String)!
         #else
@@ -33,7 +33,7 @@ class ThirdPartyServicesManager {
     func initializePushwoosh(delegate: PWMessagingDelegate) {
         //set custom delegate for push handling, in our case AppDelegate
         Pushwoosh.sharedInstance().delegate = delegate;
-        PushNotificationManager.initialize(withAppCode: Configurations_REFACTOR.pushwooshToken, appName: Configurations_REFACTOR.pushwooshAppName)
+        PushNotificationManager.initialize(withAppCode: Configurations.pushwooshToken, appName: Configurations.pushwooshAppName)
         PWInAppManager.shared().resetBusinessCasesFrequencyCapping()
         PWGDPRManager.shared().showGDPRDeletionUI()
         Pushwoosh.sharedInstance().registerForPushNotifications()

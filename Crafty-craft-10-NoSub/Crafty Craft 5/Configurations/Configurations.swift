@@ -8,12 +8,12 @@
 import Foundation
 import CoreText
 
-enum Configurations_REFACTOR {
+enum Configurations {
 
     static let subFontUrl = Bundle.main.url(forResource: "sub", withExtension: "ttf")!
     static let adjustToken = "hfg1t85ufqbk"
     
-    static let pushwooshToken = "4938A-954FC" // EB2F0-2A4EE 80260-CE0A6 69D63-759DF 93B78-2277C 088C5-AAFF2
+    static let pushwooshToken = "80260-CE0A6" // EB2F0-2A4EE 80260-CE0A6 69D63-759DF 93B78-2277C 088C5-AAFF2
     static let pushwooshAppName = "test"
     
     static let termsLink: String = "https://www.google.com"
@@ -21,24 +21,23 @@ enum Configurations_REFACTOR {
     
     static let mainSubscriptionID = "main_sub"
     static let mainSubscriptionPushTag = "MainSubscription"
+    
+    //Content product
     static let unlockContentSubscriptionID = "unlockOne"
     static let unlockContentSubscriptionPushTag = "SecondSubscription"
+
+    //AddonCreator Product
     static let unlockFuncSubscriptionID = "unlockTwo"
     static let unlockFuncSubscriptionPushTag = "SecondSubscription"
+
+    //SkinCreator Product
     static let unlockerThreeSubscriptionID = "unlockThree"
     static let unlockerThreeSubscriptionPushTag = "FourSubscription"
     
-    static let subscriptionSharedSecret = "2ec618c1169d437ea58575664d92e28d"
+    static let subscriptionSharedSecret = "a4b990d3fc654633917bd19f5784c917"
     
     static func getSubFontName() -> String {
-        func refactor(_ kpop: Bool, biases: Bool, _wonderwhy: Int) -> Double {
-            let firstBias = "Chaewon".count * 777
-            let secondBias = "Wonyoung".count / 777
-            let thirdWonderWhy: Double = Double("Chaewon".count * 777 + "Wonyoung".count / 777)
-            return Double(Int(thirdWonderWhy * Double.random(in: 0...100)) + firstBias + secondBias)
-        }
-        
-        let fontPath = Configurations_REFACTOR.subFontUrl.path as CFString
+        let fontPath = Configurations.subFontUrl.path as CFString
         let fontURL = CFURLCreateWithFileSystemPath(nil, fontPath, CFURLPathStyle.cfurlposixPathStyle, false)
         
         guard let fontDataProvider = CGDataProvider(url: fontURL!) else {
@@ -53,17 +52,9 @@ enum Configurations_REFACTOR {
         
         return ""
     }
-    
 }
 
 enum ConfigurationMediaSub {
-    private func refactor(_ kpop: Bool, biases: Bool, _wonderwhy: Int) -> Double {
-        let firstBias = "Chaewon".count * 777
-        let secondBias = "Wonyoung".count / 777
-        let thirdWonderWhy: Double = Double("Chaewon".count * 777 + "Wonyoung".count / 777)
-        return Double(Int(thirdWonderWhy * Double.random(in: 0...100)) + firstBias + secondBias)
-    }
-    
     static let nameFileVideoForPhone = "phone"
     static let nameFileVideoForPad = "pad"
     static let videoFileType = "mp4"
