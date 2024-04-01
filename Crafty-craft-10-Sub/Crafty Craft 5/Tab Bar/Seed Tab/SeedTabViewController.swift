@@ -313,6 +313,10 @@ extension SeedTabViewController: UITableViewDataSource, UITableViewDelegate {
         
         let detailsVC = SeedDetailsViewController(seed: realmSeedModel)
         self.navigationController?.pushViewController(detailsVC, animated: true)
+        
+        navbarSearchMode = false
+        searchBarView.setSearchBarText("")
+        searchBarView.endEditing(true)
     }
     
     var tableViewContainerHeight: CGFloat {

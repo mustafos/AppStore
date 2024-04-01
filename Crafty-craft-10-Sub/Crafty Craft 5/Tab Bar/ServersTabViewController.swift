@@ -345,6 +345,10 @@ extension ServersTabViewController: UITableViewDataSource, UITableViewDelegate {
         let server = dataSourceServers[indexPath.row]
         let detailsVC = ServerDetailsViewController(server: server)
         self.navigationController?.pushViewController(detailsVC, animated: true)
+        
+        navbarSearchMode = false
+        searchBarView.setSearchBarText("")
+        searchBarView.endEditing(true)
     }
     
     var tableViewContainerHeight: CGFloat {

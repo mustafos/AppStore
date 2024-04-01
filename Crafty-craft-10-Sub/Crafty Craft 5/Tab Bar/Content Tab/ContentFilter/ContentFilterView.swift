@@ -81,6 +81,7 @@ struct ContentFilterView: View {
                         }
                         .transition(.move(edge: state == .up ? .bottom : .top))
                         .zIndex(1)
+                        .padding(.top, 10)
                     }
                 }
             }

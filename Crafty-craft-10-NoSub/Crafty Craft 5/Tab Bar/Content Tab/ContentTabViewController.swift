@@ -115,7 +115,8 @@ class ContentTabViewController: UIViewController, TabBarVersatile {
         let sortedCategory = setFilterCategory.sorted()
         guard let firstCategory = sortedCategory.first else { return }
         
-        buttons.append(contentsOf: sortedCategory.map({ ContentFilterModel(label: $0, filter: .filter($0)) }))
+        buttons.append(contentsOf: sortedCategory.map({ ContentFilterModel(
+            label: $0, filter: .filter($0)) }))
         contentFilterView.updateButtons(newButtons: buttons, selectedIndex: selectedIndex)
     }
     
@@ -206,7 +207,6 @@ class ContentTabViewController: UIViewController, TabBarVersatile {
     
     private func updateData() {
         pageModel = setUpPageModel()
-        
         updateFilteredData(false)
     }
     
@@ -563,6 +563,10 @@ extension ContentTabViewController: UICollectionViewDelegate {
         let contentViewController = ContentViewController(model: filteredPageModel[indexPath.item], mode: tabsPageControllMode )
         presentFullScreenViewController(contentViewController)
         sortViewHeight.constant = 240
+        
+        navbarSearchMode = false
+        searchBarView.setSearchBarText("")
+        searchBarView.endEditing(true)
     }
 }
 

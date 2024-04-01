@@ -144,7 +144,7 @@
                                                 <constraint firstAttribute="height" constant="52" id="RGU-aV-kts"/>
                                             </constraints>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                                            <buttonConfiguration key="configuration" style="plain" title="Download">
                                                 <fontDescription key="titleFontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
                                                 <color key="baseForegroundColor" name="EerieBlackColor"/>
                                             </buttonConfiguration>
@@ -159,7 +159,7 @@
                                                 <constraint firstAttribute="height" constant="52" id="Azt-qS-TEM"/>
                                             </constraints>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Done">
+                                            <buttonConfiguration key="configuration" style="plain" title="Share">
                                                 <fontDescription key="titleFontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
                                                 <color key="baseForegroundColor" name="EerieBlackColor"/>
                                             </buttonConfiguration>

@@ -254,7 +254,6 @@ class ContentTabViewController: UIViewController, TabBarVersatile {
     
     private func updateData() {
         pageModel = setUpPageModel()
-        
         updateFilteredData(false)
     }
     
@@ -572,6 +571,7 @@ class ContentTabViewController: UIViewController, TabBarVersatile {
     
     @IBAction private func onNavBarSearchButtonTapped(_ sender: UIButton) {
         navbarSearchMode.toggle()
+        contentFilterView.viewModel.isDropdownVisible = false
     }
     
     @IBAction func settingsBtnTapped(_ sender: UIButton) {
@@ -610,6 +610,7 @@ class ContentTabViewController: UIViewController, TabBarVersatile {
             break
         }
         sortViewHeight.constant = 240
+        navbarSearchMode = false
         contentFilterView.viewModel.isDropdownVisible = false
     }
 }
@@ -619,6 +620,10 @@ extension ContentTabViewController: UICollectionViewDelegate {
         let contentViewController = ContentViewController(model: filteredPageModel[indexPath.item], mode: tabsPageControllMode )
         presentFullScreenViewController(contentViewController)
         sortViewHeight.constant = 240
+        
+        navbarSearchMode = false
+        searchBarView.setSearchBarText("")
+        searchBarView.endEditing(true)
     }
 }
 
@@ -683,6 +688,12 @@ extension ContentTabViewController: UICollectionViewDelegateFlowLayout {
         let cellHeight = cellWidth * 1.15
         
         return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        // Add bottom padding of 70 points after the last cell
+        let bottomPadding: CGFloat = Device.iPad ? 100 : 70
+        return UIEdgeInsets(top: 0, left: 0, bottom: bottomPadding, right: 0)
     }
 }
 
