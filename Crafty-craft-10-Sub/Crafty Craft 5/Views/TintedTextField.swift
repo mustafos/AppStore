@@ -9,10 +9,8 @@
 import UIKit
 
 class TintedTextField: UITextField {
-    
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         if let button = subviews.first(where: { $0 is UIButton }) as? UIButton,
            let image = button.image(for: .normal)?.withRenderingMode(.alwaysTemplate) {
             button.setImage(image, for: .normal)

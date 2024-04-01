@@ -1,9 +1,6 @@
-
 import UIKit
 import RealmSwift
 import UIKit
-
-import Foundation
 
 final class ColorRM: EmbeddedObject {
     @Persisted var red: Double
@@ -45,9 +42,9 @@ final class CreatedSkinRM: Object  {
     @Persisted var hatDiagram = Data()
     @Persisted var isCreationComplited = false
     @Persisted var name = ""
-
+    
     @Persisted var imported = false
-
+    
 }
 
 final class AddonSkinVariantObj: EmbeddedObject {

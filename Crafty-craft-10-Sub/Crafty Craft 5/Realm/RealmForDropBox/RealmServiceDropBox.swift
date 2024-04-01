@@ -1,4 +1,3 @@
-
 import RealmSwift
 
 final class RealmServiceDropBox {

@@ -1,7 +1,5 @@
 import UIKit
 
-//TODO: fix the change logic for corner in button and hidden the tableview if navigate to another screen
-
 class SearchBarView: UIView, UITextFieldDelegate {
     var onTextChanged: ((String) -> Void)?
     var buttonTapAction: (() -> Void)?

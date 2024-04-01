@@ -76,13 +76,6 @@ class EnhancementEditorModel {
         }
     }
     
-    private func chooseBestSum(_ t: Int, _ k: Int, _ ls: [Int]) -> Int {
-        return ls.reduce([]){ (sum, i) in sum + [[i]] + sum.map{ j in j + [i] } }.reduce(-1) {
-            let value = $1.reduce(0, +)
-            return ($1.count == k && value <= t && value > $0) ? value : $0
-        }
-    }
-    
     func getPropretirs() -> [AddonPropertiable] {
         
         var properiesArr = [AddonPropertiable]()
@@ -225,6 +218,7 @@ class SavedAddonEnch {
     var type: String = ""
     var file: String = ""
     var previewData: Data?
+    var addonLikeSkinInfo: AddonLikeSkinInfo?
     
     var skin_variants: [AddonSkinVariant] = .init()
     
@@ -261,6 +255,8 @@ class SavedAddonEnch {
         self.ranged_attack_burst_shots = realmModel.ranged_attack_burst_shots
         self.ranged_attack_burst_interval = realmModel.ranged_attack_burst_interval
         self.ranged_attack_atk_types = realmModel.ranged_attack_atk_types
+        
+        addonLikeSkinInfo = realmModel.addonLikeSkinInfo
     }
     
     init(realmModel: SavedAddonRM) {
@@ -287,5 +283,15 @@ class SavedAddonEnch {
         self.editingDate = realmModel.editingDate
         
         self.file = realmModel.file ?? ""
+        
+        if realmModel.addonLikeSkinInfo != nil {
+            let colors: [UIColor] = realmModel.addonLikeSkinInfo!.skinColorArray.map { UIColor.init(red: CGFloat($0.red),
+                                                                                                    green: CGFloat($0.green),
+                                                                                                    blue: CGFloat($0.blue),
+                                                                                                    alpha: CGFloat($0.alpha))}
+            addonLikeSkinInfo = .init(colorArray: colors,
+                                      height: realmModel.addonLikeSkinInfo!.height,
+                                      width: realmModel.addonLikeSkinInfo!.width)
+        }
     }
 }

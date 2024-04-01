@@ -42,7 +42,7 @@ public class RealmService {
     }
     
     ///Delete Created skins
-    func deleteSkin(skin: SkinCreatedModel) {
+    func deleteSkin(skin: AnatomyCreatedModel) {
         guard let skinForDeleting = self.getCreatedSkinByID(skinID: skin.id) else { return }
         coreRM.delete(skinForDeleting)
     }
@@ -79,7 +79,7 @@ public class RealmService {
     
     //MARK: Edit Obj Functions
     
-    func editCreatedSkinAssemblyDiagram(createdSkin: SkinCreatedModel?, newDiagram: UIImage?) {
+    func editCreatedSkinAssemblyDiagram(createdSkin: AnatomyCreatedModel?, newDiagram: UIImage?) {
         
         guard let diagram = newDiagram else { return }
         guard let localCreatedSkin = createdSkin else { return }
@@ -92,7 +92,7 @@ public class RealmService {
         coreRM.update(realmedSkin, with: ["skinAssemblyDiagram":diagramData])
     }
     
-    func editCreatedSkinAssemblyDiagram128(createdSkin: SkinCreatedModel?, newDiagram: UIImage?) {
+    func editCreatedSkinAssemblyDiagram128(createdSkin: AnatomyCreatedModel?, newDiagram: UIImage?) {
         
         guard let diagram = newDiagram else { return }
         guard let localCreatedSkin = createdSkin else { return }
@@ -102,7 +102,7 @@ public class RealmService {
         coreRM.update(realmedSkin, with: ["skinAssemblyDiagram128":diagramData])
     }
     
-    func editIsThe128(createdSkin: SkinCreatedModel?, newValue: Bool?) {
+    func editIsThe128(createdSkin: AnatomyCreatedModel?, newValue: Bool?) {
         
         guard let _ = newValue else { return }
         guard let localCreatedSkin = createdSkin else { return }
@@ -111,7 +111,7 @@ public class RealmService {
         coreRM.update(realmedSkin, with: ["is128sizeSkin":newValue])
     }
     
-    func editIsCreationComplited(createdSkin: SkinCreatedModel?, newValue: Bool?) {
+    func editIsCreationComplited(createdSkin: AnatomyCreatedModel?, newValue: Bool?) {
         
         guard let _ = newValue else { return }
         guard let localCreatedSkin = createdSkin else { return }
@@ -120,7 +120,7 @@ public class RealmService {
         coreRM.update(realmedSkin, with: ["isCreationComplited":newValue])
     }
     
-    func editCreatedSkinPreview(createdSkin: SkinCreatedModel?, newPreview: UIImage?) {
+    func editCreatedSkinPreview(createdSkin: AnatomyCreatedModel?, newPreview: UIImage?) {
         
         guard let diagram = newPreview else { return }
         guard let localCreatedSkin = createdSkin else { return }
@@ -132,7 +132,7 @@ public class RealmService {
     
     //use only for hatDiagram, will be deleted in future versions
     //thats why I duplicated the code
-    func editHatDiagram(createdSkin: SkinCreatedModel?, newHatDiagram: UIImage?) {
+    func editHatDiagram(createdSkin: AnatomyCreatedModel?, newHatDiagram: UIImage?) {
         guard let newHatDiagram = newHatDiagram else { return }
         guard let localCreatedSkin = createdSkin else { return }
         guard let realmedSkin = self.getCreatedSkinByID(skinID: localCreatedSkin.id) else { return }
@@ -140,7 +140,7 @@ public class RealmService {
         coreRM.update(realmedSkin, with: ["hatDiagram":diagramData])
     }
     
-    func editCreatedSkinName(createdSkin: SkinCreatedModel?, newName: String) {
+    func editCreatedSkinName(createdSkin: AnatomyCreatedModel?, newName: String) {
         
         guard let localCreatedSkin = createdSkin else { return }
         guard let realmedSkin = self.getCreatedSkinByID(skinID: localCreatedSkin.id) else { return }
@@ -154,7 +154,7 @@ public class RealmService {
 
 extension RealmService {
     
-    func convertSkinCreatedModel(skinModel: SkinCreatedModel) -> CreatedSkinRM {
+    func convertSkinCreatedModel(skinModel: AnatomyCreatedModel) -> CreatedSkinRM {
         let realmedModel = CreatedSkinRM()
         realmedModel.id = skinModel.id
         realmedModel.name = skinModel.name
@@ -188,7 +188,7 @@ extension RealmService {
         coreRM.addObjects(addons)
     }
     
-    func deleteAddon(addon: SavedAddon) {
+    func deleteAddon(addon: SavedAddonEnch) {
         guard let addonForDeleting = self.getSavedAddonRM(by: addon.idshka) else {
             return
         }
@@ -230,7 +230,7 @@ extension RealmService {
         coreRM.addObject(addon)
     }
     
-    func editCreatedSkinName(addon: SavedAddonRM, newAddon: SavedAddon) {
+    func editCreatedSkinName(addon: SavedAddonRM, newAddon: SavedAddonEnch) {
         coreRM.update(addon, with: ["idshka" : newAddon.idshka])
         coreRM.update(addon, with: ["displayName" : newAddon.displayName])
         coreRM.update(addon, with: ["displayImage" : newAddon.displayImage])

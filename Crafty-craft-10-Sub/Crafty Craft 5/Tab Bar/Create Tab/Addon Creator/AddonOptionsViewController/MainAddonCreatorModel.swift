@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 class AddonCategory {
     let categoryName: String
@@ -69,6 +70,8 @@ class AddonForDisplay {
     var ranged_attack_burst_shots: Double = 0.0
     var ranged_attack_burst_interval: Double = 0.0
     var ranged_attack_atk_types: String?
+    
+    var addonLikeSkinInfo: AddonLikeSkinInfo?
 
     
     //newAddons
@@ -93,5 +96,15 @@ class AddonForDisplay {
         self.ranged_attack_burst_shots = realmModel.ranged_attack_burst_shots
         self.ranged_attack_burst_interval = realmModel.ranged_attack_burst_interval
         self.ranged_attack_atk_types = realmModel.ranged_attack_atk_types
+        
+        if realmModel.addonLikeSkinInfo != nil {
+            let colors: [UIColor] = realmModel.addonLikeSkinInfo!.skinColorArray.map { UIColor.init(red: CGFloat($0.red),
+                                                   green: CGFloat($0.green),
+                                                   blue: CGFloat($0.blue),
+                                                   alpha: CGFloat($0.alpha))}
+            addonLikeSkinInfo = .init(colorArray: colors,
+                                      height: realmModel.addonLikeSkinInfo!.height,
+                                      width: realmModel.addonLikeSkinInfo!.width)
+        }
     }
 }

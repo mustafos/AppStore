@@ -15,7 +15,6 @@
 		035166732AFA3F0900035087 /* NetworkStatusMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0351662D2AFA3F0900035087 /* NetworkStatusMonitor.swift */; };
 		038360BF2AEFA35200751797 /* String+CaseInsesetive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038360BE2AEFA35200751797 /* String+CaseInsesetive.swift */; };
 		03906C322ACE9C6100429FB7 /* URL+DeleteFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03906C312ACE9C6100429FB7 /* URL+DeleteFile.swift */; };
-		03981F502AE159B100C69027 /* SeedRealmSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03981F4F2AE159B100C69027 /* SeedRealmSession.swift */; };
 		039BF2AD2AA326830065EF48 /* ServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BF22C2AA326830065EF48 /* ServicesManager.swift */; };
 		039BF2AF2AA326830065EF48 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 039BF22F2AA326830065EF48 /* Poppins-Medium.ttf */; };
 		039BF2B32AA326830065EF48 /* FontsFree-Net-SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 039BF2332AA326830065EF48 /* FontsFree-Net-SFProDisplay-Regular.ttf */; };
@@ -38,16 +37,7 @@
 		635281902A589ECA00F3EB23 /* DBParserFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635281822A589EC900F3EB23 /* DBParserFile.swift */; };
 		635281912A589ECA00F3EB23 /* DropB0ksKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635281832A589EC900F3EB23 /* DropB0ksKeys.swift */; };
 		635281922A589ECA00F3EB23 /* DBModelFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635281842A589EC900F3EB23 /* DBModelFile.swift */; };
-		635281932A589ECA00F3EB23 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635281862A589ECA00F3EB23 /* RealmService.swift */; };
-		635281942A589ECA00F3EB23 /* RealmServiceProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635281882A589ECA00F3EB23 /* RealmServiceProviding.swift */; };
-		635281952A589ECA00F3EB23 /* SkinsRealmSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6352818A2A589ECA00F3EB23 /* SkinsRealmSession.swift */; };
-		635281962A589ECA00F3EB23 /* MapRealmSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6352818B2A589ECA00F3EB23 /* MapRealmSession.swift */; };
-		635281972A589ECB00F3EB23 /* AddonsRealmSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6352818C2A589ECA00F3EB23 /* AddonsRealmSession.swift */; };
-		635281982A589ECB00F3EB23 /* RealmServiceDropBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6352818D2A589ECA00F3EB23 /* RealmServiceDropBox.swift */; };
-		635281992A589ECB00F3EB23 /* RealmEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6352818E2A589ECA00F3EB23 /* RealmEntities.swift */; };
-		6352819A2A589ECB00F3EB23 /* RealmCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6352818F2A589ECA00F3EB23 /* RealmCore.swift */; };
 		6368CAC52A3094A30055E2AC /* CubicSteveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6368CAC42A3094A30055E2AC /* CubicSteveModel.swift */; };
-		6370382A2A594AA20003A220 /* Cacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637038292A594AA20003A220 /* Cacher.swift */; };
 		639407DA2A77D097007D6301 /* UIColor+Ext_encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639407D92A77D097007D6301 /* UIColor+Ext_encode.swift */; };
 		63A8C1532A32045F005A117B /* NSLayoutConstraint_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A8C1522A32045F005A117B /* NSLayoutConstraint_Ext.swift */; };
 		63BCE0E72AE01C5F005B1608 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BCE0E62AE01C5F005B1608 /* SettingsModel.swift */; };
@@ -60,7 +50,17 @@
 		6A59426E2B5FD35E009E4BD0 /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A59426D2B5FD35E009E4BD0 /* TabBarItemView.swift */; };
 		6A5942742B61135E009E4BD0 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5942732B61135E009E4BD0 /* CustomTabBar.swift */; };
 		6A5942762B611572009E4BD0 /* CustomTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5942752B611572009E4BD0 /* CustomTabItem.swift */; };
-		6A70AB252BBAB29900AD4AA4 /* Pushwoosh in Frameworks */ = {isa = PBXBuildFile; productRef = 6A70AB242BBAB29900AD4AA4 /* Pushwoosh */; };
+		6A79B25B2BBAE0BA00B6E15B /* Pushwoosh in Frameworks */ = {isa = PBXBuildFile; productRef = 6A79B25A2BBAE0BA00B6E15B /* Pushwoosh */; };
+		6AA7B8352BBADB5A0000F8FD /* AddonsRealmSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B8282BBADB5A0000F8FD /* AddonsRealmSession.swift */; };
+		6AA7B8362BBADB5A0000F8FD /* MapRealmSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B8292BBADB5A0000F8FD /* MapRealmSession.swift */; };
+		6AA7B8372BBADB5A0000F8FD /* SeedRealmSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B82A2BBADB5A0000F8FD /* SeedRealmSession.swift */; };
+		6AA7B8382BBADB5A0000F8FD /* SkinsRealmSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B82B2BBADB5A0000F8FD /* SkinsRealmSession.swift */; };
+		6AA7B8392BBADB5A0000F8FD /* RealmServiceDropBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B82D2BBADB5A0000F8FD /* RealmServiceDropBox.swift */; };
+		6AA7B83A2BBADB5A0000F8FD /* RealmServiceProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B82E2BBADB5A0000F8FD /* RealmServiceProviding.swift */; };
+		6AA7B83B2BBADB5A0000F8FD /* Cacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B8302BBADB5A0000F8FD /* Cacher.swift */; };
+		6AA7B83C2BBADB5A0000F8FD /* RealmCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B8312BBADB5A0000F8FD /* RealmCore.swift */; };
+		6AA7B83D2BBADB5A0000F8FD /* RealmEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B8322BBADB5A0000F8FD /* RealmEntities.swift */; };
+		6AA7B83E2BBADB5A0000F8FD /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B8332BBADB5A0000F8FD /* RealmService.swift */; };
 		6AAA56B22BA7F2CB006D35C8 /* stiv_v5.scn in Resources */ = {isa = PBXBuildFile; fileRef = 6AAA56B12BA7F2CB006D35C8 /* stiv_v5.scn */; };
 		6AB028A72B5E61C9005586CC /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028A32B5E61C8005586CC /* Montserrat-Medium.ttf */; };
 		6AB028A82B5E61C9005586CC /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028A42B5E61C8005586CC /* Montserrat-Bold.ttf */; };
@@ -308,7 +308,6 @@
 		0351662D2AFA3F0900035087 /* NetworkStatusMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkStatusMonitor.swift; sourceTree = "<group>"; };
 		038360BE2AEFA35200751797 /* String+CaseInsesetive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CaseInsesetive.swift"; sourceTree = "<group>"; };
 		03906C312ACE9C6100429FB7 /* URL+DeleteFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+DeleteFile.swift"; sourceTree = "<group>"; };
-		03981F4F2AE159B100C69027 /* SeedRealmSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedRealmSession.swift; sourceTree = "<group>"; };
 		039BF22C2AA326830065EF48 /* ServicesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesManager.swift; sourceTree = "<group>"; };
 		039BF22F2AA326830065EF48 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		039BF2332AA326830065EF48 /* FontsFree-Net-SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
@@ -329,16 +328,7 @@
 		635281822A589EC900F3EB23 /* DBParserFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBParserFile.swift; sourceTree = "<group>"; };
 		635281832A589EC900F3EB23 /* DropB0ksKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropB0ksKeys.swift; sourceTree = "<group>"; };
 		635281842A589EC900F3EB23 /* DBModelFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBModelFile.swift; sourceTree = "<group>"; };
-		635281862A589ECA00F3EB23 /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
-		635281882A589ECA00F3EB23 /* RealmServiceProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmServiceProviding.swift; sourceTree = "<group>"; };
-		6352818A2A589ECA00F3EB23 /* SkinsRealmSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinsRealmSession.swift; sourceTree = "<group>"; };
-		6352818B2A589ECA00F3EB23 /* MapRealmSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapRealmSession.swift; sourceTree = "<group>"; };
-		6352818C2A589ECA00F3EB23 /* AddonsRealmSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddonsRealmSession.swift; sourceTree = "<group>"; };
-		6352818D2A589ECA00F3EB23 /* RealmServiceDropBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmServiceDropBox.swift; sourceTree = "<group>"; };
-		6352818E2A589ECA00F3EB23 /* RealmEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmEntities.swift; sourceTree = "<group>"; };
-		6352818F2A589ECA00F3EB23 /* RealmCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCore.swift; sourceTree = "<group>"; };
 		6368CAC42A3094A30055E2AC /* CubicSteveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CubicSteveModel.swift; path = "../../../../../../../../Crafty-craft-10-Sub/Crafty Craft 5/Tab Bar/Create Tab/SkinsCreator/ListOfCreatedSkinsController/Skin2DCreator/Models/CubicSteveModel.swift"; sourceTree = "<group>"; };
-		637038292A594AA20003A220 /* Cacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacher.swift; sourceTree = "<group>"; };
 		639407D92A77D097007D6301 /* UIColor+Ext_encode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext_encode.swift"; sourceTree = "<group>"; };
 		63A8C1522A32045F005A117B /* NSLayoutConstraint_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint_Ext.swift; sourceTree = "<group>"; };
 		63BCE0E62AE01C5F005B1608 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
@@ -349,6 +339,16 @@
 		6A59426D2B5FD35E009E4BD0 /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
 		6A5942732B61135E009E4BD0 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		6A5942752B611572009E4BD0 /* CustomTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabItem.swift; sourceTree = "<group>"; };
+		6AA7B8282BBADB5A0000F8FD /* AddonsRealmSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddonsRealmSession.swift; sourceTree = "<group>"; };
+		6AA7B8292BBADB5A0000F8FD /* MapRealmSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapRealmSession.swift; sourceTree = "<group>"; };
+		6AA7B82A2BBADB5A0000F8FD /* SeedRealmSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeedRealmSession.swift; sourceTree = "<group>"; };
+		6AA7B82B2BBADB5A0000F8FD /* SkinsRealmSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinsRealmSession.swift; sourceTree = "<group>"; };
+		6AA7B82D2BBADB5A0000F8FD /* RealmServiceDropBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmServiceDropBox.swift; sourceTree = "<group>"; };
+		6AA7B82E2BBADB5A0000F8FD /* RealmServiceProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmServiceProviding.swift; sourceTree = "<group>"; };
+		6AA7B8302BBADB5A0000F8FD /* Cacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cacher.swift; sourceTree = "<group>"; };
+		6AA7B8312BBADB5A0000F8FD /* RealmCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCore.swift; sourceTree = "<group>"; };
+		6AA7B8322BBADB5A0000F8FD /* RealmEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmEntities.swift; sourceTree = "<group>"; };
+		6AA7B8332BBADB5A0000F8FD /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		6AAA56B12BA7F2CB006D35C8 /* stiv_v5.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = stiv_v5.scn; sourceTree = "<group>"; };
 		6AB028A32B5E61C8005586CC /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Medium.ttf"; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Resources/Fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		6AB028A42B5E61C8005586CC /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Resources/Fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -564,7 +564,7 @@
 				032F74F32AA09BDC0044BC79 /* ZIPFoundation in Frameworks */,
 				63E876752A2A0C6B00B486B1 /* RealmSwift in Frameworks */,
 				C040CE072A5CD1E300F28F54 /* StoreKit.framework in Frameworks */,
-				6A70AB252BBAB29900AD4AA4 /* Pushwoosh in Frameworks */,
+				6A79B25B2BBAE0BA00B6E15B /* Pushwoosh in Frameworks */,
 				6FA9FCC62A4ECD6A001A1CD6 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				6F6F55B42A4ED3250093F556 /* SwiftyStoreKit in Frameworks */,
 				033847A42A9CBA1700A55021 /* EzPopup in Frameworks */,
@@ -722,39 +722,6 @@
 				635281842A589EC900F3EB23 /* DBModelFile.swift */,
 			);
 			path = DropBoxManager;
-			sourceTree = "<group>";
-		};
-		635281852A589ECA00F3EB23 /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-				635281872A589ECA00F3EB23 /* RealmForDropBox */,
-				635281862A589ECA00F3EB23 /* RealmService.swift */,
-				6352818E2A589ECA00F3EB23 /* RealmEntities.swift */,
-				6352818F2A589ECA00F3EB23 /* RealmCore.swift */,
-				637038292A594AA20003A220 /* Cacher.swift */,
-			);
-			path = Realm;
-			sourceTree = "<group>";
-		};
-		635281872A589ECA00F3EB23 /* RealmForDropBox */ = {
-			isa = PBXGroup;
-			children = (
-				635281882A589ECA00F3EB23 /* RealmServiceProviding.swift */,
-				635281892A589ECA00F3EB23 /* Realm Models */,
-				6352818D2A589ECA00F3EB23 /* RealmServiceDropBox.swift */,
-			);
-			path = RealmForDropBox;
-			sourceTree = "<group>";
-		};
-		635281892A589ECA00F3EB23 /* Realm Models */ = {
-			isa = PBXGroup;
-			children = (
-				6352818A2A589ECA00F3EB23 /* SkinsRealmSession.swift */,
-				6352818B2A589ECA00F3EB23 /* MapRealmSession.swift */,
-				6352818C2A589ECA00F3EB23 /* AddonsRealmSession.swift */,
-				03981F4F2AE159B100C69027 /* SeedRealmSession.swift */,
-			);
-			path = "Realm Models";
 			sourceTree = "<group>";
 		};
 		6368CAC32A30948C0055E2AC /* Models */ = {
@@ -1027,6 +994,40 @@
 			path = SkinCreatorController;
 			sourceTree = "<group>";
 		};
+		6AA7B82C2BBADB5A0000F8FD /* Realm Models */ = {
+			isa = PBXGroup;
+			children = (
+				6AA7B8282BBADB5A0000F8FD /* AddonsRealmSession.swift */,
+				6AA7B8292BBADB5A0000F8FD /* MapRealmSession.swift */,
+				6AA7B82A2BBADB5A0000F8FD /* SeedRealmSession.swift */,
+				6AA7B82B2BBADB5A0000F8FD /* SkinsRealmSession.swift */,
+			);
+			path = "Realm Models";
+			sourceTree = "<group>";
+		};
+		6AA7B82F2BBADB5A0000F8FD /* RealmForDropBox */ = {
+			isa = PBXGroup;
+			children = (
+				6AA7B82C2BBADB5A0000F8FD /* Realm Models */,
+				6AA7B82D2BBADB5A0000F8FD /* RealmServiceDropBox.swift */,
+				6AA7B82E2BBADB5A0000F8FD /* RealmServiceProviding.swift */,
+			);
+			path = RealmForDropBox;
+			sourceTree = "<group>";
+		};
+		6AA7B8342BBADB5A0000F8FD /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				6AA7B82F2BBADB5A0000F8FD /* RealmForDropBox */,
+				6AA7B8302BBADB5A0000F8FD /* Cacher.swift */,
+				6AA7B8312BBADB5A0000F8FD /* RealmCore.swift */,
+				6AA7B8322BBADB5A0000F8FD /* RealmEntities.swift */,
+				6AA7B8332BBADB5A0000F8FD /* RealmService.swift */,
+			);
+			name = Realm;
+			path = "../../Crafty-craft-10-Sub/Crafty Craft 5/Realm";
+			sourceTree = "<group>";
+		};
 		6F1CADE82A667C2500735EAB /* AddonEditorSelector */ = {
 			isa = PBXGroup;
 			children = (
@@ -1235,8 +1236,8 @@
 				635281812A589EC900F3EB23 /* DropBoxManager */,
 				F420A7A32A0284B30098B849 /* Extensions */,
 				D72B781C2A67C596005A6D80 /* Manager */,
+				6AA7B8342BBADB5A0000F8FD /* Realm */,
 				F48E0B512A093FA800B9020D /* Protocols */,
-				635281852A589ECA00F3EB23 /* Realm */,
 				F4DB05D22A02959800E4C43D /* Tab Bar */,
 				F438313F2A1CF0DD009B850C /* Views */,
 				F4DB05DD2A02968D00E4C43D /* Resources */,
@@ -1483,7 +1484,7 @@
 				033847A32A9CBA1700A55021 /* EzPopup */,
 				032F74F22AA09BDC0044BC79 /* ZIPFoundation */,
 				03A54F842AD5878900F10AA5 /* BetterSegmentedControl */,
-				6A70AB242BBAB29900AD4AA4 /* Pushwoosh */,
+				6A79B25A2BBAE0BA00B6E15B /* Pushwoosh */,
 			);
 			productName = "Crafty Craft 5";
 			productReference = F420A78A2A0283940098B849 /* Crafty Craft 10 NoSub.app */;
@@ -1572,7 +1573,7 @@
 				033847A22A9CBA1700A55021 /* XCRemoteSwiftPackageReference "EzPopup" */,
 				032F74F12AA09BDC0044BC79 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 				03A54F832AD5878900F10AA5 /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */,
-				6A70AB232BBAB29900AD4AA4 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */,
+				6A79B2592BBAE0BA00B6E15B /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */,
 			);
 			productRefGroup = F420A78B2A0283940098B849 /* Products */;
 			projectDirPath = "";
@@ -1673,7 +1674,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				635281902A589ECA00F3EB23 /* DBParserFile.swift in Sources */,
-				635281952A589ECA00F3EB23 /* SkinsRealmSession.swift in Sources */,
 				D72F56562A61A00A00CE85E6 /* URL+List.swift in Sources */,
 				6AB30A402B7631AD00FC5EA6 /* EnhancementCreatorViewController + UICollectionView.swift in Sources */,
 				6AB029502B5E6991005586CC /* Instrument.swift in Sources */,
@@ -1691,7 +1691,6 @@
 				6AB0292A2B5E6798005586CC /* AddonsOptionsTableViewCell.swift in Sources */,
 				6AB6CDAB2B761BD4008A3491 /* SkinCommand.swift in Sources */,
 				F438AA182A14BB0D007469E7 /* Pikko.swift in Sources */,
-				03981F502AE159B100C69027 /* SeedRealmSession.swift in Sources */,
 				6AB029582B5E69B7005586CC /* GroupDrawDirective.swift in Sources */,
 				F438AA1E2A14BB0D007469E7 /* HueDelegate.swift in Sources */,
 				03A674CD2AC316650062A3A8 /* UIViewController+Alert.swift in Sources */,
@@ -1702,7 +1701,6 @@
 				6AB6CDAA2B761BD4008A3491 /* CanvasPixel.swift in Sources */,
 				F438AA172A14BB0D007469E7 /* HueView.swift in Sources */,
 				63A8C1532A32045F005A117B /* NSLayoutConstraint_Ext.swift in Sources */,
-				635281992A589ECB00F3EB23 /* RealmEntities.swift in Sources */,
 				6AB30A432B7631AD00FC5EA6 /* EdditionalAddonModel.swift in Sources */,
 				6AB029642B5E6A29005586CC /* ThreeDColorManager.swift in Sources */,
 				6AB029B62B5EBAAC005586CC /* ColorsTraitManger.swift in Sources */,
@@ -1711,12 +1709,10 @@
 				6AB0290D2B5E66B6005586CC /* AddonCategoryOptionsViewController.swift in Sources */,
 				6AB30A412B7631AD00FC5EA6 /* EnhancementCreatorViewController.swift in Sources */,
 				F420A7A22A0284AC0098B849 /* UIViewController+loadFromNib.swift in Sources */,
-				635281962A589ECA00F3EB23 /* MapRealmSession.swift in Sources */,
 				D7FB3E9F2A7C12D100D78B57 /* UIImage+Save.swift in Sources */,
 				6AB029C12B5EBAE9005586CC /* HandsAnatomyPartViewController.swift in Sources */,
 				6AB029202B5E6742005586CC /* ResourcePackModel.swift in Sources */,
 				6AB30A382B7630BB00FC5EA6 /* ServersTabViewController.swift in Sources */,
-				635281972A589ECB00F3EB23 /* AddonsRealmSession.swift in Sources */,
 				6AB028F12B5E6638005586CC /* SceneLogicModelAddon3D.swift in Sources */,
 				6AB029B82B5EBAAC005586CC /* AnatomyCreatorImportViewController.swift in Sources */,
 				6AB029A72B5EB9F7005586CC /* AnatomyPartPickerViewController.swift in Sources */,
@@ -1726,11 +1722,14 @@
 				6AB028FA2B5E6663005586CC /* AddonEditor3DViewController.swift in Sources */,
 				035166732AFA3F0900035087 /* NetworkStatusMonitor.swift in Sources */,
 				6AB029952B5E6DBC005586CC /* TabViewControllerFactory.swift in Sources */,
+				6AA7B8352BBADB5A0000F8FD /* AddonsRealmSession.swift in Sources */,
 				6AB029B92B5EBAAC005586CC /* SkinDesignViewController.swift in Sources */,
 				D719CE9C2A6BD81E00936868 /* CancellableProtocol.swift in Sources */,
+				6AA7B8382BBADB5A0000F8FD /* SkinsRealmSession.swift in Sources */,
 				6A5942762B611572009E4BD0 /* CustomTabItem.swift in Sources */,
 				6AD127042B979BEE00482717 /* AddonCreatorMainVC.swift in Sources */,
 				F438AA2B2A175989007469E7 /* ImageExporter.swift in Sources */,
+				6AA7B8362BBADB5A0000F8FD /* MapRealmSession.swift in Sources */,
 				6AB028BA2B5E62E3005586CC /* ServerTableViewCell.swift in Sources */,
 				D7E807812A6916240007CA10 /* ImageGalleryCoordinator.swift in Sources */,
 				D719CE9E2A6BD83500936868 /* ImageService.swift in Sources */,
@@ -1749,7 +1748,6 @@
 				6AB029592B5E69B7005586CC /* PictureElement.swift in Sources */,
 				03AFFD352AD7E584002A131D /* FontHelper.swift in Sources */,
 				6AB6CDA72B761BD4008A3491 /* Extension_EditorSkinModel+hideBodyParts.swift in Sources */,
-				6370382A2A594AA20003A220 /* Cacher.swift in Sources */,
 				6AB0295E2B5E69B7005586CC /* DirectiveManager.swift in Sources */,
 				6AB029482B5E6964005586CC /* ColorPickerViewController.swift in Sources */,
 				6AB028AE2B5E629F005586CC /* SettingsViewController.swift in Sources */,
@@ -1768,22 +1766,24 @@
 				6AB029BD2B5EBACF005586CC /* HeadAnatomyViewController.swift in Sources */,
 				6AB6CDA82B761BD4008A3491 /* SceneLogicModel.swift in Sources */,
 				6AB028CC2B5E6530005586CC /* ContentCollectionViewCell.swift in Sources */,
+				6AA7B83B2BBADB5A0000F8FD /* Cacher.swift in Sources */,
 				6AB0292E2B5E67C8005586CC /* SsvedAddonCollectionCell.swift in Sources */,
 				F438AA1B2A14BB0D007469E7 /* UIColor+HSBAComponents.swift in Sources */,
 				639407DA2A77D097007D6301 /* UIColor+Ext_encode.swift in Sources */,
 				6AB6CDAD2B761BD4008A3491 /* MagnifyingGlassView.swift in Sources */,
-				635281942A589ECA00F3EB23 /* RealmServiceProviding.swift in Sources */,
 				F48E0B552A09498700B9020D /* UIViewController+DeviceOrientation.swift in Sources */,
 				6AB029AB2B5EBA66005586CC /* ColorCollectionCell.swift in Sources */,
 				D707057A2A6147D90098A501 /* FileManager+Copy.swift in Sources */,
 				6A59426E2B5FD35E009E4BD0 /* TabBarItemView.swift in Sources */,
 				6AB0290E2B5E66B6005586CC /* MainAddonCreatorModel.swift in Sources */,
 				6A5942742B61135E009E4BD0 /* CustomTabBar.swift in Sources */,
+				6AA7B83D2BBADB5A0000F8FD /* RealmEntities.swift in Sources */,
 				6AB029C42B5EBB00005586CC /* LegsAnatomyPartViewController.swift in Sources */,
 				C0EC65C52A4C948400C5B8ED /* Extension_UIColor+luminosity.swift in Sources */,
 				D72F56582A61A7BF00CE85E6 /* Decodable+Dictionary.swift in Sources */,
 				6AB028E32B5E65A2005586CC /* DownloadContnetViewController.swift in Sources */,
 				6AB029A02B5E719D005586CC /* SkinModificationViewController.swift in Sources */,
+				6AA7B8372BBADB5A0000F8FD /* SeedRealmSession.swift in Sources */,
 				F40415D62A126C2100066473 /* CanvasView.swift in Sources */,
 				F438AA312A17A391007469E7 /* UIImage+Resized.swift in Sources */,
 				63BCE0E72AE01C5F005B1608 /* SettingsModel.swift in Sources */,
@@ -1796,6 +1796,7 @@
 				6A45BF752B9486A8005DFE6B /* FooterCell.swift in Sources */,
 				038360BF2AEFA35200751797 /* String+CaseInsesetive.swift in Sources */,
 				6AB029652B5E6A29005586CC /* Extension_Skin3DTestViewController+Gestures.swift in Sources */,
+				6AA7B83A2BBADB5A0000F8FD /* RealmServiceProviding.swift in Sources */,
 				6AB0290B2B5E66B6005586CC /* AddonOptionsViewController.swift in Sources */,
 				D7FB3E932A7BFC0B00D78B57 /* UIViewController+ActivityView.swift in Sources */,
 				D7310D722A842F810020D42F /* Image+Trim.swift in Sources */,
@@ -1817,7 +1818,6 @@
 				D70705802A6169E10098A501 /* URL+Remove.swift in Sources */,
 				6368CAC52A3094A30055E2AC /* CubicSteveModel.swift in Sources */,
 				6AB028C62B5E6350005586CC /* SeedTableViewCell.swift in Sources */,
-				635281932A589ECA00F3EB23 /* RealmService.swift in Sources */,
 				D72306E42A79310B0000F6B3 /* UIColor+Resource.swift in Sources */,
 				6AB029B72B5EBAAC005586CC /* SkinCreatorController+Ext_Collection.swift in Sources */,
 				6AB028FE2B5E6663005586CC /* Extension_AddonEditor3DViewController+CollectionDelegate.swift in Sources */,
@@ -1830,16 +1830,17 @@
 				6AB0296B2B5E6A64005586CC /* BrushSizeView.swift in Sources */,
 				6AB0295C2B5E69B7005586CC /* MultiDirective.swift in Sources */,
 				635281912A589ECA00F3EB23 /* DropB0ksKeys.swift in Sources */,
-				6352819A2A589ECB00F3EB23 /* RealmCore.swift in Sources */,
+				6AA7B83E2BBADB5A0000F8FD /* RealmService.swift in Sources */,
 				635026FB2A95FF800086FE4B /* Array+substracting_ext.swift in Sources */,
 				F438AA1C2A14BB0D007469E7 /* Animations.swift in Sources */,
 				F420A7902A0283940098B849 /* SceneDelegate.swift in Sources */,
 				D7D4021E2A6FEA1200883C6D /* UITabBar+Title.swift in Sources */,
 				6AB0295D2B5E69B7005586CC /* Directive.swift in Sources */,
-				635281982A589ECB00F3EB23 /* RealmServiceDropBox.swift in Sources */,
 				6AB028F22B5E6638005586CC /* SaveRecsourceManager.swift in Sources */,
 				635281922A589ECA00F3EB23 /* DBModelFile.swift in Sources */,
 				6AB0294D2B5E6991005586CC /* Bucket.swift in Sources */,
+				6AA7B83C2BBADB5A0000F8FD /* RealmCore.swift in Sources */,
+				6AA7B8392BBADB5A0000F8FD /* RealmServiceDropBox.swift in Sources */,
 				6AB029672B5E6A29005586CC /* ThreeDSkinTestViewController.swift in Sources */,
 				07817DA82A6E8C7500D1A95B /* Configurations.swift in Sources */,
 				D7C842BB2A6A8A11006F5020 /* FileManager+Path.swift in Sources */,
@@ -2198,7 +2199,7 @@
 				minimumVersion = 10.0.0;
 			};
 		};
-		6A70AB232BBAB29900AD4AA4 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */ = {
+		6A79B2592BBAE0BA00B6E15B /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Pushwoosh/Pushwoosh-XCFramework";
 			requirement = {
@@ -2287,9 +2288,9 @@
 			package = 63E876712A2A0C6B00B486B1 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
-		6A70AB242BBAB29900AD4AA4 /* Pushwoosh */ = {
+		6A79B25A2BBAE0BA00B6E15B /* Pushwoosh */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6A70AB232BBAB29900AD4AA4 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */;
+			package = 6A79B2592BBAE0BA00B6E15B /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */;
 			productName = Pushwoosh;
 		};
 		6F2064F52A4D9CBF000B25F0 /* SwiftyDropbox */ = {
