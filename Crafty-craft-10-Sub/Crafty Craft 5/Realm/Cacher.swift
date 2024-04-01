@@ -56,4 +56,5 @@ open class CustomImageLoader: UIImageView {
     func removeLoader() {
         loader.removeFromSuperview()
     }
+
 }

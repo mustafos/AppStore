@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/abseil-cpp-binary.git",
       "state" : {
-        "revision" : "df308b8b46607675f2b9ec8e569109008f9155ce",
-        "version" : "1.2022062300.1"
+        "revision" : "7ce7be095bc3ed3c98b009532fe2d7698c132614",
+        "version" : "1.2024011601.0"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
-        "version" : "5.8.1"
+        "revision" : "f455c2975872ccd2d9c81594c658af65716e9b9a",
+        "version" : "5.9.1"
       }
     },
     {
@@ -60,8 +60,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk",
       "state" : {
-        "revision" : "f91c8167141d0279726c6f6d9d4a47c026785cbc",
-        "version" : "10.21.0"
+        "revision" : "888f0b6026e2441a69e3ee2ad5293c7a92031e62",
+        "version" : "10.23.1"
       }
     },
     {
@@ -69,8 +69,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleAppMeasurement.git",
       "state" : {
-        "revision" : "cb8617fab75d181270a1d8f763f26b15c73e2e1e",
-        "version" : "10.21.0"
+        "revision" : "c7a5917ebe48d69f421aadf154ef3969c8b7f12d",
+        "version" : "10.23.1"
       }
     },
     {
@@ -96,8 +96,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/grpc-binary.git",
       "state" : {
-        "revision" : "ea4cb5cc0c39c732b85386263116d2e2fdbbdc61",
-        "version" : "1.49.2"
+        "revision" : "67043f6389d0e28b38fa02d1c6952afeb04d807f",
+        "version" : "1.62.1"
       }
     },
     {
@@ -105,8 +105,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/gtm-session-fetcher.git",
       "state" : {
-        "revision" : "76135c9f4e1ac85459d5fec61b6f76ac47ab3a4c",
-        "version" : "3.3.1"
+        "revision" : "9534039303015a84837090d20fa21cae6e5eadb6",
+        "version" : "3.3.2"
       }
     },
     {
@@ -123,8 +123,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/adjust/ios_sdk",
       "state" : {
-        "revision" : "f7a0ad4a9f99fcbfc4c73dcad557ea3c86c5aaf6",
-        "version" : "4.37.0"
+        "revision" : "3ebb6fe16fa67d5307bdafc93005d006bfa5fb74",
+        "version" : "4.38.0"
       }
     },
     {
@@ -141,8 +141,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/nanopb.git",
       "state" : {
-        "revision" : "819d0a2173aff699fb8c364b6fb906f7cdb1a692",
-        "version" : "2.30909.0"
+        "revision" : "b7e1104502eca3a213b46303391ca4d3bc8ddec1",
+        "version" : "2.30910.0"
       }
     },
     {
@@ -169,7 +169,7 @@
       "location" : "https://github.com/Pushwoosh/Pushwoosh-XCFramework.git",
       "state" : {
         "branch" : "master",
-        "revision" : "4bcfbb0604594b2b48cf556405268148825a963d"
+        "revision" : "210221cfded8756a83a6bd2814661d390fab2473"
       }
     },
     {
@@ -177,8 +177,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core.git",
       "state" : {
-        "revision" : "a5e87a39cffdcc591f3203c11cfca68100d0b9a6",
-        "version" : "13.26.0"
+        "revision" : "374dd672af357732dccc135fecc905406fec3223",
+        "version" : "14.4.1"
       }
     },
     {
@@ -186,8 +186,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-swift",
       "state" : {
-        "revision" : "eafdd3720a8cc750bdd38bf776082d2c8cf743fc",
-        "version" : "10.46.0"
+        "revision" : "e0c2fbb442979fbf1e4be80e01d142f310a9c762",
+        "version" : "10.49.1"
       }
     },
     {
@@ -204,8 +204,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",
       "state" : {
-        "revision" : "65e8f29b2d63c4e38e736b25c27b83e012159be8",
-        "version" : "1.25.2"
+        "revision" : "9f0c76544701845ad98716f3f6a774a892152bcb",
+        "version" : "1.26.0"
       }
     },
     {
@@ -222,8 +222,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kirualex/SwiftyGif.git",
       "state" : {
-        "revision" : "d6d26061d6553a493781ad3df4a8e275c43fc373",
-        "version" : "5.4.4"
+        "revision" : "4430cbc148baa3907651d40562d96325426f409a",
+        "version" : "5.4.5"
       }
     },
     {

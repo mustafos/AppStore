@@ -60,6 +60,7 @@
 		6A59426E2B5FD35E009E4BD0 /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A59426D2B5FD35E009E4BD0 /* TabBarItemView.swift */; };
 		6A5942742B61135E009E4BD0 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5942732B61135E009E4BD0 /* CustomTabBar.swift */; };
 		6A5942762B611572009E4BD0 /* CustomTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5942752B611572009E4BD0 /* CustomTabItem.swift */; };
+		6A70AB252BBAB29900AD4AA4 /* Pushwoosh in Frameworks */ = {isa = PBXBuildFile; productRef = 6A70AB242BBAB29900AD4AA4 /* Pushwoosh */; };
 		6AAA56B22BA7F2CB006D35C8 /* stiv_v5.scn in Resources */ = {isa = PBXBuildFile; fileRef = 6AAA56B12BA7F2CB006D35C8 /* stiv_v5.scn */; };
 		6AB028A72B5E61C9005586CC /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028A32B5E61C8005586CC /* Montserrat-Medium.ttf */; };
 		6AB028A82B5E61C9005586CC /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028A42B5E61C8005586CC /* Montserrat-Bold.ttf */; };
@@ -161,7 +162,6 @@
 		6AB0299E2B5E719D005586CC /* SkinEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB0299B2B5E719D005586CC /* SkinEditorViewController.xib */; };
 		6AB0299F2B5E719D005586CC /* SkinEditorVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0299C2B5E719D005586CC /* SkinEditorVCModel.swift */; };
 		6AB029A02B5E719D005586CC /* SkinModificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0299D2B5E719D005586CC /* SkinModificationViewController.swift */; };
-		6AB029A32B5EB2B8005586CC /* Pushwoosh in Frameworks */ = {isa = PBXBuildFile; productRef = 6AB029A22B5EB2B8005586CC /* Pushwoosh */; };
 		6AB029A62B5EB9F7005586CC /* AnatomyPartPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029A42B5EB9F4005586CC /* AnatomyPartPickerViewController.xib */; };
 		6AB029A72B5EB9F7005586CC /* AnatomyPartPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB029A52B5EB9F7005586CC /* AnatomyPartPickerViewController.swift */; };
 		6AB029AA2B5EBA66005586CC /* ColorCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB029A82B5EBA63005586CC /* ColorCollectionCell.xib */; };
@@ -564,7 +564,7 @@
 				032F74F32AA09BDC0044BC79 /* ZIPFoundation in Frameworks */,
 				63E876752A2A0C6B00B486B1 /* RealmSwift in Frameworks */,
 				C040CE072A5CD1E300F28F54 /* StoreKit.framework in Frameworks */,
-				6AB029A32B5EB2B8005586CC /* Pushwoosh in Frameworks */,
+				6A70AB252BBAB29900AD4AA4 /* Pushwoosh in Frameworks */,
 				6FA9FCC62A4ECD6A001A1CD6 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				6F6F55B42A4ED3250093F556 /* SwiftyStoreKit in Frameworks */,
 				033847A42A9CBA1700A55021 /* EzPopup in Frameworks */,
@@ -1483,7 +1483,7 @@
 				033847A32A9CBA1700A55021 /* EzPopup */,
 				032F74F22AA09BDC0044BC79 /* ZIPFoundation */,
 				03A54F842AD5878900F10AA5 /* BetterSegmentedControl */,
-				6AB029A22B5EB2B8005586CC /* Pushwoosh */,
+				6A70AB242BBAB29900AD4AA4 /* Pushwoosh */,
 			);
 			productName = "Crafty Craft 5";
 			productReference = F420A78A2A0283940098B849 /* Crafty Craft 10 NoSub.app */;
@@ -1572,7 +1572,7 @@
 				033847A22A9CBA1700A55021 /* XCRemoteSwiftPackageReference "EzPopup" */,
 				032F74F12AA09BDC0044BC79 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 				03A54F832AD5878900F10AA5 /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */,
-				6AB029A12B5EB294005586CC /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */,
+				6A70AB232BBAB29900AD4AA4 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */,
 			);
 			productRefGroup = F420A78B2A0283940098B849 /* Products */;
 			projectDirPath = "";
@@ -2198,9 +2198,9 @@
 				minimumVersion = 10.0.0;
 			};
 		};
-		6AB029A12B5EB294005586CC /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */ = {
+		6A70AB232BBAB29900AD4AA4 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Pushwoosh/Pushwoosh-XCFramework.git";
+			repositoryURL = "https://github.com/Pushwoosh/Pushwoosh-XCFramework";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -2287,9 +2287,9 @@
 			package = 63E876712A2A0C6B00B486B1 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
-		6AB029A22B5EB2B8005586CC /* Pushwoosh */ = {
+		6A70AB242BBAB29900AD4AA4 /* Pushwoosh */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6AB029A12B5EB294005586CC /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */;
+			package = 6A70AB232BBAB29900AD4AA4 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */;
 			productName = Pushwoosh;
 		};
 		6F2064F52A4D9CBF000B25F0 /* SwiftyDropbox */ = {

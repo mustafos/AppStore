@@ -1,5 +1,5 @@
 {
-  "originHash" : "be589a84cb36a84492394279b0b140874d9209379f2a0b16bf6405a578996548",
+  "originHash" : "4e41ea381cf0eae8f6ce845c33a11363b2ada04881848d6c2984981472feb512",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -87,8 +87,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleUtilities.git",
       "state" : {
-        "revision" : "bc27fad73504f3d4af235de451f02ee22586ebd3",
-        "version" : "7.12.1"
+        "revision" : "26c898aed8bed13b8a63057ee26500abbbcb8d55",
+        "version" : "7.13.1"
       }
     },
     {
@@ -166,7 +166,7 @@
     {
       "identity" : "pushwoosh-xcframework",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Pushwoosh/Pushwoosh-XCFramework.git",
+      "location" : "https://github.com/Pushwoosh/Pushwoosh-XCFramework",
       "state" : {
         "branch" : "master",
         "revision" : "210221cfded8756a83a6bd2814661d390fab2473"
