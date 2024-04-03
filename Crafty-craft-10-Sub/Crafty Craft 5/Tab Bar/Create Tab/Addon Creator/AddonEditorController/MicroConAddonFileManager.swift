@@ -47,6 +47,12 @@ class AddonFileManager: AddonFileManagerProtocol {
         return destination
     }
     
+    private func generateRandomEmoji() -> String {
+        let emojis = ["😀", "😎", "😂", "😍", "🥳", "🤔", "😊", "🚀"]
+        let randomIndex = Int.random(in: 0..<emojis.count)
+        return emojis[randomIndex]
+    }
+
     func resourcePack(at url: URL) -> [ResourcePack] {
         let fileManager = FileManager.default
                 

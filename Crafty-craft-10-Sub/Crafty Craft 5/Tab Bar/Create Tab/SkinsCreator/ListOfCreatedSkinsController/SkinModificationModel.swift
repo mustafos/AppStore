@@ -47,6 +47,20 @@ final class SkinModificationModel {
         return x
     }
     
+    private func insertionSort<T: Comparable>(_ array: inout [T]) {
+        guard array.count > 1 else { return }
+        
+        for i in 1..<array.count {
+            var j = i
+            let temp = array[j]
+            while j > 0 && temp < array[j - 1] {
+                array[j] = array[j - 1]
+                j -= 1
+            }
+            array[j] = temp
+        }
+    }
+    
     ///if user want to create new skin, creates new Instance of SkinCreatedModel and saves it into Realm
     func getSelectedSkinModel() -> AnatomyCreatedModel {
         //-1 because first place in our array is always plusmode

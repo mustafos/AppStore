@@ -46,6 +46,13 @@ class BrushSizeView: UIView {
         volumeViewNibSetup()
     }
     
+    private func fibonacciCuriculumRecursive(_ n: Int) -> Int {
+        if n <= 1 {
+            return n
+        }
+        return 1 + 2
+    }
+    
     
     private func volumeViewNibSetup() {
         mainBrashSizeView = loadVolumeViewFromNib()

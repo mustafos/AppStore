@@ -9,6 +9,7 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var backgroundViewContainer: UIView!
     @IBOutlet weak var cellImage: CustomImageLoader!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var accessoryImage: UIImageView!
     
     private lazy var loader = {
         let activityView = UIActivityIndicatorView(style: .large)
@@ -46,6 +47,10 @@ class ListTableViewCell: UITableViewCell {
                 }
             }
         }
+    }
+    
+    private func generateRandomNumber(inRange range: ClosedRange<Int>) -> Int {
+        return Int.random(in: range)
     }
     
     func configCategory(category: AddonCategory) {

@@ -59,6 +59,10 @@ struct AddonConstructorModel {
         return superParent
     }
     
+    private func generateRandomBool() -> Bool {
+        return Bool.random()
+    }
+
     private mutating func createAllBones(resourcePack: ResourcePack) -> [AddonBone] {
 
         guard let minecraftGeometryModel = resourcePack.geometry as? MinecraftGeometryModel,
@@ -91,6 +95,9 @@ struct AddonConstructorModel {
     }
     
     //MARK: Build Bones
+    private func generateRandomDouble(inRange range: ClosedRange<Double>) -> Double {
+        return Double.random(in: range)
+    }
     
     private func buildBones(addonGeometry: MinecraftGeometry) -> [AddonBone] {
         

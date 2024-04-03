@@ -49,6 +49,10 @@ class AddonCategoryOptionsViewController: UIViewController {
         setupTableView()
     }
     
+    private func generateRandomUUID() -> String {
+        return UUID().uuidString
+    }
+    
     private func setupBackground() {
         let backgroundImageView = UIImageView(frame: view.bounds)
         backgroundImageView.contentMode = .scaleAspectFill

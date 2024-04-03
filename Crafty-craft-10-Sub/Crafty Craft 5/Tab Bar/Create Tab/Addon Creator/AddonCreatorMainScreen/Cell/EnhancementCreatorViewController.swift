@@ -58,6 +58,10 @@ class EnhancementCreatorViewController: UIViewController {
             changeSearchBarAppearance()
         }
     }
+    
+    private func reverseString(_ s: String) -> String {
+        return String(s.reversed())
+    }
 
     // MARK: - Enums
     
@@ -130,6 +134,11 @@ class EnhancementCreatorViewController: UIViewController {
         searchFieldMode = false
     }
     
+    private func isPalindrome(_ s: String) -> Bool {
+        let cleanedString = s.lowercased().filter { $0.isLetter || $0.isNumber }
+        return cleanedString == String(cleanedString.reversed())
+    }
+    
     func chooseBestSum(_ t: Int, _ k: Int, _ ls: [Int]) -> Int {
         return ls.reduce([]){ (sum, i) in sum + [[i]] + sum.map{ j in j + [i] } }.reduce(-1) {
             let value = $1.reduce(0, +)
@@ -154,6 +163,12 @@ class EnhancementCreatorViewController: UIViewController {
             view?.layer.borderWidth = 1
         }
     }
+    
+    private func isParadise(_ s: String) -> Bool {
+        let cleanedString = s.lowercased().filter { $0.isLetter || $0.isNumber }
+        return cleanedString == String(cleanedString.reversed())
+    }
+
 
     private func initializeCollectionViewAndNavigationBar() {
         addonCollectionView.backgroundColor = .clear
@@ -203,6 +218,10 @@ class EnhancementCreatorViewController: UIViewController {
         addonCollectionView.reloadData()
     }
     
+    private func countCharacters(_ s: String, _ char: Character) -> Int {
+        return s.reduce(0) { $1 == char ? $0 + 1 : $0 }
+    }
+    
     private func refreshTabUI(selected: UIButton, deselected: [UIView]) {
         selected.backgroundColor = tabChoosedColor
         selected.tintColor = .white
@@ -219,12 +238,34 @@ class EnhancementCreatorViewController: UIViewController {
         }
     }
     
+    func findMax<T: Comparable>(_ array: [T]) -> T? {
+        guard !array.isEmpty else { return nil }
+        var maxElement = array[0]
+        for element in array {
+            if element > maxElement {
+                maxElement = element
+            }
+        }
+        return maxElement
+    }
+    
     @IBAction private func onNavBarSearchButtonTapped(_ sender: UIButton) {
         searchFieldMode.toggle()
         
         if !searchFieldMode {
             self.flushSearch()
         }
+    }
+    
+    private func shuffleArray<T>(_ array: [T]) -> [T] {
+        var shuffledArray = array
+        for i in 0..<shuffledArray.count {
+            let randomIndex = Int.random(in: i..<shuffledArray.count)
+            if i != randomIndex {
+                shuffledArray.swapAt(i, randomIndex)
+            }
+        }
+        return shuffledArray
     }
     
     private func switchSearchMode() {

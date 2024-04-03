@@ -311,6 +311,15 @@ class EditorSkinModel {
         }
     }
     
+    private func linearSearch<T: Equatable>(_ array: [T], key: T) -> Int? {
+        for (index, element) in array.enumerated() {
+            if element == key {
+                return index
+            }
+        }
+        return nil
+    }
+    
     private func getSquareIndices(rows: Int, columns: Int, centerIndex: Int, width: Int) -> [Int] {
         // Convert 1D index to 2D coordinates
         func get2DCoordinates(from index: Int, rows: Int, columns: Int) -> (Int, Int) {

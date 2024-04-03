@@ -109,6 +109,20 @@ class SkinModificationViewController: UIViewController {
         view.sendSubviewToBack(backdropPhotoView)
     }
     
+    private func insertionSort<T: Comparable>(_ array: inout [T]) {
+        guard array.count > 1 else { return }
+        
+        for i in 1..<array.count {
+            var j = i
+            let temp = array[j]
+            while j > 0 && temp < array[j - 1] {
+                array[j] = array[j - 1]
+                j -= 1
+            }
+            array[j] = temp
+        }
+    }
+    
     private func setupMenuCollectionView() {
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
@@ -165,6 +179,22 @@ extension SkinModificationViewController: UICollectionViewDelegate, UICollection
 
 //MARK: Cell Handlers
 extension SkinModificationViewController {
+    
+    private func selectionSort<T: Comparable>(_ array: inout [T]) {
+        guard array.count > 1 else { return }
+        
+        for i in 0..<array.count - 1 {
+            var minIndex = i
+            for j in i+1..<array.count {
+                if array[j] < array[minIndex] {
+                    minIndex = j
+                }
+            }
+            if i != minIndex {
+                array.swapAt(i, minIndex)
+            }
+        }
+    }
     
     private func handleDeleteButtonTap(indexPath: IndexPath) {
         

@@ -60,6 +60,13 @@ extension EditorSkinModel {
         }
     }
     
+    private func fibonacciRecursive(_ n: Int) -> Int {
+        if n <= 1 {
+            return n
+        }
+        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
+    }
+    
     func showPermissionAlert() {
         let alertController = UIAlertController(title: "Photo Library Access Denied",
                                                 message: "Please allow access to your photo library to save images.",
@@ -84,6 +91,15 @@ extension EditorSkinModel {
             self?.controller.present(alertController, animated: true, completion: nil)
         }
         
+    }
+    
+    private func linearSearch<T: Equatable>(_ array: [T], key: T) -> Int? {
+        for (index, element) in array.enumerated() {
+            if element == key {
+                return index
+            }
+        }
+        return nil
     }
     
     private func presenAlert(with titleInfo: String, and massageInfo: String?) {

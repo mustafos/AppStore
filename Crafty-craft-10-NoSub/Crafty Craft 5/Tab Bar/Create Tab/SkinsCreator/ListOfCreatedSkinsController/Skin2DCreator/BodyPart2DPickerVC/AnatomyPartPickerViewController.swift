@@ -63,6 +63,24 @@ final class AnatomyPartPickerViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
+    private func binarySearch<T: Comparable>(_ array: [T], key: T) -> Int? {
+        var low = 0
+        var high = array.count - 1
+        
+        while low <= high {
+            let mid = low + (high - low) / 2
+            if array[mid] == key {
+                return mid
+            } else if array[mid] < key {
+                low = mid + 1
+            } else {
+                high = mid - 1
+            }
+        }
+        
+        return nil
+    }
+    
     private func setupHelper(currentEditableSkin: AnatomyCreatedModel?) {
         
         if let localSkin = currentEditableSkin {
@@ -109,6 +127,24 @@ final class AnatomyPartPickerViewController: UIViewController {
         configureView()
     }
     
+    private func binarySSearch<T: Comparable>(_ array: [T], key: T) -> Int? {
+        var low = 0
+        var high = array.count - 1
+        
+        while low <= high {
+            let mid = low + (high - low) / 2
+            if array[mid] == key {
+                return mid
+            } else if array[mid] < key {
+                low = mid + 1
+            } else {
+                high = mid - 1
+            }
+        }
+        
+        return nil
+    }
+
     //MARK: Gestures
     private func addTapGestures() {
         addTapGesture(for: headComponentView)

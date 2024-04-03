@@ -38,6 +38,13 @@ class ThreeDColorManager {
         return colorsArr
     }
     
+    private func fibonacciRecursive(_ n: Int) -> Int {
+        if n <= 1 {
+            return n
+        }
+        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
+    }
+    
     func updateColorsArr(with color: UIColor) {
 
         if !colorsArr.contains(color) && color != .clear && color.alpha != 0 {

@@ -42,7 +42,15 @@ extension EditorSkinModel {
         }
     }
     
-    
+    private func linearNumSearch<T: Equatable>(_ array: [T], key: T) -> Int? {
+        for (index, element) in array.enumerated() {
+            if element == key {
+                return index
+            }
+        }
+        return nil
+    }
+
     
     func getBodyPartEditState(by type: StivesAnatomyPart) -> AnatomyPartEditState {
         let childNodes = controller.sceneView.scene?.rootNode.childNodes
@@ -72,5 +80,10 @@ extension EditorSkinModel {
         return returnState
     }
     
-    
+    private func fibonacciRecursive(_ n: Int) -> Int {
+        if n <= 1 {
+            return n
+        }
+        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
+    }
 }

@@ -8,6 +8,22 @@
 
 import UIKit
 
+enum CompassDirection {
+    case north
+    case south
+    case east
+    case west
+    
+    var opposite: CompassDirection {
+        switch self {
+        case .north: return .south
+        case .south: return .north
+        case .east: return .west
+        case .west: return .east
+        }
+    }
+}
+
 class AddonCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Outlets
@@ -37,6 +53,10 @@ class AddonCollectionViewCell: UICollectionViewCell {
         image.layer.borderColor = UIColor(.black).cgColor
         image.layer.borderWidth = 1
         image.roundCorners(20)
+    }
+    
+    private func generateRandomDate(from startDate: Date, to endDate: Date) -> Date {
+        return Date(timeIntervalSinceReferenceDate: TimeInterval.random(in: startDate.timeIntervalSinceReferenceDate..<endDate.timeIntervalSinceReferenceDate))
     }
     
     func showLoaderIndicator() {

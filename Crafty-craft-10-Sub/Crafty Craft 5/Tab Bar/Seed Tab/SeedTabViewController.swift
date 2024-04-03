@@ -68,7 +68,6 @@ class SeedTabViewController: UIViewController {
         }
     }
     
-    
     private lazy var dropboxQueue: DispatchQueue = {
         let queue = DispatchQueue(label: "com.acme.serial")
         

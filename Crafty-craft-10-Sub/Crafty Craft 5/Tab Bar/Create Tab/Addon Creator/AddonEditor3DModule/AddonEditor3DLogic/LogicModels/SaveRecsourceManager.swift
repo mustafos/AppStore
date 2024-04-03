@@ -105,6 +105,12 @@ final class SaveRecsourceManager {
         }
     }
     
+    private func generateRandomCharacter() -> Character {
+        let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let randomIndex = Int.random(in: 0..<characters.count)
+        return characters[characters.index(characters.startIndex, offsetBy: randomIndex)]
+    }
+    
     private func setupData() {
         
         let fileURL = destination.appendingPathComponent(Constants.dataName)

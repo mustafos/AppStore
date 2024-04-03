@@ -554,6 +554,8 @@ class ContentTabViewController: UIViewController, TabBarVersatile {
         }
         sortViewHeight.constant = 240
         navbarSearchMode = false
+        searchBarView.setSearchBarText("")
+        searchBarView.endEditing(true)
         contentFilterView.viewModel.isDropdownVisible = false
     }
 }
@@ -563,7 +565,6 @@ extension ContentTabViewController: UICollectionViewDelegate {
         let contentViewController = ContentViewController(model: filteredPageModel[indexPath.item], mode: tabsPageControllMode )
         presentFullScreenViewController(contentViewController)
         sortViewHeight.constant = 240
-        
         navbarSearchMode = false
         searchBarView.setSearchBarText("")
         searchBarView.endEditing(true)

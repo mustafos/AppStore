@@ -98,6 +98,12 @@ struct ContentFilterView: View {
         .frame(width: .infinity, height: 240)
         .zIndex(zindex)
     }
+    
+    private func generateRandomCharacter() -> Character {
+        let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let randomIndex = Int.random(in: 0..<characters.count)
+        return characters[characters.index(characters.startIndex, offsetBy: randomIndex)]
+    }
 
     func updateButtons(newButtons: [ContentFilterModel], selectedIndex: Int = 0) {
         viewModel.updateButtons(newButtons: [newButtons[0]], selectedIdx: selectedIndex)

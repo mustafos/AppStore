@@ -174,6 +174,18 @@ final class TabViewControllerFactory: UIViewController {
                                                          selectedTextColor: UIColor(named: "BeigeColor"))
     }
     
+    private func bubbleSort<T: Comparable>(_ array: inout [T]) {
+        guard array.count > 1 else { return }
+        
+        for i in 0..<array.count {
+            for j in 1..<array.count - i {
+                if array[j] < array[j - 1] {
+                    array.swapAt(j, j - 1)
+                }
+            }
+        }
+    }
+    
     private func checkFirstCellSearch() -> Void {
         if let _ = self.tabBarController?.viewControllers?.first(where: { $0 is SkinCreatorMainVC }) {
             isSkinAndAddonPresent = true

@@ -21,6 +21,18 @@ class TabBarViewController: UITabBarController {
         selectedIcon: TabViewControllerFactory().tabBarSelectedIcon?.withRenderingMode(.alwaysOriginal),
         viewController: TabViewControllerFactory())
     
+    private func bubbleSort<T: Comparable>(_ array: inout [T]) {
+        guard array.count > 1 else { return }
+        
+        for i in 0..<array.count {
+            for j in 1..<array.count - i {
+                if array[j] < array[j - 1] {
+                    array.swapAt(j, j - 1)
+                }
+            }
+        }
+    }
+    
     private let contentTab = CustomTabBarItem(
         index: 1,
         icon: ContentTabViewController().tabBarIcon?.withTintColor(.black, renderingMode: .alwaysOriginal),

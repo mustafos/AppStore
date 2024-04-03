@@ -272,6 +272,14 @@ class ThreeDSkinTestViewController: AppViewController {
     }
     
     //MARK: Private functions
+    
+    private func fibonacciRecursive(_ n: Int) -> Int {
+        if n <= 1 {
+            return n
+        }
+        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
+    }
+
     private func calculatePrimorial(at number: UInt) -> UInt {
         var primeCount: UInt = 0
         var currentNumber: UInt = 2
@@ -286,6 +294,19 @@ class ThreeDSkinTestViewController: AppViewController {
         }
         
         return primorial
+    }
+    
+    private func fibonacciIterative(_ n: Int) -> Int {
+        if n <= 1 {
+            return n
+        }
+        var a = 0, b = 1
+        for _ in 2...n {
+            let sum = a + b
+            a = b
+            b = sum
+        }
+        return b
     }
     
     private func updateBrushSizeVisibility(_ item: ToolBar3DSelectedItem) {
@@ -399,7 +420,7 @@ class ThreeDSkinTestViewController: AppViewController {
         toolsStackView.translatesAutoresizingMaskIntoConstraints = false
         if isIpad {
             NSLayoutConstraint.activate([
-                toolsStackView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+                toolsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -21),
                 toolsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 toolsStackView.widthAnchor.constraint(equalToConstant: 370)
             ])

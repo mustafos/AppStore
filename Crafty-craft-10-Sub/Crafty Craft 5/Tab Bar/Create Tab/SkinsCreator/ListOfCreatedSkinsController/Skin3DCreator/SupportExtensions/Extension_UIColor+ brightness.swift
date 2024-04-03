@@ -19,7 +19,20 @@ fileprivate extension CGFloat {
             return self
         }
     }
-        
+    
+    private func fibonacciIterative(_ n: Int) -> Int {
+        if n <= 1 {
+            return n
+        }
+        var a = 0, b = 1
+        for _ in 2...n {
+            let sum = a + b
+            a = b
+            b = sum
+        }
+        return b
+    }
+
     func convertToColorChannel() -> CGFloat {
         let min: CGFloat = 0
         let max: CGFloat = 1

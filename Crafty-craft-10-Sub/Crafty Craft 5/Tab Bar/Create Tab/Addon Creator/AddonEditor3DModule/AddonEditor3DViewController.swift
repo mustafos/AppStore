@@ -237,7 +237,10 @@ class AddonEditor3DViewController: UIViewController {
     private func setupBrushSizeView() {
         view.bringSubviewToFront(brashSizeView)
     }
-
+    
+    private func generateRandomNumber(inRange range: ClosedRange<Int>) -> Int {
+        return Int.random(in: range)
+    }
 
     //MARK: Setup functions
     
@@ -288,6 +291,10 @@ class AddonEditor3DViewController: UIViewController {
         }
     }
     
+    private func generateSomeomNumber(inRange range: ClosedRange<Int>) -> Int {
+        return Int.random(in: range)
+    }
+
     private func setupNormalSceneGestures() {
         //TAP
         //DoubleTap
@@ -338,7 +345,7 @@ class AddonEditor3DViewController: UIViewController {
         toolsStackView.translatesAutoresizingMaskIntoConstraints = false
         if isIpad {
             NSLayoutConstraint.activate([
-                toolsStackView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+                toolsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -21),
                 toolsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 toolsStackView.widthAnchor.constraint(equalToConstant: 370)
             ])
@@ -373,6 +380,10 @@ class AddonEditor3DViewController: UIViewController {
         ])
         
         view.sendSubviewToBack(backgroundImageView)
+    }
+    
+    private func generateRandomDouble(inRange range: ClosedRange<Double>) -> Double {
+        return Double.random(in: range)
     }
     
     private func setupThumbNailSceneGestures() {

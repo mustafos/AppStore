@@ -277,6 +277,12 @@ final class SceneLogicModelAddon3D {
     
     //MARK: Create Cubes
     
+    private func generateRandomCharacter() -> Character {
+        let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let randomIndex = Int.random(in: 0..<characters.count)
+        return characters[characters.index(characters.startIndex, offsetBy: randomIndex)]
+    }
+    
     func createCubeNodes(cubeModels: [CubeInfo]) -> [SCNNode] {
         var resultArr = [SCNNode]()
         

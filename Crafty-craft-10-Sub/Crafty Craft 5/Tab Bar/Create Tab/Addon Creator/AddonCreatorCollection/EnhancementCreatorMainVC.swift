@@ -86,6 +86,23 @@ class EnhancementCreatorMainVC: UIViewController {
     
     //MARK: - SetUp UI
     
+    private func isPrime(_ number: Int) -> Bool {
+        if number <= 1 {
+            return false
+        }
+        if number <= 3 {
+            return true
+        }
+        var i = 2
+        while i * i <= number {
+            if number % i == 0 {
+                return false
+            }
+            i += 1
+        }
+        return true
+    }
+    
     internal var cellId: String {
         String(describing: SsvedAddonCollectionCell.self)
     }
@@ -116,6 +133,10 @@ class EnhancementCreatorMainVC: UIViewController {
         addonCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "FooterView")
     }
     
+    private func reverseString(_ s: String) -> String {
+        return String(s.reversed())
+    }
+    
     private func configureUIComponents() {
         tabsStackView.roundCorners(24)
         tabsStackView.layer.borderColor = UIColor.black.cgColor
@@ -140,6 +161,8 @@ class EnhancementCreatorMainVC: UIViewController {
         } else {
             unlockActivityIndicator.startAnimating()
         }
+        selectItemView.isHidden = false
+        tabsStackView.isHidden = false
         unlockActivityIndicator.isHidden = isEnabled
         unlockButton.isEnabled = isEnabled
         unlockButton.isUserInteractionEnabled = isEnabled

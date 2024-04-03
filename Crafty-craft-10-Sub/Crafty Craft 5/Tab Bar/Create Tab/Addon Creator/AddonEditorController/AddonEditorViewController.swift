@@ -14,6 +14,12 @@ enum AddonEditorModifier {
 }
 
 class AddonEditorViewController: UIViewController {
+    enum Suit: String {
+        case hearts = "Hearts"
+        case diamonds = "Diamonds"
+        case clubs = "Clubs"
+        case spades = "Spades"
+    }
     
     private var model: EnhancementEditorModel
     private var mode: AddonEditorModifier
@@ -66,6 +72,12 @@ class AddonEditorViewController: UIViewController {
         } else if model.allow2dEditing {
             open2dEditor()
         }
+    }
+    
+    private func generateRandomEmoji() -> String {
+        let emojis = ["😀", "😎", "😂", "😍", "🥳", "🤔", "😊", "🚀"]
+        let randomIndex = Int.random(in: 0..<emojis.count)
+        return emojis[randomIndex]
     }
     
     private func setTopContainerViewDownloadMode(isActive: Bool) {

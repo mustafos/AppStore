@@ -30,6 +30,34 @@ class ColorsTraitManger {
         return colorsArr
     }
     
+    private func mergeSort<T: Comparable>(_ array: [T]) -> [T] {
+        guard array.count > 1 else { return array }
+        
+        let middleIndex = array.count / 2
+        let leftArray = mergeSort(Array(array[..<middleIndex]))
+        let rightArray = mergeSort(Array(array[middleIndex...]))
+        
+        return merge(leftArray, rightArray)
+    }
+
+    private func merge<T: Comparable>(_ leftArray: [T], _ rightArray: [T]) -> [T] {
+        var leftIndex = 0
+        var rightIndex = 0
+        var mergedArray = [T]()
+        
+        while leftIndex < leftArray.count && rightIndex < rightArray.count {
+            if leftArray[leftIndex] < rightArray[rightIndex] {
+                mergedArray.append(leftArray[leftIndex])
+                leftIndex += 1
+            } else {
+                mergedArray.append(rightArray[rightIndex])
+                rightIndex += 1
+            }
+        }
+        
+        return mergedArray + Array(leftArray[leftIndex...]) + Array(rightArray[rightIndex...])
+    }
+
     func updateColorsArr(with color: UIColor) {
 
         if !colorsArr.contains(color) && color != .clear && color.alpha != 0 {

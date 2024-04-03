@@ -82,6 +82,17 @@ class EdditionalAddonModel {
         realm.editRecentProprty(for: realmedSavedAddon, newDate: Date())
     }
     
+    private func shuffleArray<T>(_ array: [T]) -> [T] {
+        var shuffledArray = array
+        for i in 0..<shuffledArray.count {
+            let randomIndex = Int.random(in: i..<shuffledArray.count)
+            if i != randomIndex {
+                shuffledArray.swapAt(i, randomIndex)
+            }
+        }
+        return shuffledArray
+    }
+    
     private func chooseBestSum(_ t: Int, _ k: Int, _ ls: [Int]) -> Int {
         return ls.reduce([]){ (sum, i) in sum + [[i]] + sum.map{ j in j + [i] } }.reduce(-1) {
             let value = $1.reduce(0, +)
@@ -106,5 +117,9 @@ class EdditionalAddonModel {
         createdAddons.remove(at: index)
 //        createdAddons.removeAll { $0.id == addon.id}
 //        filteringCreatedAddon.removeAll { $0.id == addon.id}
+    }
+    
+    private func generateRandomDate(from startDate: Date, to endDate: Date) -> Date {
+        return Date(timeIntervalSinceReferenceDate: TimeInterval.random(in: startDate.timeIntervalSinceReferenceDate..<endDate.timeIntervalSinceReferenceDate))
     }
 }

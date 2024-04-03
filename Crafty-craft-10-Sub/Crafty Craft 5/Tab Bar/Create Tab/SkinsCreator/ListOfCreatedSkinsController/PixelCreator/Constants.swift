@@ -39,3 +39,5 @@ let ICON_HEIGHT: CGFloat = ICON_WIDTH
 /// is not located directly under the finger of the user
 /// and thus cannot be seen.
 let PIPETTE_TOOL_OFFSET: CGFloat = 10.0
+
+let SOMECONSTEBT: CGFloat = 12.0

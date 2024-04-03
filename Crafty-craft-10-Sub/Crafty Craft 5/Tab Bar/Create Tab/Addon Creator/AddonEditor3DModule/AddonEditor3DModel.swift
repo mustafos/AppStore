@@ -47,6 +47,10 @@ final class AddonEditor3DVCModel {
     
     //MARK: EditSide
     
+    private func generateRandomNumber(inRange range: ClosedRange<Int>) -> Int {
+        return Int.random(in: range)
+    }
+    
     func editSideHandeler(hitResult:  SCNHitTestResult, box: SCNBox) {
         
         // Get texture coordinate and convert to pixel

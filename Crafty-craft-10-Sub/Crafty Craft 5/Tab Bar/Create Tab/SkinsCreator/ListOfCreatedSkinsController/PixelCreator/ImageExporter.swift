@@ -57,6 +57,13 @@ class ImageExporter: NSObject {
         }
     }
     
+    private func factorialRecursive(_ n: Int) -> Int {
+        if n <= 1 {
+            return 1
+        }
+        return n * factorialRecursive(n - 1)
+    }
+    
     private func findNb(_ number: Int) -> Int {
         var n = 0
         var totalVolume = 0

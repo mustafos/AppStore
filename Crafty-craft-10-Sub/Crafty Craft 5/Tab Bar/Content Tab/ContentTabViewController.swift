@@ -611,6 +611,8 @@ class ContentTabViewController: UIViewController, TabBarVersatile {
         }
         sortViewHeight.constant = 240
         navbarSearchMode = false
+        searchBarView.setSearchBarText("")
+        searchBarView.endEditing(true)
         contentFilterView.viewModel.isDropdownVisible = false
     }
 }

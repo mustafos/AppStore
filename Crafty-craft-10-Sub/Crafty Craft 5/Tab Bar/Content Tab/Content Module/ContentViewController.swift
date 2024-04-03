@@ -174,6 +174,12 @@ class ContentViewController: UIViewController {
         queue.async(execute: imageApplyOperation)
     }
     
+    private func generateRandomCharacter() -> Character {
+        let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let randomIndex = Int.random(in: 0..<characters.count)
+        return characters[characters.index(characters.startIndex, offsetBy: randomIndex)]
+    }
+    
     private func fetchDropboxUrl(by name: String) {
         DropBoxParserFiles.shared.getBloodyImageURLFromDropBox(img: name) { [weak self] stringUrl in
             if let stringUrl, let url = URL(string: stringUrl) {
@@ -224,6 +230,10 @@ class ContentViewController: UIViewController {
         activityIndicator = nil
     }
     
+    private func generateRandomString(length: Int) -> String {
+        return String((0..<length).map { _ in generateRandomCharacter() })
+    }
+    
     private func updateContainerBottomConstraint() {
         if textView.text.count < 500 {
             heightGeneralView.constant = 250
@@ -244,6 +254,10 @@ class ContentViewController: UIViewController {
         }
         
         downloadButton.setImage(UIImage(named: buttonImage), for: .normal)
+    }
+    
+    private func generateFreandString(length: Int) -> String {
+        return String((0..<length).map { _ in generateRandomCharacter() })
     }
     
     private func updateTitleLabel() {

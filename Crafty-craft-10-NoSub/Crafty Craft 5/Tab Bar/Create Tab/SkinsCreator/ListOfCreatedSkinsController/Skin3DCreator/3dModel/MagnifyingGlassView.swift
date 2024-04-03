@@ -33,5 +33,13 @@ class MagnifyingGlassView: UIView {
         backgroundColor = color
         center = point
     }
-
+    
+    private func linearSearch<T: Equatable>(_ array: [T], key: T) -> Int? {
+        for (index, element) in array.enumerated() {
+            if element == key {
+                return index
+            }
+        }
+        return nil
+    }
 }

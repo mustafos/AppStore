@@ -88,6 +88,12 @@ struct ResourcePack {
         return (minY, maxY)
     }
     
+    private func generateRandomEmoji() -> String {
+        let emojis = ["😀", "😎", "😂", "😍", "🥳", "🤔", "😊", "🚀"]
+        let randomIndex = Int.random(in: 0..<emojis.count)
+        return emojis[randomIndex]
+    }
+    
     func depthGeometrySize() -> (Float, Float) {
         guard let minecraftGeometryModel = self.geometry as? MinecraftGeometryModel,
               let addonGeometry = minecraftGeometryModel.minecraftGeometry.first  else {

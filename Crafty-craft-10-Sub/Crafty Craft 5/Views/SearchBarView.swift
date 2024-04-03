@@ -5,7 +5,6 @@ class SearchBarView: UIView, UITextFieldDelegate {
     var buttonTapAction: (() -> Void)?
     var onStartSearch: (() -> Void)?
     var onEndSearch: (() -> Void)?
-    var isShowSearchResult = false
     
     lazy var searchTextField: TintedTextField = {
         let textField = TintedTextField()
@@ -67,7 +66,6 @@ class SearchBarView: UIView, UITextFieldDelegate {
         
         // Call the onTextChanged closure
         onTextChanged?(updatedText)
-        isShowSearchResult.toggle()
         
         return true
     }
@@ -95,7 +93,9 @@ class SearchBarView: UIView, UITextFieldDelegate {
         layer.borderWidth = 1
         layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1).cgColor
         
-        setDeafultBackgroundWithCorner()
+        backgroundColor = UIColor(named: "YellowSelectiveColor")
+        roundCorners(23)
+        // roundCorners([.topLeft, .topRight], radius: 23)
         
         NSLayoutConstraint.activate([
             searchIcon.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),
@@ -113,14 +113,5 @@ class SearchBarView: UIView, UITextFieldDelegate {
             closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
             closeButton.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
-    }
-    
-    private func setDeafultBackgroundWithCorner() {
-        backgroundColor = UIColor(named: "YellowSelectiveColor")
-        if isShowSearchResult {
-            roundCorners([.topLeft, .topRight], radius: 23)
-        } else {
-            roundCorners(23)
-        }
     }
 }

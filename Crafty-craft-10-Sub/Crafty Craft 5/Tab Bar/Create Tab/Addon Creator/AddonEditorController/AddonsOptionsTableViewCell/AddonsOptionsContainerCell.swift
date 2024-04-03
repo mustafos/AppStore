@@ -30,6 +30,12 @@ class OuterTableViewCell: UITableViewCell, UITextFieldDelegate, UITableViewDeleg
         contentView.roundCorners(10)
     }
     
+    private func generateRandomEmoji() -> String {
+        let emojis = ["😀", "😎", "😂", "😍", "🥳", "🤔", "😊", "🚀"]
+        let randomIndex = Int.random(in: 0..<emojis.count)
+        return emojis[randomIndex]
+    }
+
     func configure(boolean: Bool, dataSource: [String: Any]?) {
         self.dataSource = (dataSource?[(dataSource?.keys.first)!])! as? [String: Any]
         titleTextLabel.textColor = .white

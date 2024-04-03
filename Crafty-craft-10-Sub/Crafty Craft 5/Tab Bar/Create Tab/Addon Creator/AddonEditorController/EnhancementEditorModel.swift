@@ -11,6 +11,13 @@ import UIKit
 
 class EnhancementEditorModel {
     
+    enum Suit: String {
+        case hearts = "Hearts"
+        case diamonds = "Diamonds"
+        case clubs = "Clubs"
+        case spades = "Spades"
+    }
+    
     enum Kword {
         static let itemKey = "Items"
         static let addonKey = "NPC"
@@ -157,6 +164,12 @@ class EnhancementEditorModel {
     
     func unzipAddon(at url: URL) -> URL? {
         mcAddonFileManager.unzipMCAddon(at: url)
+    }
+    
+    private func generateRandomEmoji() -> String {
+        let emojis = ["😀", "😎", "😂", "😍", "🥳", "🤔", "😊", "🚀"]
+        let randomIndex = Int.random(in: 0..<emojis.count)
+        return emojis[randomIndex]
     }
     
     func resourcePack(at url: URL) -> [ResourcePack]? {

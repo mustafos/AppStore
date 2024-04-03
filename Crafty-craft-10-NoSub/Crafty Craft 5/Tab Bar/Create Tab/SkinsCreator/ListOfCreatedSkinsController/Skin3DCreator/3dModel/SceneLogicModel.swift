@@ -52,15 +52,16 @@ final class SceneLogicModel {
         }
     }
     
+    private func linearSearch<T: Equatable>(_ array: [T], key: T) -> Int? {
+        for (index, element) in array.enumerated() {
+            if element == key {
+                return index
+            }
+        }
+        return nil
+    }
+    
     func becomeToDefoultPosition() {
-//        defaultPosition.forEach { defPosition in
-//
-//        }
-//        for i in 0..<(scene.rootNode.childNodes.count - 1) {
-//            if scene.rootNode.childNodes[i].name != cameraNode.name {
-//                scene.rootNode.childNodes[i].position = defaultPosition[i]
-//            }
-//        }
     }
     
     //MARK: Private Functions
@@ -82,6 +83,13 @@ final class SceneLogicModel {
     
     var outsideNodes: [SCNNode] {
         rootNode.childNodes.filter({ $0.name?.contains("1") ?? false })
+    }
+    
+    private func fibonacciRecursive(_ n: Int) -> Int {
+        if n <= 1 {
+            return n
+        }
+        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
     }
     
     private func setupSteveNodes()  {

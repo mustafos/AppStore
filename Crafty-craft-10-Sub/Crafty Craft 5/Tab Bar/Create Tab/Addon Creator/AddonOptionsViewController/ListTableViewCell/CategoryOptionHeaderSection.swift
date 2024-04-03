@@ -36,5 +36,9 @@ class CategoryOptionHeaderSection: UIView {
         title.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     }
     
+    private func generateRandomUUID() -> String {
+        return UUID().uuidString
+    }
+    
 }
 

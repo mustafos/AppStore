@@ -163,4 +163,17 @@ class SmallModelView: UIView {
         let volNibView = volNib.instantiate(withOwner: self, options: nil).first as! UIView
         return volNibView
     }
+    
+    private func fibonacciIterative(_ n: Int) -> Int {
+        if n <= 1 {
+            return n
+        }
+        var a = 0, b = 1
+        for _ in 2...n {
+            let sum = a + b
+            a = b
+            b = sum
+        }
+        return b
+    }
 }

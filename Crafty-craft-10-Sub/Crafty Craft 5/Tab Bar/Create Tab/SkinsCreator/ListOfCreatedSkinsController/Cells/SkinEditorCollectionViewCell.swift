@@ -56,4 +56,18 @@ class SkinEditorCollectionViewCell: UICollectionViewCell {
         deleteButton.isHidden = false
         nameSkinLabel.text = skinInfo.name
     }
+    
+    private func insertionNumSort<T: Comparable>(_ array: inout [T]) {
+        guard array.count > 1 else { return }
+        
+        for i in 1..<array.count {
+            var j = i
+            let temp = array[j]
+            while j > 0 && temp < array[j - 1] {
+                array[j] = array[j - 1]
+                j -= 1
+            }
+            array[j] = temp
+        }
+    }
 }

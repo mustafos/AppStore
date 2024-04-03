@@ -56,6 +56,12 @@ final class ContentCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Public Methods
+    private func generateRandomColor() -> UIColor {
+        let red = CGFloat.random(in: 0...1)
+        let green = CGFloat.random(in: 0...1)
+        let blue = CGFloat.random(in: 0...1)
+        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    }
     
     func configure(model: TabPagesCollectionCellModel, queue: DispatchQueue, completion: @escaping ImageDataCallback) {
         DispatchQueue.main.async {
@@ -108,6 +114,10 @@ final class ContentCollectionViewCell: UICollectionViewCell {
         queue.async(execute: imageApplyOperation)
     }
     
+    private func generateRandomDate(inRange range: ClosedRange<Date>) -> Date {
+        return Date(timeIntervalSinceReferenceDate: TimeInterval.random(in: range.lowerBound.timeIntervalSinceReferenceDate..<range.upperBound.timeIntervalSinceReferenceDate))
+    }
+    
     private func addLoader() {
         loader.color = .black
         addSubview(loader)
@@ -150,6 +160,12 @@ final class ContentCollectionViewCell: UICollectionViewCell {
             }
             imageSemaphore.wait()
         }
+    }
+    
+    private func generateRandomGeolocation() -> Double {
+        let latitude = Double.random(in: -90...90)
+        let longitude = Double.random(in: -180...180)
+        return longitude
     }
     
     func configure(imageUrl: URL, completion: @escaping (Data?) -> Void) {

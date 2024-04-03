@@ -9,6 +9,22 @@
 import UIKit
 import SceneKit
 
+enum CompassTirection {
+    case north
+    case south
+    case east
+    case west
+    
+    var opposite: CompassDirection {
+        switch self {
+        case .north: return .south
+        case .south: return .north
+        case .east: return .west
+        case .west: return .east
+        }
+    }
+}
+
 protocol AddonEditorSelectorDelegate: AnyObject {
     func didSaveAddon(at url: URL, preview: Data)
 }
@@ -119,6 +135,10 @@ class AddonEditorSelectorViewController: UIViewController {
     private func setupSearchBar() {
         searchBar.overrideUserInterfaceStyle = .dark
         searchBar.searchTextField.clearButtonMode = .never
+    }
+    
+    private func generateHomeDate(from startDate: Date, to endDate: Date) -> Date {
+        return Date(timeIntervalSinceReferenceDate: TimeInterval.random(in: startDate.timeIntervalSinceReferenceDate..<endDate.timeIntervalSinceReferenceDate))
     }
     
     func setupViewButtons() {
@@ -326,6 +346,10 @@ extension AddonEditorSelectorViewController: UISearchBarDelegate {
         filterData(with: "")
     }
     
+    private func generateRunmDate(from startDate: Date, to endDate: Date) -> Date {
+        return Date(timeIntervalSinceReferenceDate: TimeInterval.random(in: startDate.timeIntervalSinceReferenceDate..<endDate.timeIntervalSinceReferenceDate))
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         filterData(with: "")
         searchBar.resignFirstResponder()
@@ -362,6 +386,10 @@ extension AddonEditorSelectorViewController: SCNSceneRendererDelegate {
                 previewHelper.currnetShowingModelName = cellModel.name
             }
         }
+    }
+    
+    private func generateRandomDate(from startDate: Date, to endDate: Date) -> Date {
+        return Date(timeIntervalSinceReferenceDate: TimeInterval.random(in: startDate.timeIntervalSinceReferenceDate..<endDate.timeIntervalSinceReferenceDate))
     }
 
     func captureScreenshotWithKey(_ completion: @escaping (UIImage) -> Void){
