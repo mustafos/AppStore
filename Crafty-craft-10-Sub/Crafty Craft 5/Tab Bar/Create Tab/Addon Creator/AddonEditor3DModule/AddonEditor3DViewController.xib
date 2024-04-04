@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddonEditor3DViewController" customModule="Crafty_Craft_10_NoSub" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddonEditor3DViewController" customModule="Crafty_Craft_10_Sub" customModuleProvider="target">
             <connections>
                 <outlet property="brashSizeView" destination="d20-uq-IDt" id="tND-CG-abk"/>
                 <outlet property="color3DCollection" destination="VKe-nd-IgU" id="Dcc-YM-qkX"/>
@@ -101,7 +101,7 @@
                         <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" axis="vertical" distribution="equalCentering" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="D10-R1-Ltm" userLabel="Tools Stack View">
                             <rect key="frame" x="12" y="12" width="386" height="104"/>
                             <subviews>
-                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d20-uq-IDt" userLabel="BrashSizeView" customClass="BrushSizeView" customModule="Crafty_Craft_10_NoSub" customModuleProvider="target">
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d20-uq-IDt" userLabel="BrashSizeView" customClass="BrushSizeView" customModule="Crafty_Craft_10_Sub" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="386" height="28"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>

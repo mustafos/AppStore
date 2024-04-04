@@ -114,10 +114,6 @@ final class RealmCore: NSObject {
             return false
         }
     }
-    
-//    func toArray<T>(results: Results<T>) -> [T] {
-//        return Array(results)
-//    }
 }
 
 extension Results {

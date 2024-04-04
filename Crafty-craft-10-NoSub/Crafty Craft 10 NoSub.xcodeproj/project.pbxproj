@@ -51,6 +51,7 @@
 		6A5942742B61135E009E4BD0 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5942732B61135E009E4BD0 /* CustomTabBar.swift */; };
 		6A5942762B611572009E4BD0 /* CustomTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5942752B611572009E4BD0 /* CustomTabItem.swift */; };
 		6A79B25B2BBAE0BA00B6E15B /* Pushwoosh in Frameworks */ = {isa = PBXBuildFile; productRef = 6A79B25A2BBAE0BA00B6E15B /* Pushwoosh */; };
+		6A80B8342BBDD6B00024E5DD /* stiv_v5.scn in Resources */ = {isa = PBXBuildFile; fileRef = 6A80B8332BBDD6B00024E5DD /* stiv_v5.scn */; };
 		6AA7B8352BBADB5A0000F8FD /* AddonsRealmSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B8282BBADB5A0000F8FD /* AddonsRealmSession.swift */; };
 		6AA7B8362BBADB5A0000F8FD /* MapRealmSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B8292BBADB5A0000F8FD /* MapRealmSession.swift */; };
 		6AA7B8372BBADB5A0000F8FD /* SeedRealmSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B82A2BBADB5A0000F8FD /* SeedRealmSession.swift */; };
@@ -61,7 +62,6 @@
 		6AA7B83C2BBADB5A0000F8FD /* RealmCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B8312BBADB5A0000F8FD /* RealmCore.swift */; };
 		6AA7B83D2BBADB5A0000F8FD /* RealmEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B8322BBADB5A0000F8FD /* RealmEntities.swift */; };
 		6AA7B83E2BBADB5A0000F8FD /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B8332BBADB5A0000F8FD /* RealmService.swift */; };
-		6AAA56B22BA7F2CB006D35C8 /* stiv_v5.scn in Resources */ = {isa = PBXBuildFile; fileRef = 6AAA56B12BA7F2CB006D35C8 /* stiv_v5.scn */; };
 		6AB028A72B5E61C9005586CC /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028A32B5E61C8005586CC /* Montserrat-Medium.ttf */; };
 		6AB028A82B5E61C9005586CC /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028A42B5E61C8005586CC /* Montserrat-Bold.ttf */; };
 		6AB028A92B5E61C9005586CC /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB028A52B5E61C9005586CC /* Montserrat-Regular.ttf */; };
@@ -339,6 +339,7 @@
 		6A59426D2B5FD35E009E4BD0 /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
 		6A5942732B61135E009E4BD0 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		6A5942752B611572009E4BD0 /* CustomTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabItem.swift; sourceTree = "<group>"; };
+		6A80B8332BBDD6B00024E5DD /* stiv_v5.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = stiv_v5.scn; sourceTree = "<group>"; };
 		6AA7B8282BBADB5A0000F8FD /* AddonsRealmSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddonsRealmSession.swift; sourceTree = "<group>"; };
 		6AA7B8292BBADB5A0000F8FD /* MapRealmSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapRealmSession.swift; sourceTree = "<group>"; };
 		6AA7B82A2BBADB5A0000F8FD /* SeedRealmSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeedRealmSession.swift; sourceTree = "<group>"; };
@@ -349,7 +350,6 @@
 		6AA7B8312BBADB5A0000F8FD /* RealmCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCore.swift; sourceTree = "<group>"; };
 		6AA7B8322BBADB5A0000F8FD /* RealmEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmEntities.swift; sourceTree = "<group>"; };
 		6AA7B8332BBADB5A0000F8FD /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
-		6AAA56B12BA7F2CB006D35C8 /* stiv_v5.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = stiv_v5.scn; sourceTree = "<group>"; };
 		6AB028A32B5E61C8005586CC /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Medium.ttf"; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Resources/Fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		6AB028A42B5E61C8005586CC /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Resources/Fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		6AB028A52B5E61C9005586CC /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../../Crafty-craft-10-Sub/Crafty Craft 5/Resources/Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -1074,7 +1074,7 @@
 				6AB6CDA62B761BD4008A3491 /* MagnifyingGlassView.swift */,
 				6AB6CDA12B761BC6008A3491 /* SceneLogicModel.swift */,
 				6AB6CDA42B761BCF008A3491 /* SkinCommand.swift */,
-				6AAA56B12BA7F2CB006D35C8 /* stiv_v5.scn */,
+				6A80B8332BBDD6B00024E5DD /* stiv_v5.scn */,
 			);
 			path = 3dModel;
 			sourceTree = "<group>";
@@ -1612,7 +1612,7 @@
 				6AB028C22B5E6341005586CC /* SeedTabViewController.xib in Resources */,
 				6AB029732B5E6B00005586CC /* SmallModelView.xib in Resources */,
 				6AB028B92B5E62E3005586CC /* ServerTableViewCell.xib in Resources */,
-				6AAA56B22BA7F2CB006D35C8 /* stiv_v5.scn in Resources */,
+				6A80B8342BBDD6B00024E5DD /* stiv_v5.scn in Resources */,
 				6AB029B52B5EBAAC005586CC /* SkinDesignViewController.xib in Resources */,
 				6AB029A62B5EB9F7005586CC /* AnatomyPartPickerViewController.xib in Resources */,
 				6AB028C52B5E6350005586CC /* SeedTableViewCell.xib in Resources */,

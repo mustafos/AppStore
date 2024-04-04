@@ -318,7 +318,6 @@ class SkinDesignViewController: UIViewController, PKCanvasViewDelegate, PKToolPi
             CANVAS_WIDTH = width
             CANVAS_HEIGHT = height
         }
-//        currentBodyPartSide = nil
         guard let rotatedImage = image.rotate(radians: CGFloat.pi/2) else { return }
         guard let pixelizedImg = rotatedImage.pixelateAndResize(to: .init(width: CANVAS_HEIGHT, height: CANVAS_WIDTH)) else { return }
         
@@ -330,7 +329,6 @@ class SkinDesignViewController: UIViewController, PKCanvasViewDelegate, PKToolPi
     }
     
     @IBAction func dropperBtnTapped(_ sender: UIButton) {
-//        sender.isSelected = true
         if magnifyingGlassView == nil {
             panForColorPickerRecognizer.isEnabled = true
             tapGestureRecognizer?.isEnabled = false
@@ -343,7 +341,6 @@ class SkinDesignViewController: UIViewController, PKCanvasViewDelegate, PKToolPi
             canvasPixelView?.addSubview(magnifyingGlassView!)
         } else {
             hideMagnifyingGlass()
-//            sender.isSelected = false
         }
     }
     
@@ -465,7 +462,6 @@ class SkinDesignViewController: UIViewController, PKCanvasViewDelegate, PKToolPi
         var colorsArr: [UIColor]?
         
         var image = currentEditableSkin?.skinAssemblyDiagram
-//            .rotate(radians: CGFloat.pi)
         if currentBodyPartSide == nil {
             image = image?.resizeImageTo(size: .init(width: CANVAS_WIDTH,
                                                      height: CANVAS_HEIGHT))
@@ -524,7 +520,7 @@ class SkinDesignViewController: UIViewController, PKCanvasViewDelegate, PKToolPi
         toolsStackView.translatesAutoresizingMaskIntoConstraints = false
         if isIpad {
             NSLayoutConstraint.activate([
-                toolsStackView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+                toolsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -21),
                 toolsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 toolsStackView.widthAnchor.constraint(equalToConstant: 370)
             ])

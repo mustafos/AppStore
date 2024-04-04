@@ -515,7 +515,6 @@ class AddonEditor3DViewController: UIViewController {
 }
 
 //MARK: BrashSize Delegate
- 
 extension AddonEditor3DViewController: BrushSizeDelegate {
     func changeBrashdimensions(at size: BrashSize) {
         vcModel?.editorAddonModel.brushSize = size.rawValue

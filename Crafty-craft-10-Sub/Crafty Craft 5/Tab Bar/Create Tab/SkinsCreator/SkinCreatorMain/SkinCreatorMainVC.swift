@@ -247,7 +247,7 @@ extension SkinCreatorMainVC {
 
         // Add "Delete" action
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
-            self?.removeSkinPerf(in: indexPath)
+            self?.performSkinDeletion(at: indexPath)
         }
         alert.addAction(deleteAction)
 
@@ -259,33 +259,21 @@ extension SkinCreatorMainVC {
         present(alert, animated: true, completion: nil)
     }
     
-    private func insertionSort<T: Comparable>(_ array: inout [T]) {
-        guard array.count > 1 else { return }
+    private func performSkinDeletion(at indexPath: IndexPath) {
         
-        for i in 1..<array.count {
-            var j = i
-            let temp = array[j]
-            while j > 0 && temp < array[j - 1] {
-                array[j] = array[j - 1]
-                j -= 1
-            }
-            array[j] = temp
-        }
-    }
-    
-    private func removeSkinPerf(in indexPath: IndexPath) {
         // Animate the deletion
         if let selectedCell = self.menuCollectionView.cellForItem(at: indexPath) {
             UIView.animate(withDuration: 0.3, animations: {
                 selectedCell.alpha = 0.0
                 selectedCell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             }) { [weak self] _ in
-                let deletedSkinIndex = indexPath.item - 1
-                self?.model.deleteSkin(at: deletedSkinIndex)
-                self?.model.updateSkinsArray()
+                guard let self else { return }
+                
+                let skinModel = filteredSkins()[indexPath.item - 1]
+                self.model.deleteSkin(skinModel)
                 
                 // Firstly update UI
-                self?.menuCollectionView.performBatchUpdates({
+                menuCollectionView.performBatchUpdates({ [weak self] in
                     self?.menuCollectionView.deleteItems(at: [indexPath])
                 }, completion: nil)
             }
@@ -311,22 +299,6 @@ extension SkinCreatorMainVC {
         
         minecraftSkinManager.start(fileURL) { [weak self] url in
             self?.share(url: url, from: self?.downloadButton)
-        }
-    }
-    
-    private func selectionSort<T: Comparable>(_ array: inout [T]) {
-        guard array.count > 1 else { return }
-        
-        for i in 0..<array.count - 1 {
-            var minIndex = i
-            for j in i+1..<array.count {
-                if array[j] < array[minIndex] {
-                    minIndex = j
-                }
-            }
-            if i != minIndex {
-                array.swapAt(i, minIndex)
-            }
         }
     }
 }

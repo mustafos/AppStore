@@ -47,7 +47,7 @@ class ThirdPartyServicesManager {
                     case .authorized:
                         print("Authorized")
                         let idfa = ASIdentifierManager.shared().advertisingIdentifier
-                        print("Пользователь разрешил доступ. IDFA: ", idfa)
+                        print("The user has allowed access. IDFA:", idfa)
                         let authorizationStatus = Adjust.appTrackingAuthorizationStatus()
                         Adjust.updateConversionValue(Int(authorizationStatus))
                         Adjust.checkForNewAttStatus()

@@ -77,8 +77,7 @@ extension AddonOptionsViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.listCellIdentifier) as! ListTableViewCell
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
-        cell.config(addonModel: addons[indexPath.row])
-
+        cell.config(addonModel: addons[indexPath.row], hideAccessory: true)
         return cell
     }
     

@@ -311,8 +311,8 @@ extension EnhancementCreatorViewController: UITextFieldDelegate {
         }
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {}
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         DispatchQueue.main.asyncAfter(deadline: .now()+0.1) { [weak self] in
             self?.removeSuggestionsTableView()

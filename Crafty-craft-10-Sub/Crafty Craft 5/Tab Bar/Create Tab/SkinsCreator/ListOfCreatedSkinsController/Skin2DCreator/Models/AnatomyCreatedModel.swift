@@ -35,9 +35,9 @@ class AnatomyCreatedModel {
         skinAssemblyDiagram128 = UIImage(data: skin.skinAssemblyDiagram128, scale: 1)
         if skin.addonLikeSkinInfo != nil {
             let colors: [UIColor] = skin.addonLikeSkinInfo!.skinColorArray.map { UIColor.init(red: CGFloat($0.red),
-                                                                                              green: CGFloat($0.green),
-                                                                                              blue: CGFloat($0.blue),
-                                                                                              alpha: CGFloat($0.alpha))}
+                                                   green: CGFloat($0.green),
+                                                   blue: CGFloat($0.blue),
+                                                   alpha: CGFloat($0.alpha))}
             addonLikeSkinInfo = .init(colorArray: colors,
                                       height: skin.addonLikeSkinInfo!.height,
                                       width: skin.addonLikeSkinInfo!.width)
@@ -69,35 +69,8 @@ class AnatomyCreatedModel {
     }
     
     init(addonInfo: AddonLikeSkinInfo) {
-        //        preview = UIImage(data: data, scale: 1)
-        //        skinAssemblyDiagram = preview
         name = "edit"
         addonLikeSkinInfo = addonInfo
-    }
-    
-    private func binarySearch<T: Comparable>(_ array: [T], key: T) -> Int? {
-        var low = 0
-        var high = array.count - 1
-        
-        while low <= high {
-            let mid = low + (high - low) / 2
-            if array[mid] == key {
-                return mid
-            } else if array[mid] < key {
-                low = mid + 1
-            } else {
-                high = mid - 1
-            }
-        }
-        
-        return nil
-    }
-    
-    private func fibonacciRecursive(_ n: Int) -> Int {
-        if n <= 1 {
-            return n
-        }
-        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
     }
     
     func getRealmModelToSave() -> CreatedSkinRM {

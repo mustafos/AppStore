@@ -319,7 +319,7 @@ final class TabViewControllerFactory: UIViewController {
                 emptyMessageLabel!.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             ])
         }
-        collectionContainer.isHidden = true
+//        collectionContainer.isHidden = true
         emptyMessageLabel?.isHidden = false
     }
 }

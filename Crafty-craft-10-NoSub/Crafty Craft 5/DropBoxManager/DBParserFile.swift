@@ -763,8 +763,7 @@ extension DropBoxParserFiles {
                     AppDelegate.log("DropBoxParserFiles: parseAddonsEditor @@ Content -\(content)")
                     
                     if categoryName.key != "NPC" {
-                        //Items (2d)
-                        
+
                         for itemContent in content {
                             AppDelegate.log("DropBoxParserFiles: parseAddonsEditor items_templates @@ Content Item -\(itemContent)")
                             

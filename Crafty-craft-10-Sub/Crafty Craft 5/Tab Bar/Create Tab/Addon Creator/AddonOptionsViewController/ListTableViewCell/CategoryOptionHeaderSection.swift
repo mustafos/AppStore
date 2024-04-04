@@ -39,6 +39,5 @@ class CategoryOptionHeaderSection: UIView {
     private func generateRandomUUID() -> String {
         return UUID().uuidString
     }
-    
 }
 

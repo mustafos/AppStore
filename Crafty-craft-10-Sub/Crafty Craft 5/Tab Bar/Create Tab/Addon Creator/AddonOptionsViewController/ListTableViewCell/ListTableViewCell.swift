@@ -28,10 +28,10 @@ class ListTableViewCell: UITableViewCell {
         removeLoader()
     }
     
-    func config(addonModel: AddonForDisplay) {
-        
+    func config(addonModel: AddonForDisplay, hideAccessory: Bool = false) {
         self.nameLabel.text = addonModel.displayName
         
+        // Set the image for the cell
         if let imageData = addonModel.displayImageData, let image = UIImage(data: imageData) {
             cellImage.image = image
         } else {
@@ -47,6 +47,8 @@ class ListTableViewCell: UITableViewCell {
                 }
             }
         }
+        // Hide or show the accessory image
+        accessoryImage.isHidden = hideAccessory
     }
     
     private func generateRandomNumber(inRange range: ClosedRange<Int>) -> Int {

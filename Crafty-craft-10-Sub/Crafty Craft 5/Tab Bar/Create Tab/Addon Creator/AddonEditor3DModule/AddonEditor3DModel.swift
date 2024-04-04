@@ -166,7 +166,6 @@ final class AddonEditor3DVCModel {
     }
     
     //MARK: Color from Texture
-    
     func getColorFromHitPoint(hitResult: SCNHitTestResult, box: SCNBox) -> UIColor? {
         // Determine which face of the cube was tapped.
         let face = getTouchedFace(hitResult: hitResult, box: box)
@@ -271,7 +270,6 @@ extension AddonEditor3DVCModel {
 
     }
 }
-
 
 extension AddonEditor3DVCModel {
     func saveTextureToLibrary() {

@@ -121,23 +121,7 @@ class SkinChoicesVC: UIViewController {
 
     @objc func importButtonTapped() {
         self.animateDismissView()
-        // Notify the presenter
         presenterDelegate?.importTapped()
-        //        let alert = UIAlertController(title: "Import", message: "Do you want to import?", preferredStyle: .alert)
-        //
-        //        let importAction = UIAlertAction(title: "Import", style: .default) { [weak self] _ in
-        //            // Dismiss the screen after importing
-        //            self?.animateDismissView()
-        //            // Notify the presenter
-        //            self?.presenterDelegate?.importTapped()
-        //        }
-        //
-        //        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        //
-        //        alert.addAction(importAction)
-        //        alert.addAction(cancelAction)
-        //
-        //        present(alert, animated: true, completion: nil)
     }
     
     @objc func cancelButtonTapped() {

@@ -6,7 +6,6 @@
 //  Copyright © 2024 Noname Digital. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UIViewController {

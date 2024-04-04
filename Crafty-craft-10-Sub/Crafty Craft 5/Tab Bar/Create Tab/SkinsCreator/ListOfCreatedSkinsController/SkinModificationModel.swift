@@ -8,7 +8,6 @@
 
 import ImageIO
 import UIKit
-import Foundation
 
 final class SkinModificationModel {
     
@@ -33,32 +32,6 @@ final class SkinModificationModel {
         }
         
         return skinsCreatedModelArray[index]
-    }
-    
-    // Function to find greatest common divisor
-    func gcdLogic(_ a: UInt64, _ b: UInt64) -> UInt64 {
-        var x = a
-        var y = b
-        while y != 0 {
-            let temp = y
-            y = x % y
-            x = temp
-        }
-        return x
-    }
-    
-    private func insertionSort<T: Comparable>(_ array: inout [T]) {
-        guard array.count > 1 else { return }
-        
-        for i in 1..<array.count {
-            var j = i
-            let temp = array[j]
-            while j > 0 && temp < array[j - 1] {
-                array[j] = array[j - 1]
-                j -= 1
-            }
-            array[j] = temp
-        }
     }
     
     ///if user want to create new skin, creates new Instance of SkinCreatedModel and saves it into Realm
@@ -92,17 +65,9 @@ final class SkinModificationModel {
         skinsCreatedModelArray = RealmService.shared.getCreatedSkinsArray().map({ AnatomyCreatedModel(realmedModel: $0) })
     }
     
-    func gamePlay(_ n: UInt64) -> String {
-        // Calculate the sum of numbers on the chessboard
-        let numerator = n * (n + 1) * (2 * n + 1)
-        let denominator = 6
-        
-        // Return the result as a string
-        if n == 1 {
-            return "1"
-        } else {
-            return "[2,3]"
-        }
+    func deleteSkin(_ skin: AnatomyCreatedModel) {
+        RealmService.shared.deleteSkin(skin: skin)
+        updateSkinsArray()
     }
     
     func deleteSkin(at index: Int) {

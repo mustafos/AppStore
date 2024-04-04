@@ -176,12 +176,13 @@ extension SkinCreatorMainVC {
                 selectedCell.alpha = 0.0
                 selectedCell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             }) { [weak self] _ in
-                let deletedSkinIndex = indexPath.item - 1
-                self?.model.deleteSkin(at: deletedSkinIndex)
-                self?.model.updateSkinsArray()
+                guard let self else { return }
+                
+                let skinModel = filteredSkins()[indexPath.item - 1]
+                self.model.deleteSkin(skinModel)
                 
                 // Firstly update UI
-                self?.menuCollectionView.performBatchUpdates({
+                menuCollectionView.performBatchUpdates({ [weak self] in
                     self?.menuCollectionView.deleteItems(at: [indexPath])
                 }, completion: nil)
             }

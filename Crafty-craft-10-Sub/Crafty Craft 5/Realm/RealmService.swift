@@ -1,8 +1,6 @@
-
 import UIKit
 import RealmSwift
 import Foundation
-
 //
 /// Service of basic functions to work with differernt RealmObjects
 //
@@ -10,29 +8,7 @@ public class RealmService {
     
     public static let shared = RealmService()
     private var coreRM = RealmCore.shared
-    
-    
-//    //MARK: DataBase functions
-//
-//    func getRealmCacheSizeInKB() -> Double {
-//        let defaultRealmPath = Realm.Configuration.defaultConfiguration.fileURL
-//        guard let filePath = defaultRealmPath else { return 0.0 }
-//
-//        do {
-//            let fileAttributes = try FileManager.default.attributesOfItem(atPath: filePath.path)
-//            if let fileSizeNumber = fileAttributes[FileAttributeKey.size] as? NSNumber {
-//                let fileSize = fileSizeNumber.doubleValue
-//                return fileSize / 1024.0 // Convert bytes to KB
-//            }
-//        } catch {
-//            print("Failed to get file size: \(error.localizedDescription)")
-//        }
-//
-//        return 0.0
-//    }
-    
-    
-    
+
     //MARK: Add & Delete from Realm
     
     /// Save new skins into DB
