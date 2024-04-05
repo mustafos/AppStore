@@ -123,7 +123,7 @@ class TabBarViewController: UITabBarController {
 }
 
 // MARK: - NetworkStatusMonitorDelegate
-extension TabBarViewController: NetworkStatusMonitorDelegate {
+extension TabBarViewController: NetworkStatusMonitorDelegate {    
     func goodInnet() {}
     
     func showMess() {
