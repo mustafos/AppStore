@@ -24,38 +24,31 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //#else
         if NetworkStatusMonitor.shared.isNetworkAvailable {
             //              Validate MainProductSub
-            IAPManager.shared.validateSubscriptionWithCompletionHandler(productIdentifier: Configurations.mainSubscriptionID) { isPur in
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    switch isPur {
-                    case true: self.l0adApp()
-//                    case false: self.l0adApp()
-                    case false: self.loadSubscription()
+                IAPManager.shared.validateSubscriptions(productIdentifiers: [Configurations.mainSubscriptionID]) { result in
+                    if let userHaveSub = result[Configurations.mainSubscriptionID] {
+                        switch userHaveSub {
+                        case true:
+                            let unsubscribedVC = MainAppController()
+                            unsubscribedVC.modalPresentationStyle = .fullScreen
+                            window.rootViewController = unsubscribedVC
+                            window.makeKeyAndVisible()
+                        case false:
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                let unsubscribedVC = PremiumMainController()
+                                unsubscribedVC.modalPresentationStyle = .fullScreen
+                                window.rootViewController = unsubscribedVC
+                                window.makeKeyAndVisible()
+                            })
+                        }
+                    } else {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            let unsubscribedVC = PremiumMainController()
+                            unsubscribedVC.modalPresentationStyle = .fullScreen
+                            window.rootViewController = unsubscribedVC
+                            window.makeKeyAndVisible()
+                        })
                     }
                 }
-                //             Validate ContentProductSub
-                IAPManager.shared.validateSubscriptionWithCompletionHandler(productIdentifier: Configurations.unlockContentSubscriptionID) { isPur in
-
-                    DispatchQueue.main.async() {
-                        IAPManager.shared.contentSubIsVaild = isPur
-                    }
-                    
-                    //             Validate AddonCreatorProductSub
-                    IAPManager.shared.validateSubscriptionWithCompletionHandler(productIdentifier: Configurations.unlockFuncSubscriptionID) { isPur in
-                        DispatchQueue.main.async() {
-                            IAPManager.shared.addonCreatorIsValid = isPur
-                        }
-                        
-                        //             Validate SkinCreatorProductSub
-                        IAPManager.shared.validateSubscriptionWithCompletionHandler(productIdentifier: Configurations.unlockerThreeSubscriptionID) { isPur in
-                            DropBoxParserFiles.shared.zetupDropBox()
-                            DispatchQueue.main.async() {
-                                IAPManager.shared.skinCreatorSubIsValid = isPur
-                            }
-                        }
-                    }
-                }
-            }
         } else {
             self.loadSubscription()
         }
