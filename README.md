@@ -1,2 +1,3 @@
-# PortfolioApp
-The PortfolioApp showcases my iOS development skills for HR and recruiters. It features my projects, publications, and professional website, all accessible through a sleek SwiftUI interface with integrated WebView.
+# AppStore
+The AppStore Clone offers a meticulously crafted reproduction of the renowned AppStore, providing users with a faithful recreation of the iconic platform. The clone's intuitive navigation, stunning user interface design, and seamless app browsing experience faithfully replicate the original AppStore.
+The repository showcases mastery in frontend development, utilizing technologies like HTML, CSS, and JavaScript to replicate the essence of the original AppStore. For those engaged in the field of software development, this clone offers a unique opportunity to gain insight into the inner workings of one of the most influential app distribution platforms. For those with an interest in apps and app distribution, it provides a fascinating glimpse into the world of app development.
