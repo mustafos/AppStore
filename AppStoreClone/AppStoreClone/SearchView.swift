@@ -14,20 +14,33 @@ struct SearchView: View {
     var body: some View {
         NavigationStack {
             GeometryReader { proxy in
-                ScrollView {
-                    ForEach(vm.results) { result in
+                ZStack {
+                    if vm.results.isEmpty && vm.query.isEmpty {
                         VStack(spacing: 16) {
-                            
-                            AppIconTitleView(result: result)
-                            
-                            ScreenshotsRow(proxy: proxy, result: result)
+                            Image(systemName: "magnifyingglass")
+                                .font(.system(size: 60))
+                            Text("Please enter your search terms above")
+                                .font(.system(size: 24, weight: .semibold))
+                                .multilineTextAlignment(.center)
                         }
-                        .padding(16)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    } else {
+                        ScrollView {
+                            ForEach(vm.results) { result in
+                                VStack(spacing: 16) {
+                                    
+                                    AppIconTitleView(result: result)
+                                    
+                                    ScreenshotsRow(proxy: proxy, result: result)
+                                }
+                                .padding(16)
+                            }
+                        }
                     }
                 }
             }
             .navigationTitle("Search")
-            .searchable(text: .constant("Games, Apps, Stories and More"))
+            .searchable(text: $vm.query)
         }
     }
 }
@@ -76,6 +89,7 @@ struct ScreenshotsRow: View {
                     image
                         .resizable()
                         .scaledToFill()
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
                 } placeholder: {
                     RoundedRectangle(cornerRadius: 12)
                         .frame(width: width, height: 200)
