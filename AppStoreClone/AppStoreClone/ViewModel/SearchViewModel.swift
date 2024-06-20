@@ -3,7 +3,7 @@
 //  AppStoreClone
 //
 //  Created by Mustafa Bekirov on 16.06.2024.
-//  Copyright © 2023 Mustafa Bekirov. All rights reserved.
+//  Copyright © 2024 Mustafa Bekirov. All rights reserved.
 
 import SwiftUI
 import Combine
@@ -12,7 +12,7 @@ import Combine
 class SearchViewModel: ObservableObject {
     
     @Published var results: [Result] = [Result]()
-    @Published var query = ""
+    @Published var query = "DriverPro"
     
     private var cancellablas = Set<AnyCancellable>()
     
@@ -30,14 +30,7 @@ class SearchViewModel: ObservableObject {
             do {
                 guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchValue)&entity=software") else { return }
                 let (data, _) = try await URLSession.shared.data(from: url)
-                //                print(data)
-                
                 let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
-                //                searchResult.results.prefix(3).forEach { result in
-                //                    print(result.trackName)
-                //                }
-                //                DispatchQueue.main.async {    /*old*/
-                //                Task { @MainActor in          /*new*/
                 self.results = searchResult.results
             } catch {
                 print("Failed due to error:", error)
