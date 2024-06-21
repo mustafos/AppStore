@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6A3AFFD32C1F64C200BD75F1 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3AFFD22C1F64C200BD75F1 /* SearchViewModel.swift */; };
 		6A3AFFD52C1F668F00BD75F1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3AFFD42C1F668F00BD75F1 /* Result.swift */; };
+		6A4695872C26C59C0086ABA0 /* AppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4695862C26C59C0086ABA0 /* AppDetailView.swift */; };
+		6A4695892C26C7D60086ABA0 /* AppDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4695882C26C7D60086ABA0 /* AppDetailViewModel.swift */; };
+		6A46958B2C26CBB70086ABA0 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46958A2C26CBB70086ABA0 /* Detail.swift */; };
 		6ABD64672C20BFDB00BD60BF /* ScreenshotsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABD64662C20BFDB00BD60BF /* ScreenshotsRow.swift */; };
 		6ABD64692C20C00900BD60BF /* AppIconTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABD64682C20C00900BD60BF /* AppIconTitleView.swift */; };
 		6ABD64702C20C67300BD60BF /* Ext+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABD646F2C20C67300BD60BF /* Ext+Int.swift */; };
@@ -21,6 +24,9 @@
 /* Begin PBXFileReference section */
 		6A3AFFD22C1F64C200BD75F1 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		6A3AFFD42C1F668F00BD75F1 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		6A4695862C26C59C0086ABA0 /* AppDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailView.swift; sourceTree = "<group>"; };
+		6A4695882C26C7D60086ABA0 /* AppDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewModel.swift; sourceTree = "<group>"; };
+		6A46958A2C26CBB70086ABA0 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		6ABD64662C20BFDB00BD60BF /* ScreenshotsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsRow.swift; sourceTree = "<group>"; };
 		6ABD64682C20C00900BD60BF /* AppIconTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconTitleView.swift; sourceTree = "<group>"; };
 		6ABD646F2C20C67300BD60BF /* Ext+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Int.swift"; sourceTree = "<group>"; };
@@ -46,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				6A3AFFD42C1F668F00BD75F1 /* Result.swift */,
+				6A46958A2C26CBB70086ABA0 /* Detail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -54,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				6A3AFFD22C1F64C200BD75F1 /* SearchViewModel.swift */,
+				6A4695882C26C7D60086ABA0 /* AppDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -62,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				6AEE9EC92C0DD672008E9E1E /* SearchView.swift */,
+				6A4695862C26C59C0086ABA0 /* AppDetailView.swift */,
 				6ABD646D2C20C22A00BD60BF /* Components */,
 			);
 			path = Views;
@@ -192,11 +201,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A46958B2C26CBB70086ABA0 /* Detail.swift in Sources */,
 				6ABD64692C20C00900BD60BF /* AppIconTitleView.swift in Sources */,
 				6AEE9ECA2C0DD672008E9E1E /* SearchView.swift in Sources */,
 				6A3AFFD52C1F668F00BD75F1 /* Result.swift in Sources */,
 				6AEE9EC82C0DD672008E9E1E /* AppStoreCloneApp.swift in Sources */,
+				6A4695892C26C7D60086ABA0 /* AppDetailViewModel.swift in Sources */,
 				6ABD64672C20BFDB00BD60BF /* ScreenshotsRow.swift in Sources */,
+				6A4695872C26C59C0086ABA0 /* AppDetailView.swift in Sources */,
 				6ABD64702C20C67300BD60BF /* Ext+Int.swift in Sources */,
 				6A3AFFD32C1F64C200BD75F1 /* SearchViewModel.swift in Sources */,
 			);

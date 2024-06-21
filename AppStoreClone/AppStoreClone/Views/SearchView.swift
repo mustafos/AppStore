@@ -27,13 +27,17 @@ struct SearchView: View {
                     } else {
                         ScrollView {
                             ForEach(vm.results) { result in
-                                VStack(spacing: 16) {
-                                    
-                                    AppIconTitleView(result: result)
-                                    
-                                    ScreenshotsRow(proxy: proxy, result: result)
+                                NavigationLink {
+                                    AppDetailView(treckId: result.trackId)
+                                } label: {
+                                    VStack(spacing: 16) {
+                                        AppIconTitleView(result: result)
+                                        
+                                        ScreenshotsRow(proxy: proxy, result: result)
+                                    }
+                                    .foregroundStyle(Color(.label))
+                                    .padding(16)
                                 }
-                                .padding(16)
                             }
                         }
                     }

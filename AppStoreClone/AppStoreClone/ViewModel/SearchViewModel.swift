@@ -5,7 +5,7 @@
 //  Created by Mustafa Bekirov on 16.06.2024.
 //  Copyright © 2024 Mustafa Bekirov. All rights reserved.
 
-import SwiftUI
+import Foundation
 import Combine
 
 @MainActor
