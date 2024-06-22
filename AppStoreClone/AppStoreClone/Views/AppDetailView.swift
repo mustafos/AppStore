@@ -57,6 +57,8 @@ struct AppDetailView: View {
                 }
                 .padding(.horizontal)
                 
+                previewScreenshots
+                
                 VStack(alignment: .leading) {
                     Text("Description")
                         .font(.system(size: 24, weight: .semibold))
@@ -65,6 +67,64 @@ struct AppDetailView: View {
                 }
                 .padding(.horizontal)
             }
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .principal) {
+                AsyncImage(url: URL(string: vm.appDetail?.artworkUrl512 ?? "")) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 24, height: 24)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                } placeholder: {
+                    RoundedRectangle(cornerRadius: 16)
+                        .frame(width: 24, height: 24)
+                }
+            }
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button {} label: {
+                    Image(systemName: "icloud.and.arrow.down")
+                        .frame(width: 24)
+                }
+            }
+        }
+    }
+    
+    @State var isPresentingFullScreenScreenshots = false
+    
+    private var previewScreenshots: some View {
+        VStack {
+            Text("Preview")
+                .font(.system(size: 24, weight: .semibold))
+                .padding(.vertical)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal)
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 16) {
+                    ForEach(vm.appDetail?.screenshotUrls ?? [], id: \.self) { screenshort in
+                        Button {
+                            isPresentingFullScreenScreenshots.toggle()
+                        } label: {
+                            AsyncImage(url: URL(string: screenshort)) { image in
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 200, height: 350)
+                                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                            } placeholder: {
+                                RoundedRectangle(cornerRadius: 12)
+                                    .frame(width: 200, height: 350)
+                                    .foregroundStyle(Color(.label))
+                            }
+                        }
+                    }
+                }
+                .padding(.horizontal)
+            }
+        }
+        .fullScreenCover(isPresented: $isPresentingFullScreenScreenshots) {
+            FullScreenshotsView(screenshotUrls: vm.appDetail?.screenshotUrls ?? [])
         }
     }
 }

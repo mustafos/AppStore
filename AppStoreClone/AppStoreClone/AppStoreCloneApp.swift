@@ -11,7 +11,7 @@ import SwiftUI
 struct AppStoreCloneApp: App {
     var body: some Scene {
         WindowGroup {
-            SearchView()
+            SearchView().preferredColorScheme(.dark)
         }
     }
 }

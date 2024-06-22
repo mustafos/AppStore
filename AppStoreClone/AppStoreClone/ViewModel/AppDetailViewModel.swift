@@ -25,7 +25,7 @@ final class AppDetailViewModel: ObservableObject {
             do {
                 guard let url = URL(string: "https://itunes.apple.com/lookup?id=\(treckId)") else { return }
                 let (data, response) = try await URLSession.shared.data(from: url)
-                //                print(String(data: data, encoding: .utf8))
+                print(String(data: data, encoding: .utf8))
                 
                 let appDetailResults = try JSONDecoder().decode(AppDetailResults.self, from: data)
                 appDetailResults.results.forEach { appDetail in
