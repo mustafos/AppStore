@@ -13,6 +13,9 @@
 		6A4695892C26C7D60086ABA0 /* AppDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4695882C26C7D60086ABA0 /* AppDetailViewModel.swift */; };
 		6A46958B2C26CBB70086ABA0 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46958A2C26CBB70086ABA0 /* Detail.swift */; };
 		6A46958D2C26E16F0086ABA0 /* FullScreenshotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46958C2C26E16F0086ABA0 /* FullScreenshotsView.swift */; };
+		6A46958F2C2854DF0086ABA0 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46958E2C2854DF0086ABA0 /* Review.swift */; };
+		6A4695912C2856AE0086ABA0 /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4695902C2856AE0086ABA0 /* ReviewsView.swift */; };
+		6A4695932C2856EC0086ABA0 /* ReviewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4695922C2856EC0086ABA0 /* ReviewsViewModel.swift */; };
 		6ABD64672C20BFDB00BD60BF /* ScreenshotsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABD64662C20BFDB00BD60BF /* ScreenshotsRow.swift */; };
 		6ABD64692C20C00900BD60BF /* AppIconTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABD64682C20C00900BD60BF /* AppIconTitleView.swift */; };
 		6ABD64702C20C67300BD60BF /* Ext+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABD646F2C20C67300BD60BF /* Ext+Int.swift */; };
@@ -29,6 +32,9 @@
 		6A4695882C26C7D60086ABA0 /* AppDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewModel.swift; sourceTree = "<group>"; };
 		6A46958A2C26CBB70086ABA0 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		6A46958C2C26E16F0086ABA0 /* FullScreenshotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenshotsView.swift; sourceTree = "<group>"; };
+		6A46958E2C2854DF0086ABA0 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		6A4695902C2856AE0086ABA0 /* ReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
+		6A4695922C2856EC0086ABA0 /* ReviewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewModel.swift; sourceTree = "<group>"; };
 		6ABD64662C20BFDB00BD60BF /* ScreenshotsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsRow.swift; sourceTree = "<group>"; };
 		6ABD64682C20C00900BD60BF /* AppIconTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconTitleView.swift; sourceTree = "<group>"; };
 		6ABD646F2C20C67300BD60BF /* Ext+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Int.swift"; sourceTree = "<group>"; };
@@ -55,6 +61,7 @@
 			children = (
 				6A3AFFD42C1F668F00BD75F1 /* Result.swift */,
 				6A46958A2C26CBB70086ABA0 /* Detail.swift */,
+				6A46958E2C2854DF0086ABA0 /* Review.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -64,6 +71,7 @@
 			children = (
 				6A3AFFD22C1F64C200BD75F1 /* SearchViewModel.swift */,
 				6A4695882C26C7D60086ABA0 /* AppDetailViewModel.swift */,
+				6A4695922C2856EC0086ABA0 /* ReviewsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -81,6 +89,7 @@
 		6ABD646D2C20C22A00BD60BF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6A4695902C2856AE0086ABA0 /* ReviewsView.swift */,
 				6ABD64662C20BFDB00BD60BF /* ScreenshotsRow.swift */,
 				6ABD64682C20C00900BD60BF /* AppIconTitleView.swift */,
 				6A46958C2C26E16F0086ABA0 /* FullScreenshotsView.swift */,
@@ -208,7 +217,10 @@
 				6A46958B2C26CBB70086ABA0 /* Detail.swift in Sources */,
 				6ABD64692C20C00900BD60BF /* AppIconTitleView.swift in Sources */,
 				6AEE9ECA2C0DD672008E9E1E /* SearchView.swift in Sources */,
+				6A4695932C2856EC0086ABA0 /* ReviewsViewModel.swift in Sources */,
 				6A3AFFD52C1F668F00BD75F1 /* Result.swift in Sources */,
+				6A4695912C2856AE0086ABA0 /* ReviewsView.swift in Sources */,
+				6A46958F2C2854DF0086ABA0 /* Review.swift in Sources */,
 				6AEE9EC82C0DD672008E9E1E /* AppStoreCloneApp.swift in Sources */,
 				6A4695892C26C7D60086ABA0 /* AppDetailViewModel.swift in Sources */,
 				6ABD64672C20BFDB00BD60BF /* ScreenshotsRow.swift in Sources */,
