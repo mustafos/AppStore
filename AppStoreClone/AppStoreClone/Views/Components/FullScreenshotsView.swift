@@ -33,14 +33,16 @@ struct FullScreenshotsView: View {
                     }
                 }
                 .padding(.horizontal, 32)
+                .scrollTargetLayout()
             }
+            .scrollTargetBehavior(.viewAligned)
             .overlay(alignment: .topTrailing) {
                 Button {
                     dismiss()
                 } label: {
                     Image(systemName: "xmark.circle.fill")
                         .foregroundStyle(.white, .secondary)
-                        .font(.system(size: 32, weight: .semibold))
+                        .font(.system(size: 28, weight: .semibold))
                         .padding()
                 }
             }

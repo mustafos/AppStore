@@ -68,6 +68,7 @@ struct AppDetailView: View {
                 .padding(.horizontal)
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItemGroup(placement: .principal) {
                 AsyncImage(url: URL(string: vm.appDetail?.artworkUrl512 ?? "")) { image in
