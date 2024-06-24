@@ -18,74 +18,86 @@ struct AppDetailView: View {
     }
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            if let appDetail = vm.appDetail {
-                HStack(spacing: 16) {
-                    AsyncImage(url: URL(string: appDetail.artworkUrl512)) { image in
+        GeometryReader { proxy in
+            ScrollView(.vertical, showsIndicators: false) {
+                if let appDetail = vm.appDetail {
+                    HStack(spacing: 16) {
+                        AsyncImage(url: URL(string: appDetail.artworkUrl512)) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 100, height: 100)
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                        } placeholder: {
+                            RoundedRectangle(cornerRadius: 16)
+                                .frame(width: 100, height: 100)
+                        }
+                        VStack(alignment: .leading) {
+                            Text(appDetail.trackName)
+                                .font(.system(size: 24, weight: .semibold))
+                            Text(appDetail.artistName)
+                            Image(systemName: "icloud.and.arrow.down")
+                                .font(.system(size: 24))
+                                .padding(.vertical, 4)
+                        }
+                        
+                        Spacer()
+                    }.padding()
+                    
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("What's New")
+                                .font(.system(size: 24, weight: .semibold))
+                                .padding(.vertical)
+                            Spacer()
+                            Button {} label: {
+                                Text("Verion History")
+                            }
+                        }
+                        Text(appDetail.releaseNotes)
+                    }
+                    .padding(.horizontal)
+                    
+                    previewScreenshots
+                    
+                    VStack(alignment: .leading) {
+                        Text("Reviews")
+                            .font(.system(size: 24, weight: .semibold))
+                            .padding(.vertical)
+                    }
+                    .padding(.horizontal)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    ReviewsView(trackId: self.treckId, proxy: proxy)
+                    
+                    VStack(alignment: .leading) {
+                        Text("Description")
+                            .font(.system(size: 24, weight: .semibold))
+                            .padding(.vertical)
+                        Text(appDetail.description)
+                    }
+                    .padding(.horizontal)
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItemGroup(placement: .principal) {
+                    AsyncImage(url: URL(string: vm.appDetail?.artworkUrl512 ?? "")) { image in
                         image
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 100, height: 100)
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                            .frame(width: 24, height: 24)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
                     } placeholder: {
                         RoundedRectangle(cornerRadius: 16)
-                            .frame(width: 100, height: 100)
+                            .frame(width: 24, height: 24)
                     }
-                    VStack(alignment: .leading) {
-                        Text(appDetail.trackName)
-                            .font(.system(size: 24, weight: .semibold))
-                        Text(appDetail.artistName)
+                }
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button {} label: {
                         Image(systemName: "icloud.and.arrow.down")
-                            .font(.system(size: 24))
-                            .padding(.vertical, 4)
+                            .frame(width: 24)
                     }
-                    
-                    Spacer()
-                }.padding()
-                
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("What's New")
-                            .font(.system(size: 24, weight: .semibold))
-                            .padding(.vertical)
-                        Spacer()
-                        Button {} label: {
-                            Text("Verion History")
-                        }
-                    }
-                    Text(appDetail.releaseNotes)
-                }
-                .padding(.horizontal)
-                
-                previewScreenshots
-                
-                VStack(alignment: .leading) {
-                    Text("Description")
-                        .font(.system(size: 24, weight: .semibold))
-                        .padding(.vertical)
-                    Text(appDetail.description)
-                }
-                .padding(.horizontal)
-            }
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItemGroup(placement: .principal) {
-                AsyncImage(url: URL(string: vm.appDetail?.artworkUrl512 ?? "")) { image in
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 24, height: 24)
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                } placeholder: {
-                    RoundedRectangle(cornerRadius: 16)
-                        .frame(width: 24, height: 24)
-                }
-            }
-            ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button {} label: {
-                    Image(systemName: "icloud.and.arrow.down")
-                        .frame(width: 24)
                 }
             }
         }
@@ -132,6 +144,6 @@ struct AppDetailView: View {
 
 #Preview {
     NavigationStack {
-        AppDetailView(treckId: 6474212227)
+        AppDetailView(treckId: 547702041)
     }.preferredColorScheme(.dark)
 }

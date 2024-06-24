@@ -81,6 +81,7 @@
 			children = (
 				6AEE9EC92C0DD672008E9E1E /* SearchView.swift */,
 				6A4695862C26C59C0086ABA0 /* AppDetailView.swift */,
+				6A4695902C2856AE0086ABA0 /* ReviewsView.swift */,
 				6ABD646D2C20C22A00BD60BF /* Components */,
 			);
 			path = Views;
@@ -89,7 +90,6 @@
 		6ABD646D2C20C22A00BD60BF /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				6A4695902C2856AE0086ABA0 /* ReviewsView.swift */,
 				6ABD64662C20BFDB00BD60BF /* ScreenshotsRow.swift */,
 				6ABD64682C20C00900BD60BF /* AppIconTitleView.swift */,
 				6A46958C2C26E16F0086ABA0 /* FullScreenshotsView.swift */,

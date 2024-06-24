@@ -18,6 +18,22 @@ struct ReviewFeed: Codable {
 struct Review: Codable, Identifiable {
     var id: String { content.label }
     let content: JSONLabel
+    let title: JSONLabel
+    let author: Author
+    
+    let rating: JSONLabel
+    
+    private enum CodingKeys: String, CodingKey {
+        case author
+        case title
+        case content
+        
+        case rating = "im:rating"
+    }
+}
+
+struct Author: Codable {
+    let name: JSONLabel
 }
 
 struct JSONLabel: Codable {

@@ -53,7 +53,7 @@ struct ReviewsView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
             }
-            .padding(16)
+            .padding(.horizontal, 16)
             .scrollTargetLayout()
         }
         .scrollTargetBehavior(.viewAligned)
