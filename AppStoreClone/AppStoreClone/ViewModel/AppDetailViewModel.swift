@@ -7,6 +7,15 @@
 
 import Foundation
 
+struct APIServive {
+    static func fetchAppDetail(trackId: Int) async throws -> AppDetail {
+        let url = URL(string: "https://itunes.apple.com/lookup?id=\(trackId)")!
+        let (data, response) = try await URLSession.shared.data(from: url)
+        let appDetailResults = try JSONDecoder().decode(AppDetailResults.self, from: data)
+        return appDetailResults.results.first
+    }
+}
+
 @MainActor
 final class AppDetailViewModel: ObservableObject {
     
@@ -21,17 +30,13 @@ final class AppDetailViewModel: ObservableObject {
     }
     
     private func fetchJSONData() -> Void {
+        self.appDetail = APIServive.fetchAppDetail()
         Task {
             do {
                 guard let url = URL(string: "https://itunes.apple.com/lookup?id=\(treckId)") else { return }
-                let (data, _) = try await URLSession.shared.data(from: url)
+                let (data, response) = try await URLSession.shared.data(from: url)
                 let appDetailResults = try JSONDecoder().decode(AppDetailResults.self, from: data)
-                appDetailResults.results.forEach { appDetail in
-                    print(appDetail.description)
-                }
-                
                 self.appDetail = appDetailResults.results.first
-                
             } catch {
                 print("Faild fetching app detail:", error)
             }
