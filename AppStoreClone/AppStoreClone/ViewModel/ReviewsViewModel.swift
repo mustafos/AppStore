@@ -10,6 +10,7 @@ import Foundation
 class ReviewsViewModel: ObservableObject {
     
     @Published var entries: [Review] = [Review]()
+    @Published var error: Error?
     
     private let trackId: Int
     
@@ -18,15 +19,13 @@ class ReviewsViewModel: ObservableObject {
         fetchReviews()
     }
     
-    private func fetchReviews() -> Void {
+    private func fetchReviews() {
         Task {
             do {
-                guard let url = URL(string: "https://itunes.apple.com/rss/customerreviews/page=1/id=\(trackId)/sortby=mostrecent/json?l=en&cc=us") else { return }
-                let (data, _) = try await URLSession.shared.data(from: url)
-                let reviewsResults = try JSONDecoder().decode(ReviewResult.self, from: data)
-                self.entries = reviewsResults.feed.entry
+                self.entries = try await APIService.fetchReviews(trackId: trackId)
             } catch {
                 print("Failed to fetch reviews:", error)
+                self.error = error
             }
         }
     }

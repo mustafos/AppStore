@@ -28,10 +28,7 @@ class SearchViewModel: ObservableObject {
     private func fetchJSONData(searchValue: String) {
         Task {
             do {
-                guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchValue)&entity=software") else { return }
-                let (data, _) = try await URLSession.shared.data(from: url)
-                let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
-                self.results = searchResult.results
+                self.results = try await APIService.fetchSearchResults(searchValue: searchValue)
             } catch {
                 print("Failed due to error:", error)
             }
