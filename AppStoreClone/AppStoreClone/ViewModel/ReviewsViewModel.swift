@@ -22,7 +22,8 @@ class ReviewsViewModel: ObservableObject {
     private func fetchReviews() {
         Task {
             do {
-                self.entries = try await APIService.fetchReviews(trackId: trackId)
+//                self.entries = try await APIService.fetchReviews(trackId: trackId)
+                self.entries = try await APIService.asyncLegacyFetchReviews(trackId: trackId)
             } catch {
                 print("Failed to fetch reviews:", error)
                 self.error = error
