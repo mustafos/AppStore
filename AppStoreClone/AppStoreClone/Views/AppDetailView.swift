@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppDetailView: View {
-    @StateObject var vm: AppDetailViewModel
+    @State var vm: AppDetailViewModel
     
     let treckId: Int
     

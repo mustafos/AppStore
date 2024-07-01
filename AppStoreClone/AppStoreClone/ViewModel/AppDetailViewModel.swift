@@ -7,10 +7,11 @@
 
 import Foundation
 
-@MainActor
-class AppDetailViewModel: ObservableObject {
-    @Published var appDetail: AppDetail?
-    @Published var error: Error?
+@Observable
+class AppDetailViewModel {
+    
+    var appDetail: AppDetail?
+    var error: Error?
     
     private let treckId: Int
     init(treckId: Int) {

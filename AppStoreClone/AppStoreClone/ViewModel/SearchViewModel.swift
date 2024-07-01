@@ -8,17 +8,27 @@
 import Foundation
 import Combine
 
-@MainActor
-class SearchViewModel: ObservableObject {
+@Observable
+class SearchViewModel {
     
-    @Published var results: [Result] = [Result]()
-    @Published var query = "DriverPro"
+    var results: [Result] = [Result]()
+    var isSearching = false
+    
+    var query = "DriverPro" {
+        didSet {
+            if oldValue != query {
+                queryPublisher.send(query)
+            }
+        }
+    }
+    
+    private var queryPublisher = PassthroughSubject<String, Never>()
     
     private var cancellablas = Set<AnyCancellable>()
     
     init() {
-        $query
-            .debounce(for: 0.5, scheduler: DispatchQueue.main)
+        queryPublisher
+            .debounce(for: 0.3, scheduler: DispatchQueue.main)
             .sink { [weak self] newValue in
                 guard let self else { return }
                 self.fetchJSONData(searchValue: newValue)
@@ -28,8 +38,11 @@ class SearchViewModel: ObservableObject {
     private func fetchJSONData(searchValue: String) {
         Task {
             do {
+                self.isSearching = true
                 self.results = try await APIService.fetchSearchResults(searchValue: searchValue)
+                self.isSearching = false
             } catch {
+                self.isSearching = false
                 print("Failed due to error:", error)
             }
         }

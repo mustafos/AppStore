@@ -3,7 +3,7 @@
 //  AppStoreClone
 //
 //  Created by Mustafa Bekirov on 30.06.2024.
-//
+//  Copyright © 2024 Mustafa Bekirov. All rights reserved.
 
 import SwiftUI
 import Observation

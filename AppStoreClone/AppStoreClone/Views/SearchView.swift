@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     
-    @StateObject var vm = SearchViewModel()
+    @State var vm = SearchViewModel()
     
     var body: some View {
         NavigationStack {

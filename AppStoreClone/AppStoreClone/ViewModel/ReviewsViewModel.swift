@@ -7,10 +7,11 @@
 
 import Foundation
 
-class ReviewsViewModel: ObservableObject {
+@Observable
+class ReviewsViewModel {
     
-    @Published var entries: [Review] = [Review]()
-    @Published var error: Error?
+    var entries: [Review] = [Review]()
+    var error: Error?
     
     private let trackId: Int
     
@@ -22,7 +23,6 @@ class ReviewsViewModel: ObservableObject {
     private func fetchReviews() {
         Task {
             do {
-//                self.entries = try await APIService.fetchReviews(trackId: trackId)
                 self.entries = try await APIService.asyncLegacyFetchReviews(trackId: trackId)
             } catch {
                 print("Failed to fetch reviews:", error)
