@@ -9,13 +9,13 @@ import SwiftUI
 
 struct SearchView: View {
     
-    @State var vm = SearchViewModel()
+    @State var manager = SearchViewModel()
     
     var body: some View {
         NavigationStack {
             GeometryReader { proxy in
                 ZStack {
-                    if vm.results.isEmpty && vm.query.isEmpty {
+                    if manager.results.isEmpty && manager.query.isEmpty {
                         VStack(spacing: 16) {
                             Image(systemName: "magnifyingglass")
                                 .font(.system(size: 60))
@@ -26,7 +26,7 @@ struct SearchView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                     } else {
                         ScrollView {
-                            ForEach(vm.results) { result in
+                            ForEach(manager.results) { result in
                                 NavigationLink {
                                     AppDetailView(treckId: result.trackId)
                                 } label: {
@@ -44,7 +44,7 @@ struct SearchView: View {
                 }
             }
             .navigationTitle("Search")
-            .searchable(text: $vm.query)
+            .searchable(text: $manager.query)
         }
     }
 }

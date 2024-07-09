@@ -14,7 +14,7 @@ class SearchViewModel {
     var results: [Result] = [Result]()
     var isSearching = false
     
-    var query = "DriverPro" {
+    var query = "LinkedIn" {
         didSet {
             if oldValue != query {
                 queryPublisher.send(query)

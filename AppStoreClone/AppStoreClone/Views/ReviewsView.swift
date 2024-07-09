@@ -9,19 +9,19 @@ import SwiftUI
 
 struct ReviewsView: View {
     
-    @State var vm: ReviewsViewModel
+    @State var manager: ReviewsViewModel
     
     private let proxy: GeometryProxy
     
     init(trackId: Int, proxy: GeometryProxy) {
         self.proxy = proxy
-        self._vm = .init(wrappedValue: .init(trackId: trackId))
+        self._manager = .init(wrappedValue: .init(trackId: trackId))
     }
     
     var body: some View {
         ScrollView(.horizontal) {
             HStack(spacing: 16) {
-                ForEach(vm.entries) { review in
+                ForEach(manager.entries) { review in
                     VStack(alignment: .leading, spacing: 16) {
                         HStack {
                             Text(review.title.label)

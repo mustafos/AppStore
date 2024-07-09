@@ -8,16 +8,16 @@
 import SwiftUI
 import Observation
 
-//@MainActor
-//class SampleViewModel: ObservableObject {
-//    @Published var count = 0
-//    
-//    func increaseOnBackgroundThread() {
-//        Task {
-//            count += 5
-//        }
-//    }
-//}
+@MainActor
+class SampleViewModel: ObservableObject {
+    @Published var count = 0
+    
+    func increaseOnBackgroundThread() {
+        Task {
+            count += 5
+        }
+    }
+}
 
 @Observable
 class ObservableSampleViewModel {
@@ -32,14 +32,14 @@ class ObservableSampleViewModel {
 
 struct SampleView: View {
     
-//    @StateObject var vm = SampleViewModel()
-    @State var vm = ObservableSampleViewModel()
+    @StateObject var oldManager = SampleViewModel()
+    @State var newManager = ObservableSampleViewModel()
     
     var body: some View {
         Button {
-            vm.increaseOnBackgroundThread()
+            newManager.increaseOnBackgroundThread()
         } label: {
-            Text("Increase by 1: \(vm.count)")
+            Text("Increase by 1: \(newManager.count)")
                 .font(.largeTitle)
         }
     }
